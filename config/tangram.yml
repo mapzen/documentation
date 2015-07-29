@@ -1,0 +1,12 @@
+site_name: Tangram
+repo_url: https://github.com/tangrams/tangram
+remote_branch: gh-pages
+docs_dir: 'docs/tangram/pages'
+theme: mkdocs
+theme_dir: 'theme'
+include_nav: false # mkdocs puts all the root files in the nav; we don't want this
+include_next_prev: false # next/prev is in alpha order; we don't want this
+
+# Determines if a broken link to a page within the documentation is considered
+# a warning or an error (link to a page not listed in the pages setting). Set
+# to true to halt processing when a broken link is found, false prints a warning.

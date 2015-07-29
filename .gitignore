@@ -1,0 +1,11 @@
+# Dependencies
+env
+node_modules
+
+# Sub-tree'd sources
+docs/
+!docs/index.md
+
+# Generated files
+site/
+mkdocs.yml
