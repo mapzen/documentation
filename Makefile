@@ -20,6 +20,9 @@ get-tangram:
 get-metro-extracts:
 	curl -L $(MAPZEN) | tar -zxvf - -C src --strip-components=1 mapzen-docs-master/metro-extracts
 
+get-valhalla-demos:
+	curl -L $(VALHALLA_DEMOS) | tar -zxvf - -C src --strip-components=1 demos-master/docs && mv src/docs src/valhalla-demos
+
 get-valhalla:
 	curl -L $(VALHALLA) | tar -zxv - -C src && mv src/valhalla-docs-gh-pages src/valhalla
 
