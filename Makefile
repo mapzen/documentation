@@ -13,7 +13,15 @@ define serve-mkdocs
 	env/bin/mkdocs serve
 endef
 
-# Get docs
+# Reset entire source directory
+clean:
+	rm -rf ./src/
+	mkdir src
+	touch ./src/.gitkeep
+
+get: clean get-tangram get-metro-extracts get-valhalla-demos get-valhalla
+
+# Get individual sources docs
 get-tangram:
 	curl -L $(TANGRAM) | tar -zxvf - -C src --strip-components=1 tangram-docs-gh-pages/pages && mv src/pages src/tangram
 
