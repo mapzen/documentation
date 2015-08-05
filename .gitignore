@@ -3,11 +3,9 @@ env
 node_modules
 
 # Documentation source files
-src/*
-!src/.gitkeep
+src/*/
 
 # Generated files
 site/
-build/*
-!build/.gitkeep
+build/*/
 mkdocs.yml
