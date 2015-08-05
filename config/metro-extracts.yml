@@ -1,9 +1,10 @@
 site_name: Metro Extracts
 repo_url: https://github.com/mapzen/metroextractor-cities
 remote_branch: master
-docs_dir: 'src/metro-extracts'
+docs_dir: src/metro-extracts
 theme: mkdocs
-theme_dir: 'theme'
+theme_dir: theme
+site_dir: build/metro-extracts
 include_nav: false # mkdocs puts all the root files in the nav; we don't want this
 include_next_prev: false # next/prev is in alpha order; we don't want this
 

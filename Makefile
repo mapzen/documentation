@@ -4,22 +4,19 @@ MAPZEN = https://github.com/mapzen/mapzen-docs/archive/master.tar.gz
 VALHALLA_DEMOS = https://github.com/valhalla/demos/archive/master.tar.gz
 VALHALLA = https://github.com/valhalla/valhalla-docs/archive/gh-pages.tar.gz
 
-define serve-mkdocs
-	# Wait a second to let mkdocs have time to build
-	# Then open a browser on local machine
-	# This is spun off as a child processs
-	@(sleep 1; open http://127.0.0.1:8000) &
-	# Build, serve and watch is the main thread
-	env/bin/mkdocs serve
-endef
-
 # Reset entire source directory
-clean:
+clean-src:
 	rm -rf ./src/
 	mkdir src
 	touch ./src/.gitkeep
 
-get: clean get-tangram get-metro-extracts get-valhalla-demos get-valhalla
+# Reset entire build directory
+clean-build:
+	rm -rf ./build/
+	mkdir build
+	touch ./build/.gitkeep
+
+get: clean-src get-tangram get-metro-extracts get-valhalla-demos get-valhalla
 
 # Get individual sources docs
 get-tangram:
@@ -37,17 +34,24 @@ get-valhalla:
 # Build and serve tangram docs
 tangram: virtualenv
 	ln -sf config/tangram.yml ./mkdocs.yml
-	$(serve-mkdocs)
+	env/bin/mkdocs build
 
 # Build and serve metro-extracts docs
 metro-extracts: virtualenv
 	ln -sf config/metro-extracts.yml ./mkdocs.yml
-	$(serve-mkdocs)
+	env/bin/mkdocs build
 
-# Build and serve metro-extracts docs
+# Build and serve valhalla-demos docs
+valhalla-demos: virtualenv
+	ln -sf config/valhalla-demos.yml ./mkdocs.yml
+	env/bin/mkdocs build
+
+# Build and serve valhalla docs
 valhalla: virtualenv
 	ln -sf config/valhalla.yml ./mkdocs.yml
-	$(serve-mkdocs)
+	env/bin/mkdocs build
+
+all: clean-build tangram metro-extracts valhalla-demos valhalla
 
 # Set virtual environment & install dependencies
 virtualenv:

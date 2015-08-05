@@ -8,4 +8,6 @@ src/*
 
 # Generated files
 site/
+build/*
+!build/.gitkeep
 mkdocs.yml
