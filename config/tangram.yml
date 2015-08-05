@@ -1,7 +1,7 @@
 site_name: Tangram
 repo_url: https://github.com/tangrams/tangram
 remote_branch: gh-pages
-docs_dir: 'docs/tangram/pages'
+docs_dir: 'src/tangram/'
 theme: mkdocs
 theme_dir: 'theme'
 include_nav: false # mkdocs puts all the root files in the nav; we don't want this

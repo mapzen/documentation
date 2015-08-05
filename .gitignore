@@ -2,9 +2,9 @@
 env
 node_modules
 
-# Sub-tree'd sources
-docs/
-!docs/index.md
+# Documentation source files
+src/
+!src/.gitkeep
 
 # Generated files
 site/

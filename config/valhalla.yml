@@ -1,7 +1,7 @@
 site_name: Valhalla
 repo_url: https://github.com/valhalla/
 remote_branch: master
-docs_dir: 'docs/valhalla/docs'
+docs_dir: 'src/valhalla/docs'
 theme: mkdocs
 theme_dir: 'theme'
 include_nav: false # mkdocs puts all the root files in the nav; we don't want this

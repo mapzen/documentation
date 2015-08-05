@@ -1,7 +1,7 @@
 site_name: Metro Extracts
 repo_url: https://github.com/mapzen/metroextractor-cities
 remote_branch: master
-docs_dir: 'docs/metro-extracts'
+docs_dir: 'src/metro-extracts'
 theme: mkdocs
 theme_dir: 'theme'
 include_nav: false # mkdocs puts all the root files in the nav; we don't want this
