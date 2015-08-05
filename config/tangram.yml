@@ -4,7 +4,7 @@ remote_branch: gh-pages
 docs_dir: src/tangram
 theme: mkdocs
 theme_dir: theme
-site_dir: build/tangram
+site_dir: dist/tangram
 include_nav: false # mkdocs puts all the root files in the nav; we don't want this
 include_next_prev: false # next/prev is in alpha order; we don't want this
 

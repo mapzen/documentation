@@ -4,6 +4,6 @@ remote_branch: master
 docs_dir: src/valhalla
 theme: mkdocs
 theme_dir: theme
-site_dir: build/valhalla
+site_dir: dist/valhalla
 include_nav: false # mkdocs puts all the root files in the nav; we don't want this
 include_next_prev: false # next/prev is in alpha order; we don't want this

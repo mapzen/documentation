@@ -10,9 +10,9 @@ clean-src:
 	@rm -rf src/*/
 
 # Reset entire build directory
-clean-build:
+clean-dist:
 	@echo Cleaning out build directory...
-	@rm -rf build/*/
+	@rm -rf dist/*/
 
 get: clean-src get-tangram get-metro-extracts get-valhalla-demos get-valhalla
 
@@ -53,7 +53,7 @@ valhalla: virtualenv
 	@ln -sf config/valhalla.yml ./mkdocs.yml
 	@env/bin/mkdocs build
 
-all: clean-build tangram metro-extracts valhalla-demos valhalla
+all: clean-dist tangram metro-extracts valhalla-demos valhalla
 
 # Set virtual environment & install dependencies
 virtualenv:
