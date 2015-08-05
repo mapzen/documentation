@@ -20,6 +20,9 @@ make all
 # Local preview
 python -m SimpleHTTPServer 8000
 open http://localhost:8000/build/
+
+# Deploy preview pages to GitHub pages
+make ghpages
 ```
 
 **NOTE:** `Make` automatically downloads and installs local Python dependencies into the `./env/` directory.
