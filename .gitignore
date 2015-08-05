@@ -3,7 +3,7 @@ env
 node_modules
 
 # Documentation source files
-src/
+src/*
 !src/.gitkeep
 
 # Generated files
