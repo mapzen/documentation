@@ -8,15 +8,12 @@ Mapzen documentation pipeline.
 
 ```shell
 # Dependencies that are needed (optional if you have them already)
-(VIRTUALENV)
+sudo easy_install pip
+sudo pip install virtualenv
 
 # Clone repository
 git clone https://github.com/mapzen/mapzen-docs-generator.git
 cd mapzen-docs-generator
-
-# Install pip and virtualenv
-sudo easy_install pip
-sudo pip install virtualenv
 
 # Get all the sources
 make get
