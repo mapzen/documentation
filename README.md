@@ -7,9 +7,16 @@ Mapzen documentation pipeline.
 ### Rapid bootstrapping
 
 ```shell
+# Dependencies that are needed (optional if you have them already)
+(VIRTUALENV)
+
 # Clone repository
 git clone https://github.com/mapzen/mapzen-docs-generator.git
 cd mapzen-docs-generator
+
+# Install pip and virtualenv
+sudo easy_install pip
+sudo pip install virtualenv
 
 # Get all the sources
 make get
@@ -25,7 +32,7 @@ open http://localhost:8000/build/
 make ghpages
 ```
 
-**NOTE:** `Make` automatically downloads and installs local Python dependencies into the `./env/` directory.
+**NOTE:** `make` depends on `virtualenv` to be on the system so that the dependencies of MkDocs can be automatically downloaded and installed locally into the `./env/` directory.
 
 ## Making MkDocs happy
 
