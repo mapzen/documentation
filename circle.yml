@@ -1,0 +1,17 @@
+machine:
+  python:
+    version: 2.7.6
+
+test:
+  override:
+    - echo 'no tests :·('
+
+deployment:
+  staging:
+    branch: master
+    commands:
+      - ./deploy dev
+  production:
+    branch: production
+    commands:
+      - ./deploy production

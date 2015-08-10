@@ -7,13 +7,16 @@ Mapzen documentation pipeline.
 ### Rapid bootstrapping
 
 ```shell
-# Dependencies that are needed (optional if you have them already)
+# Global dependencies that are needed (optional if you have them already)
 sudo easy_install pip
 sudo pip install virtualenv
 
 # Clone repository
 git clone https://github.com/mapzen/mapzen-docs-generator.git
 cd mapzen-docs-generator
+
+# Install local dependencies
+make env
 
 # Get all the sources
 make get

@@ -30,25 +30,25 @@ get-valhalla:
 	@curl -L $(VALHALLA) | tar -zxv - -C src && mv src/valhalla-docs-gh-pages src/valhalla
 
 # Build tangram docs
-tangram: virtualenv
+tangram:
 	@echo Building Tangram documentation...
 	@ln -sf config/tangram.yml ./mkdocs.yml
 	@env/bin/mkdocs build
 
 # Build metro-extracts docs
-metro-extracts: virtualenv
+metro-extracts:
 	@echo Building Metro Extracts documentation...
 	@ln -sf config/metro-extracts.yml ./mkdocs.yml
 	@env/bin/mkdocs build
 
 # Build valhalla-demos docs
-valhalla-demos: virtualenv
+valhalla-demos:
 	@echo Building Valhalla/demos documentation...
 	@ln -sf config/valhalla-demos.yml ./mkdocs.yml
 	@env/bin/mkdocs build
 
 # Build valhalla docs
-valhalla: virtualenv
+valhalla:
 	@echo Building Valhalla documentation...
 	@ln -sf config/valhalla.yml ./mkdocs.yml
 	@env/bin/mkdocs build
@@ -56,7 +56,7 @@ valhalla: virtualenv
 all: clean-dist tangram metro-extracts valhalla-demos valhalla
 
 # Set virtual environment & install dependencies
-virtualenv:
+env:
 	@echo Verifying and installing Python environment and dependencies...
 	@test -d env || virtualenv env
 	@env/bin/pip install -Ur requirements.txt
@@ -64,4 +64,4 @@ virtualenv:
 ghpages:
 	@bin/deploy.sh
 
-.PHONY: tangram
+.PHONY: all
