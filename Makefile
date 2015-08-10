@@ -4,6 +4,10 @@ MAPZEN = https://github.com/mapzen/mapzen-docs/archive/master.tar.gz
 VALHALLA_DEMOS = https://github.com/valhalla/demos/archive/master.tar.gz
 VALHALLA = https://github.com/valhalla/valhalla-docs/archive/gh-pages.tar.gz
 
+# Add local env/bin to PATH
+PATH := $(shell pwd)/env/bin:$(PATH)
+SHELL := /bin/bash # required for OSX
+
 # Reset entire source directory
 clean-src:
 	@echo Cleaning out source directory...
@@ -33,25 +37,25 @@ get-valhalla:
 tangram:
 	@echo Building Tangram documentation...
 	@ln -sf config/tangram.yml ./mkdocs.yml
-	@env/bin/mkdocs build
+	@mkdocs build
 
 # Build metro-extracts docs
 metro-extracts:
 	@echo Building Metro Extracts documentation...
 	@ln -sf config/metro-extracts.yml ./mkdocs.yml
-	@env/bin/mkdocs build
+	@mkdocs build
 
 # Build valhalla-demos docs
 valhalla-demos:
 	@echo Building Valhalla/demos documentation...
 	@ln -sf config/valhalla-demos.yml ./mkdocs.yml
-	@env/bin/mkdocs build
+	@mkdocs build
 
 # Build valhalla docs
 valhalla:
 	@echo Building Valhalla documentation...
 	@ln -sf config/valhalla.yml ./mkdocs.yml
-	@env/bin/mkdocs build
+	@mkdocs build
 
 all: clean-dist tangram metro-extracts valhalla-demos valhalla
 
