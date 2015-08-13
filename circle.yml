@@ -2,6 +2,10 @@ machine:
   python:
     version: 2.7.6
 
+dependencies:
+  pre:
+    - sudo pip install -U awscli
+
 test:
   override:
     - echo 'no tests :·('
@@ -14,4 +18,4 @@ deployment:
   production:
     branch: production
     commands:
-      - ./deploy production
+      - ./deploy prod

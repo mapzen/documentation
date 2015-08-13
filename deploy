@@ -3,4 +3,5 @@ echo "lets deploy"
 make get
 make all
 
-mv dist/* $CIRCLE_ARTIFACTS/
+aws s3 sync dist s3://static-$1.mapzen.com/documentation/
+# mv dist/* $CIRCLE_ARTIFACTS/
