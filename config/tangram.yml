@@ -8,6 +8,8 @@ theme_dir: theme
 site_dir: dist/tangram
 include_nav: false # mkdocs puts all the root files in the nav; we don't want this
 include_next_prev: false # next/prev is in alpha order; we don't want this
+extra_css:
+  - css/stuff.css
 
 # Determines if a broken link to a page within the documentation is considered
 # a warning or an error (link to a page not listed in the pages setting). Set
@@ -15,7 +17,7 @@ include_next_prev: false # next/prev is in alpha order; we don't want this
 strict: false
 
 markdown_extensions:
-    - smarty
-    - toc:
-        permalink: ' ' # Blank space; this marker is styled in CSS.
-    - sane_lists
+  - smarty
+  - toc:
+      permalink: ' ' # Blank space; this marker is styled in CSS.
+  - sane_lists

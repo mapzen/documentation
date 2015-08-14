@@ -1,0 +1,418 @@
+@import url(//fonts.googleapis.com/css?family=Source+Sans+Pro:400,300italic,400italic,300,700,700italic);
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400,300italic,400italic,300,700,700italic);
+@import url(//fonts.googleapis.com/css?family=Montserrat);
+
+@import 'common/variables';
+@import 'bootstrap-custom';
+@import 'common/helpers';
+@import 'common/navbar';
+@import 'common/footer';
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
+.documentation-container {
+  padding-top: 2em;
+}
+
+ul.nav li.main a {
+  padding-top: 20px;
+  padding-bottom: 5px;
+}
+
+ul.nav li:last-child a {
+  padding-bottom: 20px;
+}
+
+ul.nav li:first-child:last-child {
+  display: none;
+}
+
+ul.nav li.main:not(.active) {
+  font-weight: bold;
+  color: #d4645c;
+}
+
+/* hack */
+.well {
+  min-height: 0;
+}
+
+div.col-md-3 {
+  padding-left: 0;
+}
+
+div.col-md-7 {
+  padding-bottom: 100px;
+}
+
+div.source-links {
+  float: right;
+}
+
+.documentation-content {
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+.documentation-content > * {
+  margin-bottom: 1em;
+}
+
+.documentation-content img {
+  max-width: 100%;
+  display: inline;
+  padding: 4px;
+  line-height: 1.428571429;
+  background-color: #fff;
+  margin: 20px auto 30px auto;
+}
+
+/* Control weird spacing on <p>'s generated inside lists */
+.documentation-content li > p {
+  margin-bottom: 0;
+}
+
+.documentation-content li > p + p {
+  margin-top: 1em;
+}
+
+.documentation-content li > p > img {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+h1, h2, h3 {
+  color: #444;
+}
+
+/* allows hash links to navigate to proper location */
+h1[id]:before, h2[id]:before, h3[id]:before, h4[id]:before, h5[id]:before, h6[id]:before {
+  content: "";
+  display: block;
+  margin-top: -75px;
+  height: 75px;
+  pointer-events: none;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 42px;
+  font-family: 'Montserrat', sans-serif;
+  color: #d4645c;
+  margin-top: 1.8em;
+}
+
+h1:first-child {
+  margin-top: 0;
+}
+
+h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  font-family: 'Montserrat', sans-serif;
+  color: #666666;
+  margin-top: 1.8em;
+}
+
+h4, h5, h6 {
+  color: #d4645c;
+}
+
+a.headerlink {
+  font-family: FontAwesome;
+  font-size: 14px;
+  display: none;
+  padding-left: .5em;
+  width: 1.5em;
+  height: 1em;
+  background-image: url(data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20stroke-linejoin%3D%22round%22%20stroke-miterlimit%3D%221.414%22%3E%3Cpath%20d%3D%22M53.496%2056.598c0-.012-.002-.025%200-.036l-.003.035h.003zm15.488%208.076c-.244.143-.493.277-.74.412%200%20.002%200%20.005-.003.007.24-.13.49-.268.745-.42zm-21.932%201.71l-.003.003c.512.225%201.137.437%201.72.614l.01-.01c-.584-.18-1.16-.38-1.73-.605zM48.77%2067c.59.18%201.135.32%201.477.407-.494-.122-.983-.264-1.47-.414L48.77%2067zm1.842.495l.005-.004c-.09-.02-.18-.035-.268-.06l.26.066zm17.248-2.2c-.586.308-1.184.585-1.786.84%200%20.004-.003.008-.004.01.06-.025.782-.323%201.79-.85zm.38-.203c.002%200%20.003-.005.003-.007-.096.054-.19.11-.29.16.096-.047.192-.098.287-.153z%22%20fill%3D%22%23505050%22%20fill-rule%3D%22nonzero%22%2F%3E%3Cpath%20d%3D%22M49.585%2014.996L38.88%2025.7c-.923.923-1.76%201.902-2.51%202.925-.164.223-.31.454-.467.68%205.17-1.4%2010.66-1.318%2015.79.252l6.777-6.777c5.177-5.177%2013.572-5.176%2018.75.002%205.176%205.176%205.177%2013.572%200%2018.75l-6.73%206.728-1.383%201.384-1.347%201.347-.005.006-2.242%202.242c-2.337%202.337-5.33%203.615-8.385%203.843v.005h-.003c-.642.056-1.194.06-1.665.04-1.035-.045-1.636-.206-1.636-.206v-.005h-.004c-2.585-.456-5.06-1.68-7.056-3.677-1.942-1.942-3.155-4.335-3.642-6.842-.013-.072-.02-.144-.034-.214-2.27.187-4.487%201.14-6.22%202.873l-3.564%203.564c1.22%203.094%203.075%206%205.578%208.5%202.502%202.5%205.402%204.36%208.497%205.58.567.226%201.143.427%201.725.61.486.15.974.292%201.47.414.037.01.067.016.1.024.09.022.177.037.267.06%205.13%201.18%2010.556.73%2015.458-1.355.604-.257%201.202-.533%201.787-.84.032-.016.063-.032.094-.05.1-.05.195-.107.29-.16.25-.135.498-.27.74-.413l.01-.006c1.778-1.05%203.454-2.34%204.98-3.866L85%2050.415c9.78-9.78%209.78-25.638%200-35.418-9.78-9.78-25.636-9.782-35.417%200z%22%20fill%3D%22%23505050%22%20fill-rule%3D%22nonzero%22%2F%3E%3Cpath%20d%3D%22M50.415%2085.004L61.118%2074.3c.925-.925%201.762-1.904%202.512-2.927.163-.223.313-.454.467-.68-5.17%201.4-10.66%201.32-15.79-.252l-.875.878-5.902%205.902c-5.177%205.177-13.57%205.176-18.75-.002-5.177-5.178-5.177-13.57%200-18.75l11.707-11.705c2.336-2.336%205.328-3.614%208.384-3.84v-.005h.005c.642-.057%201.193-.06%201.664-.04%201.034.043%201.635.205%201.635.205v.004h.005c2.583.456%205.06%201.68%207.054%203.675%201.942%201.942%203.155%204.337%203.64%206.843.015.072.024.143.035.214%202.27-.188%204.487-1.14%206.22-2.873l3.564-3.565c-1.222-3.095-3.077-5.998-5.58-8.5-2.503-2.504-5.402-4.36-8.497-5.583-.57-.225-1.145-.427-1.727-.608-.486-.152-.975-.295-1.47-.415l-.1-.025c-.088-.022-.177-.038-.266-.06-5.13-1.18-10.557-.73-15.458%201.355-.603.257-1.2.534-1.786.84-.032.015-.063.032-.095.05-.097.05-.192.107-.288.16-.248.135-.497.27-.74.414l-.01.006c-1.777%201.05-3.452%202.338-4.98%203.865l-10.7%2010.704c-9.782%209.78-9.782%2025.636%200%2035.417%209.78%209.783%2025.637%209.783%2035.418.003zM68.993%2064.67c-.002%200-.006%200-.01.004l.01-.005zm-1.133.626c.03-.016.063-.032.094-.05-.03.018-.062.034-.095.05z%22%20fill%3D%22%23505050%22%20fill-rule%3D%22nonzero%22%2F%3E%3Cpath%20d%3D%22M53.497%2056.6s.6.162%201.636.208v-.022c-.548-.027-1.094-.093-1.637-.188v.003zm-3.15%2010.83l-.1-.023.1.024z%22%20fill%3D%22%23505050%22%20fill-rule%3D%22nonzero%22%2F%3E%3Cpath%20d%3D%22M55.134%2056.786c-.002.006%200%20.014%200%20.022.47.02%201.02.016%201.664-.04v-.005c-.554.04-1.11.05-1.664.023zm1.667-.023v-.02c0%20.007%200%20.014-.002.02h.005z%22%20fill%3D%22%23505050%22%20fill-rule%3D%22nonzero%22%2F%3E%3Cpath%20d%3D%22M56.8%2056.762l-.003.003.002.003v-.003l-.002-.003z%22%20fill%3D%22%23505050%22%2F%3E%3C%2Fsvg%3E);
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-size: contain;
+}
+
+/* Hide for h1 level headings */
+h1 a.headerlink {
+  display: none !important;
+}
+
+hr {
+  border-top: 1px solid lightgray;
+}
+
+code, kbd, pre, samp  {
+  font-family: monospace, serif;
+}
+
+code {
+  padding: 4px 8px;
+  margin: 0 2px;
+  font-size: 14px;
+  color: #666;
+  background-color: #f4f4f4;
+}
+
+pre {
+  padding: 0;
+  margin-top: 1.8em;
+  margin-bottom: 1.8em;
+  border: 3px solid #e9e9e9;
+  border-radius: 0;
+  background-color: #f8f8f8;
+  background-size: 8px 8px;
+  background-image: linear-gradient(
+    135deg,
+    transparent 25%,
+    rgba(0, 0, 0, 0.04) 25%,
+    rgba(0, 0, 0, 0.04) 50%,
+    transparent 50%,
+    transparent 75%,
+    rgba(0, 0, 0, 0.04) 75%,
+    rgba(0, 0, 0, 0.04)
+  );
+  font-size: inherit;
+}
+
+pre code {
+  margin: 0;
+  padding: 1em !important; /* overwrite .hljs padding */
+  white-space: pre;
+  word-wrap: normal;
+  background-color: transparent;
+}
+
+/* Reset code inside headers */
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+  padding: inherit;
+  margin: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  background-color: inherit;
+}
+
+.modal-dialog {
+  margin-top: 60px;
+}
+
+/*
+ * Side navigation
+ *
+ * Scrollspy and affixed enhanced navigation to highlight sections and secondary
+ * sections of docs content.
+ */
+
+/* By default it's not affixed in mobile views, so undo that */
+.bs-sidebar.affix {
+  position: static;
+}
+
+.bs-sidebar.well {
+  padding: 0;
+}
+
+/* First level of nav */
+.bs-sidenav {
+  border-radius: 5px;
+  font-weight: 300;
+}
+
+/* All levels of nav */
+.bs-sidebar .nav > li > a {
+  display: block;
+  padding: 5px 20px;
+  z-index: 1;
+  color: #666;
+
+  -webkit-transition: box-shadow 160ms ease-in-out;
+     -moz-transition: box-shadow 160ms ease-in-out;
+          transition: box-shadow 160ms ease-in-out;
+}
+.bs-sidebar .nav > li:not(.main) > a {
+  padding-left: 30px;
+}
+.bs-sidebar .nav > li:not(.active) > a:hover,
+.bs-sidebar .nav > li:not(.active) > a:focus {
+  text-decoration: none;
+  /*box-shadow: inset -4px 0 0 #385d5c;*/
+}
+.bs-sidebar .nav > .active > a,
+.bs-sidebar .nav > .active:hover > a,
+.bs-sidebar .nav > .active:focus > a {
+  font-weight: 400;
+  background-color: #d4645c;
+  color: white;
+}
+
+/* Nav: second level (shown on .active) */
+.bs-sidebar .nav .nav {
+  display: none; /* Hide by default, but at >768px, show it */
+  margin-bottom: 8px;
+}
+.bs-sidebar .nav .nav > li > a {
+  padding-top:    3px;
+  padding-bottom: 3px;
+  padding-left: 30px;
+  font-size: 90%;
+}
+
+/* Show and affix the side nav when space allows it */
+@media (min-width: 992px) {
+  .bs-sidebar .nav > .active > ul {
+    display: block;
+  }
+  /* Widen the fixed sidebar */
+  .bs-sidebar.affix,
+  .bs-sidebar.affix-bottom {
+    width: 213px;
+  }
+  .bs-sidebar.affix {
+    position: fixed; /* Undo the static from mobile first approach */
+    top: 90px;
+  }
+  .bs-sidebar.affix-bottom {
+    position: absolute; /* Undo the static from mobile first approach */
+  }
+  .bs-sidebar.affix-bottom .bs-sidenav,
+  .bs-sidebar.affix .bs-sidenav {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 1200px) {
+  /* Widen the fixed sidebar again */
+  .bs-sidebar.affix-bottom,
+  .bs-sidebar.affix {
+    width: 235px; //263px;
+  }
+}
+
+.well {
+  background-color: #f8f8f8;
+  border: 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+
+h1:hover .headerlink, h2:hover .headerlink, h3:hover .headerlink, h4:hover .headerlink, h5:hover .headerlink, h6:hover .headerlink{
+  display:inline-block;
+}
+
+
+
+.admonition {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  text-align: left;
+}
+
+.admonition.note {
+  color: #3a87ad;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+
+.admonition.warning {
+  color: #c09853;
+  background-color: #fcf8e3;
+  border-color: #fbeed5;
+}
+
+.admonition.danger {
+  color: #b94a48;
+  background-color: #f2dede;
+  border-color: #eed3d7;
+}
+
+.admonition-title {
+  font-weight: bold;
+  text-align: left;
+}
+
+
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  -webkit-border-radius: 0 6px 6px 6px;
+  -moz-border-radius: 0 6px 6px;
+  border-radius: 0 6px 6px 6px;
+}
+
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #ccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+
+.dropdown-submenu:hover>a:after {
+  border-left-color: #fff;
+}
+
+.dropdown-submenu.pull-left {
+  float: none;
+}
+
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  -webkit-border-radius: 6px 0 6px 6px;
+  -moz-border-radius: 6px 0 6px 6px;
+  border-radius: 6px 0 6px 6px;
+}
+
+.documentation-meta {
+  background-color: #f8f8f8;
+  padding: 30px 20px;
+  position: relative;
+}
+
+.documentation-meta a {
+  /* .btn */
+  background-color: #666;
+  color: #fff;
+  text-shadow: none;
+  border-radius: 0;
+  text-transform: uppercase;
+  padding: 10px 16px;
+  position: absolute;
+  right: 20px;
+  top: 30px;
+}
+
+.documentation-meta p {
+  margin-right: 240px;
+}
+
+.headroom {
+  margin-top: 2em;
+}

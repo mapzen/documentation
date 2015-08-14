@@ -1,0 +1,155 @@
+//
+// Navbar
+// --------------------------------------------------
+
+nav {
+  width: 100%;
+  height: $header-height-mobile;
+  box-shadow: 0px 1px 0px rgba(255,255,255,0.15) inset, 0px 2px 8px rgba(0,0,0,0.10);
+
+  -webkit-transform: translate(0,0);
+  -moz-transform: translate(0,0);
+  transform: translate(0,0);
+
+  // Do not animate all; some browsers will animate width or height as DOM paints
+  -webkit-transition: top 250ms;
+  -moz-transition: top 250ms;
+  transition: top 250ms;
+
+  // Ensures positioning above gallery
+  // and secondary navigation hitbox
+  // TODO: override Bootstrap properly / set up a z-index hierarchy
+  z-index: 3500 !important;
+
+  @media (min-width: $screen-sm-min) {
+    height: $header-height;
+  }
+
+  li {
+    text-transform: uppercase;
+    text-align: center;
+  }
+}
+
+// Positioning for sticky navbar
+// See stickynav.js to see when / how these styles are applied
+body:not(.is-scrolling) nav.navbar-fixed-top {
+  top: 0;
+}
+
+body.hide-fixed-main-nav nav.navbar-fixed-top {
+  top: -60px;
+}
+
+// Apply margin to the body to take up the space
+// vacated by fixed-positioned navbar
+body {
+  margin-top: $header-height-mobile;
+
+  @media (min-width: $screen-sm-min) {
+    margin-top: $header-height;
+  }
+}
+
+// Different styles for mobile dropdown menu
+@media (max-width: $screen-xs-max) {
+  .navbar-nav {
+    background: rgba(255,255,255,0.95);
+    margin-top: 0;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.10);
+
+    li > a {
+      display: inline-block;
+      background: transparent !important;
+    }
+  }
+}
+
+// Overwrite Bootstrap styles by matching selectors
+.navbar {
+  border: 0; // Overwrite 1px border width
+}
+.navbar-nav > li > a {
+  line-height: 26px; // Make link fit the height of the navbar
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  border-bottom: 4px solid $mz-red;
+  padding-bottom: 11px;
+}
+
+// Navbar and branding size differs on mobile and tablet/desktop+, so
+// there is some more involved CSS overriding here
+.navbar-brand {
+  // Match container edge
+  padding: 8px 15px;
+
+  // Branding size at tablet/desktop screen
+  @media (min-width: $screen-sm) {
+    height: 100%;
+
+    // When the navbar is forced to be full-width
+    // of window, apply a padding on the left
+    .container-fluid & {
+      padding-left: 15px;
+    }
+  }
+}
+
+// Mapzen logo for tablet/desktop+
+// This is set as a background-image in CSS so that the
+// hover effect background is preloaded, preventing a
+// flicker that would have been seen if this was a
+// JavaScript-based show/hide of the image element
+.mapzen-logo {
+  width: 130px;
+  height: 40px;
+  background-image: url('/resources/mapzen-logo.png');
+  background-repeat: no-repeat;
+  background-position: 0 -40px;
+  background-size: 130px;
+
+  &:hover {
+    background-position: 0 0;
+  }
+
+  // Set the size and position of the logo at mobile screen
+  @media (max-width: $screen-xs-max) {
+    height: 31px;
+    background-position: 0 0;
+    background-size: 110px;
+  }
+
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    background-image: url('/resources/mapzen-logo@2x.png');
+  }
+}
+
+li:hover .animated-key {
+  background-image: url('/resources/key_h.png');
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+li.active:hover .animated-key {
+  background-image: url('/resources/key.png');
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+.animated-key {
+  padding-right: 15px;
+  display: inline;
+  float: left;
+  width: 23px;
+  height: 28px;
+  background-image: url('/resources/key.png');
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+  background-size: 80% 80%;
+  transition: all 0.5s ease-out;
+}

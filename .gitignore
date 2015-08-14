@@ -9,3 +9,4 @@ src/*/
 site/
 dist/*/
 mkdocs.yml
+.sass-cache/

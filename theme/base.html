@@ -12,9 +12,8 @@
 
     <title>{% if page_title %}{{ page_title }} - {% endif %}{{ site_name }}</title>
 
-    <link href="{{ base_url }}/css/bootstrap-custom.min.css" rel="stylesheet">
-    <link href="{{ base_url }}/css/font-awesome-4.0.3.css" rel="stylesheet">
-    <link href="{{ base_url }}/css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ base_url }}/css/font-awesome-4.0.3.css">
+    <link rel="stylesheet" href="{{ base_url }}/css/base.css">
     <link rel="stylesheet" href="{{ base_url }}/css/highlight.css">
     {%- for path in extra_css %}
     <link href="{{ path }}" rel="stylesheet">
@@ -41,31 +40,38 @@
 
   <body{% if current_page and current_page.is_homepage %} class="homepage"{% endif %}>
 
-    {% include "nav.html" %}
+    {% include "common/navbar.html" %}
+
+    <div class='container'>
+      <div class='row'>
+      </div>
+    </div>
 
     <div class="container documentation-container">
+      <div class='row'>
       {% block content %}
-        <div class="col-md-3 col-md-offset-1">{% include "toc.html" %}</div>
-        <div class="col-md-7" role="main">
+        <div class="col-xs-12 col-md-3">{% include "toc.html" %}</div>
+        <div class="col-xs-12 col-md-9" role="main">
           <div class='documentation-content'>
             {% include "content.html" %}
           </div>
+        </div>
+      {% endblock %}
+      </div>
+    </div>
 
+    <div class='container headroom-large footroom-large'>
+      <div class='row'>
+        <div class='col-xs-12 col-md-12'>
           <div class="documentation-meta headroom">
             <p>{{ hi }} Sign up or sign in to get your free API key for unlimited access to {{ site_name }}.</p>
             <a href='https://mapzen.com/developers/'>Go to Developers Portal</a>
           </div>
         </div>
-      {% endblock %}
+      </div>
     </div>
 
-    <footer class="col-md-12">
-      <hr>
-      {% if copyright %}
-        <p>{{ copyright }}</p>
-      {% endif %}
-      <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
-    </footer>
+    {% include "common/footer.html" %}
 
     <script src="{{ base_url }}/js/jquery-1.10.2.min.js"></script>
     <script src="{{ base_url }}/js/bootstrap-3.0.3.min.js"></script>

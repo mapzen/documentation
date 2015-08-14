@@ -1,0 +1,68 @@
+//
+// Footer
+// --------------------------------------------------
+
+// Page layout modifier
+body.no-footer {
+  #footer,
+  footer {
+    display: none;
+  }
+}
+
+.footer-background {
+  padding-top: 50px;
+  background-color: #eee;
+  // Data URI Component-encoded SVG
+  // See comment with .carousel::after for instructions
+  // on how to create one of these
+  background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg%20width%3D%222400%22%20height%3D%22330%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-miterlimit%3D%221.414%22%3E%3Cpath%20d%3D%22M0%20262L1200%2010l1200%20252V0H0v262z%22%20fill%3D%22%23fff%22%2F%3E%3Cpath%20d%3D%22M0%20256L1200%204l1200%20252%22%20fill%3D%22none%22%20stroke-width%3D%221.33%22%20stroke%3D%22%23D4625C%22%2F%3E%3C%2Fsvg%3E');
+  background-position: center top;
+  background-repeat: no-repeat;
+
+  // Special case for any screens wider than the
+  // width of the triangle mask; scale up the image
+  // to fit
+  @media (min-width: 2400px) {
+    background-size: cover;
+  }
+}
+
+.footer-menu {
+  font-size: 13px;
+  line-height: 1.8;
+
+  @media (max-width: $screen-xs-max) {
+    text-align: center;
+  }
+
+  h6 {
+    font-weight: bold;
+    font-size: inherit;
+
+    &:not(:first-of-type) {
+      margin-top: 20px;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  .fa {
+    margin-right: 0.25em;
+  }
+
+  // Padding to re-balance the effect of left-aligned text
+  // appearing to pull to the left
+  > div {
+    @media (min-width: $screen-sm-min) {
+      padding-left: 40px;
+    }
+
+    @media (min-width: $screen-md-min) {
+      padding-left: 80px;
+    }
+  }
+}

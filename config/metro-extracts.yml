@@ -15,7 +15,7 @@ include_next_prev: false # next/prev is in alpha order; we don't want this
 strict: true
 
 markdown_extensions:
-    - smarty
-    - toc:
-        permalink: ' ' # Blank space; this marker is styled in CSS.
-    - sane_lists
+  - smarty
+  - toc:
+      permalink: ' ' # Blank space; this marker is styled in CSS.
+  - sane_lists
