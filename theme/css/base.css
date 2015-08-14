@@ -189,7 +189,7 @@ code {
 }
 
 pre {
-  padding: 1em;
+  padding: 0;
   margin-top: 1.8em;
   margin-bottom: 1.8em;
   border: 3px solid #e9e9e9;
@@ -197,21 +197,21 @@ pre {
   background-color: #f8f8f8;
   background-size: 8px 8px;
   background-image: linear-gradient(
-      135deg,
-      transparent 25%,
-      rgba(0, 0, 0, 0.04) 25%,
-      rgba(0, 0, 0, 0.04) 50%,
-      transparent 50%,
-      transparent 75%,
-      rgba(0, 0, 0, 0.04) 75%,
-      rgba(0, 0, 0, 0.04)
+    135deg,
+    transparent 25%,
+    rgba(0, 0, 0, 0.04) 25%,
+    rgba(0, 0, 0, 0.04) 50%,
+    transparent 50%,
+    transparent 75%,
+    rgba(0, 0, 0, 0.04) 75%,
+    rgba(0, 0, 0, 0.04)
   );
   font-size: inherit;
 }
 
 pre code {
   margin: 0;
-  padding: 0;
+  padding: 1em !important; /* overwrite .hljs padding */
   white-space: pre;
   word-wrap: normal;
   background-color: transparent;
