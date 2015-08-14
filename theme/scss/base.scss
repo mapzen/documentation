@@ -23,6 +23,7 @@ body {
 .breadcrumb {
   margin-bottom: 0;
 
+  // Need to set this font for our divider character to work
   li::before {
     font: normal normal normal 14px/1 FontAwesome;
   }
@@ -36,14 +37,11 @@ body {
   background-color: $mz-lightgray;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
-  padding: 2em 0;
 
   h1 {
-    margin: 0;
-    padding: 0;
+    margin: 1.5em 0;
   }
 }
-
 
 ul.nav li.main a {
   padding-top: 20px;
