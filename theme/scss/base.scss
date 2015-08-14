@@ -112,7 +112,6 @@ div.source-links {
   margin-bottom: 1em;
 }
 .documentation-content {
-
   h1, h2, h3 {
     color: #444;
   }
@@ -134,7 +133,12 @@ div.source-links {
     margin-top: 1.8em;
   }
 
-  h1:first-child {
+  h1:first-child,
+  h2:first-child,
+  h3:first-child,
+  h4:first-child,
+  h5:first-child,
+  h6:first-child {
     margin-top: 0;
   }
 

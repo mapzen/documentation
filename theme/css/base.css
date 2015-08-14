@@ -3805,7 +3805,12 @@ div.source-links {
     font-family: 'Montserrat', sans-serif;
     color: #d4645c;
     margin-top: 1.8em; }
-  .documentation-content h1:first-child {
+  .documentation-content h1:first-child,
+  .documentation-content h2:first-child,
+  .documentation-content h3:first-child,
+  .documentation-content h4:first-child,
+  .documentation-content h5:first-child,
+  .documentation-content h6:first-child {
     margin-top: 0; }
   .documentation-content h2, .documentation-content h3, .documentation-content h4, .documentation-content h5, .documentation-content h6 {
     font-weight: 400;
