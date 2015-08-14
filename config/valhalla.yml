@@ -1,9 +1,21 @@
 site_name: Valhalla
 repo_url: https://github.com/valhalla/
 remote_branch: master
+google_analytics: ['UA-47035811-1', 'mapzen.com']
 docs_dir: src/valhalla
 theme: mkdocs
 theme_dir: theme
 site_dir: dist/valhalla
 include_nav: false # mkdocs puts all the root files in the nav; we don't want this
 include_next_prev: false # next/prev is in alpha order; we don't want this
+
+# Determines if a broken link to a page within the documentation is considered
+# a warning or an error (link to a page not listed in the pages setting). Set
+# to true to halt processing when a broken link is found, false prints a warning.
+strict: true
+
+markdown_extensions:
+    - smarty
+    - toc:
+        permalink: ' ' # Blank space; this marker is styled in CSS.
+    - sane_lists
