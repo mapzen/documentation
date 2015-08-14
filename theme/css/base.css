@@ -2900,6 +2900,21 @@ tbody.collapse.in {
     .navbar-inverse .btn-link[disabled]:hover, .navbar-inverse .btn-link[disabled]:focus, fieldset[disabled] .navbar-inverse .btn-link:hover, fieldset[disabled] .navbar-inverse .btn-link:focus {
       color: #444; }
 
+.breadcrumb {
+  padding: 1em 0;
+  margin-bottom: 20px;
+  list-style: none;
+  background-color: transparent;
+  border-radius: 0; }
+  .breadcrumb > li {
+    display: inline-block; }
+    .breadcrumb > li + li:before {
+      content: " ";
+      padding: 0 5px;
+      color: #ccc; }
+  .breadcrumb > .active {
+    color: #898989; }
+
 .modal-open {
   overflow: hidden; }
 
@@ -3662,6 +3677,11 @@ body.no-footer footer {
     .footer-background {
       background-size: cover; } }
 
+footer .slogan {
+  text-shadow: 0 1px rgba(255, 255, 255, 0.5); }
+footer .copyright {
+  color: #888; }
+
 .footer-menu {
   font-size: 13px;
   line-height: 1.8; }
@@ -3685,12 +3705,38 @@ body.no-footer footer {
     .footer-menu > div {
       padding-left: 80px; } }
 
+footer .slogan {
+  font-family: 'Montserrat', 'Open Sans', sans-serif;
+  font-weight: 300; }
+footer h6 {
+  font-family: 'Montserrat', 'Open Sans', sans-serif; }
+footer h5 {
+  font-family: 'Montserrat', 'Playfair Display', sans-serif;
+  font-weight: 300;
+  font-size: 1.5em;
+  line-height: 1.4;
+  color: #666666; }
+
 body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400; }
 
+.breadcrumb {
+  margin-bottom: 0; }
+  .breadcrumb li::before {
+    font: normal normal normal 14px/1 FontAwesome; }
+
 .documentation-container {
   padding-top: 2em; }
+
+.documentation-hero {
+  background-color: #f8f8f8;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  padding: 2em 0; }
+  .documentation-hero h1 {
+    margin: 0;
+    padding: 0; }
 
 ul.nav li.main a {
   padding-top: 20px;
@@ -3709,12 +3755,6 @@ ul.nav li.main:not(.active) {
 /* hack */
 .well {
   min-height: 0; }
-
-div.col-md-3 {
-  padding-left: 0; }
-
-div.col-md-7 {
-  padding-bottom: 100px; }
 
 div.source-links {
   float: right; }
@@ -3745,35 +3785,31 @@ div.source-links {
   margin-top: 0;
   margin-bottom: 1em; }
 
-h1, h2, h3 {
-  color: #444; }
-
-/* allows hash links to navigate to proper location */
-h1[id]:before, h2[id]:before, h3[id]:before, h4[id]:before, h5[id]:before, h6[id]:before {
-  content: "";
-  display: block;
-  margin-top: -75px;
-  height: 75px;
-  pointer-events: none; }
-
-h1 {
-  font-weight: 700;
-  font-size: 42px;
-  font-family: 'Montserrat', sans-serif;
-  color: #d4645c;
-  margin-top: 1.8em; }
-
-h1:first-child {
-  margin-top: 0; }
-
-h2, h3, h4, h5, h6 {
-  font-weight: 400;
-  font-family: 'Montserrat', sans-serif;
-  color: #666666;
-  margin-top: 1.8em; }
-
-h4, h5, h6 {
-  color: #d4645c; }
+.documentation-content {
+  /* allows hash links to navigate to proper location */ }
+  .documentation-content h1, .documentation-content h2, .documentation-content h3 {
+    color: #444; }
+  .documentation-content h1[id]:before, .documentation-content h2[id]:before, .documentation-content h3[id]:before, .documentation-content h4[id]:before, .documentation-content h5[id]:before, .documentation-content h6[id]:before {
+    content: "";
+    display: block;
+    margin-top: -75px;
+    height: 75px;
+    pointer-events: none; }
+  .documentation-content h1 {
+    font-weight: 700;
+    font-size: 42px;
+    font-family: 'Montserrat', sans-serif;
+    color: #d4645c;
+    margin-top: 1.8em; }
+  .documentation-content h1:first-child {
+    margin-top: 0; }
+  .documentation-content h2, .documentation-content h3, .documentation-content h4, .documentation-content h5, .documentation-content h6 {
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+    color: #666666;
+    margin-top: 1.8em; }
+  .documentation-content h4, .documentation-content h5, .documentation-content h6 {
+    color: #d4645c; }
 
 a.headerlink {
   font-family: FontAwesome;
@@ -4020,8 +4056,5 @@ h1:hover .headerlink, h2:hover .headerlink, h3:hover .headerlink, h4:hover .head
 
 .documentation-meta p {
   margin-right: 240px; }
-
-.headroom {
-  margin-top: 2em; }
 
 /*# sourceMappingURL=base.css.map */

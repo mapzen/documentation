@@ -2,20 +2,48 @@
 @import url(//fonts.googleapis.com/css?family=Open+Sans:400,300italic,400italic,300,700,700italic);
 @import url(//fonts.googleapis.com/css?family=Montserrat);
 
+// Common Mapzen styles imported from mapzen/blog or mapzen/developer
+// Try not to edit files in common/ so we can easily keep stuff in sync
 @import 'common/variables';
-@import 'bootstrap-custom';
+@import 'variables'; // Documentation-specific Bootstrap variables
+@import 'bootstrap-custom'; // Some modules here are enabled or disabled differently, actually
 @import 'common/helpers';
 @import 'common/navbar';
 @import 'common/footer';
+
+// Documentation specific styles
+// Write your overrides here if possible
+@import 'footer';
 
 body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
 }
 
+.breadcrumb {
+  margin-bottom: 0;
+
+  li::before {
+    font: normal normal normal 14px/1 FontAwesome;
+  }
+}
+
 .documentation-container {
   padding-top: 2em;
 }
+
+.documentation-hero {
+  background-color: $mz-lightgray;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  padding: 2em 0;
+
+  h1 {
+    margin: 0;
+    padding: 0;
+  }
+}
+
 
 ul.nav li.main a {
   padding-top: 20px;
@@ -40,13 +68,6 @@ ul.nav li.main:not(.active) {
   min-height: 0;
 }
 
-div.col-md-3 {
-  padding-left: 0;
-}
-
-div.col-md-7 {
-  padding-bottom: 100px;
-}
 
 div.source-links {
   float: right;
@@ -83,41 +104,44 @@ div.source-links {
   margin-top: 0;
   margin-bottom: 1em;
 }
+.documentation-content {
 
-h1, h2, h3 {
-  color: #444;
-}
+  h1, h2, h3 {
+    color: #444;
+  }
 
-/* allows hash links to navigate to proper location */
-h1[id]:before, h2[id]:before, h3[id]:before, h4[id]:before, h5[id]:before, h6[id]:before {
-  content: "";
-  display: block;
-  margin-top: -75px;
-  height: 75px;
-  pointer-events: none;
-}
+  /* allows hash links to navigate to proper location */
+  h1[id]:before, h2[id]:before, h3[id]:before, h4[id]:before, h5[id]:before, h6[id]:before {
+    content: "";
+    display: block;
+    margin-top: -75px;
+    height: 75px;
+    pointer-events: none;
+  }
 
-h1 {
-  font-weight: 700;
-  font-size: 42px;
-  font-family: 'Montserrat', sans-serif;
-  color: #d4645c;
-  margin-top: 1.8em;
-}
+  h1 {
+    font-weight: 700;
+    font-size: 42px;
+    font-family: 'Montserrat', sans-serif;
+    color: #d4645c;
+    margin-top: 1.8em;
+  }
 
-h1:first-child {
-  margin-top: 0;
-}
+  h1:first-child {
+    margin-top: 0;
+  }
 
-h2, h3, h4, h5, h6 {
-  font-weight: 400;
-  font-family: 'Montserrat', sans-serif;
-  color: #666666;
-  margin-top: 1.8em;
-}
+  h2, h3, h4, h5, h6 {
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+    color: #666666;
+    margin-top: 1.8em;
+  }
 
-h4, h5, h6 {
-  color: #d4645c;
+  h4, h5, h6 {
+    color: #d4645c;
+  }
+
 }
 
 a.headerlink {
@@ -411,8 +435,4 @@ h1:hover .headerlink, h2:hover .headerlink, h3:hover .headerlink, h4:hover .head
 
 .documentation-meta p {
   margin-right: 240px;
-}
-
-.headroom {
-  margin-top: 2em;
 }

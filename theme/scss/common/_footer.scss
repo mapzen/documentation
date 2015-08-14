@@ -28,6 +28,16 @@ body.no-footer {
   }
 }
 
+footer {
+  .slogan {
+    text-shadow: 0 1px rgba(255, 255, 255, 0.5);
+  }
+
+  .copyright {
+    color: #888;
+  }
+}
+
 .footer-menu {
   font-size: 13px;
   line-height: 1.8;

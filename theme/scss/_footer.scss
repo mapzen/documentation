@@ -1,0 +1,19 @@
+footer {
+  .slogan {
+    font-family: 'Montserrat', 'Open Sans', sans-serif;
+    font-weight: 300;
+  }
+
+  h6 {
+    font-family: 'Montserrat', 'Open Sans', sans-serif;
+  }
+
+  // Migrate a version of mapzen.com's h5 style for 'Get Involved'
+  h5 {
+    font-family: 'Montserrat', 'Playfair Display', sans-serif;
+    font-weight: 300;
+    font-size: 1.5em;
+    line-height: 1.4;
+    color: #666666;
+  }
+}
