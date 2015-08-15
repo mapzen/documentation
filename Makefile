@@ -65,7 +65,4 @@ env:
 	@test -d env || virtualenv env
 	@env/bin/pip install -Ur requirements.txt
 
-ghpages:
-	@bin/deploy.sh
-
 .PHONY: all
