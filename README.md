@@ -43,13 +43,23 @@ make tangram           # Sets the documentation to build and watch, in this case
 env/bin/mkdocs serve   # Run the server with watch
 ```
 
+### Building styles
+
+The docs theme borrows styles and view snippets from mapzen.com, primarily for the header and footer, as well as Bootstrap variables that are reused. In addition, there are stylesheets that are specific for documentation. This is all compiled with Sass. Building the compiled CSS file does not happen automatically on each deploy because it is not assumed to change as frequently as documentation content. To update CSS, run locally:
+
+```shell
+make css
+```
+
+This depends on the `sass` command being available locally so you will have to [install it](http://sass-lang.com/install) if it is not there. This command watches the entire source `theme/scss` folder for changes and compiles CSS. When you are done editing CSS, you can quit the watcher and then commit the compiled file to Git.
+
 ## Making MkDocs happy
 
 ### You must always:
 
 - Include an `index.md` file at the root folder of your documentation. (Note: [MkDocs will allow this to be customized in the future.](https://github.com/mkdocs/mkdocs/issues/608))
 - Include all local documentation assets, such as images, inside this root folder (or link to an external source).
-- Start each page with a top-level heading.
+- Start each page with a top-level heading. (Note: The level of heading should no longer affect presentation, but I still need to test whether this affects TOC creation.)
 
 ### You will sometimes:
 

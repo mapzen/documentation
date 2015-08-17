@@ -59,10 +59,14 @@ valhalla:
 
 all: clean-dist tangram metro-extracts valhalla-demos valhalla
 
+# Sets up CSS compile via Sass, watching for changes
+css:
+	@sass --watch theme/scss:theme/css
+
 # Set virtual environment & install dependencies
 env:
 	@echo Verifying and installing Python environment and dependencies...
 	@test -d env || virtualenv env
 	@env/bin/pip install -Ur requirements.txt
 
-.PHONY: all
+.PHONY: all css
