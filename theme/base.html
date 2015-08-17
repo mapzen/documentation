@@ -82,9 +82,6 @@
           <div class='documentation-content'>
             {% include 'content.html' %}
           </div>
-          <div class='headroom-large'>
-            <em>Last updated: {{ build_date_utc.strftime('%-d %B %Y') }}</em>
-          </div>
         </div>
       {% endblock %}
       </div>
@@ -144,4 +141,5 @@
 <!--
 MkDocs version : {{ mkdocs_version }}
 Build Date UTC : {{ build_date_utc }}
+Build date: {{ build_date_utc.strftime('%-d %B %Y') }}
 -->
