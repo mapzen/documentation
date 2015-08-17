@@ -21,3 +21,7 @@ markdown_extensions:
   - toc:
       permalink: ' ' # Blank space; this marker is styled in CSS.
   - sane_lists
+
+# Extra variables for templates
+extra:
+  docs_repo_url: https://github.com/mapzen/mapzen-docs
