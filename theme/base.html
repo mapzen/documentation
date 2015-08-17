@@ -48,7 +48,16 @@
           <ol class='breadcrumb'>
             <li><a href='/developers/'>Developers</a></li>
             <li><a href='/documentation/'>Documentation</a></li>
-            <li class='active'>{{ site_name }}</li>
+
+            {# Top-level project breadcrumb. #}
+            {# Displays link only if sub-page breadcrumb exists. #}
+            <li{% if not page_title %} class='active'{% endif %}>{% if page_title %}<a href='{{ homepage_url }}'>{% endif %}{{ site_name }}{% if page_title %}</a>{% endif %}</li>
+
+            {# Sub-page breadcrumb. #}
+            {# Displays only if exists. #}
+            {% if page_title %}
+            <li class='active'>{% if canonical_url %}<a href='{{ canonical_url }}'>{% endif %}{{ page_title }}{% if canonical_url %}</a>{% endif %}</li>
+            {% endif %}
           </ol>
         </div>
       </div>
