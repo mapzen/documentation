@@ -49,4 +49,5 @@ markdown_extensions:
 
 # Extra variables for templates
 extra:
-  docs_repo_url: https://github.com/mapzen/mapzen-docs
+  docs_repo_url: https://github.com/tangrams/tangram-docs
+  display_project_name_api_key: true

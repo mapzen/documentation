@@ -19,3 +19,7 @@ markdown_extensions:
   - toc:
       permalink: ' ' # Blank space; this marker is styled in CSS.
   - sane_lists
+
+extra:
+  docs_repo_url: https://github.com/valhalla/demos/tree/master/docs
+  display_project_name_api_key: false

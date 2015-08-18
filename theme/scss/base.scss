@@ -10,6 +10,7 @@
 @import 'common/helpers';
 @import 'common/navbar';
 @import 'common/footer';
+@import 'common/buttons';
 
 // Documentation specific styles
 // Write your overrides here if possible
@@ -468,20 +469,8 @@ h1:hover .headerlink, h2:hover .headerlink, h3:hover .headerlink, h4:hover .head
   padding: 30px 20px;
   position: relative;
 }
-
-.documentation-meta a {
-  /* .btn */
-  background-color: #666;
-  color: #fff;
-  text-shadow: none;
-  border-radius: 0;
-  text-transform: uppercase;
-  padding: 10px 16px;
-  position: absolute;
-  right: 20px;
-  top: 30px;
-}
-
-.documentation-meta p {
-  margin-right: 240px;
+.btn {
+  font-weight: 300;
+  font-family: 'Montserrat';
+  
 }

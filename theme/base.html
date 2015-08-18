@@ -75,12 +75,19 @@
 
 
     <div class='container headroom-large footroom-large'>
-      <div class='row'>
-        <div class='col-xs-12 col-md-12'>
-          <div class='documentation-meta headroom'>
-            <p>{{ hi }} Sign up or sign in to get your free API key for unlimited access to {{ site_name }}.</p>
-            <a href='https://mapzen.com/developers/'>Go to Developers Portal</a>
-          </div>
+      <div class='row documentation-meta headroom'>
+        <div class='col-xs-12 col-md-8'>
+          <p>
+            Sign up or sign in to get your free API key for unlimited access to
+            {% if display_project_name_api_key %}
+              {{ site_name }}.
+            {% else %}
+              Mapzen products and services.
+            {% endif %}
+          </p>
+        </div>
+        <div class='col-xs-12 col-md-4 text-right'>
+          <a href='https://mapzen.com/developers/' class='btn btn-mapzen'>Go to Developers Portal</a>
         </div>
       </div>
     </div>

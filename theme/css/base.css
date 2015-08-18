@@ -3705,6 +3705,51 @@ footer .copyright {
     .footer-menu > div {
       padding-left: 80px; } }
 
+/* button styles */
+button:focus {
+  outline: 0; }
+
+.btn {
+  border-radius: 0;
+  border-width: 1px;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 10px 16px; }
+
+.btn_mapzen,
+.btn-mapzen {
+  border-color: #d4645c;
+  background-color: #d4645c;
+  color: #fff;
+  text-shadow: none; }
+  .btn_mapzen:hover, .btn_mapzen:focus,
+  .btn-mapzen:hover,
+  .btn-mapzen:focus {
+    border-color: #993434;
+    background-color: #993434;
+    color: #fff; }
+
+.btn_transparent,
+.btn-transparent {
+  background: transparent;
+  border-color: #444;
+  color: #444; }
+  .btn_transparent:hover, .btn_transparent:focus,
+  .btn-transparent:hover,
+  .btn-transparent:focus {
+    background-color: #e5e5e5;
+    border-color: #444;
+    color: #444; }
+
+.btn-dark {
+  border-color: #333;
+  background-color: #333;
+  color: #fff; }
+  .btn-dark:hover, .btn-dark:focus {
+    border-color: #000;
+    background-color: #000;
+    color: #fff; }
+
 footer .slogan {
   font-family: 'Montserrat', 'Open Sans', sans-serif;
   font-weight: 300; }
@@ -4075,19 +4120,8 @@ h1:hover .headerlink, h2:hover .headerlink, h3:hover .headerlink, h4:hover .head
   padding: 30px 20px;
   position: relative; }
 
-.documentation-meta a {
-  /* .btn */
-  background-color: #666;
-  color: #fff;
-  text-shadow: none;
-  border-radius: 0;
-  text-transform: uppercase;
-  padding: 10px 16px;
-  position: absolute;
-  right: 20px;
-  top: 30px; }
-
-.documentation-meta p {
-  margin-right: 240px; }
+.btn {
+  font-weight: 300;
+  font-family: 'Montserrat'; }
 
 /*# sourceMappingURL=base.css.map */
