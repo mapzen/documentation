@@ -4,7 +4,7 @@
     {% if include_nav %}
       {% for nav_item in nav %}
       {% if nav_item.children %}
-        <li class='dropdown{% if nav_item.active %} active{% endif %}'>
+        <li class='main{% if nav_item.active %} active{% endif %}'>
           <a href='#' class='dropdown-toggle' data-toggle='dropdown'>{{ nav_item.title }} <b class='caret'></b></a>
           <ul class='dropdown-menu'>
           {% for nav_item in nav_item.children %}
@@ -13,7 +13,7 @@
           </ul>
         </li>
       {% else %}
-        <li {% if nav_item.active %}class='active'{% endif %}>
+        <li class='main{% if nav_item.active %} active{% endif %}'>
           <a href='{{ nav_item.url }}'>{{ nav_item.title }}</a>
         </li>
       {% endif %}
@@ -21,10 +21,10 @@
     {% endif %}
 
     {% for toc_item in toc %}
-        <li class='main {% if toc_item.active %}active{% endif %}'><a href='{{ toc_item.url }}'>{{ toc_item.title }}</a></li>
-        {% for toc_item in toc_item.children %}
-            <li><a href='{{ toc_item.url }}'>{{ toc_item.title }}</a></li>
-        {% endfor %}
+      <li class='main {% if toc_item.active %}active{% endif %}'><a href='{{ toc_item.url }}'>{{ toc_item.title }}</a></li>
+      {% for toc_item in toc_item.children %}
+        <li><a href='{{ toc_item.url }}'>{{ toc_item.title }}</a></li>
+      {% endfor %}
     {% endfor %}
     </ul>
 </div>

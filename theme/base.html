@@ -45,21 +45,7 @@
     <div class='container'>
       <div class='row headroom'>
         <div class='col-xs-12 col-md-12'>
-          <ol class='breadcrumb'>
-            <li><a href='/developers/'>Developers</a></li>
-            <li><a href='/documentation/'>Documentation</a></li>
-
-            {# Top-level project breadcrumb. #}
-            {# Is labeled 'active' if current page is project homepage. #}
-            {# Creates link to project homepage if currently on a sub-page. #}
-            <li{% if current_page and current_page.is_homepage %} class='active'{% endif %}>{% if page_title %}<a href='{{ homepage_url }}'>{% endif %}{{ site_name }}{% if page_title %}</a>{% endif %}</li>
-
-            {# Sub-page breadcrumb. #}
-            {# Displays only if exists. #}
-            {% if page_title %}
-            <li class='active'>{% if canonical_url %}<a href='{{ canonical_url }}'>{% endif %}{{ page_title }}{% if canonical_url %}</a>{% endif %}</li>
-            {% endif %}
-          </ol>
+          {% include 'breadcrumbs.html' %}
         </div>
       </div>
     </div>
