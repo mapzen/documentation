@@ -6,7 +6,7 @@ docs_dir: src/metro-extracts
 theme: mkdocs
 theme_dir: theme
 site_dir: dist/metro-extracts
-include_nav: false # mkdocs puts all the root files in the nav; we don't want this
+include_nav: true
 include_next_prev: false # next/prev is in alpha order; we don't want this
 
 # Determines if a broken link to a page within the documentation is considered
