@@ -53,6 +53,16 @@ make css
 
 This depends on the `sass` command being available locally so you will have to [install it](http://sass-lang.com/install) if it is not there. This command watches the entire source `theme/scss` folder for changes and compiles CSS. When you are done editing CSS, you can quit the watcher and then commit the compiled file to Git.
 
+### Customizing templates
+
+We've heavily customized the MkDocs theme for use with Mapzen documentation. Resources for helping this happen are a little scattered so here is an attempt to gather all the relevant information in one spot.
+
+- [MkDocs custom themes](http://www.mkdocs.org/user-guide/styling-your-docs/#custom-themes). This includes all the variables that MkDocs makes available to templates.
+- [Jinja2 templating language](http://jinja.pocoo.org/docs/dev/). MkDocs uses Jinja2. This is very similar to Jekyll's Liquid syntax, but it's not the same! ...so it's very easy to get them confused sometimes.
+- [MkDocs built-in themes source](https://github.com/mkdocs/mkdocs/tree/master/mkdocs/themes). These are the built-in themes source code. Don't start from scratch, refer to these!
+- [MkDocs Bootswatch themes source](https://github.com/mkdocs/mkdocs-bootswatch/tree/master/mkdocs_bootswatch). These are additional [Bootswatch](https://bootswatch.com/) themes that are not included by default. However they might provide additional references for good practices.
+
+
 ## Making MkDocs happy
 
 ### You must always:
