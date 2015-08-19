@@ -3750,6 +3750,10 @@ button:focus {
     background-color: #000;
     color: #fff; }
 
+.search-label {
+  font-family: "Montserrat", "Open Sans", sans-serif;
+  color: #606060; }
+
 footer .slogan {
   font-family: 'Montserrat', 'Open Sans', sans-serif;
   font-weight: 300; }
@@ -3766,16 +3770,16 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400; }
 
-.breadcrumb {
-  margin-bottom: 0; }
-  .breadcrumb li::before {
-    font: normal normal normal 14px/1 FontAwesome; }
-
 nav {
   box-shadow: none; }
 
 .navbar {
   border-bottom: 1px solid #e9e9e9; }
+
+.breadcrumb {
+  margin-bottom: 0; }
+  .breadcrumb li::before {
+    font: normal normal normal 14px/1 FontAwesome; }
 
 .documentation-container {
   padding-top: 2em; }
@@ -3783,12 +3787,9 @@ nav {
 .documentation-hero {
   background-color: #f8f8f8;
   text-align: center;
-  font-family: 'Montserrat', sans-serif; }
+  font-family: "Montserrat", "Playfair Display", sans-serif; }
   .documentation-hero h1 {
     margin: 1.5em 0; }
-
-div.source-links {
-  float: right; }
 
 .documentation-content {
   line-height: 1.8;
@@ -3829,7 +3830,7 @@ div.source-links {
   .documentation-content h1 {
     font-weight: 700;
     font-size: 42px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", "Playfair Display", sans-serif;
     color: #d4645c;
     margin-top: 1.8em; }
   .documentation-content h1:first-child,
@@ -3841,7 +3842,7 @@ div.source-links {
     margin-top: 0; }
   .documentation-content h2, .documentation-content h3, .documentation-content h4, .documentation-content h5, .documentation-content h6 {
     font-weight: 400;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", "Playfair Display", sans-serif;
     color: #666666;
     margin-top: 1.8em; }
   .documentation-content h4, .documentation-content h5, .documentation-content h6 {
@@ -4122,6 +4123,6 @@ h1:hover .headerlink, h2:hover .headerlink, h3:hover .headerlink, h4:hover .head
 
 .btn {
   font-weight: 300;
-  font-family: 'Montserrat'; }
+  font-family: "Montserrat", "Open Sans", sans-serif; }
 
 /*# sourceMappingURL=base.css.map */

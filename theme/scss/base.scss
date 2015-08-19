@@ -14,11 +14,20 @@
 
 // Documentation specific styles
 // Write your overrides here if possible
+@import 'search';
 @import 'footer';
 
 body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
+}
+
+// Let's hack the navbar box-shadow
+nav {
+  box-shadow: none;
+}
+.navbar {
+  border-bottom: 1px solid #e9e9e9;
 }
 
 // Customize breadcrumb
@@ -31,14 +40,6 @@ body {
   }
 }
 
-// Let's hack the navbar box-shadow
-nav {
-  box-shadow: none;
-}
-.navbar {
-  border-bottom: 1px solid #e9e9e9;
-}
-
 .documentation-container {
   padding-top: 2em;
 }
@@ -46,16 +47,11 @@ nav {
 .documentation-hero {
   background-color: $mz-lightgray;
   text-align: center;
-  font-family: 'Montserrat', sans-serif;
+  font-family: $docs-heading-font;
 
   h1 {
     margin: 1.5em 0;
   }
-}
-
-
-div.source-links {
-  float: right;
 }
 
 .documentation-content {
@@ -106,7 +102,7 @@ div.source-links {
   h1 {
     font-weight: 700;
     font-size: 42px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: $docs-heading-font;
     color: #d4645c;
     margin-top: 1.8em;
   }
@@ -122,7 +118,7 @@ div.source-links {
 
   h2, h3, h4, h5, h6 {
     font-weight: 400;
-    font-family: 'Montserrat', sans-serif;
+    font-family: $docs-heading-font;
     color: #666666;
     margin-top: 1.8em;
   }
@@ -471,6 +467,5 @@ h1:hover .headerlink, h2:hover .headerlink, h3:hover .headerlink, h4:hover .head
 }
 .btn {
   font-weight: 300;
-  font-family: 'Montserrat';
-  
+  font-family: $docs-accent-font;
 }
