@@ -3920,17 +3920,12 @@ h6 code {
  * Scrollspy and affixed enhanced navigation to highlight sections and secondary
  * sections of docs content.
  */
-/* By default it's not affixed in mobile views, so undo that */
-.bs-sidebar.affix {
-  position: static; }
-
-.bs-sidebar.well {
-  padding: 0; }
-
 /* First level of nav */
 .bs-sidenav {
   border-radius: 5px;
-  font-weight: 300; }
+  font-weight: 300;
+  background-color: #f8f8f8;
+  margin-bottom: 30px; }
 
 /* All levels of nav */
 .bs-sidebar .nav > li > a {
@@ -3970,40 +3965,24 @@ h6 code {
   font-size: 90%; }
 
 /* Show and affix the side nav when space allows it */
-@media (min-width: 992px) {
-  .bs-sidebar .nav > .active > ul {
-    display: block; }
+/* By default it's not affixed in mobile views, so undo that */
+.bs-sidebar.affix {
+  position: static; }
 
+@media (min-width: 992px) {
   /* Widen the fixed sidebar */
   .bs-sidebar.affix,
   .bs-sidebar.affix-bottom {
-    width: 213px; }
+    width: 210px; }
 
   .bs-sidebar.affix {
     position: fixed;
-    /* Undo the static from mobile first approach */
     top: 90px; }
 
   .bs-sidebar.affix-bottom {
-    position: absolute;
-    /* Undo the static from mobile first approach */ }
-
-  .bs-sidebar.affix-bottom .bs-sidenav,
-  .bs-sidebar.affix .bs-sidenav {
-    margin-top: 0;
-    margin-bottom: 0; } }
+    position: absolute; } }
 @media (min-width: 1200px) {
-  /* Widen the fixed sidebar again */
-  .bs-sidebar.affix-bottom,
-  .bs-sidebar.affix {
-    width: 235px; } }
-.well {
-  background-color: #f8f8f8;
-  border: 0;
-  border-radius: 0;
-  -webkit-box-shadow: none;
-  box-shadow: none; }
-
+  /* Widen the fixed sidebar again */ }
 ul.nav > li.main > a {
   padding-bottom: 5px; }
 
@@ -4016,10 +3995,6 @@ ul.nav > li:first-child:last-child {
 ul.nav > li.main:not(.active) {
   font-weight: bold;
   color: #d4645c; }
-
-/* hack */
-.well {
-  min-height: 0; }
 
 .bs-sidenav li.main.active .toc-subnav {
   display: block; }
