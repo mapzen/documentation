@@ -38,7 +38,7 @@ $(document).ready(function () {
         return $docContainer.offset().top - $nav.height()
       },
       bottom: function () {
-        return $('footer').outerHeight(true) + $('.documentation-meta').outerHeight(true)
+        return $(document).height() - $docContainer.offset().top - $docContainer.outerHeight(true)
       }
     }
   })

@@ -8,8 +8,8 @@ theme_dir: theme
 site_dir: dist/tangram
 include_nav: true
 include_next_prev: false # next/prev is in alpha order; we don't want this
-extra_css:
-  - css/stuff.css
+extra_javascript:
+  - js/bootstrap.min.js # Copied latest version of Bootstrap
 
 # Because Tangram does not organize documentation in folders, we're going to have
 # to enforce the Table of Contents structure manually in the configuration below.
