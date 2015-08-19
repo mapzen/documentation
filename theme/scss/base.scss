@@ -405,12 +405,31 @@ h1:hover .headerlink, h2:hover .headerlink, h3:hover .headerlink, h4:hover .head
 }
 
 
+.btn {
+  font-weight: 300;
+  font-family: $docs-accent-font;
+}
+
 .documentation-meta {
   background-color: #f8f8f8;
   padding: 30px 20px;
   position: relative;
+  text-align: center;
+
+  .btn {
+    width: 100%;
+    margin-top: 20px;
+  }
 }
-.btn {
-  font-weight: 300;
-  font-family: $docs-accent-font;
+
+@media (min-width: 992px) {
+  // Resets applied mobile styles
+  .documentation-meta {
+    text-align: left;
+
+    .btn {
+      margin-top: 0;
+      width: auto;
+    }
+  }
 }

@@ -6414,13 +6414,24 @@ h1:hover .headerlink, h2:hover .headerlink, h3:hover .headerlink, h4:hover .head
   font-weight: bold;
   text-align: left; }
 
-.documentation-meta {
-  background-color: #f8f8f8;
-  padding: 30px 20px;
-  position: relative; }
-
 .btn {
   font-weight: 300;
   font-family: "Montserrat", "Open Sans", sans-serif; }
+
+.documentation-meta {
+  background-color: #f8f8f8;
+  padding: 30px 20px;
+  position: relative;
+  text-align: center; }
+  .documentation-meta .btn {
+    width: 100%;
+    margin-top: 20px; }
+
+@media (min-width: 992px) {
+  .documentation-meta {
+    text-align: left; }
+    .documentation-meta .btn {
+      margin-top: 0;
+      width: auto; } }
 
 /*# sourceMappingURL=base.css.map */
