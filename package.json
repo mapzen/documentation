@@ -1,0 +1,23 @@
+{
+  "name": "mapzen-docs-generator",
+  "version": "0.8.0",
+  "description": "Mapzen documentation pipeline.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mapzen/mapzen-docs-generator.git"
+  },
+  "author": "Lou Huang <lou@mapzen.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mapzen/mapzen-docs-generator/issues"
+  },
+  "homepage": "https://github.com/mapzen/mapzen-docs-generator",
+  "dependencies": {
+    "bootstrap-sass": "^3.3.5",
+    "ui": "git+https://github.com/mapzen/ui.git"
+  }
+}

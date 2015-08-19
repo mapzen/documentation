@@ -1,4 +1,4 @@
-<ul class='dropdown-menu toc-subnav'>
+<ul class='toc-subnav'>
 {% for toc_item in toc %}
   <li class='main {% if toc_item.active %}active{% endif %}'><a href='{{ toc_item.url }}'>{{ toc_item.title }}</a></li>
   {% for toc_item in toc_item.children %}
