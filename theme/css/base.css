@@ -6280,11 +6280,17 @@ h6 code {
  * sections of docs content.
  */
 /* First level of nav */
-.bs-sidenav {
+.bs-sidebar {
   border-radius: 5px;
   font-weight: 300;
   background-color: #f8f8f8;
-  margin-bottom: 30px; }
+  margin-bottom: 30px;
+  max-height: calc(100% - 120px);
+  overflow-x: hidden;
+  overflow-y: auto; }
+
+.bs-sidebar.affix-bottom {
+  max-height: none; }
 
 /* All levels of nav */
 .bs-sidebar .nav > li > a {
