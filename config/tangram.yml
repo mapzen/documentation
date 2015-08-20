@@ -51,3 +51,4 @@ markdown_extensions:
 extra:
   docs_repo_url: https://github.com/tangrams/tangram-docs
   display_project_name_api_key: true
+  exclude_home_contents_in_toc: true
