@@ -1,0 +1,78 @@
+//
+// Pagination
+// --------------------------------------------------
+
+.pagination {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  font-size: 16px;
+
+  a.pagination-link {
+    position: relative;
+    display: table-cell;
+    margin: 0;
+    padding: 20px;
+    vertical-align: middle;
+    width: 50%;
+
+    &:hover {
+      background-color: $mz-lightgray;
+    }
+  }
+
+  .fa {
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+    width: 25px;
+    height: 40px;
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .pagination-link-text {
+    display: block;
+  }
+
+  .pagination-previous {
+    .pagination-link-text {
+      padding-left: 20px;
+    }
+
+    .fa {
+      left: 5px;
+    }
+  }
+
+  // Show a separator when both previous and next links are present
+  .pagination-previous + .pagination-next {
+    border-left: 1px solid $divider-color;
+  }
+
+  .pagination-next {
+    text-align: right;
+
+    .pagination-link-text {
+      padding-right: 20px;
+    }
+
+    .fa {
+      right: 5px;
+    }
+  }
+}
+
+// Alternate pagination
+.pagination-alt {
+  border-top: 1px solid $divider-color;
+  border-bottom: 1px solid $divider-color;
+  border-radius: 0;
+
+  .pagination-previous + .pagination-next {
+    border-left: 0;
+  }
+}
+//
+// Navbar
+// --------------------------------------------------

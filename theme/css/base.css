@@ -6109,6 +6109,50 @@ button:focus {
     background-color: #000;
     color: #fff; }
 
+.pagination {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  font-size: 16px; }
+  .pagination a.pagination-link {
+    position: relative;
+    display: table-cell;
+    margin: 0;
+    padding: 20px;
+    vertical-align: middle;
+    width: 50%; }
+    .pagination a.pagination-link:hover {
+      background-color: #f8f8f8; }
+  .pagination .fa {
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+    width: 25px;
+    height: 40px;
+    font-size: 30px;
+    line-height: 40px; }
+  .pagination .pagination-link-text {
+    display: block; }
+  .pagination .pagination-previous .pagination-link-text {
+    padding-left: 20px; }
+  .pagination .pagination-previous .fa {
+    left: 5px; }
+  .pagination .pagination-previous + .pagination-next {
+    border-left: 1px solid #e0e0e0; }
+  .pagination .pagination-next {
+    text-align: right; }
+    .pagination .pagination-next .pagination-link-text {
+      padding-right: 20px; }
+    .pagination .pagination-next .fa {
+      right: 5px; }
+
+.pagination-alt {
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  border-radius: 0; }
+  .pagination-alt .pagination-previous + .pagination-next {
+    border-left: 0; }
+
 .search-label {
   font-family: "Montserrat", "Open Sans", sans-serif;
   color: #606060; }
