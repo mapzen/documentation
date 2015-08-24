@@ -1,0 +1,164 @@
+/*
+ * Side navigation (aka "toc" or "Table of Contents")
+ *
+ * Scrollspy and affixed enhanced navigation to highlight sections and secondary
+ * sections of docs content.
+ */
+
+/* First level of nav */
+.toc {
+  font-weight: 300;
+  background-color: $mz-lightgray;
+
+  // For mobile layout, add a margin between TOC and documentation content.
+  margin-bottom: 30px;
+
+  // When affixed, TOC should never extend past the height of the viewport.
+  // If it is longer than there is space, add a scrollbar.
+  max-height: calc(100% - 120px);
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  // Once we scroll TOC out of the way, Bootstrap adds the affix-bottom class.
+  // We must reset max-height at this point otherwise this could cause jumpiness.
+  &.affix-bottom {
+    max-height: none;
+  }
+}
+
+/* All levels of nav */
+.toc .nav > li > a {
+  display: block;
+  padding: 5px 20px;
+  z-index: 1;
+  color: #333;
+
+  -webkit-transition: box-shadow 160ms ease-in-out;
+     -moz-transition: box-shadow 160ms ease-in-out;
+          transition: box-shadow 160ms ease-in-out;
+}
+.toc .nav > li:not(.main) > a {
+  padding-left: 30px;
+}
+.toc .nav > li:not(.active) > a:hover,
+.toc .nav > li:not(.active) > a:focus {
+  text-decoration: none;
+  /*box-shadow: inset -4px 0 0 #385d5c;*/
+}
+.toc .nav > .active > a,
+.toc .nav > .active:hover > a,
+.toc .nav > .active:focus > a {
+  font-weight: 400;
+  background-color: #d4645c;
+  color: white;
+}
+
+/* Nav: second level (shown on .active) */
+.toc .nav .nav {
+  display: none; /* Hide by default, but at >768px, show it */
+  margin-bottom: 8px;
+}
+.toc .nav .nav > li > a {
+  padding-top:    3px;
+  padding-bottom: 3px;
+  padding-left: 30px;
+  font-size: 90%;
+}
+
+
+/* Show and affix the side nav when space allows it */
+
+/* By default it's not affixed in mobile views, so undo that */
+.toc.affix {
+ position: static;
+}
+
+@media (min-width: 992px) {
+  .toc .nav > .active > ul {
+    display: block;
+  }
+  /* Widen the fixed sidebar */
+  .toc.affix,
+  .toc.affix-bottom {
+   width: 210px;
+  }
+  .toc.affix {
+    position: fixed; // Undo the static from mobile first approach
+    top: 90px;
+  }
+  .toc.affix-bottom {
+    position: absolute; // Undo the static from mobile first approach
+  }
+}
+
+ul.nav > li.main > a {
+  padding-bottom: 5px;
+}
+ul.nav {
+  padding-bottom: 20px;
+}
+ul.nav > li:first-child:last-child {
+  display: none;
+}
+
+ul.nav > li.main:not(.active) {
+  font-weight: bold;
+  color: #d4645c;
+}
+
+.toc-nav {
+  li.main.active .toc-subnav {
+    display: block;
+  }
+  li.main:not(.active) .toc-subnav {
+    //display :none;
+  }
+}
+// Nav stuff
+.toc-subnav {
+  list-style-type: none;
+  padding: 0;
+  font-weight: 400;
+
+  // Start in a collapsed-condition
+  max-height: 0;
+  overflow: hidden;
+
+  // Animation
+  -webkit-transition: max-height 200ms ease-in-out;
+  -moz-transition: max-height 200ms ease-in-out;
+  transition: max-height 200ms ease-in-out;
+
+  // If expanded
+  // We are animating to a super high max-height
+  // because the exact height of the subnav is unknown.
+  // This is pretty hacky, actually.
+  &.toc-expand {
+    max-height: 1000px;
+  }
+
+  > li > a {
+    display: block;
+    padding: 5px 20px;
+    padding-left: 30px;
+    z-index: 1;
+    color: #333;
+    -webkit-transition: box-shadow 160ms ease-in-out;
+    -moz-transition: box-shadow 160ms ease-in-out;
+    transition: box-shadow 160ms ease-in-out;
+  }
+  li.active {
+    font-weight: 400;
+    background-color: $mz-darkblue;
+    color: white;
+    > a {
+      color: white;
+    }
+  }
+
+  .toc-subnav {
+    > li > a {
+      padding-left: 45px;
+    }
+  }
+}

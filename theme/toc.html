@@ -1,13 +1,13 @@
-<div class='bs-sidebar hidden-print' role='directory' id='toc'>
-  <ul class='nav bs-sidenav'>
+<div class='toc hidden-print' role='directory' id='toc'>
+  <ul class='nav toc-nav'>
 
   {% if include_nav %}
     {% for nav_item in nav if not nav_item.title == 'README' %}
       {% if nav_item.children %}
-        <li class='main{% if nav_item.active %} active{% endif %}'>
-          <a href='#'>{{ nav_item.title }}</a>
+        <li class='main {% if nav_item.active %} active{% endif %}'>
+          <a href='#' class='toc-subnav-toggle'>{{ nav_item.title }}</a>
           {% if not (loop.first and config.extra.exclude_home_contents_in_toc == true) %}
-            <ul class='toc-subnav'>
+            <ul class='toc-subnav{% if nav_item.active %} toc-expand{% endif %}'>
               {% for nav_item in nav_item.children %}
                 {% include 'nav-sub.html' %}
               {% endfor %}

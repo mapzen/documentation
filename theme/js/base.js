@@ -43,14 +43,18 @@ $(document).ready(function () {
     }
   })
 
+  $('.toc-subnav-toggle').on('click', function (e) {
+    e.preventDefault()
+    $(this).next('ul').toggleClass('toc-expand')
+  })
 });
 
 
 $('body').scrollspy({
-    target: '.bs-sidebar',
+  target: '.toc-sidenav',
 });
 
 /* Prevent disabled links from causing a page reload */
-$("li.disabled a").click(function() {
-    event.preventDefault();
-});
+$('li.disabled a').click(function(event) {
+  event.preventDefault();
+})

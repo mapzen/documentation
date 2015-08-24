@@ -6169,6 +6169,125 @@ footer h5 {
   line-height: 1.4;
   color: #666666; }
 
+/*
+ * Side navigation (aka "toc" or "Table of Contents")
+ *
+ * Scrollspy and affixed enhanced navigation to highlight sections and secondary
+ * sections of docs content.
+ */
+/* First level of nav */
+.toc {
+  font-weight: 300;
+  background-color: #f8f8f8;
+  margin-bottom: 30px;
+  max-height: calc(100% - 120px);
+  overflow-x: hidden;
+  overflow-y: auto; }
+  .toc.affix-bottom {
+    max-height: none; }
+
+/* All levels of nav */
+.toc .nav > li > a {
+  display: block;
+  padding: 5px 20px;
+  z-index: 1;
+  color: #333;
+  -webkit-transition: box-shadow 160ms ease-in-out;
+  -moz-transition: box-shadow 160ms ease-in-out;
+  transition: box-shadow 160ms ease-in-out; }
+
+.toc .nav > li:not(.main) > a {
+  padding-left: 30px; }
+
+.toc .nav > li:not(.active) > a:hover,
+.toc .nav > li:not(.active) > a:focus {
+  text-decoration: none;
+  /*box-shadow: inset -4px 0 0 #385d5c;*/ }
+
+.toc .nav > .active > a,
+.toc .nav > .active:hover > a,
+.toc .nav > .active:focus > a {
+  font-weight: 400;
+  background-color: #d4645c;
+  color: white; }
+
+/* Nav: second level (shown on .active) */
+.toc .nav .nav {
+  display: none;
+  /* Hide by default, but at >768px, show it */
+  margin-bottom: 8px; }
+
+.toc .nav .nav > li > a {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 30px;
+  font-size: 90%; }
+
+/* Show and affix the side nav when space allows it */
+/* By default it's not affixed in mobile views, so undo that */
+.toc.affix {
+  position: static; }
+
+@media (min-width: 992px) {
+  .toc .nav > .active > ul {
+    display: block; }
+
+  /* Widen the fixed sidebar */
+  .toc.affix,
+  .toc.affix-bottom {
+    width: 210px; }
+
+  .toc.affix {
+    position: fixed;
+    top: 90px; }
+
+  .toc.affix-bottom {
+    position: absolute; } }
+ul.nav > li.main > a {
+  padding-bottom: 5px; }
+
+ul.nav {
+  padding-bottom: 20px; }
+
+ul.nav > li:first-child:last-child {
+  display: none; }
+
+ul.nav > li.main:not(.active) {
+  font-weight: bold;
+  color: #d4645c; }
+
+.toc-nav li.main.active .toc-subnav {
+  display: block; }
+
+.toc-subnav {
+  list-style-type: none;
+  padding: 0;
+  font-weight: 400;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 200ms ease-in-out;
+  -moz-transition: max-height 200ms ease-in-out;
+  transition: max-height 200ms ease-in-out; }
+  .toc-subnav.toc-expand {
+    max-height: 1000px; }
+  .toc-subnav > li > a {
+    display: block;
+    padding: 5px 20px;
+    padding-left: 30px;
+    z-index: 1;
+    color: #333;
+    -webkit-transition: box-shadow 160ms ease-in-out;
+    -moz-transition: box-shadow 160ms ease-in-out;
+    transition: box-shadow 160ms ease-in-out; }
+  .toc-subnav li.active {
+    font-weight: 400;
+    background-color: #385d5c;
+    color: white; }
+    .toc-subnav li.active > a {
+      color: white; }
+  .toc-subnav .toc-subnav > li > a {
+    padding-left: 45px; }
+
 body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400; }
@@ -6313,121 +6432,6 @@ h6 code {
   line-height: inherit;
   color: inherit;
   background-color: inherit; }
-
-.modal-dialog {
-  margin-top: 60px; }
-
-/*
- * Side navigation
- *
- * Scrollspy and affixed enhanced navigation to highlight sections and secondary
- * sections of docs content.
- */
-/* First level of nav */
-.bs-sidebar {
-  font-weight: 300;
-  background-color: #f8f8f8;
-  margin-bottom: 30px;
-  max-height: calc(100% - 120px);
-  overflow-x: hidden;
-  overflow-y: auto; }
-
-.bs-sidebar.affix-bottom {
-  max-height: none; }
-
-/* All levels of nav */
-.bs-sidebar .nav > li > a {
-  display: block;
-  padding: 5px 20px;
-  z-index: 1;
-  color: #666;
-  -webkit-transition: box-shadow 160ms ease-in-out;
-  -moz-transition: box-shadow 160ms ease-in-out;
-  transition: box-shadow 160ms ease-in-out; }
-
-.bs-sidebar .nav > li:not(.main) > a {
-  padding-left: 30px; }
-
-.bs-sidebar .nav > li:not(.active) > a:hover,
-.bs-sidebar .nav > li:not(.active) > a:focus {
-  text-decoration: none;
-  /*box-shadow: inset -4px 0 0 #385d5c;*/ }
-
-.bs-sidebar .nav > .active > a,
-.bs-sidebar .nav > .active:hover > a,
-.bs-sidebar .nav > .active:focus > a {
-  font-weight: 400;
-  background-color: #d4645c;
-  color: white; }
-
-/* Nav: second level (shown on .active) */
-.bs-sidebar .nav .nav {
-  display: none;
-  /* Hide by default, but at >768px, show it */
-  margin-bottom: 8px; }
-
-.bs-sidebar .nav .nav > li > a {
-  padding-top: 3px;
-  padding-bottom: 3px;
-  padding-left: 30px;
-  font-size: 90%; }
-
-/* Show and affix the side nav when space allows it */
-/* By default it's not affixed in mobile views, so undo that */
-.bs-sidebar.affix {
-  position: static; }
-
-@media (min-width: 992px) {
-  /* Widen the fixed sidebar */
-  .bs-sidebar.affix,
-  .bs-sidebar.affix-bottom {
-    width: 210px; }
-
-  .bs-sidebar.affix {
-    position: fixed;
-    top: 90px; }
-
-  .bs-sidebar.affix-bottom {
-    position: absolute; } }
-@media (min-width: 1200px) {
-  /* Widen the fixed sidebar again */ }
-ul.nav > li.main > a {
-  padding-bottom: 5px; }
-
-ul.nav {
-  padding-bottom: 20px; }
-
-ul.nav > li:first-child:last-child {
-  display: none; }
-
-ul.nav > li.main:not(.active) {
-  font-weight: bold;
-  color: #d4645c; }
-
-.bs-sidenav li.main.active .toc-subnav {
-  display: block; }
-
-.toc-subnav {
-  list-style-type: none;
-  padding: 0;
-  font-weight: 300; }
-  .toc-subnav > li > a {
-    display: block;
-    padding: 5px 20px;
-    padding-left: 30px;
-    z-index: 1;
-    color: #666;
-    -webkit-transition: box-shadow 160ms ease-in-out;
-    -moz-transition: box-shadow 160ms ease-in-out;
-    transition: box-shadow 160ms ease-in-out; }
-  .toc-subnav li.active {
-    font-weight: 400;
-    background-color: #d4645c;
-    color: white; }
-    .toc-subnav li.active > a {
-      color: white; }
-  .toc-subnav .toc-subnav > li > a {
-    padding-left: 45px; }
 
 h1:hover .headerlink, h2:hover .headerlink, h3:hover .headerlink, h4:hover .headerlink, h5:hover .headerlink, h6:hover .headerlink {
   display: inline-block; }
