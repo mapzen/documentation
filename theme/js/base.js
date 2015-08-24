@@ -47,11 +47,18 @@ $(document).ready(function () {
     e.preventDefault()
     $(this).next('ul').toggleClass('toc-expand')
   })
+
+  // Guarantee only one active thing is up
+/*
+  var activeEls = $('.toc li.active:not(.toc-top-level').each(function (index) {
+    if (index !== activeEls.lenght)
+  })
+    console.log(activeEls.length)*/
 });
 
 
 $('body').scrollspy({
-  target: '.toc-sidenav',
+  target: '.toc',
 });
 
 /* Prevent disabled links from causing a page reload */

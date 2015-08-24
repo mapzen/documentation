@@ -6183,6 +6183,8 @@ footer h5 {
   max-height: calc(100% - 120px);
   overflow-x: hidden;
   overflow-y: auto; }
+  .toc.affix {
+    position: static; }
   .toc.affix-bottom {
     max-height: none; }
   .toc a {
@@ -6191,40 +6193,19 @@ footer h5 {
     z-index: 1;
     color: #333;
     text-decoration: none;
-    -webkit-transition: box-shadow 160ms ease-in-out;
-    -moz-transition: box-shadow 160ms ease-in-out;
-    transition: box-shadow 160ms ease-in-out; }
-  .toc a:hover {
-    background-color: rgba(0, 0, 0, 0.08); }
-  .toc li.main {
+    -webkit-transition: box-shadow 100ms ease-in-out;
+    -moz-transition: box-shadow 100ms ease-in-out;
+    transition: box-shadow 100ms ease-in-out; }
+  .toc li.toc-top-level {
     font-weight: bold; }
-    .toc li.main.active > a {
+    .toc li.toc-top-level > a:hover,
+    .toc li.toc-top-level > a:focus, .toc li.toc-top-level.active > a {
       box-shadow: inset 4px 0 0 #385d5c; }
-    .toc li.main:not(.active) > a:hover, .toc li.main:not(.active) > a:focus {
-      box-shadow: inset 4px 0 0 #385d5c; }
-
-/* Nav: second level (shown on .active) */
-.toc .nav .nav {
-  display: none;
-  /* Hide by default, but at >768px, show it */
-  margin-bottom: 8px; }
-
-.toc .nav .nav > li > a {
-  padding-top: 3px;
-  padding-bottom: 3px;
-  padding-left: 30px;
-  font-size: 90%; }
-
-/* Show and affix the side nav when space allows it */
-/* By default it's not affixed in mobile views, so undo that */
-.toc.affix {
-  position: static; }
 
 @media (min-width: 992px) {
   .toc .nav > .active > ul {
     display: block; }
 
-  /* Widen the fixed sidebar */
   .toc.affix,
   .toc.affix-bottom {
     width: 210px; }
@@ -6240,9 +6221,16 @@ ul.nav > li:first-child:last-child {
   display: none;
 }
 */
-.toc-nav li.main.active .toc-subnav {
-  display: block; }
-
+/*
+.toc-nav {
+  li.main.active .toc-subnav {
+    display: block;
+  }
+  li.main:not(.active) .toc-subnav {
+    //display :none;
+  }
+}
+*/
 .toc-subnav {
   list-style-type: none;
   padding: 0;
@@ -6254,21 +6242,11 @@ ul.nav > li:first-child:last-child {
   transition: max-height 200ms ease-in-out; }
   .toc-subnav.toc-expand {
     max-height: 1000px; }
-  .toc-subnav > li > a {
-    display: block;
-    padding: 5px 20px;
-    padding-left: 30px;
-    z-index: 1;
-    color: #333;
-    -webkit-transition: box-shadow 160ms ease-in-out;
-    -moz-transition: box-shadow 160ms ease-in-out;
-    transition: box-shadow 160ms ease-in-out; }
-  .toc-subnav li.active {
-    font-weight: 400;
-    background-color: #385d5c;
-    color: white; }
-    .toc-subnav li.active > a {
-      color: white; }
+  .toc-subnav a:hover,
+  .toc-subnav a:focus,
+  .toc-subnav li.active > a {
+    background-color: #eee;
+    box-shadow: inset 2px 0 0 #385d5c; }
   .toc-subnav .toc-subnav > li > a {
     padding-left: 45px; }
 
