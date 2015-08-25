@@ -13,6 +13,7 @@
 @import 'common/footer';
 @import 'common/buttons';
 @import 'common/pagination';
+@import 'common/cta';
 
 // Documentation specific styles
 // Write your overrides here if possible
@@ -250,37 +251,4 @@ h1:hover .headerlink, h2:hover .headerlink, h3:hover .headerlink, h4:hover .head
 .btn {
   font-weight: 300;
   font-family: $docs-accent-font;
-}
-
-.cta-container {
-  background-color: #f8f8f8;
-  padding: 25px 20px;
-  position: relative;
-  text-align: center;
-
-  .cta-text {
-    margin: 0;
-    // Match text size and line height to button.
-    padding: 10px 16px;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 1.42857;
-  }
-
-  .btn {
-    width: 100%;
-    margin-top: 20px;
-  }
-}
-
-@media (min-width: 992px) {
-  // Resets applied mobile styles
-  .cta-container {
-    text-align: left;
-
-    .btn {
-      margin-top: 0;
-      width: auto;
-    }
-  }
 }

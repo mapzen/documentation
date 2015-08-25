@@ -42,10 +42,6 @@ footer {
   font-size: 13px;
   line-height: 1.8;
 
-  @media (max-width: $screen-xs-max) {
-    text-align: center;
-  }
-
   h6 {
     font-weight: bold;
     font-size: inherit;
@@ -63,16 +59,16 @@ footer {
   .fa {
     margin-right: 0.25em;
   }
+}
 
-  // Padding to re-balance the effect of left-aligned text
-  // appearing to pull to the left
-  > div {
-    @media (min-width: $screen-sm-min) {
-      padding-left: 40px;
-    }
+// Padding to re-balance the effect of left-aligned text
+// appearing to pull to the left
+.footer-section {
+  @media (min-width: $screen-xs-min) {
+    padding-left: 40px;
+  }
 
-    @media (min-width: $screen-md-min) {
-      padding-left: 80px;
-    }
+  @media (min-width: $screen-md-min) {
+    padding-left: 80px;
   }
 }

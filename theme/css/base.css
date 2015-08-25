@@ -6044,9 +6044,6 @@ footer .copyright {
 .footer-menu {
   font-size: 13px;
   line-height: 1.8; }
-  @media (max-width: 767px) {
-    .footer-menu {
-      text-align: center; } }
   .footer-menu h6 {
     font-weight: bold;
     font-size: inherit; }
@@ -6057,12 +6054,13 @@ footer .copyright {
     padding-left: 0; }
   .footer-menu .fa {
     margin-right: 0.25em; }
-  @media (min-width: 768px) {
-    .footer-menu > div {
-      padding-left: 40px; } }
-  @media (min-width: 992px) {
-    .footer-menu > div {
-      padding-left: 80px; } }
+
+@media (min-width: 480px) {
+  .footer-section {
+    padding-left: 40px; } }
+@media (min-width: 992px) {
+  .footer-section {
+    padding-left: 80px; } }
 
 /* button styles */
 button:focus {
@@ -6153,6 +6151,27 @@ button:focus {
   .pagination-alt .pagination-previous + .pagination-next {
     border-left: 0; }
 
+.cta-container {
+  background-color: #f8f8f8;
+  padding: 25px 20px;
+  position: relative;
+  text-align: center; }
+  .cta-container .cta-text {
+    margin: 0;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.42857; }
+  .cta-container .btn {
+    width: 100%;
+    margin-top: 20px; }
+
+@media (min-width: 992px) {
+  .cta-container {
+    text-align: left; }
+    .cta-container .btn {
+      margin-top: 0;
+      width: auto; } }
 .search-label {
   font-family: "Montserrat", "Open Sans", sans-serif;
   color: #606060; }
@@ -6419,27 +6438,5 @@ h1:hover .headerlink, h2:hover .headerlink, h3:hover .headerlink, h4:hover .head
 .btn {
   font-weight: 300;
   font-family: "Montserrat", "Open Sans", sans-serif; }
-
-.cta-container {
-  background-color: #f8f8f8;
-  padding: 25px 20px;
-  position: relative;
-  text-align: center; }
-  .cta-container .cta-text {
-    margin: 0;
-    padding: 10px 16px;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 1.42857; }
-  .cta-container .btn {
-    width: 100%;
-    margin-top: 20px; }
-
-@media (min-width: 992px) {
-  .cta-container {
-    text-align: left; }
-    .cta-container .btn {
-      margin-top: 0;
-      width: auto; } }
 
 /*# sourceMappingURL=base.css.map */

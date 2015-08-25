@@ -94,23 +94,7 @@
     </div>
 
     <div class='container headroom-large footroom-large'>
-      <div class='cta-container'>
-        <div class='row'>
-          <div class='col-xs-12 col-md-8'>
-            <p class='cta-text'>
-              Sign up or sign in to get your free API key for unlimited access to
-              {% if config.extra.display_project_name_api_key %}
-                {{ site_name }}.
-              {% else %}
-                Mapzen products and services.
-              {% endif %}
-            </p>
-          </div>
-          <div class='col-xs-12 col-md-4 text-right'>
-            <a href='https://mapzen.com/developers/' class='btn btn-mapzen'>Go to Developers Portal</a>
-          </div>
-        </div>
-      </div>
+      {% include 'common/cta.html' %}
     </div>
 
     {% include 'common/footer.html' %}
