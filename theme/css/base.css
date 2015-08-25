@@ -6420,19 +6420,25 @@ h1:hover .headerlink, h2:hover .headerlink, h3:hover .headerlink, h4:hover .head
   font-weight: 300;
   font-family: "Montserrat", "Open Sans", sans-serif; }
 
-.documentation-meta {
+.cta-container {
   background-color: #f8f8f8;
-  padding: 30px 20px;
+  padding: 25px 20px;
   position: relative;
   text-align: center; }
-  .documentation-meta .btn {
+  .cta-container .cta-text {
+    margin: 0;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.42857; }
+  .cta-container .btn {
     width: 100%;
     margin-top: 20px; }
 
 @media (min-width: 992px) {
-  .documentation-meta {
+  .cta-container {
     text-align: left; }
-    .documentation-meta .btn {
+    .cta-container .btn {
       margin-top: 0;
       width: auto; } }
 
