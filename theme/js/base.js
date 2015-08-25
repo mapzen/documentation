@@ -50,10 +50,10 @@ $(document).ready(function () {
 
   // Guarantee only one active thing is up
 
-  var activeEls = $('.toc li.active:not(.toc-top-level')
+  var activeEls = $('.toc li.active')
   activeEls.each(function (index) {
     if (index + 1 !== activeEls.length) {
-      $(activeEls[index]).addClass('active-alt-highlight')
+      $(activeEls[index]).removeClass('active')
     }
   })
 });

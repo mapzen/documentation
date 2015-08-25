@@ -35,7 +35,7 @@
   // All nav links
   a {
     display: block;
-    padding: 5px 20px;
+    padding: 5px 15px; // Right-left padding matches Bootstrap .nav
     z-index: 1;
     color: #333;
     text-decoration: none;
@@ -48,14 +48,13 @@
   // Top-level "main" items
   li.toc-top-level {
     font-weight: bold;
+  }
 
-    // State and interaction
-
-    // If active, display box-shadow
-    &.active > a {
-      background-color: #eee;
-      box-shadow: inset 4px 0 0 #385d5c;
-    }
+  // State and interaction
+  // If current, display box-shadow & background color
+  li.toc-current > a {
+    background-color: #eee;
+    box-shadow: inset 4px 0 0 #385d5c;
   }
 }
 
@@ -108,29 +107,27 @@ ul.nav > li:first-child:last-child {
 
   // Link states and interaction inside of a sub-nav
   // TODO: Some nav items are colored by a Bootstrap variable set to this color.
-  // Deal with this after (?) refactoring out use of Bootstrap .nav class.
   a:hover,
   a:focus {
     background-color: #eee;
   }
 
-  // Actual highlighted section
+  // Current sub entry
+  // The difference is a slightly smaller box-shadow
+  li.toc-current > a {
+    box-shadow: inset 2px 0 0 #385d5c;
+  }
+
+  // Actual active section
   li.active > a {
     background-color: $mz-darkblue;
     color: white;
   }
 
-  // Sometimes there can be more than one active class
-  // So basically override it
-  li.active-alt-highlight > a {
-    background-color: #eee;
-    color: initial;
-    box-shadow: inset 2px 0 0 #385d5c;
-  }
-
+  // Sub menu indents
   .toc-subnav {
     > li > a {
-      padding-left: 45px;
+      padding-left: 30px;
     }
   }
 }

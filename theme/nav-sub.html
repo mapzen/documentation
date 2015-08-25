@@ -1,17 +1,15 @@
-{% if not nav_item.children %}
-  <li {% if nav_item.active %}class='active'{% endif %}>
+<li {% if nav_item.active %}class='toc-current'{% endif %}>
+  {% if not nav_item.children %}
     <a href='{{ nav_item.url }}'>{{ nav_item.title }}</a>
-  </li>
-  {% if nav_item.active %}
-    {% include 'toc-sub.html' %}
-  {% endif %}
-{% else %}
-  <li class=''>
+    {% if nav_item.active %}
+      {% include 'toc-sub.html' %}
+    {% endif %}
+  {% else %}
     <a href=''>{{ nav_item.title }}</a>
     <ul class=''>
       {% for nav_item in nav_item.children %}
         {% include 'nav-sub.html' %}
       {% endfor %}
     </ul>
-  </li>
-{% endif %}
+  {% endif %}
+</li>
