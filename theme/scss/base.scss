@@ -99,11 +99,16 @@ nav {
   }
 
   /* allows hash links to navigate to proper location */
-  h1[id]:before, h2[id]:before, h3[id]:before, h4[id]:before, h5[id]:before, h6[id]:before {
-    content: "";
+  h1[id]:before,
+  h2[id]:before,
+  h3[id]:before,
+  h4[id]:before,
+  h5[id]:before,
+  h6[id]:before {
+    content: '';
     display: block;
-    margin-top: -75px;
-    height: 75px;
+    margin-top: -90px;
+    height: 90px;
     pointer-events: none;
   }
 
@@ -115,6 +120,8 @@ nav {
     margin-top: 1.8em;
   }
 
+  // Headings that occur as the first item in the container
+  // should not have a top margin.
   h1:first-child,
   h2:first-child,
   h3:first-child,
@@ -134,7 +141,6 @@ nav {
   h4, h5, h6 {
     color: #d4645c;
   }
-
 }
 
 a.headerlink {
@@ -150,16 +156,22 @@ a.headerlink {
   background-size: contain;
 }
 
-/* Hide for h1 level headings */
-h1 a.headerlink {
-  display: none !important;
+// Show on hover.
+// Do not show for h1-level headings that are at the top of the container.
+h1:hover:not(:first-child) .headerlink,
+h2:hover .headerlink,
+h3:hover .headerlink,
+h4:hover .headerlink,
+h5:hover .headerlink,
+h6:hover .headerlink {
+  display: inline-block;
 }
 
 hr {
   border-top: 1px solid lightgray;
 }
 
-code, kbd, pre, samp  {
+code, kbd, pre, samp {
   font-family: monospace, serif;
 }
 
@@ -216,15 +228,13 @@ h6 code {
   background-color: inherit;
 }
 
-h1:hover .headerlink, h2:hover .headerlink, h3:hover .headerlink, h4:hover .headerlink, h5:hover .headerlink, h6:hover .headerlink{
-  display:inline-block;
-}
-
 // Pagination, if exists - lower margin override
 .pagination {
   margin-bottom: 0;
 }
 
+// Admonition styles, copied from MkDocs theme
+// These are not currently enabled. They can be enabled via Markdown plugins.
 .admonition {
   padding: 15px;
   margin-bottom: 20px;

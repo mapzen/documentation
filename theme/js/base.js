@@ -61,6 +61,7 @@ $(document).ready(function () {
 
 $('body').scrollspy({
   target: '.toc',
+  offset: 0
 });
 
 /* Prevent disabled links from causing a page reload */

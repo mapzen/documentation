@@ -6312,11 +6312,16 @@ nav {
     margin-bottom: 1em; }
   .documentation-content h1, .documentation-content h2, .documentation-content h3 {
     color: #444; }
-  .documentation-content h1[id]:before, .documentation-content h2[id]:before, .documentation-content h3[id]:before, .documentation-content h4[id]:before, .documentation-content h5[id]:before, .documentation-content h6[id]:before {
-    content: "";
+  .documentation-content h1[id]:before,
+  .documentation-content h2[id]:before,
+  .documentation-content h3[id]:before,
+  .documentation-content h4[id]:before,
+  .documentation-content h5[id]:before,
+  .documentation-content h6[id]:before {
+    content: '';
     display: block;
-    margin-top: -75px;
-    height: 75px;
+    margin-top: -90px;
+    height: 90px;
     pointer-events: none; }
   .documentation-content h1 {
     font-weight: 700;
@@ -6351,9 +6356,13 @@ a.headerlink {
   background-position: center right;
   background-size: contain; }
 
-/* Hide for h1 level headings */
-h1 a.headerlink {
-  display: none !important; }
+h1:hover:not(:first-child) .headerlink,
+h2:hover .headerlink,
+h3:hover .headerlink,
+h4:hover .headerlink,
+h5:hover .headerlink,
+h6:hover .headerlink {
+  display: inline-block; }
 
 hr {
   border-top: 1px solid lightgray; }
@@ -6401,9 +6410,6 @@ h6 code {
   line-height: inherit;
   color: inherit;
   background-color: inherit; }
-
-h1:hover .headerlink, h2:hover .headerlink, h3:hover .headerlink, h4:hover .headerlink, h5:hover .headerlink, h6:hover .headerlink {
-  display: inline-block; }
 
 .pagination {
   margin-bottom: 0; }
