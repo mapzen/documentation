@@ -53,6 +53,7 @@
 
     // If active, display box-shadow
     &.active > a {
+      background-color: #eee;
       box-shadow: inset 4px 0 0 #385d5c;
     }
   }
@@ -106,18 +107,25 @@ ul.nav > li:first-child:last-child {
   }
 
   // Link states and interaction inside of a sub-nav
+  // TODO: Some nav items are colored by a Bootstrap variable set to this color.
+  // Deal with this after (?) refactoring out use of Bootstrap .nav class.
   a:hover,
   a:focus {
     background-color: #eee;
   }
 
+  // Actual highlighted section
   li.active > a {
-    background-color: #eee;
-    box-shadow: inset 2px 0 0 #385d5c;
     background-color: $mz-darkblue;
     color: white;
-    // TODO: Some nav items are colored by a Bootstrap variable set to this color.
-    // Deal with this after (?) refactoring out use of Bootstrap .nav class.
+  }
+
+  // Sometimes there can be more than one active class
+  // So basically override it
+  li.active-alt-highlight > a {
+    background-color: #eee;
+    color: initial;
+    box-shadow: inset 2px 0 0 #385d5c;
   }
 
   .toc-subnav {

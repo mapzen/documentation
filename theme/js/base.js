@@ -49,11 +49,13 @@ $(document).ready(function () {
   })
 
   // Guarantee only one active thing is up
-/*
-  var activeEls = $('.toc li.active:not(.toc-top-level').each(function (index) {
-    if (index !== activeEls.lenght)
+
+  var activeEls = $('.toc li.active:not(.toc-top-level')
+  activeEls.each(function (index) {
+    if (index + 1 !== activeEls.length) {
+      $(activeEls[index]).addClass('active-alt-highlight')
+    }
   })
-    console.log(activeEls.length)*/
 });
 
 
