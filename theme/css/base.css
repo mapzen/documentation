@@ -6294,7 +6294,7 @@ nav {
   /* allows hash links to navigate to proper location */ }
   .documentation-content > * {
     margin-bottom: 1em; }
-  .documentation-content :last-child {
+  .documentation-content > :last-child {
     margin-bottom: 0 !important; }
   .documentation-content img {
     max-width: 100%;
