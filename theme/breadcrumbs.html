@@ -15,7 +15,7 @@
   {% for nav_item in nav %}
     {% if nav_item.active %}
       <li class='active'>
-        {{ nav_item.title | regex_replace('^api\w+', 'API') }}
+        {{ nav_item.title }}
       </li>
 
       {# Sub-page breadcrumb. #}
