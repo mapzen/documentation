@@ -6329,8 +6329,8 @@ nav {
   .documentation-content h6[id]:before {
     content: '';
     display: block;
-    margin-top: -75px;
-    height: 75px;
+    margin-top: -70px;
+    height: 70px;
     pointer-events: none; }
   .documentation-content h1 {
     position: relative;
