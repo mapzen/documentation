@@ -24,7 +24,7 @@ $(document).ready(function () {
   }
 
   // Autofocus to search.
-  $('#mkdocs-search-query').focus()
+  // $('#mkdocs-search-query').focus()
 
   // Highlight.js
   hljs.initHighlightingOnLoad();

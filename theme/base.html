@@ -52,10 +52,13 @@
       </div>
     </div>
 
-    <div class='container'>
+    <div class='container documentation-nav'>
       <div class='row headroom'>
-        <div class='col-xs-12 col-md-12'>
+        <div class='col-xs-12 col-md-7'>
           {% include 'breadcrumbs.html' %}
+        </div>
+        <div class='col-xs-12 col-md-5'>
+          {% include 'search-form.html' %}
         </div>
       </div>
     </div>
@@ -65,9 +68,6 @@
       {% block content %}
         <div class='col-xs-12 col-md-3'>{% include 'toc.html' %}</div>
         <div class='col-xs-12 col-md-9' role='main'>
-
-          {% include 'search-form.html' %}
-
           <div class='documentation-content'>
             {% include 'content.html' %}
           </div>
