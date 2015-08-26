@@ -12,19 +12,20 @@
   </li>
 
   {# Navigation category breadcrumb. #}
-  {% if include_nav %}
-    {% for nav_item in nav %}
-      {% if nav_item.active %}
-        <li class='active'>
-          {{ nav_item.title }}
-        </li>
-      {% endif %}
-    {% endfor %}
-  {% endif %}
+  {% for nav_item in nav %}
+    {% if nav_item.active %}
+      <li class='active'>
+        {{ nav_item.title | regex_replace('^api\w+', 'API') }}
+      </li>
 
-  {# Sub-page breadcrumb. #}
-  {# Displays only if exists. #}
-  {% if page_title %}
-  <li class='active'>{% if canonical_url %}<a href='{{ canonical_url }}'>{% endif %}{{ page_title }}{% if canonical_url %}</a>{% endif %}</li>
-  {% endif %}
+      {# Sub-page breadcrumb. #}
+      {# Displays only if it exists. #}
+      {# Occurs inside this loop so it has access to nav_item.title #}
+      {% if page_title and page_title != nav_item.title %}
+        <li class='active'>{% if canonical_url %}<a href='{{ canonical_url }}'>{% endif %}{{ page_title }}{% if canonical_url %}</a>{% endif %}</li>
+      {% endif %}
+
+    {% endif %}
+  {% endfor %}
+
 </ol>
