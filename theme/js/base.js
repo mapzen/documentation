@@ -24,11 +24,11 @@ $(document).ready(function () {
   }
 
   // Autofocus to search.
-  // $('#mkdocs-search-query').focus()
+  $('#mkdocs-search-query').focus()
 
   // Highlight.js
   hljs.initHighlightingOnLoad();
-  $('table').addClass('table table-striped table-hover');
+  $('table').addClass('table table-striped');
 
   // Affix for side nav bar
   $('#toc').affix({

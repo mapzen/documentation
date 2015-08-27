@@ -4,10 +4,32 @@
   margin-bottom: 0.5em;
 }
 
+.search-container {
+  input:focus {
+  }
+}
+
 .search-results-container {
   position: absolute;
+  background-color: white;
+  padding: 0 10px;
+  box-sizing: border-box;
+  right: 15px;
+  left: 15px;
+  border: 1px solid #e1e1e1;
+  margin-top: 5px;
+  box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.1);
 
   h3 {
-    font-size: 1.2em;
+    font-size: 1.4em;
+    margin-top: 1em;
+    margin-bottom: 0.6em;
+  }
+
+  // 'No results found'
+  p:first-child:last-child {
+    margin-top: 0.85em;
+    margin-bottom: 0.85em;
+    font-weight: bold;
   }
 }
