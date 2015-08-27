@@ -1,7 +1,7 @@
 # Source doc tarballs
 TANGRAM = https://github.com/tangrams/tangram-docs/archive/reorg.tar.gz
 MAPZEN = https://github.com/mapzen/mapzen-docs/archive/master.tar.gz
-VALHALLA = https://github.com/valhalla/valhalla-docs/archive/gh-pages.tar.gz
+VALHALLA = https://github.com/valhalla/valhalla-docs/archive/master.tar.gz
 
 # Add local env/bin to PATH
 PATH := $(shell pwd)/env/bin:$(PATH)
@@ -27,7 +27,7 @@ get-metro-extracts:
 	@curl -L $(MAPZEN) | tar -zxv -C src --strip-components=1 mapzen-docs-master/metro-extracts
 
 get-valhalla:
-	@curl -L $(VALHALLA) | tar -zxv -C src && mv src/valhalla-docs-gh-pages src/valhalla
+	@curl -L $(VALHALLA) | tar -zxv -C src && mv src/valhalla-docs-master src/valhalla
 
 # Build tangram docs
 tangram:
@@ -47,7 +47,7 @@ valhalla:
 	@ln -sf config/valhalla.yml ./mkdocs.yml
 	@mkdocs build --clean # Ensure stale files are cleaned
 
-all: clean-dist tangram metro-extracts valhalla-demos valhalla
+all: clean-dist tangram metro-extracts valhalla
 
 # Sets up CSS compile via Sass, watching for changes
 css:
