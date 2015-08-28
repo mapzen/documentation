@@ -2,12 +2,14 @@
   <li><a href='/developers/'>Developers</a></li>
   <li><a href='/documentation/'>Documentation</a></li>
 
-  {# TODO: Enable whitespace control (Jinja2 syntax seems to not work) #}
-
   {# Top-level project breadcrumb. #}
   {# Is labeled 'active' if current page is project homepage. #}
   {# Creates link to project homepage if currently on a sub-page or nav is included. #}
-  <li{% if current_page and current_page.is_homepage %} class='active'{% endif %}>{% if page_title or include_nav %}<a href='{{ homepage_url }}'>{% endif %}{{ site_name }}{% if page_title or include_nav %}</a>{% endif %}</li>
+  <li{% if current_page and current_page.is_homepage %} class='active'{% endif %}>
+    {% if page_title or include_nav %}<a href='{{ homepage_url }}'>{% endif %}
+    {{ site_name }}
+    {% if page_title or include_nav %}</a>{% endif %}
+  </li>
 
   {# Navigation category breadcrumb. #}
   {% for nav_item in nav %}
