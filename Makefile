@@ -49,7 +49,7 @@ valhalla:
 
 all: clean-dist tangram metro-extracts valhalla
 	# Compress all HTML files - controls Jinja whitespace
-	@find dist -name \*.html -ls -exec htmlmin {} {} \;
+	@find dist -name \*.html -ls -exec htmlmin --keep-optional-attribute-quotes {} {} \;
 
 # Sets up CSS compile via Sass, watching for changes
 css:
