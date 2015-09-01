@@ -5916,12 +5916,6 @@ button.close {
   font-size: 18px;
   line-height: 1.6; }
 
-.text-32 {
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
-  font-weight: 300;
-  font-size: 32px;
-  line-height: 1.4; }
-
 nav {
   width: 100%;
   height: 50px;
@@ -6049,6 +6043,11 @@ footer .copyright {
     font-size: inherit; }
     .footer-menu h6:not(:first-of-type) {
       margin-top: 20px; }
+    .footer-menu h6 a,
+    .footer-menu h6 a:hover,
+    .footer-menu h6 a:active,
+    .footer-menu h6 a:visited {
+      color: inherit; }
   .footer-menu ul {
     list-style-type: none;
     padding-left: 0; }
@@ -6180,23 +6179,37 @@ button:focus {
   margin-bottom: 0.5em; }
 
 .search-results-container {
+  display: none;
   position: absolute;
   background-color: white;
-  padding: 0 10px;
+  padding: 0;
   box-sizing: border-box;
   right: 15px;
   left: 15px;
   border: 1px solid #e1e1e1;
-  margin-top: 5px;
-  box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.1); }
+  border-top: 0;
+  margin-top: 0;
+  box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.1);
+  overflow-x: hidden;
+  overflow-y: auto; }
+  .search-results-container::-webkit-scrollbar {
+    height: 6px;
+    width: 6px; }
+  .search-results-container::-webkit-scrollbar-thumb {
+    background-color: rgba(110, 160, 164, 0.75); }
   .search-results-container h3 {
     font-size: 1.4em;
-    margin-top: 1em;
-    margin-bottom: 0.6em; }
+    margin-top: 0;
+    margin-bottom: 0.5em; }
   .search-results-container p:first-child:last-child {
-    margin-top: 0.85em;
-    margin-bottom: 0.85em;
+    padding: 0.85em 10px;
+    margin: 0;
     font-weight: bold; }
+  .search-results-container article {
+    padding: 10px;
+    border-bottom: 1px solid #e1e1e1; }
+  .search-results-container article:hover {
+    background-color: rgba(192, 192, 192, 0.1); }
 
 footer .slogan {
   font-family: 'Montserrat', 'Open Sans', sans-serif;
@@ -6224,6 +6237,11 @@ footer h5 {
   max-height: calc(100% - 120px);
   overflow-x: hidden;
   overflow-y: auto; }
+  .toc::-webkit-scrollbar {
+    height: 6px;
+    width: 6px; }
+  .toc::-webkit-scrollbar-thumb {
+    background-color: rgba(110, 160, 164, 0.75); }
   .toc.affix {
     position: static; }
   .toc.affix-bottom {

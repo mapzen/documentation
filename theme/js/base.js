@@ -17,14 +17,28 @@ $(document).ready(function () {
   var search_term = getSearchTerm()
   var $search_modal = $('#mkdocs_search_modal')
   var $docContainer = $('.documentation-container')
+  var $searchResults = $('#mkdocs-search-results')
+  var $searchInput = $('#mkdocs-search-query')
   var $nav = $('nav')
 
   if (search_term) {
-    $('#mkdocs-search-query').val(search_term)
+    $searchInput.val(search_term)
   }
 
   // Autofocus to search.
-  $('#mkdocs-search-query').focus()
+  $searchInput.focus()
+  $searchInput.on('keyup', function (e) {
+    // Need to wait a bit for search function to finish populating our results
+    setTimeout(function () {
+      // See if anything is inside the search results
+      if ($.trim($searchResults.html()) !== '') {
+        $searchResults.show()
+        $searchResults.css('max-height', window.innerHeight - $searchResults[0].getBoundingClientRect().top - 100)
+      } else {
+        $searchResults.hide()
+      }
+    }, 0)
+  })
 
   // Highlight.js
   hljs.initHighlightingOnLoad();

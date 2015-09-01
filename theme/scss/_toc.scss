@@ -19,6 +19,15 @@
   overflow-x: hidden;
   overflow-y: auto;
 
+  &::-webkit-scrollbar {
+    height: 6px;
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: transparentize($mz-blue, 0.25);
+  }
+
   // Show and affix the TOC when space allows it
 
   // By default it's not affixed in mobile views, so undo that
