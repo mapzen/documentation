@@ -48,6 +48,7 @@
 
   article {
     padding: 10px;
+    cursor: pointer;
   }
 
   article:not(:last-child) {
@@ -56,5 +57,18 @@
 
   article:hover {
     background-color: rgba(192,192,192,0.10);
+
+    a {
+      color: $mz-darkblue;
+    }
   }
+
+  article.selected {
+    background-color: rgba(128,128,128,0.10);
+  }
+
+  a strong {
+    color: $mz-darkblue;
+  }
+
 }

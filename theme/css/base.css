@@ -6206,11 +6206,18 @@ button:focus {
     margin: 0;
     font-weight: bold; }
   .search-results-container article {
-    padding: 10px; }
+    padding: 10px;
+    cursor: pointer; }
   .search-results-container article:not(:last-child) {
     border-bottom: 1px solid #e1e1e1; }
   .search-results-container article:hover {
     background-color: rgba(192, 192, 192, 0.1); }
+    .search-results-container article:hover a {
+      color: #385d5c; }
+  .search-results-container article.selected {
+    background-color: rgba(128, 128, 128, 0.1); }
+  .search-results-container a strong {
+    color: #385d5c; }
 
 footer .slogan {
   font-family: 'Montserrat', 'Open Sans', sans-serif;

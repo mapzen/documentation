@@ -25,6 +25,8 @@ $(document).ready(function () {
     $searchInput.val(search_term)
   }
 
+  var selectedPosition
+
   // Autofocus to search.
   $searchInput.focus()
   $searchInput.on('keyup', function (e) {
@@ -34,11 +36,108 @@ $(document).ready(function () {
       if ($.trim($searchResults.html()) !== '') {
         $searchResults.show()
         $searchResults.css('max-height', window.innerHeight - $searchResults[0].getBoundingClientRect().top - 100)
+
+        var input = $searchInput.val().trim()
+        var list = $searchResults.find('article')
+
+        if (list.length > 0) {
+          var highlight = function (text, focus) {
+            var r = RegExp('(' + focus + ')', 'gi');
+            return text.replace(r, '<strong>$1</strong>');
+          }
+
+          var html = $searchResults.html()
+          $searchResults.html(highlight(html, input))
+
+          // Now reapply selection
+          if (selectedPosition) {
+            list[selectedPosition].addClass('selected')
+          }
+        }
       } else {
         $searchResults.hide()
       }
     }, 0)
   })
+  $searchInput.on('keydown', function (e) {
+    // Ignore key results are not visible
+    if (!$searchResults.is(':visible')) {
+      return;
+    }
+
+    var selected = $searchResults.find('article.selected')[0]
+    var list = $searchResults.find('article')
+
+    for (var i = 0; i < list.length; i++) {
+      if (list[i] === selected) {
+        selectedPosition = i;
+        break;
+      }
+    }
+
+    switch (e.keyCode) {
+      // 13 = enter
+      case 13:
+        e.preventDefault()
+        if (selected) {
+          findAndOpenLink(selected)
+        }
+        break;
+      // 38 = up arrow
+      case 38:
+        e.preventDefault()
+
+        if (selected) {
+          $(selected).removeClass('selected')
+        }
+
+        var previousItem = list[selectedPosition - 1];
+
+        if (selected && previousItem) {
+          $(previousItem).addClass('selected');
+        } else {
+          $(list[list.length - 1]).addClass('selected');
+        }
+        break;
+      // 40 = down arrow
+      case 40:
+        e.preventDefault()
+
+        if (selected) {
+          $(selected).removeClass('selected');
+        }
+
+        var nextItem = list[selectedPosition + 1];
+
+        if (selected && nextItem) {
+          $(nextItem).addClass('selected');
+        } else {
+          $(list[0]).addClass('selected');
+        }
+        break;
+      // all other keys
+      default:
+        break;
+    }
+  })
+  $search_modal.on('blur', function () {
+    resetSearchResults();
+  })
+  $searchResults.on('click', 'article', function (e) {
+    findAndOpenLink(this);
+    // In case it just jumps down the page
+    resetSearchResults();
+  })
+
+  function findAndOpenLink (articleEl) {
+    var link = $(articleEl).find('a').attr('href')
+    window.location.href = link;
+  }
+
+  function resetSearchResults () {
+    $searchResults.empty();
+    $searchResults.hide();
+  }
 
   // Highlight.js
   hljs.initHighlightingOnLoad();
