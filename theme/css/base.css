@@ -6206,7 +6206,8 @@ button:focus {
     margin: 0;
     font-weight: bold; }
   .search-results-container article {
-    padding: 10px;
+    padding: 10px; }
+  .search-results-container article:not(:last-child) {
     border-bottom: 1px solid #e1e1e1; }
   .search-results-container article:hover {
     background-color: rgba(192, 192, 192, 0.1); }
