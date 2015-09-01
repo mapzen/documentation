@@ -7,28 +7,45 @@
   padding: 25px 20px;
   position: relative;
   text-align: center;
+  width: 100%;
 
-  .cta-text {
+  @media (min-width: $screen-md-min) {
+    display: table;
+  }
+}
+
+.cta-text {
+  // Match text size and line height to button.
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.42857;
+
+  p {
     margin: 0;
-    // Match text size and line height to button.
-    padding: 10px 16px;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 1.42857;
+  }
+
+  @media (min-width: $screen-md-min) {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: left;
+  }
+}
+
+.cta-btn {
+  text-align: right;
+
+  @media (min-width: $screen-md-min) {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0 10px;
   }
 
   .btn {
     width: 100%;
     margin-top: 20px;
-  }
-}
 
-@media (min-width: 992px) {
-  // Resets applied mobile styles
-  .cta-container {
-    text-align: left;
-
-    .btn {
+    @media (min-width: $screen-md-min) {
       margin-top: 0;
       width: auto;
     }

@@ -6156,23 +6156,40 @@ button:focus {
   background-color: #f8f8f8;
   padding: 25px 20px;
   position: relative;
-  text-align: center; }
-  .cta-container .cta-text {
-    margin: 0;
-    padding: 10px 16px;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 1.42857; }
-  .cta-container .btn {
+  text-align: center;
+  width: 100%; }
+  @media (min-width: 992px) {
+    .cta-container {
+      display: table; } }
+
+.cta-text {
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.42857; }
+  .cta-text p {
+    margin: 0; }
+  @media (min-width: 992px) {
+    .cta-text {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: left; } }
+
+.cta-btn {
+  text-align: right; }
+  @media (min-width: 992px) {
+    .cta-btn {
+      display: table-cell;
+      vertical-align: middle;
+      padding: 0 10px; } }
+  .cta-btn .btn {
     width: 100%;
     margin-top: 20px; }
+    @media (min-width: 992px) {
+      .cta-btn .btn {
+        margin-top: 0;
+        width: auto; } }
 
-@media (min-width: 992px) {
-  .cta-container {
-    text-align: left; }
-    .cta-container .btn {
-      margin-top: 0;
-      width: auto; } }
 .search-label {
   font-family: "Montserrat", "Open Sans", sans-serif;
   color: #606060;
