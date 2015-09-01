@@ -49,6 +49,13 @@ footer {
     &:not(:first-of-type) {
       margin-top: 20px;
     }
+
+    a,
+    a:hover,
+    a:active,
+    a:visited {
+      color: inherit;
+    }
   }
 
   ul {
