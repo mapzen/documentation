@@ -6233,8 +6233,9 @@ button:focus {
       color: #385d5c; }
   .search-results-container article.selected {
     background-color: rgba(128, 128, 128, 0.1); }
-  .search-results-container a strong {
-    color: #385d5c; }
+  .search-results-container strong {
+    color: #385d5c;
+    background-color: papayawhip; }
 
 footer .slogan {
   font-family: 'Montserrat', 'Open Sans', sans-serif;
