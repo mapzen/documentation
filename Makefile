@@ -1,5 +1,5 @@
 # Source doc tarballs
-TANGRAM = https://github.com/tangrams/tangram-docs/archive/reorg.tar.gz
+TANGRAM = https://github.com/tangrams/tangram-docs/archive/gh-pages.tar.gz
 MAPZEN = https://github.com/mapzen/mapzen-docs/archive/master.tar.gz
 VALHALLA = https://github.com/valhalla/valhalla-docs/archive/master.tar.gz
 
@@ -21,7 +21,7 @@ get: clean-src get-tangram get-metro-extracts get-valhalla
 
 # Get individual sources docs
 get-tangram:
-	@curl -L $(TANGRAM) | tar -zxv -C src --strip-components=1 tangram-docs-reorg/pages && mv src/pages src/tangram
+	@curl -L $(TANGRAM) | tar -zxv -C src --strip-components=1 tangram-docs-gh-pages/pages && mv src/pages src/tangram
 
 get-metro-extracts:
 	@curl -L $(MAPZEN) | tar -zxv -C src --strip-components=1 mapzen-docs-master/metro-extracts
