@@ -6,6 +6,7 @@ VALHALLA = https://github.com/valhalla/valhalla-docs/archive/master.tar.gz
 # Add local env/bin to PATH
 PATH := $(shell pwd)/env/bin:$(PATH)
 SHELL := /bin/bash # required for OSX
+PYTHONPATH := packages:$(PYTHONPATH)
 
 # Reset entire source directory
 clean-src:
@@ -60,5 +61,6 @@ env:
 	@echo Verifying and installing Python environment and dependencies...
 	@test -d env || virtualenv env
 	@env/bin/pip install -Ur requirements.txt
+	@env/bin/pip install -e packages/mdx_autolink
 
 .PHONY: all css

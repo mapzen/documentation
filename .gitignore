@@ -10,3 +10,7 @@ site/
 dist/*/
 mkdocs.yml
 .sass-cache/
+
+# Python
+*.pyc
+*.egg-info/

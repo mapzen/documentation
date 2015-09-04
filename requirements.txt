@@ -1,3 +1,2 @@
 mkdocs >= 0.14.0
 htmlmin >= 0.1.6
-mdx_linkify >= 0.6.0
