@@ -8,11 +8,9 @@ Mapzen documentation pipeline.
 
 ```shell
 # Global dependencies that are needed (optional if you have them already)
-sudo easy_install pip
-sudo pip install virtualenv
-
-# Use python 3
+# Installing python3 with Homebrew is the easiest way of getting what you need
 brew install python3
+pip3 install virtualenv
 
 # Clone repository
 git clone https://github.com/mapzen/mapzen-docs-generator.git
