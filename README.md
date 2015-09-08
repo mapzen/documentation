@@ -11,6 +11,9 @@ Mapzen documentation pipeline.
 sudo easy_install pip
 sudo pip install virtualenv
 
+# Use python 3
+brew install python3
+
 # Clone repository
 git clone https://github.com/mapzen/mapzen-docs-generator.git
 cd mapzen-docs-generator
@@ -27,9 +30,6 @@ make all
 # Local preview
 python -m SimpleHTTPServer 8000
 open http://localhost:8000/build/
-
-# Deploy preview pages to GitHub pages
-make ghpages
 ```
 
 **NOTE:** `make` depends on `virtualenv` to be on the system so that the dependencies of MkDocs can be automatically downloaded and installed locally into the `./env/` directory.
