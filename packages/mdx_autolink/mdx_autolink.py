@@ -7,10 +7,6 @@ Initial goal is to mimic GitHub-flavored Markdown:
 
   - If you see a link, make it work
   - If it's inside of `backticks`, don't
-
-Copyright 2015 Lou Huang
-
-License: [MIT](http://opensource.org/licenses/MIT)
 """
 
 import re
@@ -25,9 +21,19 @@ urlfinder = re.compile(r'((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-
                        r'(?:[\-\+=&;%@\.\w_]*)#?(?:[\.!/\\\w]*))?)')
 """
 
-urlfinder = re.compile(r'(https?:\/\/([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?)')
+urlfinder = re.compile(r'(https?:\/\/([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w\.\-#?=&%]*[^\.)\s])\/?)')
 
-# TODO: Terminate the URL regex if there is a period and immediately after is whitespace or linebreak.
+# What it's doing. This is descriptive, not necessarily prescriptive behavior.
+# Matches only URLs prepended with http:// or https://
+# Anything that looks like a domain.name
+# Any combination of URL-friendly characters, but a non-exhaustive list:
+#  - inner periods are OK
+#  - dashes are OK
+#  - # for anchor hashes
+#  - ?, =, & for query strings
+#  - % for escaped characters
+#  - But NOT any period or closing parenthesis (from Markdown) followed by whitespace
+# Trailing slashes are OK
 
 class URLify(Preprocessor):
     def run(self, lines):
