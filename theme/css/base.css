@@ -6396,7 +6396,8 @@ nav {
   .documentation-content h1, .documentation-content h2, .documentation-content h3, .documentation-content h4, .documentation-content h5, .documentation-content h6 {
     position: relative;
     font-family: "Montserrat", "Playfair Display", sans-serif;
-    font-weight: 400; }
+    font-weight: 400;
+    margin-bottom: 0.6em; }
   .documentation-content h1 {
     font-weight: 700;
     font-size: 42px;
