@@ -6375,7 +6375,9 @@ nav {
     pointer-events: none;
   }
   */ }
-  .documentation-content > * {
+  .documentation-content section > p,
+  .documentation-content section > ol,
+  .documentation-content section > ul {
     margin-bottom: 1em; }
   .documentation-content > :last-child {
     margin-bottom: 0 !important; }

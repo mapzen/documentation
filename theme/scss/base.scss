@@ -68,11 +68,14 @@ nav {
   font-size: 16px;
 
   // Structural spacing
-  > * {
+  section > p,
+  section > ol,
+  section > ul, {
     margin-bottom: 1em;
   }
+
+  // Align last item to bottom of the container so navigation affixes to bottom cleanly
   > :last-child {
-    // Align last item to bottom of the container so navigation affixes to bottom cleanly
     margin-bottom: 0 !important;
   }
 
