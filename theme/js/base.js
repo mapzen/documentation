@@ -59,6 +59,7 @@ $(document).ready(function () {
       }
     }, 0)
   })
+  /* DISABLED, this doesn't work well because other search JS overwrites selection
   $searchInput.on('keydown', function (e) {
     // Ignore key results are not visible
     if (!$searchResults.is(':visible')) {
@@ -120,6 +121,7 @@ $(document).ready(function () {
         break;
     }
   })
+  */
   $search_modal.on('blur', function () {
     resetSearchResults();
   })
