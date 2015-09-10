@@ -28,7 +28,7 @@ $(document).ready(function () {
   var selectedPosition
 
   // Autofocus to search.
-  $searchInput.focus()
+//  $searchInput.focus()
   $searchInput.on('keyup', function (e) {
     // Need to wait a bit for search function to finish populating our results
     setTimeout(function () {

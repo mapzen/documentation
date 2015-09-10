@@ -6349,6 +6349,9 @@ nav {
   font-family: "Montserrat", "Playfair Display", sans-serif; }
   .documentation-hero h1 {
     margin: 1.5em 0; }
+  .documentation-hero h1 + p {
+    margin-top: -45px;
+    margin-bottom: 45px; }
 
 .documentation-nav {
   position: relative;

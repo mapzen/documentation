@@ -46,7 +46,8 @@
       <div class='container'>
         <div class='row'>
           <div class='col-xs-12 col-md-12'>
-            <h1>{{ site_name}}</h1>
+            <h1>{{ site_name }}</h1>
+            {% if config.extra.site_subtitle %}<p>{{ config.extra.site_subtitle }}</p>{% endif %}
           </div>
         </div>
       </div>

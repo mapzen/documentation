@@ -52,6 +52,11 @@ nav {
   h1 {
     margin: 1.5em 0;
   }
+
+  h1 + p {
+    margin-top: -45px;
+    margin-bottom: 45px;
+  }
 }
 
 .documentation-nav {
