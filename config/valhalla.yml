@@ -25,6 +25,7 @@ markdown_extensions:
       permalink: ' ' # Blank space; this marker is styled in CSS.
   - sane_lists
   - nl2br
+  - outline
   - autolink
 
 extra:

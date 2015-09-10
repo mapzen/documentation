@@ -6360,7 +6360,21 @@ nav {
 .documentation-content {
   line-height: 1.8;
   font-size: 16px;
-  /* allows hash links to navigate to proper location */ }
+  /*
+  // allows hash links to navigate to proper location
+  h1[id]:before,
+  h2[id]:before,
+  h3[id]:before,
+  h4[id]:before,
+  h5[id]:before,
+  h6[id]:before {
+    content: '';
+    display: block;
+    margin-top: -70px;
+    height: 70px;
+    pointer-events: none;
+  }
+  */ }
   .documentation-content > * {
     margin-bottom: 1em; }
   .documentation-content > :last-child {
@@ -6379,41 +6393,33 @@ nav {
   .documentation-content li > p > img {
     margin-top: 0;
     margin-bottom: 1em; }
-  .documentation-content h1, .documentation-content h2, .documentation-content h3 {
-    color: #444; }
-  .documentation-content h1[id]:before,
-  .documentation-content h2[id]:before,
-  .documentation-content h3[id]:before,
-  .documentation-content h4[id]:before,
-  .documentation-content h5[id]:before,
-  .documentation-content h6[id]:before {
-    content: '';
-    display: block;
-    margin-top: -70px;
-    height: 70px;
-    pointer-events: none; }
-  .documentation-content h1 {
+  .documentation-content h1, .documentation-content h2, .documentation-content h3, .documentation-content h4, .documentation-content h5, .documentation-content h6 {
     position: relative;
+    font-family: "Montserrat", "Playfair Display", sans-serif;
+    font-weight: 400; }
+  .documentation-content h1 {
     font-weight: 700;
     font-size: 42px;
-    font-family: "Montserrat", "Playfair Display", sans-serif;
-    color: #d4645c;
-    margin-top: 1.8em; }
-  .documentation-content h1:first-child,
-  .documentation-content h2:first-child,
-  .documentation-content h3:first-child,
-  .documentation-content h4:first-child,
-  .documentation-content h5:first-child,
-  .documentation-content h6:first-child {
-    margin-top: 0; }
-  .documentation-content h2, .documentation-content h3, .documentation-content h4, .documentation-content h5, .documentation-content h6 {
-    position: relative;
-    font-weight: 400;
-    font-family: "Montserrat", "Playfair Display", sans-serif;
-    color: #666666;
-    margin-top: 1.8em; }
+    color: #d4645c; }
+  .documentation-content h2, .documentation-content h3 {
+    color: #666; }
   .documentation-content h4, .documentation-content h5, .documentation-content h6 {
     color: #d4645c; }
+  .documentation-content section {
+    margin-top: -50px;
+    padding-top: 50px; }
+  .documentation-content h1, .documentation-content h2, .documentation-content h3, .documentation-content h4, .documentation-content h5, .documentation-content h6 {
+    margin-top: 25px; }
+  .documentation-content > section:first-child {
+    margin-top: -70px;
+    padding-top: 70px; }
+    .documentation-content > section:first-child > h1:first-child,
+    .documentation-content > section:first-child > h2:first-child,
+    .documentation-content > section:first-child > h3:first-child,
+    .documentation-content > section:first-child > h4:first-child,
+    .documentation-content > section:first-child > h5:first-child,
+    .documentation-content > section:first-child > h6:first-child {
+      margin-top: 0; }
 
 a.headerlink {
   position: absolute;
@@ -6484,6 +6490,9 @@ h6 code {
   line-height: inherit;
   color: inherit;
   background-color: inherit; }
+
+.table th {
+  font-family: "Montserrat", "Playfair Display", sans-serif; }
 
 .pagination {
   margin-bottom: 0; }

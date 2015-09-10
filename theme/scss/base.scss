@@ -99,11 +99,29 @@ nav {
     margin-bottom: 1em;
   }
 
-  h1, h2, h3 {
-    color: #444;
+  // Headings
+  h1, h2, h3, h4, h5, h6 {
+    position: relative;
+    font-family: $docs-heading-font;
+    font-weight: 400;
   }
 
-  /* allows hash links to navigate to proper location */
+  h1 {
+    font-weight: 700;
+    font-size: 42px;
+    color: #d4645c;
+  }
+
+  h2, h3 {
+    color: #666;
+  }
+
+  h4, h5, h6 {
+    color: #d4645c;
+  }
+
+  /*
+  // allows hash links to navigate to proper location
   h1[id]:before,
   h2[id]:before,
   h3[id]:before,
@@ -116,37 +134,36 @@ nav {
     height: 70px;
     pointer-events: none;
   }
+  */
 
-  h1 {
-    position: relative;
-    font-weight: 700;
-    font-size: 42px;
-    font-family: $docs-heading-font;
-    color: #d4645c;
-    margin-top: 1.8em;
+  // Each header's content is wrapped in a <section> container
+  // This allows this to container to make anchor links navigate
+  // without headbutting the top of the window, like so.
+  // This requires the mdx_outline extension to be turned on.
+  section {
+    margin-top: -50px;
+    padding-top: 50px;
   }
 
-  // Headings that occur as the first item in the container
+  // Position heading landing spot correctly
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 25px;
+  }
+
+  // Headings that occur as the first item in the page
   // should not have a top margin.
-  h1:first-child,
-  h2:first-child,
-  h3:first-child,
-  h4:first-child,
-  h5:first-child,
-  h6:first-child {
-    margin-top: 0;
-  }
+  > section:first-child {
+    margin-top: -70px;
+    padding-top: 70px;
 
-  h2, h3, h4, h5, h6 {
-    position: relative;
-    font-weight: 400;
-    font-family: $docs-heading-font;
-    color: #666666;
-    margin-top: 1.8em;
-  }
-
-  h4, h5, h6 {
-    color: #d4645c;
+    > h1:first-child,
+    > h2:first-child,
+    > h3:first-child,
+    > h4:first-child,
+    > h5:first-child,
+    > h6:first-child {
+      margin-top: 0;
+    }
   }
 }
 
@@ -235,6 +252,11 @@ h6 code {
   line-height: inherit;
   color: inherit;
   background-color: inherit;
+}
+
+// Table
+.table th {
+  font-family: $docs-heading-font;
 }
 
 // Pagination, if exists - lower margin override
