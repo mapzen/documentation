@@ -14,3 +14,4 @@ mkdocs.yml
 # Python
 *.pyc
 *.egg-info/
+__pycache__
