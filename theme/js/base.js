@@ -27,8 +27,6 @@ $(document).ready(function () {
 
   var selectedPosition
 
-  // Autofocus to search.
-//  $searchInput.focus()
   $searchInput.on('keyup', function (e) {
     // Need to wait a bit for search function to finish populating our results
     setTimeout(function () {
@@ -176,7 +174,7 @@ $(document).ready(function () {
 
 $('body').scrollspy({
   target: '.toc',
-  offset: 0
+  offset: 10
 });
 
 /* Prevent disabled links from causing a page reload */
