@@ -1,2 +1,3 @@
 mkdocs >= 0.14.0
 htmlmin >= 0.1.6
+mdx-outline >= 1.2.1
