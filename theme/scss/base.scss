@@ -239,6 +239,12 @@ pre code {
   background-color: transparent;
 }
 
+// Nested blocks should have normal margins
+li > pre {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
 /* Reset code inside headers */
 h1 code,
 h2 code,

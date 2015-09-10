@@ -61,6 +61,7 @@ env:
 	@echo Verifying and installing Python environment and dependencies...
 	@test -d env || virtualenv -p python3 env
 	@env/bin/pip install -Ur requirements.txt
-	@env/bin/pip install -e extensions/mdx_autolink
+	@env/bin/pip install https://github.com/facelessuser/pymdown-extensions/archive/master.zip
+	# @env/bin/pip install -e extensions/mdx_autolink
 
 .PHONY: all css env

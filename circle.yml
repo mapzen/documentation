@@ -6,7 +6,7 @@ dependencies:
   pre:
     - sudo pip install -U awscli
   post:
-    - pip install -e extensions/mdx_autolink
+    - pip install https://github.com/facelessuser/pymdown-extensions/archive/master.zip
 
 test:
   override:

@@ -26,7 +26,14 @@ markdown_extensions:
   - sane_lists
   - nl2br
   - outline
-  - autolink
+  # Set of PyMdown extensions to flesh out GFM-mimicry
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.githubemoji
+  - pymdownx.magiclink
+  - pymdownx.superfences
+  - pymdownx.tasklist
+  - pymdownx.tilde
 
 extra:
   docs_repo_url: https://github.com/valhalla/valhalla-docs
