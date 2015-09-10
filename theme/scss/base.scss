@@ -231,6 +231,7 @@ pre {
 }
 
 pre code {
+  position: relative; // Fixes section anti-headbutt code from intercepting interactions with scrollbar.
   margin: 0;
   padding: 1em !important; /* overwrite .hljs padding */
   white-space: pre;

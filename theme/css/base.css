@@ -6469,6 +6469,7 @@ pre {
   font-size: inherit; }
 
 pre code {
+  position: relative;
   margin: 0;
   padding: 1em !important;
   /* overwrite .hljs padding */
