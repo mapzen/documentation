@@ -6427,6 +6427,15 @@ nav {
     .documentation-content > section:first-child > h6:first-child {
       margin-top: 0; }
 
+.documentation-edit {
+  border-top: 1px solid #eee;
+  padding-top: 2em;
+  text-align: right;
+  line-height: 2em; }
+  .documentation-edit i.fa {
+    vertical-align: middle;
+    color: #666; }
+
 a.headerlink {
   position: absolute;
   display: none;

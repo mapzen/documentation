@@ -176,6 +176,18 @@ nav {
   }
 }
 
+.documentation-edit {
+  border-top: 1px solid #eee;
+  padding-top: 2em;
+  text-align: right;
+  line-height: 2em;
+
+  i.fa {
+    vertical-align: middle;
+    color: #666;
+  }
+}
+
 a.headerlink {
   position: absolute;
   display: none;
