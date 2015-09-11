@@ -1,6 +1,12 @@
 # Parsing code
 
-```html hl_lines="4 5 6"
+Here are code samples to test
+
+## You can highlight some lines
+
+This uses [CodeHilite](https://pythonhosted.org/Markdown/extensions/code_hilite.html)
+
+```html hl_lines="4 5 6 9 10 11 12"
 <!DOCTYPE html>
 <html>
 <head>
