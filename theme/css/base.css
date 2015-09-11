@@ -1,7 +1,8 @@
 @charset "UTF-8";
-@import url(//fonts.googleapis.com/css?family=Source+Sans+Pro:400,300italic,400italic,300,700,700italic);
-@import url(//fonts.googleapis.com/css?family=Open+Sans:400,300italic,400italic,300,700,700italic);
-@import url(//fonts.googleapis.com/css?family=Montserrat);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300italic,400italic,300,700,700italic);
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300italic,400italic,300,700,700italic);
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
 /*!
  * Bootstrap v3.3.5 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
@@ -6463,7 +6464,7 @@ hr {
   border-top: 1px solid lightgray; }
 
 code, kbd, pre, samp {
-  font-family: monospace, serif; }
+  font-family: 'Source Code Pro', monospace; }
 
 code {
   padding: 4px 8px;
@@ -6473,7 +6474,7 @@ code {
   background-color: #f4f4f4; }
 
 pre {
-  padding: 0;
+  padding: 1em;
   margin-top: 1.5em;
   margin-bottom: 1.5em;
   border: 3px solid #eee;
@@ -6481,8 +6482,12 @@ pre {
   background-color: #f8f8f8;
   background-size: 8px 8px;
   background-image: linear-gradient(135deg, transparent 25%, rgba(0, 0, 0, 0.02) 25%, rgba(0, 0, 0, 0.02) 50%, transparent 50%, transparent 75%, rgba(0, 0, 0, 0.02) 75%, rgba(0, 0, 0, 0.02));
-  font-size: inherit; }
+  font-size: inherit;
+  overflow-x: auto;
+  position: relative;
+  word-wrap: normal; }
 
+/* Note: <code> is not appearing inside <pre> for codehilite blocks */
 pre code {
   position: relative;
   margin: 0;
