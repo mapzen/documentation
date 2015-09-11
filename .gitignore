@@ -4,6 +4,7 @@ node_modules
 
 # Documentation source files
 src/*/
+!src/test/
 
 # Generated files
 site/
