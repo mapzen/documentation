@@ -1,5 +1,5 @@
 site_name: Tangram
-repo_url: https://github.com/tangrams/tangram
+repo_url: https://github.com/tangrams/tangram-docs
 remote_branch: gh-pages
 google_analytics: ['UA-47035811-1', 'mapzen.com']
 docs_dir: src/tangram
@@ -57,6 +57,7 @@ markdown_extensions:
 
 # Extra variables for templates
 extra:
-  docs_repo_url: https://github.com/tangrams/tangram-docs
+  project_repo_url: https://github.com/tangrams/tangram
+  docs_base_url: https://github.com/tangrams/tangram-docs/tree/gh-pages/pages
   display_project_name_api_key: true
   exclude_home_contents_in_toc: true

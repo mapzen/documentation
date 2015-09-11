@@ -1,5 +1,5 @@
 site_name: Metro Extracts
-repo_url: https://github.com/mapzen/metroextractor-cities
+repo_url: https://github.com/mapzen/mapzen-docs
 remote_branch: master
 google_analytics: ['UA-47035811-1', 'mapzen.com']
 docs_dir: src/metro-extracts
@@ -32,5 +32,6 @@ markdown_extensions:
 
 # Extra variables for templates
 extra:
-  docs_repo_url: https://github.com/mapzen/mapzen-docs
+  project_repo_url: https://github.com/mapzen/metroextractor-cities
+  docs_base_url: https://github.com/mapzen/mapzen-docs/tree/master/metro-extracts
   display_project_name_api_key: false

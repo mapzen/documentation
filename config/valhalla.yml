@@ -1,5 +1,5 @@
 site_name: Valhalla
-repo_url: https://github.com/valhalla/
+repo_url: https://github.com/valhalla/valhalla-docs
 remote_branch: master
 google_analytics: ['UA-47035811-1', 'mapzen.com']
 docs_dir: src/valhalla
@@ -7,7 +7,7 @@ theme: mkdocs
 theme_dir: theme
 site_dir: dist/valhalla
 include_nav: true
-include_next_prev: false # next/prev is in alpha order; we don't want this
+include_next_prev: true
 
 # Determines if a broken link to a page within the documentation is considered
 # a warning or an error (link to a page not listed in the pages setting). Set
@@ -37,6 +37,7 @@ markdown_extensions:
 
 extra:
   site_subtitle: '&middot; navigation &middot; text-to-speech &middot; elevation &middot;'
-  docs_repo_url: https://github.com/valhalla/valhalla-docs
+  project_repo_url: https://github.com/valhalla/
+  docs_base_url: https://github.com/valhalla/valhalla-docs/blob/master
   display_project_name_api_key: true
   exclude_home_contents_in_toc: true

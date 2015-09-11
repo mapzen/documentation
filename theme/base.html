@@ -91,12 +91,14 @@
             {% include 'content.html' %}
           </div>
 
+          {% if config.extra.docs_base_url %}
           <div class='documentation-edit headroom-large'>
-            <a href='{{ config.extra.docs_repo_url }}'>
-              Propose edits to this documentation on GitHub
+            <a href='{{ config.extra.docs_base_url }}/{{ current_page.input_path }}'>
+              Edit this page on GitHub
               <i class='fa fa-2x fa-fw fa-github'></i>
             </a>
           </div>
+          {% endif %}
 
           {% if include_next_prev %}
             <div class='pagination pagination-alt headroom-large'>
