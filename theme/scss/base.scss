@@ -229,6 +229,14 @@ code {
   background-color: #f4f4f4;
 }
 
+// Special case for code spans that are the only child of its parent element
+// They turn into code blocks, but allow for line breaks. See Valhalla API reference
+// for an actual use case. TODO: Consider whether they should also adopt the
+// border and background of other code blocks?
+p > code:first-child:last-child {
+  display: block;
+}
+
 // UPDATED so lighter contrast
 pre {
   padding: 1em;
