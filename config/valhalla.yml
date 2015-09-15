@@ -8,6 +8,7 @@ theme_dir: theme
 site_dir: dist/valhalla
 include_nav: true
 include_next_prev: true
+extra_css: [css/codehilite/mapzen.css]
 
 # Determines if a broken link to a page within the documentation is considered
 # a warning or an error (link to a page not listed in the pages setting). Set
@@ -26,6 +27,7 @@ markdown_extensions:
   - sane_lists
   - nl2br
   - outline
+  - codehilite
   # Set of PyMdown extensions to flesh out GFM-mimicry
   - pymdownx.betterem:
       smart_enable: all

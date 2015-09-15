@@ -31,8 +31,14 @@ get-metro-extracts:
 get-valhalla:
 	@curl -L $(VALHALLA) | tar -zxv -C src && mv src/valhalla-docs-master src/valhalla
 
-get-valhalla:
+get-search:
 	@curl -L $(SEARCH) | tar -zxv -C src && mv src/search-docs-master src/search
+=======
+# Build test docs
+test-docs:
+	@echo Building test documentation...
+	@ln -sf config/test.yml ./mkdocs.yml
+	@mkdocs build --clean # Ensure stale files are cleaned
 
 # Build tangram docs
 tangram:

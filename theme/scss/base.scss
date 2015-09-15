@@ -1,6 +1,7 @@
-@import url(//fonts.googleapis.com/css?family=Source+Sans+Pro:400,300italic,400italic,300,700,700italic);
-@import url(//fonts.googleapis.com/css?family=Open+Sans:400,300italic,400italic,300,700,700italic);
-@import url(//fonts.googleapis.com/css?family=Montserrat);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300italic,400italic,300,700,700italic);
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300italic,400italic,300,700,700italic);
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
 
 // Common Mapzen styles imported from mapzen/blog or mapzen/developer
 // Try not to edit files in common/ so we can easily keep stuff in sync
@@ -177,8 +178,6 @@ nav {
 }
 
 .documentation-edit {
-  border-top: 1px solid #e0e0e0;
-  padding-top: 2em;
   text-align: right;
   line-height: 2em;
 
@@ -219,7 +218,7 @@ hr {
 }
 
 code, kbd, pre, samp {
-  font-family: monospace, serif;
+  font-family: 'Source Code Pro', monospace;
 }
 
 code {
@@ -230,9 +229,17 @@ code {
   background-color: #f4f4f4;
 }
 
+// Special case for code spans that are the only child of its parent element
+// They turn into code blocks, but allow for line breaks. See Valhalla API reference
+// for an actual use case. TODO: Consider whether they should also adopt the
+// border and background of other code blocks?
+p > code:first-child:last-child {
+  display: block;
+}
+
 // UPDATED so lighter contrast
 pre {
-  padding: 0;
+  padding: 1em;
   margin-top: 1.5em;
   margin-bottom: 1.5em;
   border: 3px solid #eee;
@@ -250,8 +257,13 @@ pre {
     rgba(0, 0, 0, 0.02)
   );
   font-size: inherit;
+  // Updated because lack of <code> child element
+  overflow-x: auto;
+  position: relative; // Fixes section anti-headbutt code from intercepting interactions with scrollbar.
+  word-wrap: normal;
 }
 
+/* Note: <code> is not appearing inside <pre> for codehilite blocks */
 pre code {
   position: relative; // Fixes section anti-headbutt code from intercepting interactions with scrollbar.
   margin: 0;

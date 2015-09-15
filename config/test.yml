@@ -1,13 +1,14 @@
-site_name: Metro Extracts
-repo_url: https://github.com/mapzen/mapzen-docs
+site_name: Test
+repo_url: https://github.com/valhalla/valhalla-docs
 remote_branch: master
 google_analytics: ['UA-47035811-1', 'mapzen.com']
-docs_dir: src/metro-extracts
+docs_dir: src/test
 theme: mkdocs
 theme_dir: theme
-site_dir: dist/metro-extracts
+site_dir: dist/test
 include_nav: true
-include_next_prev: false # next/prev is in alpha order; we don't want this
+include_next_prev: true
+extra_css: [css/codehilite/mapzen.css]
 
 # Determines if a broken link to a page within the documentation is considered
 # a warning or an error (link to a page not listed in the pages setting). Set
@@ -31,8 +32,9 @@ markdown_extensions:
   - pymdownx.tasklist
   - pymdownx.tilde
 
-# Extra variables for templates
 extra:
-  project_repo_url: https://github.com/mapzen/metroextractor-cities
-  docs_base_url: https://github.com/mapzen/mapzen-docs/tree/master/metro-extracts
-  display_project_name_api_key: false
+  site_subtitle: '&middot; navigation &middot; text-to-speech &middot; elevation &middot;'
+  project_repo_url: https://github.com/mapzen/mapzen-docs-generator
+  docs_base_url: https://github.com/mapzen/mapzen-docs-generator/blob/master/src/test
+  display_project_name_api_key: true
+  exclude_home_contents_in_toc: true

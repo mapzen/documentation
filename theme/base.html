@@ -73,10 +73,10 @@
 
     <div class='container documentation-nav hidden-print'>
       <div class='row headroom'>
-        <div class='col-xs-12 col-md-7'>
+        <div class='col-xs-12 col-md-8'>
           {% include 'breadcrumbs.html' %}
         </div>
-        <div class='col-xs-12 col-md-5'>
+        <div class='col-xs-12 col-md-4'>
           {% include 'search-form.html' %}
         </div>
       </div>
@@ -101,7 +101,7 @@
           {% endif %}
 
           {% if include_next_prev %}
-            <div class='pagination pagination-alt headroom-large'>
+            <div class='pagination pagination-alt headroom'>
               {% if previous_page %}
                 <a class='pagination-link pagination-previous' rel='next' {% if previous_page %}href='{{ previous_page.url }}'{% endif %}>
                   <i class='fa fa-fw fa-angle-left'></i>
