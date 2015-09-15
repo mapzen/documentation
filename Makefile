@@ -33,7 +33,7 @@ get-valhalla:
 
 get-search:
 	@curl -L $(SEARCH) | tar -zxv -C src && mv src/search-docs-master src/search
-=======
+
 # Build test docs
 test-docs:
 	@echo Building test documentation...
