@@ -32,7 +32,7 @@ get-valhalla:
 	@curl -L $(VALHALLA) | tar -zxv -C src && mv src/valhalla-docs-master src/valhalla
 
 get-search:
-	@curl -L $(SEARCH) | tar -zxv -C src && mv src/search-docs-master src/search
+	@curl -L $(SEARCH) | tar -zxv -C src && mv src/pelias-doc-master src/search
 
 # Build test docs
 test-docs:
