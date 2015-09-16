@@ -15,6 +15,9 @@ include_next_prev: true
 strict: true
 pages:
   - Home: index.md
+  - API Reference:
+    - 'Overview': 'swagger-docs/overview.md'
+    - 'Paths': 'swagger-docs/paths.md'
   #- 'API Reference': 'api-reference.md'
   #- 'Terminology': 'terminology.md'
   #- 'LRM-Valhalla walkthrough': 'lrm-valhalla-walkthrough.md'

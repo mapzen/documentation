@@ -19,7 +19,7 @@ clean-dist:
 	@echo Cleaning out build directory...
 	@rm -rf dist/*/
 
-get: clean-src get-tangram get-metro-extracts get-valhalla
+get: clean-src get-tangram get-metro-extracts get-valhalla get-search
 
 # Get individual sources docs
 get-tangram:
