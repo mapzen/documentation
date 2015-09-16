@@ -1,0 +1,52 @@
+site_name: Mapzen Search
+repo_url: https://github.com/pelias/pelias-doc
+remote_branch: master
+google_analytics: ['UA-47035811-1', 'mapzen.com']
+docs_dir: src/search
+theme: mkdocs
+theme_dir: theme
+site_dir: dist/search
+include_nav: true
+include_next_prev: true
+
+# Determines if a broken link to a page within the documentation is considered
+# a warning or an error (link to a page not listed in the pages setting). Set
+# to true to halt processing when a broken link is found, false prints a warning.
+strict: true
+pages:
+  - Home: index.md
+  - API Reference:
+    - 'Overview': 'swagger-docs/overview.md'
+    - 'Paths': 'swagger-docs/paths.md'
+  - Getting Started:
+    - 'Overview': 'getting-started/000-getting-started.md'
+    - 'API Keys': 'getting-started/001-api.md'
+    - 'Search & Autocomplete': 'getting-started/002-search.md'
+    - 'Reverse Geocoding': 'getting-started/003-reverse.md'
+    - 'Data & Licensing': 'getting-started/004-data.md'
+  #- 'API Reference': 'api-reference.md'
+  #- 'Terminology': 'terminology.md'
+  #- 'LRM-Valhalla walkthrough': 'lrm-valhalla-walkthrough.md'
+
+markdown_extensions:
+  - smarty
+  - toc:
+      permalink: ' ' # Blank space; this marker is styled in CSS.
+  - sane_lists
+  - nl2br
+  - outline
+  # Set of PyMdown extensions to flesh out GFM-mimicry
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.githubemoji
+  - pymdownx.magiclink
+  - pymdownx.superfences
+  - pymdownx.tasklist
+  - pymdownx.tilde
+
+extra:
+  site_subtitle: 'High-performance geocoding and place search service'
+  project_repo_url: https://github.com/pelias/
+  docs_base_url: https://github.com/pelias/pelias-doc/blob/master
+  display_project_name_api_key: true
+  exclude_home_contents_in_toc: true
