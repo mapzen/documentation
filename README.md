@@ -75,4 +75,9 @@ We've heavily customized the MkDocs theme for use with Mapzen documentation. Res
 
 ### Markdown formatting tweaks for compatibility with GitHub
 
+- Blank lines between different blocks of content will be your best friend(s). So, include a blank line before and after bulleted lists, numbered lists, code blocks, images...
+- If a code block or image is supposed to be part of a list, remember the blank lines before and after, and _also_ indent it **four spaces**. Using or mixing tabs might cause problems. Python Markdown is a lot pickier about this than GitHub-flavored Markdown, causing lists to nest improperly or break numbering altogether.
 - Good luck!
+
+
+
