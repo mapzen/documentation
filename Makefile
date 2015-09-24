@@ -8,26 +8,24 @@ PATH := $(shell pwd)/env/bin:$(PATH)
 SHELL := /bin/bash # required for OSX
 PYTHONPATH := packages:$(PYTHONPATH)
 
-# Reset entire source directory
-clean-src:
-	@echo Cleaning out source directory...
-	@rm -rf src/*/
-
 # Reset entire build directory
 clean-dist:
 	@echo Cleaning out build directory...
 	@rm -rf dist/*/
 
-get: clean-src get-tangram get-metro-extracts get-valhalla
+get: get-tangram get-metro-extracts get-valhalla
 
 # Get individual sources docs
 get-tangram:
+	@rm -rf src/tangram
 	@curl -L $(TANGRAM) | tar -zxv -C src --strip-components=1 tangram-docs-gh-pages/pages && mv src/pages src/tangram
 
 get-metro-extracts:
+	@rm -rf src/metro-extracts
 	@curl -L $(MAPZEN) | tar -zxv -C src --strip-components=1 mapzen-docs-master/metro-extracts
 
 get-valhalla:
+	@rm -rf src/valhalla
 	@curl -L $(VALHALLA) | tar -zxv -C src && mv src/valhalla-docs-master src/valhalla
 
 # Build test docs

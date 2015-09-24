@@ -18,7 +18,8 @@ pages:
   - Home: index.md
   - 'API Reference': 'api-reference.md'
   - 'Terminology': 'terminology.md'
-  - 'LRM-Valhalla walkthrough': 'lrm-valhalla-walkthrough.md'
+  - 'Add Valhalla routing to a map': 'add-routing-to-a-map.md'
+  - 'Elevation service': 'elevation-service.md'
 
 markdown_extensions:
   - smarty
