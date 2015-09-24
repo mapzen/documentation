@@ -2,6 +2,7 @@
 TANGRAM = https://github.com/tangrams/tangram-docs/archive/gh-pages.tar.gz
 MAPZEN = https://github.com/mapzen/mapzen-docs/archive/master.tar.gz
 VALHALLA = https://github.com/valhalla/valhalla-docs/archive/master.tar.gz
+SEARCH = https://github.com/pelias/pelias-doc/archive/master.tar.gz
 
 # Add local env/bin to PATH
 PATH := $(shell pwd)/env/bin:$(PATH)
@@ -13,7 +14,7 @@ clean-dist:
 	@echo Cleaning out build directory...
 	@rm -rf dist/*/
 
-get: get-tangram get-metro-extracts get-valhalla
+get: get-tangram get-metro-extracts get-valhalla get-search
 
 # Get individual sources docs
 get-tangram:
@@ -27,6 +28,10 @@ get-metro-extracts:
 get-valhalla:
 	@rm -rf src/valhalla
 	@curl -L $(VALHALLA) | tar -zxv -C src && mv src/valhalla-docs-master src/valhalla
+
+get-search:
+	@rm -rf src/search
+	@curl -L $(SEARCH) | tar -zxv -C src && mv src/pelias-doc-master src/search
 
 # Build test docs
 test-docs:
@@ -52,7 +57,13 @@ valhalla:
 	@ln -sf config/valhalla.yml ./mkdocs.yml
 	@mkdocs build --clean # Ensure stale files are cleaned
 
-all: clean-dist tangram metro-extracts valhalla
+# Build Search/Pelias docs
+search:
+	@echo Building Search/Pelias documentation...
+	@ln -sf config/search.yml ./mkdocs.yml
+	@mkdocs build --clean # Ensure stale files are cleaned
+
+all: clean-dist tangram metro-extracts valhalla search
 	# Compress all HTML files - controls Jinja whitespace
 	@find dist -name \*.html -ls -exec htmlmin --keep-optional-attribute-quotes {} {} \;
 
