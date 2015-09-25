@@ -18,7 +18,7 @@ pages:
   - Home: index.md
   - 'API Reference': 'api-reference.md'
   - 'Terminology': 'terminology.md'
-  - 'Add Valhalla routing to a map': 'add-routing-to-a-map.md'
+  - 'Add Mapzen Turn-by-Turn routing to a map': 'add-routing-to-a-map.md'
   - 'Elevation service': 'elevation-service.md'
 
 markdown_extensions:
