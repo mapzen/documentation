@@ -15,10 +15,10 @@ include_next_prev: true
 strict: true
 pages:
   - Home: index.md
-  - API Reference:
-    - 'Overview': 'swagger-docs/overview.md'
-    - 'Paths': 'swagger-docs/paths.md'
-    - 'Definitions': 'swagger-docs/definitions.md'
+#  - API Reference:
+#    - 'Overview': 'swagger-docs/overview.md'
+#    - 'Paths': 'swagger-docs/paths.md'
+#    - 'Definitions': 'swagger-docs/definitions.md'
   - Getting Started:
     - 'Overview': 'getting-started/000-getting-started.md'
     - 'API Keys': 'getting-started/001-api.md'
