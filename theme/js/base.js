@@ -20,6 +20,9 @@ $(document).ready(function () {
   var $searchResults = $('#mkdocs-search-results')
   var $searchInput = $('#mkdocs-search-query')
   var $nav = $('nav')
+  var $toc = $('#toc')
+  var $docContent = $('.documentation-content').parent()
+  var affixState = false
 
   if (search_term) {
     $searchInput.val(search_term)
@@ -144,21 +147,34 @@ $(document).ready(function () {
   $('table').addClass('table table-striped');
 
   // Affix for side nav bar
-  $('#toc').affix({
-    offset: {
-      top: function () {
-        // Calculate the top offset
-        return $docContainer.offset().top - $nav.height()
-      },
-      bottom: function () {
-        return $(document).height() - $docContainer.offset().top - $docContainer.outerHeight(true)
+  // Don't turn on affix if the TOC height is greater than
+  // document content, to prevent positioning bugs
+  if ($toc.height() < $docContent.height()) {
+    $toc.affix({
+      offset: {
+        top: function () {
+          return $docContainer.offset().top - $nav.height()
+        },
+        bottom: function () {
+            return $(document).height() - $docContainer.offset().top - $docContainer.outerHeight(true)
+        }
       }
-    }
-  })
+    })
+    // Record that affix is on
+    affixState = true
+  }
 
   $('.toc-subnav-toggle').on('click', function (e) {
     e.preventDefault()
-    $(this).next('ul').toggleClass('toc-expand')
+    var $el = $(this).next('ul')
+    $el.toggleClass('toc-expand')
+
+    // Recalc affix position after expand transition finishes
+    if (affixState === true) {
+      $el.one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function (e) {
+        $toc.affix('checkPosition')
+      })
+    }
   })
 
   // Guarantee only one active thing is up
