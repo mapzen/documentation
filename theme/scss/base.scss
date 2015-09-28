@@ -93,6 +93,14 @@ nav {
     background-color: #fff;
   }
 
+  // Override default img styles for .emoji
+  img.emoji {
+    padding: 0;
+    background-color: transparent;
+    line-height: inherit;
+    max-width: initial;
+  }
+
   // Control weird spacing on <p>'s generated inside lists
   li > p {
     margin-bottom: 0;
@@ -306,7 +314,10 @@ h6 code {
   background-color: inherit;
 }
 
-// Table
+// Tables
+.table {
+  border: 2px solid $table-border-color;
+}
 .table th {
   font-family: $docs-heading-font;
 }
