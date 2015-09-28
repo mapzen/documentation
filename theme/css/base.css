@@ -6390,8 +6390,7 @@ nav {
     display: inline;
     padding: 4px;
     line-height: 1.428571429;
-    background-color: #fff;
-    margin: 20px auto 30px auto; }
+    background-color: #fff; }
   .documentation-content li > p {
     margin-bottom: 0; }
   .documentation-content li > p + p {
@@ -6427,6 +6426,12 @@ nav {
     .documentation-content > section:first-child > h5:first-child,
     .documentation-content > section:first-child > h6:first-child {
       margin-top: 0; }
+  .documentation-content .caption {
+    margin-top: -0.8em;
+    font-size: 0.9em;
+    font-weight: 300;
+    font-style: italic;
+    color: #666; }
 
 .documentation-edit {
   text-align: right;
@@ -6471,6 +6476,11 @@ code {
   color: #666;
   background-color: #f4f4f4; }
 
+/*
+p > code:first-child:last-child {
+  display: block;
+}
+*/
 pre {
   padding: 1em;
   margin-top: 1.5em;
