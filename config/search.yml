@@ -15,17 +15,16 @@ include_next_prev: true
 strict: true
 pages:
   - Home: index.md
-  - Getting Started:
-    - 'Overview': 'get-started.md'
-    - 'API Keys': 'api-keys-rate-limits.md'
-    - 'Search': 'search.md'
-    - 'Reverse Geocoding': 'reverse.md'
-    - 'Autocomplete': 'autocomplete.md'
-    - 'Place': 'place.md'
-    - 'API Responses': 'response.md'
-    - 'Data Sources': 'data-sources.md'
-    - 'Loading data from the browser': 'use-cors.md'
-    - 'Transitioning from Pelias Beta': 'transition-from-beta.md'
+  - 'Get started': 'get-started.md'
+  - 'API keys and rate limits': 'api-keys-rate-limits.md'
+  - 'Search': 'search.md'
+  - 'Reverse geocoding': 'reverse.md'
+  - 'Autocomplete': 'autocomplete.md'
+  - 'Place': 'place.md'
+  - 'API responses': 'response.md'
+  - 'Data sources': 'data-sources.md'
+  - 'Load data from the browser': 'use-cors.md'
+  - 'Transition from Pelias beta': 'transition-from-beta.md'
 
 markdown_extensions:
   - smarty
