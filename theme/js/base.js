@@ -144,7 +144,7 @@ $(document).ready(function () {
 
   // Highlight.js
   hljs.initHighlightingOnLoad();
-  $('table').addClass('table table-striped');
+  $('table').addClass('table');
 
   // Affix for side nav bar
   // Don't turn on affix if the TOC height is greater than

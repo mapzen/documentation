@@ -321,9 +321,13 @@ h6 code {
 // Tables
 .table {
   border: 2px solid $table-border-color;
-}
-.table th {
-  font-family: $docs-heading-font;
+
+  th {
+    font-family: $docs-heading-font;
+  }
+  td, th {
+    border-right: 1px dotted $table-border-color;
+  }
 }
 
 // Pagination, if exists - lower margin override

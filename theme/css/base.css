@@ -6284,7 +6284,7 @@ footer h5 {
     transition: box-shadow 100ms ease-in-out; }
   .toc li.toc-top-level {
     font-weight: bold; }
-  .toc li.toc-current > a {
+  .toc li.toc-top-level.toc-current > a {
     background-color: #385d5c;
     color: white; }
 
@@ -6321,8 +6321,11 @@ ul.nav > li:first-child:last-child {
   .toc-subnav a:hover,
   .toc-subnav a:focus {
     background-color: #eee; }
-  .toc-subnav li.toc-current > a {
-    box-shadow: inset 2px 0 0 #385d5c; }
+  .toc-subnav li.toc-current.active > a {
+    box-shadow: none;
+    background-color: transparent;
+    color: inherit; }
+  .toc-subnav li.toc-current:not(.active) > a,
   .toc-subnav li.active > a {
     background-color: #eee;
     box-shadow: inset 4px 0 0 #385d5c; }
@@ -6534,9 +6537,10 @@ h6 code {
 
 .table {
   border: 2px solid #ddd; }
-
-.table th {
-  font-family: "Montserrat", "Playfair Display", sans-serif; }
+  .table th {
+    font-family: "Montserrat", "Playfair Display", sans-serif; }
+  .table td, .table th {
+    border-right: 1px dotted #ddd; }
 
 .pagination {
   margin-bottom: 0; }

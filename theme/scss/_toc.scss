@@ -61,7 +61,7 @@
 
   // State and interaction
   // If current, display box-shadow & background color
-  li.toc-current > a {
+  li.toc-top-level.toc-current > a {
     background-color: $mz-darkblue;
     color: white;
   }
@@ -121,13 +121,16 @@ ul.nav > li:first-child:last-child {
     background-color: #eee;
   }
 
-  // Current sub entry
-  // The difference is a slightly smaller box-shadow
-  li.toc-current > a {
-    box-shadow: inset 2px 0 0 #385d5c;
+  // Some overrides on active styling
+  //  TODO: better
+  li.toc-current.active > a {
+    box-shadow: none;
+    background-color: transparent;
+    color: inherit;
   }
 
   // Actual active section
+  li.toc-current:not(.active) > a,
   li.active > a {
     background-color: #eee;
     box-shadow: inset 4px 0 0 #385d5c;
