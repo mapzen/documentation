@@ -1,7 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300italic,400italic,300,700,700italic);
-@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600);
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300italic,400italic,300,700,700italic);
-@import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300italic,400italic,300,700,700italic|Source+Code+Pro:400,600|Open+Sans:400,300italic,400italic,300,700,700italic|Playfair+Display:700|Montserrat);
 
 // Common Mapzen styles imported from mapzen/blog or mapzen/developer
 // Try not to edit files in common/ so we can easily keep stuff in sync
@@ -50,14 +47,19 @@ nav {
   text-align: center;
   font-family: $docs-heading-font;
   color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 180px;
+  padding: 40px 20px;
 
   h1 {
-    margin: 1.5em 0;
+    font-family: 'Playfair Display';
   }
 
-  h1 + p {
-    margin-top: -45px;
-    margin-bottom: 45px;
+  p {
+    margin-top: 1em;
   }
 }
 

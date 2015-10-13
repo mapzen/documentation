@@ -53,7 +53,7 @@ metro-extracts:
 
 # Build valhalla docs
 valhalla:
-	@echo Building Turn-by-Turn (Valhalla) documentation...
+	@echo Building Turn-by-Turn [Valhalla] documentation...
 	@ln -sf config/valhalla.yml ./mkdocs.yml
 	@mkdocs build --clean # Ensure stale files are cleaned
 
@@ -65,7 +65,7 @@ elevation:
 
 # Build Search/Pelias docs
 search:
-	@echo Building Search (Pelias) documentation...
+	@echo Building Search [Pelias] documentation...
 	@ln -sf config/search.yml ./mkdocs.yml
 	@mkdocs build --clean # Ensure stale files are cleaned
 
