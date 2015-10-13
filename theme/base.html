@@ -108,6 +108,12 @@
                   <span class='pagination-link-text'>{{ previous_page.title }}</span>
                 </a>
               {% endif %}
+
+              <a class='pagination-link pagination-top' href='#'>
+                <i class='fa fa-fw fa-angle-up'></i>
+                <span class='pagination-link-text'>Top</span>
+              </a>
+
               {% if next_page %}
                 <a class='pagination-link pagination-next' rel='prev' {% if next_page %}href='{{ next_page.url }}'{% endif %}>
                   <span class='pagination-link-text'>{{ next_page.title }}</span>

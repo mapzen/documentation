@@ -46,9 +46,10 @@ nav {
 }
 
 .documentation-hero {
-  background-color: $mz-lightgray;
+  background-color: $mz-darkblue; //$mz-lightgray;
   text-align: center;
   font-family: $docs-heading-font;
+  color: white;
 
   h1 {
     margin: 1.5em 0;
@@ -325,6 +326,18 @@ h6 code {
 // Pagination, if exists - lower margin override
 .pagination {
   margin-bottom: 0;
+}
+
+// Back to top test
+.pagination-top {
+  text-align: center;
+  width: 100px !important;
+  .fa {
+    position: static;
+  }
+  .pagination-link-text {
+    display: inline;
+  }
 }
 
 // Admonition styles, copied from MkDocs theme

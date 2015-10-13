@@ -6345,9 +6345,10 @@ nav {
     font: normal normal normal 14px/1 FontAwesome; }
 
 .documentation-hero {
-  background-color: #f8f8f8;
+  background-color: #385d5c;
   text-align: center;
-  font-family: "Montserrat", "Playfair Display", sans-serif; }
+  font-family: "Montserrat", "Playfair Display", sans-serif;
+  color: white; }
   .documentation-hero h1 {
     margin: 1.5em 0; }
   .documentation-hero h1 + p {
@@ -6537,6 +6538,14 @@ h6 code {
 
 .pagination {
   margin-bottom: 0; }
+
+.pagination-top {
+  text-align: center;
+  width: 100px !important; }
+  .pagination-top .fa {
+    position: static; }
+  .pagination-top .pagination-link-text {
+    display: inline; }
 
 .admonition {
   padding: 15px;
