@@ -62,8 +62,8 @@
   // State and interaction
   // If current, display box-shadow & background color
   li.toc-current > a {
-    background-color: #eee;
-    box-shadow: inset 4px 0 0 #385d5c;
+    background-color: $mz-darkblue;
+    color: white;
   }
 }
 
@@ -129,8 +129,8 @@ ul.nav > li:first-child:last-child {
 
   // Actual active section
   li.active > a {
-    background-color: $mz-darkblue;
-    color: white;
+    background-color: #eee;
+    box-shadow: inset 4px 0 0 #385d5c;
   }
 
   // Sub menu indents

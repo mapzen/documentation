@@ -6285,8 +6285,8 @@ footer h5 {
   .toc li.toc-top-level {
     font-weight: bold; }
   .toc li.toc-current > a {
-    background-color: #eee;
-    box-shadow: inset 4px 0 0 #385d5c; }
+    background-color: #385d5c;
+    color: white; }
 
 @media (min-width: 992px) {
   .toc .nav > .active > ul {
@@ -6324,8 +6324,8 @@ ul.nav > li:first-child:last-child {
   .toc-subnav li.toc-current > a {
     box-shadow: inset 2px 0 0 #385d5c; }
   .toc-subnav li.active > a {
-    background-color: #385d5c;
-    color: white; }
+    background-color: #eee;
+    box-shadow: inset 4px 0 0 #385d5c; }
   .toc-subnav .toc-subnav > li > a {
     padding-left: 30px; }
 
