@@ -53,17 +53,23 @@ metro-extracts:
 
 # Build valhalla docs
 valhalla:
-	@echo Building Valhalla documentation...
+	@echo Building Turn-by-Turn (Valhalla) documentation...
 	@ln -sf config/valhalla.yml ./mkdocs.yml
+	@mkdocs build --clean # Ensure stale files are cleaned
+
+# Build elevation service docs
+elevation:
+	@echo Building Elevation Service documentation...
+	@ln -sf config/elevation.yml ./mkdocs.yml
 	@mkdocs build --clean # Ensure stale files are cleaned
 
 # Build Search/Pelias docs
 search:
-	@echo Building Search/Pelias documentation...
+	@echo Building Search (Pelias) documentation...
 	@ln -sf config/search.yml ./mkdocs.yml
 	@mkdocs build --clean # Ensure stale files are cleaned
 
-all: clean-dist tangram metro-extracts valhalla search
+all: clean-dist tangram metro-extracts valhalla search elevation
 	# Compress all HTML files - controls Jinja whitespace
 	@find dist -name \*.html -ls -exec htmlmin --keep-optional-attribute-quotes {} {} \;
 

@@ -1,13 +1,13 @@
-site_name: Mapzen Turn-by-Turn
+site_name: Elevation Service
 repo_url: https://github.com/valhalla/valhalla-docs
 remote_branch: master
 google_analytics: ['UA-47035811-1', 'mapzen.com']
 docs_dir: src/valhalla
 theme: mkdocs
 theme_dir: theme
-site_dir: dist/turn-by-turn
+site_dir: dist/elevation
 include_nav: true
-include_next_prev: true
+include_next_prev: false
 extra_css: [css/codehilite/mapzen.css]
 
 # Determines if a broken link to a page within the documentation is considered
@@ -16,10 +16,7 @@ extra_css: [css/codehilite/mapzen.css]
 strict: true
 pages:
   - Home: index.md
-  - 'API Reference': 'api-reference.md'
-  - 'Terminology': 'terminology.md'
-  - 'Add Mapzen Turn-by-Turn routing to a map': 'add-routing-to-a-map.md'
-  # - 'Elevation service': 'elevation-service.md'
+  - 'Elevation service': 'elevation-service.md'
 
 markdown_extensions:
   - smarty
@@ -39,7 +36,7 @@ markdown_extensions:
   - pymdownx.tilde
 
 extra:
-  site_subtitle: 'Add routing and navigation to your web and mobile apps.'
+  site_subtitle: 'Gotta get up to get down.'
   project_repo_url: https://github.com/valhalla/
   docs_base_url: https://github.com/valhalla/valhalla-docs/blob/master
   display_project_name_api_key: true
