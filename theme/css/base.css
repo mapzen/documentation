@@ -6365,6 +6365,8 @@ nav {
 .documentation-content {
   line-height: 1.8;
   font-size: 16px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
   /*
   // allows hash links to navigate to proper location
   h1[id]:before,

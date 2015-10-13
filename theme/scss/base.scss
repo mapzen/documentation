@@ -74,6 +74,9 @@ nav {
   line-height: 1.8;
   font-size: 16px;
 
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+
   // Structural spacing
   section > p,
   section > ol,
