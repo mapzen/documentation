@@ -45,7 +45,8 @@ markdown_extensions:
   - pymdownx.tilde
 
 extra:
-  site_subtitle: 'High-performance geocoding and place search service'
+  site_subtitle: 'Find places and addresses with this geographic search service built on open tools and open data.'
+  #'High-performance geocoding and place search service'
   project_repo_url: https://github.com/pelias/
   docs_base_url: https://github.com/pelias/pelias-doc/blob/master
   display_project_name_api_key: true

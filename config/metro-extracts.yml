@@ -33,6 +33,7 @@ markdown_extensions:
 
 # Extra variables for templates
 extra:
+  site_subtitle: Download city-sized portions of OpenStreetMap data in a variety of formats.
   project_repo_url: https://github.com/mapzen/metroextractor-cities
   docs_base_url: https://github.com/mapzen/mapzen-docs/tree/master/metro-extracts
   display_project_name_api_key: false
