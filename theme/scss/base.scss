@@ -160,6 +160,36 @@ nav {
     }
   }
 
+  @media (max-width: 767px) {
+    h1 {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 300;
+      color: $mz-darkblue;
+      font-size: 40px;
+    }
+
+    h2 {
+      color: #666;
+      font-size: 28px;
+    }
+
+    h3 {
+      color: #d4645c;
+      font-size: 20px;
+    }
+
+    h4 {
+      color: $mz-darkblue;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    h5, h6 {
+      color: #666;
+      font-size: 16px;
+    }
+  }
+
   /*
   // allows hash links to navigate to proper location
   h1[id]:before,

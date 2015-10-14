@@ -6438,6 +6438,25 @@ nav {
     .documentation-content h5, .documentation-content h6 {
       color: #666;
       font-size: 18px; } }
+  @media (max-width: 767px) {
+    .documentation-content h1 {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 300;
+      color: #385d5c;
+      font-size: 40px; }
+    .documentation-content h2 {
+      color: #666;
+      font-size: 28px; }
+    .documentation-content h3 {
+      color: #d4645c;
+      font-size: 20px; }
+    .documentation-content h4 {
+      color: #385d5c;
+      font-size: 16px;
+      font-weight: 700; }
+    .documentation-content h5, .documentation-content h6 {
+      color: #666;
+      font-size: 16px; } }
   .documentation-content section {
     margin-top: -50px;
     padding-top: 50px; }
