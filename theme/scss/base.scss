@@ -4,9 +4,8 @@
 // Try not to edit files in common/ so we can easily keep stuff in sync
 @import 'common/variables';
 @import 'variables'; // Documentation-specific Bootstrap variables
-
-@import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
-
+//@import 'bootstrap-custom'; // Some modules here are enabled or disabled differently, actually
+@import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/';
 @import 'common/helpers';
 @import 'common/navbar';
 @import 'common/footer';
@@ -57,6 +56,7 @@ nav {
 
   h1 {
     font-family: 'Playfair Display';
+    padding-top: 30px,
   }
 
   p {
@@ -124,24 +124,70 @@ nav {
 
   // Headings
   h1, h2, h3, h4, h5, h6 {
-    position: relative;
-    font-family: $docs-heading-font;
-    font-weight: 400;
-    margin-bottom: 0.6em;
+      position: relative;
+      font-family: $docs-heading-font;
+      font-weight: 400;
+      margin-bottom: 0.6em;
+      line-height: 1.2em;
+    }
+  @media (min-width: 767px) {
+    h1 {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 300;
+      color: $mz-darkblue;
+      font-size: 48px;
+    }
+
+    h2 {
+      color: #666;
+      font-size: 32px;
+    }
+
+    h3 {
+      color: #d4645c;
+      font-size: 24px;
+    }
+
+    h4 {
+      color: $mz-darkblue;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    h5, h6 {
+      color: #666;
+      font-size: 18px;
+    }
   }
 
-  h1 {
-    font-weight: 700;
-    font-size: 42px;
-    color: #d4645c;
-  }
+  @media (max-width: 767px) {
+    h1 {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 300;
+      color: $mz-darkblue;
+      font-size: 40px;
+    }
 
-  h2, h3 {
-    color: #666;
-  }
+    h2 {
+      color: #666;
+      font-size: 28px;
+    }
 
-  h4, h5, h6 {
-    color: #d4645c;
+    h3 {
+      color: #d4645c;
+      font-size: 20px;
+    }
+
+    h4 {
+      color: $mz-darkblue;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    h5, h6 {
+      color: #666;
+      font-size: 16px;
+    }
   }
 
   /*
@@ -327,6 +373,9 @@ h6 code {
 
   th {
     font-family: $docs-heading-font;
+    color: $mz-darkblue;
+    font-size: 18px;
+    font-weight: 700;
   }
   td, th {
     border-right: 1px dotted $table-border-color;
