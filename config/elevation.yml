@@ -36,7 +36,7 @@ markdown_extensions:
   - pymdownx.tilde
 
 extra:
-  site_subtitle: 'Gotta get up to get down.'
+  site_subtitle: 'Take your map to new heights.'
   project_repo_url: https://github.com/valhalla/
   docs_base_url: https://github.com/valhalla/valhalla-docs/blob/master
   display_project_name_api_key: true
