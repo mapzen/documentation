@@ -25,6 +25,10 @@ get-metro-extracts:
 	@rm -rf src/metro-extracts
 	@curl -L $(MAPZEN) | tar -zxv -C src --strip-components=1 mapzen-docs-master/metro-extracts
 
+get-vector-tiles:
+	@rm -rf src/vector-tiles
+	@curl -L $(MAPZEN) | tar -zxv -C src --strip-components=1 mapzen-docs-master/vector-tiles
+
 get-valhalla:
 	@rm -rf src/valhalla
 	@curl -L $(VALHALLA) | tar -zxv -C src && mv src/valhalla-docs-master src/valhalla
@@ -51,6 +55,12 @@ metro-extracts:
 	@ln -sf config/metro-extracts.yml ./mkdocs.yml
 	@mkdocs build --clean # Ensure stale files are cleaned
 
+# Build vector-tiles docs
+vector-tiles:
+	@echo Building Vector Tiles documentation...
+	@ln -sf config/vector-tiles.yml ./mkdocs.yml
+	@mkdocs build --clean # Ensure stale files are cleaned
+
 # Build valhalla docs
 valhalla:
 	@echo Building Turn-by-Turn [Valhalla] documentation...
@@ -69,7 +79,7 @@ search:
 	@ln -sf config/search.yml ./mkdocs.yml
 	@mkdocs build --clean # Ensure stale files are cleaned
 
-all: clean-dist tangram metro-extracts valhalla search elevation
+all: clean-dist tangram metro-extracts vector-tiles valhalla search elevation
 	# Compress all HTML files - controls Jinja whitespace
 	@find dist -name \*.html -ls -exec htmlmin --keep-optional-attribute-quotes {} {} \;
 
