@@ -111,7 +111,7 @@ ul.nav > li:first-child:last-child {
   // because the exact height of the subnav is unknown.
   // This is pretty hacky, actually.
   &.toc-expand {
-    max-height: 1000px;
+    max-height: 10000px;
   }
 
   // Link states and interaction inside of a sub-nav
