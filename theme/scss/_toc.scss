@@ -46,7 +46,7 @@
     display: block;
     padding: 5px 15px; // Right-left padding matches Bootstrap .nav
     z-index: 1;
-    color: #333;
+    color: $mz-darkblue;
     text-decoration: none;
 
     -webkit-transition: box-shadow 100ms ease-in-out;
@@ -119,6 +119,7 @@ ul.nav > li:first-child:last-child {
   a:hover,
   a:focus {
     background-color: #eee;
+    color: #6ea0a4;
   }
 
   // Some overrides on active styling
