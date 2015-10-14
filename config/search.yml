@@ -25,6 +25,7 @@ pages:
   - 'Data sources': 'data-sources.md'
   - 'Load data from the browser': 'use-cors.md'
   - 'Terminology': 'glossary.md'
+  - 'HTTP status codes': 'http-status-codes.md'
   - 'Transition from Pelias beta': 'transition-from-beta.md'
 
 markdown_extensions:
