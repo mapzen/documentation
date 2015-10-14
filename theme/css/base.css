@@ -6314,7 +6314,7 @@ ul.nav > li:first-child:last-child {
   -moz-transition: max-height 200ms ease-in-out;
   transition: max-height 200ms ease-in-out; }
   .toc-subnav.toc-expand {
-    max-height: 1000px; }
+    max-height: 10000px; }
   .toc-subnav a:hover,
   .toc-subnav a:focus {
     background-color: #eee; }
