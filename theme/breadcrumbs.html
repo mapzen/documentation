@@ -4,21 +4,25 @@
   {# Top-level project breadcrumb. #}
   {# Is labeled 'active' if current page is project homepage. #}
   {# Creates link to project homepage if currently on a sub-page or nav is included. #}
-  <li{% if current_page and current_page.is_homepage %} class='active'{% endif %}>{% if page_title or include_nav %}<a href='{{ homepage_url }}'>{% endif %}{{ site_name }}{% if page_title or include_nav %}</a>{% endif %}</li>
+  {% if current_page and current_page.is_homepage %}
+    <li class='active'>{{ site_name }}</li>
+  {% else %}
+    <li>{% if page_title or include_nav %}<a href='{{ homepage_url }}'>{% endif %}{{ site_name }}{% if page_title or include_nav %}</a>{% endif %}</li>
 
-  {# Navigation category breadcrumb. #}
-  {% for nav_item in nav %}
-    {% if nav_item.active %}
-      <li class='active'>{{ nav_item.title }}</li>
+    {# Navigation category breadcrumb. #}
+    {% for nav_item in nav %}
+      {% if nav_item.active %}
+        <li class='active'>{{ nav_item.title }}</li>
 
-      {# Sub-page breadcrumb. #}
-      {# Displays only if it exists. #}
-      {# Occurs inside this loop so it has access to nav_item.title #}
-      {% if page_title and page_title != nav_item.title %}
-        <li class='active'>{% if canonical_url %}<a href='{{ canonical_url }}'>{% endif %}{{ page_title }}{% if canonical_url %}</a>{% endif %}</li>
+        {# Sub-page breadcrumb. #}
+        {# Displays only if it exists. #}
+        {# Occurs inside this loop so it has access to nav_item.title #}
+        {% if page_title and page_title != nav_item.title %}
+          <li class='active'>{% if canonical_url %}<a href='{{ canonical_url }}'>{% endif %}{{ page_title }}{% if canonical_url %}</a>{% endif %}</li>
+        {% endif %}
+
       {% endif %}
-
-    {% endif %}
-  {% endfor %}
+    {% endfor %}
+  {% endif %}
 
 </ol>
