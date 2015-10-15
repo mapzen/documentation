@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/mapzen/mapzen-docs-generator",
   "dependencies": {
-    "bootstrap-sass": "^3.3.5",
-    "ui": "git+https://github.com/mapzen/ui.git"
+    "bootstrap-sass": "^3.3.5"
   }
 }

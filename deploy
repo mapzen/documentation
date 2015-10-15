@@ -4,4 +4,3 @@ make get
 make all
 
 aws s3 sync dist s3://static-$1.mapzen.com/documentation/
-# mv dist/* $CIRCLE_ARTIFACTS/
