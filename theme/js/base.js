@@ -42,13 +42,13 @@ $(document).ready(function () {
         var list = $searchResults.find('article')
 
         if (list.length > 0) {
-          var highlight = function (text, focus) {
-            var r = RegExp('(' + focus + ')', 'gi');
-            return text.replace(r, '<strong>$1</strong>');
-          }
+          // var highlight = function (text, focus) {
+          //   var r = RegExp('(' + focus + ')', 'gi');
+          //   return text.replace(r, '<strong>$1</strong>');
+          // }
 
-          var html = $searchResults.html()
-          $searchResults.html(highlight(html, input))
+          // var html = $searchResults.html()
+          // $searchResults.html(highlight(html, input))
 
           // Now reapply selection
           if (selectedPosition) {
