@@ -13,6 +13,11 @@ include_next_prev: false # next/prev is in alpha order; we don't want this
 # a warning or an error (link to a page not listed in the pages setting). Set
 # to true to halt processing when a broken link is found, false prints a warning.
 strict: true
+pages:
+  - Home: index.md
+  - 'Use the vector tile service': 'use-service.md'
+  - 'Display vector tiles in a map': 'display-tiles.md'
+  - 'Layers in the vector tile service': 'layers.md'
 
 markdown_extensions:
   - smarty
@@ -33,7 +38,7 @@ markdown_extensions:
 
 # Extra variables for templates
 extra:
-  site_subtitle: Add open geospatial data to your applications with the vector tile map service.
+  site_subtitle: 'Add open geospatial data to your applications with the vector tile map service.'
   project_repo_url: https://github.com/mapzen/vector-datasource
   docs_base_url: https://github.com/mapzen/mapzen-docs/tree/master/vector-tiles
   display_project_name_api_key: false
