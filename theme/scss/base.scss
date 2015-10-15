@@ -332,14 +332,22 @@ pre {
   // Updated because lack of <code> child element
   overflow-x: auto;
   position: relative; // Fixes section anti-headbutt code from intercepting interactions with scrollbar.
-  word-wrap: normal;
+
+  // Wrapping needs some work
+  word-wrap: normal; // Just this prevents wrapping
+
+  // No matter what, enforce wrapping for print
+  @media print {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
 }
 
 /* Note: <code> is not appearing inside <pre> for codehilite blocks */
 pre code {
   position: relative; // Fixes section anti-headbutt code from intercepting interactions with scrollbar.
   margin: 0;
-  padding: 1em !important; /* overwrite .hljs padding */
+ // padding: 1em !important; /* overwrite .hljs padding */
   white-space: pre;
   word-wrap: normal;
   background-color: transparent;

@@ -6540,13 +6540,15 @@ pre {
   overflow-x: auto;
   position: relative;
   word-wrap: normal; }
+  @media print {
+    pre {
+      word-break: break-word;
+      overflow-wrap: break-word; } }
 
 /* Note: <code> is not appearing inside <pre> for codehilite blocks */
 pre code {
   position: relative;
   margin: 0;
-  padding: 1em !important;
-  /* overwrite .hljs padding */
   white-space: pre;
   word-wrap: normal;
   background-color: transparent; }
