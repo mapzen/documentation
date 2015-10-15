@@ -96,4 +96,7 @@ env:
 	@npm install
 	# @env/bin/pip install -e extensions/mdx_autolink
 
-.PHONY: all css env
+serve:
+	@env/bin/mkdocs serve
+
+.PHONY: all css env serve

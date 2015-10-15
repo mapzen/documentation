@@ -6193,6 +6193,9 @@ button:focus {
   color: #606060;
   margin-bottom: 0.5em; }
 
+.search-container form {
+  margin-top: 8px; }
+
 .search-results-container {
   display: none;
   position: absolute;
