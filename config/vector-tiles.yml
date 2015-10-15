@@ -15,9 +15,9 @@ include_next_prev: true
 strict: true
 pages:
   - Home: index.md
-  - 'Use the vector tile service': 'use-service.md'
-  - 'Display vector tiles in a map': 'display-tiles.md'
-  - 'Layers in the vector tile service': 'layers.md'
+  - 'Get started': 'use-service.md'
+  - 'Make a map': 'display-tiles.md'
+  - 'Layers': 'layers.md'
 
 markdown_extensions:
   - smarty
