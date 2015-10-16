@@ -6586,7 +6586,8 @@ h6 code {
   background-color: inherit; }
 
 .table {
-  border: 2px solid #ddd; }
+  border: 2px solid #ddd;
+  margin-bottom: 0; }
   .table th {
     font-family: "Montserrat", "Open Sans", sans-serif;
     color: #385d5c;
@@ -6603,6 +6604,12 @@ h6 code {
     .table td code {
       word-break: break-word;
       overflow-wrap: break-word; } }
+
+.table-wrapper {
+  overflow-x: auto;
+  max-width: 100%;
+  width: 100%;
+  margin-bottom: 20px; }
 
 .pagination {
   margin-bottom: 0; }

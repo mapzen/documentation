@@ -381,6 +381,7 @@ h6 code {
 // Tables
 .table {
   border: 2px solid $table-border-color;
+  margin-bottom: 0;
 
   th {
     font-family: $docs-heading-font;
@@ -407,6 +408,14 @@ h6 code {
       overflow-wrap: break-word;
     }
   }
+}
+
+// To allow scrolling wide tables
+.table-wrapper {
+  overflow-x: auto;
+  max-width: 100%;
+  width: 100%;
+  margin-bottom: 20px; // Replace bottom table margin
 }
 
 // Pagination, if exists - lower margin override

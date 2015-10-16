@@ -185,6 +185,9 @@ $(document).ready(function () {
       $(activeEls[index]).removeClass('active')
     }
   })
+
+  // Wrap all tables in a wrapper div
+  $('.table').wrap('<div class="table-wrapper"></div>');
 });
 
 
