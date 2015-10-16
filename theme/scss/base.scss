@@ -43,7 +43,7 @@ nav {
 }
 
 .documentation-hero {
-  background-color: $mz-darkblue; //$mz-lightgray;
+  background-color: $mz-darkblue;
   text-align: center;
   font-family: $docs-heading-font;
   color: white;
@@ -51,7 +51,6 @@ nav {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 180px;
   padding: 40px 20px;
 
   h1 {
@@ -124,12 +123,13 @@ nav {
 
   // Headings
   h1, h2, h3, h4, h5, h6 {
-      position: relative;
-      font-family: $docs-heading-font;
-      font-weight: 400;
-      margin-bottom: 0.6em;
-      line-height: 1.2em;
-    }
+    position: relative;
+    font-family: $docs-heading-font;
+    font-weight: 400;
+    margin-bottom: 0.6em;
+    line-height: 1.2em;
+  }
+
   @media (min-width: 767px) {
     h1 {
       font-family: 'Open Sans', sans-serif;
@@ -213,6 +213,9 @@ nav {
   section {
     margin-top: -50px;
     padding-top: 50px;
+
+    // Prevents larger content like tables from forcing the page to be wider
+    overflow: hidden;
   }
 
   // Position heading landing spot correctly
@@ -384,9 +387,25 @@ h6 code {
     color: $mz-darkblue;
     font-size: 18px;
     font-weight: 700;
+
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
   }
   td, th {
     border-right: 1px dotted $table-border-color;
+  }
+
+  td {
+    line-height: inherit !important;
+  }
+
+  // Break long code strings in table cells on small windows
+  @media (max-width: 768px) {
+    td code {
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
   }
 }
 

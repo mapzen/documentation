@@ -6238,6 +6238,11 @@ button:focus {
     color: #385d5c;
     background-color: papayawhip; }
 
+@media (max-width: 768px) {
+  .form-control {
+    line-height: 40px;
+    padding: 0 15px;
+    height: auto; } }
 footer .slogan {
   font-family: 'Montserrat', 'Open Sans', sans-serif;
   font-weight: 300; }
@@ -6275,7 +6280,7 @@ footer h5 {
     max-height: none; }
   .toc a {
     display: block;
-    padding: 5px 15px;
+    padding: 6px 15px;
     z-index: 1;
     color: #385d5c;
     text-decoration: none;
@@ -6288,6 +6293,11 @@ footer h5 {
     background-color: #385d5c;
     color: white; }
 
+@media (max-width: 768px) {
+  .toc a,
+  .nav > li > a {
+    min-height: 44px;
+    padding: 15px; } }
 @media (min-width: 992px) {
   .toc .nav > .active > ul {
     display: block; }
@@ -6357,7 +6367,6 @@ nav {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 180px;
   padding: 40px 20px; }
   .documentation-hero h1 {
     font-family: 'Playfair Display';
@@ -6462,7 +6471,8 @@ nav {
       font-size: 16px; } }
   .documentation-content section {
     margin-top: -50px;
-    padding-top: 50px; }
+    padding-top: 50px;
+    overflow: hidden; }
   .documentation-content h1, .documentation-content h2, .documentation-content h3, .documentation-content h4, .documentation-content h5, .documentation-content h6 {
     margin-top: 25px; }
   .documentation-content > section:first-child {
@@ -6582,8 +6592,17 @@ h6 code {
     color: #385d5c;
     font-size: 18px;
     font-weight: 700; }
+    @media (max-width: 768px) {
+      .table th {
+        font-size: 16px; } }
   .table td, .table th {
     border-right: 1px dotted #ddd; }
+  .table td {
+    line-height: inherit !important; }
+  @media (max-width: 768px) {
+    .table td code {
+      word-break: break-word;
+      overflow-wrap: break-word; } }
 
 .pagination {
   margin-bottom: 0; }

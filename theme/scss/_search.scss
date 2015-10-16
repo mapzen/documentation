@@ -74,5 +74,13 @@
     color: $mz-darkblue;
     background-color: papayawhip;
   }
-
 }
+
+@media (max-width: 768px) {
+  .form-control {
+    line-height: 40px;
+    padding: 0 15px;
+    height: auto;
+  }
+}
+

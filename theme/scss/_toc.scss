@@ -44,7 +44,7 @@
   // All nav links
   a {
     display: block;
-    padding: 5px 15px; // Right-left padding matches Bootstrap .nav
+    padding: 6px 15px; // Right-left padding matches Bootstrap .nav
     z-index: 1;
     color: $mz-darkblue;
     text-decoration: none;
@@ -64,6 +64,15 @@
   li.toc-top-level.toc-current > a {
     background-color: $mz-darkblue;
     color: white;
+  }
+}
+
+// Mobile
+@media (max-width: 768px) {
+  .toc a,
+  .nav > li > a {
+    min-height: 44px;
+    padding: 15px;
   }
 }
 
