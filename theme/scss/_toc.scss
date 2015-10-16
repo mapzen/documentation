@@ -133,7 +133,8 @@ ul.nav > li:first-child:last-child {
 
   // Some overrides on active styling
   //  TODO: better
-  li.toc-current.active > a {
+  li.toc-current.active > a,
+  li.toc-current:not(.active) li.active > a {
     box-shadow: none;
     background-color: transparent;
     color: inherit;
