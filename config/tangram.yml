@@ -1,6 +1,6 @@
 site_name: Tangram
-repo_url: https://github.com/tangrams/tangram-docs
-remote_branch: gh-pages
+repo_url: https://github.com/mapzen/mapzen-docs
+remote_branch: master
 google_analytics: ['UA-47035811-1', 'mapzen.com']
 docs_dir: src/tangram
 theme: mkdocs
@@ -14,7 +14,7 @@ include_next_prev: true
 # This means pages should be added or subtracted manually here if the files change.
 pages:
   - Home: index.md
-  - Concept Overviews:
+  - Concept overviews:
     - 'The Scene File': 'Scene-file.md'
     - 'Filters': 'Filters-Overview.md'
     - 'Lights': 'Lights-Overview.md'
@@ -22,7 +22,7 @@ pages:
     - 'Materials': 'Materials-Overview.md'
     - 'Shaders': 'Shaders-Overview.md'
     - 'Styles': 'Styles-Overview.md'
-  - Technical Reference:
+  - Technical reference:
     - 'yaml': 'yaml.md'
     - 'scene': 'scene.md'
     - 'sources': 'sources.md'
@@ -60,6 +60,6 @@ markdown_extensions:
 extra:
   site_subtitle: Render 2D and 3D maps with fine control over almost every aspect of the map-making process.
   project_repo_url: https://github.com/tangrams/tangram
-  docs_base_url: https://github.com/tangrams/tangram-docs/tree/gh-pages/pages
+  docs_base_url: https://github.com/mapzen/mapzen-docs/tree/master/tangram
   display_project_name_api_key: true
   exclude_home_contents_in_toc: true
