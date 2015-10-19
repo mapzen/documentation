@@ -2,6 +2,9 @@
 // Footer
 // --------------------------------------------------
 
+// Upgrade font family for footer
+$footer-font: 'Montserrat', 'Open Sans', sans-serif;
+
 // Page layout modifier
 body.no-footer {
   #footer,
@@ -31,6 +34,8 @@ body.no-footer {
 footer {
   .slogan {
     text-shadow: 0 1px rgba(255, 255, 255, 0.5);
+    font-family: $footer-font;
+    font-weight: 300;
   }
 
   .copyright {
@@ -43,7 +48,8 @@ footer {
   line-height: 1.8;
 
   h6 {
-    font-weight: bold;
+    font-family: $footer-font;
+    font-weight: 400;
     font-size: inherit;
 
     &:not(:first-of-type) {
