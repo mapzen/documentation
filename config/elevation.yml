@@ -1,8 +1,8 @@
 site_name: Elevation Service
-repo_url: https://github.com/valhalla/valhalla-docs
+repo_url: https://github.com/mapzen/mapzen-docs
 remote_branch: master
 google_analytics: ['UA-47035811-1', 'mapzen.com']
-docs_dir: src/valhalla
+docs_dir: src/elevation
 theme: mkdocs
 theme_dir: theme
 site_dir: dist/elevation
@@ -38,7 +38,7 @@ markdown_extensions:
 
 extra:
   site_subtitle: 'Take your map to new heights.'
-  project_repo_url: https://github.com/valhalla/
-  docs_base_url: https://github.com/valhalla/valhalla-docs/blob/master
+  project_repo_url: https://github.com/valhalla/skadi
+  docs_base_url: https://github.com/mapzen/mapzen-docs/tree/master/elevation
   display_project_name_api_key: true
   exclude_home_contents_in_toc: true
