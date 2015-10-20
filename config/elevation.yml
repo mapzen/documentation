@@ -9,7 +9,6 @@ site_dir: dist/elevation
 include_nav: true
 include_next_prev: false
 extra_css: [css/codehilite/mapzen.css]
-extra_javascript: [js/elevation-service.js]
 
 # Determines if a broken link to a page within the documentation is considered
 # a warning or an error (link to a page not listed in the pages setting). Set

@@ -1,8 +1,8 @@
 # Source doc tarballs
-TANGRAM = https://github.com/tangrams/tangram-docs/archive/gh-pages.tar.gz
+#TANGRAM = https://github.com/tangrams/tangram-docs/archive/gh-pages.tar.gz
 MAPZEN = https://github.com/mapzen/mapzen-docs/archive/master.tar.gz
-VALHALLA = https://github.com/valhalla/valhalla-docs/archive/master.tar.gz
-SEARCH = https://github.com/pelias/pelias-doc/archive/master.tar.gz
+#VALHALLA = https://github.com/valhalla/valhalla-docs/archive/master.tar.gz
+#SEARCH = https://github.com/pelias/pelias-doc/archive/master.tar.gz
 
 # Add local env/bin to PATH
 PATH := $(shell pwd)/env/bin:$(PATH)
@@ -14,12 +14,12 @@ clean-dist:
 	@echo Cleaning out build directory...
 	@rm -rf dist/*/
 
-get: get-tangram get-metro-extracts get-vector-tiles get-valhalla get-search
+get: get-tangram get-metro-extracts get-vector-tiles get-turn-by-turn get-elevation get-search
 
 # Get individual sources docs
 get-tangram:
 	@rm -rf src/tangram
-	@curl -L $(TANGRAM) | tar -zxv -C src --strip-components=1 tangram-docs-gh-pages/pages && mv src/pages src/tangram
+	@curl -L $(MAPZEN) | tar -zxv -C src --strip-components=1 mapzen-docs-master/tangram
 
 get-metro-extracts:
 	@rm -rf src/metro-extracts
@@ -29,13 +29,17 @@ get-vector-tiles:
 	@rm -rf src/vector-tiles
 	@curl -L $(MAPZEN) | tar -zxv -C src --strip-components=1 mapzen-docs-master/vector-tiles
 
-get-valhalla:
-	@rm -rf src/valhalla
-	@curl -L $(VALHALLA) | tar -zxv -C src && mv src/valhalla-docs-master src/valhalla
+get-turn-by-turn:
+	@rm -rf src/turn-by-turn
+	@curl -L $(MAPZEN) | tar -zxv -C src --strip-components=1 mapzen-docs-master/turn-by-turn
+
+get-elevation:
+	@rm -rf src/elevation
+	@curl -L $(MAPZEN) | tar -zxv -C src --strip-components=1 mapzen-docs-master/elevation
 
 get-search:
 	@rm -rf src/search
-	@curl -L $(SEARCH) | tar -zxv -C src && mv src/pelias-doc-master src/search
+	@curl -L $(MAPZEN) | tar -zxv -C src --strip-components=1 mapzen-docs-master/search
 
 # Build test docs
 test-docs:
@@ -61,10 +65,10 @@ vector-tiles:
 	@ln -sf config/vector-tiles.yml ./mkdocs.yml
 	@mkdocs build --clean # Ensure stale files are cleaned
 
-# Build valhalla docs
-valhalla:
-	@echo Building Turn-by-Turn [Valhalla] documentation...
-	@ln -sf config/valhalla.yml ./mkdocs.yml
+# Build turn-by-turn docs
+turn-by-turn:
+	@echo Building Turn-by-Turn documentation...
+	@ln -sf config/turn-by-turn.yml ./mkdocs.yml
 	@mkdocs build --clean # Ensure stale files are cleaned
 
 # Build elevation service docs
@@ -79,7 +83,7 @@ search:
 	@ln -sf config/search.yml ./mkdocs.yml
 	@mkdocs build --clean # Ensure stale files are cleaned
 
-all: clean-dist tangram metro-extracts vector-tiles valhalla search elevation
+all: clean-dist tangram metro-extracts vector-tiles turn-by-turn search elevation
 	# Compress all HTML files - controls Jinja whitespace
 	@find dist -name \*.html -ls -exec htmlmin --keep-optional-attribute-quotes {} {} \;
 
