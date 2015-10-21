@@ -1,8 +1,7 @@
-# mapzen-docs-generator
+# Mapzen's documentation pipeline
 
-Mapzen documentation pipeline.
-
-**Current documentation generator:** [MkDocs](http://www.mkdocs.org/)
+We write our documentation in Markdown and store them iin GitHub, and use a [MkDocs](http://www.mkdocs.org/)-based automated workflow to convert them into friendlier static-site documentation pages hosted at https://mapzen.com/documentation/. You can read more about this on our [blog post](https://mapzen.com/blog/doc-site/
+).
 
 ### Rapid bootstrapping
 
