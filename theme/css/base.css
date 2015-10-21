@@ -8216,7 +8216,11 @@ nav {
   .breadcrumb li::before {
     font: normal normal normal 14px/1 FontAwesome; }
 
-/* line 45, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+/* line 46, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+.breadcrumb > li + li:before {
+  content: "" " "; }
+
+/* line 50, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
 .documentation-hero {
   background-color: #385d5c;
   text-align: center;
@@ -8227,24 +8231,24 @@ nav {
   align-items: center;
   justify-content: center;
   padding: 40px 20px; }
-  /* line 56, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+  /* line 61, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
   .documentation-hero h1 {
     font-family: 'Playfair Display';
     padding-top: 20px; }
-  /* line 61, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+  /* line 66, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
   .documentation-hero p {
     margin-top: 1em; }
 
-/* line 66, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+/* line 71, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
 .documentation-nav {
   position: relative;
   z-index: 20; }
 
-/* line 71, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+/* line 76, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
 .documentation-container {
   padding-top: 2em; }
 
-/* line 75, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+/* line 80, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
 .documentation-content {
   line-height: 1.8;
   font-size: 16px;
@@ -8265,38 +8269,38 @@ nav {
     pointer-events: none;
   }
   */ }
-  /* line 85, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+  /* line 90, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
   .documentation-content section > p,
   .documentation-content section > ol,
   .documentation-content section > ul {
     margin-bottom: 1em; }
-  /* line 90, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+  /* line 95, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
   .documentation-content > :last-child {
     margin-bottom: 0 !important; }
-  /* line 94, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+  /* line 99, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
   .documentation-content img {
     max-width: 100%;
     display: inline;
     padding: 4px;
     line-height: 1.428571429;
     background-color: #fff; }
-  /* line 103, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+  /* line 108, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
   .documentation-content img.emoji {
     padding: 0;
     background-color: transparent;
     line-height: inherit;
     max-width: initial; }
-  /* line 111, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+  /* line 116, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
   .documentation-content li > p {
     margin-bottom: 0; }
-  /* line 115, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+  /* line 120, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
   .documentation-content li > p + p {
     margin-top: 1em; }
-  /* line 119, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+  /* line 124, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
   .documentation-content li > p > img {
     margin-top: 0;
     margin-bottom: 1em; }
-  /* line 125, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+  /* line 130, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
   .documentation-content h1, .documentation-content h2, .documentation-content h3, .documentation-content h4, .documentation-content h5, .documentation-content h6 {
     position: relative;
     font-family: "Montserrat", "Open Sans", sans-serif;
@@ -8304,66 +8308,66 @@ nav {
     margin-bottom: 0.6em;
     line-height: 1.2em; }
   @media (min-width: 767px) {
-    /* line 134, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+    /* line 139, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
     .documentation-content h1 {
       font-family: 'Open Sans', sans-serif;
       font-weight: 300;
       color: #385d5c;
       font-size: 48px; }
-    /* line 141, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+    /* line 146, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
     .documentation-content h2 {
       color: #666;
       font-size: 32px; }
-    /* line 146, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+    /* line 151, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
     .documentation-content h3 {
       color: #d4645c;
       font-size: 24px; }
-    /* line 151, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+    /* line 156, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
     .documentation-content h4 {
       color: #385d5c;
       font-size: 18px;
       font-weight: 700; }
-    /* line 157, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+    /* line 162, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
     .documentation-content h5, .documentation-content h6 {
       color: #666;
       font-size: 18px; } }
   @media (max-width: 767px) {
-    /* line 164, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+    /* line 169, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
     .documentation-content h1 {
       font-family: 'Open Sans', sans-serif;
       font-weight: 300;
       color: #385d5c;
       font-size: 40px; }
-    /* line 171, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+    /* line 176, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
     .documentation-content h2 {
       color: #666;
       font-size: 28px; }
-    /* line 176, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+    /* line 181, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
     .documentation-content h3 {
       color: #d4645c;
       font-size: 20px; }
-    /* line 181, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+    /* line 186, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
     .documentation-content h4 {
       color: #385d5c;
       font-size: 16px;
       font-weight: 700; }
-    /* line 187, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+    /* line 192, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
     .documentation-content h5, .documentation-content h6 {
       color: #666;
       font-size: 16px; } }
-  /* line 213, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+  /* line 218, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
   .documentation-content section {
     margin-top: -50px;
     padding-top: 50px;
     overflow: hidden; }
-  /* line 222, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+  /* line 227, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
   .documentation-content h1, .documentation-content h2, .documentation-content h3, .documentation-content h4, .documentation-content h5, .documentation-content h6 {
     margin-top: 25px; }
-  /* line 228, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+  /* line 233, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
   .documentation-content > section:first-child {
     margin-top: -70px;
     padding-top: 70px; }
-    /* line 237, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+    /* line 242, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
     .documentation-content > section:first-child > h1:first-child,
     .documentation-content > section:first-child > h2:first-child,
     .documentation-content > section:first-child > h3:first-child,
@@ -8371,7 +8375,7 @@ nav {
     .documentation-content > section:first-child > h5:first-child,
     .documentation-content > section:first-child > h6:first-child {
       margin-top: 0; }
-  /* line 242, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+  /* line 247, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
   .documentation-content .caption {
     margin-top: -0.8em;
     font-size: 0.9em;
@@ -8379,16 +8383,16 @@ nav {
     font-style: italic;
     color: #666; }
 
-/* line 251, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+/* line 256, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
 .documentation-edit {
   text-align: right;
   line-height: 2em; }
-  /* line 255, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+  /* line 260, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
   .documentation-edit i.fa {
     vertical-align: middle;
     color: #666; }
 
-/* line 261, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+/* line 266, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
 a.headerlink {
   position: absolute;
   display: none;
@@ -8404,7 +8408,7 @@ a.headerlink {
   background-position: center right;
   background-size: contain; }
 
-/* line 283, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+/* line 288, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
 h1:hover:not(:first-child) .headerlink,
 h2:hover .headerlink,
 h3:hover .headerlink,
@@ -8413,15 +8417,15 @@ h5:hover .headerlink,
 h6:hover .headerlink {
   display: inline-block; }
 
-/* line 287, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+/* line 292, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
 hr {
   border-top: 1px solid lightgray; }
 
-/* line 291, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+/* line 296, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
 code, kbd, pre, samp {
   font-family: 'Source Code Pro', monospace; }
 
-/* line 295, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+/* line 300, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
 code {
   padding: 4px 8px;
   margin: 0 2px;
@@ -8434,7 +8438,7 @@ p > code:first-child:last-child {
   display: block;
 }
 */
-/* line 316, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+/* line 321, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
 pre {
   padding: 1em;
   margin-top: 1.5em;
@@ -8449,13 +8453,13 @@ pre {
   position: relative;
   word-wrap: normal; }
   @media print {
-    /* line 316, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+    /* line 321, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
     pre {
       word-break: break-word;
       overflow-wrap: break-word; } }
 
 /* Note: <code> is not appearing inside <pre> for codehilite blocks */
-/* line 350, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+/* line 355, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
 pre code {
   position: relative;
   margin: 0;
@@ -8463,13 +8467,13 @@ pre code {
   word-wrap: normal;
   background-color: transparent; }
 
-/* line 360, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+/* line 365, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
 li > pre {
   margin-top: 1em;
   margin-bottom: 1em; }
 
 /* Reset code inside headers */
-/* line 371, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+/* line 376, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
 h1 code,
 h2 code,
 h3 code,
@@ -8484,55 +8488,55 @@ h6 code {
   color: inherit;
   background-color: inherit; }
 
-/* line 382, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+/* line 387, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
 .table {
   border: 2px solid #ddd;
   margin-bottom: 0; }
-  /* line 386, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+  /* line 391, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
   .table th {
     font-family: "Montserrat", "Open Sans", sans-serif;
     color: #385d5c;
     font-size: 18px;
     font-weight: 700; }
     @media (max-width: 768px) {
-      /* line 386, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+      /* line 391, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
       .table th {
         font-size: 16px; } }
-  /* line 396, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+  /* line 401, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
   .table td, .table th {
     border-right: 1px dotted #ddd; }
-  /* line 400, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+  /* line 405, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
   .table td {
     line-height: inherit !important; }
   @media (max-width: 768px) {
-    /* line 406, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+    /* line 411, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
     .table td code {
       word-break: break-word;
       overflow-wrap: break-word; } }
 
-/* line 414, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+/* line 419, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
 .table-wrapper {
   overflow-x: auto;
   max-width: 100%;
   width: 100%;
   margin-bottom: 20px; }
 
-/* line 422, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+/* line 427, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
 .pagination {
   margin-bottom: 0; }
 
-/* line 427, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+/* line 432, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
 .pagination-top {
   text-align: center;
   width: 100px !important; }
-  /* line 430, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+  /* line 435, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
   .pagination-top .fa {
     position: static; }
-  /* line 433, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+  /* line 438, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
   .pagination-top .pagination-link-text {
     display: inline; }
 
-/* line 440, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+/* line 445, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
 .admonition {
   padding: 15px;
   margin-bottom: 20px;
@@ -8540,25 +8544,25 @@ h6 code {
   border-radius: 4px;
   text-align: left; }
 
-/* line 448, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+/* line 453, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
 .admonition.note {
   color: #3a87ad;
   background-color: #d9edf7;
   border-color: #bce8f1; }
 
-/* line 454, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+/* line 459, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
 .admonition.warning {
   color: #c09853;
   background-color: #fcf8e3;
   border-color: #fbeed5; }
 
-/* line 460, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+/* line 465, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
 .admonition.danger {
   color: #b94a48;
   background-color: #f2dede;
   border-color: #eed3d7; }
 
-/* line 466, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
+/* line 471, /Users/lou/Repositories/mapzen/mapzen-docs-generator/theme/scss/base.scss */
 .admonition-title {
   font-weight: bold;
   text-align: left; }
