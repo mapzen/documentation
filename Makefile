@@ -89,7 +89,7 @@ all: clean-dist tangram metro-extracts vector-tiles turn-by-turn search elevatio
 
 # Sets up CSS compile via Sass, watching for changes
 css:
-	@sass --watch theme/scss:theme/css
+	@env/bin/sassc --sourcemap --watch theme/scss/base.scss theme/css/base.css
 
 # Set virtual environment & install dependencies
 env:

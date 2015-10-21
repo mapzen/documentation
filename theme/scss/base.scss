@@ -5,7 +5,7 @@
 @import 'common/variables';
 @import 'variables'; // Documentation-specific Bootstrap variables
 //@import 'bootstrap-custom'; // Some modules here are enabled or disabled differently, actually
-@import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/';
+@import '../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
 @import 'common/helpers';
 @import 'common/navbar';
 @import 'common/footer';
@@ -466,10 +466,4 @@ h6 code {
 .admonition-title {
   font-weight: bold;
   text-align: left;
-}
-
-
-.btn {
-  font-weight: 300;
-  font-family: $docs-accent-font;
 }
