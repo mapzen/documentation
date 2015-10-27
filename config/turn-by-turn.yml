@@ -1,8 +1,8 @@
 site_name: Mapzen Turn-by-Turn
-repo_url: https://github.com/valhalla/valhalla-docs
+repo_url: https://github.com/valhalla/mapzen-docs
 remote_branch: master
 google_analytics: ['UA-47035811-1', 'mapzen.com']
-docs_dir: src/valhalla
+docs_dir: src/turn-by-turn
 theme: mkdocs
 theme_dir: theme
 site_dir: dist/turn-by-turn
@@ -19,7 +19,6 @@ pages:
   - 'API Reference': 'api-reference.md'
   - 'Terminology': 'terminology.md'
   - 'Add Mapzen Turn-by-Turn routing to a map': 'add-routing-to-a-map.md'
-  # - 'Elevation service': 'elevation-service.md'
 
 markdown_extensions:
   - smarty
@@ -41,6 +40,6 @@ markdown_extensions:
 extra:
   site_subtitle: 'Add routing and navigation to your web and mobile apps.'
   project_repo_url: https://github.com/valhalla/
-  docs_base_url: https://github.com/valhalla/valhalla-docs/blob/master
+  docs_base_url: https://github.com/mapzen/mapzen-docs/tree/master/turn-by-turn
   display_project_name_api_key: true
   exclude_home_contents_in_toc: true

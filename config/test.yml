@@ -1,3 +1,12 @@
+#   !! DO NOT DELETE THIS FILE !!
+#
+# This is a test config for the src/test files that are intended ONLY
+# for local testing of styles, pipelines etc. This allows us to check in
+# to the repository things we want to test against as we develop the pipeline,
+# without disturbing actual documentation sources.
+# Test files will NOT be deployed to remote development or production servers.
+# They are only intended for LOCAL development environments.
+
 site_name: Test
 repo_url: https://github.com/valhalla/valhalla-docs
 remote_branch: master
@@ -33,7 +42,7 @@ markdown_extensions:
   - pymdownx.tilde
 
 extra:
-  site_subtitle: '&middot; navigation &middot; text-to-speech &middot; elevation &middot;'
+  site_subtitle: 'This is a sample for the documentation pipeline.'
   project_repo_url: https://github.com/mapzen/mapzen-docs-generator
   docs_base_url: https://github.com/mapzen/mapzen-docs-generator/blob/master/src/test
   display_project_name_api_key: true
