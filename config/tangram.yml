@@ -14,6 +14,7 @@ include_next_prev: true
 # This means pages should be added or subtracted manually here if the files change.
 pages:
   - Home: index.md
+  - 'Walkthrough': 'walkthrough.md'
   - Concept overviews:
     - 'The Scene File': 'Scene-file.md'
     - 'Filters': 'Filters-Overview.md'
