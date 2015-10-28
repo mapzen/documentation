@@ -13,6 +13,7 @@ theme: mkdocs
 theme_dir: theme
 include_nav: true
 include_next_prev: true
+extra_css: [css/codehilite/mapzen.css]
 
 # Determines if a broken link to a page within the documentation is considered
 # a warning or an error (link to a page not listed in the pages setting). Set

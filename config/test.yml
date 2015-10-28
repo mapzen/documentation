@@ -11,7 +11,6 @@ site_name: Test
 repo_url: https://github.com/valhalla/valhalla-docs
 docs_dir: src/test
 site_dir: dist/test
-extra_css: [css/codehilite/mapzen.css]
 
 extra:
   site_subtitle: 'This is a sample for the documentation pipeline.'
