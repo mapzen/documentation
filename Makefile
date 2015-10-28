@@ -50,37 +50,37 @@ test-docs:
 # Build tangram docs
 tangram:
 	@echo Building Tangram documentation...
-	@ln -sf config/tangram.yml ./mkdocs.yml
+	@anyconfig_cli ./config/default.yml ./config/tangram.yml --merge=merge_dicts --output=./mkdocs.yml
 	@mkdocs build --clean # Ensure stale files are cleaned
 
 # Build metro-extracts docs
 metro-extracts:
 	@echo Building Metro Extracts documentation...
-	@ln -sf config/metro-extracts.yml ./mkdocs.yml
+	@anyconfig_cli ./config/default.yml ./config/metro-extracts.yml --merge=merge_dicts --output=./mkdocs.yml
 	@mkdocs build --clean # Ensure stale files are cleaned
 
 # Build vector-tiles docs
 vector-tiles:
 	@echo Building Vector Tiles documentation...
-	@ln -sf config/vector-tiles.yml ./mkdocs.yml
+	@anyconfig_cli ./config/default.yml ./config/vector-tiles.yml --merge=merge_dicts --output=./mkdocs.yml
 	@mkdocs build --clean # Ensure stale files are cleaned
 
 # Build turn-by-turn docs
 turn-by-turn:
 	@echo Building Turn-by-Turn documentation...
-	@ln -sf config/turn-by-turn.yml ./mkdocs.yml
+	@anyconfig_cli ./config/default.yml ./config/turn-by-turn.yml --merge=merge_dicts --output=./mkdocs.yml
 	@mkdocs build --clean # Ensure stale files are cleaned
 
 # Build elevation service docs
 elevation:
 	@echo Building Elevation Service documentation...
-	@ln -sf config/elevation.yml ./mkdocs.yml
+	@anyconfig_cli ./config/default.yml ./config/elevation.yml --merge=merge_dicts --output=./mkdocs.yml
 	@mkdocs build --clean # Ensure stale files are cleaned
 
 # Build Search/Pelias docs
 search:
 	@echo Building Search [Pelias] documentation...
-	@ln -sf config/search.yml ./mkdocs.yml
+	@anyconfig_cli ./config/default.yml ./config/search.yml --merge=merge_dicts --output=./mkdocs.yml
 	@mkdocs build --clean # Ensure stale files are cleaned
 
 all: clean-dist tangram metro-extracts vector-tiles turn-by-turn search elevation
@@ -89,7 +89,7 @@ all: clean-dist tangram metro-extracts vector-tiles turn-by-turn search elevatio
 
 # Sets up CSS compile via Sass, watching for changes
 css:
-	@env/bin/sassc --sourcemap --watch theme/scss/base.scss theme/css/base.css
+	@sassc --sourcemap --watch theme/scss/base.scss theme/css/base.css
 
 # Set virtual environment & install dependencies
 env:
@@ -101,6 +101,6 @@ env:
 	# @env/bin/pip install -e extensions/mdx_autolink
 
 serve:
-	@env/bin/mkdocs serve
+	@mkdocs serve
 
 .PHONY: all css env serve

@@ -1,18 +1,7 @@
 site_name: Mapzen Search
-repo_url: https://github.com/mapzen/mapzen-docs
-remote_branch: master
-google_analytics: ['UA-47035811-1', 'mapzen.com']
 docs_dir: src/search
-theme: mkdocs
-theme_dir: theme
 site_dir: dist/search
-include_nav: true
-include_next_prev: true
 
-# Determines if a broken link to a page within the documentation is considered
-# a warning or an error (link to a page not listed in the pages setting). Set
-# to true to halt processing when a broken link is found, false prints a warning.
-strict: true
 pages:
   - Home: index.md
   - 'Get started': 'get-started.md'
@@ -28,27 +17,8 @@ pages:
   - 'HTTP status codes': 'http-status-codes.md'
   - 'Transition from Pelias beta': 'transition-from-beta.md'
 
-markdown_extensions:
-  - smarty
-  - toc:
-      permalink: ' ' # Blank space; this marker is styled in CSS.
-  - sane_lists
-  - nl2br
-  - outline
-  - codehilite
-  # Set of PyMdown extensions to flesh out GFM-mimicry
-  - pymdownx.betterem:
-      smart_enable: all
-  - pymdownx.githubemoji
-  - pymdownx.magiclink
-  - pymdownx.superfences
-  - pymdownx.tasklist
-  - pymdownx.tilde
-
 extra:
   site_subtitle: 'Find places and addresses with this geographic search service built on open tools and open data.'
   #'High-performance geocoding and place search service'
   project_repo_url: https://github.com/pelias/
   docs_base_url: https://github.com/mapzen/mapzen-docs/tree/master/search
-  display_project_name_api_key: true
-  exclude_home_contents_in_toc: true
