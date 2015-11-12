@@ -42,43 +42,43 @@ get-search:
 	@curl -L $(MAPZEN) | tar -zxv -C src --strip-components=1 mapzen-docs-master/search
 
 # Build test docs
-test-docs:
+test-docs: css-once
 	@echo Building test documentation...
 	@ln -sf config/test.yml ./mkdocs.yml
 	@mkdocs build --clean # Ensure stale files are cleaned
 
 # Build tangram docs
-tangram:
+tangram: css-once
 	@echo Building Tangram documentation...
 	@anyconfig_cli ./config/default.yml ./config/tangram.yml --merge=merge_dicts --output=./mkdocs.yml
 	@mkdocs build --clean # Ensure stale files are cleaned
 
 # Build metro-extracts docs
-metro-extracts:
+metro-extracts: css-once
 	@echo Building Metro Extracts documentation...
 	@anyconfig_cli ./config/default.yml ./config/metro-extracts.yml --merge=merge_dicts --output=./mkdocs.yml
 	@mkdocs build --clean # Ensure stale files are cleaned
 
 # Build vector-tiles docs
-vector-tiles:
+vector-tiles: css-once
 	@echo Building Vector Tiles documentation...
 	@anyconfig_cli ./config/default.yml ./config/vector-tiles.yml --merge=merge_dicts --output=./mkdocs.yml
 	@mkdocs build --clean # Ensure stale files are cleaned
 
 # Build turn-by-turn docs
-turn-by-turn:
+turn-by-turn: css-once
 	@echo Building Turn-by-Turn documentation...
 	@anyconfig_cli ./config/default.yml ./config/turn-by-turn.yml --merge=merge_dicts --output=./mkdocs.yml
 	@mkdocs build --clean # Ensure stale files are cleaned
 
 # Build elevation service docs
-elevation:
+elevation: css-once
 	@echo Building Elevation Service documentation...
 	@anyconfig_cli ./config/default.yml ./config/elevation.yml --merge=merge_dicts --output=./mkdocs.yml
 	@mkdocs build --clean # Ensure stale files are cleaned
 
 # Build Search/Pelias docs
-search:
+search: css-once
 	@echo Building Search [Pelias] documentation...
 	@anyconfig_cli ./config/default.yml ./config/search.yml --merge=merge_dicts --output=./mkdocs.yml
 	@mkdocs build --clean # Ensure stale files are cleaned
@@ -90,6 +90,10 @@ all: clean-dist tangram metro-extracts vector-tiles turn-by-turn search elevatio
 # Sets up CSS compile via Sass, watching for changes
 css:
 	@sassc --sourcemap --watch theme/scss/base.scss theme/css/base.css
+
+# Sets up CSS compile via Sass, no watch
+css-once:
+	@sassc --sourcemap theme/scss/base.scss theme/css/base.css
 
 # Set virtual environment & install dependencies
 env:
