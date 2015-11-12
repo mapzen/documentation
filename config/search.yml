@@ -5,6 +5,7 @@ site_dir: dist/search
 pages:
   - Home: index.md
   - 'Get started': 'get-started.md'
+  - 'Add search to a map': 'add-search-to-a-map.md'
   - 'API keys and rate limits': 'api-keys-rate-limits.md'
   - 'Search': 'search.md'
   - 'Reverse geocoding': 'reverse.md'
