@@ -41,5 +41,6 @@ markdown_extensions:
 extra:
   site_subtitle: Placeholder subtitle.
   project_repo_url: https://github.com/mapzen/mapzen-docs/
+  # This is used to build the "edit in GitHub" links.
   docs_base_url: https://github.com/mapzen/mapzen-docs/tree/master/
   exclude_home_contents_in_toc: true

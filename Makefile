@@ -2,7 +2,7 @@
 #TANGRAM = https://github.com/tangrams/tangram-docs/archive/gh-pages.tar.gz
 MAPZEN = https://github.com/mapzen/mapzen-docs/archive/master.tar.gz
 #VALHALLA = https://github.com/valhalla/valhalla-docs/archive/master.tar.gz
-#SEARCH = https://github.com/pelias/pelias-doc/archive/master.tar.gz
+SEARCH = https://github.com/pelias/pelias-doc/archive/master.tar.gz
 
 # Add local env/bin to PATH
 PATH := $(shell pwd)/env/bin:$(PATH)
@@ -39,7 +39,7 @@ get-elevation:
 
 get-search:
 	@rm -rf src/search
-	@curl -L $(MAPZEN) | tar -zxv -C src --strip-components=1 mapzen-docs-master/search
+	@curl -L $(SEARCH) | tar -zxv -C src && mv src/pelias-doc-master src/search
 
 # Build test docs
 test-docs: css-once
