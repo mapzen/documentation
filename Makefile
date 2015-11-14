@@ -14,6 +14,7 @@ PYTHONPATH := packages:$(PYTHONPATH)
 clean-dist:
 	@echo Cleaning out build directory...
 	@rm -rf dist/*/
+	@mkdir -p src
 
 get: get-tangram get-metro-extracts get-vector-tiles get-turn-by-turn get-elevation get-search
 
