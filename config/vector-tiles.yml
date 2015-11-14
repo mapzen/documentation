@@ -12,5 +12,5 @@ pages:
 extra:
   site_subtitle: 'Add open geospatial data to your applications with the vector tile map service.'
   project_repo_url: https://github.com/mapzen/vector-datasource
-  docs_base_url: https://github.com/mapzen/mapzen-docs/tree/master/vector-tiles
+  docs_base_url: https://github.com/mapzen/vector-tile-service-docs/blob/master
   exclude_home_contents_in_toc: false
