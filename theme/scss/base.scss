@@ -1,19 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600|Open+Sans:400,300italic,400italic,300,600,700,700italic|Playfair+Display:700|Montserrat);
 
 // Common Mapzen styles imported from mapzen/blog or mapzen/developer
-// Try not to edit files in common/ so we can easily keep stuff in sync
-@import 'common/variables';
-@import 'variables'; // Documentation-specific Bootstrap variables
-//@import 'bootstrap-custom'; // Some modules here are enabled or disabled differently, actually
-@import '../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
-@import 'common/helpers';
-@import 'common/navbar';
-@import 'common/footer';
-@import 'common/buttons';
-@import 'common/pagination';
-@import 'common/cta';
+@import '../../node_modules/styleguide/src/stylesheets/styleguide.scss';
 
-// Documentation specific styles
 // Write your overrides here if possible
 @import 'search';
 @import 'footer';

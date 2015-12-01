@@ -78,5 +78,15 @@ We've heavily customized the MkDocs theme for use with Mapzen documentation. Res
 - If a code block or image is supposed to be part of a list, remember the blank lines before and after, and _also_ indent it **four spaces**. Using or mixing tabs might cause problems. Python Markdown is a lot pickier about this than GitHub-flavored Markdown, causing lists to nest improperly or break numbering altogether.
 - Good luck!
 
+## Updating documentation sources
 
+There are two things to do if you want to change the GitHub source of documentation.
 
+1. **Update the project configuration file.** This is located at `config/project-name.yml` file. Look for the `extra` key and find or create, one level in, the `docs_base_url` key. This is used to build the "edit in GitHub" links at the bottom of each page. The actual path and file name are appended to the base URL. It will look something like this:
+
+    ```yml
+    extra:
+      docs_base_url: https://github.com/mapzen/mapzen-docs/tree/master/metro-extracts
+    ```
+
+2. **Update the repository path in the Makefile.** This is a little harder because it requires some knowledge of shell scripting and `Make`. Generally, we want to first retrieve the source documentation file from GitHub (it's compressed). Next, uncompress it -- extract the files into the `src/project-name` directory. If you're getting files from the mapzen-docs repository, you will have to flatten the directory structure a level up because of how the repository is organized. This step can vary depending on the project, which is why it's not super friendly.

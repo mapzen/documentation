@@ -1,0 +1,46 @@
+#   !! DO NOT DELETE THIS FILE !!
+#
+# This sets default settings for MkDocs.
+# Each individual project settings will be merged with this file.
+#
+# -----------------------------------------------------------------------------
+
+site_name: Mapzen documentation
+repo_url: https://github.com/mapzen/mapzen-docs
+remote_branch: master
+google_analytics: ['UA-47035811-1', 'mapzen.com']
+theme: mkdocs
+theme_dir: theme
+include_nav: true
+include_next_prev: true
+extra_css: [css/codehilite/mapzen.css]
+
+# Determines if a broken link to a page within the documentation is considered
+# a warning or an error (link to a page not listed in the pages setting). Set
+# to true to halt processing when a broken link is found, false prints a warning.
+strict: true
+
+markdown_extensions:
+  - smarty
+  - toc:
+      permalink: ' ' # Blank space; this marker is styled in CSS.
+  - sane_lists
+  - nl2br
+  - outline
+  - codehilite
+  # Set of PyMdown extensions to flesh out GFM-mimicry
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.githubemoji
+  - pymdownx.magiclink
+  - pymdownx.superfences
+  - pymdownx.tasklist
+  - pymdownx.tilde
+
+# Extra variables for templates
+extra:
+  site_subtitle: Placeholder subtitle.
+  project_repo_url: https://github.com/mapzen/mapzen-docs/
+  # This is used to build the "edit in GitHub" links.
+  docs_base_url: https://github.com/mapzen/mapzen-docs/tree/master/
+  exclude_home_contents_in_toc: true

@@ -1,44 +1,16 @@
 site_name: Vector Tile Service
-repo_url: https://github.com/mapzen/mapzen-docs
-remote_branch: master
-google_analytics: ['UA-47035811-1', 'mapzen.com']
 docs_dir: src/vector-tiles
-theme: mkdocs
-theme_dir: theme
 site_dir: dist/vector-tiles
-include_nav: true
-include_next_prev: true
 
-# Determines if a broken link to a page within the documentation is considered
-# a warning or an error (link to a page not listed in the pages setting). Set
-# to true to halt processing when a broken link is found, false prints a warning.
-strict: true
 pages:
   - Home: index.md
   - 'Get started': 'use-service.md'
   - 'Make a map': 'display-tiles.md'
   - 'Layers': 'layers.md'
 
-markdown_extensions:
-  - smarty
-  - toc:
-      permalink: ' ' # Blank space; this marker is styled in CSS.
-  - sane_lists
-  - nl2br
-  - outline
-  - codehilite
-  # Set of PyMdown extensions to flesh out GFM-mimicry
-  - pymdownx.betterem:
-      smart_enable: all
-  - pymdownx.githubemoji
-  - pymdownx.magiclink
-  - pymdownx.superfences
-  - pymdownx.tasklist
-  - pymdownx.tilde
-
 # Extra variables for templates
 extra:
   site_subtitle: 'Add open geospatial data to your applications with the vector tile map service.'
   project_repo_url: https://github.com/mapzen/vector-datasource
-  docs_base_url: https://github.com/mapzen/mapzen-docs/tree/master/vector-tiles
-  display_project_name_api_key: false
+  docs_base_url: https://github.com/mapzen/vector-tile-service-docs/blob/master
+  exclude_home_contents_in_toc: false

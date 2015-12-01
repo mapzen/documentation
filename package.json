@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/mapzen/mapzen-docs-generator",
   "dependencies": {
-    "bootstrap-sass": "^3.3.5"
+    "styleguide": "https://github.com/mapzen/styleguide/archive/master.tar.gz"
   }
 }
