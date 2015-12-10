@@ -46,43 +46,43 @@ get-search:
 	@curl -L $(SEARCH) | tar -zxv -C src && mv src/pelias-doc-master src/search
 
 # Build test docs
-test-docs: css-once
+test-docs:
 	@echo Building test documentation...
 	@ln -sf config/test.yml ./mkdocs.yml
 	@mkdocs build --clean # Ensure stale files are cleaned
 
 # Build tangram docs
-tangram: css-once
+tangram:
 	@echo Building Tangram documentation...
 	@anyconfig_cli ./config/default.yml ./config/tangram.yml --merge=merge_dicts --output=./mkdocs.yml
 	@mkdocs build --clean # Ensure stale files are cleaned
 
 # Build metro-extracts docs
-metro-extracts: css-once
+metro-extracts:
 	@echo Building Metro Extracts documentation...
 	@anyconfig_cli ./config/default.yml ./config/metro-extracts.yml --merge=merge_dicts --output=./mkdocs.yml
 	@mkdocs build --clean # Ensure stale files are cleaned
 
 # Build vector-tiles docs
-vector-tiles: css-once
+vector-tiles:
 	@echo Building Vector Tiles documentation...
 	@anyconfig_cli ./config/default.yml ./config/vector-tiles.yml --merge=merge_dicts --output=./mkdocs.yml
 	@mkdocs build --clean # Ensure stale files are cleaned
 
 # Build turn-by-turn docs
-turn-by-turn: css-once
+turn-by-turn:
 	@echo Building Turn-by-Turn documentation...
 	@anyconfig_cli ./config/default.yml ./config/turn-by-turn.yml --merge=merge_dicts --output=./mkdocs.yml
 	@mkdocs build --clean # Ensure stale files are cleaned
 
 # Build elevation service docs
-elevation: css-once
+elevation:
 	@echo Building Elevation Service documentation...
 	@anyconfig_cli ./config/default.yml ./config/elevation.yml --merge=merge_dicts --output=./mkdocs.yml
 	@mkdocs build --clean # Ensure stale files are cleaned
 
 # Build Search/Pelias docs
-search: css-once
+search:
 	@echo Building Search [Pelias] documentation...
 	@anyconfig_cli ./config/default.yml ./config/search.yml --merge=merge_dicts --output=./mkdocs.yml
 	@mkdocs build --clean # Ensure stale files are cleaned
@@ -90,14 +90,6 @@ search: css-once
 all: clean-dist tangram metro-extracts vector-tiles turn-by-turn search elevation
 	# Compress all HTML files - controls Jinja whitespace
 	@find dist -name \*.html -ls -exec htmlmin --keep-optional-attribute-quotes {} {} \;
-
-# Sets up CSS compile via Sass, watching for changes
-css:
-	@sassc --sourcemap --watch theme/scss/base.scss theme/css/base.css
-
-# Sets up CSS compile via Sass, no watch
-css-once:
-	@sassc --sourcemap theme/scss/base.scss theme/css/base.css
 
 # Set virtual environment & install dependencies
 env:
@@ -110,4 +102,4 @@ env:
 serve:
 	@mkdocs serve
 
-.PHONY: all css env serve
+.PHONY: all env serve
