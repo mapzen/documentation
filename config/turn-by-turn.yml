@@ -4,11 +4,11 @@ site_dir: dist/turn-by-turn
 
 pages:
   - Home: index.md
-  - 'API Reference': 'api-reference.md'
+  - 'API reference': 'api-reference.md'
   - 'Terminology': 'terminology.md'
   - 'Add Mapzen Turn-by-Turn routing to a map': 'add-routing-to-a-map.md'
 
 extra:
   site_subtitle: 'Add routing and navigation to your web and mobile apps.'
   project_repo_url: https://github.com/valhalla/
-  docs_base_url: https://github.com/mapzen/mapzen-docs/tree/master/turn-by-turn
+  docs_base_url: https://github.com/valhalla/valhalla-docs/tree/master
