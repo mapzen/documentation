@@ -1,7 +1,7 @@
 # Source doc tarballs
 TANGRAM = https://github.com/tangrams/tangram-docs/archive/gh-pages.tar.gz
 MAPZEN = https://github.com/mapzen/mapzen-docs/archive/master.tar.gz
-VALHALLA = https://github.com/valhalla/valhalla-docs/archive/matrix-help.tar.gz
+VALHALLA = https://github.com/valhalla/valhalla-docs/archive/master.tar.gz
 VECTOR = https://github.com/mapzen/vector-tile-service-docs/archive/master.tar.gz
 SEARCH = https://github.com/pelias/pelias-doc/archive/master.tar.gz
 
@@ -34,15 +34,15 @@ get-vector-tiles:
 
 get-turn-by-turn:
 	@rm -rf src/turn-by-turn
-	@curl -L $(VALHALLA) | tar -zxv -C src && mv src/valhalla-docs-matrix-help src/turn-by-turn
+	@curl -L $(VALHALLA) | tar -zxv -C src && mv src/valhalla-docs-master src/turn-by-turn
 
 get-elevation:
 	@rm -rf src/elevation
-	@curl -L $(VALHALLA) | tar -zxv -C src --strip-components=1 valhalla-docs-matrix-help/elevation
+	@curl -L $(VALHALLA) | tar -zxv -C src --strip-components=1 valhalla-docs-master/elevation
 
 get-matrix:
 	@rm -rf src/matrix
-	@curl -L $(VALHALLA) | tar -zxv -C src --strip-components=1 valhalla-docs-matrix-help/matrix
+	@curl -L $(VALHALLA) | tar -zxv -C src --strip-components=1 valhalla-docs-master/matrix
 
 get-search:
 	@rm -rf src/search
