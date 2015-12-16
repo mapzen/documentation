@@ -4,10 +4,10 @@ site_dir: dist/matrix
 
 pages:
   - Home: index.md
-  - 'API reference': 'timedistancematrix-api.md'
+  - 'API reference': 'api-reference.md'
 
 extra:
   site_subtitle: 'Calculate the time and distance between a set of locations.'
   #'Time-distance matrix service'
   project_repo_url: https://github.com/valhalla/
-  docs_base_url: https://github.com/valhalla/valhalla-docs/tree/matrix-help
+  docs_base_url: https://github.com/valhalla/valhalla-docs/tree/master
