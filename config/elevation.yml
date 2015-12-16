@@ -11,4 +11,4 @@ pages:
 extra:
   site_subtitle: 'Take your map to new heights.'
   project_repo_url: https://github.com/valhalla/skadi
-  docs_base_url: https://github.com/mapzen/mapzen-docs/tree/master/elevation
+  docs_base_url: https://github.com/valhalla/valhalla-docs/tree/matrix-help
