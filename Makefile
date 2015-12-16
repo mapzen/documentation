@@ -1,7 +1,7 @@
 # Source doc tarballs
 TANGRAM = https://github.com/tangrams/tangram-docs/archive/gh-pages.tar.gz
 MAPZEN = https://github.com/mapzen/mapzen-docs/archive/master.tar.gz
-VALHALLA = https://github.com/valhalla/valhalla-docs/archive/master.tar.gz
+VALHALLA = https://github.com/valhalla/valhalla-docs/archive/matrix-help.tar.gz
 VECTOR = https://github.com/mapzen/vector-tile-service-docs/archive/master.tar.gz
 SEARCH = https://github.com/pelias/pelias-doc/archive/master.tar.gz
 
@@ -16,13 +16,13 @@ clean-dist:
 	@rm -rf dist/*/
 	@mkdir -p src
 
-get: get-tangram get-metro-extracts get-vector-tiles get-turn-by-turn get-elevation get-search
+get: get-tangram get-metro-extracts get-vector-tiles get-turn-by-turn get-elevation get-matrix get-search
 
 # Get individual sources docs
 get-tangram:
 	@rm -rf src/tangram
-	# @curl -L $(TANGRAM) | tar -zxv -C src --strip-components=1 tangram-docs-gh-pages/pages && mv src/pages src/tangram
-	@curl -L $(MAPZEN) | tar -zxv -C src --strip-components=1 mapzen-docs-master/tangram
+	@curl -L $(TANGRAM) | tar -zxv -C src --strip-components=1 tangram-docs-gh-pages/pages && mv src/pages src/tangram
+	# @curl -L $(MAPZEN) | tar -zxv -C src --strip-components=1 mapzen-docs-master/tangram
 
 get-metro-extracts:
 	@rm -rf src/metro-extracts
@@ -34,12 +34,15 @@ get-vector-tiles:
 
 get-turn-by-turn:
 	@rm -rf src/turn-by-turn
-	@curl -L $(VALHALLA) | tar -zxv -C src && mv src/valhalla-docs-master src/turn-by-turn
-	# @curl -L $(MAPZEN) | tar -zxv -C src --strip-components=1 mapzen-docs-master/turn-by-turn
+	@curl -L $(VALHALLA) | tar -zxv -C src && mv src/valhalla-docs-matrix-help src/turn-by-turn
 
 get-elevation:
 	@rm -rf src/elevation
-	@curl -L $(MAPZEN) | tar -zxv -C src --strip-components=1 mapzen-docs-master/elevation
+	@curl -L $(VALHALLA) | tar -zxv -C src --strip-components=1 valhalla-docs-matrix-help/elevation
+
+get-matrix:
+	@rm -rf src/matrix
+	@curl -L $(VALHALLA) | tar -zxv -C src --strip-components=1 valhalla-docs-matrix-help/matrix
 
 get-search:
 	@rm -rf src/search
@@ -81,13 +84,19 @@ elevation:
 	@anyconfig_cli ./config/default.yml ./config/elevation.yml --merge=merge_dicts --output=./mkdocs.yml
 	@mkdocs build --clean # Ensure stale files are cleaned
 
+# Build time-distance matrix service docs
+matrix:
+	@echo Building Time-Distance Matrix Service documentation...
+	@anyconfig_cli ./config/default.yml ./config/matrix.yml --merge=merge_dicts --output=./mkdocs.yml
+	@mkdocs build --clean # Ensure stale files are cleaned
+
 # Build Search/Pelias docs
 search:
 	@echo Building Search [Pelias] documentation...
 	@anyconfig_cli ./config/default.yml ./config/search.yml --merge=merge_dicts --output=./mkdocs.yml
 	@mkdocs build --clean # Ensure stale files are cleaned
 
-all: clean-dist tangram metro-extracts vector-tiles turn-by-turn search elevation
+all: clean-dist tangram metro-extracts vector-tiles turn-by-turn search elevation matrix
 	# Compress all HTML files - controls Jinja whitespace
 	@find dist -name \*.html -ls -exec htmlmin --keep-optional-attribute-quotes {} {} \;
 
