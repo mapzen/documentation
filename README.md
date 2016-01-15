@@ -26,7 +26,7 @@ make all
 
 # Local preview
 python -m SimpleHTTPServer 8000
-open http://localhost:8000/build/
+open http://localhost:8000/dist/
 ```
 
 **NOTE:** `make` depends on `virtualenv` to be on the system so that the dependencies of MkDocs can be automatically downloaded and installed locally into the `./env/` directory.
