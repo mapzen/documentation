@@ -8,7 +8,7 @@
 site_name: Mapzen documentation
 repo_url: https://github.com/mapzen/mapzen-docs
 remote_branch: master
-google_analytics: ['UA-47035811-1', 'mapzen.com']
+# google_analytics: ['UA-47035811-1', 'mapzen.com']
 theme: mkdocs
 theme_dir: theme
 include_nav: true
