@@ -5,6 +5,9 @@ VALHALLA = https://github.com/valhalla/valhalla-docs/archive/master.tar.gz
 VECTOR = https://github.com/mapzen/vector-tile-service-docs/archive/master.tar.gz
 SEARCH = https://github.com/pelias/pelias-doc/archive/master.tar.gz
 
+# Mapzen styleguide
+STYLEGUIDE = https://github.com/mapzen/styleguide/archive/master.tar.gz
+
 # Add local env/bin to PATH
 PATH := $(shell pwd)/env/bin:$(PATH)
 SHELL := /bin/bash # required for OSX
@@ -16,7 +19,7 @@ clean-dist:
 	@rm -rf dist/*/
 	@mkdir -p src
 
-get: get-tangram get-metro-extracts get-vector-tiles get-turn-by-turn get-elevation get-matrix get-search
+get: get-tangram get-metro-extracts get-vector-tiles get-turn-by-turn get-elevation get-matrix get-search styleguide
 
 # Get individual sources docs
 get-tangram:
@@ -47,6 +50,13 @@ get-matrix:
 get-search:
 	@rm -rf src/search
 	@curl -L $(SEARCH) | tar -zxv -C src && mv src/pelias-doc-master src/search
+
+# Retrieve style guide
+styleguide:
+	@rm -rf src/styleguide
+	@curl -L $(STYLEGUIDE) | tar -zxv -C src && mv src/styleguide-master src/styleguide
+	@mkdir -p theme/fragments
+	@cp src/styleguide/src/site/fragments/* theme/fragments
 
 # Build test docs
 test-docs:
