@@ -16,13 +16,8 @@ function getSearchTerm()
 $(document).ready(function () {
   var search_term = getSearchTerm()
   var $search_modal = $('#mkdocs_search_modal')
-  var $docContainer = $('.documentation-container')
   var $searchResults = $('#mkdocs-search-results')
   var $searchInput = $('#mkdocs-search-query')
-  var $nav = $('nav')
-  var $toc = $('#toc')
-  var $docContent = $('.documentation-content').parent()
-  var affixState = false
 
   if (search_term) {
     $searchInput.val(search_term)
@@ -60,69 +55,7 @@ $(document).ready(function () {
       }
     }, 0)
   })
-  /* DISABLED, this doesn't work well because other search JS overwrites selection
-  $searchInput.on('keydown', function (e) {
-    // Ignore key results are not visible
-    if (!$searchResults.is(':visible')) {
-      return;
-    }
 
-    var selected = $searchResults.find('article.selected')[0]
-    var list = $searchResults.find('article')
-
-    for (var i = 0; i < list.length; i++) {
-      if (list[i] === selected) {
-        selectedPosition = i;
-        break;
-      }
-    }
-
-    switch (e.keyCode) {
-      // 13 = enter
-      case 13:
-        e.preventDefault()
-        if (selected) {
-          findAndOpenLink(selected)
-        }
-        break;
-      // 38 = up arrow
-      case 38:
-        e.preventDefault()
-
-        if (selected) {
-          $(selected).removeClass('selected')
-        }
-
-        var previousItem = list[selectedPosition - 1];
-
-        if (selected && previousItem) {
-          $(previousItem).addClass('selected');
-        } else {
-          $(list[list.length - 1]).addClass('selected');
-        }
-        break;
-      // 40 = down arrow
-      case 40:
-        e.preventDefault()
-
-        if (selected) {
-          $(selected).removeClass('selected');
-        }
-
-        var nextItem = list[selectedPosition + 1];
-
-        if (selected && nextItem) {
-          $(nextItem).addClass('selected');
-        } else {
-          $(list[0]).addClass('selected');
-        }
-        break;
-      // all other keys
-      default:
-        break;
-    }
-  })
-  */
   $search_modal.on('blur', function () {
     resetSearchResults();
   })
@@ -144,57 +77,10 @@ $(document).ready(function () {
 
   // Highlight.js
   hljs.initHighlightingOnLoad();
-  $('table').addClass('table');
-
-  // Affix for side nav bar
-  // Don't turn on affix if the TOC height is greater than
-  // document content, to prevent positioning bugs
-  if ($toc.height() < $docContent.height()) {
-    $toc.affix({
-      offset: {
-        top: function () {
-          return $docContainer.offset().top - $nav.height()
-        },
-        bottom: function () {
-            return $(document).height() - $docContainer.offset().top - $docContainer.outerHeight(true)
-        }
-      }
-    })
-    // Record that affix is on
-    affixState = true
-  }
-
-  $('.toc-subnav-toggle').on('click', function (e) {
-    e.preventDefault()
-    var $el = $(this).next('ul')
-    $el.toggleClass('toc-expand')
-
-    // Recalc affix position after expand transition finishes
-    if (affixState === true) {
-      $el.one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function (e) {
-        $toc.affix('checkPosition')
-      })
-    }
-  })
-
-  // Guarantee only one active thing is up
-
-  var activeEls = $('.toc li.active')
-  activeEls.each(function (index) {
-    if (index + 1 !== activeEls.length) {
-      $(activeEls[index]).removeClass('active')
-    }
-  })
-
-  // Wrap all tables in a wrapper div
-  $('.table').wrap('<div class="table-wrapper"></div>');
 });
 
-
-$('body').scrollspy({
-  target: '.toc',
-  offset: 10
-});
+// Add the correct class to tables
+$('table').addClass('table');
 
 /* Prevent disabled links from causing a page reload */
 $('li.disabled a').click(function(event) {
