@@ -7,6 +7,7 @@ pages:
   - 'API reference': 'api-reference.md'
   - 'Terminology': 'terminology.md'
   - 'Add Mapzen Turn-by-Turn routing to a map': 'add-routing-to-a-map.md'
+  - 'Decode a route shape': 'decoding.md'
 
 extra:
   site_subtitle: 'Add routing and navigation to your web and mobile apps.'
