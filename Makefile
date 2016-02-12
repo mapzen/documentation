@@ -2,7 +2,7 @@
 TANGRAM = https://github.com/tangrams/tangram-docs/archive/gh-pages.tar.gz
 MAPZEN = https://github.com/mapzen/mapzen-docs/archive/master.tar.gz
 VALHALLA = https://github.com/valhalla/valhalla-docs/archive/master.tar.gz
-VECTOR = https://github.com/mapzen/vector-tile-service-docs/archive/master.tar.gz
+VECTOR = https://github.com/mapzen/vector-datasource/archive/v0.8.0-alpha.tar.gz
 SEARCH = https://github.com/pelias/pelias-doc/archive/master.tar.gz
 
 # Mapzen styleguide
@@ -33,7 +33,7 @@ get-metro-extracts:
 
 get-vector-tiles:
 	@rm -rf src/vector-tiles
-	@curl -L $(VECTOR) | tar -zxv -C src && mv src/vector-tile-service-docs-master src/vector-tiles
+	@curl -L $(VECTOR) | tar -zxv -C src --strip-components=1 vector-datasource-0.8.0-alpha/docs && mv src/docs src/vector-tiles && rm src/vector-tiles/README.md
 
 get-turn-by-turn:
 	@rm -rf src/turn-by-turn
