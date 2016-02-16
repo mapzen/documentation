@@ -3,13 +3,13 @@ docs_dir: src/vector-tiles
 site_dir: dist/vector-tiles
 
 pages:
-  - Home: docs/index.md
-  - 'Get started': 'docs/use-service.md'
-  - 'Make a map': 'docs/display-tiles.md'
-  - 'API keys and rate limits': 'docs/api-keys-and-rate-limits.md'
-  - 'Attribution': 'docs/attribution.md'
-  - 'Data Sources': 'docs/data-sources.md'
-  - 'Layers': 'docs/layers.md'
+  - Home: index.md
+  - 'Get started': 'use-service.md'
+  - 'Make a map': 'display-tiles.md'
+  - 'API keys and rate limits': 'api-keys-and-rate-limits.md'
+  - 'Attribution': 'attribution.md'
+  - 'Data Sources': 'data-sources.md'
+  - 'Layers': 'layers.md'
   
 # Extra variables for templates
 extra:

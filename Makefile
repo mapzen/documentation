@@ -35,7 +35,8 @@ get-metro-extracts:
 
 get-vector-tiles:
 	@rm -rf src/vector-tiles
-	@curl -L $(VECTOR) | tar -zxv -C src --strip-components=1 vector-datasource-0.8.0-alpha2/docs && mv src/docs src/vector-tiles && rm src/vector-tiles/README.md
+	@mkdir -p src/vector-tiles
+	@curl -L $(VECTOR) | tar -zxv -C src/vector-tiles --strip-components=2 --exclude=README.md vector-datasource-0.8.0-alpha2/docs
 
 get-turn-by-turn:
 	@rm -rf src/turn-by-turn
