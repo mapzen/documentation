@@ -30,6 +30,7 @@ get-tangram:
 
 get-metro-extracts:
 	@rm -rf src/metro-extracts
+	@mkdir -p src/metro-extracts
 	@curl -L $(EXTRACTS) | tar -zxv -C src/metro-extracts --strip-components=2 metroextractor-cities-master/docs
 
 get-vector-tiles:

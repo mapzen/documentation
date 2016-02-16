@@ -11,7 +11,8 @@ dependencies:
 
 test:
   override:
-    - echo 'no tests :·('
+    - make get
+    - make all
 
 deployment:
   staging:
