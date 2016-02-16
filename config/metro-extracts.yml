@@ -11,5 +11,5 @@ pages:
 extra:
   site_subtitle: Download city-sized portions of OpenStreetMap data in a variety of formats.
   project_repo_url: https://github.com/mapzen/metroextractor-cities
-  docs_base_url: https://github.com/mapzen/mapzen-docs/tree/master/metro-extracts
+  docs_base_url: https://github.com/mapzen/metroextractor-cities/tree/master/docs
   exclude_home_contents_in_toc: false

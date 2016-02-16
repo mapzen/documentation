@@ -1,6 +1,5 @@
 # Source doc tarballs
 TANGRAM = https://github.com/tangrams/tangram-docs/archive/gh-pages.tar.gz
-MAPZEN = https://github.com/mapzen/mapzen-docs/archive/master.tar.gz
 EXTRACTS = https://github.com/mapzen/metroextractor-cities/archive/master.tar.gz
 VALHALLA = https://github.com/valhalla/valhalla-docs/archive/master.tar.gz
 VECTOR = https://github.com/mapzen/vector-datasource/archive/v0.8.0-alpha2.tar.gz
@@ -26,7 +25,6 @@ get: get-tangram get-metro-extracts get-vector-tiles get-turn-by-turn get-elevat
 get-tangram:
 	@rm -rf src/tangram
 	@curl -L $(TANGRAM) | tar -zxv -C src --strip-components=1 tangram-docs-gh-pages/pages && mv src/pages src/tangram
-	# @curl -L $(MAPZEN) | tar -zxv -C src --strip-components=1 mapzen-docs-master/tangram
 
 get-metro-extracts:
 	@rm -rf src/metro-extracts
