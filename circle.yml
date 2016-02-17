@@ -10,13 +10,3 @@ test:
   override:
     - make get
     - make all
-
-deployment:
-  staging:
-    branch: master
-    commands:
-      - ./deploy dev
-  production:
-    branch: production
-    commands:
-      - ./deploy prod
