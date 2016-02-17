@@ -6,7 +6,7 @@
 # -----------------------------------------------------------------------------
 
 site_name: Mapzen documentation
-repo_url: https://github.com/mapzen/mapzen-docs
+repo_url: https://github.com/mapzen/mapzen-docs-generator
 remote_branch: master
 # google_analytics: ['UA-47035811-1', 'mapzen.com']
 theme: mkdocs
@@ -40,7 +40,7 @@ markdown_extensions:
 # Extra variables for templates
 extra:
   site_subtitle: Placeholder subtitle.
-  project_repo_url: https://github.com/mapzen/mapzen-docs/
+  project_repo_url: https://github.com/mapzen/mapzen-docs-generator/
   # This is used to build the "edit in GitHub" links.
-  docs_base_url: https://github.com/mapzen/mapzen-docs/tree/master/
+  docs_base_url: https://github.com/mapzen/mapzen-docs-generator/tree/master/
   exclude_home_contents_in_toc: true
