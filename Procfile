@@ -1,1 +1,1 @@
-deploy: make get && make all && aws s3 sync dist $AWS_DESTINATION
+deploy: make get && make all && python run-checklist.py && aws s3 sync dist $AWS_DESTINATION

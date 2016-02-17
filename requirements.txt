@@ -6,3 +6,4 @@ libsass >= 0.8.3
 anyconfig >= 0.0.10
 awscli==1.10.5
 https://github.com/facelessuser/pymdown-extensions/archive/1.0.0.zip
+beautifulsoup4==4.4.1
