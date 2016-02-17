@@ -4,3 +4,5 @@ htmlmin >= 0.1.6
 mdx-outline >= 1.2.1
 libsass >= 0.8.3
 anyconfig >= 0.0.10
+awscli==1.10.5
+https://github.com/facelessuser/pymdown-extensions/archive/1.0.0.zip
