@@ -19,38 +19,44 @@ clean-dist:
 	@rm -rf dist/*/
 	@mkdir -p src
 
-get: get-tangram get-metro-extracts get-vector-tiles get-turn-by-turn get-elevation get-matrix get-search theme/fragments
+get: src-tangram src-metro-extracts src-vector-tiles src-turn-by-turn src-elevation src-matrix src-search theme/fragments
+	mkdir -p src
+	rm -f src/tangram && ln -s ../src-tangram src/tangram
+	rm -f src/metro-extracts && ln -s ../src-metro-extracts src/metro-extracts
+	rm -f src/vector-tiles && ln -s ../src-vector-tiles src/vector-tiles
+	rm -f src/turn-by-turn && ln -s ../src-turn-by-turn src/turn-by-turn
+	rm -f src/elevation && ln -s ../src-elevation src/elevation
+	rm -f src/matrix && ln -s ../src-matrix src/matrix
+	rm -f src/search && ln -s ../src-search src/search
 
 # Get individual sources docs
-get-tangram:
-	@rm -rf src/tangram
-	@curl -L $(TANGRAM) | tar -zxv -C src --strip-components=1 tangram-docs-gh-pages/pages && mv src/pages src/tangram
+src-tangram:
+	mkdir src-tangram
+	curl -sL $(TANGRAM) | tar -zxv -C src-tangram --strip-components=2 tangram-docs-gh-pages/pages
 
-get-metro-extracts:
-	@rm -rf src/metro-extracts
-	@mkdir -p src/metro-extracts
-	@curl -L $(EXTRACTS) | tar -zxv -C src/metro-extracts --strip-components=2 metroextractor-cities-master/docs
+src-metro-extracts:
+	mkdir src-metro-extracts
+	curl -sL $(EXTRACTS) | tar -zxv -C src-metro-extracts --strip-components=2 metroextractor-cities-master/docs
 
-get-vector-tiles:
-	@rm -rf src/vector-tiles
-	@mkdir -p src/vector-tiles
-	@curl -L $(VECTOR) | tar -zxv -C src/vector-tiles --strip-components=2 --exclude=README.md vector-datasource-0.8.0-alpha2/docs
+src-vector-tiles:
+	mkdir src-vector-tiles
+	curl -sL $(VECTOR) | tar -zxv -C src-vector-tiles --strip-components=2 --exclude=README.md vector-datasource-0.8.0-alpha2/docs
 
-get-turn-by-turn:
-	@rm -rf src/turn-by-turn
-	@curl -L $(VALHALLA) | tar -zxv -C src && mv src/valhalla-docs-master src/turn-by-turn
+src-turn-by-turn:
+	mkdir src-turn-by-turn
+	curl -sL $(VALHALLA) | tar -zxv -C src-turn-by-turn --strip-components=1 valhalla-docs-master
 
-get-elevation:
-	@rm -rf src/elevation
-	@curl -L $(VALHALLA) | tar -zxv -C src --strip-components=1 valhalla-docs-master/elevation
+src-elevation:
+	mkdir src-elevation
+	curl -sL $(VALHALLA) | tar -zxv -C src-elevation --strip-components=2 valhalla-docs-master/elevation
 
-get-matrix:
-	@rm -rf src/matrix
-	@curl -L $(VALHALLA) | tar -zxv -C src --strip-components=1 valhalla-docs-master/matrix
+src-matrix:
+	mkdir src-matrix
+	curl -sL $(VALHALLA) | tar -zxv -C src-matrix --strip-components=2 valhalla-docs-master/matrix
 
-get-search:
-	@rm -rf src/search
-	@curl -L $(SEARCH) | tar -zxv -C src && mv src/pelias-doc-master src/search
+src-search:
+	mkdir src-search
+	curl -sL $(SEARCH) | tar -zxv -C src-search --strip-components=1 pelias-doc-master
 
 # Retrieve style guide
 theme/fragments:
