@@ -1,6 +1,9 @@
-mkdocs >= 0.14.0
-pygments >= 2.0.2
-htmlmin >= 0.1.6
-mdx-outline >= 1.2.1
-libsass >= 0.8.3
-anyconfig >= 0.0.10
+mkdocs==0.15.2
+Pygments==2.1.1
+htmlmin==0.1.10
+mdx-outline==1.2.1
+libsass==0.10.1
+anyconfig==0.4.0
+awscli==1.10.5
+https://github.com/facelessuser/pymdown-extensions/archive/1.0.0.zip
+beautifulsoup4==4.4.1
