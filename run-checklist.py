@@ -42,38 +42,38 @@ class Tests (unittest.TestCase):
         url1 = self.server.url
         
         head1 = page1.find(class_=compile(r'\bdocumentation-hero\b')).find('h1')
-        self.assertEqual(head1.text, start_title, 'Should be looking at {} page'.format(start_title))
+        self.assertEqual(head1.text, start_title, 'Should be looking at {} page at {}'.format(start_title, self.server.url))
         
         crumbs1 = page1.find('ol', class_=compile(r'\bbreadcrumb\b')).find_all('li')
-        self.assertEqual(len(crumbs1), 2, 'There should be two breadcrumbs at top')
-        self.assertIsNotNone(crumbs1[0].find('a'), 'The first breadcrumb is a link')
-        self.assertIsNone(crumbs1[1].find('a'), 'The last breadcrumb is not a link')
-        self.assertEqual(crumbs1[1].text, start_title, 'The last breadcrumb should be {}'.format(start_title))
+        self.assertEqual(len(crumbs1), 2, 'There should be two breadcrumbs at top at {}'.format(self.server.url))
+        self.assertIsNotNone(crumbs1[0].find('a'), 'The first breadcrumb is a link at {}'.format(self.server.url))
+        self.assertIsNone(crumbs1[1].find('a'), 'The last breadcrumb is not a link at {}'.format(self.server.url))
+        self.assertEqual(crumbs1[1].text, start_title, 'The last breadcrumb should be {} at {}'.format(start_title, self.server.url))
         
         link1 = page1.find('a', class_=compile(r'\bpagination-link\b'))
         
         if next_title is None:
-            self.assertIsNone(link1, 'Should be no pagination link here')
+            self.assertIsNone(link1, 'Should be no pagination link at {}'.format(self.server.url))
             return
         
-        self.assertIn(next_title, link1.text, 'First pagination link should go to {}'.format(next_title))
+        self.assertIn(next_title, link1.text, 'First pagination link should go to {} from {}'.format(next_title, self.server.url))
         
         page2 = self.server.go(link1['href'])
         
         head2 = page1.find(class_=compile(r'\bdocumentation-hero\b')).find('h1')
-        self.assertIn(start_title, head2.text, 'We should be on a page called {}'.format(start_title))
+        self.assertIn(start_title, head2.text, 'We should be on a page called {} at {}'.format(start_title, self.server.url))
         
         crumbs2 = page2.find('ol', class_=compile(r'\bbreadcrumb\b')).find_all('li')
-        self.assertEqual(len(crumbs2), 3, 'There should be three breadcrumbs at top')
-        self.assertIsNotNone(crumbs2[0].find('a'), 'The first breadcrumb is a link')
-        self.assertIsNotNone(crumbs2[1].find('a'), 'The second breadcrumb is a link')
-        self.assertIsNone(crumbs2[2].find('a'), 'The last breadcrumb is not a link')
-        self.assertEqual(crumbs2[2].text, next_title, 'The last breadcrumb should be {}'.format(next_title))
+        self.assertEqual(len(crumbs2), 3, 'There should be three breadcrumbs at top at {}'.format(self.server.url))
+        self.assertIsNotNone(crumbs2[0].find('a'), 'The first breadcrumb is a link at {}'.format(self.server.url))
+        self.assertIsNotNone(crumbs2[1].find('a'), 'The second breadcrumb is a link at {}'.format(self.server.url))
+        self.assertIsNone(crumbs2[2].find('a'), 'The last breadcrumb is not a link at {}'.format(self.server.url))
+        self.assertEqual(crumbs2[2].text, next_title, 'The last breadcrumb should be {} at {}'.format(next_title, self.server.url))
 
         edit2 = page2.find(string=compile(r'Edit this page on GitHub')).find_parent('a')
 
-        self.assertEqual(urlparse(edit2['href']).hostname, 'github.com', 'Should link to Github.com')
-        self.assertTrue(urlparse(edit2['href']).path.endswith('.md'), 'Should link to a Markdown file')
+        self.assertEqual(urlparse(edit2['href']).hostname, 'github.com', 'Should link to Github.com from {}'.format(self.server.url))
+        self.assertTrue(urlparse(edit2['href']).path.endswith('.md'), 'Should link to a Markdown file from {}'.format(self.server.url))
         
         link2 = page2.find('a', class_=compile(r'\bpagination-link\b'))
         self.server.go(link2['href'])
