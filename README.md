@@ -1,7 +1,13 @@
 # Mapzen's documentation pipeline
 
-We write our documentation in Markdown and store them iin GitHub, and use a [MkDocs](http://www.mkdocs.org/)-based automated workflow to convert them into friendlier static-site documentation pages hosted at https://mapzen.com/documentation/. You can read more about this on our [blog post](https://mapzen.com/blog/doc-site/
-).
+We write our documentation in Markdown and store them in GitHub, and use a [MkDocs](http://www.mkdocs.org/)-based automated workflow to convert them into friendlier static-site documentation pages hosted at https://mapzen.com/documentation/. You can read more about this on our [blog post](https://mapzen.com/blog/doc-site/).
+
+## Status
+
+Documentation is generated hourly from a scheduled task attached to the
+[Heroku app `mapzen-docs-generator`](https://dashboard.heroku.com/apps/mapzen-docs-generator).
+
+## Installation, Testing, And Use
 
 ### Rapid bootstrapping
 
