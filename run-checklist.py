@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from bs4 import BeautifulSoup
 from urllib.parse import urlparse, urlunparse, urljoin
 from os.path import join, abspath, dirname, relpath, isdir, isfile

@@ -10,3 +10,4 @@ test:
   override:
     - make get
     - make all
+    - ./run-checklist.py
