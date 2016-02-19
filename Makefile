@@ -13,11 +13,7 @@ PATH := $(shell pwd)/env/bin:$(PATH)
 SHELL := /bin/bash # required for OSX
 PYTHONPATH := packages:$(PYTHONPATH)
 
-# Reset entire build directory
-clean-dist:
-	@echo Cleaning out build directory...
-	@rm -rf dist/*/
-	@mkdir -p src
+all: dist
 
 src: src-tangram src-metro-extracts src-vector-tiles src-turn-by-turn src-elevation src-matrix src-search theme/fragments
 	mkdir src
@@ -99,8 +95,8 @@ dist-search: src
 	anyconfig_cli ./config/default.yml ./config/search.yml --merge=merge_dicts --set site_dir=dist-search --output=./dist-search-mkdocs.yml
 	mkdocs build --config-file ./dist-search-mkdocs.yml --clean
 
-all: clean-dist dist-tangram dist-metro-extracts dist-vector-tiles dist-turn-by-turn dist-search dist-elevation dist-matrix
-	# Compress all HTML files - controls Jinja whitespace
+dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-turn-by-turn dist-search dist-elevation dist-matrix
+	mkdir dist
 	ln -s ../dist-tangram dist/tangram
 	ln -s ../dist-metro-extracts dist/metro-extracts
 	ln -s ../dist-vector-tiles dist/vector-tiles
@@ -108,7 +104,8 @@ all: clean-dist dist-tangram dist-metro-extracts dist-vector-tiles dist-turn-by-
 	ln -s ../dist-search dist/search
 	ln -s ../dist-elevation dist/elevation
 	ln -s ../dist-matrix dist/matrix
-	@find dist -name \*.html -ls -exec htmlmin --keep-optional-attribute-quotes {} {} \;
+	# Compress all HTML files - controls Jinja whitespace
+	find -L dist -name \*.html -ls -exec htmlmin --keep-optional-attribute-quotes {} {} \;
 
 # Set virtual environment & install dependencies
 env:

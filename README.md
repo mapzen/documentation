@@ -24,11 +24,8 @@ cd mapzen-docs-generator
 # Install local dependencies
 make env
 
-# Get all the sources
-make src
-
-# Build all the documentations
-make all
+# Get all the sources and build all the documentation
+make
 
 # Local preview
 python -m SimpleHTTPServer 8000
