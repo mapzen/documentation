@@ -64,12 +64,6 @@ theme/fragments:
 	@curl -L '$(STYLEGUIDE)/src/site/fragments/global-nav.html' -o theme/fragments/global-nav.html
 	@curl -L '$(STYLEGUIDE)/src/site/fragments/global-footer.html' -o theme/fragments/global-footer.html
 
-# Build test docs
-test-docs:
-	@echo Building test documentation...
-	@ln -sf config/test.yml ./mkdocs.yml
-	@mkdocs build --clean # Ensure stale files are cleaned
-
 # Build tangram docs
 tangram:
 	@echo Building Tangram documentation...
