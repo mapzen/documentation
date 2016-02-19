@@ -1,5 +1,5 @@
 #!/bin/sh -ex
-make get
+make src
 make all
 ./run-checklist.py
 aws s3 sync dist s3://static-dev.mapzen.com/documentation/

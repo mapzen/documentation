@@ -25,7 +25,7 @@ cd mapzen-docs-generator
 make env
 
 # Get all the sources
-make get
+make src
 
 # Build all the documentations
 make all

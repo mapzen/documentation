@@ -8,6 +8,6 @@ dependencies:
 
 test:
   override:
-    - make get
+    - make src
     - make all
     - ./run-checklist.py

@@ -19,15 +19,15 @@ clean-dist:
 	@rm -rf dist/*/
 	@mkdir -p src
 
-get: src-tangram src-metro-extracts src-vector-tiles src-turn-by-turn src-elevation src-matrix src-search theme/fragments
-	mkdir -p src
-	rm -f src/tangram && ln -s ../src-tangram src/tangram
-	rm -f src/metro-extracts && ln -s ../src-metro-extracts src/metro-extracts
-	rm -f src/vector-tiles && ln -s ../src-vector-tiles src/vector-tiles
-	rm -f src/turn-by-turn && ln -s ../src-turn-by-turn src/turn-by-turn
-	rm -f src/elevation && ln -s ../src-elevation src/elevation
-	rm -f src/matrix && ln -s ../src-matrix src/matrix
-	rm -f src/search && ln -s ../src-search src/search
+src: src-tangram src-metro-extracts src-vector-tiles src-turn-by-turn src-elevation src-matrix src-search theme/fragments
+	mkdir src
+	ln -s ../src-tangram src/tangram
+	ln -s ../src-metro-extracts src/metro-extracts
+	ln -s ../src-vector-tiles src/vector-tiles
+	ln -s ../src-turn-by-turn src/turn-by-turn
+	ln -s ../src-elevation src/elevation
+	ln -s ../src-matrix src/matrix
+	ln -s ../src-search src/search
 
 # Get individual sources docs
 src-tangram:
