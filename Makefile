@@ -65,49 +65,49 @@ theme/fragments:
 	@curl -L '$(STYLEGUIDE)/src/site/fragments/global-footer.html' -o theme/fragments/global-footer.html
 
 # Build tangram docs
-tangram:
-	@echo Building Tangram documentation...
-	@anyconfig_cli ./config/default.yml ./config/tangram.yml --merge=merge_dicts --output=./mkdocs.yml
-	@mkdocs build --clean # Ensure stale files are cleaned
+dist-tangram: src
+	anyconfig_cli ./config/default.yml ./config/tangram.yml --merge=merge_dicts --set site_dir=dist-tangram --output=./dist-tangram-mkdocs.yml
+	mkdocs build --config-file ./dist-tangram-mkdocs.yml --clean
 
 # Build metro-extracts docs
-metro-extracts:
-	@echo Building Metro Extracts documentation...
-	@anyconfig_cli ./config/default.yml ./config/metro-extracts.yml --merge=merge_dicts --output=./mkdocs.yml
-	@mkdocs build --clean # Ensure stale files are cleaned
+dist-metro-extracts: src
+	anyconfig_cli ./config/default.yml ./config/metro-extracts.yml --merge=merge_dicts --set site_dir=dist-metro-extracts --output=./dist-metro-extracts-mkdocs.yml
+	mkdocs build --config-file ./dist-metro-extracts-mkdocs.yml --clean
 
 # Build vector-tiles docs
-vector-tiles:
-	@echo Building Vector Tiles documentation...
-	@anyconfig_cli ./config/default.yml ./config/vector-tiles.yml --merge=merge_dicts --output=./mkdocs.yml
-	@mkdocs build --clean # Ensure stale files are cleaned
+dist-vector-tiles: src
+	anyconfig_cli ./config/default.yml ./config/vector-tiles.yml --merge=merge_dicts --set site_dir=dist-vector-tiles --output=./dist-vector-tiles-mkdocs.yml
+	mkdocs build --config-file ./dist-vector-tiles-mkdocs.yml --clean
 
 # Build turn-by-turn docs
-turn-by-turn:
-	@echo Building Turn-by-Turn documentation...
-	@anyconfig_cli ./config/default.yml ./config/turn-by-turn.yml --merge=merge_dicts --output=./mkdocs.yml
-	@mkdocs build --clean # Ensure stale files are cleaned
+dist-turn-by-turn: src
+	anyconfig_cli ./config/default.yml ./config/turn-by-turn.yml --merge=merge_dicts --set site_dir=dist-turn-by-turn --output=./dist-turn-by-turn-mkdocs.yml
+	mkdocs build --config-file ./dist-turn-by-turn-mkdocs.yml --clean
 
 # Build elevation service docs
-elevation:
-	@echo Building Elevation Service documentation...
-	@anyconfig_cli ./config/default.yml ./config/elevation.yml --merge=merge_dicts --output=./mkdocs.yml
-	@mkdocs build --clean # Ensure stale files are cleaned
+dist-elevation: src
+	anyconfig_cli ./config/default.yml ./config/elevation.yml --merge=merge_dicts --set site_dir=dist-elevation --output=./dist-elevation-mkdocs.yml
+	mkdocs build --config-file ./dist-elevation-mkdocs.yml --clean
 
 # Build time-distance matrix service docs
-matrix:
-	@echo Building Time-Distance Matrix Service documentation...
-	@anyconfig_cli ./config/default.yml ./config/matrix.yml --merge=merge_dicts --output=./mkdocs.yml
-	@mkdocs build --clean # Ensure stale files are cleaned
+dist-matrix: src
+	anyconfig_cli ./config/default.yml ./config/matrix.yml --merge=merge_dicts --set site_dir=dist-matrix --output=./dist-matrix-mkdocs.yml
+	mkdocs build --config-file ./dist-matrix-mkdocs.yml --clean
 
 # Build Search/Pelias docs
-search:
-	@echo Building Search [Pelias] documentation...
-	@anyconfig_cli ./config/default.yml ./config/search.yml --merge=merge_dicts --output=./mkdocs.yml
-	@mkdocs build --clean # Ensure stale files are cleaned
+dist-search: src
+	anyconfig_cli ./config/default.yml ./config/search.yml --merge=merge_dicts --set site_dir=dist-search --output=./dist-search-mkdocs.yml
+	mkdocs build --config-file ./dist-search-mkdocs.yml --clean
 
-all: clean-dist tangram metro-extracts vector-tiles turn-by-turn search elevation matrix
+all: clean-dist dist-tangram dist-metro-extracts dist-vector-tiles dist-turn-by-turn dist-search dist-elevation dist-matrix
 	# Compress all HTML files - controls Jinja whitespace
+	ln -s ../dist-tangram dist/tangram
+	ln -s ../dist-metro-extracts dist/metro-extracts
+	ln -s ../dist-vector-tiles dist/vector-tiles
+	ln -s ../dist-turn-by-turn dist/turn-by-turn
+	ln -s ../dist-search dist/search
+	ln -s ../dist-elevation dist/elevation
+	ln -s ../dist-matrix dist/matrix
 	@find dist -name \*.html -ls -exec htmlmin --keep-optional-attribute-quotes {} {} \;
 
 # Set virtual environment & install dependencies
