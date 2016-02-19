@@ -8,8 +8,6 @@ SEARCH = https://github.com/pelias/pelias-doc/archive/master.tar.gz
 # Mapzen styleguide
 STYLEGUIDE = https://github.com/mapzen/styleguide/raw/master
 
-# Add local env/bin to PATH
-PATH := $(shell pwd)/env/bin:$(PATH)
 SHELL := /bin/bash # required for OSX
 PYTHONPATH := packages:$(PYTHONPATH)
 
@@ -107,15 +105,7 @@ dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-turn-by-turn dist-
 	# Compress all HTML files - controls Jinja whitespace
 	find -L dist -name \*.html -ls -exec htmlmin --keep-optional-attribute-quotes {} {} \;
 
-# Set virtual environment & install dependencies
-env:
-	@echo Verifying and installing Python environment and dependencies...
-	@test -d env || virtualenv -p python3 env
-	@env/bin/pip install -Ur requirements.txt
-	@env/bin/pip install https://github.com/facelessuser/pymdown-extensions/archive/master.zip
-	@npm install
-
 serve:
 	@mkdocs serve
 
-.PHONY: all env serve
+.PHONY: all serve
