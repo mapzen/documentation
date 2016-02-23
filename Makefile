@@ -13,6 +13,13 @@ PYTHONPATH := packages:$(PYTHONPATH)
 
 all: dist
 
+clean:
+	rm -rf src dist theme/fragments
+	rm -rf src-tangram src-metro-extracts src-vector-tiles \
+	       src-turn-by-turn src-elevation src-matrix src-search
+	rm -rf dist-tangram dist-metro-extracts dist-vector-tiles \
+	       dist-turn-by-turn dist-search dist-elevation dist-matrix
+
 src: src-tangram src-metro-extracts src-vector-tiles src-turn-by-turn src-elevation src-matrix src-search
 	mkdir src
 	ln -s ../src-tangram src/tangram
@@ -55,8 +62,8 @@ src-search:
 # Retrieve style guide
 theme/fragments:
 	@mkdir -p theme/fragments
-	@curl -L '$(STYLEGUIDE)/src/site/fragments/global-nav.html' -o theme/fragments/global-nav.html
-	@curl -L '$(STYLEGUIDE)/src/site/fragments/global-footer.html' -o theme/fragments/global-footer.html
+	@curl -sL '$(STYLEGUIDE)/src/site/fragments/global-nav.html' -o theme/fragments/global-nav.html
+	@curl -sL '$(STYLEGUIDE)/src/site/fragments/global-footer.html' -o theme/fragments/global-footer.html
 
 # Build tangram docs
 dist-tangram: src theme/fragments
@@ -108,4 +115,4 @@ dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-turn-by-turn dist-
 serve:
 	@mkdocs serve
 
-.PHONY: all serve
+.PHONY: all clean serve
