@@ -53,8 +53,10 @@ class Tests (unittest.TestCase):
         
         anchor1a = page1.find('footer').find(string=compile(r'Documentation')).find_parent('a')
         anchor1b = page1.find('footer').find(string=compile(r'GitHub')).find_parent('a')
-        self.assertEqual(anchor1a['href'], '/documentation/', 'Should link to root /documentation')
-        self.assertEqual(anchor1b['href'], 'https://github.com/mapzen/', 'Should link out to Github')
+        href1a = urljoin(urljoin('https://mapzen.com/documentation/', self.server.url), anchor1a['href'])
+        href1b = urljoin(urljoin('https://mapzen.com/documentation/', self.server.url), anchor1b['href'])
+        self.assertEqual(href1a, 'https://mapzen.com/documentation/', 'Should link to Mapzen docs')
+        self.assertEqual(href1b, 'https://github.com/mapzen/', 'Should link out to Github')
         
         link1 = page1.find('a', class_=compile(r'\bpagination-link\b'))
         
