@@ -6,7 +6,7 @@ VECTOR = https://github.com/mapzen/vector-datasource/archive/v0.8.0-alpha2.tar.g
 SEARCH = https://github.com/pelias/pelias-doc/archive/master.tar.gz
 
 # Mapzen styleguide
-STYLEGUIDE = https://github.com/mapzen/styleguide/archive/master.tar.gz
+STYLEGUIDE = https://github.com/mapzen/styleguide/raw/master
 
 # Add local env/bin to PATH
 PATH := $(shell pwd)/env/bin:$(PATH)
@@ -19,7 +19,7 @@ clean-dist:
 	@rm -rf dist/*/
 	@mkdir -p src
 
-get: get-tangram get-metro-extracts get-vector-tiles get-turn-by-turn get-elevation get-matrix get-search styleguide
+get: get-tangram get-metro-extracts get-vector-tiles get-turn-by-turn get-elevation get-matrix get-search theme/fragments
 
 # Get individual sources docs
 get-tangram:
@@ -53,11 +53,10 @@ get-search:
 	@curl -L $(SEARCH) | tar -zxv -C src && mv src/pelias-doc-master src/search
 
 # Retrieve style guide
-styleguide:
-	@rm -rf src/styleguide
-	@curl -L $(STYLEGUIDE) | tar -zxv -C src && mv src/styleguide-master src/styleguide
+theme/fragments:
 	@mkdir -p theme/fragments
-	@cp src/styleguide/src/site/fragments/* theme/fragments
+	@curl -L '$(STYLEGUIDE)/src/site/fragments/global-nav.html' -o theme/fragments/global-nav.html
+	@curl -L '$(STYLEGUIDE)/src/site/fragments/global-footer.html' -o theme/fragments/global-footer.html
 
 # Build test docs
 test-docs:
