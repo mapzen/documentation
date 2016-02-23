@@ -51,6 +51,11 @@ class Tests (unittest.TestCase):
         self.assertIsNone(crumbs1[1].find('a'), 'The last breadcrumb is not a link at {}'.format(self.server.url))
         self.assertEqual(crumbs1[1].text, start_title, 'The last breadcrumb should be {} at {}'.format(start_title, self.server.url))
         
+        anchor1a = page1.find('footer').find(string=compile(r'Documentation')).find_parent('a')
+        anchor1b = page1.find('footer').find(string=compile(r'GitHub')).find_parent('a')
+        self.assertEqual(anchor1a['href'], '/documentation/', 'Should link to root /documentation')
+        self.assertEqual(anchor1b['href'], 'https://github.com/mapzen/', 'Should link out to Github')
+        
         link1 = page1.find('a', class_=compile(r'\bpagination-link\b'))
         
         if next_title is None:
