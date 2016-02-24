@@ -19,6 +19,9 @@ clean:
 	       src-turn-by-turn src-elevation src-matrix src-search
 	rm -rf dist-tangram dist-metro-extracts dist-vector-tiles \
 	       dist-turn-by-turn dist-search dist-elevation dist-matrix
+	rm -rf dist-tangram-mkdocs.yml dist-metro-extracts-mkdocs.yml \
+	       dist-vector-tiles-mkdocs.yml dist-turn-by-turn-mkdocs.yml \
+	       dist-search-mkdocs.yml dist-elevation-mkdocs.yml dist-matrix-mkdocs.yml
 
 src: src-tangram src-metro-extracts src-vector-tiles src-turn-by-turn src-elevation src-matrix src-search
 	mkdir src
