@@ -1,6 +1,6 @@
 site_name: Metro Extracts
-docs_dir: src/metro-extracts
-site_dir: dist/metro-extracts
+docs_dir: src-metro-extracts
+site_dir: dist-metro-extracts
 include_next_prev: false # next/prev is in alpha order; we don't want this
 
 pages:

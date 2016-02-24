@@ -2,12 +2,7 @@ machine:
   python:
     version: 3.4.3
 
-dependencies:
-  pre:
-    - rm -rf node_modules # Force npm install to fetch styleguide from remote server
-
 test:
   override:
-    - make get
-    - make all
+    - make
     - ./run-checklist.py

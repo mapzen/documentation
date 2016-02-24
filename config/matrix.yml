@@ -1,6 +1,6 @@
 site_name: Time-Distance Matrix
-docs_dir: src/matrix
-site_dir: dist/matrix
+docs_dir: src-matrix
+site_dir: dist-matrix
 
 pages:
   - Home: index.md

@@ -1,15 +1,11 @@
 # Dependencies
 env
-node_modules
-
-# Documentation source files
-src/*/
-!src/test/
 
 # Generated files
-site/
-dist/*/
-mkdocs.yml
+dist/
+src-*/
+dist-*/
+dist-*-mkdocs.yml
 .sass-cache/
 theme/fragments/
 

@@ -1,6 +1,6 @@
 site_name: Mapzen Search
-docs_dir: src/search
-site_dir: dist/search
+docs_dir: src-search
+site_dir: dist-search
 
 pages:
   - Home: index.md
