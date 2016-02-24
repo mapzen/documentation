@@ -1,6 +1,6 @@
 site_name: Elevation Service
-docs_dir: src/elevation
-site_dir: dist/elevation
+docs_dir: src-elevation
+site_dir: dist-elevation
 include_next_prev: false
 extra_css: [css/codehilite/mapzen.css]
 

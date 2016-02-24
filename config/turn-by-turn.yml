@@ -1,6 +1,6 @@
 site_name: Mapzen Turn-by-Turn
-docs_dir: src/turn-by-turn
-site_dir: dist/turn-by-turn
+docs_dir: src-turn-by-turn
+site_dir: dist-turn-by-turn
 
 pages:
   - Home: index.md

@@ -1,6 +1,6 @@
 site_name: Tangram
-docs_dir: src/tangram
-site_dir: dist/tangram
+docs_dir: src-tangram
+site_dir: dist-tangram
 
 # Because Tangram does not organize documentation in folders, we're going to have
 # to enforce the Table of Contents structure manually in the configuration below.

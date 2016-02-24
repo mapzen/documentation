@@ -14,7 +14,7 @@ PYTHONPATH := packages:$(PYTHONPATH)
 all: dist
 
 clean:
-	rm -rf src dist theme/fragments
+	rm -rf dist theme/fragments
 	rm -rf src-tangram src-metro-extracts src-vector-tiles \
 	       src-turn-by-turn src-elevation src-matrix src-search
 	rm -rf dist-tangram dist-metro-extracts dist-vector-tiles \
@@ -22,16 +22,6 @@ clean:
 	rm -rf dist-tangram-mkdocs.yml dist-metro-extracts-mkdocs.yml \
 	       dist-vector-tiles-mkdocs.yml dist-turn-by-turn-mkdocs.yml \
 	       dist-search-mkdocs.yml dist-elevation-mkdocs.yml dist-matrix-mkdocs.yml
-
-src: src-tangram src-metro-extracts src-vector-tiles src-turn-by-turn src-elevation src-matrix src-search
-	mkdir src
-	ln -s ../src-tangram src/tangram
-	ln -s ../src-metro-extracts src/metro-extracts
-	ln -s ../src-vector-tiles src/vector-tiles
-	ln -s ../src-turn-by-turn src/turn-by-turn
-	ln -s ../src-elevation src/elevation
-	ln -s ../src-matrix src/matrix
-	ln -s ../src-search src/search
 
 # Get individual sources docs
 src-tangram:
@@ -69,38 +59,38 @@ theme/fragments:
 	@curl -sL '$(STYLEGUIDE)/src/site/fragments/global-footer.html' -o theme/fragments/global-footer.html
 
 # Build tangram docs
-dist-tangram: src theme/fragments
-	anyconfig_cli ./config/default.yml ./config/tangram.yml --merge=merge_dicts --set site_dir=dist-tangram --output=./dist-tangram-mkdocs.yml
+dist-tangram: src-tangram theme/fragments
+	anyconfig_cli ./config/default.yml ./config/tangram.yml --merge=merge_dicts --output=./dist-tangram-mkdocs.yml
 	mkdocs build --config-file ./dist-tangram-mkdocs.yml --clean
 
 # Build metro-extracts docs
-dist-metro-extracts: src theme/fragments
-	anyconfig_cli ./config/default.yml ./config/metro-extracts.yml --merge=merge_dicts --set site_dir=dist-metro-extracts --output=./dist-metro-extracts-mkdocs.yml
+dist-metro-extracts: src-metro-extracts theme/fragments
+	anyconfig_cli ./config/default.yml ./config/metro-extracts.yml --merge=merge_dicts --output=./dist-metro-extracts-mkdocs.yml
 	mkdocs build --config-file ./dist-metro-extracts-mkdocs.yml --clean
 
 # Build vector-tiles docs
-dist-vector-tiles: src theme/fragments
-	anyconfig_cli ./config/default.yml ./config/vector-tiles.yml --merge=merge_dicts --set site_dir=dist-vector-tiles --output=./dist-vector-tiles-mkdocs.yml
+dist-vector-tiles: src-vector-tiles theme/fragments
+	anyconfig_cli ./config/default.yml ./config/vector-tiles.yml --merge=merge_dicts --output=./dist-vector-tiles-mkdocs.yml
 	mkdocs build --config-file ./dist-vector-tiles-mkdocs.yml --clean
 
 # Build turn-by-turn docs
-dist-turn-by-turn: src theme/fragments
-	anyconfig_cli ./config/default.yml ./config/turn-by-turn.yml --merge=merge_dicts --set site_dir=dist-turn-by-turn --output=./dist-turn-by-turn-mkdocs.yml
+dist-turn-by-turn: src-turn-by-turn theme/fragments
+	anyconfig_cli ./config/default.yml ./config/turn-by-turn.yml --merge=merge_dicts --output=./dist-turn-by-turn-mkdocs.yml
 	mkdocs build --config-file ./dist-turn-by-turn-mkdocs.yml --clean
 
 # Build elevation service docs
-dist-elevation: src theme/fragments
-	anyconfig_cli ./config/default.yml ./config/elevation.yml --merge=merge_dicts --set site_dir=dist-elevation --output=./dist-elevation-mkdocs.yml
+dist-elevation: src-elevation theme/fragments
+	anyconfig_cli ./config/default.yml ./config/elevation.yml --merge=merge_dicts --output=./dist-elevation-mkdocs.yml
 	mkdocs build --config-file ./dist-elevation-mkdocs.yml --clean
 
 # Build time-distance matrix service docs
-dist-matrix: src theme/fragments
-	anyconfig_cli ./config/default.yml ./config/matrix.yml --merge=merge_dicts --set site_dir=dist-matrix --output=./dist-matrix-mkdocs.yml
+dist-matrix: src-matrix theme/fragments
+	anyconfig_cli ./config/default.yml ./config/matrix.yml --merge=merge_dicts --output=./dist-matrix-mkdocs.yml
 	mkdocs build --config-file ./dist-matrix-mkdocs.yml --clean
 
 # Build Search/Pelias docs
-dist-search: src theme/fragments
-	anyconfig_cli ./config/default.yml ./config/search.yml --merge=merge_dicts --set site_dir=dist-search --output=./dist-search-mkdocs.yml
+dist-search: src-search theme/fragments
+	anyconfig_cli ./config/default.yml ./config/search.yml --merge=merge_dicts --output=./dist-search-mkdocs.yml
 	mkdocs build --config-file ./dist-search-mkdocs.yml --clean
 
 dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-turn-by-turn dist-search dist-elevation dist-matrix

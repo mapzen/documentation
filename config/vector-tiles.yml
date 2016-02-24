@@ -1,6 +1,6 @@
 site_name: Vector Tile Service
-docs_dir: src/vector-tiles
-site_dir: dist/vector-tiles
+docs_dir: src-vector-tiles
+site_dir: dist-vector-tiles
 
 pages:
   - Home: index.md

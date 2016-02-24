@@ -2,7 +2,6 @@
 env
 
 # Generated files
-src/
 dist/
 src-*/
 dist-*/
