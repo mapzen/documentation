@@ -20,7 +20,6 @@ checkout of this repository:
 virtualenv -p python3 venv
 source venv/bin/activate
 pip install -Ur requirements.txt
-npm install
 
 # Get all the sources and build all the documentation
 make
