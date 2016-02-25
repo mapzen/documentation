@@ -6,3 +6,4 @@ test:
   override:
     - make
     - ./run-checklist.py
+    - cp -Lr dist $CIRCLE_ARTIFACTS/documentation
