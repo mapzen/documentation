@@ -8,4 +8,10 @@ test:
     - ./run-checklist.py
     - cp -Lr dist $CIRCLE_ARTIFACTS/documentation
     - echo '<a href="/documentation/">documentation</a>' > $CIRCLE_ARTIFACTS/index.html
-    - echo '<a href="search/">search</a>' > $CIRCLE_ARTIFACTS/documentation/index.html
+    - echo '<a href="tangram/">tangram</a><br>' > $CIRCLE_ARTIFACTS/documentation/index.html
+    - echo '<a href="metro-extracts/">metro-extracts</a><br>' >> $CIRCLE_ARTIFACTS/documentation/index.html
+    - echo '<a href="vector-tiles/">vector-tiles</a><br>' >> $CIRCLE_ARTIFACTS/documentation/index.html
+    - echo '<a href="turn-by-turn/">turn-by-turn</a><br>' >> $CIRCLE_ARTIFACTS/documentation/index.html
+    - echo '<a href="search/">search</a><br>' >> $CIRCLE_ARTIFACTS/documentation/index.html
+    - echo '<a href="elevation/">elevation</a><br>' >> $CIRCLE_ARTIFACTS/documentation/index.html
+    - echo '<a href="matrix/">matrix</a><br>' >> $CIRCLE_ARTIFACTS/documentation/index.html
