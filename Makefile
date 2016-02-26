@@ -101,7 +101,7 @@ dist-index: theme/fragments
 	mkdocs build --config-file ./dist-index-mkdocs.yml --clean
 
 dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-turn-by-turn dist-search dist-elevation dist-matrix dist-index
-	mkdir dist
+	cp -r dist-index dist
 	ln -s ../dist-tangram dist/tangram
 	ln -s ../dist-metro-extracts dist/metro-extracts
 	ln -s ../dist-vector-tiles dist/vector-tiles
