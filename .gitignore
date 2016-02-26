@@ -8,6 +8,7 @@ dist-*/
 dist-*-mkdocs.yml
 .sass-cache/
 theme/fragments/
+!src-index/
 
 # Python
 *.pyc
