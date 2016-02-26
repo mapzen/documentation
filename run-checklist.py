@@ -88,6 +88,26 @@ class Tests (unittest.TestCase):
         
         self.assertEqual(self.server.url, url1, 'We should be back where we started')
     
+    def test_index(self):
+        page = self.server.go('/')
+        
+        hitboxes = page.find('div', class_='doc-hitboxes').find_all('div', class_='doc-hitbox')
+        self.assertEqual(len(hitboxes), 7, 'Should be seven documentation sections')
+        
+        anchors = [box.find('a') for box in hitboxes]
+        titles = [anchor.find('h5').text.strip() for anchor in anchors]
+
+        base = 'https://mapzen.com/documentation/'
+        links = {urljoin(base, a['href']): t for (a, t) in zip(anchors, titles)}
+        
+        self.assertEqual(links['https://mapzen.com/documentation/tangram/'], 'Tangram')
+        self.assertEqual(links['https://mapzen.com/documentation/search/'], 'Mapzen Search')
+        self.assertEqual(links['https://mapzen.com/documentation/turn-by-turn/'], 'Mapzen Turn-by-Turn')
+        self.assertEqual(links['https://mapzen.com/documentation/vector-tiles/'], 'Vector Tile Service')
+        self.assertEqual(links['https://mapzen.com/documentation/metro-extracts/'], 'Metro Extracts')
+        self.assertEqual(links['https://mapzen.com/documentation/elevation/'], 'Elevation Service')
+        self.assertEqual(links['https://mapzen.com/documentation/matrix/'], 'Time-Distance Matrix')
+    
     def test_tangram_index(self):
         self._test_doc_section('/tangram', 'Tangram', 'Walkthrough')
     
