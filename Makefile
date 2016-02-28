@@ -99,6 +99,7 @@ dist-search: src-search theme/fragments
 dist-index: theme/fragments
 	anyconfig_cli ./config/default.yml ./config/index.yml --merge=merge_dicts --output=./dist-index-mkdocs.yml
 	mkdocs build --config-file ./dist-index-mkdocs.yml --clean
+	cp dist-index/index.html dist-index/next.html
 
 dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-turn-by-turn dist-search dist-elevation dist-matrix dist-index
 	cp -r dist-index dist
