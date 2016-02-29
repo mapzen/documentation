@@ -6,6 +6,9 @@
 			</h1>
 		</div>
 	</div>
+	<div class="row">
+		<br>
+	</div>
 	<div class="row doc-hitboxes">
 		<div class="col-sm-6 col-xs-12">
 			<div class="doc-hitbox footroom-med">
