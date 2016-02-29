@@ -4,14 +4,6 @@
 			<h1 class="red-text">
 				documentation 
 			</h1>
-			<h3 class="headroom">
-				Get to know all the things about Mapzen tools and services. 
-			</h3>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-xs-12 text-center headroom-extra-large footroom-extra-large">
-			<img class="red-compass" src="https://mapzen.com/resources/compass-red.png"> 
 		</div>
 	</div>
 	<div class="row doc-hitboxes">
