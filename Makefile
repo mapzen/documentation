@@ -18,10 +18,12 @@ clean:
 	rm -rf src-tangram src-metro-extracts src-vector-tiles \
 	       src-turn-by-turn src-elevation src-matrix src-search
 	rm -rf dist-tangram dist-metro-extracts dist-vector-tiles \
-	       dist-turn-by-turn dist-search dist-elevation dist-matrix
+	       dist-turn-by-turn dist-search dist-elevation dist-matrix \
+	       dist-index
 	rm -rf dist-tangram-mkdocs.yml dist-metro-extracts-mkdocs.yml \
 	       dist-vector-tiles-mkdocs.yml dist-turn-by-turn-mkdocs.yml \
-	       dist-search-mkdocs.yml dist-elevation-mkdocs.yml dist-matrix-mkdocs.yml
+	       dist-search-mkdocs.yml dist-elevation-mkdocs.yml \
+	       dist-matrix-mkdocs.yml dist-index-mkdocs.yml
 
 # Get individual sources docs
 src-tangram:
@@ -93,8 +95,14 @@ dist-search: src-search theme/fragments
 	anyconfig_cli ./config/default.yml ./config/search.yml --merge=merge_dicts --output=./dist-search-mkdocs.yml
 	mkdocs build --config-file ./dist-search-mkdocs.yml --clean
 
-dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-turn-by-turn dist-search dist-elevation dist-matrix
-	mkdir dist
+# Build index page
+dist-index: theme/fragments
+	anyconfig_cli ./config/default.yml ./config/index.yml --merge=merge_dicts --output=./dist-index-mkdocs.yml
+	mkdocs build --config-file ./dist-index-mkdocs.yml --clean
+	cp dist-index/index.html dist-index/next.html
+
+dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-turn-by-turn dist-search dist-elevation dist-matrix dist-index
+	cp -r dist-index dist
 	ln -s ../dist-tangram dist/tangram
 	ln -s ../dist-metro-extracts dist/metro-extracts
 	ln -s ../dist-vector-tiles dist/vector-tiles

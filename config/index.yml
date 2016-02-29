@@ -1,0 +1,8 @@
+docs_dir: src-index
+site_dir: dist-index
+
+pages:
+  - Home: index.md
+
+extra:
+  layout: raw-page
