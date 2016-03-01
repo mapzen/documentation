@@ -5,11 +5,11 @@ site_dir: dist-vector-tiles
 pages:
   - Home: index.md
   - 'Get started': 'use-service.md'
-  - 'Make a map': 'display-tiles.md'
-  - 'API keys and rate limits': 'api-keys-and-rate-limits.md'
-  - 'Attribution': 'attribution.md'
-  - 'Data Sources': 'data-sources.md'
   - 'Layers': 'layers.md'
+  - 'Make a map': 'display-tiles.md'
+  - 'Data Sources': 'data-sources.md'
+  - 'Attribution': 'attribution.md'
+  - 'API keys and rate limits': 'api-keys-and-rate-limits.md'
   
 # Extra variables for templates
 extra:
