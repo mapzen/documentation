@@ -118,7 +118,7 @@ class Tests (unittest.TestCase):
         self._test_doc_section('/turn-by-turn', 'Mapzen Turn-by-Turn', 'API reference')
 
     def test_vectortiles_index(self):
-        self._test_doc_section('/vector-tiles', 'Vector Tile Service', 'Get started')
+        self._test_doc_section('/vector-tiles', 'Vector Tile Service', 'Layers')
 
     def test_metroextracts_index(self):
         self._test_doc_section('/metro-extracts', 'Metro Extracts', None)
