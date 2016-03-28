@@ -8,7 +8,7 @@
 	</div>
 	<div class="row">
 		<div class="col-xs-12 text-center headroom-extra-large footroom-extra-large">
-			<img class="red-compass" src="https://mapzen.com/resources/compass-red.png"> 
+			<img class="red-compass" src="https://mapzen.com/common/styleguide/images/divider/compass-red.png"> 
 		</div>
 	</div>
 	<div class="row doc-hitboxes">
