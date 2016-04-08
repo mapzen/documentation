@@ -17,16 +17,19 @@ pages:
     - 'Shaders': 'Shaders-Overview.md'
     - 'Styles': 'Styles-Overview.md'
   - Technical reference:
-    - 'yaml': 'yaml.md'
-    - 'scene': 'scene.md'
-    - 'sources': 'sources.md'
     - 'cameras': 'cameras.md'
+    - 'draw': 'draw.md'
+    - 'filters': 'filters.md'
+    - 'layers': 'layers.md'
     - 'lights': 'lights.md'
     - 'materials': 'materials.md'
-    - 'styles': 'styles.md'
-    - 'layers': 'layers.md'
-    - 'draw': 'draw.md'
+    - 'scene': 'scene.md'
     - 'shaders': 'shaders.md'
+    - 'sources': 'sources.md'
+    - 'styles': 'styles.md'
+    - 'textures': 'textures.md'
+    - 'yaml': 'yaml.md'
+  - 'JavaScript API': 'Javascript-API.md'
 
 # Determines if a broken link to a page within the documentation is considered
 # a warning or an error (link to a page not listed in the pages setting). Set
