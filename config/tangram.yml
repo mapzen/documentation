@@ -29,7 +29,7 @@ pages:
     - 'styles': 'styles.md'
     - 'textures': 'textures.md'
     - 'yaml': 'yaml.md'
-  - 'JavaScript API': 'JavaScript-API.md'
+  - 'JavaScript API': 'Javascript-API.md'
 
 # Determines if a broken link to a page within the documentation is considered
 # a warning or an error (link to a page not listed in the pages setting). Set
