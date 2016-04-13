@@ -17,6 +17,7 @@ pages:
   - 'Terminology': 'glossary.md'
   - 'HTTP status codes': 'http-status-codes.md'
   - 'Transition from Pelias beta': 'transition-from-beta.md'
+  - 'Release notes': 'release-notes.md'
 
 extra:
   site_subtitle: 'Find places and addresses with this geographic search service built on open tools and open data.'
