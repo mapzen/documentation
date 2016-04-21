@@ -4,6 +4,7 @@ EXTRACTS = https://github.com/mapzen/metroextractor-cities/archive/master.tar.gz
 VALHALLA = https://github.com/valhalla/valhalla-docs/archive/master.tar.gz
 VECTOR = https://github.com/mapzen/vector-datasource/archive/v0.9.1.tar.gz
 SEARCH = https://github.com/pelias/pelias-doc/archive/master.tar.gz
+ANDROID = https://github.com/mapzen/android/archive/master.tar.gz
 
 # Mapzen styleguide
 STYLEGUIDE = https://github.com/mapzen/styleguide/raw/master
@@ -54,6 +55,10 @@ src-search:
 	mkdir src-search
 	curl -sL $(SEARCH) | tar -zxv -C src-search --strip-components=1 pelias-doc-master
 
+src-android:
+	mkdir src-android
+	curl -sL $(ANDROID) | tar -zxv -C src-android --strip-components=2 android-master/docs
+
 # Retrieve style guide
 theme/fragments:
 	@mkdir -p theme/fragments
@@ -94,6 +99,11 @@ dist-matrix: src-matrix theme/fragments
 dist-search: src-search theme/fragments
 	anyconfig_cli ./config/default.yml ./config/search.yml --merge=merge_dicts --output=./dist-search-mkdocs.yml
 	mkdocs build --config-file ./dist-search-mkdocs.yml --clean
+
+# Build Android docs
+dist-android: src-android theme/fragments
+	anyconfig_cli ./config/default.yml ./config/android.yml --merge=merge_dicts --output=./dist-android-mkdocs.yml
+	mkdocs build --config-file ./dist-android-mkdocs.yml --clean
 
 # Build index page
 dist-index: theme/fragments
