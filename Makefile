@@ -111,7 +111,7 @@ dist-index: theme/fragments
 	mkdocs build --config-file ./dist-index-mkdocs.yml --clean
 	cp dist-index/index.html dist-index/next.html
 
-dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-turn-by-turn dist-search dist-elevation dist-matrix dist-index
+dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-turn-by-turn dist-search dist-elevation dist-matrix dist-android dist-index
 	cp -r dist-index dist
 	ln -s ../dist-tangram dist/tangram
 	ln -s ../dist-metro-extracts dist/metro-extracts
@@ -120,6 +120,7 @@ dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-turn-by-turn dist-
 	ln -s ../dist-search dist/search
 	ln -s ../dist-elevation dist/elevation
 	ln -s ../dist-matrix dist/matrix
+	ln -s ../dist-android dist/android
 	# Compress all HTML files - controls Jinja whitespace
 	find -L dist -name \*.html -ls -exec htmlmin --keep-optional-attribute-quotes {} {} \;
 

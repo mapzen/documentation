@@ -96,6 +96,18 @@
 				<span class="btn btn-transparent headroom-large">View documentation</span> </a> 
 			</div>
 		</div>
+		<div class="col-sm-6 col-xs-12">
+			<div class="doc-hitbox footroom-med">
+				<a href="android/" title="Android SDK documentation"> 
+				<h5>
+					Android SDK
+				</h5>
+				<p>
+					A thin wrapper that packages up everything you need to use Mapzen services in your Android applications.
+				</p>
+				<span class="btn btn-transparent headroom-large">View documentation</span> </a> 
+			</div>
+		</div>
 	</div>
 	<div class="row">
 		<div class="col-xs-12">
