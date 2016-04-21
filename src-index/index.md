@@ -103,7 +103,7 @@
 					Android SDK
 				</h5>
 				<p>
-					A thin wrapper that packages up everything you need to use Mapzen services in your Android applications.
+					Everything you need to use Mapzen services in your Android applications.
 				</p>
 				<span class="btn btn-transparent headroom-large">View documentation</span> </a> 
 			</div>
