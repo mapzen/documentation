@@ -31,10 +31,8 @@ pages:
       - 'textures': 'textures.md'
       - 'yaml': 'yaml.md'
   - JavaScript API: 'Javascript-API.md'
-  - Android SDK: 'Android-SDK.md'
   - Demos & Examples:
     - 'JS Walkthrough': 'JS-awalkthrough.md'
-    - 'Android Walkthrough': 'Android-walkthrough.md'
     - 'Demos': 'Demos.md'
 
 
