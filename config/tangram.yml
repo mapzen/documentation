@@ -10,12 +10,13 @@ pages:
   - Scene File:
     - Concept overviews:
       - 'The Scene File': 'Scene-file.md'
-      - 'Filters': 'Filters-Overview.md'
-      - 'Lights': 'Lights-Overview.md'
-      - 'Cameras': 'Cameras-Overview.md'
-      - 'Materials': 'Materials-Overview.md'
-      - 'Shaders': 'Shaders-Overview.md'
+      - 'Data Filters': 'Filters-Overview.md'
       - 'Styles': 'Styles-Overview.md'
+      - 'Shaders': 'Shaders-Overview.md'
+      - 'Rasters': 'Rasters-Overview.md'
+      - 'Lights': 'Lights-Overview.md'
+      - 'Camerasa': 'Cameras-Overview.md'
+      - 'Materials': 'Materials-Overview.md'
     - Technical reference:
       - 'cameras': 'cameras.md'
       - 'draw': 'draw.md'
