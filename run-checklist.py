@@ -130,5 +130,8 @@ class Tests (unittest.TestCase):
     def test_matrix_index(self):
         self._test_doc_section('/matrix', 'Time-Distance Matrix', 'API reference')
 
+    def test_android_index(self):
+        self._test_doc_section('/android', 'Mapzen Android SDK', 'Installation')
+
 if __name__ == '__main__':
     unittest.main()
