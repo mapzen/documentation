@@ -32,7 +32,7 @@ pages:
       - 'yaml': 'yaml.md'
   - JavaScript API: 'Javascript-API.md'
   - Demos & Examples:
-    - 'JS Walkthrough': 'JS-awalkthrough.md'
+    - 'JS Walkthrough': 'JS-walkthrough.md'
     - 'Demos': 'Demos.md'
 
 
