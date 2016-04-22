@@ -32,7 +32,8 @@ pages:
   - JavaScript API: 'Javascript-API.md'
   - Android SDK: 'Android-SDK.md'
   - Demos & Examples:
-    - 'Walkthrough': 'walkthrough.md'
+    - 'JS Walkthrough': 'JS-awalkthrough.md'
+    - 'Android Walkthrough': 'Android-walkthrough.md'
     - 'Demos': 'Demos.md'
 
 
