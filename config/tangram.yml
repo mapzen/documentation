@@ -13,9 +13,9 @@ pages:
       - 'Data Filters': 'Filters-Overview.md'
       - 'Styles': 'Styles-Overview.md'
       - 'Shaders': 'Shaders-Overview.md'
-      - 'Rasters': 'Rasters-Overview.md'
+      - 'Raster Sources': 'Raster-Overview.md'
       - 'Lights': 'Lights-Overview.md'
-      - 'Camerasa': 'Cameras-Overview.md'
+      - 'Cameras': 'Cameras-Overview.md'
       - 'Materials': 'Materials-Overview.md'
     - Technical reference:
       - 'cameras': 'cameras.md'
