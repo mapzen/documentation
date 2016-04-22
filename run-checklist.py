@@ -92,7 +92,7 @@ class Tests (unittest.TestCase):
         page = self.server.go('/')
         
         hitboxes = page.find('div', class_='doc-hitboxes').find_all('div', class_='doc-hitbox')
-        self.assertEqual(len(hitboxes), 7, 'Should be seven documentation sections')
+        self.assertEqual(len(hitboxes), 8, 'Should be eight documentation sections')
         
         anchors = [box.find('a') for box in hitboxes]
         titles = [anchor.find('h5').text.strip() for anchor in anchors]
@@ -107,6 +107,7 @@ class Tests (unittest.TestCase):
         self.assertEqual(links['https://mapzen.com/documentation/metro-extracts/'], 'Metro Extracts')
         self.assertEqual(links['https://mapzen.com/documentation/elevation/'], 'Elevation Service')
         self.assertEqual(links['https://mapzen.com/documentation/matrix/'], 'Time-Distance Matrix')
+        self.assertEqual(links['https://mapzen.com/documentation/android/'], 'Android SDK')
     
     def test_tangram_index(self):
         self._test_doc_section('/tangram', 'Tangram', 'Walkthrough')
