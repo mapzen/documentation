@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 from urllib.parse import urlparse, urlunparse, urljoin
 from os.path import join, abspath, dirname, relpath, isdir, isfile
 from re import compile
-import unittest
+import unittest, yaml
 
 class HTTP404 (RuntimeError): pass
 
@@ -35,6 +35,20 @@ class Tests (unittest.TestCase):
     
     def setUp(self):
         self.server = SoupServer(join(dirname(__file__), 'dist'))
+    
+    def _load_doc_titles(self, path):
+        '''
+        '''
+        with open(path) as file:
+            config = yaml.load(file)
+            site_name = config['site_name']
+            
+            if config.get('include_next_prev') is not False:
+                (page2_title, ) = config['pages'][1].keys()
+            else:
+                page2_title = None
+        
+        return site_name, page2_title
     
     def _test_doc_section(self, start_path, start_title, next_title):
         '''
@@ -110,28 +124,28 @@ class Tests (unittest.TestCase):
         self.assertEqual(links['https://mapzen.com/documentation/android/'], 'Android SDK')
     
     def test_tangram_index(self):
-        self._test_doc_section('/tangram', 'Tangram', 'Walkthrough')
+        self._test_doc_section('/tangram', *self._load_doc_titles('config/tangram.yml'))
     
     def test_search_index(self):
-        self._test_doc_section('/search', 'Mapzen Search', 'Get started')
+        self._test_doc_section('/search', *self._load_doc_titles('config/search.yml'))
 
     def test_turnbyturn_index(self):
-        self._test_doc_section('/turn-by-turn', 'Mapzen Turn-by-Turn', 'API reference')
+        self._test_doc_section('/turn-by-turn', *self._load_doc_titles('config/turn-by-turn.yml'))
 
     def test_vectortiles_index(self):
-        self._test_doc_section('/vector-tiles', 'Vector Tile Service', 'Layers')
+        self._test_doc_section('/vector-tiles', *self._load_doc_titles('config/vector-tiles.yml'))
 
     def test_metroextracts_index(self):
-        self._test_doc_section('/metro-extracts', 'Metro Extracts', None)
+        self._test_doc_section('/metro-extracts', *self._load_doc_titles('config/metro-extracts.yml'))
 
     def test_elevation_index(self):
-        self._test_doc_section('/elevation', 'Elevation Service', None)
+        self._test_doc_section('/elevation', *self._load_doc_titles('config/elevation.yml'))
 
     def test_matrix_index(self):
-        self._test_doc_section('/matrix', 'Time-Distance Matrix', 'API reference')
+        self._test_doc_section('/matrix', *self._load_doc_titles('config/matrix.yml'))
 
     def test_android_index(self):
-        self._test_doc_section('/android', 'Mapzen Android SDK', 'Installation')
+        self._test_doc_section('/android', *self._load_doc_titles('config/android.yml'))
 
 if __name__ == '__main__':
     unittest.main()
