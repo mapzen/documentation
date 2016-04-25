@@ -77,7 +77,7 @@ There are two things to do if you want to change the GitHub repo used as the sou
       docs_base_url: https://github.com/mapzen/mapzen-docs/tree/master/metro-extracts
     ```
 
-2. **Update the repository path in the Makefile.** This file is located in this repo's root, and will be named `dist-projectname-mkdocs.yml`. This is a little harder because it requires some knowledge of shell scripting and `Make`. Generally, we want to first retrieve the source documentation file from GitHub (it's compressed). It might look something like this:
+2. **Update the repository path in the Makefile.** This file is located in this repo's root, and is called `Makefile`. This is a little harder because it requires some knowledge of shell scripting and `Make`. Generally, we want to first retrieve the source documentation file from GitHub (it's compressed). It might look something like this:
 
     `TANGRAM = https://github.com/tangrams/tangram-docs/archive/gh-pages.tar.gz`
     
