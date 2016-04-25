@@ -7,7 +7,7 @@ site_dir: dist-tangram
 # This means pages should be added or subtracted manually here if the files change.
 pages:
   - Home: index.md
-  - Styling Concept Overviews:
+  - Concept Overviews:
     - 'The Scene File': 'Scene-file.md'
     - 'Data Filters': 'Filters-Overview.md'
     - 'Styles': 'Styles-Overview.md'
@@ -16,7 +16,7 @@ pages:
     - 'Lights': 'Lights-Overview.md'
     - 'Cameras': 'Cameras-Overview.md'
     - 'Materials': 'Materials-Overview.md'
-  - Styling Technical Reference:
+  - Syntax Reference:
     - 'cameras': 'cameras.md'
     - 'draw': 'draw.md'
     - 'filters': 'filters.md'
