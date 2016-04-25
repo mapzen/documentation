@@ -68,7 +68,7 @@ We've heavily customized the MkDocs theme for use with Mapzen documentation. Res
 
 ## Updating documentation sources
 
-There are two things to do if you want to change the GitHub source of documentation.
+There are two things to do if you want to change the GitHub repo used as the source of the documentation.
 
 1. **Update the project configuration file.** This is located at `config/project-name.yml` file. Look for the `extra` key and find or create, one level in, the `docs_base_url` key. This is used to build the "edit in GitHub" links at the bottom of each page. The actual path and file name are appended to the base URL. It will look something like this:
 
@@ -77,4 +77,10 @@ There are two things to do if you want to change the GitHub source of documentat
       docs_base_url: https://github.com/mapzen/mapzen-docs/tree/master/metro-extracts
     ```
 
-2. **Update the repository path in the Makefile.** This is a little harder because it requires some knowledge of shell scripting and `Make`. Generally, we want to first retrieve the source documentation file from GitHub (it's compressed). Next, uncompress it -- extract the files into the `src/project-name` directory. If you're getting files from the mapzen-docs repository, you will have to flatten the directory structure a level up because of how the repository is organized. This step can vary depending on the project, which is why it's not super friendly.
+2. **Update the repository path in the Makefile.** This file is located in this repo's root, and will be named `dist-projectname-mkdocs.yml`. This is a little harder because it requires some knowledge of shell scripting and `Make`. Generally, we want to first retrieve the source documentation file from GitHub (it's compressed). It might look something like this:
+
+    `TANGRAM = https://github.com/tangrams/tangram-docs/archive/gh-pages.tar.gz`
+    
+    Next, uncompress it -- extract the files into the `src/project-name` directory. If you're getting files from the mapzen-docs repository, you will have to flatten the directory structure a level up because of how the repository is organized. This step can vary depending on the project, which is why it's not super friendly.
+
+    You can also change the branch of the repo used as the source of the documentation with this line, by replacing `gh-pages` with the name of another branch.
