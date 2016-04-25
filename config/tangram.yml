@@ -21,6 +21,7 @@ pages:
       - 'cameras': 'cameras.md'
       - 'draw': 'draw.md'
       - 'filters': 'filters.md'
+      - 'global': 'global.md'
       - 'layers': 'layers.md'
       - 'lights': 'lights.md'
       - 'materials': 'materials.md'
