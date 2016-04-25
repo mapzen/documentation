@@ -68,7 +68,7 @@ We've heavily customized the MkDocs theme for use with Mapzen documentation. Res
 
 ## Updating documentation sources
 
-There are two things to do if you want to change the GitHub repo used as the source of the documentation.
+There are two things to do if you want to change the GitHub source of documentation.
 
 1. **Update the project configuration file.** This is located at `config/project-name.yml` file. Look for the `extra` key and find or create, one level in, the `docs_base_url` key. This is used to build the "edit in GitHub" links at the bottom of each page. The actual path and file name are appended to the base URL. It will look something like this:
 
