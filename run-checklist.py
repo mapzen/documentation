@@ -124,8 +124,8 @@ class Tests (unittest.TestCase):
         self.assertEqual(links['https://mapzen.com/documentation/android/'], 'Android SDK')
     
     def test_tangram_index(self):
-        pass # self._test_doc_section('/tangram', *self._load_doc_titles('config/tangram.yml'))
-    
+        self._test_doc_section('/tangram', *self._load_doc_titles('config/tangram.yml'))
+
     def test_search_index(self):
         self._test_doc_section('/search', *self._load_doc_titles('config/search.yml'))
 
