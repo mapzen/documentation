@@ -7,19 +7,20 @@ site_dir: dist-tangram
 # This means pages should be added or subtracted manually here if the files change.
 pages:
   - Home: index.md
-  - 'Walkthrough': 'walkthrough.md'
-  - Concept overviews:
+  - Concept Overviews:
     - 'The Scene File': 'Scene-file.md'
-    - 'Filters': 'Filters-Overview.md'
+    - 'Data Filters': 'Filters-Overview.md'
+    - 'Styles': 'Styles-Overview.md'
+    - 'Shaders': 'Shaders-Overview.md'
+    - 'Raster Sources': 'Raster-Overview.md'
     - 'Lights': 'Lights-Overview.md'
     - 'Cameras': 'Cameras-Overview.md'
     - 'Materials': 'Materials-Overview.md'
-    - 'Shaders': 'Shaders-Overview.md'
-    - 'Styles': 'Styles-Overview.md'
-  - Technical reference:
+  - Syntax Reference:
     - 'cameras': 'cameras.md'
     - 'draw': 'draw.md'
     - 'filters': 'filters.md'
+    - 'global': 'global.md'
     - 'layers': 'layers.md'
     - 'lights': 'lights.md'
     - 'materials': 'materials.md'
@@ -29,7 +30,11 @@ pages:
     - 'styles': 'styles.md'
     - 'textures': 'textures.md'
     - 'yaml': 'yaml.md'
-  - 'JavaScript API': 'Javascript-API.md'
+  - JavaScript API: 'Javascript-API.md'
+  - Demos & Examples:
+    - 'Demos': 'Demos.md'
+    - 'JS Walkthrough': 'walkthrough.md'
+
 
 # Determines if a broken link to a page within the documentation is considered
 # a warning or an error (link to a page not listed in the pages setting). Set
