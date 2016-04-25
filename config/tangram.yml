@@ -7,30 +7,29 @@ site_dir: dist-tangram
 # This means pages should be added or subtracted manually here if the files change.
 pages:
   - Home: index.md
-  - Scene File:
-    - Concept overviews:
-      - 'The Scene File': 'Scene-file.md'
-      - 'Data Filters': 'Filters-Overview.md'
-      - 'Styles': 'Styles-Overview.md'
-      - 'Shaders': 'Shaders-Overview.md'
-      - 'Raster Sources': 'Raster-Overview.md'
-      - 'Lights': 'Lights-Overview.md'
-      - 'Cameras': 'Cameras-Overview.md'
-      - 'Materials': 'Materials-Overview.md'
-    - Technical reference:
-      - 'cameras': 'cameras.md'
-      - 'draw': 'draw.md'
-      - 'filters': 'filters.md'
-      - 'global': 'global.md'
-      - 'layers': 'layers.md'
-      - 'lights': 'lights.md'
-      - 'materials': 'materials.md'
-      - 'scene': 'scene.md'
-      - 'shaders': 'shaders.md'
-      - 'sources': 'sources.md'
-      - 'styles': 'styles.md'
-      - 'textures': 'textures.md'
-      - 'yaml': 'yaml.md'
+  - Styling Concept Overviews:
+    - 'The Scene File': 'Scene-file.md'
+    - 'Data Filters': 'Filters-Overview.md'
+    - 'Styles': 'Styles-Overview.md'
+    - 'Shaders': 'Shaders-Overview.md'
+    - 'Raster Sources': 'Raster-Overview.md'
+    - 'Lights': 'Lights-Overview.md'
+    - 'Cameras': 'Cameras-Overview.md'
+    - 'Materials': 'Materials-Overview.md'
+  - Styling Technical Reference:
+    - 'cameras': 'cameras.md'
+    - 'draw': 'draw.md'
+    - 'filters': 'filters.md'
+    - 'global': 'global.md'
+    - 'layers': 'layers.md'
+    - 'lights': 'lights.md'
+    - 'materials': 'materials.md'
+    - 'scene': 'scene.md'
+    - 'shaders': 'shaders.md'
+    - 'sources': 'sources.md'
+    - 'styles': 'styles.md'
+    - 'textures': 'textures.md'
+    - 'yaml': 'yaml.md'
   - JavaScript API: 'Javascript-API.md'
   - Demos & Examples:
     - 'Demos': 'Demos.md'
