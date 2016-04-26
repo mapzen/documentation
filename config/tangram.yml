@@ -31,9 +31,11 @@ pages:
     - 'textures': 'textures.md'
     - 'yaml': 'yaml.md'
   - JavaScript API: 'Javascript-API.md'
+  - Android API: 'Android-API.md'
   - Demos & Examples:
     - 'Demos': 'Demos.md'
     - 'JS Walkthrough': 'walkthrough.md'
+    - 'Android Walkthrough': 'android-walkthrough.md'
 
 
 # Determines if a broken link to a page within the documentation is considered
