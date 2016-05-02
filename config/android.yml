@@ -12,6 +12,7 @@ pages:
   - 'Polylines': 'polyline.md'
   - 'Polygons': 'polygon.md'
   - 'Switching styles': 'styles.md'
+  - 'Gesture responders': 'gesture-responders.md'
 
 extra:
   site_subtitle: 'A thin wrapper that packages up everything you need to use Mapzen services in your Android applications.'
