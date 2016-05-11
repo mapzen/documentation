@@ -1,11 +1,8 @@
-# Project versions
-VECTOR_VERSION = 0.10.2
-
 # Source doc tarballs
 TANGRAM = https://github.com/tangrams/tangram-docs/archive/gh-pages.tar.gz
 EXTRACTS = https://github.com/mapzen/metroextractor-cities/archive/master.tar.gz
 VALHALLA = https://github.com/valhalla/valhalla-docs/archive/master.tar.gz
-VECTOR = https://github.com/mapzen/vector-datasource/archive/v$(VECTOR_VERSION).tar.gz
+VECTOR = https://github.com/mapzen/vector-datasource/archive/v0.10.2.tar.gz
 SEARCH = https://github.com/pelias/pelias-doc/archive/master.tar.gz
 ANDROID = https://github.com/mapzen/android/archive/master.tar.gz
 
@@ -42,7 +39,7 @@ src-metro-extracts:
 
 src-vector-tiles:
 	mkdir src-vector-tiles
-	curl -sL $(VECTOR) | tar -zxv -C src-vector-tiles --strip-components=2 --exclude=README.md vector-datasource-$(VECTOR_VERSION)/docs
+	curl -sL $(VECTOR) | tar -zxv -C src-vector-tiles --strip-components=2 --exclude=README.md --wildcards '*/docs/'
 
 src-turn-by-turn:
 	mkdir src-turn-by-turn
