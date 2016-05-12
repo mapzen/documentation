@@ -1,5 +1,5 @@
 # Source doc tarballs
-TANGRAM = https://github.com/tangrams/tangram-docs/archive/gh-pages.tar.gz
+TANGRAM = https://github.com/tangrams/tangram-docs/archive/meetar/introductions.tar.gz
 EXTRACTS = https://github.com/mapzen/metroextractor-cities/archive/master.tar.gz
 VALHALLA = https://github.com/valhalla/valhalla-docs/archive/master.tar.gz
 VECTOR = https://github.com/mapzen/vector-datasource/archive/v0.10.2.tar.gz
@@ -31,7 +31,7 @@ clean:
 # Get individual sources docs
 src-tangram:
 	mkdir src-tangram
-	curl -sL $(TANGRAM) | tar -zxv -C src-tangram --strip-components=2 tangram-docs-gh-pages/pages
+	curl -sL $(TANGRAM) | tar -zxv -C src-tangram --strip-components=2 tangram-docs-meetar-introductions/pages
 
 src-metro-extracts:
 	mkdir src-metro-extracts
