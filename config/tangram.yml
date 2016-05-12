@@ -8,6 +8,7 @@ site_dir: dist-tangram
 pages:
   - Home: index.md
   - Concept Overviews:
+    - 'YAML': 'yaml.md'
     - 'The Scene File': 'Scene-file.md'
     - 'Data Filters': 'Filters-Overview.md'
     - 'Styles': 'Styles-Overview.md'
@@ -29,7 +30,6 @@ pages:
     - 'sources': 'sources.md'
     - 'styles': 'styles.md'
     - 'textures': 'textures.md'
-    - 'yaml': 'yaml.md'
   - JavaScript API: 'Javascript-API.md'
   - Android API: 'Android-API.md'
   - Demos & Examples:
