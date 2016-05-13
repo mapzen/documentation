@@ -16,6 +16,7 @@ pages:
     - 'Lights': 'Lights-Overview.md'
     - 'Cameras': 'Cameras-Overview.md'
     - 'Materials': 'Materials-Overview.md'
+    - 'YAML': 'yaml.md'
   - Syntax Reference:
     - 'cameras': 'cameras.md'
     - 'draw': 'draw.md'
@@ -29,7 +30,6 @@ pages:
     - 'sources': 'sources.md'
     - 'styles': 'styles.md'
     - 'textures': 'textures.md'
-    - 'yaml': 'yaml.md'
   - JavaScript API: 'Javascript-API.md'
   - Android API: 'Android-API.md'
   - Demos & Examples:
