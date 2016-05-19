@@ -1,9 +1,9 @@
 <div id='mkdocs_search_modal' class='search-container' tabindex='-1' aria-labelledby='Search Modal' aria-hidden='true'>
-  <!--h4 class='search-label modal-title' id='exampleModalLabel'>Search in {{ site_name }} documentation</h4-->
-  <form role='form'>
-    <!--div class='form-group'-->
-      <input type='text' class='form-control' placeholder='Search documentation' id='mkdocs-search-query'>
-    <!--/div-->
+  <form action="https://www.google.com/search" method="get">
+    <div class="form-group inline-submit">
+      <input type="hidden" name="as_sitesearch" value="mapzen.com/documentation">
+      <input type="search" name="q" placeholder="search documentation" style="width:210px;">
+      <input type="submit" class="btn btn-transparent" value="search">
+    </div>
   </form>
-  <div id='mkdocs-search-results' class='search-results-container'></div>
 </div>
