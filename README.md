@@ -77,4 +77,16 @@ There are two things to do if you want to change the GitHub source of documentat
       docs_base_url: https://github.com/mapzen/mapzen-docs/tree/master/metro-extracts
     ```
 
-2. **Update the repository path in the Makefile.** This is a little harder because it requires some knowledge of shell scripting and `Make`. Generally, we want to first retrieve the source documentation file from GitHub (it's compressed). Next, uncompress it -- extract the files into the `src/project-name` directory. If you're getting files from the mapzen-docs repository, you will have to flatten the directory structure a level up because of how the repository is organized. This step can vary depending on the project, which is why it's not super friendly.
+2. **Update the repository path in the Makefile.** The Makefile is located in this repo's root, and is called `Makefile`. This step is a little harder and benefits from some knowledge of shell scripting and `Make`. Generally, we want to first retrieve the source documentation file, which is available from GitHub inside a pre-packaged archive with the extension `tar.gz`. We locate it by setting a variable with the file's location, which might look something like this:
+
+    `TANGRAM = https://github.com/tangrams/tangram-docs/archive/gh-pages.tar.gz`
+    
+    Next, we uncompress it, with a line further down in the Makefile that looks something like this:
+    
+    `curl -sL $(TANGRAM) | tar -zxv -C src-tangram --strip-components=2 tangram-docs-gh-pages/pages`
+    
+    This will extract the files into the `src/project-name` directory, which makes them available to mkdocs. If you're getting files from the `mapzen-docs` repository, you will have to flatten the directory structure a level up because of how the repository is organized. This step can vary depending on the project, which is why it's not super friendly.
+
+    You can also change the branch used as the source of the documentation with these lines, which can be handy for testing purposes. This is accomplished by replacing `gh-pages` with the name of another branch. Note that you'll need to convert any slashes in the branch name to dashes – e.g. if your repo name is `tangram-docs` and your branch name is `meetar/cleanup`, the reference in the `curl` command will look like `tangram-docs-meetar-cleanup`, and the full command will be:
+    
+    `curl -sL $(TANGRAM) | tar -zxv -C src-tangram --strip-components=2 tangram-docs-meetar-cleanup/pages`
