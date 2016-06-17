@@ -20,7 +20,6 @@ pages:
   - Syntax Reference:
     - 'cameras': 'cameras.md'
     - 'draw': 'draw.md'
-    - 'filters': 'filters.md'
     - 'global': 'global.md'
     - 'import': 'import.md'
     - 'layers': 'layers.md'
