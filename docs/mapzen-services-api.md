@@ -30,7 +30,7 @@ To check your usage, sign in to your developer account.
 
 1. Sign in at https://mapzen.com/developers.
 2. Click the statistics button for the API key you want to review.
-3. View a graph of your recent usage for a certain period of time, such as the past day or month. 
+3. View a graph of your recent usage for a certain period of time, such as the past day or month.
 
 You also receive [HTTP status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) in the header for the server's response to your query.
 
@@ -54,8 +54,6 @@ _Mapzen Search_ is a geocoding and place-finding service and has these limits:
 
 - 6 queries per second
 - 30,000 queries per day
-
-Mapzen Search is a web service that is built upon the code from the open-source geocoder project called Pelias.  It's best to start with the service; only if you need very high rate limits or custom tools should you run your own instance of Pelias.
 
 The Mapzen Search service is built from the [Pelias](https://github.com/pelias) open-source project.
 
