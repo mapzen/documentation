@@ -44,9 +44,7 @@ Vector tiles provides global basemap coverage and has these limits:
 - 2,000 queries per minute
 - 100,000 queries per day
 
-You may cache the tiles for offline use, but cannot bundle the tiles for purposes of reselling them.
-
-The Mapzen vector tiles service is built from the [Tilezen](https://github.com/tilezen) open-source project.
+You may cache the tiles for offline use. The Mapzen vector tiles service is built from the [Tilezen](https://github.com/tilezen) open-source project.
 
 ### Search and mobility
 
