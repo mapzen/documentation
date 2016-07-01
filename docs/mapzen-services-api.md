@@ -50,14 +50,18 @@ The Mapzen vector tiles service is built from the [Tilezen](https://github.com/t
 
 ### Search and mobility
 
-_Mapzen Search_ is a geocoding and place-finding service and has these limits:
+#### Mapzen Search
+
+Mapzen Search is a geocoding and place-finding service and has these limits:
 
 - 6 queries per second
 - 30,000 queries per day
 
 The Mapzen Search service is built from the [Pelias](https://github.com/pelias) open-source project.
 
-_Mapzen Turn-by-Turn_ is a routing and navigation service and has these limits:
+#### Mapzen Turn-by-Turn
+
+Mapzen Turn-by-Turn is a routing and navigation service and has these limits:
 
 - 2 queries per second
 - 50,000 queries per day
@@ -69,14 +73,18 @@ The distance limit is the total straight-line distance (colloquially, "as the cr
 
 The Mapzen Turn-by-Turn, Matrix, and Elevation services are built from the [Valhalla](https://github.com/valhalla) open-source project.
 
-_Mapzen Matrix_ provides time and distance calculations between locations and has these limits:
+#### Mapzen Matrix
+
+Mapzen Matrix provides time and distance calculations between locations and has these limits:
 
 - 2 queries per second
 - 5,000 queries per day
 - The maximum number of locations is 50 for any type of matrix.
 - The maximum straight-line distance between two locations is 200 kilometers.
 
-_Mapzen Elevation_ provides the height or elevation at a set of locations and has these limits:
+#### Mapzen Elevation
+
+Mapzen Elevation provides the height or elevation at a set of locations and has these limits:
 
 - 2 queries per second
 - 20,000 queries per day
