@@ -6,9 +6,6 @@ VECTOR = https://github.com/mapzen/vector-datasource/archive/v0.10.2.tar.gz
 SEARCH = https://github.com/pelias/pelias-doc/archive/master.tar.gz
 ANDROID = https://github.com/mapzen/android/archive/master.tar.gz
 
-# Mapzen styleguide
-STYLEGUIDE = https://github.com/mapzen/styleguide/raw/master
-
 SHELL := /bin/bash # required for OSX
 PYTHONPATH := packages:$(PYTHONPATH)
 
@@ -63,9 +60,9 @@ src-android:
 
 # Retrieve style guide
 theme/fragments:
-	@mkdir -p theme/fragments
-	@curl -sL '$(STYLEGUIDE)/src/site/fragments/global-nav.html' -o theme/fragments/global-nav.html
-	@curl -sL '$(STYLEGUIDE)/src/site/fragments/global-footer.html' -o theme/fragments/global-footer.html
+	mkdir -p theme/fragments
+	curl -sL 'https://mapzen.com/site-fragments/navbar.html' -o theme/fragments/global-nav.html
+	curl -sL 'https://mapzen.com/site-fragments/footer.html' -o theme/fragments/global-footer.html
 
 # Build tangram docs
 dist-tangram: src-tangram theme/fragments
