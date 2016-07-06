@@ -59,7 +59,7 @@ src-android:
 	mkdir src-android
 	curl -sL $(ANDROID) | tar -zxv -C src-android --strip-components=2 android-master/docs
 
-src-android:
+src-general:
 	mkdir src-general
 	curl -sL $(GENERAL) | tar -zxv -C src-general --strip-components=2 mapzen-docs-generator-master/docs
 
