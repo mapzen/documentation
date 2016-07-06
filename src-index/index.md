@@ -10,8 +10,6 @@
 		<div class="col-xs-12 text-center headroom-extra-large footroom-extra-large">
 			<img class="red-compass" src="https://mapzen.com/common/styleguide/images/divider/compass-red.png">
 		</div>
-	</div>
-	<div class="documentation-content h4">
 		<p>
 			Find out more about API keys and rate limits.
 		</p>
