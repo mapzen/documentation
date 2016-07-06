@@ -10,9 +10,9 @@
 		<div class="col-xs-12 text-center headroom-extra-large footroom-extra-large">
 			<img class="red-compass" src="https://mapzen.com/common/styleguide/images/divider/compass-red.png">
 		</div>
-		<p>
+		<div class "headroom" text-center footroom-extra-large>
 			Find out more about API keys and rate limits.
-		</p>
+		</div>
 	</div>
 	<div class="row doc-hitboxes">
 		<div class="col-sm-6 col-xs-12">
