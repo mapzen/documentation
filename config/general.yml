@@ -1,13 +1,13 @@
-site_name: Get started
-docs_dir: src-general
-site_dir: dist-general
+site_name: Overview
+docs_dir: src-overview
+site_dir: dist-overview
 include_next_prev: false # next/prev is in alpha order; we don't want this
 
 pages:
-  - Home: index.md
+  - Overview: index.md
 
 extra:
-  site_subtitle: Get started with Mapzen
+  site_subtitle: Overview
   project_repo_url: https://github.com/mapzen/mapzen-docs-generator
   docs_base_url: https://github.com/mapzen/mapzen-docs-generator/tree/master/docs
   exclude_home_contents_in_toc: false
