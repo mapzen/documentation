@@ -37,7 +37,7 @@ src-metro-extracts:
 
 src-vector-tiles:
 	mkdir src-vector-tiles
-	curl -sL $(VECTOR) | tar -zxv -C src-vector-tiles --strip-components=2 --exclude=README.md --wildcards '*/docs/'
+	curl -sL $(VECTOR) | tar -zxv -C src-vector-tiles --strip-components=2 --exclude=README.md '*/docs/'
 
 src-turn-by-turn:
 	mkdir src-turn-by-turn
