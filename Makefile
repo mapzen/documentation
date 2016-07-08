@@ -5,6 +5,7 @@ VALHALLA = https://github.com/valhalla/valhalla-docs/archive/master.tar.gz
 VECTOR = https://github.com/mapzen/vector-datasource/archive/v0.10.2.tar.gz
 SEARCH = https://github.com/pelias/pelias-doc/archive/master.tar.gz
 ANDROID = https://github.com/mapzen/android/archive/master.tar.gz
+OVERVIEW = https://github.com/mapzen/mapzen-docs-generator/archive/master.tar.gz
 
 SHELL := /bin/bash # required for OSX
 PYTHONPATH := packages:$(PYTHONPATH)
@@ -58,6 +59,10 @@ src-android:
 	mkdir src-android
 	curl -sL $(ANDROID) | tar -zxv -C src-android --strip-components=2 android-master/docs
 
+src-overview:
+	mkdir src-overview
+	curl -sL $(OVERVIEW) | tar -zxv -C src-overview --strip-components=2 mapzen-docs-generator-master/docs
+
 # Retrieve style guide
 theme/fragments:
 	mkdir -p theme/fragments
@@ -104,13 +109,18 @@ dist-android: src-android theme/fragments
 	anyconfig_cli ./config/default.yml ./config/android.yml --merge=merge_dicts --output=./dist-android-mkdocs.yml
 	mkdocs build --config-file ./dist-android-mkdocs.yml --clean
 
+# Build general Mapzen docs
+dist-overview: src-overview theme/fragments
+	anyconfig_cli ./config/default.yml ./config/overview.yml --merge=merge_dicts --output=./dist-overview-mkdocs.yml
+	mkdocs build --config-file ./dist-overview-mkdocs.yml --clean
+
 # Build index page
 dist-index: theme/fragments
 	anyconfig_cli ./config/default.yml ./config/index.yml --merge=merge_dicts --output=./dist-index-mkdocs.yml
 	mkdocs build --config-file ./dist-index-mkdocs.yml --clean
 	cp dist-index/index.html dist-index/next.html
 
-dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-turn-by-turn dist-search dist-elevation dist-matrix dist-android dist-index
+dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-turn-by-turn dist-search dist-elevation dist-matrix dist-android dist-overview dist-index
 	cp -r dist-index dist
 	ln -s ../dist-tangram dist/tangram
 	ln -s ../dist-metro-extracts dist/metro-extracts
@@ -120,6 +130,7 @@ dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-turn-by-turn dist-
 	ln -s ../dist-elevation dist/elevation
 	ln -s ../dist-matrix dist/matrix
 	ln -s ../dist-android dist/android
+	ln -s ../dist-overview dist/overview
 	# Compress all HTML files - controls Jinja whitespace
 	find -L dist -name \*.html -ls -exec htmlmin --keep-optional-attribute-quotes {} {} \;
 
