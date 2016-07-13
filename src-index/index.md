@@ -39,7 +39,7 @@
 	    <h6 class="team-name"> Maps </h6>
 	    <div class="job-info-container first">
 	      <div class="job-info">
-	        <a class="job-title" href="/jobs/tiles-engineer/">Tangram</a>
+	        <a class="job-title" href="https://mapzen.com/documentation/tangram/">Tangram</a>
 	        <p class="excerpt"> Mapzen serves up bespoke map tiles for the masses. Help Render 2D and 3D maps with fine control over almost every aspect of the map-making process. </p>
 	      </div>
 				<div class="read-more">
@@ -48,11 +48,11 @@
 	    </div>
 	    <div class="job-info-container">
 	      <div class="job-info">
-	        <a class="job-title" href="/jobs/tiles-engineer/">Vector tiles</a>
+	        <a class="job-title" href="vector-tiles/">Vector tiles</a>
 	        <p class="excerpt"> Display the world with the latest open data using the vector tile map service.</p>
 	      </div>
 				<div class="read-more">
-					<a class="btn btn-default btn-transparent" href="/jobs/tiles-engineer/"> read docs </a>
+					<a class="btn btn-default btn-transparent" href="vector-tiles/"> read docs </a>
 	      </div>
 	    </div>
 	  </div>
@@ -60,20 +60,20 @@
 	    <h6 class="team-name"> Search & Mobility </h6>
 	    <div class="job-info-container first">
 	      <div class="job-info">
-	        <a class="job-title" href="/jobs/tiles-engineer/">Mapzen Search</a>
+	        <a class="job-title" href="search/">Mapzen Search</a>
 	        <p class="excerpt"> Find places and addresses with this geographic search service built on open tools and open data.</p>
 	      </div>
 				<div class="read-more">
-					<a class="btn btn-default btn-transparent" href="/jobs/tiles-engineer/"> read docs </a>
+					<a class="btn btn-default btn-transparent" href="search/"> read docs </a>
 	      </div>
 	    </div>
 	    <div class="job-info-container">
 	      <div class="job-info">
-	        <a class="job-title" href="/jobs/tiles-engineer/">Mapzen turn-by-turn</a>
+	        <a class="job-title" href="turn-by-turn/">Mapzen turn-by-turn</a>
 	        <p class="excerpt"> Add planetwide routing and navigation to your web and mobile apps.</p>
 	      </div>
 				<div class="read-more">
-					<a class="btn btn-default btn-transparent" href="/jobs/tiles-engineer/"> read docs </a>
+					<a class="btn btn-default btn-transparent" href="turn-by-turn/"> read docs </a>
 	      </div>
 	    </div>
 	  </div>
@@ -81,11 +81,11 @@
 	    <h6 class="team-name"> Data </h6>
 	    <div class="job-info-container first">
 	      <div class="job-info">
-	        <a class="job-title" href="/jobs/tiles-engineer/">Metro Extract</a>
+	        <a class="job-title" href="metro-extract/">Metro Extract</a>
 	        <p class="excerpt"> Download city-sized portions of OpenStreetMap data in a variety of formats.</p>
 	      </div>
 				<div class="read-more">
-					<a class="btn btn-default btn-transparent" href="/jobs/tiles-engineer/"> read docs </a>
+					<a class="btn btn-default btn-transparent" href="metro-extract/"> read docs </a>
 	      </div>
 	    </div>
 	  </div>
@@ -93,11 +93,11 @@
 	    <h6 class="team-name"> Mobile </h6>
 	    <div class="job-info-container first">
 	      <div class="job-info">
-	        <a class="job-title" href="/jobs/tiles-engineer/">Android SDK</a>
+	        <a class="job-title" href="android/">Android SDK</a>
 	        <p class="excerpt"> Everything you need to use Mapzen services in your Android applications.</p>
 	      </div>
 				<div class="read-more">
-					<a class="btn btn-default btn-transparent" href="/jobs/tiles-engineer/"> read docs </a>
+					<a class="btn btn-default btn-transparent" href="android/"> read docs </a>
 	      </div>
 	    </div>
 	  </div>
