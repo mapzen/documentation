@@ -102,18 +102,4 @@
 	    </div>
 	  </div>
 	</div>
-	<div class="row">
-		<div class="col-xs-12">
-			<div class="cta-container">
-				<div class="cta-text">
-					<p>
-						You have any question?
-					</p>
-				</div>
-				<div class="cta-btn">
-					<a href="/developers/" class="btn btn-transparent">Email us</a>
-				</div>
-			</div>
-		</div>
-	</div>
 </div>
