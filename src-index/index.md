@@ -1,4 +1,7 @@
 <style>
+.paragraph {
+	font-weight: 300;
+}
 .job-title {
 	font-size: 20px;
 }
@@ -8,6 +11,7 @@
 .jobs .job-info-container {
 	border-top: 2px solid #ccc;
 }
+
 </style>
 
 <div class="container" id="content">
@@ -25,10 +29,13 @@
 	</div>
 	<div class="cta-container footroom-large">
 		<div class="cta-text">
-		<p>
-		<img src="https://mapzen.com/common/styleguide/images/feedback.svg">
-			Get your API key for access to Mapzen services.
-	</p>
+			<div class="hidden-xs col-sm-2">
+				<img src="https://mapzen.com/common/styleguide/images/feedback.svg">
+			</div>
+			<div class="col-xs-12 col-sm-10">
+				Get your API key for access to Mapzen services.<br>
+				<p class ="paragraph"> "New to Mapzen? Learn more about rate limits and API keys and start playing with our products in minutes.</p>
+			</div>
 	  </div>
 	  <div class="cta-btn">
 	    <a href="http://www.mapzen.com/developers/" class="btn btn-mapzen">Sign up</a>
