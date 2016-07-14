@@ -2,16 +2,10 @@
 .paragraph {
 	font-weight: 300;
 }
+
 .job-title {
 	font-size: 20px;
 }
-.jobs .job-info-container.first {
-	border-top: 3px solid #ccc;
-}
-.jobs .job-info-container {
-	border-top: 2px solid #ccc;
-}
-
 </style>
 
 <div class="container" id="content">
@@ -30,7 +24,7 @@
 	<div class="cta-container footroom-large">
 		<div class="cta-text">
 			<div class="hidden-xs col-sm-2">
-				<img src="https://mapzen.com/common/styleguide/images/feedback.svg">
+				<img width="100px" src="https://mapzen.com/common/styleguide/images/feedback.svg">
 			</div>
 			<div class="col-xs-12 col-sm-10">
 				Get your API key for access to Mapzen services.<br>
