@@ -112,12 +112,4 @@
 	    </div>
 	  </div>
 	</div>
-	<div class="cta-container footroom-large">
-		<div class="cta-text">
-		Have any question?
-			</div>
-	  <div class="cta-btn">
-	    <a href="http://www.mapzen.com/documentation/overview" class="btn btn-transparent">Contact us</a>
-	  </div>
-	</div>
 </div>
