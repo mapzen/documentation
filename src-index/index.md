@@ -24,7 +24,7 @@
 	<div class="cta-container footroom-large">
 		<div class="cta-text">
 			<div class="hidden-xs col-sm-2">
-				<img width="100px" src="https://mapzen.com/common/styleguide/images/key.png">
+				<img width="100px" src="https://mapzen.com/common/styleguide/images/key.svg">
 			</div>
 			<div class="col-xs-12 col-sm-10">
 				Get your API key for access to Mapzen services.<br>
