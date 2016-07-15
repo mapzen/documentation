@@ -28,7 +28,7 @@
 			</div>
 			<div class="col-xs-12 col-sm-10">
 				Get your API key for access to Mapzen services.<br>
-				<p class ="cta-paragraph"> "New to Mapzen? Learn more about rate limits and API keys and start playing with our products in minutes.</p>
+				<p class ="cta-paragraph"> New to Mapzen? Learn more about rate limits and API keys to start playing with our products in minutes.</p>
 			</div>
 	  </div>
 	  <div class="cta-btn">
@@ -40,11 +40,11 @@
 	    <h6 class="team-name cateogory-title"> Maps </h6>
 	    <div class="job-info-container category-info-container first">
 	      <div class="job-info category-info">
-	        <a class="job-title docs-title" href="https://mapzen.com/documentation/tangram/">Tangram</a>
-	        <p class="excerpt"> Mapzen serves up bespoke map tiles for the masses. Help Render 2D and 3D maps with fine control over almost every aspect of the map-making process. </p>
+	        <a class="job-title docs-title" href="tangram/">Tangram</a>
+	        <p class="excerpt"> Render 2D and 3D maps with fine control over almost every aspect of the map-making process. </p>
 	      </div>
 				<div class="read-more">
-					<a class="btn btn-default btn-transparent" href="/jobs/tiles-engineer/"> read docs </a>
+					<a class="btn btn-default btn-transparent" href="tangram/"> View Documentation </a>
 	      </div>
 	    </div>
 	    <div class="job-info-container category-info-container">
@@ -53,7 +53,7 @@
 	        <p class="excerpt"> Display the world with the latest open data using the vector tile map service.</p>
 	      </div>
 				<div class="read-more">
-					<a class="btn btn-default btn-transparent" href="vector-tiles/"> read docs </a>
+					<a class="btn btn-default btn-transparent" href="vector-tiles/"> View Documentation </a>
 	      </div>
 	    </div>
 	  </div>
@@ -65,16 +65,16 @@
 	        <p class="excerpt"> Find places and addresses with this geographic search service built on open tools and open data.</p>
 	      </div>
 				<div class="read-more">
-					<a class="btn btn-default btn-transparent" href="search/"> read docs </a>
+					<a class="btn btn-default btn-transparent" href="search/"> View Documentation </a>
 	      </div>
 	    </div>
 	    <div class="job-info-container category-info-container">
 	      <div class="job-info category-info">
 	        <a class="job-title docs-title" href="turn-by-turn/">Mapzen turn-by-turn</a>
-	        <p class="excerpt"> Add planetwide routing and navigation to your web and mobile apps.</p>
+	        <p class="excerpt"> Add planetwide routing and navigation to your web and mobile applications.</p>
 	      </div>
 				<div class="read-more">
-					<a class="btn btn-default btn-transparent" href="turn-by-turn/"> read docs </a>
+					<a class="btn btn-default btn-transparent" href="turn-by-turn/"> View Documentation </a>
 	      </div>
 	    </div>
 	  </div>
@@ -82,20 +82,20 @@
 	    <h6 class="team-name cateogory-title"> Data </h6>
 	    <div class="job-info-container category-info-container first">
 	      <div class="job-info category-info">
-	        <a class="job-title docs-title" href="metro-extract/">Metro Extract</a>
+	        <a class="job-title docs-title" href="metro-extracts/">Metro Extracts</a>
 	        <p class="excerpt"> Download city-sized portions of OpenStreetMap data in a variety of formats.</p>
 	      </div>
 				<div class="read-more">
-					<a class="btn btn-default btn-transparent" href="metro-extract/"> read docs </a>
+					<a class="btn btn-default btn-transparent" href="metro-extracts/"> View Documentation </a>
 	      </div>
 	    </div>
 	    <div class="job-info-container category-info-container">
 	      <div class="job-info category-info">
-	        <a class="job-title docs-title" href="metro-extract/">Elevation Service</a>
-	        <p class="excerpt"> Take your map to new heights with worldwide elevation and bathymetric data. </p>
+	        <a class="job-title docs-title" href="elevation/">Elevation Service</a>
+	        <p class="excerpt"> Request digital elevation model (DEM) data from around the world. </p>
 	      </div>
 				<div class="read-more">
-					<a class="btn btn-default btn-transparent" href="metro-extract/"> read docs </a>
+					<a class="btn btn-default btn-transparent" href="elevation/"> View Documentation </a>
 	      </div>
 	    </div>
 	  </div>
@@ -107,7 +107,7 @@
 	        <p class="excerpt"> Everything you need to use Mapzen services in your Android applications.</p>
 	      </div>
 				<div class="read-more">
-					<a class="btn btn-default btn-transparent" href="android/"> read docs </a>
+					<a class="btn btn-default btn-transparent" href="android/"> View Documentation </a>
 	      </div>
 	    </div>
 	  </div>
