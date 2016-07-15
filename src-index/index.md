@@ -32,7 +32,7 @@
 			</div>
 	  </div>
 	  <div class="cta-btn">
-	    <a href="http://www.mapzen.com/developers/" class="btn btn-mapzen">Sign up</a>
+	    <a href="http://www.mapzen.com/documentation/overview" class="btn btn-mapzen">Get started</a>
 	  </div>
 	</div>
 	<div class="row jobs">
