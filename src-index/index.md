@@ -24,7 +24,7 @@
 	<div class="cta-container footroom-large">
 		<div class="cta-text">
 			<div class="hidden-xs col-sm-2">
-				<img width="100px" src="https://mapzen.com/common/styleguide/images/feedback.svg">
+				<img width="100px" src="https://mapzen.com/common/styleguide/images/key.png">
 			</div>
 			<div class="col-xs-12 col-sm-10">
 				Get your API key for access to Mapzen services.<br>
@@ -83,7 +83,7 @@
 	    <div class="job-info-container category-info-container first">
 	      <div class="job-info category-info">
 	        <a class="job-title docs-title" href="metro-extracts/">Metro Extracts</a>
-	        <p class="excerpt"> Download city-sized portions of OpenStreetMap data in a variety of formats.</p>
+	        <p class="excerpt"> Download manageable, city-sized portions of OpenStreetMap data.</p>
 	      </div>
 				<div class="read-more">
 					<a class="btn btn-default btn-transparent" href="metro-extracts/"> View Documentation </a>
