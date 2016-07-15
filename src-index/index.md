@@ -104,7 +104,7 @@
 	    <div class="job-info-container category-info-container first">
 	      <div class="job-info category-info">
 	        <a class="job-title docs-title" href="android/">Android SDK</a>
-	        <p class="excerpt"> Everything you need to use Mapzen services in your Android applications.</p>
+	        <p class="excerpt"> Add Mapzen maps and location services to your Android apps.</p>
 	      </div>
 				<div class="read-more">
 					<a class="btn btn-default btn-transparent" href="android/"> View Documentation </a>
