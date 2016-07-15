@@ -28,7 +28,7 @@
 			</div>
 			<div class="col-xs-12 col-sm-10">
 				Get your API key for access to Mapzen services.
-				<p class ="cta-paragraph"> New to Mapzen? Learn more about rate limits and API keys to start playing with our products in minutes.</p>
+				<p class ="cta-paragraph"> New to Mapzen? Learn more about rate limits and API keys to start working with our products in minutes.</p>
 			</div>
 	  </div>
 	  <div class="cta-btn">
