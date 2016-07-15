@@ -27,7 +27,7 @@
 				<img width="50px" src="https://mapzen.com/common/styleguide/images/key.svg">
 			</div>
 			<div class="col-xs-12 col-sm-10">
-				Get your API key for access to Mapzen services.<br>
+				Get your API key for access to Mapzen services.
 				<p class ="cta-paragraph"> New to Mapzen? Learn more about rate limits and API keys to start playing with our products in minutes.</p>
 			</div>
 	  </div>
@@ -110,6 +110,14 @@
 					<a class="btn btn-default btn-transparent" href="android/"> View Documentation </a>
 	      </div>
 	    </div>
+	  </div>
+	</div>
+	<div class="cta-container footroom-large">
+		<div class="cta-text">
+		Have any question?
+			</div>
+	  <div class="cta-btn">
+	    <a href="http://www.mapzen.com/documentation/overview" class="btn btn-transparent">Contact us</a>
 	  </div>
 	</div>
 </div>
