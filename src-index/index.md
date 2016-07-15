@@ -70,7 +70,7 @@
 	    </div>
 	    <div class="job-info-container category-info-container">
 	      <div class="job-info category-info">
-	        <a class="job-title docs-title" href="turn-by-turn/">Mapzen turn-by-turn</a>
+	        <a class="job-title docs-title" href="turn-by-turn/">Mapzen Turn-by-Turn</a>
 	        <p class="excerpt"> Add planetwide routing and navigation to your web and mobile applications.</p>
 	      </div>
 				<div class="read-more">
