@@ -21,6 +21,7 @@ pages:
     - 'cameras': 'cameras.md'
     - 'draw': 'draw.md'
     - 'global': 'global.md'
+    - 'fonts': 'fonts.md'
     - 'import': 'import.md'
     - 'layers': 'layers.md'
     - 'lights': 'lights.md'
