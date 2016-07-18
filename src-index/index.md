@@ -1,13 +1,3 @@
-<style>
-.cta-paragraph {
-	font-weight: 300;
-}
-
-.job-title docs-title {
-	font-size: 20px;
-}
-</style>
-
 <div class="container" id="content">
 	<div class="row headroom-large footroom-large">
 		<div class="col-xs-12 text-center">
@@ -35,21 +25,21 @@
 	    <a href="http://www.mapzen.com/documentation/overview" class="btn btn-mapzen">Get started</a>
 	  </div>
 	</div>
-	<div class="row jobs">
+	<div class="row">
 	  <div class="col-xs-12 footroom-large">
-	    <h6 class="team-name cateogory-title"> Maps </h6>
-	    <div class="job-info-container category-info-container first">
-	      <div class="job-info category-info">
-	        <a class="job-title docs-title" href="tangram/">Tangram</a>
+	    <h6 class="category-title"> Maps </h6>
+	    <div class="category-info-container first">
+	      <div class="category-info">
+	        <a class="docs-title" href="tangram/">Tangram</a>
 	        <p class="excerpt"> Render 2D and 3D maps with fine control over almost every aspect of the map-making process. </p>
 	      </div>
 				<div class="read-more">
 					<a class="btn btn-default btn-transparent" href="tangram/"> View Documentation </a>
 	      </div>
 	    </div>
-	    <div class="job-info-container category-info-container">
-	      <div class="job-info category-info">
-	        <a class="job-title docs-title" href="vector-tiles/">Vector tiles</a>
+	    <div class="category-info-container">
+	      <div class="category-info">
+	        <a class="docs-title" href="vector-tiles/">Vector tiles</a>
 	        <p class="excerpt"> Display the world with the latest open data using the vector tile map service.</p>
 	      </div>
 				<div class="read-more">
@@ -58,19 +48,19 @@
 	    </div>
 	  </div>
 	  <div class="col-xs-12 footroom-large">
-	    <h6 class="team-name cateogory-title"> Search & Mobility </h6>
-	    <div class="job-info-container category-info-container first">
-	      <div class="job-info category-info">
-	        <a class="job-title docs-title" href="search/">Mapzen Search</a>
+	    <h6 class="category-title"> Search & Mobility </h6>
+	    <div class="category-info-container first">
+	      <div class="category-info">
+	        <a class="docs-title" href="search/">Mapzen Search</a>
 	        <p class="excerpt"> Find places and addresses with this geographic search service built on open tools and open data.</p>
 	      </div>
 				<div class="read-more">
 					<a class="btn btn-default btn-transparent" href="search/"> View Documentation </a>
 	      </div>
 	    </div>
-	    <div class="job-info-container category-info-container">
-	      <div class="job-info category-info">
-	        <a class="job-title docs-title" href="turn-by-turn/">Mapzen Turn-by-Turn</a>
+	    <div class="category-info-container">
+	      <div class="category-info">
+	        <a class="docs-title" href="turn-by-turn/">Mapzen Turn-by-Turn</a>
 	        <p class="excerpt"> Add planetwide routing and navigation to your web and mobile applications.</p>
 	      </div>
 				<div class="read-more">
@@ -79,19 +69,19 @@
 	    </div>
 	  </div>
  		<div class="col-xs-12 footroom-large">
-	    <h6 class="team-name cateogory-title"> Data </h6>
-	    <div class="job-info-container category-info-container first">
-	      <div class="job-info category-info">
-	        <a class="job-title docs-title" href="metro-extracts/">Metro Extracts</a>
+	    <h6 class="category-title"> Data </h6>
+	    <div class="category-info-container first">
+	      <div class="category-info">
+	        <a class="docs-title" href="metro-extracts/">Metro Extracts</a>
 	        <p class="excerpt"> Download manageable, city-sized portions of OpenStreetMap data.</p>
 	      </div>
 				<div class="read-more">
 					<a class="btn btn-default btn-transparent" href="metro-extracts/"> View Documentation </a>
 	      </div>
 	    </div>
-	    <div class="job-info-container category-info-container">
-	      <div class="job-info category-info">
-	        <a class="job-title docs-title" href="elevation/">Elevation Service</a>
+	    <div class="category-info-container">
+	      <div class="category-info">
+	        <a class="docs-title" href="elevation/">Elevation Service</a>
 	        <p class="excerpt"> Request digital elevation model (DEM) data from around the world. </p>
 	      </div>
 				<div class="read-more">
@@ -100,10 +90,10 @@
 	    </div>
 	  </div>
  		<div class="col-xs-12 footroom-large">
-	    <h6 class="team-name cateogory-title"> Mobile </h6>
-	    <div class="job-info-container category-info-container first">
-	      <div class="job-info category-info">
-	        <a class="job-title docs-title" href="android/">Android SDK</a>
+	    <h6 class="category-title"> Mobile </h6>
+	    <div class="category-info-container first">
+	      <div class="category-info">
+	        <a class="docs-title" href="android/">Android SDK</a>
 	        <p class="excerpt"> Add Mapzen maps and location services to your Android apps.</p>
 	      </div>
 				<div class="read-more">
