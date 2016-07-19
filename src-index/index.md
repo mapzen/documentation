@@ -69,7 +69,7 @@
 	    </div>
 			<div class="category-info-container">
 				<div class="category-info">
-					<a class="docs-title" href="optimized/">Optimized route</a>
+					<a class="docs-title" href="optimized/">Optimized Route</a>
 					<p class="excerpt"> Find the most efficient route between many locations.</p>
 				</div>
 				<div class="read-more">
