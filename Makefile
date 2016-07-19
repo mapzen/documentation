@@ -16,15 +16,15 @@ clean:
 	rm -rf dist theme/fragments
 	rm -rf src-tangram src-metro-extracts src-vector-tiles \
 	       src-turn-by-turn src-elevation src-matrix src-search \
-	       src-android
+	       src-android src-optimized
 	rm -rf dist-tangram dist-metro-extracts dist-vector-tiles \
 	       dist-turn-by-turn dist-search dist-elevation dist-matrix \
-	       dist-index dist-android
+	       dist-index dist-android dist-optimized
 	rm -rf dist-tangram-mkdocs.yml dist-metro-extracts-mkdocs.yml \
 	       dist-vector-tiles-mkdocs.yml dist-turn-by-turn-mkdocs.yml \
 	       dist-search-mkdocs.yml dist-elevation-mkdocs.yml \
 	       dist-matrix-mkdocs.yml dist-index-mkdocs.yml \
-	       dist-android-mkdocs.yml
+	       dist-android-mkdocs.yml dist-optimized-mkdocs.yml
 
 # Get individual sources docs
 src-tangram:
@@ -54,6 +54,10 @@ src-elevation:
 src-matrix:
 	mkdir src-matrix
 	curl -sL $(VALHALLA) | tar -zxv -C src-matrix --strip-components=2 valhalla-docs-master/matrix
+
+src-optimized:
+	mkdir src-optimized
+	curl -sL $(VALHALLA) | tar -zxv -C src-optimized --strip-components=2 valhalla-docs-master/optimized_route
 
 src-search:
 	mkdir src-search
@@ -103,6 +107,11 @@ dist-matrix: src-matrix theme/fragments
 	anyconfig_cli ./config/default.yml ./config/matrix.yml --merge=merge_dicts --output=./dist-matrix-mkdocs.yml
 	mkdocs build --config-file ./dist-matrix-mkdocs.yml --clean
 
+# Build optimized route service docs
+dist-optimized: src-optimized theme/fragments
+	anyconfig_cli ./config/default.yml ./config/optimized.yml --merge=merge_dicts --output=./dist-optimized-mkdocs.yml
+	mkdocs build --config-file ./dist-optimized-mkdocs.yml --clean
+
 # Build Search/Pelias docs
 dist-search: src-search theme/fragments
 	anyconfig_cli ./config/default.yml ./config/search.yml --merge=merge_dicts --output=./dist-search-mkdocs.yml
@@ -124,7 +133,7 @@ dist-index: theme/fragments
 	mkdocs build --config-file ./dist-index-mkdocs.yml --clean
 	cp dist-index/index.html dist-index/next.html
 
-dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-turn-by-turn dist-search dist-elevation dist-matrix dist-android dist-overview dist-index
+dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-turn-by-turn dist-search dist-elevation dist-matrix dist-android dist-overview dist-index dist-optimized
 	cp -r dist-index dist
 	ln -s ../dist-tangram dist/tangram
 	ln -s ../dist-metro-extracts dist/metro-extracts
@@ -133,6 +142,7 @@ dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-turn-by-turn dist-
 	ln -s ../dist-search dist/search
 	ln -s ../dist-elevation dist/elevation
 	ln -s ../dist-matrix dist/matrix
+	ln -s ../dist-optimized dist/optimized
 	ln -s ../dist-android dist/android
 	ln -s ../dist-overview dist/overview
 	# Compress all HTML files - controls Jinja whitespace
