@@ -6,7 +6,7 @@ extra_css: [css/codehilite/mapzen.css]
 
 pages:
   - Home: index.md
-  - 'Optimized route': 'elevation-service.md'
+  - 'Optimized route API reference': 'api-reference.md'
 
 extra:
   site_subtitle: 'Find the most efficient route between many locations.'
