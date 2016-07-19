@@ -73,7 +73,7 @@
 					<p class="excerpt"> Find the most efficient route between many locations.</p>
 				</div>
 				<div class="read-more">
-					<a class="btn btn-default btn-transparent" href="optimized-route/"> View Documentation </a>
+					<a class="btn btn-default btn-transparent" href="optimized/"> View Documentation </a>
 				</div>
 			</div>
 			<div class="category-info-container">
@@ -82,7 +82,7 @@
 					<p class="excerpt"> Calculate the time and distance between a set of locations.</p>
 				</div>
 				<div class="read-more">
-					<a class="btn btn-default btn-transparent" href="optimized-route/"> View Documentation </a>
+					<a class="btn btn-default btn-transparent" href="matrix/"> View Documentation </a>
 				</div>
 			</div>
 	  </div>
