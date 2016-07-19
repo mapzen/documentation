@@ -122,6 +122,7 @@ class Tests (unittest.TestCase):
         # self.assertEqual(links['https://mapzen.com/documentation/metro-extracts/'], 'Metro Extracts')
         # self.assertEqual(links['https://mapzen.com/documentation/elevation/'], 'Elevation Service')
         # self.assertEqual(links['https://mapzen.com/documentation/matrix/'], 'Time-Distance Matrix')
+        # self.assertEqual(links['https://mapzen.com/documentation/optimized/'], 'Optimized Route')
         # self.assertEqual(links['https://mapzen.com/documentation/android/'], 'Android SDK')
 
     def test_tangram_index(self):
@@ -144,6 +145,9 @@ class Tests (unittest.TestCase):
 
     def test_matrix_index(self):
         self._test_doc_section('/matrix', *self._load_doc_titles('config/matrix.yml'))
+
+    def test_optimized_index(self):
+        self._test_doc_section('/optimized', *self._load_doc_titles('config/optimized.yml'))
 
     def test_android_index(self):
         self._test_doc_section('/android', *self._load_doc_titles('config/android.yml'))
