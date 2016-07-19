@@ -67,6 +67,24 @@
 					<a class="btn btn-default btn-transparent" href="turn-by-turn/"> View Documentation </a>
 	      </div>
 	    </div>
+			<div class="category-info-container">
+				<div class="category-info">
+					<a class="docs-title" href="optimized-route/">Optimized route</a>
+					<p class="excerpt"> Find the most efficient route between many locations.</p>
+				</div>
+				<div class="read-more">
+					<a class="btn btn-default btn-transparent" href="optimized-route/"> View Documentation </a>
+				</div>
+			</div>
+			<div class="category-info-container">
+				<div class="category-info">
+					<a class="docs-title" href="matrix/">Time-Distance Matrix</a>
+					<p class="excerpt"> Calculate the time and distance between a set of locations.</p>
+				</div>
+				<div class="read-more">
+					<a class="btn btn-default btn-transparent" href="optimized-route/"> View Documentation </a>
+				</div>
+			</div>
 	  </div>
  		<div class="col-xs-12 footroom-large">
 	    <h6 class="category-title"> Data </h6>
