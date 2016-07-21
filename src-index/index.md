@@ -30,6 +30,15 @@
 	    <h6 class="category-title"> Maps </h6>
 	    <div class="category-info-container first">
 	      <div class="category-info">
+	        <a class="docs-title" href="mapzen-js/">Mapzen JS</a>
+	        <p class="excerpt"> Everything you need to use Mapzen services in your web applications. </p>
+	      </div>
+				<div class="read-more">
+					<a class="btn btn-default btn-transparent" href="mapzen-js/"> View Documentation </a>
+	      </div>
+	    </div>
+	    <div class="category-info-container">
+	      <div class="category-info">
 	        <a class="docs-title" href="tangram/">Tangram</a>
 	        <p class="excerpt"> Render 2D and 3D maps with fine control over almost every aspect of the map-making process. </p>
 	      </div>
