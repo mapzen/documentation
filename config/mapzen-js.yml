@@ -1,4 +1,4 @@
-site_name: Mapzen Javascript SDK
+site_name: Mapzen JavaScript SDK
 docs_dir: src-mapzen-js
 site_dir: dist-mapzen-js
 
