@@ -36,7 +36,7 @@
 				<div class="category-info">
 					<a class="docs-title" href="mapzen-js/">Mapzen JS</a> 
 					<p class="excerpt">
-						Everything you need to use Mapzen services in your web applications. 
+						Get everything you need to use Mapzen services in your web applications. 
 					</p>
 				</div>
 				<div class="read-more">
