@@ -4,10 +4,11 @@ site_dir: dist-mapzen-js
 
 pages:
   - Home: index.md
-  - 'Getting started': 'gettingstarted.md'
-  - 'API': 'api.md'
+  - 'Get started': 'get-started.md'
+  - 'API reference': 'api-reference.md'
+  - 'Geocoder': 'search.md'
 
 extra:
-  site_subtitle: 'A thin wrapper that packages up everything you need to use Mapzen services in your web applications.'
+  site_subtitle: 'Get everything you need to use Mapzen services in your web applications.'
   project_repo_url: https://github.com/mapzen/mapzen.js
   docs_base_url: https://github.com/mapzen/mapzen-js/tree/kkowalsky-text-edit/docs
