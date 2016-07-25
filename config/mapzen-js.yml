@@ -1,0 +1,14 @@
+site_name: Mapzen JavaScript SDK
+docs_dir: src-mapzen-js
+site_dir: dist-mapzen-js
+
+pages:
+  - Home: index.md
+  - 'Get started': 'get-started.md'
+  - 'API reference': 'api-reference.md'
+  - 'Geocoder': 'search.md'
+
+extra:
+  site_subtitle: 'Get everything you need to use Mapzen services in your web applications.'
+  project_repo_url: https://github.com/mapzen/mapzen.js
+  docs_base_url: https://github.com/mapzen/mapzen.js/tree/master/docs
