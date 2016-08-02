@@ -9,7 +9,9 @@ pages:
   - 'Geocoder': 'search.md'
 
 redirects:
-  'old-crap': 'get-started'
+  'old-thing': 'get-started'
+  'offsite-stuff': 'http://example.com'
+  'search': 'besmirch'
 
 extra:
   site_subtitle: 'Get everything you need to use Mapzen services in your web applications.'

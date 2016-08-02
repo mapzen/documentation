@@ -122,8 +122,8 @@ dist-android: src-android theme/fragments
 # Build Mapzen.js docs
 dist-mapzen-js: src-mapzen-js theme/fragments
 	anyconfig_cli ./config/default.yml ./config/mapzen-js.yml --merge=merge_dicts --output=./dist-mapzen-js-mkdocs.yml
-	./setup-redirects.py ./dist-mapzen-js-mkdocs.yml
 	mkdocs build --config-file ./dist-mapzen-js-mkdocs.yml --clean
+	./setup-redirects.py ./dist-mapzen-js-mkdocs.yml
 
 # Build general Mapzen docs
 dist-overview: src-overview theme/fragments
