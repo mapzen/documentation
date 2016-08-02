@@ -1,6 +1,6 @@
 # Source doc tarballs
 TANGRAM = https://github.com/tangrams/tangram-docs/archive/gh-pages.tar.gz
-EXTRACTS = https://github.com/mapzen/data-pages/archive/36a7c08.tar.gz
+EXTRACTS = https://github.com/mapzen/data-pages/archive/0991d522f8f98b284ede5626ceb32e9bb3fb76f4.tar.gz
 VALHALLA = https://github.com/valhalla/valhalla-docs/archive/master.tar.gz
 VECTOR = https://github.com/mapzen/vector-datasource/archive/v0.10.2.tar.gz
 SEARCH = https://github.com/pelias/pelias-doc/archive/master.tar.gz
@@ -34,7 +34,7 @@ src-tangram:
 
 src-metro-extracts:
 	mkdir src-metro-extracts
-	curl -sL $(EXTRACTS) | tar -zxv -C src-metro-extracts --strip-components=2 data-pages-36a7c08f63146e3b4113e75cbb0a2cb886d81e33/docs
+	curl -sL $(EXTRACTS) | tar -zxv -C src-metro-extracts --strip-components=2 data-pages-0991d522f8f98b284ede5626ceb32e9bb3fb76f4/docs
 
 src-vector-tiles:
 	mkdir src-vector-tiles
