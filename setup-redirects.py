@@ -29,6 +29,7 @@ def setup_redirect(old_path, new_href):
 
 parser = argparse.ArgumentParser(description='Prepare some redirects.')
 parser.add_argument('config', help='Configuration file path')
+parser.add_argument('base', help='Output documentation base path')
 
 if __name__ == '__main__':
     args = parser.parse_args()
@@ -39,5 +40,5 @@ if __name__ == '__main__':
         
         for (old_name, new_name) in config.get('redirects', {}).items():
             old_path = join(site_dir, old_name, 'index.html')
-            new_href = urljoin('/documentation/', new_name)
+            new_href = urljoin(args.base, new_name)
             setup_redirect(old_path, new_href)
