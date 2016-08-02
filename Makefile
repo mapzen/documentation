@@ -34,7 +34,7 @@ src-tangram:
 
 src-metro-extracts:
 	mkdir src-metro-extracts
-	curl -sL $(EXTRACTS) | tar -zxv -C src-metro-extracts --strip-components=2 data-pages-36a7c08/docs
+	curl -sL $(EXTRACTS) | tar -zxv -C src-metro-extracts --strip-components=2 data-pages-36a7c08f63146e3b4113e75cbb0a2cb886d81e33/docs
 
 src-vector-tiles:
 	mkdir src-vector-tiles
