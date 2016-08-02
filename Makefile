@@ -86,6 +86,7 @@ dist-tangram: src-tangram theme/fragments
 # Build metro-extracts docs
 dist-metro-extracts: src-metro-extracts theme/fragments
 	anyconfig_cli ./config/default.yml ./config/metro-extracts.yml --merge=merge_dicts --output=./dist-metro-extracts-mkdocs.yml
+	./setup-redirects.py ./dist-metro-extracts-mkdocs.yml
 	mkdocs build --config-file ./dist-metro-extracts-mkdocs.yml --clean
 
 # Build vector-tiles docs
@@ -121,6 +122,7 @@ dist-android: src-android theme/fragments
 # Build Mapzen.js docs
 dist-mapzen-js: src-mapzen-js theme/fragments
 	anyconfig_cli ./config/default.yml ./config/mapzen-js.yml --merge=merge_dicts --output=./dist-mapzen-js-mkdocs.yml
+	./setup-redirects.py ./dist-mapzen-js-mkdocs.yml
 	mkdocs build --config-file ./dist-mapzen-js-mkdocs.yml --clean
 
 # Build general Mapzen docs
