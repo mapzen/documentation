@@ -128,7 +128,7 @@ dist-search: src-search theme/fragments
 	mkdocs build --config-file ./dist-search-mkdocs.yml --clean
 
 # Build Mobility docs
-dist-mobility: src-turn-by-turn src-elevation src-matrix src-mobility theme/fragments
+dist-mobility: src-turn-by-turn src-matrix src-mobility theme/fragments
 	anyconfig_cli ./config/default.yml ./config/mobility.yml --merge=merge_dicts --output=./dist-mobility-mkdocs.yml
 	mkdocs build --config-file ./dist-mobility-mkdocs.yml --clean
 
@@ -153,7 +153,7 @@ dist-index: theme/fragments
 	mkdocs build --config-file ./dist-index-mkdocs.yml --clean
 	cp dist-index/index.html dist-index/next.html
 
-dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-turn-by-turn dist-search dist-elevation dist-matrix dist-android dist-mapzen-js dist-overview dist-index dist-optimized
+dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-turn-by-turn dist-search dist-elevation dist-matrix dist-android dist-mapzen-js dist-overview dist-index dist-optimized dist-mobility
 	cp -r dist-index dist
 	ln -s ../dist-tangram dist/tangram
 	ln -s ../dist-metro-extracts dist/metro-extracts
