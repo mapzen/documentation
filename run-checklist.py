@@ -124,6 +124,8 @@ class Tests (unittest.TestCase):
         # self.assertEqual(links['https://mapzen.com/documentation/matrix/'], 'Time-Distance Matrix')
         # self.assertEqual(links['https://mapzen.com/documentation/optimized/'], 'Optimized Route')
         # self.assertEqual(links['https://mapzen.com/documentation/android/'], 'Android SDK')
+        # self.assertEqual(links['https://mapzen.com/documentation/mobility/'], 'Mobility')
+        # self.assertEqual(links['https://mapzen.com/documentation/overview/'], 'Overview')
 
     def test_tangram_index(self):
         pass # self._test_doc_section('/tangram', *self._load_doc_titles('config/tangram.yml'))
@@ -140,6 +142,9 @@ class Tests (unittest.TestCase):
     def test_metroextracts_index(self):
         self._test_doc_section('/metro-extracts', *self._load_doc_titles('config/metro-extracts.yml'))
 
+    def test_mobility_index(self):
+        self._test_doc_section('/mobility', *self._load_doc_titles('config/mobility.yml'))
+
     def test_elevation_index(self):
         self._test_doc_section('/elevation', *self._load_doc_titles('config/elevation.yml'))
 
@@ -154,6 +159,9 @@ class Tests (unittest.TestCase):
 
     def test_mapzenjs_index(self):
         self._test_doc_section('/mapzen-js', *self._load_doc_titles('config/mapzen-js.yml'))
+
+    def test_overview_index(self):
+        self._test_doc_section('/overview', *self._load_doc_titles('config/overview.yml'))
 
 if __name__ == '__main__':
     unittest.main()

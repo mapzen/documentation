@@ -17,16 +17,16 @@ clean:
 	rm -rf dist theme/fragments
 	rm -rf src-tangram src-metro-extracts src-vector-tiles \
 	       src-turn-by-turn src-elevation src-matrix src-search \
-	       src-android src-mapzen-js src-optimized
+	       src-android src-mapzen-js src-optimized src-mobility
 	rm -rf dist-tangram dist-metro-extracts dist-vector-tiles \
 	       dist-turn-by-turn dist-search dist-elevation dist-matrix \
-	       dist-index dist-android dist-mapzen-js dist-optimized
+	       dist-index dist-android dist-mapzen-js dist-optimized dist-mobility
 	rm -rf dist-tangram-mkdocs.yml dist-metro-extracts-mkdocs.yml \
 	       dist-vector-tiles-mkdocs.yml dist-turn-by-turn-mkdocs.yml \
 	       dist-search-mkdocs.yml dist-elevation-mkdocs.yml \
 	       dist-matrix-mkdocs.yml dist-index-mkdocs.yml \
 	       dist-android-mkdocs.yml dist-mapzen-js-mkdocs.yml \
-	       dist-optimized-mkdocs.yml
+	       dist-optimized-mkdocs.yml dist-mobility-mkdocs.yml
 
 # Get individual sources docs
 src-tangram:
@@ -60,6 +60,10 @@ src-matrix:
 src-optimized:
 	mkdir src-optimized
 	curl -sL $(VALHALLA) | tar -zxv -C src-optimized --strip-components=2 valhalla-docs-master/optimized_route
+
+src-mobility:
+	mkdir src-mobility
+	curl -sL $(VALHALLA) | tar -zxv -C src-mobility --strip-components=1 valhalla-docs-master
 
 src-search:
 	mkdir src-search
@@ -123,6 +127,11 @@ dist-search: src-search theme/fragments
 	anyconfig_cli ./config/default.yml ./config/search.yml --merge=merge_dicts --output=./dist-search-mkdocs.yml
 	mkdocs build --config-file ./dist-search-mkdocs.yml --clean
 
+# Build Mobility docs
+dist-mobility: src-turn-by-turn src-elevation src-matrix src-mobility theme/fragments
+	anyconfig_cli ./config/default.yml ./config/mobility.yml --merge=merge_dicts --output=./dist-mobility-mkdocs.yml
+	mkdocs build --config-file ./dist-mobility-mkdocs.yml --clean
+
 # Build Android docs
 dist-android: src-android theme/fragments
 	anyconfig_cli ./config/default.yml ./config/android.yml --merge=merge_dicts --output=./dist-android-mkdocs.yml
@@ -154,6 +163,7 @@ dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-turn-by-turn dist-
 	ln -s ../dist-elevation dist/elevation
 	ln -s ../dist-matrix dist/matrix
 	ln -s ../dist-optimized dist/optimized
+	ln -s ../dist-mobility dist/mobility
 	ln -s ../dist-android dist/android
 	ln -s ../dist-mapzen-js dist/mapzen-js
 	ln -s ../dist-overview dist/overview
