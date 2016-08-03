@@ -8,7 +8,7 @@ pages:
   - 'Overview': 'overview.md'
   - 'Walkthrough': 'walkthrough.md'
   - 'Custom Extracts': 'custom-extracts.md'
-  - 'File Format': 'fileformat.md'
+  - 'File Formats': 'fileformat.md'
 
 extra:
   site_subtitle: Download city-sized portions of OpenStreetMap data in a variety of formats.
