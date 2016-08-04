@@ -83,7 +83,7 @@
 			</div>
 			<div class="category-info-container">
 				<div class="category-info">
-					<a class="docs-title" href="turn-by-turn/">Mapzen Mobility</a>
+					<a class="docs-title" href="mobility/">Mapzen Mobility</a>
 					<p class="excerpt">
 						Add planetwide routing and navigation to your web and mobile applications.
 					</p>
@@ -92,6 +92,7 @@
 					<a class="btn btn-default btn-transparent" href="mobility/"> View Documentation </a>
 				</div>
 			</div>
+		</div>
 		<div class="col-xs-12 footroom-large">
 			<h6 class="category-title">
 				Data
