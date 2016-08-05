@@ -45,17 +45,17 @@ src-vector-tiles:
 	 || tar -zxv -C src-vector-tiles --strip-components=2 --exclude=README.md '*/docs/' \
 	    )
 
-src-turn-by-turn:
-	mkdir src-turn-by-turn
-	curl -sL $(VALHALLA) | tar -zxv -C src-turn-by-turn --strip-components=1 valhalla-docs-master
+# src-turn-by-turn:
+# 	mkdir src-turn-by-turn
+# 	curl -sL $(VALHALLA) | tar -zxv -C src-turn-by-turn --strip-components=1 valhalla-docs-master
 
 src-elevation:
 	mkdir src-elevation
 	curl -sL $(VALHALLA) | tar -zxv -C src-elevation --strip-components=2 valhalla-docs-master/elevation
 
-src-matrix:
-	mkdir src-matrix
-	curl -sL $(VALHALLA) | tar -zxv -C src-matrix --strip-components=2 valhalla-docs-master/matrix
+# src-matrix:
+# 	mkdir src-matrix
+# 	curl -sL $(VALHALLA) | tar -zxv -C src-matrix --strip-components=2 valhalla-docs-master/matrix
 
 # src-optimized:
 # 	mkdir src-optimized
@@ -128,10 +128,10 @@ dist-search: src-search theme/fragments
 	mkdocs build --config-file ./dist-search-mkdocs.yml --clean
 
 # Build Mobility docs
-dist-mobility: src-turn-by-turn src-matrix src-mobility theme/fragments
+dist-mobility: src-mobility theme/fragments
 	anyconfig_cli ./config/default.yml ./config/mobility.yml --merge=merge_dicts --output=./dist-mobility-mkdocs.yml
 	mkdocs build --config-file ./dist-mobility-mkdocs.yml --clean
-	./setup-redirects.py ./dist-mobility-mkdocs.yml /documentation/mobility/
+	# ./setup-redirects.py ./dist-mobility-mkdocs.yml /mobility/
 
 # Build Android docs
 dist-android: src-android theme/fragments
