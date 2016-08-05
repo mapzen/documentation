@@ -5,7 +5,6 @@ include_next_prev: false # next/prev is in alpha order; we don't want this
 
 pages:
   - Home: index.md
-  - 'Overview': 'overview.md'
   - 'Tutorial': 'tutorial.md'
   - 'Custom Extracts': 'custom-extracts.md'
   - 'File Formats': 'fileformat.md'
