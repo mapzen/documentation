@@ -6,8 +6,8 @@ include_next_prev: false # next/prev is in alpha order; we don't want this
 pages:
   - Home: index.md
   - 'Tutorial': 'tutorial.md'
-  - 'Custom Extracts': 'custom-extracts.md'
-  - 'File Formats': 'file-format.md'
+  - 'Custom extracts': 'custom-extracts.md'
+  - 'File formats': 'file-format.md'
 
 extra:
   site_subtitle: Download city-sized portions of OpenStreetMap data in a variety of formats.
