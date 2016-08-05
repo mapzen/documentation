@@ -91,32 +91,38 @@ theme/fragments:
 dist-tangram: src-tangram theme/fragments
 	anyconfig_cli ./config/default.yml ./config/tangram.yml --merge=merge_dicts --output=./dist-tangram-mkdocs.yml
 	mkdocs build --config-file ./dist-tangram-mkdocs.yml --clean
+	./setup-redirects.py ./dist-tangram-mkdocs.yml /documentation/tangram/
 
 # Build metro-extracts docs
 dist-metro-extracts: src-metro-extracts theme/fragments
 	anyconfig_cli ./config/default.yml ./config/metro-extracts.yml --merge=merge_dicts --output=./dist-metro-extracts-mkdocs.yml
 	mkdocs build --config-file ./dist-metro-extracts-mkdocs.yml --clean
+	./setup-redirects.py ./dist-metro-extracts-mkdocs.yml /documentation/metro-extracts/
 
 # Build vector-tiles docs
 dist-vector-tiles: src-vector-tiles theme/fragments
 	anyconfig_cli ./config/default.yml ./config/vector-tiles.yml --merge=merge_dicts --output=./dist-vector-tiles-mkdocs.yml
 	mkdocs build --config-file ./dist-vector-tiles-mkdocs.yml --clean
+	./setup-redirects.py ./dist-vector-tiles-mkdocs.yml /documentation/vector-tiles/
 
 # # Build turn-by-turn docs
 # dist-turn-by-turn: src-turn-by-turn theme/fragments
 # 	anyconfig_cli ./config/default.yml ./config/turn-by-turn.yml --merge=merge_dicts --output=./dist-turn-by-turn-mkdocs.yml
 # 	mkdocs build --config-file ./dist-turn-by-turn-mkdocs.yml --clean
+# 	./setup-redirects.py ./dist-turn-by-turn-mkdocs.yml /documentation/turn-by-turn/
 
 # Build elevation service docs
 dist-elevation: src-elevation theme/fragments
 	anyconfig_cli ./config/default.yml ./config/elevation.yml --merge=merge_dicts --output=./dist-elevation-mkdocs.yml
 	mkdocs build --config-file ./dist-elevation-mkdocs.yml --clean
+	./setup-redirects.py ./dist-elevation-mkdocs.yml /documentation/elevation/
 
 # # Build time-distance matrix service docs
 # dist-matrix: src-matrix theme/fragments
 # 	anyconfig_cli ./config/default.yml ./config/matrix.yml --merge=merge_dicts --output=./dist-matrix-mkdocs.yml
 # 	mkdocs build --config-file ./dist-matrix-mkdocs.yml --clean
-#
+# 	./setup-redirects.py ./dist-matrix-mkdocs.yml /documentation/matrix/
+# 
 # # Build optimized route service docs
 # dist-optimized: src-optimized theme/fragments
 # 	anyconfig_cli ./config/default.yml ./config/optimized.yml --merge=merge_dicts --output=./dist-optimized-mkdocs.yml
@@ -126,27 +132,31 @@ dist-elevation: src-elevation theme/fragments
 dist-search: src-search theme/fragments
 	anyconfig_cli ./config/default.yml ./config/search.yml --merge=merge_dicts --output=./dist-search-mkdocs.yml
 	mkdocs build --config-file ./dist-search-mkdocs.yml --clean
+	./setup-redirects.py ./dist-search-mkdocs.yml /documentation/search/
 
 # Build Mobility docs
 dist-mobility: src-mobility theme/fragments
 	anyconfig_cli ./config/default.yml ./config/mobility.yml --merge=merge_dicts --output=./dist-mobility-mkdocs.yml
 	mkdocs build --config-file ./dist-mobility-mkdocs.yml --clean
-	# ./setup-redirects.py ./dist-mobility-mkdocs.yml /mobility/
+	./setup-redirects.py ./dist-mobility-mkdocs.yml /documentation/mobility/
 
 # Build Android docs
 dist-android: src-android theme/fragments
 	anyconfig_cli ./config/default.yml ./config/android.yml --merge=merge_dicts --output=./dist-android-mkdocs.yml
 	mkdocs build --config-file ./dist-android-mkdocs.yml --clean
+	./setup-redirects.py ./dist-android-mkdocs.yml /documentation/android/
 
 # Build Mapzen.js docs
 dist-mapzen-js: src-mapzen-js theme/fragments
 	anyconfig_cli ./config/default.yml ./config/mapzen-js.yml --merge=merge_dicts --output=./dist-mapzen-js-mkdocs.yml
 	mkdocs build --config-file ./dist-mapzen-js-mkdocs.yml --clean
+	./setup-redirects.py ./dist-mapzen-js-mkdocs.yml /documentation/mapzen-js/
 
 # Build general Mapzen docs
 dist-overview: src-overview theme/fragments
 	anyconfig_cli ./config/default.yml ./config/overview.yml --merge=merge_dicts --output=./dist-overview-mkdocs.yml
 	mkdocs build --config-file ./dist-overview-mkdocs.yml --clean
+	./setup-redirects.py ./dist-overview-mkdocs.yml /documentation/overview/
 
 # Build index page
 dist-index: theme/fragments
