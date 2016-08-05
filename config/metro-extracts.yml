@@ -10,7 +10,8 @@ pages:
   - 'File formats': 'file-format.md'
 
 redirects:
-  overview: '.'
+  'overview': '.'
+  'walkthrough': 'tutorial'
 
 extra:
   site_subtitle: Download city-sized portions of OpenStreetMap data in a variety of formats.
