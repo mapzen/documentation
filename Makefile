@@ -131,6 +131,7 @@ dist-search: src-search theme/fragments
 dist-mobility: src-turn-by-turn src-matrix src-mobility theme/fragments
 	anyconfig_cli ./config/default.yml ./config/mobility.yml --merge=merge_dicts --output=./dist-mobility-mkdocs.yml
 	mkdocs build --config-file ./dist-mobility-mkdocs.yml --clean
+	./setup-redirects.py ./dist-mobility-mkdocs.yml /mobility/
 
 # Build Android docs
 dist-android: src-android theme/fragments
