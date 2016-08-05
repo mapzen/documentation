@@ -45,17 +45,17 @@ src-vector-tiles:
 	 || tar -zxv -C src-vector-tiles --strip-components=2 --exclude=README.md '*/docs/' \
 	    )
 
-# src-turn-by-turn:
-# 	mkdir src-turn-by-turn
-# 	curl -sL $(VALHALLA) | tar -zxv -C src-turn-by-turn --strip-components=1 valhalla-docs-master
+src-turn-by-turn:
+	mkdir src-turn-by-turn
+	curl -sL $(VALHALLA) | tar -zxv -C src-turn-by-turn --strip-components=1 valhalla-docs-master
 
 src-elevation:
 	mkdir src-elevation
 	curl -sL $(VALHALLA) | tar -zxv -C src-elevation --strip-components=2 valhalla-docs-master/elevation
 
-# src-matrix:
-# 	mkdir src-matrix
-# 	curl -sL $(VALHALLA) | tar -zxv -C src-matrix --strip-components=2 valhalla-docs-master/matrix
+src-matrix:
+	mkdir src-matrix
+	curl -sL $(VALHALLA) | tar -zxv -C src-matrix --strip-components=2 valhalla-docs-master/matrix
 
 # src-optimized:
 # 	mkdir src-optimized
