@@ -68,8 +68,6 @@ The Mapzen Search service is built from the [Pelias](https://github.com/pelias) 
 
 The distance limit is the total straight-line distance (colloquially, as the crow flies) along a path through successive locations.
 
-The Mapzen Turn-by-Turn, Matrix, and Elevation services are built from the [Valhalla](https://github.com/valhalla) open-source project.
-
 #### Mapzen Matrix
 
 [Mapzen Matrix](https://mapzen.com/documentation/matrix/) provides time and distance calculations between locations and has these limits:
@@ -78,6 +76,19 @@ The Mapzen Turn-by-Turn, Matrix, and Elevation services are built from the [Valh
 - 5,000 queries per day
 - The maximum number of locations is 50 for any type of matrix.
 - The maximum straight-line distance between two locations is 200 kilometers.
+
+#### Mapzen Optimized Route
+
+[Mapzen Optimized Route](https://mapzen.com/documentation/optimized/) finds the most efficient route between many locations. To use the Optimized Route service, you need a Matrix API key because the result is built with matrix calculations. The service has these limits:
+
+- 2 queries per second
+- 5,000 queries per day
+- The maximum number of locations is 50.
+- The maximum straight-line distance between two locations is 200 kilometers.
+
+The Mapzen Turn-by-Turn, Matrix, and Optimized Route services are built from the [Valhalla](https://github.com/valhalla) open-source project. 
+
+### Data products
 
 #### Mapzen Elevation
 
@@ -88,12 +99,12 @@ The Mapzen Turn-by-Turn, Matrix, and Elevation services are built from the [Valh
 
 There are also limitations on the number of sampling points for which you request elevations.
 
-### Data products
+The Mapzen Elevation lookup service is built from the [Valhalla](https://github.com/valhalla) open-source project.
 
-Other than the vector tiles service, Mapzen's data products do not currently require API keys. These include:
+Mapzen's other data products do not currently require API keys. These include:
 
 - Who's on First, the global gazetteer
-- Metro Extracts, downloadable snapshots of OpenStreetMap data
+- Metro Extracts, downloadable snapshots of OpenStreetMap data (Note: you will need to sign in with a developer account to download custom extracts)
 - Transitland, the open transit data project
 
 ### Mobile products
