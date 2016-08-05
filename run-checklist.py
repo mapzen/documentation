@@ -133,8 +133,8 @@ class Tests (unittest.TestCase):
     def test_search_index(self):
         self._test_doc_section('/search', *self._load_doc_titles('config/search.yml'))
 
-    def test_turnbyturn_index(self):
-        self._test_doc_section('/turn-by-turn', *self._load_doc_titles('config/turn-by-turn.yml'))
+    # def test_turnbyturn_index(self):
+    #     self._test_doc_section('/turn-by-turn', *self._load_doc_titles('config/turn-by-turn.yml'))
 
     def test_vectortiles_index(self):
         self._test_doc_section('/vector-tiles', *self._load_doc_titles('config/vector-tiles.yml'))
@@ -148,11 +148,11 @@ class Tests (unittest.TestCase):
     def test_elevation_index(self):
         self._test_doc_section('/elevation', *self._load_doc_titles('config/elevation.yml'))
 
-    def test_matrix_index(self):
-        self._test_doc_section('/matrix', *self._load_doc_titles('config/matrix.yml'))
-
-    def test_optimized_index(self):
-        self._test_doc_section('/optimized', *self._load_doc_titles('config/optimized.yml'))
+    # def test_matrix_index(self):
+    #     self._test_doc_section('/matrix', *self._load_doc_titles('config/matrix.yml'))
+    #
+    # def test_optimized_index(self):
+    #     self._test_doc_section('/optimized', *self._load_doc_titles('config/optimized.yml'))
 
     def test_android_index(self):
         self._test_doc_section('/android', *self._load_doc_titles('config/android.yml'))
