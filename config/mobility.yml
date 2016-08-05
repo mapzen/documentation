@@ -13,10 +13,10 @@ pages:
   - 'Decode a route shape': 'decoding.md'
   - 'Release notes': 'release-notes.md'
 
-redirects:
-  'turn-by-turn': 'mobility/turn-by-turn'
-  'optimized': 'mobility/optimized'
-  'matrix': 'mobility/matrix'
+# redirects:
+#  'turn-by-turn': 'mobility/turn-by-turn'
+#  'optimized': 'mobility/optimized'
+#  'matrix': 'mobility/matrix'
 
 extra:
   site_subtitle: 'Add routing and navigation to your web and mobile apps.'
