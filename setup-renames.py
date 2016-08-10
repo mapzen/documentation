@@ -5,6 +5,10 @@ from shutil import move
 import yaml, argparse
 
 def setup_rename(old_path, new_path):
+    if exists(new_path):
+        print('Will not overwrite', new_path)
+        return
+    
     if not exists(dirname(new_path)):
         makedirs(dirname(new_path))
     
