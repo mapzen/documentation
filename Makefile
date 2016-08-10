@@ -137,6 +137,7 @@ dist-search: src-search theme/fragments
 # Build Mobility docs
 dist-mobility: src-mobility theme/fragments
 	anyconfig_cli ./config/default.yml ./config/mobility.yml --merge=merge_dicts --output=./dist-mobility-mkdocs.yml
+	./setup-renames.py ./dist-mobility-mkdocs.yml
 	mkdocs build --config-file ./dist-mobility-mkdocs.yml --clean
 	./setup-redirects.py ./dist-mobility-mkdocs.yml /documentation/mobility/
 
