@@ -8,6 +8,7 @@ site_dir: dist-tangram
 pages:
   - Home: index.md
   - Concept Overviews:
+    - 'Tangram': 'Tangram-Overview.md'
     - 'The Scene File': 'Scene-file.md'
     - 'Data Filters': 'Filters-Overview.md'
     - 'Styles': 'Styles-Overview.md'
