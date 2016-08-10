@@ -168,7 +168,7 @@ dist-index: theme/fragments
 	mkdocs build --config-file ./dist-index-mkdocs.yml --clean
 	cp dist-index/index.html dist-index/next.html
 
-dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-search dist-elevation dist-android dist-mapzen-js dist-overview dist-index dist-mobility
+dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-search dist-elevation dist-android dist-mapzen-js dist-overview dist-index dist-mobility dist-turn-by-turn dist-matrix dist-optimized
 	cp -r dist-index dist
 	ln -s ../dist-tangram dist/tangram
 	ln -s ../dist-metro-extracts dist/metro-extracts
