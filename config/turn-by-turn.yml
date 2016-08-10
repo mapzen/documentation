@@ -1,0 +1,18 @@
+site_name: Mapzen Turn-by-Turn
+docs_dir: src-turn-by-turn
+site_dir: dist-turn-by-turn
+
+pages:
+  - Home: nothing.md
+
+redirects:
+  '.': '/documentation/mobility/turn-by-turn'
+  'api-reference': '/documentation/mobility/turn-by-turn/api-reference'
+  'add-routing-to-a-map': '/documentation/mobility/turn-by-turn/add-routing-to-a-map'
+  'terminology': '/documentation/mobility/terminology'
+  'decoding': '/documentation/mobility/decoding'
+
+extra:
+  site_subtitle: 'Add routing and navigation to your web and mobile apps.'
+  project_repo_url: https://github.com/valhalla/
+  docs_base_url: https://github.com/valhalla/valhalla-docs/tree/master

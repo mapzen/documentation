@@ -17,13 +17,16 @@ clean:
 	rm -rf dist theme/fragments
 	rm -rf src-tangram src-metro-extracts src-vector-tiles \
 	       src-elevation src-search \
+	       src-turn-by-turn \
 	       src-android src-mapzen-js src-mobility
 	rm -rf dist-tangram dist-metro-extracts dist-vector-tiles \
 	       dist-search dist-elevation \
+	       dist-turn-by-turn \
 	       dist-index dist-android dist-mapzen-js dist-mobility
 	rm -rf dist-tangram-mkdocs.yml dist-metro-extracts-mkdocs.yml \
 	       dist-vector-tiles-mkdocs.yml  \
 	       dist-search-mkdocs.yml dist-elevation-mkdocs.yml \
+	       dist-turn-by-turn-mkdocs.yml \
 	       dist-index-mkdocs.yml \
 	       dist-android-mkdocs.yml dist-mapzen-js-mkdocs.yml \
 	       dist-mobility-mkdocs.yml
@@ -45,9 +48,9 @@ src-vector-tiles:
 	 || tar -zxv -C src-vector-tiles --strip-components=2 --exclude=README.md '*/docs/' \
 	    )
 
-# src-turn-by-turn:
-# 	mkdir src-turn-by-turn
-# 	curl -sL $(VALHALLA) | tar -zxv -C src-turn-by-turn --strip-components=1 valhalla-docs-master
+src-turn-by-turn:
+	mkdir src-turn-by-turn
+	touch src-turn-by-turn/nothing.md
 
 src-elevation:
 	mkdir src-elevation
@@ -105,11 +108,11 @@ dist-vector-tiles: src-vector-tiles theme/fragments
 	mkdocs build --config-file ./dist-vector-tiles-mkdocs.yml --clean
 	./setup-redirects.py ./dist-vector-tiles-mkdocs.yml /documentation/vector-tiles/
 
-# # Build turn-by-turn docs
-# dist-turn-by-turn: src-turn-by-turn theme/fragments
-# 	anyconfig_cli ./config/default.yml ./config/turn-by-turn.yml --merge=merge_dicts --output=./dist-turn-by-turn-mkdocs.yml
-# 	mkdocs build --config-file ./dist-turn-by-turn-mkdocs.yml --clean
-# 	./setup-redirects.py ./dist-turn-by-turn-mkdocs.yml /documentation/turn-by-turn/
+# Build turn-by-turn docs
+dist-turn-by-turn: src-turn-by-turn theme/fragments
+	anyconfig_cli ./config/default.yml ./config/turn-by-turn.yml --merge=merge_dicts --output=./dist-turn-by-turn-mkdocs.yml
+	mkdocs build --config-file ./dist-turn-by-turn-mkdocs.yml --clean
+	./setup-redirects.py ./dist-turn-by-turn-mkdocs.yml /documentation/turn-by-turn/
 
 # Build elevation service docs
 dist-elevation: src-elevation theme/fragments
@@ -169,7 +172,7 @@ dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-search dist-elevat
 	ln -s ../dist-tangram dist/tangram
 	ln -s ../dist-metro-extracts dist/metro-extracts
 	ln -s ../dist-vector-tiles dist/vector-tiles
-	#ln -s ../dist-turn-by-turn dist/turn-by-turn
+	ln -s ../dist-turn-by-turn dist/turn-by-turn
 	ln -s ../dist-search dist/search
 	ln -s ../dist-elevation dist/elevation
 	#ln -s ../dist-matrix dist/matrix
