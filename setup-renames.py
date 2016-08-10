@@ -1,9 +1,13 @@
 #!/usr/bin/env python
 from os.path import join, dirname, exists
+from os import makedirs
 from shutil import move
 import yaml, argparse
 
 def setup_rename(old_path, new_path):
+    if not exists(dirname(new_path)):
+        makedirs(dirname(new_path))
+    
     move(old_path, new_path)
 
 parser = argparse.ArgumentParser(description='Prepare some renames.')

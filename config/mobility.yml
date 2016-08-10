@@ -4,13 +4,15 @@ site_dir: dist-mobility
 
 mz:renames:
   'optimized_route': 'optimized-route'
+  'api-reference.md': 'turn-by-turn/api-reference.md'
+  'add-routing-to-a-map.md': 'turn-by-turn/add-routing-to-a-map.md'
 
 pages:
   - Home: index.md
   - 'Terminology': 'terminology.md'
   - Turn-by-Turn:
-    - 'API reference': 'api-reference.md'
-    - 'Add Mapzen Turn-by-Turn routing to a map': 'add-routing-to-a-map.md'
+    - 'API reference': 'turn-by-turn/api-reference.md'
+    - 'Add Mapzen Turn-by-Turn routing to a map': 'turn-by-turn/add-routing-to-a-map.md'
   - 'Optimized route': 'optimized-route/api-reference.md'
   - 'Time-Distance Matrix': 'matrix/api-reference.md'
   - 'Decode a route shape': 'decoding.md'
