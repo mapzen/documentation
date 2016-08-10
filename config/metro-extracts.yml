@@ -5,11 +5,16 @@ include_next_prev: false # next/prev is in alpha order; we don't want this
 
 pages:
   - Home: index.md
-  - 'Overview': 'overview.md'
-  - 'Walkthrough': 'walkthrough.md'
+  - 'Tutorial': 'tutorial.md'
+  - 'Custom extracts': 'custom-extracts.md'
+  - 'File formats': 'file-format.md'
+
+redirects:
+  'overview': '.'
+  'walkthrough': 'tutorial'
 
 extra:
   site_subtitle: Download city-sized portions of OpenStreetMap data in a variety of formats.
-  project_repo_url: https://github.com/mapzen/metroextractor-cities
-  docs_base_url: https://github.com/mapzen/metroextractor-cities/tree/master/docs
+  project_repo_url: https://github.com/mapzen/metro-extracts
+  docs_base_url: https://github.com/mapzen/metro-extracts/tree/master/docs
   exclude_home_contents_in_toc: false
