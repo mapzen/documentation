@@ -5,7 +5,7 @@ site_dir: dist-turn-by-turn
 pages:
   - Home: nothing.md
 
-redirects:
+mz:redirects:
   '.': '/documentation/mobility/turn-by-turn'
   'api-reference': '/documentation/mobility/turn-by-turn/api-reference'
   'add-routing-to-a-map': '/documentation/mobility/turn-by-turn/add-routing-to-a-map'

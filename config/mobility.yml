@@ -18,11 +18,6 @@ pages:
   - 'Decode a route shape': 'decoding.md'
   - 'Release notes': 'release-notes.md'
 
-# redirects:
-#  'turn-by-turn': 'mobility'
-#  'optimized': 'mobility/optimized'
-#  'matrix': 'mobility/matrix'
-
 extra:
   site_subtitle: 'Add routing and navigation to your web and mobile apps.'
   project_repo_url: https://github.com/valhalla/

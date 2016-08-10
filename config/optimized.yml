@@ -7,7 +7,7 @@ extra_css: [css/codehilite/mapzen.css]
 pages:
   - Home: nothing.md
 
-redirects:
+mz:redirects:
   '.': '/documentation/mobility/optimized/api-reference'
   'api-reference': '/documentation/mobility/optimized/api-reference'
 

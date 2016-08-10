@@ -5,7 +5,7 @@ site_dir: dist-matrix
 pages:
   - Home: nothing.md
 
-redirects:
+mz:redirects:
   '.': '/documentation/mobility/matrix/api-reference'
   'api-reference': '/documentation/mobility/matrix/api-reference'
 
