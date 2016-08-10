@@ -38,7 +38,7 @@ if __name__ == '__main__':
         config = yaml.safe_load(input)
         site_dir = config.get('site_dir')
         
-        for (old_name, new_name) in config.get('redirects', {}).items():
+        for (old_name, new_name) in config.get('mz:redirects', {}).items():
             old_path = join(site_dir, old_name, 'index.html')
             new_href = urljoin(args.base, new_name)
             setup_redirect(old_path, new_href)

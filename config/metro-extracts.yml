@@ -9,7 +9,7 @@ pages:
   - 'Custom extracts': 'custom-extracts.md'
   - 'File formats': 'file-format.md'
 
-redirects:
+mz:redirects:
   'overview': '.'
   'walkthrough': 'tutorial'
 
