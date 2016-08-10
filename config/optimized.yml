@@ -8,8 +8,8 @@ pages:
   - Home: nothing.md
 
 redirects:
-  '.': '/documentation/mobility/optimized-route/api-reference'
-  'api-reference': '/documentation/mobility/optimized-route/api-reference'
+  '.': '/documentation/mobility/optimized/api-reference'
+  'api-reference': '/documentation/mobility/optimized/api-reference'
 
 extra:
   site_subtitle: 'Find the most efficient route between many locations.'
