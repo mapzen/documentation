@@ -169,7 +169,7 @@ dist-index: theme/fragments
 	cp dist-index/index.html dist-index/next.html
 
 dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-search dist-elevation dist-android dist-mapzen-js dist-overview dist-index dist-mobility dist-turn-by-turn dist-matrix dist-optimized
-	cp -r dist-index dist
+	mkdir dist
 	ln -s ../dist-tangram dist/tangram
 	ln -s ../dist-metro-extracts dist/metro-extracts
 	ln -s ../dist-vector-tiles dist/vector-tiles
@@ -182,6 +182,7 @@ dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-search dist-elevat
 	ln -s ../dist-android dist/android
 	ln -s ../dist-mapzen-js dist/mapzen-js
 	ln -s ../dist-overview dist/overview
+	rsync -urv --ignore-existing dist-index/ dist/
 	# Compress all HTML files - controls Jinja whitespace
 	find -L dist -name \*.html -ls -exec htmlmin --keep-optional-attribute-quotes {} {} \;
 
