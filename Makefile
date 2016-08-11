@@ -130,6 +130,7 @@ dist-matrix: src-matrix theme/fragments
 dist-optimized: src-optimized theme/fragments
 	anyconfig_cli ./config/default.yml ./config/optimized.yml --merge=merge_dicts --output=./dist-optimized-mkdocs.yml
 	mkdocs build --config-file ./dist-optimized-mkdocs.yml --clean
+	./setup-redirects.py ./dist-optimized-mkdocs.yml /documentation/optimized/
 
 # Build Search/Pelias docs
 dist-search: src-search theme/fragments
@@ -166,18 +167,16 @@ dist-overview: src-overview theme/fragments
 dist-index: theme/fragments
 	anyconfig_cli ./config/default.yml ./config/index.yml --merge=merge_dicts --output=./dist-index-mkdocs.yml
 	mkdocs build --config-file ./dist-index-mkdocs.yml --clean
+	./setup-redirects.py ./dist-index-mkdocs.yml /documentation/
 	cp dist-index/index.html dist-index/next.html
 
-dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-search dist-elevation dist-android dist-mapzen-js dist-overview dist-index dist-mobility dist-turn-by-turn dist-matrix dist-optimized
+dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-search dist-elevation dist-android dist-mapzen-js dist-overview dist-index dist-mobility
 	mkdir dist
 	ln -s ../dist-tangram dist/tangram
 	ln -s ../dist-metro-extracts dist/metro-extracts
 	ln -s ../dist-vector-tiles dist/vector-tiles
-	ln -s ../dist-turn-by-turn dist/turn-by-turn
 	ln -s ../dist-search dist/search
 	ln -s ../dist-elevation dist/elevation
-	ln -s ../dist-matrix dist/matrix
-	ln -s ../dist-optimized dist/optimized
 	ln -s ../dist-mobility dist/mobility
 	ln -s ../dist-android dist/android
 	ln -s ../dist-mapzen-js dist/mapzen-js

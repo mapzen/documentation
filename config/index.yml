@@ -4,5 +4,16 @@ site_dir: dist-index
 pages:
   - Home: index.md
 
+mz:redirects:
+  'matrix': '/documentation/mobility/matrix/api-reference'
+  'matrix/api-reference': '/documentation/mobility/matrix/api-reference'
+  'optimized': '/documentation/mobility/optimized/api-reference'
+  'optimized/api-reference': '/documentation/mobility/optimized/api-reference'
+  'turn-by-turn': '/documentation/mobility/turn-by-turn'
+  'turn-by-turn/api-reference': '/documentation/mobility/turn-by-turn/api-reference'
+  'turn-by-turn/add-routing-to-a-map': '/documentation/mobility/turn-by-turn/add-routing-to-a-map'
+  'turn-by-turn/terminology': '/documentation/mobility/terminology'
+  'turn-by-turn/decoding': '/documentation/mobility/decoding'
+
 extra:
   layout: raw-page
