@@ -17,16 +17,13 @@ clean:
 	rm -rf dist theme/fragments
 	rm -rf src-tangram src-metro-extracts src-vector-tiles \
 	       src-elevation src-search \
-	       src-turn-by-turn src-matrix src-optimized \
 	       src-android src-mapzen-js src-mobility
 	rm -rf dist-tangram dist-metro-extracts dist-vector-tiles \
 	       dist-search dist-elevation \
-	       dist-turn-by-turn dist-matrix dist-optimized \
 	       dist-index dist-android dist-mapzen-js dist-mobility
 	rm -rf dist-tangram-mkdocs.yml dist-metro-extracts-mkdocs.yml \
 	       dist-vector-tiles-mkdocs.yml  \
 	       dist-search-mkdocs.yml dist-elevation-mkdocs.yml \
-	       dist-turn-by-turn-mkdocs.yml dist-matrix-mkdocs.yml dist-optimized-mkdocs.yml \
 	       dist-index-mkdocs.yml \
 	       dist-android-mkdocs.yml dist-mapzen-js-mkdocs.yml \
 	       dist-mobility-mkdocs.yml
@@ -48,21 +45,9 @@ src-vector-tiles:
 	 || tar -zxv -C src-vector-tiles --strip-components=2 --exclude=README.md '*/docs/' \
 	    )
 
-src-turn-by-turn:
-	mkdir src-turn-by-turn
-	touch src-turn-by-turn/nothing.md
-
 src-elevation:
 	mkdir src-elevation
 	curl -sL $(VALHALLA) | tar -zxv -C src-elevation --strip-components=2 valhalla-docs-master/elevation
-
-src-matrix:
-	mkdir src-matrix
-	touch src-matrix/nothing.md
-
-src-optimized:
-	mkdir src-optimized
-	touch src-optimized/nothing.md
 
 src-mobility:
 	mkdir src-mobility
@@ -108,29 +93,11 @@ dist-vector-tiles: src-vector-tiles theme/fragments
 	mkdocs build --config-file ./dist-vector-tiles-mkdocs.yml --clean
 	./setup-redirects.py ./dist-vector-tiles-mkdocs.yml /documentation/vector-tiles/
 
-# Build turn-by-turn docs
-dist-turn-by-turn: src-turn-by-turn theme/fragments
-	anyconfig_cli ./config/default.yml ./config/turn-by-turn.yml --merge=merge_dicts --output=./dist-turn-by-turn-mkdocs.yml
-	mkdocs build --config-file ./dist-turn-by-turn-mkdocs.yml --clean
-	./setup-redirects.py ./dist-turn-by-turn-mkdocs.yml /documentation/turn-by-turn/
-
 # Build elevation service docs
 dist-elevation: src-elevation theme/fragments
 	anyconfig_cli ./config/default.yml ./config/elevation.yml --merge=merge_dicts --output=./dist-elevation-mkdocs.yml
 	mkdocs build --config-file ./dist-elevation-mkdocs.yml --clean
 	./setup-redirects.py ./dist-elevation-mkdocs.yml /documentation/elevation/
-
-# Build time-distance matrix service docs
-dist-matrix: src-matrix theme/fragments
-	anyconfig_cli ./config/default.yml ./config/matrix.yml --merge=merge_dicts --output=./dist-matrix-mkdocs.yml
-	mkdocs build --config-file ./dist-matrix-mkdocs.yml --clean
-	./setup-redirects.py ./dist-matrix-mkdocs.yml /documentation/matrix/
-
-# Build optimized route service docs
-dist-optimized: src-optimized theme/fragments
-	anyconfig_cli ./config/default.yml ./config/optimized.yml --merge=merge_dicts --output=./dist-optimized-mkdocs.yml
-	mkdocs build --config-file ./dist-optimized-mkdocs.yml --clean
-	./setup-redirects.py ./dist-optimized-mkdocs.yml /documentation/optimized/
 
 # Build Search/Pelias docs
 dist-search: src-search theme/fragments
