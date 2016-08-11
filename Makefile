@@ -6,7 +6,6 @@ VECTOR = https://github.com/mapzen/vector-datasource/archive/v0.10.2.tar.gz
 SEARCH = https://github.com/pelias/pelias-doc/archive/master.tar.gz
 ANDROID = https://github.com/mapzen/android/archive/master.tar.gz
 MAPZENJS = https://github.com/mapzen/mapzen.js/archive/master.tar.gz
-OVERVIEW = https://github.com/mapzen/mapzen-docs-generator/archive/master.tar.gz
 
 SHELL := /bin/bash # required for OSX
 PYTHONPATH := packages:$(PYTHONPATH)
@@ -66,8 +65,7 @@ src-mapzen-js:
 	curl -sL $(MAPZENJS) | tar -zxv -C src-mapzen-js --strip-components=2 mapzen.js-master/docs
 
 src-overview:
-	mkdir src-overview
-	curl -sL $(OVERVIEW) | tar -zxv -C src-overview --strip-components=2 mapzen-docs-generator-master/docs
+	cp -r docs src-overview
 
 # Retrieve style guide
 theme/fragments:
