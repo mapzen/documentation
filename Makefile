@@ -149,8 +149,6 @@ dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-search dist-elevat
 	ln -s ../dist-mapzen-js dist/mapzen-js
 	ln -s ../dist-overview dist/overview
 	rsync -urv --ignore-existing dist-index/ dist/
-	# Compress all HTML files - controls Jinja whitespace
-	find -L dist -name \*.html -ls -exec htmlmin --keep-optional-attribute-quotes {} {} \;
 
 serve:
 	@mkdocs serve
