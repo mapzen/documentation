@@ -1,10 +1,14 @@
 #!/usr/bin/env python
-from os.path import join, dirname, exists
+from os.path import join, dirname, exists, isdir
 from os import makedirs
 from shutil import move
 import yaml, argparse
 
 def setup_rename(old_path, new_path):
+    if isdir(old_path):
+        print('Will not rename a whole directory')
+        return
+
     if exists(new_path):
         print('Will not overwrite', new_path)
         return
