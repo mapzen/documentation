@@ -2,7 +2,8 @@
 TANGRAM = https://github.com/tangrams/tangram-docs/archive/gh-pages.tar.gz
 EXTRACTS = https://github.com/mapzen/metro-extracts/archive/master.tar.gz
 VALHALLA = https://github.com/valhalla/valhalla-docs/archive/master.tar.gz
-VECTOR = https://github.com/mapzen/vector-datasource/archive/v0.10.2.tar.gz
+VECTOR_TILES = https://github.com/tilezen/vector-datasource/archive/v0.10.2.tar.gz
+ELEVATION_TILES = https://github.com/tilezen/joerd/archive/nvkelso/add-docs.tar.gz
 SEARCH = https://github.com/pelias/pelias-doc/archive/master.tar.gz
 ANDROID = https://github.com/mapzen/android/archive/master.tar.gz
 MAPZENJS = https://mapzen.com/js/docs.tar.gz
@@ -17,16 +18,18 @@ clean:
 	rm -rf dist theme/fragments
 	rm -rf src-tangram src-metro-extracts src-vector-tiles \
 	       src-turn-by-turn src-elevation src-matrix src-search \
-	       src-android src-mapzen-js src-optimized
+	       src-android src-mapzen-js src-optimized \
+	       src-elevation-tiles
 	rm -rf dist-tangram dist-metro-extracts dist-vector-tiles \
 	       dist-turn-by-turn dist-search dist-elevation dist-matrix \
-	       dist-index dist-android dist-mapzen-js dist-optimized
+	       dist-index dist-android dist-mapzen-js dist-optimized \
+	       dist-elevation-tiles
 	rm -rf dist-tangram-mkdocs.yml dist-metro-extracts-mkdocs.yml \
 	       dist-vector-tiles-mkdocs.yml dist-turn-by-turn-mkdocs.yml \
 	       dist-search-mkdocs.yml dist-elevation-mkdocs.yml \
 	       dist-matrix-mkdocs.yml dist-index-mkdocs.yml \
 	       dist-android-mkdocs.yml dist-mapzen-js-mkdocs.yml \
-	       dist-optimized-mkdocs.yml
+	       dist-optimized-mkdocs.yml dist-elevation-tiles-mkdocs.yml
 
 # Get individual sources docs
 src-tangram:
@@ -40,9 +43,17 @@ src-metro-extracts:
 src-vector-tiles:
 	mkdir src-vector-tiles
 	# Try with --wildcards for GNU tar, but fall back to BSD tar syntax for Mac.
-	curl -sL $(VECTOR) | ( \
+	curl -sL $(VECTOR_TILES) | ( \
 	    tar -zxv -C src-vector-tiles --strip-components=2 --exclude=README.md --wildcards '*/docs/' \
 	 || tar -zxv -C src-vector-tiles --strip-components=2 --exclude=README.md '*/docs/' \
+	    )
+
+src-elevation-tiles:
+	mkdir src-elevation-tiles
+	# Try with --wildcards for GNU tar, but fall back to BSD tar syntax for Mac.
+	curl -sL $(ELEVATION_TILES) | ( \
+	    tar -zxv -C src-elevation-tiles --strip-components=2 --exclude=README.md --wildcards '*/docs/' \
+	 || tar -zxv -C src-elevation-tiles --strip-components=2 --exclude=README.md '*/docs/' \
 	    )
 
 src-turn-by-turn:
@@ -101,6 +112,12 @@ dist-vector-tiles: src-vector-tiles theme/fragments
 	mkdocs build --config-file ./dist-vector-tiles-mkdocs.yml --clean
 	./setup-redirects.py ./dist-vector-tiles-mkdocs.yml /documentation/vector-tiles/
 
+# Build elevation-tiles docs
+dist-elevation-tiles: src-elevation-tiles theme/fragments
+	anyconfig_cli ./config/default.yml ./config/elevation-tiles.yml --merge=merge_dicts --output=./dist-elevation-tiles-mkdocs.yml
+	mkdocs build --config-file ./dist-elevation-tiles-mkdocs.yml --clean
+	./setup-redirects.py ./dist-elevation-tiles-mkdocs.yml /documentation/elevation-tiles/
+
 # Build turn-by-turn docs
 dist-turn-by-turn: src-turn-by-turn theme/fragments
 	anyconfig_cli ./config/default.yml ./config/turn-by-turn.yml --merge=merge_dicts --output=./dist-turn-by-turn-mkdocs.yml
@@ -154,11 +171,12 @@ dist-index: theme/fragments
 	mkdocs build --config-file ./dist-index-mkdocs.yml --clean
 	cp dist-index/index.html dist-index/next.html
 
-dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-turn-by-turn dist-search dist-elevation dist-matrix dist-android dist-mapzen-js dist-overview dist-index dist-optimized
+dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-elevation-tiles dist-turn-by-turn dist-search dist-elevation dist-matrix dist-android dist-mapzen-js dist-overview dist-index dist-optimized
 	cp -r dist-index dist
 	ln -s ../dist-tangram dist/tangram
 	ln -s ../dist-metro-extracts dist/metro-extracts
 	ln -s ../dist-vector-tiles dist/vector-tiles
+	ln -s ../dist-elevation-tiles dist/elevation-tiles
 	ln -s ../dist-turn-by-turn dist/turn-by-turn
 	ln -s ../dist-search dist/search
 	ln -s ../dist-elevation dist/elevation
