@@ -1,6 +1,6 @@
-site_name: Elevation Tile Service
-docs_dir: src-elevation-tiles
-site_dir: dist-elevation-tiles
+site_name: Terrain Tile Service
+docs_dir: src-terrain-tiles
+site_dir: dist-terrain-tiles
 
 pages:
   - Home: index.md
