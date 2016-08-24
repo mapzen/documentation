@@ -73,7 +73,7 @@
 					</p>
 				</div>
 				<div class="read-more">
-					<a class="btn btn-default btn-transparent" href="elevation-tiles/"> View Documentation </a>
+					<a class="btn btn-default btn-transparent" href="terrain-tiles/"> View Documentation </a>
 				</div>
 			</div>
 		</div>
