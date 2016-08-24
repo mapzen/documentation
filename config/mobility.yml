@@ -28,9 +28,9 @@ pages:
   - 'Release notes': 'release-notes.md'
 
 mz:redirects:
-  'mobility/matrix': 'mobility/matrix/api-reference'
-  'mobility/optimized': 'mobility/optimized/api-reference'
-  'mobility/turn-by-turn': 'mobility/turn-by-turn/api-reference'
+  'mobility/matrix': 'matrix/api-reference'
+  'mobility/optimized': 'optimized/api-reference'
+  'mobility/turn-by-turn': 'turn-by-turn/api-reference'
 
 extra:
   site_subtitle: 'Add routing and navigation to your web and mobile apps.'
