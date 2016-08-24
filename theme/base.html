@@ -60,12 +60,21 @@
           </div>
 
           {% if config.extra.docs_base_url %}
-          <div class='documentation-edit headroom-large'>
-            <a href='{{ config.extra.docs_base_url }}/{{ current_page.input_path }}'>
-              Edit this page on GitHub
-              <i class='fa fa-2x fa-fw fa-github'></i>
-            </a>
-          </div>
+            <div class='documentation-edit headroom-large'>
+              {# Look for Github sources in configured mz:renames #}
+              {% for (github_path, local_path) in config.get('mz:renames', {}).items() if (local_path == current_page.input_path) %}
+                <!-- found {{ local_path }} renamed from {{ github_path }} -->
+                <a href='{{ config.extra.docs_base_url }}/{{ github_path }}'>
+                  Edit this page on GitHub
+                  <i class='fa fa-2x fa-fw fa-github'></i>
+                </a>
+              {% else %}
+                <a href='{{ config.extra.docs_base_url }}/{{ current_page.input_path }}'>
+                  Edit this page on GitHub
+                  <i class='fa fa-2x fa-fw fa-github'></i>
+                </a>
+              {% endfor %}
+            </div>
           {% endif %}
 
           {% if include_next_prev %}
