@@ -29,8 +29,6 @@ pages:
 
 mz:redirects:
   'turn-by-turn': 'turn-by-turn/api-reference'
-  'matrix': 'matrix/api-reference'
-  'optimized': 'optimized/api-reference'
 
 extra:
   site_subtitle: 'Add routing and navigation to your web and mobile apps.'
