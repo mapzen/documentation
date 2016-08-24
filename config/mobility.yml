@@ -28,8 +28,6 @@ pages:
   - 'Release notes': 'release-notes.md'
 
 mz:redirects:
-  'mobility/matrix': 'matrix/api-reference'
-  'mobility/optimized': 'optimized/api-reference'
   'mobility/turn-by-turn': 'turn-by-turn/api-reference'
 
 extra:
