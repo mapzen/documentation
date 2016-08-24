@@ -67,7 +67,7 @@
 			</div>
 			<div class="category-info-container">
 				<div class="category-info">
-					<a class="docs-title" href="elevation-tiles/">Elevation tiles</a>
+					<a class="docs-title" href="terrain-tiles/">Terrain tiles</a>
 					<p class="excerpt">
 						Add open elevation data to your applications with raster tiles.
 					</p>
