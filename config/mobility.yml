@@ -22,7 +22,7 @@ pages:
   - Turn-by-Turn:
     - 'API reference': 'turn-by-turn/api-reference.md'
     - 'Overview': 'turn-by-turn/turn-by-turn-overview.md'
-    - 'Tutorial': 'turn-by-turn/add-routing-to-a-map.md'
+    - 'Tutorial': 'turn-by-turn/add-routing-to-a-map.md' 
   - 'Optimized route': 'optimized/api-reference.md'
   - 'Time-Distance Matrix': 'matrix/api-reference.md'
   - 'Decode a route shape': 'decoding.md'
