@@ -21,8 +21,8 @@ pages:
   - Home: index.md
   - 'Glossary': 'terminology.md'
   - Turn-by-Turn:
-    - 'API reference': 'turn-by-turn/api-reference.md'
     - 'Overview': 'turn-by-turn/overview.md'
+    - 'API reference': 'turn-by-turn/api-reference.md'
     - 'Tutorial': 'turn-by-turn/add-routing-to-a-map.md' 
   - 'Optimized route': 'optimized/api-reference.md'
   - 'Time-Distance Matrix': 'matrix/api-reference.md'
