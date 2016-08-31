@@ -15,13 +15,15 @@ mz:renames:
   'images/route-map-valhalla.png': 'turn-by-turn/images/route-map-valhalla.png'
   'images/start-python-server.png': 'turn-by-turn/images/start-python-server.png'
   'images/terminal-404-error.png': 'turn-by-turn/images/terminal-404-error.png'
+  'turn-by-turn-overview.md': 'turn-by-turn/overview.md'
 
 pages:
   - Home: index.md
-  - 'Terminology': 'terminology.md'
+  - 'Glossary': 'terminology.md'
   - Turn-by-Turn:
+    - 'Overview': 'turn-by-turn/overview.md'
     - 'API reference': 'turn-by-turn/api-reference.md'
-    - 'Add Mapzen Turn-by-Turn routing to a map': 'turn-by-turn/add-routing-to-a-map.md'
+    - 'Tutorial': 'turn-by-turn/add-routing-to-a-map.md' 
   - 'Optimized route': 'optimized/api-reference.md'
   - 'Time-Distance Matrix': 'matrix/api-reference.md'
   - 'Decode a route shape': 'decoding.md'
