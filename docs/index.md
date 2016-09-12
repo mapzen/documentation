@@ -24,7 +24,7 @@ All the projects used to build the Mapzen-hosted services are open source. If yo
 
 If you send a query without a valid API key (keyless access), the rate limits for Mapzen Search, Turn-by-Turn, Matrix, and Elevation are reduced to 1,000 requests per day, 6 per minute, and 1 per second.
 
-If you find a problem, or have enhancement suggestions for Mapzen's products, send a note to hello@mapzen.com or add an issue to the GitHub project.
+If you find a problem, need higher limits, or have enhancement suggestions for Mapzen's products, send a note to hello@mapzen.com.
 
 #### Check your usage
 
@@ -38,7 +38,7 @@ You also receive [HTTP status codes](https://en.wikipedia.org/wiki/List_of_HTTP_
 
 If you exceed rate limits, you will typically see errors for 403 Forbidden and 429 Too Many Requests.
 
-Mapzen uses server caching to deliver commonly requested content as quickly as possible. Queries that are served from a cache do not count toward your rate limits. For example, you might encounter results from the cache when you browse a map with vector tiles in a popular extent or repeatedly perform an identical geocoding search. 
+Mapzen uses server caching to deliver commonly requested content as quickly as possible. Queries that are served from a cache do not count toward your rate limits. For example, you might encounter results from the cache when you browse a map with vector tiles in a popular extent or repeatedly perform an identical geocoding search.
 
 ### Mapping products
 
