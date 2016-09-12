@@ -18,7 +18,7 @@ Mapzen's web services have various API endpoints that allow you to access web re
 ## Rate limits
 Mapzen offers a free tier of each service, subject to the rate limits listed below. The service shared resource, so there are limitations to prevent individual users from degrading system performance for everyone.
 
-The services have maximum numbers of queries you can make within a certain period of time, and some have additional limitations to minimize computationally intensive uses. If you exceed rate limits, you may start seeing HTTP errors, typically, 403 Forbidden and 429 Too Many Requests.
+The services have maximum numbers of queries you can make within a certain period of time, and some have additional limitations to minimize computationally intensive uses.
 
 All the projects used to build the Mapzen-hosted services are open source. If you want to try Mapzen's products, start with the hosted services to see if they fit your workflow needs. If you later decide that you need additional customizations or higher capacity, you can consider installing on your own servers the open-source code used to build Mapzen's services.
 
@@ -35,6 +35,10 @@ To check your usage, sign in to your developer account.
 3. View a graph of your recent usage for a certain period of time, such as the past day or month.
 
 You also receive [HTTP status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) in the header for the server's response to your query.
+
+If you exceed rate limits, you will typically see errors for 403 Forbidden and 429 Too Many Requests.
+
+Mapzen uses server caching to deliver commonly requested content as quickly as possible. Queries that are served from a cache do not count toward your rate limits. For example, you might encounter results from the cache when you browse a map with vector tiles in a popular extent or repeatedly perform an identical geocoding search. 
 
 ### Mapping products
 
