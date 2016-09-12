@@ -16,7 +16,7 @@ When signed in to your Mapzen developer account, you see a dashboard where you c
 Mapzen's web services have various API endpoints that allow you to access web resources through a URL. You will need to include your API key in the URL you construct to send queries to Mapzen's services.   
 
 ## Rate limits
-Mapzen offers a free tier of each service, subject to the rate limits listed below. The service shared resource, so there are limitations to prevent individual users from degrading system performance for everyone.
+Mapzen offers a free tier of each service, subject to the rate limits listed below. Mapzen's hosted services are shared resources, so there are limitations to prevent individual users from degrading system performance for everyone.
 
 The services have maximum numbers of queries you can make within a certain period of time, and some have additional limitations to minimize computationally intensive uses.
 
