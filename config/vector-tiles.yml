@@ -10,10 +10,10 @@ pages:
   - 'Data Sources': 'data-sources.md'
   - 'Attribution': 'attribution.md'
   - 'API keys and rate limits': 'api-keys-and-rate-limits.md'
-  
+
 # Extra variables for templates
 extra:
   site_subtitle: 'Add open geospatial data to your applications with the vector tile map service.'
-  project_repo_url: https://github.com/mapzen/vector-datasource
-  docs_base_url: https://github.com/mapzen/vector-datasource/tree/master/docs
+  project_repo_url: https://github.com/tilezen/vector-datasource
+  docs_base_url: https://github.com/tilezen/vector-datasource/tree/master/docs
   exclude_home_contents_in_toc: false

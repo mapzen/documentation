@@ -2,7 +2,8 @@
 TANGRAM = https://github.com/tangrams/tangram-docs/archive/gh-pages.tar.gz
 EXTRACTS = https://github.com/mapzen/metro-extracts/archive/master.tar.gz
 VALHALLA = https://github.com/valhalla/valhalla-docs/archive/master.tar.gz
-VECTOR = https://github.com/mapzen/vector-datasource/archive/v0.10.2.tar.gz
+VECTOR_TILES = https://github.com/tilezen/vector-datasource/archive/v0.10.2.tar.gz
+TERRAIN_TILES = https://github.com/tilezen/joerd/archive/2a98d96ddc6ac246dc11b9c13b1c62a286df1349.tar.gz
 SEARCH = https://github.com/pelias/pelias-doc/archive/master.tar.gz
 ANDROID = https://github.com/mapzen/android/archive/master.tar.gz
 MAPZENJS = https://mapzen.com/js/docs.tar.gz
@@ -14,18 +15,17 @@ all: dist
 
 clean:
 	rm -rf dist theme/fragments
-	rm -rf src-tangram src-metro-extracts src-vector-tiles \
-	       src-elevation src-search \
-	       src-android src-mapzen-js src-mobility
-	rm -rf dist-tangram dist-metro-extracts dist-vector-tiles \
-	       dist-search dist-elevation \
-	       dist-index dist-android dist-mapzen-js dist-mobility
-	rm -rf dist-tangram-mkdocs.yml dist-metro-extracts-mkdocs.yml \
-	       dist-vector-tiles-mkdocs.yml  \
-	       dist-search-mkdocs.yml dist-elevation-mkdocs.yml \
-	       dist-index-mkdocs.yml \
-	       dist-android-mkdocs.yml dist-mapzen-js-mkdocs.yml \
-	       dist-mobility-mkdocs.yml
+	rm -rf src-android src-elevation src-mapzen-js src-metro-extracts \
+	       src-mobility src-search src-tangram src-terrain-tiles \
+	       src-vector-tiles
+	rm -rf dist-android dist-elevation dist-index dist-mapzen-js \
+	       dist-metro-extracts dist-mobility dist-search dist-tangram \
+	       dist-terrain-tiles dist-vector-tiles
+	rm -rf dist-android-mkdocs.yml dist-elevation-mkdocs.yml \
+	       dist-index-mkdocs.yml dist-mapzen-js-mkdocs.yml \
+	       dist-metro-extracts-mkdocs.yml dist-mobility-mkdocs.yml \
+	       dist-search-mkdocs.yml dist-tangram-mkdocs.yml \
+	       dist-terrain-tiles-mkdocs.yml dist-vector-tiles-mkdocs.yml
 
 # Get individual sources docs
 src-tangram:
@@ -39,9 +39,17 @@ src-metro-extracts:
 src-vector-tiles:
 	mkdir src-vector-tiles
 	# Try with --wildcards for GNU tar, but fall back to BSD tar syntax for Mac.
-	curl -sL $(VECTOR) | ( \
+	curl -sL $(VECTOR_TILES) | ( \
 	    tar -zxv -C src-vector-tiles --strip-components=2 --exclude=README.md --wildcards '*/docs/' \
 	 || tar -zxv -C src-vector-tiles --strip-components=2 --exclude=README.md '*/docs/' \
+	    )
+
+src-terrain-tiles:
+	mkdir src-terrain-tiles
+	# Try with --wildcards for GNU tar, but fall back to BSD tar syntax for Mac.
+	curl -sL $(TERRAIN_TILES) | ( \
+	    tar -zxv -C src-terrain-tiles --strip-components=2 --exclude=README.md --wildcards '*/docs/' \
+	 || tar -zxv -C src-terrain-tiles --strip-components=2 --exclude=README.md '*/docs/' \
 	    )
 
 src-elevation:
@@ -74,7 +82,8 @@ theme/fragments:
 	curl -sL 'https://mapzen.com/site-fragments/footer.html' -o theme/fragments/global-footer.html
 
 # Build Tangram, Metro Extracts, Vector Tiles, Elevation, Search, Mobility,
-# Android, Mapzen JS, and Overview docs. Uses GNU Make pattern rules:
+# Android, Mapzen JS, Terrain Tiles, and Overview docs.
+# Uses GNU Make pattern rules:
 # https://www.gnu.org/software/make/manual/html_node/Pattern-Examples.html
 dist-%: src-% theme/fragments
 	anyconfig_cli ./config/default.yml ./config/$*.yml --merge=merge_dicts --output=./dist-$*-mkdocs.yml
@@ -89,11 +98,12 @@ dist-index: theme/fragments
 	./setup-redirects.py ./dist-index-mkdocs.yml /documentation/
 	cp dist-index/index.html dist-index/next.html
 
-dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-search dist-elevation dist-android dist-mapzen-js dist-overview dist-index dist-mobility
+dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-search dist-elevation dist-android dist-mapzen-js dist-overview dist-index dist-mobility dist-terrain-tiles
 	mkdir dist
 	ln -s ../dist-tangram dist/tangram
 	ln -s ../dist-metro-extracts dist/metro-extracts
 	ln -s ../dist-vector-tiles dist/vector-tiles
+	ln -s ../dist-terrain-tiles dist/terrain-tiles
 	ln -s ../dist-search dist/search
 	ln -s ../dist-elevation dist/elevation
 	ln -s ../dist-mobility dist/mobility

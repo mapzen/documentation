@@ -1,0 +1,19 @@
+site_name: Terrain Tile Service
+docs_dir: src-terrain-tiles
+site_dir: dist-terrain-tiles
+
+pages:
+  - Home: index.md
+  - 'Formats': 'formats.md'
+  - 'Get started': 'use-service.md'
+  - 'Build a map': 'build-a-map.md'
+  - 'Data Sources': 'data-sources.md'
+  - 'Attribution': 'attribution.md'
+  - 'API keys and rate limits': 'api-keys-and-rate-limits.md'
+
+# Extra variables for templates
+extra:
+  site_subtitle: 'Add open elevation data to your applications with the raster tile map service.'
+  project_repo_url: https://github.com/tilezen/joerd
+  docs_base_url: https://github.com/tilezen/joerd/tree/master/docs
+  exclude_home_contents_in_toc: false
