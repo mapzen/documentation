@@ -9,7 +9,7 @@ When signed in to your Mapzen developer account, you see a dashboard where you c
 1. If you do not have a GitHub account, create one at https://github.com/join. It can be any kind, including personal.
 2. Go to https://mapzen.com/developers. This is where you can create, delete, and manage your API keys.
 3. Sign in with your GitHub account. If you have not done this before, you need to agree to the terms first.
-4. Create a new key for the Mapzen product you want to use.
+4. Create a new Mapzen Key.
 5. Optionally, give the key a name so you can remember the purpose of the project.
 6. When you are ready to use it, copy the key and paste it into your code.
 
