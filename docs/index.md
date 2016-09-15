@@ -119,7 +119,7 @@ Mapzen's other data products do not currently require API keys. These include:
 
 ### Mobile products
 
-To use Mapzen's Android SDK or any of Mapzen's other products in your mobile apps, you need an API key for the function you are integrating. For example, adding routing to your app requires a Mapzen Turn-by-Turn API key.
+To use Mapzen's Android SDK or any of Mapzen's other products in your mobile apps, you need an API key for the function you are integrating. For example, adding routing to your app requires a Mapzen API key.
 
 ## Terms of use
 
