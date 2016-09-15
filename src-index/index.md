@@ -96,35 +96,13 @@
 			</div>
 			<div class="category-info-container">
 				<div class="category-info">
-					<a class="docs-title" href="turn-by-turn/">Mapzen Turn-by-Turn</a>
+					<a class="docs-title" href="mobility/">Mapzen Mobility</a>
 					<p class="excerpt">
 						Add planetwide routing and navigation to your web and mobile applications.
 					</p>
 				</div>
 				<div class="read-more">
-					<a class="btn btn-default btn-transparent" href="turn-by-turn/"> View Documentation </a>
-				</div>
-			</div>
-			<div class="category-info-container">
-				<div class="category-info">
-					<a class="docs-title" href="optimized/">Optimized Route</a>
-					<p class="excerpt">
-						Find the most efficient route between many locations.
-					</p>
-				</div>
-				<div class="read-more">
-					<a class="btn btn-default btn-transparent" href="optimized/"> View Documentation </a>
-				</div>
-			</div>
-			<div class="category-info-container">
-				<div class="category-info">
-					<a class="docs-title" href="matrix/">Time-Distance Matrix</a>
-					<p class="excerpt">
-						Calculate the time and distance between a set of locations.
-					</p>
-				</div>
-				<div class="read-more">
-					<a class="btn btn-default btn-transparent" href="matrix/"> View Documentation </a>
+					<a class="btn btn-default btn-transparent" href="mobility/"> View Documentation </a>
 				</div>
 			</div>
 		</div>
