@@ -65,6 +65,7 @@
 					<a class="btn btn-default btn-transparent" href="vector-tiles/"> View Documentation </a>
 				</div>
 			</div>
+			<!--
 			<div class="category-info-container">
 				<div class="category-info">
 					<a class="docs-title" href="terrain-tiles/">Terrain tiles</a>
@@ -76,6 +77,7 @@
 					<a class="btn btn-default btn-transparent" href="terrain-tiles/"> View Documentation </a>
 				</div>
 			</div>
+			-->
 		</div>
 		<div class="col-xs-12 footroom-large">
 			<h6 class="category-title">
