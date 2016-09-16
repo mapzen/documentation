@@ -4,17 +4,17 @@ site_dir: dist-search
 
 pages:
   - Home: index.md
-  - 'Get started': 'get-started.md'
-  - 'Add search to a map': 'add-search-to-a-map.md'
-  - 'API keys and rate limits': 'api-keys-rate-limits.md'
+#  - 'Get started': 'get-started.md' need to create redirect
+  - 'Terminology': 'glossary.md'
   - 'Search': 'search.md'
   - 'Reverse geocoding': 'reverse.md'
   - 'Autocomplete': 'autocomplete.md'
   - 'Place': 'place.md'
+  - 'Tutorial': 'add-search-to-a-map.md'
   - 'API responses': 'response.md'
   - 'Data sources': 'data-sources.md'
+  - 'API keys and rate limits': 'api-keys-rate-limits.md'
   - 'Load data from the browser': 'use-cors.md'
-  - 'Terminology': 'glossary.md'
   - 'HTTP status codes': 'http-status-codes.md'
   - 'Transition from Pelias beta': 'transition-from-beta.md'
   - 'Release notes': 'release-notes.md'
