@@ -4,8 +4,7 @@ site_dir: dist-search
 
 pages:
   - Home: index.md
-#  - 'Get started': 'get-started.md' need to create redirect
-  - 'Terminology': 'glossary.md'
+  - 'Glossary': 'glossary.md'
   - 'Search': 'search.md'
   - 'Reverse geocoding': 'reverse.md'
   - 'Autocomplete': 'autocomplete.md'
@@ -13,14 +12,15 @@ pages:
   - 'Tutorial': 'add-search-to-a-map.md'
   - 'API responses': 'response.md'
   - 'Data sources': 'data-sources.md'
-  - 'API keys and rate limits': 'api-keys-rate-limits.md'
   - 'Load data from the browser': 'use-cors.md'
   - 'HTTP status codes': 'http-status-codes.md'
-  - 'Transition from Pelias beta': 'transition-from-beta.md'
+  - 'API keys and rate limits': 'api-keys-rate-limits.md'
   - 'Release notes': 'release-notes.md'
+
+mz:redirects:
+  'get-started': '.'
 
 extra:
   site_subtitle: 'Find places and addresses with this geographic search service built on open tools and open data.'
-  #'High-performance geocoding and place search service'
   project_repo_url: https://github.com/pelias/
   docs_base_url: https://github.com/pelias/pelias-doc/blob/master
