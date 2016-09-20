@@ -2,7 +2,7 @@
 TANGRAM = https://github.com/tangrams/tangram-docs/archive/gh-pages.tar.gz
 EXTRACTS = https://github.com/mapzen/metro-extracts/archive/master.tar.gz
 VALHALLA = https://github.com/valhalla/valhalla-docs/archive/master.tar.gz
-VECTOR_TILES = https://github.com/tilezen/vector-datasource/archive/v0.10.2.tar.gz
+VECTOR_TILES = https://github.com/tilezen/vector-datasource/archive/v0.10.5-docs1.tar.gz
 TERRAIN_TILES = https://github.com/tilezen/joerd/archive/a3cf077338e298c5f6d61d3ba3e017b130258fe7.tar.gz
 SEARCH = https://github.com/pelias/pelias-doc/archive/master.tar.gz
 ANDROID = https://github.com/mapzen/android/archive/master.tar.gz
