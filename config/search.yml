@@ -9,12 +9,12 @@ pages:
   - 'Reverse geocoding': 'reverse.md'
   - 'Autocomplete': 'autocomplete.md'
   - 'Place': 'place.md'
-  - 'Tutorial': 'add-search-to-a-map.md'
   - 'API responses': 'response.md'
   - 'Data sources': 'data-sources.md'
-  - 'Load data from the browser': 'use-cors.md'
   - 'HTTP status codes': 'http-status-codes.md'
+  - 'Tutorial': 'add-search-to-a-map.md'
   - 'API keys and rate limits': 'api-keys-rate-limits.md'
+  - 'Load data from the browser': 'use-cors.md'
   - 'Release notes': 'release-notes.md'
 
 mz:redirects:
