@@ -42,15 +42,19 @@ Mapzen uses server caching to deliver commonly requested content as quickly as p
 
 ### Mapping products
 
+#### Tangram
+
 [Tangram](https://mapzen.com/documentation/tangram/), Mapzen's rendering software for web and mobile apps, does not require its own API key. However, if you are using Tangram to draw data from Mapzen's vector tiles service, you need a vector tiles key.
 
-The [vector tiles](https://mapzen.com/documentation/vector-tiles/) service provides global basemap coverage and has these limits:
+#### Mapzen Vector Tiles
+
+[Mapzen Vector Tiles](https://mapzen.com/documentation/vector-tiles/) provides global basemap coverage and has these limits:
 
 - 100 queries per second
 - 2,000 queries per minute
 - 100,000 queries per day
 
-The Mapzen vector tiles service is built from the [Tilezen](https://github.com/tilezen) open-source project.
+The Mapzen Vector Tiles service is built from the [Tilezen](https://github.com/tilezen) open-source project.
 
 ### Search and mobility products
 
