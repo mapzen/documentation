@@ -14,8 +14,8 @@ pages:
   - 'Switching styles': 'styles.md'
   - 'Gesture responders': 'gesture-responders.md'
   - 'Location services': 'location-services.md'
-  - 'Mapzen Search': 'search.md'
-  - 'Mapzen Turn-by-Turn': 'turn-by-turn.md'
+  - 'Mapzen Search for Android': 'search.md'
+  - 'Mapzen Turn-by-Turn for Android': 'turn-by-turn.md'
 
 extra:
   site_subtitle: 'A thin wrapper that packages up everything you need to use Mapzen services in your Android applications.'
