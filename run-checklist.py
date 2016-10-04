@@ -159,6 +159,9 @@ class Tests (unittest.TestCase):
     def test_android_index(self):
         self._test_doc_section('/android', *self._load_doc_titles('config/android.yml'))
 
+    def test_ios_index(self):
+        self._test_doc_section('/ios', *self._load_doc_titles('config/ios.yml'))
+
     def test_mapzenjs_index(self):
         self._test_doc_section('/mapzen-js', *self._load_doc_titles('config/mapzen-js.yml'))
 

@@ -146,7 +146,16 @@
 				</div>
 				<div class="read-more">
 					<a class="btn btn-default btn-transparent" href="android/"> View Documentation </a>
-				</div>
+				</div><div class="category-info-container first">
+					<div class="category-info">
+						<a class="docs-title" href="ios/">iOS SDK</a>
+						<p class="excerpt">
+							Add Mapzen maps and location services to your iOS apps.
+						</p>
+					</div>
+					<div class="read-more">
+						<a class="btn btn-default btn-transparent" href="ios/"> View Documentation </a>
+					</div>
 			</div>
 		</div>
 	</div>
