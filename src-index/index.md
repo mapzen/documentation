@@ -146,7 +146,9 @@
 				</div>
 				<div class="read-more">
 					<a class="btn btn-default btn-transparent" href="android/"> View Documentation </a>
-				</div><div class="category-info-container">
+				</div>
+			</div>
+				<div class="category-info-container">
 					<div class="category-info">
 						<a class="docs-title" href="ios/">iOS SDK</a>
 						<p class="excerpt">
@@ -156,7 +158,6 @@
 					<div class="read-more">
 						<a class="btn btn-default btn-transparent" href="ios/"> View Documentation </a>
 					</div>
+				</div>
 			</div>
-		</div>
-	</div>
 </div>
