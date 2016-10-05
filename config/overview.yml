@@ -1,7 +1,6 @@
 site_name: Developer overview
 docs_dir: src-overview
 site_dir: dist-overview
-include_next_prev: false # next/prev is in alpha order; we don't want this
 
 pages:
   - Overview: index.md

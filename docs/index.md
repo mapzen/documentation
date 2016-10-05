@@ -9,11 +9,11 @@ When signed in to your Mapzen developer account, you see a dashboard where you c
 1. If you do not have a GitHub account, create one at https://github.com/join. It can be any kind, including personal.
 2. Go to https://mapzen.com/developers. This is where you can create, delete, and manage your API keys.
 3. Sign in with your GitHub account. If you have not done this before, you need to agree to the terms first.
-4. Create a new key for the Mapzen product you want to use.
+4. Create a new Mapzen Key.
 5. Optionally, give the key a name so you can remember the purpose of the project.
-6. When you are ready to use it, copy the key and paste it into your code.
+6. When you are ready to use it, copy the key and paste it into your code. In your query, the API key parameter should take the form of `api_key=mapzen-xxxxxx`.
 
-Mapzen's web services have various API endpoints that allow you to access web resources through a URL. You will need to include your API key in the URL you construct to send queries to Mapzen's services.   
+Mapzen's web services have various API endpoints that allow you to access web resources through a URL. You will need to include your API key in the URL you construct to send queries to Mapzen's services. For example, add an `api_key` URL parameter to any request, such as `&api_key=mapzen-xxxxxx`.  
 
 ## Rate limits
 Mapzen offers a free tier of each service, subject to the rate limits listed below. Mapzen's hosted services are shared resources, so there are limitations to prevent individual users from degrading system performance for everyone.
@@ -42,15 +42,19 @@ Mapzen uses server caching to deliver commonly requested content as quickly as p
 
 ### Mapping products
 
+#### Tangram
+
 [Tangram](https://mapzen.com/documentation/tangram/), Mapzen's rendering software for web and mobile apps, does not require its own API key. However, if you are using Tangram to draw data from Mapzen's vector tiles service, you need a vector tiles key.
 
-The [vector tiles](https://mapzen.com/documentation/vector-tiles/) service provides global basemap coverage and has these limits:
+#### Mapzen Vector Tiles
+
+[Mapzen Vector Tiles](https://mapzen.com/documentation/vector-tiles/) provides global basemap coverage and has these limits:
 
 - 100 queries per second
 - 2,000 queries per minute
 - 100,000 queries per day
 
-The Mapzen vector tiles service is built from the [Tilezen](https://github.com/tilezen) open-source project.
+The Mapzen Vector Tiles service is built from the [Tilezen](https://github.com/tilezen) open-source project.
 
 ### Search and mobility products
 
@@ -119,7 +123,7 @@ Mapzen's other data products do not currently require API keys. These include:
 
 ### Mobile products
 
-To use Mapzen's Android SDK or any of Mapzen's other products in your mobile apps, you need an API key for the function you are integrating. For example, adding routing to your app requires a Mapzen Turn-by-Turn API key.
+To use Mapzen's Android SDK or any of Mapzen's other products in your mobile apps, you need an API key for the function you are integrating. For example, adding routing to your app requires a Mapzen API key.
 
 ## Terms of use
 
