@@ -13,7 +13,7 @@ When signed in to your Mapzen developer account, you see a dashboard where you c
 5. Optionally, give the key a name so you can remember the purpose of the project.
 6. When you are ready to use it, copy the key and paste it into your code. In your query, the API key parameter should take the form of `api_key=mapzen-xxxxxx`.
 
-Mapzen's web services have various API endpoints that allow you to access web resources through a URL. You will need to include your API key in the URL you construct to send queries to Mapzen's services. For example, add an `api_key` URL parameter to any request, such as `&api_key=mapzen-xxxxxx`.  
+Mapzen's web services have various API endpoints that allow you to access web resources through a URL. You will need to include your API key in the URL you construct to send queries to Mapzen's services. For example, add an `api_key` URL parameter to any request, such as `&api_key=mapzen-xxxxxx`.
 
 ## Rate limits
 Mapzen offers a free tier of each service, subject to the rate limits listed below. Mapzen's hosted services are shared resources, so there are limitations to prevent individual users from degrading system performance for everyone.
@@ -55,6 +55,12 @@ Mapzen uses server caching to deliver commonly requested content as quickly as p
 - 100,000 queries per day
 
 The Mapzen Vector Tiles service is built from the [Tilezen](https://github.com/tilezen) open-source project.
+
+#### Mapzen Terrain Tiles
+
+[Mapzen Terrain Tiles](https://mapzen.com/documentation/terrain-tiles/) provides global elevation coverage. This service is 100% cached and there are no limits.
+
+The Mapzen Terrain Tiles service is built from the [Joerd](https://github.com/tilezen/joerd) open-source project.
 
 ### Search and mobility products
 
