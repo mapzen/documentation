@@ -58,7 +58,7 @@
 				<div class="category-info">
 					<a class="docs-title" href="vector-tiles/">Vector tiles</a>
 					<p class="excerpt">
-						Display the world with the latest open data using the vector tile map service.
+						Display the world with the latest open data using vector tiles.
 					</p>
 				</div>
 				<div class="read-more">
