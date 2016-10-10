@@ -58,7 +58,7 @@ The Mapzen Vector Tiles service is built from the [Tilezen](https://github.com/t
 
 #### Mapzen Terrain Tiles
 
-[Mapzen Terrain Tiles](https://mapzen.com/documentation/terrain-tiles/) provides global elevation coverage. This service is 100% cached and there are no limits.
+[Mapzen Terrain Tiles](https://mapzen.com/documentation/terrain-tiles/) provides global elevation coverage. This service is 100% cached and there are no rate limits.
 
 The Mapzen Terrain Tiles service is built from the [Joerd](https://github.com/tilezen/joerd) open-source project.
 
