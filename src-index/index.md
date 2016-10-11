@@ -58,26 +58,24 @@
 				<div class="category-info">
 					<a class="docs-title" href="vector-tiles/">Vector tiles</a>
 					<p class="excerpt">
-						Display the world with the latest open data using the vector tile map service.
+						Display the world with the latest open data using vector tiles.
 					</p>
 				</div>
 				<div class="read-more">
 					<a class="btn btn-default btn-transparent" href="vector-tiles/"> View Documentation </a>
 				</div>
 			</div>
-			<!--
 			<div class="category-info-container">
 				<div class="category-info">
 					<a class="docs-title" href="terrain-tiles/">Terrain tiles</a>
 					<p class="excerpt">
-						Add open elevation data to your applications with raster tiles.
+						Add open elevation data to your applications with raster terrain tiles.
 					</p>
 				</div>
 				<div class="read-more">
 					<a class="btn btn-default btn-transparent" href="terrain-tiles/"> View Documentation </a>
 				</div>
 			</div>
-			-->
 		</div>
 		<div class="col-xs-12 footroom-large">
 			<h6 class="category-title">
