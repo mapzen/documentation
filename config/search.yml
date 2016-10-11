@@ -9,6 +9,7 @@ pages:
   - 'Reverse geocoding': 'reverse.md'
   - 'Autocomplete': 'autocomplete.md'
   - 'Place': 'place.md'
+  - 'Addresses': 'addresses.md'
   - 'API responses': 'response.md'
   - 'Data sources': 'data-sources.md'
   - 'HTTP status codes': 'http-status-codes.md'
