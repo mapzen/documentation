@@ -1,0 +1,11 @@
+site_name: Mapzen iOS SDK
+docs_dir: src-ios
+site_dir: dist-ios
+
+pages:
+  - Home: index.md
+
+extra:
+  site_subtitle: 'A thin wrapper that packages up everything you need to use Mapzen services in your iOS applications.'
+  project_repo_url: https://github.com/mapzen/ios
+  docs_base_url: https://github.com/mapzen/ios/tree/master/docs
