@@ -122,4 +122,4 @@ There are two (sometimes three) things to do if you want to change the GitHub so
 
     `curl -sL $(TANGRAM) | tar -zxv -C src-tangram --strip-components=2 tangram-docs-meetar-cleanup/pages`
 
-3. **Create redirects if necessary.**
+3. **Create redirects if necessary.** Sometimes we have to change names for the table of contents and documentation anchors. Time for redirects!
