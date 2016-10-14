@@ -29,7 +29,7 @@ Docs live in either individual repositories in a team's organization, or as a fo
 
 ### View changes in Precog
 
-If you've created a Pull Request in the mapzen-docs-generator repository, you can view changes in Precog at [precog.mapzen.com/mapzen/mapzen-docs-generator/](precog.mapzen.com/mapzen/mapzen-docs-generator/). This will only show changes that have been done in this specific repository, so to track changes in a particular repository, you need to edit the **Makefile** to reflect the branch that you're working on. You can do this by:
+If you've created a Pull Request in the mapzen-docs-generator repository, you can view changes in Precog at [precog.mapzen.com/mapzen/mapzen-docs-generator/](precog.mapzen.com/mapzen/mapzen-docs-generator/). This will only show changes that have been done in this specific repository. If the changes you're doing on a particular repository aren't live yet, you need to edit the **Makefile** to reflect the branch that you're working on. You can do this by:
 
 1. Opening the Makefile
 2. In another tab, open the latest commit on the branch you're working on in the particular project repository
@@ -111,4 +111,4 @@ Under the 'pages' section of the product's config .yml, we add another section c
 
 ## Doc writing instructions
 
-Follow the guidelines of the [writing style guide](https://github.com/mapzen/styleguide/tree/master/src/site/guides) when it comes to writing technical documentation. 
+Follow the guidelines of the [writing style guide](https://github.com/mapzen/styleguide/tree/master/src/site/guides) when it comes to writing technical documentation.
