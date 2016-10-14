@@ -3,7 +3,7 @@
 We write our documentation in Markdown and store them in GitHub, and use a [MkDocs](http://www.mkdocs.org/)-based automated workflow to convert them into friendlier static-site documentation pages hosted at https://mapzen.com/documentation/. You can read more about this on our [blog post](https://mapzen.com/blog/doc-site/).
 
 ## Status
-<img href="https://circleci.com/gh/mapzen/mapzen-docs-generator.svg?style=shield&circle-token=7674367293a932dc152f6663d5361bf8570d4ad6" />
+![Circle CI status](https://circleci.com/gh/mapzen/mapzen-docs-generator.svg?style=shield&circle-token=7674367293a932dc152f6663d5361bf8570d4ad6)
 
 Documentation is generated hourly from a scheduled task attached to the
 [Heroku app `mapzen-docs-generator`](https://dashboard.heroku.com/apps/mapzen-docs-generator).
