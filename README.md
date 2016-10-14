@@ -3,6 +3,7 @@
 We write our documentation in Markdown and store them in GitHub, and use a [MkDocs](http://www.mkdocs.org/)-based automated workflow to convert them into friendlier static-site documentation pages hosted at https://mapzen.com/documentation/. You can read more about this on our [blog post](https://mapzen.com/blog/doc-site/).
 
 ## Status
+https://circleci.com/gh/:mapzen/:mapzen-docs-generator.svg?style=shield&circle-token=:7674367293a932dc152f6663d5361bf8570d4ad6
 
 Documentation is generated hourly from a scheduled task attached to the
 [Heroku app `mapzen-docs-generator`](https://dashboard.heroku.com/apps/mapzen-docs-generator).
@@ -39,26 +40,6 @@ If you've created a Pull Request in the mapzen-docs-generator repository, you ca
 
 At the moment, this will be needed to be updated with the new commit ID when needed.
 
-### Rapid bootstrapping
-
-On a Mac, assuming you have [Homebrew](http://brew.sh) and
-[Python 3](https://docs.python.org/3/using/mac.html) installed, and a local
-checkout of this repository:
-
-```shell
-# Prepare virtualenv and install local dependencies
-virtualenv -p python3 venv
-source venv/bin/activate
-pip install -Ur requirements.txt
-
-# Get all the sources and build all the documentation
-make
-
-# Local preview
-python -m SimpleHTTPServer 8000
-open http://localhost:8000/dist/
-```
-
 ### Using MkDocs watch feature
 
 MkDocs can only build one set of documentation at a time, so there's really no way to build and then watch the entire documentation suite at once. However you can still just watch one set of documentation which is still enough for editing styles or debugging.
@@ -76,7 +57,6 @@ We've heavily customized the MkDocs theme for use with Mapzen documentation. Res
 - [Jinja2 templating language](http://jinja.pocoo.org/docs/dev/). MkDocs uses Jinja2. This is very similar to Jekyll's Liquid syntax, but it's not the same! ...so it's very easy to get them confused sometimes.
 - [MkDocs built-in themes source](https://github.com/mkdocs/mkdocs/tree/master/mkdocs/themes). These are the built-in themes source code. Don't start from scratch, refer to these!
 - [MkDocs Bootswatch themes source](https://github.com/mkdocs/mkdocs-bootswatch/tree/master/mkdocs_bootswatch). These are additional [Bootswatch](https://bootswatch.com/) themes that are not included by default. However they might provide additional references for good practices.
-
 
 ## Making MkDocs happy
 
@@ -123,3 +103,8 @@ There are two (sometimes three) things to do if you want to change the GitHub so
     `curl -sL $(TANGRAM) | tar -zxv -C src-tangram --strip-components=2 tangram-docs-meetar-cleanup/pages`
 
 3. **Create redirects if necessary.** Sometimes we have to change names for the table of contents and documentation anchors. Time for redirects!
+Under the 'pages' section of the product's config .yml, we add another section called 'mz:redirects'. In this section, we add the original markdown file name that we're removing, and then add the page to redirect it to. Take this example from the `search.yml` for instance:
+
+`mz:redirects:
+  'get-started': '.'
+  'transition-from-beta': '.'``
