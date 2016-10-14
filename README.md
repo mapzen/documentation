@@ -105,6 +105,10 @@ There are two (sometimes three) things to do if you want to change the GitHub so
 3. **Create redirects if necessary.** Sometimes we have to change names for the table of contents and documentation anchors. Time for redirects!
 Under the 'pages' section of the product's config .yml, we add another section called 'mz:redirects'. In this section, we add the original markdown file name that we're removing, and then add the page to redirect it to. Take this example from the `search.yml` for instance:
 
-`mz:redirects:
-  'get-started': '.'
-  'transition-from-beta': '.'``
+    `mz:redirects:
+      'get-started': '.'
+      'transition-from-beta': '.'``
+
+## Doc writing instructions
+
+Follow the guidelines of the [writing style guide](https://github.com/mapzen/styleguide/tree/master/src/site/guides) when it comes to writing technical documentation. 
