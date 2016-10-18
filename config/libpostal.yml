@@ -1,0 +1,12 @@
+site_name: Address Parsing
+docs_dir: src-libpostal
+site_dir: dist-libpostal
+extra_css: [css/codehilite/mapzen.css]
+
+pages:
+  - Home: index.md
+
+extra:
+  site_subtitle: 'Parse and expand address data with the libpostal engine.'
+  project_repo_url: https://github.com/whosonfirst/go-whosonfirst-libpostal
+  docs_base_url: https://github.com/whosonfirst/go-whosonfirst-libpostal/blob/master/docs
