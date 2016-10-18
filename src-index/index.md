@@ -130,6 +130,17 @@
 					<a class="btn btn-default btn-transparent" href="elevation/"> View Documentation </a>
 				</div>
 			</div>
+			<div class="category-info-container">
+				<div class="category-info">
+					<a class="docs-title" href="addresses/">Address Parsing</a>
+					<p class="excerpt">
+						Parse and expand address data with the libpostal engine.
+					</p>
+				</div>
+				<div class="read-more">
+					<a class="btn btn-default btn-transparent" href="addresses/"> View Documentation </a>
+				</div>
+			</div>
 		</div>
 		<div class="col-xs-12 footroom-large">
 			<h6 class="category-title">
