@@ -1,6 +1,6 @@
 site_name: Address Parsing
-docs_dir: src-addresses
-site_dir: dist-addresses
+docs_dir: src-libpostal
+site_dir: dist-libpostal
 extra_css: [css/codehilite/mapzen.css]
 
 pages:

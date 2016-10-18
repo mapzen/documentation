@@ -8,7 +8,7 @@ SEARCH = https://github.com/pelias/pelias-doc/archive/master.tar.gz
 ANDROID = https://github.com/mapzen/android/archive/master.tar.gz
 IOS = https://github.com/mapzen/ios/archive/master.tar.gz
 MAPZENJS = https://mapzen.com/js/docs.tar.gz
-ADDRESSES = https://github.com/whosonfirst/go-whosonfirst-libpostal/archive/master.tar.gz
+LIBPOSTAL = https://github.com/whosonfirst/go-whosonfirst-libpostal/archive/master.tar.gz
 
 SHELL := /bin/bash # required for OSX
 PYTHONPATH := packages:$(PYTHONPATH)
@@ -19,16 +19,16 @@ clean:
 	rm -rf dist theme/fragments
 	rm -rf src-android src-ios src-elevation src-mapzen-js src-metro-extracts \
 	       src-mobility src-search src-tangram src-terrain-tiles \
-	       src-vector-tiles src-addresses
+	       src-vector-tiles src-libpostal
 	rm -rf dist-android dist-ios dist-elevation dist-index dist-mapzen-js \
 	       dist-metro-extracts dist-mobility dist-search dist-tangram \
-	       dist-terrain-tiles dist-vector-tiles dist-addresses
+	       dist-terrain-tiles dist-vector-tiles dist-libpostal
 	rm -rf dist-android-mkdocs.yml dist-ios-mkdocs.yml dist-elevation-mkdocs.yml \
 	       dist-index-mkdocs.yml dist-mapzen-js-mkdocs.yml \
 	       dist-metro-extracts-mkdocs.yml dist-mobility-mkdocs.yml \
 	       dist-search-mkdocs.yml dist-tangram-mkdocs.yml \
 	       dist-terrain-tiles-mkdocs.yml dist-vector-tiles-mkdocs.yml \
-				 dist-addresses-mkdocs.yml
+				 dist-libpostal-mkdocs.yml
 
 # Get individual sources docs
 src-tangram:
@@ -79,9 +79,9 @@ src-mapzen-js:
 	mkdir src-mapzen-js
 	curl -sL $(MAPZENJS) | tar -zxv -C src-mapzen-js --strip-components=1 docs
 
-src-addresses:
-	mkdir src-addresses
-	curl -sL $(ADDRESSES) | tar -zxv -C src-addresses --strip-components=2 go-whosonfirst-libpostal-master/docs
+src-libpostal:
+	mkdir src-libpostal
+	curl -sL $(LIBPOSTAL) | tar -zxv -C src-libpostal --strip-components=2 go-whosonfirst-libpostal-master/docs
 
 src-overview:
 	cp -r docs src-overview
@@ -109,7 +109,7 @@ dist-index: theme/fragments
 	./setup-redirects.py ./dist-index-mkdocs.yml /documentation/
 	cp dist-index/index.html dist-index/next.html
 
-dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-search dist-elevation dist-android dist-ios dist-mapzen-js dist-overview dist-index dist-mobility dist-terrain-tiles dist-addresses
+dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-search dist-elevation dist-android dist-ios dist-mapzen-js dist-overview dist-index dist-mobility dist-terrain-tiles dist-libpostal
 	mkdir dist
 	ln -s ../dist-tangram dist/tangram
 	ln -s ../dist-metro-extracts dist/metro-extracts
@@ -122,7 +122,7 @@ dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-search dist-elevat
 	ln -s ../dist-ios dist/ios
 	ln -s ../dist-mapzen-js dist/mapzen-js
 	ln -s ../dist-overview dist/overview
-	ln -s ../dist-addresses dist/addresses
+	ln -s ../dist-libpostal dist/libpostal
 	rsync -urv --ignore-existing dist-index/ dist/
 
 serve:

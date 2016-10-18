@@ -132,13 +132,13 @@
 			</div>
 			<div class="category-info-container">
 				<div class="category-info">
-					<a class="docs-title" href="addresses/">Address Parsing</a>
+					<a class="docs-title" href="libpostal/">Address Parsing</a>
 					<p class="excerpt">
 						Parse and expand address data with the libpostal engine.
 					</p>
 				</div>
 				<div class="read-more">
-					<a class="btn btn-default btn-transparent" href="addresses/"> View Documentation </a>
+					<a class="btn btn-default btn-transparent" href="libpostal/"> View Documentation </a>
 				</div>
 			</div>
 		</div>
