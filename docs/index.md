@@ -22,7 +22,7 @@ The services have maximum numbers of queries you can make within a certain perio
 
 All the projects used to build the Mapzen-hosted services are open source. If you want to try Mapzen's products, start with the hosted services to see if they fit your workflow needs. If you later decide that you need additional customizations or higher capacity, you can consider installing on your own servers the open-source code used to build Mapzen's services.
 
-If you send a query without a valid API key (keyless access), the rate limits for Mapzen Search, Turn-by-Turn, Matrix, and Elevation are reduced to 1,000 requests per day, 6 per minute, and 1 per second.
+If you send a query without a valid API key (keyless access), the rate limits for Mapzen Search, Turn-by-Turn, Matrix, and Elevation are reduced to 1,000 requests per day, 6 per minute, and 1 per second. The limits for Mapzen Vector Tiles are 2,400 requests per day, 120 per minute, and 30 per second.
 
 If you find a problem, need higher limits, or have enhancement suggestions for Mapzen's products, send a note to hello@mapzen.com.
 
