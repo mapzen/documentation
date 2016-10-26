@@ -34,7 +34,7 @@
 			</h6>
 			<div class="category-info-container first">
 				<div class="category-info">
-					<a class="docs-title" href="mapzen-js/">Mapzen JS</a>
+					<a class="docs-title" href="mapzen-js/">mapzen.js</a>
 					<p class="excerpt">
 						Get everything you need to use Mapzen services in your web applications.
 					</p>
