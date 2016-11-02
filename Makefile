@@ -2,11 +2,13 @@
 TANGRAM = https://github.com/tangrams/tangram-docs/archive/gh-pages.tar.gz
 EXTRACTS = https://github.com/mapzen/metro-extracts/archive/master.tar.gz
 VALHALLA = https://github.com/valhalla/valhalla-docs/archive/master.tar.gz
-VECTOR_TILES = https://github.com/tilezen/vector-datasource/archive/v0.10.2.tar.gz
-TERRAIN_TILES = https://github.com/tilezen/joerd/archive/a3cf077338e298c5f6d61d3ba3e017b130258fe7.tar.gz
+VECTOR_TILES = https://github.com/tilezen/vector-datasource/archive/v1.0.0-docs2.tar.gz
+TERRAIN_TILES = https://github.com/tilezen/joerd/archive/v1.0.0-docs2.tar.gz
 SEARCH = https://github.com/pelias/pelias-doc/archive/master.tar.gz
 ANDROID = https://github.com/mapzen/android/archive/master.tar.gz
+IOS = https://github.com/mapzen/ios/archive/master.tar.gz
 MAPZENJS = https://mapzen.com/js/docs.tar.gz
+LIBPOSTAL = https://github.com/whosonfirst/go-whosonfirst-libpostal/archive/master.tar.gz
 
 SHELL := /bin/bash # required for OSX
 PYTHONPATH := packages:$(PYTHONPATH)
@@ -15,17 +17,18 @@ all: dist
 
 clean:
 	rm -rf dist theme/fragments
-	rm -rf src-android src-elevation src-mapzen-js src-metro-extracts \
+	rm -rf src-android src-ios src-elevation src-mapzen-js src-metro-extracts \
 	       src-mobility src-search src-tangram src-terrain-tiles \
-	       src-vector-tiles
-	rm -rf dist-android dist-elevation dist-index dist-mapzen-js \
+	       src-vector-tiles src-libpostal
+	rm -rf dist-android dist-ios dist-elevation dist-index dist-mapzen-js \
 	       dist-metro-extracts dist-mobility dist-search dist-tangram \
-	       dist-terrain-tiles dist-vector-tiles
-	rm -rf dist-android-mkdocs.yml dist-elevation-mkdocs.yml \
+	       dist-terrain-tiles dist-vector-tiles dist-libpostal
+	rm -rf dist-android-mkdocs.yml dist-ios-mkdocs.yml dist-elevation-mkdocs.yml \
 	       dist-index-mkdocs.yml dist-mapzen-js-mkdocs.yml \
 	       dist-metro-extracts-mkdocs.yml dist-mobility-mkdocs.yml \
 	       dist-search-mkdocs.yml dist-tangram-mkdocs.yml \
-	       dist-terrain-tiles-mkdocs.yml dist-vector-tiles-mkdocs.yml
+	       dist-terrain-tiles-mkdocs.yml dist-vector-tiles-mkdocs.yml \
+				 dist-libpostal-mkdocs.yml
 
 # Get individual sources docs
 src-tangram:
@@ -68,9 +71,17 @@ src-android:
 	mkdir src-android
 	curl -sL $(ANDROID) | tar -zxv -C src-android --strip-components=2 android-master/docs
 
+src-ios:
+	mkdir src-ios
+	curl -sL $(IOS) | tar -zxv -C src-ios --strip-components=2 ios-master/docs
+
 src-mapzen-js:
 	mkdir src-mapzen-js
 	curl -sL $(MAPZENJS) | tar -zxv -C src-mapzen-js --strip-components=1 docs
+
+src-libpostal:
+	mkdir src-libpostal
+	curl -sL $(LIBPOSTAL) | tar -zxv -C src-libpostal --strip-components=2 go-whosonfirst-libpostal-master/docs
 
 src-overview:
 	cp -r docs src-overview
@@ -82,7 +93,7 @@ theme/fragments:
 	curl -sL 'https://mapzen.com/site-fragments/footer.html' -o theme/fragments/global-footer.html
 
 # Build Tangram, Metro Extracts, Vector Tiles, Elevation, Search, Mobility,
-# Android, Mapzen JS, Terrain Tiles, and Overview docs.
+# Android, iOS, Mapzen JS, Terrain Tiles, and Overview docs.
 # Uses GNU Make pattern rules:
 # https://www.gnu.org/software/make/manual/html_node/Pattern-Examples.html
 dist-%: src-% theme/fragments
@@ -98,7 +109,7 @@ dist-index: theme/fragments
 	./setup-redirects.py ./dist-index-mkdocs.yml /documentation/
 	cp dist-index/index.html dist-index/next.html
 
-dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-search dist-elevation dist-android dist-mapzen-js dist-overview dist-index dist-mobility dist-terrain-tiles
+dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-search dist-elevation dist-android dist-ios dist-mapzen-js dist-overview dist-index dist-mobility dist-terrain-tiles dist-libpostal
 	mkdir dist
 	ln -s ../dist-tangram dist/tangram
 	ln -s ../dist-metro-extracts dist/metro-extracts
@@ -108,8 +119,10 @@ dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-search dist-elevat
 	ln -s ../dist-elevation dist/elevation
 	ln -s ../dist-mobility dist/mobility
 	ln -s ../dist-android dist/android
+	ln -s ../dist-ios dist/ios
 	ln -s ../dist-mapzen-js dist/mapzen-js
 	ln -s ../dist-overview dist/overview
+	ln -s ../dist-libpostal dist/libpostal
 	rsync -urv --ignore-existing dist-index/ dist/
 
 serve:

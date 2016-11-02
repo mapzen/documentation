@@ -5,7 +5,7 @@ site_dir: dist-android
 pages:
   - Home: index.md
   - 'Installation': 'installation.md'
-  - 'Getting started': 'getting-started.md'
+  - 'Get started': 'getting-started.md'
   - 'Current location': 'current-location.md'
   - 'Position, rotation, and zoom': 'basic-functions.md'
   - 'Markers': 'markers.md'
@@ -13,6 +13,9 @@ pages:
   - 'Polygons': 'polygon.md'
   - 'Switching styles': 'styles.md'
   - 'Gesture responders': 'gesture-responders.md'
+  - 'Location services': 'location-services.md'
+  - 'Mapzen Search for Android': 'search.md'
+  - 'Mapzen Turn-by-Turn for Android': 'turn-by-turn.md'
 
 extra:
   site_subtitle: 'A thin wrapper that packages up everything you need to use Mapzen services in your Android applications.'

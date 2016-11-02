@@ -42,8 +42,10 @@ class Tests (unittest.TestCase):
         with open(path) as file:
             config = yaml.load(file)
             site_name = config['site_name']
+            has_more_pages = bool(len(config['pages']) > 1)
+            has_next_prev = (config.get('include_next_prev') is not False)
 
-            if config.get('include_next_prev') is not False:
+            if has_more_pages and has_next_prev:
                 (page2_title, ) = config['pages'][1].keys()
             else:
                 page2_title = None
@@ -156,6 +158,12 @@ class Tests (unittest.TestCase):
 
     def test_android_index(self):
         self._test_doc_section('/android', *self._load_doc_titles('config/android.yml'))
+
+    def test_ios_index(self):
+        self._test_doc_section('/ios', *self._load_doc_titles('config/ios.yml'))
+
+    def test_ios_index(self):
+        self._test_doc_section('/libpostal', *self._load_doc_titles('config/libpostal.yml'))
 
     def test_mapzenjs_index(self):
         self._test_doc_section('/mapzen-js', *self._load_doc_titles('config/mapzen-js.yml'))

@@ -34,7 +34,7 @@
 			</h6>
 			<div class="category-info-container first">
 				<div class="category-info">
-					<a class="docs-title" href="mapzen-js/">Mapzen JS</a>
+					<a class="docs-title" href="mapzen-js/">mapzen.js</a>
 					<p class="excerpt">
 						Get everything you need to use Mapzen services in your web applications.
 					</p>
@@ -58,26 +58,24 @@
 				<div class="category-info">
 					<a class="docs-title" href="vector-tiles/">Vector tiles</a>
 					<p class="excerpt">
-						Display the world with the latest open data using the vector tile map service.
+						Display the world with the latest open data using vector tiles.
 					</p>
 				</div>
 				<div class="read-more">
 					<a class="btn btn-default btn-transparent" href="vector-tiles/"> View Documentation </a>
 				</div>
 			</div>
-			<!--
 			<div class="category-info-container">
 				<div class="category-info">
 					<a class="docs-title" href="terrain-tiles/">Terrain tiles</a>
 					<p class="excerpt">
-						Add open elevation data to your applications with raster tiles.
+						Add open elevation data to your applications with raster terrain tiles.
 					</p>
 				</div>
 				<div class="read-more">
 					<a class="btn btn-default btn-transparent" href="terrain-tiles/"> View Documentation </a>
 				</div>
 			</div>
-			-->
 		</div>
 		<div class="col-xs-12 footroom-large">
 			<h6 class="category-title">
@@ -132,6 +130,17 @@
 					<a class="btn btn-default btn-transparent" href="elevation/"> View Documentation </a>
 				</div>
 			</div>
+			<div class="category-info-container">
+				<div class="category-info">
+					<a class="docs-title" href="libpostal/">Address Parsing</a>
+					<p class="excerpt">
+						Parse and expand address data with the libpostal engine.
+					</p>
+				</div>
+				<div class="read-more">
+					<a class="btn btn-default btn-transparent" href="libpostal/"> View Documentation </a>
+				</div>
+			</div>
 		</div>
 		<div class="col-xs-12 footroom-large">
 			<h6 class="category-title">
@@ -146,6 +155,18 @@
 				</div>
 				<div class="read-more">
 					<a class="btn btn-default btn-transparent" href="android/"> View Documentation </a>
+				</div>
+			</div>
+				<div class="category-info-container">
+					<div class="category-info">
+						<a class="docs-title" href="ios/">iOS SDK</a>
+						<p class="excerpt">
+							Add Mapzen maps and location services to your iOS apps.
+						</p>
+					</div>
+					<div class="read-more">
+						<a class="btn btn-default btn-transparent" href="ios/"> View Documentation </a>
+					</div>
 				</div>
 			</div>
 		</div>
