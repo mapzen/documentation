@@ -25,7 +25,7 @@ Docs live in either individual repositories in a team's organization, or as a fo
 | [Elevation Service](https://mapzen.com/documentation/elevation/) | https://github.com/valhalla/valhalla-docs  | Push to Master |
 | [Android SDK](https://mapzen.com/documentation/android/) | https://github.com/mapzen/android/tree/master/docs | Push to Master |
 
-## Installation, testing, and use
+## Install, test, and use
 
 ### Preview the changes on the precog website
 
