@@ -31,7 +31,9 @@ _Tip:  By default, terminal windows open into your home directory, so you will n
 
 There are many options for getting your map or other project onto the web where it can be shared with others. Use whichever fits your situation best.
 
-**Option 1**: Use [bl.ocks.org](https://bl.ocks.org). This site is a view for code hosted as [GitHub Gist](https://gist.github.com/). 
+**Option 1**: [bl.ocks.org](https://bl.ocks.org). 
+
+This site is a view for code hosted as [GitHub Gist](https://gist.github.com/). 
 
 1. Go to [https://gist.github.com](https://gist.github.com).  
 2. Add your HTML page. Call it `index.html` and copy and paste in your HTML code.
@@ -43,14 +45,16 @@ There are many options for getting your map or other project onto the web where 
 _Tip: You can also try [blockbuilder.org](http://blockbuilder.org/), which automates the gist to bl.ocks workflow for you._
 
 
-**Option 2**: Use [Dropbox](https://www.dropbox.com/) 
+**Option 2**: [Dropbox](https://www.dropbox.com/) 
+
 You can use Dropbox's web servers to host your files. That public link you copied can be viewed by anyone who has the link.
 
 1. Save your project files to your public directory of Dropbox.
 2. Right-click (or _&#8984; + click_) on the main HTML file, such as `index.html`, and click `Copy Public Link`.
 3. Paste that link into your browser.
 
-**Option 3**: Use GitHub Pages
+**Option 3**: GitHub Pages
+
 [GitHub Pages](https://help.github.com/articles/what-is-github-pages/) is a free hosting service for repositories stored on GitHub. You can use GitHub pages for a variety of projects, including your personal blog or a corporate website.
 
 You need to specify the source of the files used to build the website. In the simplest workflow, you can publish the site from one of these two sources:
