@@ -1,6 +1,6 @@
 # Mapzen's documentation pipeline
 
-We write our documentation in Markdown and store them in GitHub, and use a [MkDocs](http://www.mkdocs.org/)-based automated workflow to convert them into friendlier static-site documentation pages hosted at https://mapzen.com/documentation/. You can read more about this on our [blog post](https://mapzen.com/blog/doc-site/).
+Mapzen writes documentation in Markdown, stores the source files in GitHub, and uses a [MkDocs](http://www.mkdocs.org/)-based automated workflow to convert them into friendlier static-site documentation pages hosted at https://mapzen.com/documentation/. You can read more about this process in the [blog post](https://mapzen.com/blog/doc-site/).
 
 ## Status
 ![Circle CI status](https://circleci.com/gh/mapzen/mapzen-docs-generator.svg?style=shield&circle-token=7674367293a932dc152f6663d5361bf8570d4ad6)
@@ -25,9 +25,9 @@ Docs live in either individual repositories in a team's organization, or as a fo
 | [Elevation Service](https://mapzen.com/documentation/elevation/) | https://github.com/valhalla/valhalla-docs  | Push to Master |
 | [Android SDK](https://mapzen.com/documentation/android/) | https://github.com/mapzen/android/tree/master/docs | Push to Master |
 
-## Installation, Testing, And Use
+## Installation, testing, and use
 
-### View changes in Precog
+### Preview the changes on the precog website
 
 If you've created a Pull Request in the mapzen-docs-generator repository, you can view changes in Precog at [precog.mapzen.com/mapzen/mapzen-docs-generator/](precog.mapzen.com/mapzen/mapzen-docs-generator/). This will only show changes that have been done in this specific repository. If the changes you're doing on a particular repository aren't live yet, you need to edit the **Makefile** to reflect the branch that you're working on. You can do this by:
 
@@ -40,44 +40,39 @@ If you've created a Pull Request in the mapzen-docs-generator repository, you ca
 
 At the moment, this will be needed to be updated with the new commit ID when needed.
 
-### Using MkDocs watch feature
+### Build locally
 
-MkDocs can only build one set of documentation at a time, so there's really no way to build and then watch the entire documentation suite at once. However you can still just watch one set of documentation which is still enough for editing styles or debugging.
+You can build one or more parts of the documentation. Clone the repository locally and open a terminal window to the mapzen-docs-generator folder. To build everything, use the commands `make` and `mkdocs serve`.
+
+You can also build one set of the help, such as Tangram, by referencing the `dist-` package name and the `yml` file. 
 
 ```shell
-make dist-tangram                       # Prepares documentation, in this case it's tangram
+make dist-tangram                       # Prepares documentation, in this case it's Tangram
 mkdocs serve -f dist-tangram-mkdocs.yml # Run the server with watch
 ```
 
-### Customizing templates
+### Custom templates
 
-We've heavily customized the MkDocs theme for use with Mapzen documentation. Resources for helping this happen are a little scattered so here is an attempt to gather all the relevant information in one spot.
+We have heavily customized the MkDocs theme for use with Mapzen documentation. Resources for helping this happen are a little scattered, so here is an attempt to gather all the relevant information in one spot.
 
 - [MkDocs custom themes](http://www.mkdocs.org/user-guide/styling-your-docs/#custom-themes). This includes all the variables that MkDocs makes available to templates.
 - [Jinja2 templating language](http://jinja.pocoo.org/docs/dev/). MkDocs uses Jinja2. This is very similar to Jekyll's Liquid syntax, but it's not the same! ...so it's very easy to get them confused sometimes.
 - [MkDocs built-in themes source](https://github.com/mkdocs/mkdocs/tree/master/mkdocs/themes). These are the built-in themes source code. Don't start from scratch, refer to these!
 - [MkDocs Bootswatch themes source](https://github.com/mkdocs/mkdocs-bootswatch/tree/master/mkdocs_bootswatch). These are additional [Bootswatch](https://bootswatch.com/) themes that are not included by default. However they might provide additional references for good practices.
 
-## Making MkDocs happy
-
-### You must always:
+## Requirements for MkDocs
 
 - Include an `index.md` file at the root folder of your documentation. (Note: [MkDocs will allow this to be customized in the future.](https://github.com/mkdocs/mkdocs/issues/608))
 - Include all local documentation assets, such as images, inside this root folder (or link to an external source).
-- Start each page with a top-level heading. (Note: The level of heading should no longer affect presentation, but I still need to test whether this affects TOC creation.)
+- Start each page with a top-level heading with one `#` symbol, except for the index.md. The home page should not have a title because it would most likely duplicate the banner on the page.
 
-### You will sometimes:
+### Markdown formatting tweaks for compatibility with GitHub and the documentation site
 
-- Think carefully about the choices you made in life.
-
-### Markdown formatting tweaks for compatibility with GitHub
-
-- [Handy dandy Markdown formatting guide](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
-- Blank lines between different blocks of content will be your best friend(s). So, include a blank line before and after bulleted lists, numbered lists, code blocks, images...
+- [Markdown formatting guide](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+- Add blank lines between different blocks of content: before and after bulleted lists, numbered lists, code blocks, images, and so on.
 - If a code block or image is supposed to be part of a list, remember the blank lines before and after, and _also_ indent it **four spaces**. Using or mixing tabs might cause problems. Python Markdown is a lot pickier about this than GitHub-flavored Markdown, causing lists to nest improperly or break numbering altogether.
-- Good luck!
 
-## Updating documentation sources
+## Update documentation sources
 
 There are two (sometimes three) things to do if you want to change the GitHub source of documentation.
 
@@ -88,7 +83,7 @@ There are two (sometimes three) things to do if you want to change the GitHub so
       docs_base_url: https://github.com/mapzen/mapzen-docs/tree/master/metro-extracts
     ```
 
-2. **Update the repository path in the Makefile.** The Makefile is located in this repo's root, and is called `Makefile`. This step is a little harder and benefits from some knowledge of shell scripting and `Make`. Generally, we want to first retrieve the source documentation file, which is available from GitHub inside a pre-packaged archive with the extension `tar.gz`. We locate it by setting a variable with the file's location, which might look something like this:
+2. **Update the repository path in the Makefile.** The Makefile is located in this repo's root, and is called `Makefile`. This step is a little harder and benefits from some knowledge of shell scripting and `Make`. Generally, you want to first retrieve the source documentation file, which is available from GitHub inside a pre-packaged archive with the extension `tar.gz`. You locate it by setting a variable with the file's location, which might look something like this:
 
     `TANGRAM = https://github.com/tangrams/tangram-docs/archive/gh-pages.tar.gz`
 
@@ -96,19 +91,21 @@ There are two (sometimes three) things to do if you want to change the GitHub so
 
     `curl -sL $(TANGRAM) | tar -zxv -C src-tangram --strip-components=2 tangram-docs-gh-pages/pages`
 
-    This will extract the files into the `src/project-name` directory, which makes them available to mkdocs. If you're getting files from the `mapzen-docs` repository, you will have to flatten the directory structure a level up because of how the repository is organized. This step can vary depending on the project, which is why it's not super friendly.
+    This will extract the files into the `src/project-name` directory, which makes them available to mkdocs. If you're getting files from the `mapzen-docs` repository, you will have to flatten the directory structure a level up because of how the repository is organized. This step can vary depending on the project, which is why it's not super-friendly.
 
     You can also change the branch used as the source of the documentation with these lines, which can be handy for testing purposes. This is accomplished by replacing `gh-pages` with the name of another branch. Note that you'll need to convert any slashes in the branch name to dashes – e.g. if your repo name is `tangram-docs` and your branch name is `meetar/cleanup`, the reference in the `curl` command will look like `tangram-docs-meetar-cleanup`, and the full command will be:
 
     `curl -sL $(TANGRAM) | tar -zxv -C src-tangram --strip-components=2 tangram-docs-meetar-cleanup/pages`
 
-3. **Create redirects if necessary.** Sometimes we have to change names for the table of contents and documentation anchors. Time for redirects!
-Under the 'pages' section of the product's config .yml, we add another section called 'mz:redirects'. In this section, we add the original markdown file name that we're removing, and then add the page to redirect it to. Take this example from the `search.yml` for instance:
+3. **Create redirects if necessary.** Sometimes you have to change names for the files or move files into other folders, or you delete a file. You should make a redirect link so users can find the new topic.
+To create a redirect, under the `pages` section of the product's config .yml, add another section called 'mz:redirects'. In this section, add the original markdown file name that you have moved, and then add the page where it should be redirected. Take this example from the `search.yml`, for instance:
 
     `mz:redirects:
       'get-started': '.'
       'transition-from-beta': '.'``
+      
+If you need to create a different path in the documentation output than the file name or folder system, consider whether you should make these changes in the GitHub repository first.
 
-## Doc writing instructions
+## Documentation writing instructions
 
 Follow the guidelines of the [writing style guide](https://github.com/mapzen/styleguide/tree/master/src/site/guides) when it comes to writing technical documentation.
