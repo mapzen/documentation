@@ -8,3 +8,10 @@ test:
     - ./run-checklist.py
     - cp -Lr dist $CIRCLE_ARTIFACTS/documentation
     - echo '<a href="/documentation/">documentation</a>' > $CIRCLE_ARTIFACTS/index.html
+
+deployment:
+  release:
+    branch: "migurski/add-circle-deploy"
+    commands:
+      - echo aws s3 sync dist s3://static-dev.mapzen.com/documentation/
+      - echo aws s3 sync dist $AWS_DESTINATION
