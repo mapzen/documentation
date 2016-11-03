@@ -45,6 +45,17 @@
 			</div>
 			<div class="category-info-container">
 				<div class="category-info">
+					<a class="docs-title" href="cartography/">Cartography</a>
+					<p class="excerpt">
+						Open-source map styles and hundreds of map icon.
+					</p>
+				</div>
+				<div class="read-more">
+					<a class="btn btn-default btn-transparent" href="cartography/"> View Documentation </a>
+				</div>
+			</div>
+			<div class="category-info-container">
+				<div class="category-info">
 					<a class="docs-title" href="tangram/">Tangram</a>
 					<p class="excerpt">
 						Render 2D and 3D maps with fine control over almost every aspect of the map-making process.
