@@ -1,11 +1,11 @@
-site_name: Developer Guide
+site_name: Developer Guides
 docs_dir: src-tutorials
 site_dir: dist-tutorials
 
 pages:
   # - Home: 'index.md'
-  - Text editors: 'tutorials/install-text-editor.md'
-  - Server environment: 'tutorials/server-environment.md'
+  - Text editors: 'install-text-editor.md'
+  - Server environment: 'server-environment.md'
 
 extra:
   site_subtitle: 'Set up your development environment with these how-to topics'
