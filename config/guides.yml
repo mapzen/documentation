@@ -10,4 +10,4 @@ pages:
 extra:
   site_subtitle: 'Set up your development environment with these how-to topics'
   project_repo_url: https://github.com/mapzen/mapzen-docs-generator
-  docs_base_url: https://github.com/mapzen/mapzen-docs-generator/tree/master/docs
+  docs_base_url: https://github.com/mapzen/mapzen-docs-generator/tree/master/docs/guides

@@ -1,1 +1,1 @@
-Tutorials help you get started. 
+Follow these developer guides to learn general tips for setting up your software development environment. This includes how to install a text editor, run a local web server for testing, and set up a remote web server where you can host your code.
