@@ -1,8 +1,4 @@
-# Set up a local web development environment
-
-As you begin writing code, there will be a time when you need to set up a local development environment on your computer. This will involve setting up a text editor to write your code, a local server to test your code, and a remote server to share that code with others.
-
-## Install a text editor
+# Install a text editor
 
 A text editor is an application that will allow you to edit plain text files.  
 
