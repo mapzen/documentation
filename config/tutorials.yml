@@ -3,11 +3,11 @@ docs_dir: src-tutorials
 site_dir: dist-tutorials
 
 pages:
-  - Home: tutorials/index.md
-  - Text editors: tutorials/install-text-editor.md
-  - Server environment: tutorials/server-environment.md
+  - Home: 'tutorials/index.md'
+  - Text editors: 'tutorials/install-text-editor.md'
+  - Server environment: 'tutorials/server-environment.md'
 
 extra:
-  site_subtitle: Set up your development environment with these how-to topics
+  site_subtitle: 'Set up your development environment with these how-to topics'
   project_repo_url: https://github.com/mapzen/mapzen-docs-generator
   docs_base_url: https://github.com/mapzen/mapzen-docs-generator/tree/master/docs
