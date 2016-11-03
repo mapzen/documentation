@@ -11,7 +11,7 @@ test:
 
 deployment:
   release:
-    branch: "migurski/add-circle-deploy"
+    branch: master
     commands:
-      - echo aws s3 sync dist s3://static-dev.mapzen.com/documentation/
-      - echo aws s3 sync dist $AWS_DESTINATION
+      - aws s3 sync dist s3://static-dev.mapzen.com/documentation/
+      - aws s3 sync dist $AWS_DESTINATION
