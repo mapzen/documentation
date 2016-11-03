@@ -84,10 +84,10 @@ src-libpostal:
 	curl -sL $(LIBPOSTAL) | tar -zxv -C src-libpostal --strip-components=2 go-whosonfirst-libpostal-master/docs
 
 src-overview:
-	cp -r docs src-overview
+	cp -r docs/overview src-overview
 
 src-tutorials:
-	cp -r docs src-tutorials
+	cp -r docs/tutorials src-tutorials
 
 # Retrieve style guide
 theme/fragments:

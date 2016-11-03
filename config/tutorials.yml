@@ -3,7 +3,7 @@ docs_dir: src-tutorials
 site_dir: dist-tutorials
 
 pages:
-  # - Home: 'index.md'
+  - Home: 'index.md'
   - Text editors: 'install-text-editor.md'
   - Server environment: 'server-environment.md'
 
