@@ -86,6 +86,9 @@ src-libpostal:
 src-overview:
 	cp -r docs src-overview
 
+src-tutorials:
+	cp -r docs src-tutorials
+
 # Retrieve style guide
 theme/fragments:
 	mkdir -p theme/fragments
@@ -109,7 +112,7 @@ dist-index: theme/fragments
 	./setup-redirects.py ./dist-index-mkdocs.yml /documentation/
 	cp dist-index/index.html dist-index/next.html
 
-dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-search dist-elevation dist-android dist-ios dist-mapzen-js dist-overview dist-index dist-mobility dist-terrain-tiles dist-libpostal
+dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-search dist-elevation dist-android dist-ios dist-mapzen-js dist-overview dist-tutorials dist-index dist-mobility dist-terrain-tiles dist-libpostal
 	mkdir dist
 	ln -s ../dist-tangram dist/tangram
 	ln -s ../dist-metro-extracts dist/metro-extracts
@@ -122,6 +125,7 @@ dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-search dist-elevat
 	ln -s ../dist-ios dist/ios
 	ln -s ../dist-mapzen-js dist/mapzen-js
 	ln -s ../dist-overview dist/overview
+	ln -s ../dist-tutorials dist/tutorials
 	ln -s ../dist-libpostal dist/libpostal
 	rsync -urv --ignore-existing dist-index/ dist/
 
