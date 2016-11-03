@@ -1,6 +1,6 @@
 site_name: Developer Guides
-docs_dir: src-tutorials
-site_dir: dist-tutorials
+docs_dir: src-guides
+site_dir: dist-guides
 
 pages:
   - Home: 'index.md'
