@@ -1,4 +1,4 @@
-site_name: Mapzen Cartography
+site_name: Cartography
 docs_dir: src-cartography
 site_dir: dist-cartography
 
