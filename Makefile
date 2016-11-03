@@ -86,7 +86,7 @@ src-libpostal:
 
 src-cartography:
 	mkdir src-cartography
-	curl -sL $(CARTOGRAPHY) | tar -zxv -C src-search --strip-components=1 cartography-doc-master
+	curl -sL $(CARTOGRAPHY) | tar -zxv -C src-cartography --strip-components=1 cartography-doc-master
 
 src-overview:
 	cp -r docs src-overview
