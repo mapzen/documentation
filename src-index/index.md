@@ -47,7 +47,7 @@
 				<div class="category-info">
 					<a class="docs-title" href="cartography/">Cartography</a>
 					<p class="excerpt">
-						Open-source map styles and hundreds of map icon.
+						Basemap styles and hundreds of map icons for you to use.
 					</p>
 				</div>
 				<div class="read-more">

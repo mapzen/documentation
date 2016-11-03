@@ -6,7 +6,7 @@ pages:
   - Home: index.md
   - 'Get started': 'get-started.md'
   - 'API reference': 'api-reference.md'
-  - 'House Styles': 'styles.md'
+  - 'Basemap styles': 'styles.md'
 #  - 'Icons': 'icons.md'
   - 'Versioning': 'versioning.md'
 
