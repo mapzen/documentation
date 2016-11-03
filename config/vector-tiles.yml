@@ -10,6 +10,7 @@ pages:
   - 'Data Sources': 'data-sources.md'
   - 'Attribution': 'attribution.md'
   - 'API keys and rate limits': 'api-keys-and-rate-limits.md'
+  - 'v1.0 Migration Guide': 'migration.md'
 
 # Extra variables for templates
 extra:
