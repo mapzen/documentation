@@ -171,8 +171,8 @@ class Tests (unittest.TestCase):
     def test_overview_index(self):
         self._test_doc_section('/overview', *self._load_doc_titles('config/overview.yml'))
 
-    #def test_tutorials_index(self):
-    #        self._test_doc_section('/tutorials', *self._load_doc_titles('config/tutorials.yml'))
+    def test_guides_index(self):
+        self._test_doc_section('/guides', *self._load_doc_titles('config/guides.yml'))
 
 if __name__ == '__main__':
     unittest.main()
