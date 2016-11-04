@@ -137,6 +137,8 @@ class Tests (unittest.TestCase):
 
     # def test_turnbyturn_index(self):
     #     self._test_doc_section('/turn-by-turn', *self._load_doc_titles('config/turn-by-turn.yml'))
+    def test_cartography_index(self):
+        self._test_doc_section('/cartography', *self._load_doc_titles('config/cartography.yml'))
 
     def test_vectortiles_index(self):
         self._test_doc_section('/vector-tiles', *self._load_doc_titles('config/vector-tiles.yml'))
