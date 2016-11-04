@@ -89,7 +89,10 @@ src-cartography:
 	curl -sL $(CARTOGRAPHY) | tar -zxv -C src-cartography --strip-components=1 cartography-docs-master
 
 src-overview:
-	cp -r docs src-overview
+	cp -r docs/overview src-overview
+
+src-guides:
+	cp -r docs/guides src-guides
 
 # Retrieve style guide
 theme/fragments:
@@ -114,7 +117,7 @@ dist-index: theme/fragments
 	./setup-redirects.py ./dist-index-mkdocs.yml /documentation/
 	cp dist-index/index.html dist-index/next.html
 
-dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-search dist-elevation dist-android dist-ios dist-mapzen-js dist-overview dist-index dist-mobility dist-terrain-tiles dist-libpostal dist-cartography
+dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-search dist-elevation dist-android dist-ios dist-mapzen-js dist-overview dist-guides dist-index dist-mobility dist-terrain-tiles dist-libpostal dist-cartography
 	mkdir dist
 	ln -s ../dist-tangram dist/tangram
 	ln -s ../dist-metro-extracts dist/metro-extracts
@@ -127,6 +130,7 @@ dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-search dist-elevat
 	ln -s ../dist-ios dist/ios
 	ln -s ../dist-mapzen-js dist/mapzen-js
 	ln -s ../dist-overview dist/overview
+	ln -s ../dist-guides dist/guides
 	ln -s ../dist-libpostal dist/libpostal
 	ln -s ../dist-cartography dist/cartography
 	rsync -urv --ignore-existing dist-index/ dist/
