@@ -26,6 +26,7 @@ pages:
     - 'Tutorial': 'turn-by-turn/add-routing-to-a-map.md' 
   - 'Optimized route': 'optimized/api-reference.md'
   - 'Time-Distance Matrix': 'matrix/api-reference.md'
+  - 'Isochrones': 'isochrones/api-reference.md'
   - 'Decode a route shape': 'decoding.md'
   - 'Release notes': 'release-notes.md'
 
