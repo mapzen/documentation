@@ -27,6 +27,10 @@ pages:
   - 'Optimized route': 'optimized/api-reference.md'
   - 'Time-Distance Matrix': 'matrix/api-reference.md'
   - 'Isochrones': 'isochrones/api-reference.md'
+  - 'Mobility Explorer':
+    - 'Overview': 'explorer/overview.md'
+    - 'Explore transit': 'explorer/explore-transit.md'
+    - 'Generate isochrones': 'explorer/isochones.md'
   - 'Decode a route shape': 'decoding.md'
   - 'Release notes': 'release-notes.md'
 
