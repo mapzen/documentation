@@ -62,7 +62,7 @@ src-elevation:
 
 src-mobility:
 	mkdir src-mobility
-	curl -sL $(VALHALLA) | tar -zxv -C src-mobility --strip-components=1 valhalla-docs-master
+	curl -sL $(VALHALLA) | tar -zxv -C src-mobility --strip-components=1 valhalla-docs-rhonda-mobility-explorer
 
 src-search:
 	mkdir src-search
