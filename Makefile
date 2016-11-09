@@ -1,7 +1,7 @@
 # Source doc tarballs
 TANGRAM = https://github.com/tangrams/tangram-docs/archive/gh-pages.tar.gz
 EXTRACTS = https://github.com/mapzen/metro-extracts/archive/master.tar.gz
-VALHALLA = https://github.com/valhalla/valhalla-docs/archive/master.tar.gz
+VALHALLA = https://github.com/valhalla/valhalla-docs/archive/rhonda-mobility-explorer.tar.gz
 VECTOR_TILES = https://github.com/tilezen/vector-datasource/archive/v1.0.0-docs3.tar.gz
 TERRAIN_TILES = https://github.com/tilezen/joerd/archive/v1.0.0-docs3.tar.gz
 SEARCH = https://github.com/pelias/pelias-doc/archive/master.tar.gz
