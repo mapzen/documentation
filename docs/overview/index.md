@@ -97,14 +97,24 @@ The distance limit is the total straight-line distance (colloquially, as the cro
 
 #### Mapzen Optimized Route
 
-[Mapzen Optimized Route](https://mapzen.com/documentation/optimized/) finds the most efficient route between many locations. To use the Optimized Route service, you need a Matrix API key because the result is built with matrix calculations. The service has these limits:
+[Mapzen Optimized Route](https://mapzen.com/documentation/optimized/) finds the most efficient route between many locations. The service has these limits:
 
 - 2 queries per second
 - 5,000 queries per day
 - The maximum number of locations is 50.
 - The maximum straight-line distance between two locations is 200 kilometers.
 
-The Mapzen Turn-by-Turn, Matrix, and Optimized Route services are built from the [Valhalla](https://github.com/valhalla) open-source project.
+#### Mapzen Isochrone
+
+[Mapzen Isochrone]((https://mapzen.com/documentation/isochrones/) provides a computation of areas that are reachable within specified time periods from a location or set of locations. The service has these limits:
+
+- 2 queries per second
+- 5,000 queries per day
+- The maximum number of locations is one. For isochrones around multiple locations, you need to make multiple requests.
+- The maximum time to compute isochrone contours from the location is 120 minutes.
+- The maximum number of isochrone contours in a single request is four.
+
+The Mapzen Turn-by-Turn, Matrix, Optimized Route, and Isochrone services are built from the [Valhalla](https://github.com/valhalla) open-source project.
 
 ### Data products
 
