@@ -26,7 +26,7 @@ pages:
     - 'Tutorial': 'turn-by-turn/add-routing-to-a-map.md'
   - 'Optimized route': 'optimized/api-reference.md'
   - 'Time-Distance Matrix': 'matrix/api-reference.md'
-  - 'Isochrone': 'isochrones/api-reference.md'
+  - 'Isochrone': 'isochrone/api-reference.md'
   - 'Mobility Explorer':
     - 'Overview': 'explorer/overview.md'
     - 'Explore transit': 'explorer/explore-transit.md'
