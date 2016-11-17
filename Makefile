@@ -2,7 +2,6 @@
 TANGRAM = https://github.com/tangrams/tangram-docs/archive/gh-pages.tar.gz
 EXTRACTS = https://github.com/mapzen/metro-extracts/archive/master.tar.gz
 VALHALLA = https://github.com/valhalla/valhalla-docs/archive/master.tar.gz
-VALHALLA_ME = https://github.com/valhalla/valhalla-docs/archive/rhonda-mobility-explorer.tar.gz #temp path for branch so I don't break elevation
 VECTOR_TILES = https://github.com/tilezen/vector-datasource/archive/v1.0.0-docs3.tar.gz
 TERRAIN_TILES = https://github.com/tilezen/joerd/archive/v1.0.0-docs3.tar.gz
 SEARCH = https://github.com/pelias/pelias-doc/archive/master.tar.gz
@@ -63,7 +62,7 @@ src-elevation:
 
 src-mobility:
 	mkdir src-mobility
-	curl -sL $(VALHALLA_ME) | tar -zxv -C src-mobility --strip-components=1 valhalla-docs-rhonda-mobility-explorer
+	curl -sL $(VALHALLA) | tar -zxv -C src-mobility --strip-components=1 valhalla-docs-master
 
 src-search:
 	mkdir src-search
