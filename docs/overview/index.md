@@ -106,7 +106,7 @@ The distance limit is the total straight-line distance (colloquially, as the cro
 
 #### Mapzen Isochrone
 
-[Mapzen Isochrone]((https://mapzen.com/documentation/isochrones/) provides a computation of areas that are reachable within specified time periods from a location or set of locations. The service has these limits:
+[Mapzen Isochrone](https://mapzen.com/documentation/isochrones/) provides a computation of areas that are reachable within specified time periods from a location or set of locations. The service has these limits:
 
 - 2 queries per second
 - 5,000 queries per day
