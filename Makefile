@@ -98,7 +98,7 @@ src-guides:
 # Retrieve style guide
 theme/fragments:
 	mkdir -p theme/fragments
-	curl -sL 'https://mapzen.com/site-fragments/navbar.html' -o theme/fragments/global-nav.html
+	curl -sL 'https://mapzen.com/site-fragments/new-navbar.html' -o theme/fragments/global-nav.html
 	curl -sL 'https://mapzen.com/site-fragments/footer.html' -o theme/fragments/global-footer.html
 
 # Build Tangram, Metro Extracts, Vector Tiles, Elevation, Search, Mobility,
