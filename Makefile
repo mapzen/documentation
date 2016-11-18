@@ -3,7 +3,7 @@ TANGRAM = https://github.com/tangrams/tangram-docs/archive/gh-pages.tar.gz
 EXTRACTS = https://github.com/mapzen/metro-extracts/archive/master.tar.gz
 VALHALLA = https://github.com/valhalla/valhalla-docs/archive/master.tar.gz
 VECTOR_TILES = https://github.com/tilezen/vector-datasource/archive/v1.0.0-docs3.tar.gz
-TERRAIN_TILES = https://github.com/tilezen/joerd/archive/v1.0.0-docs3.tar.gz
+TERRAIN_TILES = https://api.github.com/repos/tilezen/joerd/releases/latest
 SEARCH = https://github.com/pelias/pelias-doc/archive/master.tar.gz
 ANDROID = https://github.com/mapzen/android/archive/master.tar.gz
 IOS = https://github.com/mapzen/ios/archive/master.tar.gz
@@ -51,7 +51,9 @@ src-vector-tiles:
 src-terrain-tiles:
 	mkdir src-terrain-tiles
 	# Try with --wildcards for GNU tar, but fall back to BSD tar syntax for Mac.
-	curl -sL $(TERRAIN_TILES) | ( \
+	curl -sL $(TERRAIN_TILES) \
+	| jq '.tarball_url' \
+	| xargs curl -sL | ( \
 	    tar -zxv -C src-terrain-tiles --strip-components=2 --exclude=README.md --wildcards '*/docs/' \
 	 || tar -zxv -C src-terrain-tiles --strip-components=2 --exclude=README.md '*/docs/' \
 	    )
