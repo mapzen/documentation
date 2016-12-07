@@ -63,4 +63,3 @@ strict: false
 extra:
   site_subtitle: Render 2D and 3D maps with fine control over almost every aspect of the map-making process.
   project_repo_url: https://github.com/tangrams/tangram
-  docs_base_url: https://github.com/tangrams/tangram-docs/tree/gh-pages/pages
