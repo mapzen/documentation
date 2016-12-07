@@ -6,13 +6,13 @@ site_dir: dist-tangram
 # to enforce the Table of Contents structure manually in the configuration below.
 # This means pages should be added or subtracted manually here if the files change.
 pages:
-  - Home: 'index.md'
-  - Documentation: 'scene.md'
+  - Home: index.md
+  - 'Documentation': 'scene.md'
     - 'Data': 'data.md'
     - 'Styling features': 'styles.md'
     - 'Editing map view': 'map-view.md'
     - 'Shaders': 'shaders.md'
-  - API Reference: 'reference.md'
+  - 'API Reference': 'reference.md'
   - Tutorials:
     - 'Make a Tangram map': 'intro.md'
     - 'Cartographic design': 'cartography.md'
