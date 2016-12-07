@@ -6,38 +6,52 @@ site_dir: dist-tangram
 # to enforce the Table of Contents structure manually in the configuration below.
 # This means pages should be added or subtracted manually here if the files change.
 pages:
-  - Home: index.md
-  - Concept Overviews:
-    - 'Tangram': 'Tangram-Overview.md'
-    - 'The Scene File': 'Scene-file.md'
-    - 'Data Filters': 'Filters-Overview.md'
-    - 'Styles': 'Styles-Overview.md'
-    - 'Shaders': 'Shaders-Overview.md'
-    - 'Raster Sources': 'Raster-Overview.md'
-    - 'Lights': 'Lights-Overview.md'
-    - 'Cameras': 'Cameras-Overview.md'
-    - 'Materials': 'Materials-Overview.md'
-    - 'YAML': 'yaml.md'
-  - Syntax Reference:
-    - 'cameras': 'cameras.md'
-    - 'draw': 'draw.md'
-    - 'global': 'global.md'
-    - 'fonts': 'fonts.md'
-    - 'import': 'import.md'
-    - 'layers': 'layers.md'
-    - 'lights': 'lights.md'
-    - 'materials': 'materials.md'
-    - 'scene': 'scene.md'
-    - 'shaders': 'shaders.md'
-    - 'sources': 'sources.md'
-    - 'styles': 'styles.md'
-    - 'textures': 'textures.md'
-  - JavaScript API: 'Javascript-API.md'
-  - Android API: 'Android-API.md'
-  - Demos & Examples:
-    - 'Demos': 'Demos.md'
-    - 'JS Walkthrough': 'walkthrough.md'
-    - 'Android Walkthrough': 'android-walkthrough.md'
+  - Get Started: index.md
+  - Documentation: 'scene.md'
+    - 'Data': 'data.md'
+    - 'Styling features': 'styles.md'
+    - 'Editing map view': 'map-view.md'
+    - 'Shaders': 'shaders.md'
+  - API Reference: 'reference.md'
+  - Tutorials:
+    - 'Make a Tangram map': 'intro.md'
+    - 'Cartographic design': 'cartography.md'
+    - 'Editing a basemap': 'basemap.md'
+    - 'Custom Styles': 'custom-styles.md'
+    - 'Terrain maps': 'terrain.md'
+  - Gallery: 'gallery.md'
+
+  # - Concept Overviews:
+  #   - 'Tangram': 'Tangram-Overview.md'
+  #   - 'The Scene File': 'Scene-file.md'
+  #   - 'Data Filters': 'Filters-Overview.md'
+  #   - 'Styles': 'Styles-Overview.md'
+  #   - 'Shaders': 'Shaders-Overview.md'
+  #   - 'Raster Sources': 'Raster-Overview.md'
+  #   - 'Lights': 'Lights-Overview.md'
+  #   - 'Cameras': 'Cameras-Overview.md'
+  #   - 'Materials': 'Materials-Overview.md'
+  #   - 'YAML': 'yaml.md'
+  # - Syntax Reference:
+  #   - 'cameras': 'cameras.md'
+  #   - 'draw': 'draw.md'
+  #   - 'global': 'global.md'
+  #   - 'fonts': 'fonts.md'
+  #   - 'import': 'import.md'
+  #   - 'layers': 'layers.md'
+  #   - 'lights': 'lights.md'
+  #   - 'materials': 'materials.md'
+  #   - 'scene': 'scene.md'
+  #   - 'shaders': 'shaders.md'
+  #   - 'sources': 'sources.md'
+  #   - 'styles': 'styles.md'
+  #   - 'textures': 'textures.md'
+  # - JavaScript API: 'Javascript-API.md'
+  # - Android API: 'Android-API.md'
+  # - Demos & Examples:
+  #   - 'Demos': 'Demos.md'
+  #   - 'JS Walkthrough': 'walkthrough.md'
+  #   - 'Android Walkthrough': 'android-walkthrough.md'
 
 
 # Determines if a broken link to a page within the documentation is considered
