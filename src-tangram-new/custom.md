@@ -10,21 +10,7 @@ There are a few built-in styles: polygons, lines, points, text, and raster. Usin
 
 Let's use one of the built-in customization options, `dash`, to draw some dashed lines. Add a datasource to your map with a 'source', then add some lines to your map - let's start with roads features.
 
-https://mapzen.com/tangram/play/?#16.50417/40.78070/-73.96085
-
-sources:
-    mapzen:
-        type: TopoJSON
-        url: https://tile.mapzen.com/mapzen/vector/v1/all/{z}/{x}/{y}.topojson
-
-layers:
-    roads:
-        data: { source: mapzen }
-        draw:
-            lines:
-                order: 1
-                width: 5px
-                color: gray
+<div class="demo-wrapper" source="https://mapzen.com/tangram/play/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom-1.yaml#16.50417/40.78070/-73.96085"></div>
 
 now let's make a custom draw style, let's call it '_dashes' – the underscore is a handy way to remember which things we named ourselves. The `dash` parameter takes an array, which sets the length of the dashes and gaps.
 
