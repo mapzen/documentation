@@ -2,4 +2,4 @@
 
 ## Required Elements in Tangram
 
-## Skeleton (oh spooky!)
+## global

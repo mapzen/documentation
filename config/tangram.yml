@@ -23,16 +23,16 @@ pages:
   - 'Gallery': 'gallery.md'
 
 mz:redirects:
-    'tangram-overview': '.'
+  'tangram-overview': '.'
   'filters-overview': 'data'
   'raster-overview': 'styles-overview#rasters'
   'lights-overview': 'map-view#lights'
   'cameras-overview': 'map-view#cameras'
   'materials-overview': 'styles-overview#materials'
-  'YAML': 'yaml.md' x
+  'yaml': 'index#yaml'
   'cameras': 'map-view#cameras'
   'draw': 'styles-overview#draw'
-  'global': 'global.md' x
+  'global': 'scene-file#global'
   'fonts': 'styles-overview#fonts'
   'import': 'data#import'
   'layers': 'data#layers'
