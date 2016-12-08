@@ -6,7 +6,7 @@
       {% if nav_item.children %}
         <li class='toc-top-level{% if nav_item.active %} toc-current{% endif %}'>
           <a href='#' class='toc-subnav-toggle'>{{ nav_item.title }}</a>
-          {% if not (loop.first and config.extra.exclude_home_contents_in_toc == true) %}
+          {% if not (loop.first == true) %}
             <ul class='toc-subnav{% if nav_item.active %} toc-expand{% endif %}'>
               {% for nav_item in nav_item.children %}
                 {% include 'nav-sub.html' %}
