@@ -13,7 +13,7 @@ pages:
     - 'Styling features': 'styles-overview.md'
     - 'Editing map view': 'map-view.md'
     - 'Shaders': 'shaders-overview.md'
-  - 'API Reference': 'reference.md'
+  - 'API Reference': 'api-reference.md'
   - Tutorials:
     - 'Make a Tangram map': 'intro-tutorial.md'
     - 'Cartographic design': 'cartography.md'
