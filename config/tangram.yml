@@ -15,6 +15,7 @@ pages:
     - 'Shaders': 'shaders-overview.md'
   - 'API Reference': 'api-reference.md'
   - Tutorials:
+    - 'Custom Styles': 'custom.md'
     - 'Make a Tangram map': 'intro-tutorial.md'
     - 'Cartographic design': 'cartography.md'
     - 'Editing a basemap': 'basemap.md'
