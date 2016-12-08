@@ -10,7 +10,7 @@ Tangram is available in two delicious flavors: [Tangram JS](https://github.com/t
 
 All of these effects are possible thanks to [OpenGL](https://en.wikipedia.org/wiki/OpenGL). You can write graphics card programs, known as [shaders](Shaders-Overview.md), and even JavaScript to add interactivity, mix data sources, and control the design of your maps.
 
-## YAML 
+## YAML
 **YAML** is an object-based data format with a flexible structure. Its specification includes a huge array of wacky abilities, but we only use a few of them.
 
 Here are the most important YAML features to know about when writing Tangram scene files.
@@ -342,3 +342,5 @@ vec3 hsv2rgb(vec3 c) {
 ## JSON compatibility
 
 YAML's capabilities are officially a superset of JSON, which makes conversion between the two formats a cinch.
+
+##
