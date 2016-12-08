@@ -23,10 +23,9 @@ pages:
   - 'Gallery': 'gallery.md'
 
 mz:redirects:
-  'tangram': '.'
+    'tangram-overview': '.'
   'filters-overview': 'data'
   'raster-overview': 'styles-overview#rasters'
-  'tangram': '.'
   'lights-overview': 'map-view#lights'
   'cameras-overview': 'map-view#cameras'
   'materials-overview': 'styles-overview#materials'
