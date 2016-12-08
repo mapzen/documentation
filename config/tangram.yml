@@ -7,21 +7,48 @@ site_dir: dist-tangram
 # This means pages should be added or subtracted manually here if the files change.
 pages:
   - Home: index.md
-  - Documentation: 
-    - 'The scene file': 'scene.md'
+  - Documentation:
+    - 'The scene file': 'scene-file.md'
     - 'Data': 'data.md'
-    - 'Styling features': 'styles.md'
+    - 'Styling features': 'styles-overview.md'
     - 'Editing map view': 'map-view.md'
-    - 'Shaders': 'shaders.md'
+    - 'Shaders': 'shaders-overview.md'
   - 'API Reference': 'reference.md'
   - Tutorials:
-    - 'Make a Tangram map': 'intro.md'
+    - 'Make a Tangram map': 'intro-tutorial.md'
     - 'Cartographic design': 'cartography.md'
     - 'Editing a basemap': 'basemap.md'
     - 'Custom Styles': 'custom-styles.md'
     - 'Terrain maps': 'terrain.md'
   - 'Gallery': 'gallery.md'
 
+mz:redirects:
+  'tangram': '.'
+  'filters-overview': 'data'
+  'raster-overview': 'styles-overview#rasters'
+  'tangram': '.'
+  'lights-overview': 'map-view#lights'
+  'cameras-overview': 'map-view#cameras'
+  'materials-overview': 'styles-overview#materials'
+  'YAML': 'yaml.md' x
+  'cameras': 'map-view#cameras'
+  'draw': 'styles-overview#draw'
+  'global': 'global.md' x
+  'fonts': 'styles-overview#fonts'
+  'import': 'data#import'
+  'layers': 'data#layers'
+  'lights': 'map-view#lights'
+  'materials': 'styles-overview#materials'
+  'scene': 'scene-file'
+  'shaders': 'shaders-overview'
+  'sources': 'data#sources'
+  'styles': 'styles-overview'
+  'textures': 'styles-overview#textures'
+  'javascript-api': 'api-reference'
+  'Android-API': 'api-reference#android'
+  'demos': 'gallery'
+  'walkthrough': 'intro-tutorial'
+  # 'Android Walkthrough': 'android-walkthrough.md' (NEED TO REDIRECT BUT WHERE TO PUT THIS???)
 
 # Determines if a broken link to a page within the documentation is considered
 # a warning or an error (link to a page not listed in the pages setting). Set
@@ -30,6 +57,6 @@ strict: false
 
 # Extra variables for templates
 extra:
-  site_subtitle: Render 2D and 3D maps with fine control over almost every aspect of the map-making process.
+  site_subtitle: Render 2D and 3D maps with fine control over almost every aspect of the map making process.
   project_repo_url: https://github.com/tangrams/tangram
   docs_base_url: https://github.com/tangrams/tangram-docs/tree/gh-pages/pages
