@@ -34,7 +34,7 @@ To get started, you need to make a copy of the repository containing the tutoria
 2. Navigate to https://github.com/mapzen/write-the-docs-tutorial, which contains some files to get you started.
 4. Click the `Fork` button in the top right corner of the page.
 
-  ![Fork a repository button](../images/fork-repo-button.png)
+  ![Fork a repository button](/images/fork-repo-button.png)
 
 5. You may be prompted where to place the forked repository. Choose the option that will put the copy into your personal account, rather than forking it into any _organization_ to which you belong. An organization is a group of users on GitHub.
 
