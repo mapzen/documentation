@@ -10,12 +10,12 @@ Tangram is available in two delicious flavors: [Tangram JS](https://github.com/t
 
 All of these effects are possible thanks to [OpenGL](https://en.wikipedia.org/wiki/OpenGL). You can write graphics card programs, known as [shaders](Shaders-Overview.md), and even JavaScript to add interactivity, mix data sources, and control the design of your maps.
 
-## YAML
+## YAML  
 **YAML** is an object-based data format with a flexible structure. Its specification includes a huge array of wacky abilities, but we only use a few of them.
 
 Here are the most important YAML features to know about when writing Tangram scene files.
 
-## mappings
+### mappings
 
 Tangram makes heavy use of the YAML structures known as "mappings," known elsewhere as "[associative arrays](https://en.wikipedia.org/wiki/Associative_array)" or "dictionaries". They are made up of "key/value pairs" – in these docs, we usually call these _parameters_, because that's how we use them:
 
@@ -58,7 +58,7 @@ This is because the value of "parameter1" can't be both "value1" and an object c
 
 In this documentation, we refer to both parameters and elements as "objects".
 
-## object syntax
+### object syntax
 
 YAML supports two kinds of syntax when writing nested objects: _block syntax_ and _flow syntax_.
 
@@ -96,7 +96,7 @@ roads:
 #### Syntax examples
 For further examples, check out our many fine [demos](https://github.com/tangrams?query=demo)!
 
-## lists
+### lists
 
 Lists are written differently in each of the above syntax styles.
 
@@ -118,7 +118,7 @@ Note that _lists_ and _mappings_ are interpreted differently in various situatio
 
 See also: [Lists Imply Any, Mappings Imply All](Filters-Overview.md#lists-imply-any-mappings-imply-all)
 
-## syntax mixing
+### syntax mixing
 
 _Block syntax_ can enclose _flow syntax_, but not the other way around – once you start an object in _flow syntax_, you have to finish it before you can move back into _block syntax_.
 
@@ -139,7 +139,7 @@ element: { parameter:
     - item3
 ```
 
-## data types
+### data types
 
 Tangram's data types are based on YAML's functionality, but we've extended them a bit in certain contexts.
 
@@ -174,7 +174,7 @@ color: [10, [0.3, 0.4, 0.3], [14, [0.5, 0.825, 0.5]]]
 width: [[13, 0px], [14, 3px], [16, 5px], [18, 10px]]
 ```
 
-## value types
+### value types
 
 Tangram accepts a variety of values and units depending on the parameter.
 
@@ -195,10 +195,10 @@ As well as any of the CSS specification types:
     - HSL#*: `hsla(180, 100%, 100%, 50%)`
 
 
-*Hex values must be in quotes, to prevent interpretation as a YAML comment.
-**Currently, alpha values are ignored in the `add` and `multiply` `blend` modes, and respected in the `inlay` and `overlay` modes. For more on this, see the [`blend`](styles.md#blend) entry.
+Hex values must be in quotes, to prevent interpretation as a YAML comment.
+Currently, alpha values are ignored in the `add` and `multiply` `blend` modes, and respected in the `inlay` and `overlay` modes. For more on this, see the [`blend`](styles.md#blend) entry.
 
-## reserved keywords
+### reserved keywords
 
 Our YAML parser detects certain keywords contextually based on the element or parameter in which they are used. In these contexts, these words are _reserved keywords_ and can't be used as custom element names.
 
@@ -237,7 +237,7 @@ labels:
    filter: { $geometry: point }
 ```
 
-## multi-line strings
+### multi-line strings
 
 One of the reasons we chose YAML as our scene file format is its ability to handle multi-line strings with a minimum of fuss. In _block syntax_ only, start an parameter's value with a "pipe" character (`|`) followed by a newline, and everything that isn't indented _less_ after that will be treated as a single string value, newlines included:
 
@@ -282,7 +282,7 @@ elevator:
                     position.z *= (sin(position.z + u_time) + 1.0);
                 }
 ```
-## comments
+### comments
 
 ```yaml
 # This is a YAML comment.
@@ -297,7 +297,7 @@ elevator:
 
 Bear in mind that in multi-line strings, pound signs lose their ability to comment code! You'll have to use the comment convention in whatever language you're writing. (This can be a pain when using auto-commenting in text editors.)
 
-## `url`
+### `url`
 
 `url` attributes may be used to link to external YAML files in the `styles` element, as well as in the shader block elements `global`, `color`, `normal`, and `position`. This allows for more modular shader construction as well as easy sharing of styles.
 
@@ -339,8 +339,6 @@ vec3 hsv2rgb(vec3 c) {
 }
 ```
 
-## JSON compatibility
+### JSON compatibility
 
 YAML's capabilities are officially a superset of JSON, which makes conversion between the two formats a cinch.
-
-##
