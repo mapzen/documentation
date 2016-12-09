@@ -1,3 +1,61 @@
+<script>
+function elementIntersectsViewport (el) {
+  var top = el.offsetTop;
+  var height = el.offsetHeight;
+
+  while(el.offsetParent) {
+    el = el.offsetParent;
+    top += el.offsetTop;
+  }
+
+  return (
+    top < (window.pageYOffset + window.innerHeight) &&
+    (top + height) > window.pageYOffset
+  );
+}
+
+function hide(el) {
+    iframe = el.getElementsByTagName("iframe")[0];
+    if (typeof iframe != "undefined") el.removeChild(iframe);
+}
+function show(el) {
+    iframe = el.getElementsByTagName("iframe")[0];
+    if (typeof iframe == "undefined") {
+        iframe = document.createElement("iframe");
+        el.appendChild(iframe);
+        iframe.style.height = "100%";
+        iframe.src = el.getAttribute("source");
+    }
+}
+
+// check visibility every half-second, hide off-screen demos to go easy on the GPU
+
+setInterval( function() {
+    var elements = document.getElementsByClassName("demo-wrapper");
+    for (var i=0; i < elements.length; i++) {
+        el = elements[i];
+        if (elementIntersectsViewport(el) || (i == 0 && window.pageYOffset < 500)) {
+            show(el);
+            // show the next two iframes as well
+            show(elements[i+1]);
+            show(elements[i+2]);
+            for (var j=0; j < elements.length; j++) {
+                if (j != i && j != i+1) {
+                    hide(elements[j]);
+                }
+            }
+            break;
+        }
+    }
+}, 500);
+</script>
+<style>
+#demo-wrapper {
+    margin-bottom: 1em;
+}
+</style>
+
+
 # Make a map in Tangram
 
 [Tangram](index.md) is a 2D and 3D map renderer that allows you to make web maps with infinite possibilities. Tangram is built off of [WebGL](index.md#webgl) and uses a syntax style called [YAML](index.md#YAML) to control the map design with extremely fine detail, if desired. This step-by-step tutorial will walk you through making your first Tangram map.  
