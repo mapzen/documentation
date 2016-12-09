@@ -1,0 +1,22 @@
+sources:
+    mapzen:
+        type: TopoJSON
+        url: https://tile.mapzen.com/mapzen/vector/v1/all/{z}/{x}/{y}.topojson
+
+layers:
+    _landLayer:
+        data:
+            source: mapzen 
+            layer: earth
+        draw:
+            polygons:
+                order: 0
+                color: [0.443, 0.439, 0.431, 1.00]
+    _waterLayer:
+        data:
+            source: mapzen
+            layer: water
+        draw:
+            polygons:
+                order: 2
+                color: [0.322, 0.396, 0.416, 0.32]

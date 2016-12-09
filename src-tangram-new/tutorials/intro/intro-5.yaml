@@ -1,0 +1,73 @@
+sources:
+    mapzen:
+        type: TopoJSON
+        url: https://tile.mapzen.com/mapzen/vector/v1/all/{z}/{x}/{y}.topojson
+
+layers:
+    _landLayer:
+        data:
+            source: mapzen 
+            layer: earth
+        draw:
+            polygons:
+                order: 0
+                color: [0.443, 0.439, 0.431, 1.00]
+    _waterLayer:
+        data:
+            source: mapzen
+            layer: water
+        draw:
+            polygons:
+                order: 2
+                color: [0.322, 0.396, 0.416, 0.32]
+    _boundariesLayer:
+        data:
+            source: mapzen
+            layer: boundaries
+        _countryBorders:
+            filter: { kind_detail: "2"  }
+            draw:
+                lines:
+                    order: 1
+                    color: [0.965, 0.953, 0.953, 1.00]
+                    width: [[2,1.5px],[5,2.5px]]
+                    cap: round
+        _stateBorders:
+            filter: { kind_detail: "4" }
+            draw:
+                lines:
+                    order: 1
+                    color: [0.745, 0.722, 0.714, 1.00]
+                    width: 1px
+    _roadsLayer:
+        data:
+            source: mapzen
+            layer: roads
+        draw:
+            lines:
+                order: 3
+                color: [0.667, 0.643, 0.627, 1.00]
+                width: 1px
+                cap: round
+    _buildingsLayer:
+        data:
+            source: mapzen
+            layer: buildings
+        draw:
+            polygons:
+                order: 4
+                color: [0.290, 0.278, 0.278, 1.00]
+    _countryName:
+        data:
+            source: mapzen
+            layer: places
+        filter: { kind: country, population: { min: 30000000 } }
+        draw:
+            text:
+                text_source: function() { return feature["name:en"] || feature["name"]; }
+                font:
+                    size: 14px
+                    fill: [0.788, 0.694, 0.380, 1.00]
+                order: 5
+                
+            
