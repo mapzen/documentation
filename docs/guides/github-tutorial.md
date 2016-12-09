@@ -31,7 +31,7 @@ You can review the [GitHub Glossary](https://help.github.com/articles/github-glo
 To get started, you need to make a copy of the repository containing the tutorial data files. You do not have write permissions for the source version, but making a copy into your own GitHub account allows you to edit them. This is known as creating a _fork_, or _forking a repository_.
 
 1. Open a browser to https://github.com and sign in with your account.
-2. Navigate to https://github.com/mapzen/write-the-docs, which contains some files to get you started.
+2. Navigate to https://github.com/mapzen/write-the-docs-tutorial, which contains some files to get you started.
 4. Click the `Fork` button in the top right corner of the page.
 
   ![Fork a repository button](../images/fork-repo-button.png)
@@ -61,7 +61,7 @@ Your fork has the basic configuration to get a website built with Jekyll, but do
 
 Markdown is a lightweight markup language that uses plain text with symbols, like asterisks and underscores, to style the appearance. You use markdown formatting throughout GitHub, and many files are in `.md` format. Two syntax references are from [John Gruber](https://daringfireball.net/projects/markdown/syntax), who created markdown, and [GitHub](https://guides.github.com/features/mastering-markdown/). Jekyll converts markdown files into HTML for use on a website.
 
-1. Be sure you are in the `docs` folder (the path should be `write-the-docs/docs`) and click `Create new file`.
+1. Be sure you are in the `docs` folder (the path should be `write-the-docs-tutorial/docs`) and click `Create new file`.
 
   ![Create new file button](../images/create-new-file-button.png)
 
