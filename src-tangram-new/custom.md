@@ -10,96 +10,23 @@ There are a few built-in styles: polygons, lines, points, text, and raster. Usin
 
 Let's use one of the built-in customization options, `dash`, to draw some dashed lines. Add a datasource to your map with a 'source', then add some lines to your map - let's start with roads features.
 
-<div class="demo-wrapper" source="https://mapzen.com/tangram/play/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom-1.yaml#16.50417/40.78070/-73.96085"></div>
+<iframe class="demo-wrapper" src="https://mapzen.com/tangram/play/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom1.yaml#16.50417/40.78070/-73.96085"></iframe>
 
 now let's make a custom draw style, let's call it '_dashes' – the underscore is a handy way to remember which things we named ourselves. The `dash` parameter takes an array, which sets the length of the dashes and gaps.
 
-sources:
-    mapzen:
-        type: TopoJSON
-        url: https://tile.mapzen.com/mapzen/vector/v1/all/{z}/{x}/{y}.topojson
-
-styles:
-    _dashes:
-        base: lines
-        dash: [1, 1]
-
-layers:
-    roads:
-        data: { source: mapzen }
-        draw:
-            lines:
-                order: 1
-                width: 5px
-                color: gray
+<iframe class="demo-wrapper" src="https://mapzen.com/tangram/play/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom2.yaml#16.50417/40.78070/-73.96085"></iframe>
 
 Then, set the drawstyle in your roads layer to '_dashes', and it will be drawn in our custom style. The values of the `dash` parameter are a ratios to the width of the line – so a value of 1 will produce a square dash or gap, a value of `2` will make that dash or gap twice as long as the line's width, and `.5` will be half the width of the line. Try different values below:
 
-sources:
-    mapzen:
-        type: TopoJSON
-        url: https://tile.mapzen.com/mapzen/vector/v1/all/{z}/{x}/{y}.topojson
-
-styles:
-    _dashes:
-        base: lines
-        dash: [1, 1]
-
-layers:
-    roads:
-        data: { source: mapzen }
-        draw:
-            _dashes:
-                order: 1
-                width: 5px
-                color: gray
+<iframe class="demo-wrapper" src="https://mapzen.com/tangram/play/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom3.yaml#16.50417/40.78070/-73.96085"></iframe>
 
 By default, the dash style has transparent background, but we can give it a color using the dash_background_color option:
 
-sources:
-    mapzen:
-        type: TopoJSON
-        url: https://tile.mapzen.com/mapzen/vector/v1/all/{z}/{x}/{y}.topojson
-
-styles:
-    _dashes:
-        base: lines
-        dash: [1, 1]
-        dash_background_color: pink
-
-layers:
-    roads:
-        data: { source: mapzen }
-        draw:
-            _dashes:
-                order: 1
-                width: 5px
-                color: gray
+<iframe class="demo-wrapper" src="https://mapzen.com/tangram/play/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom4.yaml#16.50417/40.78070/-73.96085"></iframe>
 
 We can also apply an outline:
 
-sources:
-    mapzen:
-        type: TopoJSON
-        url: https://tile.mapzen.com/mapzen/vector/v1/all/{z}/{x}/{y}.topojson
-
-styles:
-    _dashes:
-        base: lines
-        dash: [2, 1]
-        dash_background_color: pink
-
-layers:
-    roads:
-        data: { source: mapzen }
-        draw:
-            _dashes:
-                order: 1
-                width: 5px
-                color: gray
-                outline:
-                    color: pink
-                    width: 1px
+<iframe class="demo-wrapper" src="https://mapzen.com/tangram/play/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom5.yaml#16.50417/40.78070/-73.96085"></iframe>
 
 ## Transparency with built-in 'blend' modes
 
@@ -108,81 +35,19 @@ Now let's add transparency to a polygons layer, using another custom styling opt
 Start with a buildings data layer:
 https://mapzen.com/tangram/play/?#18.07925/40.76442/-73.98058
 
-sources:
-    mapzen:
-        type: TopoJSON
-        url: https://tile.mapzen.com/mapzen/vector/v1/all/{z}/{x}/{y}.topojson
-
-layers:
-    buildings:
-        data: { source: mapzen }
-        draw:
-            buildings:
-                order: 1
-                color: [.7, .7, .7]
-                extrude: true
+<iframe class="demo-wrapper" src="https://mapzen.com/tangram/play/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom6.yaml#16.50417/40.78070/-73.96085"></iframe>
 
 Then, add a new style based on the 'polygons' style – this one is named '_transparent'.
 
-sources:
-    mapzen:
-        type: TopoJSON
-        url: https://tile.mapzen.com/mapzen/vector/v1/all/{z}/{x}/{y}.topojson
-
-styles:
-    _transparent:
-        base: polygons
-
-layers:
-    buildings:
-        data: { source: mapzen }
-        draw:
-            polygons:
-                order: 1
-                color: [.7, .7, .7]
-                extrude: true
+<iframe class="demo-wrapper" src="https://mapzen.com/tangram/play/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom7.yaml#16.50417/40.78070/-73.96085"></iframe>
 
 Then, add a `blend` mode of `overlay`, and set our buildings draw style to match the name of our custom style:
 
-sources:
-    mapzen:
-        type: TopoJSON
-        url: https://tile.mapzen.com/mapzen/vector/v1/all/{z}/{x}/{y}.topojson
-
-styles:
-    _transparent:
-        base: polygons
-        blend: overlay
-
-layers:
-    buildings:
-        data: { source: mapzen }
-        draw:
-            _transparent:
-                order: 1
-                color: [.75, .75, .75, .3]
-                extrude: true
+<iframe class="demo-wrapper" src="https://mapzen.com/tangram/play/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom8.yaml#16.50417/40.78070/-73.96085"></iframe>
 
 It doesn't look any different! The blend modes expect an alpha value, so let's add one to the building layer's `color` now:
 
-sources:
-    mapzen:
-        type: TopoJSON
-        url: https://tile.mapzen.com/mapzen/vector/v1/all/{z}/{x}/{y}.topojson
-
-styles:
-    _transparent:
-        base: polygons
-        blend: overlay
-
-layers:
-    buildings:
-        data: { source: mapzen }
-        draw:
-            _transparent:
-                order: 1
-                color: [.75, .75, .75, .3]
-                extrude: true
+<iframe class="demo-wrapper" src="https://mapzen.com/tangram/play/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom9.yaml#16.50417/40.78070/-73.96085"></iframe>
 
 Experiment with different RGB and alpha values above!
 
@@ -190,71 +55,15 @@ Experiment with different RGB and alpha values above!
 
 Custom shaders are also achieved through custom `styles`, using the `shaders` block. Let's start with our buildings layer, with a new style named `_custom`:
 
-sources:
-    mapzen:
-        type: TopoJSON
-        url: https://tile.mapzen.com/mapzen/vector/v1/all/{z}/{x}/{y}.topojson
-
-styles:
-    _custom:
-        base: polygons
-
-layers:
-    buildings:
-        data: { source: mapzen }
-        draw:
-            _custom:
-                order: 1
-                color: [.75, .75, .75]
-                extrude: true
+<iframe class="demo-wrapper" src="https://mapzen.com/tangram/play/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom10.yaml#16.50417/40.78070/-73.96085"></iframe>
 
 Then, add a `shaders` block, with a `blocks` block and a `color` block inside that. This `color` block will hold the shader code, which is written in GLSL. To start off (and to tell it's working) we'll set the output color to magenta:
 
-sources:
-    mapzen:
-        type: TopoJSON
-        url: https://tile.mapzen.com/mapzen/vector/v1/all/{z}/{x}/{y}.topojson
-
-styles:
-    _custom:
-        base: polygons
-        shaders:
-            blocks:
-                color: |
-                    color.rgb = vec3(1, 0, 1);
-
-layers:
-    buildings:
-        data: { source: mapzen }
-        draw:
-            _custom:
-                order: 1
-                order: 1
-                extrude: true
+<iframe class="demo-wrapper" src="https://mapzen.com/tangram/play/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom11.yaml#16.50417/40.78070/-73.96085"></iframe>
 
 Now we can write functions to control the color of our buildings directly, using built-in variables if we wish to tie the color to properties of the geometry or scene. Let's get the `worldPosition()` of each vertex, and then color the buildings based on their height:
 
-sources:
-    mapzen:
-        type: TopoJSON
-        url: https://tile.mapzen.com/mapzen/vector/v1/all/{z}/{x}/{y}.topojson
-
-styles:
-    _custom:
-        base: polygons
-        shaders:
-            blocks:
-                color: |
-                    color.rgb = vec3(worldPosition().z) / 100.;
-
-layers:
-    buildings:
-        data: { source: mapzen }
-        draw:
-            _custom:
-                order: 1
-                order: 1
-                extrude: true
+<iframe class="demo-wrapper" src="https://mapzen.com/tangram/play/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom12.yaml#16.50417/40.78070/-73.96085"></iframe>
 
 In the shaders, the `vec3()` is necessary to convert worldPosition().z, which is a single `float`, into a `vec3()`, so it can be compatible with color.rgb, which is also a vec3() – you can tell because of the three channels: `.rgb`. But instead of doing this explicitly, there'a a cute trick you can do called "swizzling" which lets you mix and match channels to implicitly declare a vec3():
 
@@ -262,29 +71,7 @@ In the shaders, the `vec3()` is necessary to convert worldPosition().z, which is
 
 If we add `animated: true` to the style, we can make effects based on the `u_time` internal variable:
 
-sources:
-    mapzen:
-        type: TopoJSON
-        url: https://tile.mapzen.com/mapzen/vector/v1/all/{z}/{x}/{y}.topojson
-
-styles:
-    _custom:
-        base: polygons
-        animated: true
-        shaders:
-            blocks:
-                color: |
-                    color.rgb = worldPosition().zzz / 100.;
-                    color *= sin(u_time);
-
-layers:
-    buildings:
-        data: { source: mapzen }
-        draw:
-            _custom:
-                order: 1
-                color: white
-                extrude: true
+<iframe class="demo-wrapper" src="https://mapzen.com/tangram/play/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom13.yaml#16.50417/40.78070/-73.96085"></iframe>
 
 Experiment with different `style` and `layer` `color` values to see the way the `shader`'s `color` affects the draw layer's color.
 
