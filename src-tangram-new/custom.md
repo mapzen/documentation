@@ -36,7 +36,9 @@ setInterval( function() {
         el = elements[i];
         if (elementIntersectsViewport(el) || (i == 0 && window.pageYOffset < 500)) {
             show(el);
+            // show the next two iframes as well
             show(elements[i+1]);
+            show(elements[i+2]);
             for (var j=0; j < elements.length; j++) {
                 if (j != i && j != i+1) {
                     hide(elements[j]);
@@ -132,7 +134,7 @@ Add a `blend` mode of `overlay`, and set our buildings draw style to match the n
 
 <div class="demo-wrapper" source="https://mapzen.com/tangram/play/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom8.yaml#18.07925/40.76442/-73.98058"></div>
 
-It doesn't look any different! The blend modes expect an alpha value, so let's add one to the building layer's `color` now:
+But it doesn't look transparent! That's because the building layer's color value is a solid gray (`[.7, .7, .7]`). Those three values are the R, G, and B channels – but there's another possible value, for alpha – if you don't specify it, it defaults to `1`, which is opaque. The blend modes work with alpha, so let's change that color value to `[.7, .7, .7, .5]`, half-transparent:
 
 <div class="demo-wrapper" source="https://mapzen.com/tangram/play/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom9.yaml#18.07925/40.76442/-73.98058"></div>
 
