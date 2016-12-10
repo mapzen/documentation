@@ -16,9 +16,13 @@ function elementIntersectsViewport (el) {
 
 function hide(el) {
     iframe = el.getElementsByTagName("iframe")[0];
-    if (typeof iframe != "undefined") el.removeChild(iframe);
+    if (typeof iframe != "undefined") {
+        console.log(JSON.stringify(iframe.contentWindow.scene.config));
+        el.removeChild(iframe);
+    }
 }
 function show(el) {
+    if (typeof el != 'undefined')
     iframe = el.getElementsByTagName("iframe")[0];
     if (typeof iframe == "undefined") {
         iframe = document.createElement("iframe");
