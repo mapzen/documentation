@@ -170,9 +170,9 @@ For more about internal variables available in shaders, see [Built-ins, defaults
 
 When writing Tangram shaders, you might get an error like this:
 
-<span style="background-color: yellow">`'+' : wrong operand types no operation '+' exists that takes a left-hand operand of type 'highp float' and a right operand of type 'const int' (or there is no acceptable conversion)`</span>
+<code style="color:black;background-color: #ffcc00">'+' : wrong operand types no operation '+' exists that takes a left-hand operand of type 'highp float' and a right operand of type 'const int' (or there is no acceptable conversion)</code>
 
-In general this means one of the numbers in your expression is missing a decimal point, like `.5 + 1' – this makes GLSL sad.
+In general this means one of the numbers in your expression is missing a decimal point, like `.5 + 1` – this makes GLSL sad.
 
 Some languages (like JavaScript) do automatic type conversion, but the version of GLSL used in Tangram doesn't – you have to tell it to do everything explicitly, which makes it a bit tedious, but for this reason it's harder for GLSL to misinterpret your intentions.
 
