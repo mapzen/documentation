@@ -35,11 +35,19 @@ function show(el) {
         iframe = el.getElementsByTagName("iframe")[0];
         if (typeof iframe == "undefined") {
             iframe = document.createElement("iframe");
+            var source = '';
             el.appendChild(iframe);
             iframe.style.height = "100%";
+            if (typeof el.getAttribute("source") != 'undefined') {
+                // get the source
+                source = el.getAttribute("source");
+
+            }
+
             if (el.getAttribute("code") !='') {
                 // get source from the previously-saved blobURL
-                iframe.src = el.getAttribute("code");
+                var code = el.getAttribute("code");
+                iframe.src = replaceUrlParam(el.getAttribute("source"), "scene", code);
                 // el.setAttribute("code", '')
                 // window.URL.revokeObjectURL(url);
 
@@ -50,8 +58,19 @@ function show(el) {
     }
 }
 
-// check visibility every half-second, hide off-screen demos to go easy on the GPU
+function replaceUrlParam(url, paramName, paramValue){
+    // from http://stackoverflow.com/questions/7171099/how-to-replace-url-parameter-with-javascript-jquery
+    if(paramValue == null)
+        paramValue = '';
+    var pattern = new RegExp('\\b('+paramName+'=).*?(&|$)')
+    if(url.search(pattern)>=0){
+        return url.replace(pattern,'$1' + paramValue + '$2');
+    }
+    return url + (url.indexOf('?')>0 ? '&' : '?') + paramName + '=' + paramValue 
+}
 
+
+// check visibility every half-second, hide off-screen demos to go easy on the GPU
 setInterval( function() {
     var elements = document.getElementsByClassName("demo-wrapper");
     for (var i=0; i < elements.length; i++) {
