@@ -1,4 +1,6 @@
 <script>
+document.domain = "mapzen.com"
+
 function elementIntersectsViewport (el) {
   var top = el.offsetTop;
   var height = el.offsetHeight;
@@ -64,6 +66,10 @@ Tangram draws map features using its built-in styles: `polygons`, `lines`, `poin
 ## Dashed lines with built-in `dash` options
 
 Let's use one of the built-in style customization options, [`dash`](styles.md#dash), to draw some dashed lines. Add a datasource to your map with a [`source`](source.md) entry, then add some lines to your map - let's start with road features.
+
+<div class="demo-wrapper" source="https://precog.mapzen.com/tangrams/tangram-play/master/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom1.yaml#16.50417/40.78070/-73.96085"></div>
+
+??
 
 <div class="demo-wrapper" source="https://mapzen.com/tangram/play/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom1.yaml#16.50417/40.78070/-73.96085"></div>
 
