@@ -1,5 +1,6 @@
 <script>
 document.domain = "mapzen.com"
+window.BlobBuilder = window.BlobBuilder || window.WebKitBlobBuilder || window.MozBlobBuilder || window.MSBlobBuilder;
 
 function elementIntersectsViewport (el) {
   var top = el.offsetTop;
@@ -32,7 +33,15 @@ function show(el) {
             iframe = document.createElement("iframe");
             el.appendChild(iframe);
             iframe.style.height = "100%";
-            iframe.src = el.getAttribute("source");
+            if (el.getAttribute("code") !='') {
+                var bb = new BlobBuilder();
+                bb.append(el.getAttribute("code"));
+                var blob = bb.getBlob('text/yaml');
+                // iframe.src = el.getAttribute("source");
+                iframe.src = window.URL.createObjectURL(blob);
+            } else {
+                iframe.src = el.getAttribute("source");
+            }
         }
     }
 }
@@ -72,7 +81,7 @@ Let's use one of the built-in style customization options, [`dash`](styles.md#da
 
 <!-- <div class="demo-wrapper" source="https://precog.mapzen.com/tangrams/tangram-play/master/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom1.yaml#16.50417/40.78070/-73.96085"></div>
  -->
-<div class="demo-wrapper" source="https://mapzen.com/tangram/play/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom1.yaml#16.50417/40.78070/-73.96085"></div>
+<div class="demo-wrapper" code="" source="https://mapzen.com/tangram/play/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom1.yaml#16.50417/40.78070/-73.96085"></div>
 
 Note: in the examples in this tutorial, we are relying on a couple of similar shortcuts to set our _data layers_ and _draw styles_. Rather than give a custom name to each layer and set its data layer separately, like so:
 
@@ -115,7 +124,7 @@ layers:
 
 Now let's make a custom _draw style_, let's call it '_dashes' – the underscore is a handy way to remember which things we named ourselves. The `dash` parameter takes an array, which sets the length of the dashes and gaps.
 
-<div class="demo-wrapper" source="https://mapzen.com/tangram/play/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom2.yaml#16.50417/40.78070/-73.96085"></div>
+<div class="demo-wrapper" code="" source="https://mapzen.com/tangram/play/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom2.yaml#16.50417/40.78070/-73.96085"></div>
 
 Then, rename the _draw group_ of the "roads" layer from `polygons` to `_dashes`, and they will be drawn in our custom style.
 
@@ -123,15 +132,15 @@ The values of the `dash` parameter are relative to the `width` of the line – a
 
 Try different values for `dash` and `width` below:
 
-<div class="demo-wrapper" source="https://mapzen.com/tangram/play/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom3.yaml#16.50417/40.78070/-73.96085"></div>
+<div class="demo-wrapper" code="" source="https://mapzen.com/tangram/play/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom3.yaml#16.50417/40.78070/-73.96085"></div>
 
 By default, the `dash` style has a transparent background, but we can give the background a solid color using the `dash_background_color` option:
 
-<div class="demo-wrapper" source="https://mapzen.com/tangram/play/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom4.yaml#16.50417/40.78070/-73.96085"></div>
+<div class="demo-wrapper" code="" source="https://mapzen.com/tangram/play/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom4.yaml#16.50417/40.78070/-73.96085"></div>
 
 We can also apply an `outline`:
 
-<div class="demo-wrapper" source="https://mapzen.com/tangram/play/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom5.yaml#16.50417/40.78070/-73.96085"></div>
+<div class="demo-wrapper" code="" source="https://mapzen.com/tangram/play/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom5.yaml#16.50417/40.78070/-73.96085"></div>
 
 ## Transparency with blend modes
 
@@ -139,19 +148,19 @@ Now let's add transparency to a polygons layer, using another custom styling opt
 
 Start with a buildings data layer:
 
-<div class="demo-wrapper" source="https://mapzen.com/tangram/play/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom6.yaml#18.07925/40.76442/-73.98058"></div>
+<div class="demo-wrapper" code="" source="https://mapzen.com/tangram/play/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom6.yaml#18.07925/40.76442/-73.98058"></div>
 
 Then, add a new style based on the 'polygons' style – this one is named '_transparent'.
 
-<div class="demo-wrapper" source="https://mapzen.com/tangram/play/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom7.yaml#18.07925/40.76442/-73.98058"></div>
+<div class="demo-wrapper" code="" source="https://mapzen.com/tangram/play/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom7.yaml#18.07925/40.76442/-73.98058"></div>
 
 Add a `blend` mode of `overlay`, and set our buildings draw style to match the name of our custom style:
 
-<div class="demo-wrapper" source="https://mapzen.com/tangram/play/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom8.yaml#18.07925/40.76442/-73.98058"></div>
+<div class="demo-wrapper" code="" source="https://mapzen.com/tangram/play/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom8.yaml#18.07925/40.76442/-73.98058"></div>
 
 It doesn't look transparent! That's because the building layer's color value is a solid gray (`[.7, .7, .7]`). Those three values are the Red, Green, and Blue channels – but there's another possible value, for Alpha, and if you don't specify it, it defaults to `1`, which is opaque. The blend modes work with alpha, so let's change that color value to `[.7, .7, .7, .5]`, half-transparent:
 
-<div class="demo-wrapper" source="https://mapzen.com/tangram/play/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom9.yaml#18.07925/40.76442/-73.98058"></div>
+<div class="demo-wrapper" code="" source="https://mapzen.com/tangram/play/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom9.yaml#18.07925/40.76442/-73.98058"></div>
 
 Experiment with different RGB and alpha values above!
 
@@ -159,19 +168,19 @@ Experiment with different RGB and alpha values above!
 
 Custom shaders are also achieved through custom `styles`, using the `shaders` block. Let's start with our buildings layer, with a new style named `_custom`:
 
-<div class="demo-wrapper" source="https://mapzen.com/tangram/play/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom10.yaml#18.07925/40.76442/-73.98058"></div>
+<div class="demo-wrapper" code="" source="https://mapzen.com/tangram/play/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom10.yaml#18.07925/40.76442/-73.98058"></div>
 
 Then, add a `shaders` block, with a `blocks` block and a `color` block inside that. This `color` block will hold the shader code, which is written in GLSL. To start off (and to tell it's working) we'll set the output color to magenta:
 
-<div class="demo-wrapper" source="https://mapzen.com/tangram/play/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom11.yaml#18.07925/40.76442/-73.98058"></div>
+<div class="demo-wrapper" code="" source="https://mapzen.com/tangram/play/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom11.yaml#18.07925/40.76442/-73.98058"></div>
 
 Now we can write functions to control the color of our buildings directly, using built-in variables if we wish to control the color with properties of the geometry or scene. Let's get the `worldPosition()` of each vertex, and then color the buildings based on their height:
 
-<div class="demo-wrapper" source="https://mapzen.com/tangram/play/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom12.yaml#18.07925/40.76442/-73.98058"></div>
+<div class="demo-wrapper" code="" source="https://mapzen.com/tangram/play/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom12.yaml#18.07925/40.76442/-73.98058"></div>
 
 If we add `animated: true` to the style, we can make effects based on the `u_time` internal variable:
 
-<div class="demo-wrapper" source="https://mapzen.com/tangram/play/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom13.yaml#18.07925/40.76442/-73.98058"></div>
+<div class="demo-wrapper" code="" source="https://mapzen.com/tangram/play/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom13.yaml#18.07925/40.76442/-73.98058"></div>
 
 Experiment with different `style` and `layer` `color` values to see the way the `shader`'s `color` affects the draw layer's color.
 
