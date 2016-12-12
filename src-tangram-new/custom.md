@@ -22,9 +22,7 @@ function hide(el) {
         if (typeof iframe.contentWindow.scene != 'undefined') {
             // make a new blob from the codemirror code
 
-            [JSON.stringify(debug, null, 2)]
-
-            blob = new Blob([JSON.stringify(iframe.contentWindow.scene.config, null, 2)], {type: "text/plain"}),
+            var blob = new Blob([JSON.stringify(iframe.contentWindow.scene.config, null, 2)], {type: "text/plain"});
             // make an objectURL from the blob and save that to the parent div
             el.setAttribute("code", window.URL.createObjectURL(blob));
             console.log('saved', el.getAttribute("code"))
