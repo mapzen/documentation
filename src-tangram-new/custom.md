@@ -19,18 +19,21 @@ function elementIntersectsViewport (el) {
 function hide(el) {
     iframe = el.getElementsByTagName("iframe")[0];
     if (typeof iframe != "undefined") {
-        console.log(JSON.stringify(iframe.contentWindow.scene.config));
-        el.removeChild(iframe);
+        if (typeof iframe.contentWindow.scene != 'undefined') {
+            console.log(JSON.stringify(iframe.contentWindow.scene.config));
+            el.removeChild(iframe);
+        }
     }
 }
 function show(el) {
-    if (typeof el != 'undefined')
-    iframe = el.getElementsByTagName("iframe")[0];
-    if (typeof iframe == "undefined") {
-        iframe = document.createElement("iframe");
-        el.appendChild(iframe);
-        iframe.style.height = "100%";
-        iframe.src = el.getAttribute("source");
+    if (typeof el != 'undefined') {
+        iframe = el.getElementsByTagName("iframe")[0];
+        if (typeof iframe == "undefined") {
+            iframe = document.createElement("iframe");
+            el.appendChild(iframe);
+            iframe.style.height = "100%";
+            iframe.src = el.getAttribute("source");
+        }
     }
 }
 
@@ -46,7 +49,7 @@ setInterval( function() {
             show(elements[i+1]);
             show(elements[i+2]);
             for (var j=0; j < elements.length; j++) {
-                if (j != i && j != i+1) {
+                if (j != i && j != i+1 && j != i+2) {
                     hide(elements[j]);
                 }
             }
@@ -67,10 +70,8 @@ Tangram draws map features using its built-in styles: `polygons`, `lines`, `poin
 
 Let's use one of the built-in style customization options, [`dash`](styles.md#dash), to draw some dashed lines. Add a datasource to your map with a [`source`](source.md) entry, then add some lines to your map - let's start with road features.
 
-<div class="demo-wrapper" source="https://precog.mapzen.com/tangrams/tangram-play/master/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom1.yaml#16.50417/40.78070/-73.96085"></div>
-
-??
-
+<!-- <div class="demo-wrapper" source="https://precog.mapzen.com/tangrams/tangram-play/master/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom1.yaml#16.50417/40.78070/-73.96085"></div>
+ -->
 <div class="demo-wrapper" source="https://mapzen.com/tangram/play/embed/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom1.yaml#16.50417/40.78070/-73.96085"></div>
 
 Note: in the examples in this tutorial, we are relying on a couple of similar shortcuts to set our _data layers_ and _draw styles_. Rather than give a custom name to each layer and set its data layer separately, like so:
