@@ -1,6 +1,5 @@
 <script>
 document.domain = "mapzen.com"
-window.BlobBuilder = window.BlobBuilder || window.WebKitBlobBuilder || window.MozBlobBuilder || window.MSBlobBuilder;
 
 function elementIntersectsViewport (el) {
   var top = el.offsetTop;
@@ -21,7 +20,14 @@ function hide(el) {
     iframe = el.getElementsByTagName("iframe")[0];
     if (typeof iframe != "undefined") {
         if (typeof iframe.contentWindow.scene != 'undefined') {
-            console.log(JSON.stringify(iframe.contentWindow.scene.config));
+            // make a new blob from the codemirror code
+
+            [JSON.stringify(debug, null, 2)]
+
+            blob = new Blob([JSON.stringify(iframe.contentWindow.scene.config, null, 2)], {type: "text/plain"}),
+            // make an objectURL from the blob and save that to the parent div
+            el.setAttribute("code", window.URL.createObjectURL(blob));
+            console.log('saved', el.getAttribute("code"))
             el.removeChild(iframe);
         }
     }
@@ -34,11 +40,11 @@ function show(el) {
             el.appendChild(iframe);
             iframe.style.height = "100%";
             if (el.getAttribute("code") !='') {
-                var bb = new BlobBuilder();
-                bb.append(el.getAttribute("code"));
-                var blob = bb.getBlob('text/yaml');
-                // iframe.src = el.getAttribute("source");
-                iframe.src = window.URL.createObjectURL(blob);
+                // get source from the previously-saved blobURL
+                iframe.src = el.getAttribute("code");
+                // el.setAttribute("code", '')
+                // window.URL.revokeObjectURL(url);
+
             } else {
                 iframe.src = el.getAttribute("source");
             }
