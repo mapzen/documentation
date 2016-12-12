@@ -34,7 +34,7 @@ To get started, you need to make a copy of the repository containing the tutoria
 2. Navigate to https://github.com/mapzen/write-the-docs-tutorial, which contains some files to get you started.
 4. Click the `Fork` button in the top right corner of the page.
 
-  ![Fork a repository button](/images/fork-repo-button.png)
+  ![Fork a repository button](images/fork-repo-button.png)
 
 5. You may be prompted where to place the forked repository. Choose the option that will put the copy into your personal account, rather than forking it into any _organization_ to which you belong. An organization is a group of users on GitHub.
 
@@ -49,7 +49,7 @@ The files provided for the tutorial include information about the repository's l
 1. Look at the files in your forked repository.
 2. Click the `docs` folder to display its contents. It contains a `css` folder, which imports a visual theme for the website you will create, and `_config.yml` to set up the website.
 
-  ![Files in the repository](../images/repo-files-css-config.png)
+  ![Files in the repository](images/repo-files-css-config.png)
 
 These files are used with [Jekyll](https://jekyllrb.com/), a software library written in Ruby that converts text files, such as the markdown files you see here, into a static website or blog. Jekyll is very flexible, and you can [review the documentation](https://jekyllrb.com/docs/home/) to learn more about how to customize it for your site. [GitHub Pages](https://pages.github.com/), which the free website hosting service you are using in this tutorial, is powered by Jekyll.
 
@@ -63,7 +63,7 @@ Markdown is a lightweight markup language that uses plain text with symbols, lik
 
 1. Be sure you are in the `docs` folder (the path should be `write-the-docs-tutorial/docs`) and click `Create new file`.
 
-  ![Create new file button](../images/create-new-file-button.png)
+  ![Create new file button](images/create-new-file-button.png)
 
 2. In the `Name your file` box, type `index.md`. It is very important that you include the `.md` file extension in the name; otherwise, your website will not be generated.
 3. On the `Edit new file` tab, add all the following text.
@@ -101,13 +101,13 @@ _Tip: You can click Graphs > Network or the number next to the Fork button, to v
   _Tip: When you are making more complex edits, you may want to create a branch from the Branch menu and reuse the branch for multiple commits._
 4. GitHub automatically suggests a branch name based on your username. You can use it or type your own, such as `new-index-file`. The branch name should be descriptive, and some organizations may have naming standards.
 
-  ![Commit new file](../images/index-file-commit-small.png)
+  ![Commit new file](images/index-file-commit-small.png)
 
 5. Click `Propose new file`.
   The page refreshes and you are on a page where you can open a pull request to propose your changes be merged into the master branch. The subject of the pull request is the commit message you typed before.
 6. Add some additional information about your the changes you are proposing in the comment box, such as `This adds an index file to create the homepage for the website.`
 
-  ![Open a pull request page](../images/open-pull-request-small.png)
+  ![Open a pull request page](images/open-pull-request-small.png)
 
 7. Scroll the page and review the other information displayed on the pull request. For example, you can see the list of commits (there is only one) and the changes you made.
 8. Click `Create pull request`.
@@ -124,18 +124,18 @@ In this case, you are the only contributor to this repository and need to review
 
 1. Review the information on the pull request page.
 
-  ![Pull request page](../images/pull-request-page-small.png)
+  ![Pull request page](images/pull-request-page-small.png)
 
 2. Below the merge section, type a comment and click `Comment`. Comments are used to discuss the changes. You can use emoji and markdown in your comments.
 
-  ![Add a comment to a pull request](../images/pull-request-add-comment-small.png)
+  ![Add a comment to a pull request](images/pull-request-add-comment-small.png)
 
 3. Click `Merge pull request`.
   Your changes are compatible and do not conflict with the master branch, so can be merged automatically. However, sometimes, when multiple people are editing the same part of a file, GitHub cannot determine which change is correct. If this happens, you may need to use [command-line options](https://help.github.com/articles/resolving-a-merge-conflict-from-the-command-line/) to review and reconcile merge conflicts.
 4. Click `Confirm merge`.
 5. Click `Delete branch` to remove the temporary branch.
 
-  ![Delete the old branch](../images/pull-request-delete-branch.png)
+  ![Delete the old branch](images/pull-request-delete-branch.png)
 
 You have now merged your changes into the master branch, and the pull request status shows as `Merged`. Congratulations if this is your first pull request!
 
@@ -152,12 +152,12 @@ The option to use the `docs` folder, which is what you will be doing, allows you
 
 1. Click `Settings` near the top of the page.
 
-  ![Repository settings button](../images/repository-settings-button.png)
+  ![Repository settings button](images/repository-settings-button.png)
 
 2. On the main `Options` tab, scroll to the `GitHub Pages` section.
 3. Under `Source`, click `master branch /docs folder`.
 
-  ![GitHub Pages source using the /docs folder](../images/github-pages-source.png)
+  ![GitHub Pages source using the /docs folder](images/github-pages-source.png)
 
 4. Click `Save`.
 5. After the page refreshes, scroll back to the `GitHub Pages` section, if necessary, and notice that there is a banner indicating your site is ready to be published.
@@ -176,13 +176,13 @@ You next can replace the "Hello, world!" text with real content. You can copy te
 2. In the root level of the repository, find and open the file named `sample-text-for-website.md`.
 3. Click the `Raw` button to view the plain text, including the markdown formatting.
 
-  ![View the raw file content](../images/raw-button.png)
+  ![View the raw file content](images/raw-button.png)
 
 4. Select all the text and copy it.
 5. Navigate to the `index.md` file in the `docs` folder.
 6. Click `Edit this file`.
 
-  ![Start editing the file](../images/edit-this-text-button.png)
+  ![Start editing the file](images/edit-this-text-button.png)
 
 7. Delete the "Hello, world!" text, making sure to leave in place the front matter section above it.
 8. Paste the text you copied after the second `---` line.
