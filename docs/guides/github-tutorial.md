@@ -96,12 +96,16 @@ _Tip: You can click Graphs > Network or the number next to the Fork button, to v
 2. In the first box, type `Create website index file`.
   This is a commit message, where you can explain your work. Providing a descriptive and meaningful message is important so you and others are able to know what is happening in this group of edits and be able to refer back to them in the future. If you do not add any text, GitHub includes a default message.
 3. Click `Create a new branch for this commit and start a pull request.` On this page, GitHub is combining three actions into one: creating a branch for your changes, committing your them to the branch, and starting a pull request.
+
   _Tip: When you are making more complex edits, you may want to create a branch from the Branch menu and reuse the branch for multiple commits._
+
 4. GitHub automatically suggests a branch name based on your username. You can use it or type your own, such as `new-index-file`. The branch name should be descriptive, and some organizations may have naming standards.
 
     ![Commit new file](images/index-file-commit-small.png)
 5. Click `Propose new file`.
+
   The page refreshes and you are on a page where you can open a pull request to propose your changes be merged into the master branch. The subject of the pull request is the commit message you typed before.
+
 6. Add some additional information about your the changes you are proposing in the comment box, such as `This adds an index file to create the homepage for the website.`
 
     ![Open a pull request page](images/open-pull-request-small.png)
@@ -125,7 +129,9 @@ In this case, you are the only contributor to this repository and need to review
 
     ![Add a comment to a pull request](images/pull-request-add-comment-small.png)
 3. Click `Merge pull request`.
+
   Your changes are compatible and do not conflict with the master branch, so can be merged automatically. However, sometimes, when multiple people are editing the same part of a file, GitHub cannot determine which change is correct. If this happens, you may need to use [command-line options](https://help.github.com/articles/resolving-a-merge-conflict-from-the-command-line/) to review and reconcile merge conflicts.
+  
 4. Click `Confirm merge`.
 5. Click `Delete branch` to remove the temporary branch.
 
