@@ -78,10 +78,11 @@ setInterval( function() {
         if (elementIntersectsViewport(el) || (i == 0 && window.pageYOffset < 500)) {
             show(el);
             // show the next two iframes as well
-            show(elements[i+1]);
-            show(elements[i+2]);
+            // show(elements[i+1]);
+            // show(elements[i+2]);
             for (var j=0; j < elements.length; j++) {
-                if (j != i && j != i+1 && j != i+2) {
+                // if (j != i && j != i+1 && j != i+2) {
+                if (j != i) {
                     hide(elements[j]);
                 }
             }
@@ -145,7 +146,7 @@ layers:
 
 Now let's make a custom _draw style_, let's call it '_dashes' – the underscore is a handy way to remember which things we named ourselves. The `dash` parameter takes an array, which sets the length of the dashes and gaps.
 
-<div class="demo-wrapper" id="demo1" code="" source="https://precog.mapzen.com/tangrams/tangram-play/blob/?go=&scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom7.yaml#16.50417/40.78070/-73.96085"></div>
+<div class="demo-wrapper" id="demo1" code="" source="https://precog.mapzen.com/tangrams/tangram-play/blob/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom7.yaml#16.50417/40.78070/-73.96085"></div>
 
 
 Note: in the examples in this tutorial, we are relying on a couple of similar shortcuts to set our _data layers_ and _draw styles_. Rather than give a custom name to each layer and set its data layer separately, like so:
