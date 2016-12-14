@@ -54,7 +54,7 @@ Mapzen uses server caching to deliver commonly requested content as quickly as p
 - 2,000 queries per minute (about 133 views per minute)
 - 100,000 queries per day (about 6,6000 views per day)
 
-When viewing a map, you commonly use about 15 tiles at a time. The number of map views is an attempt to translate the query rate limits into practical expectations in an app. Without an API key, the rate limits correspond to two map views per second, eight per minute, and 160 per day.
+When viewing a map, you commonly use about 15 tiles at a time. The number of map views is an attempt to translate the query rate limits into practical expectations in an app.
 
 The Mapzen Vector Tiles service is built from the [Tilezen](https://github.com/tilezen) open-source project.
 
