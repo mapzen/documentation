@@ -1,5 +1,5 @@
 <script>
-document.domain = "precog.mapzen.com"
+// document.domain = "precog.mapzen.com"
 
 function elementIntersectsViewport (el) {
   var top = el.offsetTop;
@@ -19,13 +19,19 @@ function elementIntersectsViewport (el) {
 function hide(el) {
     iframe = el.getElementsByTagName("iframe")[0];
     if (typeof iframe != "undefined") {
-        if (typeof iframe.contentWindow.scene != 'undefined') {
-            // make a new blob from the codemirror code
+        try {
+            if (typeof iframe.contentWindow.scene != 'undefined') {
+                // make a new blob from the codemirror code
 
-            var blob = new Blob([JSON.stringify(iframe.contentWindow.scene.config, null, 2)], {type: "text/plain"});
-            // make an objectURL from the blob and save that to the parent div
-            el.setAttribute("code", window.URL.createObjectURL(blob));
-            console.log('saved', el.getAttribute("code"))
+                var blob = new Blob([JSON.stringify(iframe.contentWindow.scene.config, null, 2)], {type: "text/plain"});
+                // make an objectURL from the blob and save that to the parent div
+                el.setAttribute("code", window.URL.createObjectURL(blob));
+                console.log('saved', el.getAttribute("code"))
+                el.removeChild(iframe);
+            }
+        }
+        catch(e) {
+            console.log(e);
             el.removeChild(iframe);
         }
     }
