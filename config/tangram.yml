@@ -7,7 +7,7 @@ site_dir: dist-tangram
 # This means pages should be added or subtracted manually here if the files change.
 pages:
   - Get Started: index.md
-    - 'Tangram Basics': index.md
+  #- 'Tangram Basics': index.md
   - Documentation:
     - 'The scene file': 'scene-file.md'
     - 'Data': 'data.md'
