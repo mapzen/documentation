@@ -26,20 +26,6 @@ If you send a query without a valid API key (keyless access), the rate limits fo
 
 If you find a problem, need higher limits, or have enhancement suggestions for Mapzen's products, send a note to hello@mapzen.com.
 
-#### Check your usage
-
-To check your usage, sign in to your developer account.
-
-1. Sign in at https://mapzen.com/developers.
-2. Click the statistics button for the API key you want to review.
-3. View a graph of your recent usage for a certain period of time, such as the past day or month.
-
-You also receive [HTTP status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) in the header for the server's response to your query.
-
-If you exceed rate limits, you will typically see errors for 403 Forbidden and 429 Too Many Requests.
-
-Mapzen uses server caching to deliver commonly requested content as quickly as possible. Queries that are served from a cache do not count toward your rate limits. For example, you might encounter results from the cache when you browse a map with vector tiles in a popular extent or repeatedly perform an identical geocoding search.
-
 ### Mapping products
 
 #### Tangram
@@ -140,6 +126,8 @@ Mapzen's other data products do not currently require API keys. These include:
 ### Mobile products
 
 To use Mapzen's Android SDK or any of Mapzen's other products in your mobile apps, you need an API key for the function you are integrating. For example, adding routing to your app requires a Mapzen API key.
+
+
 
 ## Terms of use
 
