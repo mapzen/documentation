@@ -93,7 +93,7 @@ To have features appear on the map, use the `layers` block to create a new layer
 
 The data we want to use has been selected, but won't appear in the editor until the `draw` block is written. The draw block .... (some info on it here)
 
-There are specific draw styles for drawing features as points, lines, polygons, or text. The `_landLayer` can use the `polygons` draw style. To use this draw style, a color has to be provided (Tangram accepts RGB, RGBA, HEX, HSL) and an order. The drawing order is a _required_ element in Tangram, and defines the sequence for the map to render layers. This will be the bottom layer and should be defined as '0'. [More information on ordering here.](https://mapzen.com/documentation/vector-tiles/layers/#feature-ordering) With this draw block complete, a map should appear!
+There are specific draw styles for drawing features as points, lines, polygons, or text. The `_landLayer` can use the [`polygons` draw style](). To use this draw style, a color has to be provided (Tangram accepts RGB, RGBA, HEX, HSL) and an order. The drawing order is a _required_ element in Tangram, and defines the sequence for the map to render layers. This will be the bottom layer and should be defined as '0'. [More information on ordering here.](https://mapzen.com/documentation/vector-tiles/layers/#feature-ordering) With this draw block complete, a map should appear!
 
 ```yaml
 layers:
@@ -107,7 +107,7 @@ layers:
                 color: [0.443, 0.439, 0.431, 1.00]
 ```
 
-To add water, make another called `_waterLayer ` that uses the `water` layer from the vector tiles source. This layer should also be drawn as a polygon and will follow the same format as the `_landLayer`.
+To add water, make another called `_waterLayer ` that uses the `water` layer from the vector tiles source. This layer should also be drawn as a polygon and will follow the same format as the `_landLayer`, except order and color should be changed to reflect that this layer represents water. Water should be drawn on top of the land layer for features like lakes and rivers that would otherwise be cut off if underneath.
 
 ```yaml
 _waterLayer:
@@ -126,6 +126,31 @@ Here's what your map should look like:
 
 
 ### Filtering boundary types
+
+So far, this map is simple and shows basic land and water layers using the polygon draw style. The next layer to add takes advantage of another draw style, [lines](). Lines must have a specified color and width, along with the required order.
+
+
+```yaml
+_boundariesLayer:
+       data:
+           source: mapzen
+           layer: boundaries
+       _countryBorders:
+           filter: { kind_detail: "2"  }
+           draw:
+               lines:
+                   order: 1
+                   color: [0.965, 0.953, 0.953, 1.00]
+                   width: 1.75px
+                   cap: round
+       _stateBorders:
+           filter: { kind_detail: "4" }
+           draw:
+               lines:
+                   order: 1
+                   color: [0.745, 0.722, 0.714, 1.00]
+                   width: 1px
+```
 
 <iframe class="demo-wrapper" src="https://mapzen.com/tangram/play/?scene=https%3A%2F%2Fapi.github.com%2Fgists%2F048a7c4152405cd538f57083177eb054#4.674/42.009/-99.610"></iframe>
 

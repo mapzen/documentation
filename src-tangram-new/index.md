@@ -1,4 +1,4 @@
-# Get started with Tangram
+# Get started
 
 [Tangram](https://mapzen.com/projects/tangram) is a flexible mapping engine, designed for real-time rendering of 2D and 3D maps from [vector tiles](). Map styles, data filters, labels, and even graphics card code can be defined in [YAML](http://www.yaml.org/spec/1.2/spec.html), and APIs permit direct interactive control of the style. Changing the color is just the beginning; every Tangram map is a 3D scene, so you also can modify [lights](Lights-Overview.md) and [cameras](Cameras-Overview.md).
 
@@ -6,16 +6,18 @@ Tangram is designed to use vector data sources such as Mapzen’s [vector tile s
 
 Tangram is available in two delicious flavors: [Tangram JS](https://github.com/tangrams/tangram) is a [Leaflet](http://leafletjs.com/) plugin for browser-based mapping, and [Tangram ES](https://github.com/tangrams/tangram-es) is a C++ library for native mobile and embedded devices.
 
-## OpenGL Rendering
+## Tangram Basics
+
+### OpenGL Rendering
 
 All of these effects are possible thanks to [OpenGL](https://en.wikipedia.org/wiki/OpenGL). You can write graphics card programs, known as [shaders](Shaders-Overview.md), and even JavaScript to add interactivity, mix data sources, and control the design of your maps.
 
-## YAML  
+### YAML  
 **YAML** is an object-based data format with a flexible structure. Its specification includes a huge array of wacky abilities, but we only use a few of them.
 
 Here are the most important YAML features to know about when writing Tangram scene files.
 
-### mappings
+#### mappings
 
 Tangram makes heavy use of the YAML structures known as "mappings," known elsewhere as "[associative arrays](https://en.wikipedia.org/wiki/Associative_array)" or "dictionaries". They are made up of "key/value pairs" – in these docs, we usually call these _parameters_, because that's how we use them:
 
@@ -58,11 +60,11 @@ This is because the value of "parameter1" can't be both "value1" and an object c
 
 In this documentation, we refer to both parameters and elements as "objects".
 
-### object syntax
+#### object syntax
 
 YAML supports two kinds of syntax when writing nested objects: _block syntax_ and _flow syntax_.
 
-####block syntax
+##### block syntax
 
 _Block syntax_ requires each level of an object to be indented with spaces – any number of spaces or tabs is allowed, as long as it's consistent throughout the file. It is relatively easy to read, though it tends to result in longer files.
 
@@ -80,7 +82,7 @@ _Note:_ if you mix spaces and tabs, the parser will throw an error like this one
 ```
 YAMLException {name: "YAMLException", reason: "bad indentation of a mapping entry"}
 ```
-#### flow syntax
+##### flow syntax
 Here is the same object as the first example above, written in the more compact _flow syntax_:
 ```yaml
 element1: { subelement1: { parameter1: value1, parameter2: value2 }, subelement2: { parameter1: value1, parameter2: value2 } }
@@ -96,11 +98,11 @@ roads:
 #### Syntax examples
 For further examples, check out our many fine [demos](https://github.com/tangrams?query=demo)!
 
-### lists
+#### lists
 
 Lists are written differently in each of the above syntax styles.
 
-#### block lists
+##### block lists
 ```yaml
 element:
     parameter:
@@ -109,7 +111,7 @@ element:
         - item 3
 ```
 
-####flow lists
+##### flow lists
 ```yaml
 element: { parameter: [ item1, item2, item3 ] }
 ```
@@ -118,7 +120,7 @@ Note that _lists_ and _mappings_ are interpreted differently in various situatio
 
 See also: [Lists Imply Any, Mappings Imply All](Filters-Overview.md#lists-imply-any-mappings-imply-all)
 
-### syntax mixing
+#### syntax mixing
 
 _Block syntax_ can enclose _flow syntax_, but not the other way around – once you start an object in _flow syntax_, you have to finish it before you can move back into _block syntax_.
 
@@ -198,7 +200,7 @@ As well as any of the CSS specification types:
 Hex values must be in quotes, to prevent interpretation as a YAML comment.
 Currently, alpha values are ignored in the `add` and `multiply` `blend` modes, and respected in the `inlay` and `overlay` modes. For more on this, see the [`blend`](styles.md#blend) entry.
 
-### reserved keywords
+#### reserved keywords
 
 Our YAML parser detects certain keywords contextually based on the element or parameter in which they are used. In these contexts, these words are _reserved keywords_ and can't be used as custom element names.
 
@@ -237,7 +239,7 @@ labels:
    filter: { $geometry: point }
 ```
 
-### multi-line strings
+#### multi-line strings
 
 One of the reasons we chose YAML as our scene file format is its ability to handle multi-line strings with a minimum of fuss. In _block syntax_ only, start an parameter's value with a "pipe" character (`|`) followed by a newline, and everything that isn't indented _less_ after that will be treated as a single string value, newlines included:
 
@@ -338,7 +340,3 @@ vec3 hsv2rgb(vec3 c) {
     return c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);
 }
 ```
-
-### JSON compatibility
-
-YAML's capabilities are officially a superset of JSON, which makes conversion between the two formats a cinch.
