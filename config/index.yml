@@ -3,7 +3,7 @@ site_dir: dist-index
 
 pages:
   - Home: index.md
-  - 'Rate limit usage': 'usage.md'
+  - Rate limit usage: 'usage.md'
 
 mz:redirects:
   'matrix': 'mobility/matrix/api-reference'
@@ -18,3 +18,4 @@ mz:redirects:
 
 extra:
   layout: raw-page
+  docs_base_url: https://github.com/mapzen/mapzen-docs-generator/tree/master/docs/overview
