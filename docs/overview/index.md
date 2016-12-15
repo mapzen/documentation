@@ -22,7 +22,7 @@ The services have maximum numbers of queries you can make within a certain perio
 
 All the projects used to build the Mapzen-hosted services are open source. If you want to try Mapzen's products, start with the hosted services to see if they fit your workflow needs. If you later decide that you need additional customizations or higher capacity, you can consider installing on your own servers the open-source code used to build Mapzen's services.
 
-If you send a query without a valid API key (keyless access), the rate limits for Mapzen Search, Turn-by-Turn, Matrix, and Elevation are reduced to 1,000 requests per day, 6 per minute, and 1 per second.
+If you send a query without a valid API key (keyless access), the rate limits are 1,000 requests per day, 6 per minute, and 1 per second for each Mapzen service.
 
 If you find a problem, need higher limits, or have enhancement suggestions for Mapzen's products, send a note to hello@mapzen.com.
 
@@ -36,9 +36,11 @@ If you find a problem, need higher limits, or have enhancement suggestions for M
 
 [Mapzen Vector Tiles](https://mapzen.com/documentation/vector-tiles/) provides global basemap coverage and has these limits:
 
-- 100 queries per second
-- 2,000 queries per minute
-- 100,000 queries per day
+- 100 queries per second (about six map views per second)
+- 2,000 queries per minute (about 133 views per minute)
+- 100,000 queries per day (about 6,6000 views per day)
+
+When viewing a map, you commonly use about 15 tiles at a time. The number of map views is an attempt to translate the query rate limits into practical expectations in an app.
 
 The Mapzen Vector Tiles service is built from the [Tilezen](https://github.com/tilezen) open-source project.
 
