@@ -107,7 +107,7 @@ layers:
                 color: [0.443, 0.439, 0.431, 1.00]
 ```
 
-To add water, make another called `_waterLayer ` that uses the `water` layer from vector tiles. This layer can also be drawn as a polygon, but increase the order to '2' and add a different color.
+To add water, make another called `_waterLayer ` that uses the `water` layer from the vector tiles source. This layer should also be drawn as a polygon and will follow the same format as the `_landLayer`. 
 
 ```yaml
 _waterLayer:
