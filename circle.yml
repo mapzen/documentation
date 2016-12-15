@@ -2,9 +2,21 @@ machine:
   python:
     version: 3.4.3
 
+dependencies:
+  override:
+    - sudo apt-get update -y
+    - sudo apt-get install -y curl jq
+
 test:
   override:
     - make
     - ./run-checklist.py
     - cp -Lr dist $CIRCLE_ARTIFACTS/documentation
     - echo '<a href="/documentation/">documentation</a>' > $CIRCLE_ARTIFACTS/index.html
+
+deployment:
+  release:
+    branch: master
+    commands:
+      - aws s3 sync dist s3://static-dev.mapzen.com/documentation/
+      - aws s3 sync dist $AWS_DESTINATION

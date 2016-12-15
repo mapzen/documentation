@@ -10,6 +10,7 @@ pages:
   - 'Data Sources': 'data-sources.md'
   - 'Attribution': 'attribution.md'
   - 'API keys and rate limits': 'api-keys-and-rate-limits.md'
+  - 'Migrate to version 1.0': 'migrate-to-vector-tiles-v1.md'
 
 # Extra variables for templates
 extra:
