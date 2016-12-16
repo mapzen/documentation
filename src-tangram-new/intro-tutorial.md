@@ -127,8 +127,13 @@ Here's what your map should look like:
 
 ### Filtering boundary types
 
-So far, this map is simple and shows basic land and water layers using the polygon draw style. The next layer to add takes advantage of another draw style, [lines](). Lines must have a specified color and width, along with the required order.
+So far, this map shows basic land and water layers using the polygon draw style. The next layer to add takes advantage of another draw style, [lines](), to show administrative boundaries (a useful addition to most maps). To use the line draw style, there must be a specified color and width, along with the required order.
 
+This layer with the layer name and the data being declared, this time the layer is changed to `boundaries`. The [boundaries](https://mapzen.com/documentation/vector-tiles/layers/#boundaries) layer documentation from Mapzen Vector Tiles mentions the various types of boundaries in this layer that should be styled differently to avoid confusion. On the same indent level as the `data` element, create another layer named `_countryBorders`.
+
+The boundaries layer has properties that can be used to filter by administrative type, `kind_detail` in this instance. To filter just the country borders for this sublayer, set the `kind_detail = "2"` in a filter statement, enclosed by curly brackets (this is used for inline filtering). After the filter, a `draw` block can be used with the `lines` draw style. Add the draw order and then the desired color and width for the country border. There are [options for styling line features]() that can also be added, if desired.
+
+While showing country borders is great at low zooms, adding additional boundaries for states and provinces adds detail as the zoom level increases. To add this additional sublayer, we create another layer named `_stateBorders` on the same indent level as `_countryBorders`. This layer will follow the same filter and draw rules as the previous layer, with some changes. The `kind_detail` for the boundaries layer should be set to "4" in the filter block. The draw style can be written the same as `_countryBorders`, except with a smaller sized width to show the different administrative levels of the two layers.
 
 ```yaml
 _boundariesLayer:
@@ -139,18 +144,19 @@ _boundariesLayer:
            filter: { kind_detail: "2"  }
            draw:
                lines:
-                   order: 1
+                   order: 2
                    color: [0.965, 0.953, 0.953, 1.00]
                    width: 1.75px
-                   cap: round
        _stateBorders:
            filter: { kind_detail: "4" }
            draw:
                lines:
-                   order: 1
+                   order: 2
                    color: [0.745, 0.722, 0.714, 1.00]
                    width: 1px
 ```
+
+After these boundaries layer, the map is shaping up to be a nice reference map at low zooms:
 
 <iframe class="demo-wrapper" src="https://mapzen.com/tangram/play/?scene=https%3A%2F%2Fapi.github.com%2Fgists%2F048a7c4152405cd538f57083177eb054#4.674/42.009/-99.610"></iframe>
 
