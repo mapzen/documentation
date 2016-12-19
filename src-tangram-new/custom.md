@@ -1,5 +1,4 @@
 <script>
-// document.domain = "mapzen.com"
 
 function elementIntersectsViewport (el) {
   var top = el.offsetTop;
@@ -23,7 +22,7 @@ function hide(el) {
             if (typeof iframe.contentWindow.scene != 'undefined') {
                 // make a new blob from the codemirror code
 
-                var blob = new Blob([JSON.stringify(iframe.contentWindow.scene.config, null, 2)], {type: "text/plain"});
+                var blob = new Blob([JSON.stringify(iframe.contentWindow.editor.getValue(), null, 2)], {type: "text/plain"});
                 // make an objectURL from the blob and save that to the parent div
                 el.setAttribute("code", window.URL.createObjectURL(blob));
                 console.log('saved', el.getAttribute("code"))
@@ -50,7 +49,7 @@ function show(el) {
 
             }
 
-            if (el.getAttribute("code") !='') {
+            if (el.getAttribute("code") !='' && el.getAttribute("code") !='null') {
                 // get source from the previously-saved blobURL
                 var code = el.getAttribute("code");
                 iframe.src = replaceUrlParam(el.getAttribute("source"), "scene", code);
