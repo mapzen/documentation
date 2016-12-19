@@ -80,11 +80,11 @@ setInterval( function() {
         if (elementIntersectsViewport(el) || (i == 0 && window.pageYOffset < 500)) {
             show(el);
             // show the next two iframes as well
-            // show(elements[i+1]);
-            // show(elements[i+2]);
+            show(elements[i+1]);
+            show(elements[i+2]);
             for (var j=0; j < elements.length; j++) {
-                // if (j != i && j != i+1 && j != i+2) {
-                if (j != i) {
+                // also keep showing the previous one
+                if (j != i && j != i-1) {
                     hide(elements[j]);
                 }
             }
