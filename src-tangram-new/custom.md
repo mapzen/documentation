@@ -1,5 +1,5 @@
 <script>
-// document.domain = "precog.mapzen.com"
+// document.domain = "mapzen.com"
 
 function elementIntersectsViewport (el) {
   var top = el.offsetTop;
@@ -109,7 +109,8 @@ Tangram draws map features using its built-in styles: `polygons`, `lines`, `poin
 
 Let's use one of the built-in style customization options, [`dash`](styles.md#dash), to draw some dashed lines. Add a datasource to your map with a [`source`](source.md) entry, then add some lines to your map - let's start with road features.
 
-<div class="demo-wrapper" id="demo0" code="" source="https://precog.mapzen.com/tangrams/tangram-play/blob2/embed/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom6.yaml#16.50417/40.78070/-73.96085"></div>
+<!-- <div class="demo-wrapper" id="demo0" code="" source="https://precog.mapzen.com/tangrams/tangram-play/36695453b02953bf94ca3fd37d255a9f047f7032/embed/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom6.yaml#16.50417/40.78070/-73.96085"></div> -->
+<div class="demo-wrapper" id="demo0" code="" source="https://precog.mapzen.com/tangrams/tangram-play/master/embed/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom6.yaml#16.50417/40.78070/-73.96085"></div>
 
 Note: in the examples in this tutorial, we are relying on a couple of similar shortcuts to set our _data layers_ and _draw styles_. Rather than give a custom name to each layer and set its data layer separately, like so:
 
@@ -152,7 +153,7 @@ layers:
 
 Now let's make a custom _draw style_, let's call it '_dashes' – the underscore is a handy way to remember which things we named ourselves. The `dash` parameter takes an array, which sets the length of the dashes and gaps.
 
-<div class="demo-wrapper" id="demo1" code="" source="https://precog.mapzen.com/tangrams/tangram-play/blob2/embed/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom7.yaml#16.50417/40.78070/-73.96085"></div>
+<div class="demo-wrapper" id="demo1" code="" source="https://mapzen.com/tangram/play/embed/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom7.yaml#16.50417/40.78070/-73.96085"></div>
 
 
 Note: in the examples in this tutorial, we are relying on a couple of similar shortcuts to set our _data layers_ and _draw styles_. Rather than give a custom name to each layer and set its data layer separately, like so:
@@ -196,5 +197,5 @@ layers:
 
 Now let's make a custom _draw style_, let's call it '_dashes' – the underscore is a handy way to remember which things we named ourselves. The `dash` parameter takes an array, which sets the length of the dashes and gaps.
 
-<div class="demo-wrapper" id="demo2" code="" source="https://precog.mapzen.com/tangrams/tangram-play/blob2/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom8.yaml#16.50417/40.78070/-73.96085"></div>
+<div class="demo-wrapper" id="demo2" code="" source="https://mapzen.com/tangram/play/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom8.yaml#16.50417/40.78070/-73.96085"></div>
 
