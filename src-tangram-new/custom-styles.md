@@ -99,60 +99,19 @@ setInterval( function() {
 }
 </style>
 
-Tangram draws map features using its [built-in _draw styles_](https://mapzen.com/documentation/tangram/Styles-Overview/): `polygons`, `lines`, `points`, `text`, and `raster`. Using the `styles` element, you can customize the behavior of these draw styles, either by using the many built-in customization features, or by making your own effects from scratch using [shaders](https://mapzen.com/documentation/tangram/shaders/).
+Mapzen has published a number of stylish yet functional [basemaps](https://mapzen.com/products/maps/), equally suitable for the home or office. They can be used as standalone Leaflet layers using [Mapzen.js](https://mapzen.com/documentation/mapzen-js/):
 
-This tutorial will explore three things you can make with custom styles: dashed lines, transparent polygons, and shader effects.
-
-[images]
-
-Note: in the examples in this tutorial, we are relying on a couple of similar shortcuts to set our _data layers_ and _draw styles_. Rather than give a custom name to each layer and set its data layer separately, like so:
-
-```yaml
-layers:
-    _my_roads:
-        data: { source: mapzen, layer: roads }
+```javascript
+var map = L.Mapzen.map('map', {
+  center: [40.74429, -73.99035],
+  zoom: 15,
+  scene: L.Mapzen.BasemapStyles.Refill
+})
 ```
 
-We're omitting the `layer` declaration, and simply naming our layer the name of the data layer we wish to draw:
-
-```
-layers:
-    roads:
-        data: { source: mapzen }
-```
-
-Similarly, rather than giving a custom name to each _draw group_ and specify its _draw style_ explicitly, like so:
-
-```yaml
-layers:
-    roads:
-        data: { source: mapzen }
-        draw:
-            _my_lines:
-                style: lines
-                width: 2px
-```
-
-We're omitting the `style` declaration, and simply naming our _draw group_ the name of the _draw style_ we wish to use:
-
-```
-layers:
-    roads:
-        data: { source: mapzen }
-        draw:
-            lines:
-                width: 2px
-```
-
-Of course these shortcuts only work if _data layers_ and _draw styles_ with those names exist in the data or in the `styles` block. (These shortcuts are documented at [Layer Name Shortcut](https://mapzen.com/documentation/tangram/Filters-Overview/#layer-name-shortcut) and [Using Styles](https://mapzen.com/documentation/tangram/Styles-Overview.md#using-styles)]).
-
-## Dashed lines with built-in `dash` options
-
-Let's use one of the built-in style customization options, [`dash`](https://mapzen.com/documentation/tangram/styles#dash), to draw some dashed lines. Add a datasource to your map with a [`source`](https://mapzen.com/documentation/tangram/source) entry, then add some lines to your map - let's start with road features.
+Or, you can put your own data on top of them inside of a [Tangram](https://mapzen.com/products/tangram/) scene file with the `import` feature:
 
 <div class="demo-wrapper" id="demo0" code="" source="https://precog.mapzen.com/tangrams/tangram-play/master/embed/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom1.yaml#16.50417/40.78070/-73.96085"></div>
-
-
 
 Now let's make a custom _draw style_ called "_dashes" (it could be anything, and the underscore isn't required, but it's a handy way to remember which things we named ourselves). The `dash` parameter takes an array, which sets the length of the dashes and gaps.
 
@@ -174,7 +133,7 @@ You can also apply an `outline`:
 
 <div class="demo-wrapper" id="demo5" code="" source="https://precog.mapzen.com/tangrams/tangram-play/master/embed/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom5.yaml#16.50417/40.78070/-73.96085"></div>
 
-## Transparency with blend modes
+## Transparency with Blend Modes
 
 Now let's add transparency to a polygons layer, using another custom styling option, [`blend`](https://mapzen.com/documentation/tangram/styles/#blend).
 
@@ -196,7 +155,7 @@ It doesn't look transparent! That's because the building layer's color value is 
 
 Experiment with different RGB and alpha values above!
 
-## Shader effects with custom draw styles
+## Shader Effects
 
 Custom shaders are also achieved through custom `styles`, using the [`shaders`](https://mapzen.com/documentation/tangram/shaders/#shaders) block. Starting with the buildings layer again, add a new entry to the `styles` block named "_custom":
 
@@ -217,3 +176,5 @@ And when `animated: true` is added to the style, you can make effects based on t
 Experiment with different `color` values to see the way the shader's `color` and the draw layer's `color` interact.
 
 For more about internal variables available in shaders, see [Built-ins, defaults, and presets](shaders.md#built-ins-defaults-and-presets).
+
+Questions? Comments? Drop us a line [on GitHub](http://github.com/tangrams/tangram/issues), [on Twitter](http://twitter.com/tangramjs), or [via email](mailto:tangram@mapzen.com).
