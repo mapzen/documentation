@@ -17,7 +17,7 @@ pages:
   - Tutorials:
     - 'Make a Tangram map': 'intro-tutorial.md'
     - 'Cartographic design': 'cartography.md'
-    - 'Editing a basemap': 'basemap.md'
+    - 'Editing a basemap': 'editing-basemaps.md'
     - 'Custom Styles': 'custom-styles.md'
     - 'Terrain maps': 'terrain.md'
   - 'Gallery': 'gallery.md'
