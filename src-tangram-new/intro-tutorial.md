@@ -53,6 +53,42 @@ setInterval( function() {
 #demo-wrapper {
     margin-bottom: 1em;
 }
+
+.split-example {
+    margin-left: calc(50% - 50vw);
+    width: 100vw;
+    height: 500px;
+}
+.split-example .panel {
+    width: 50%;
+    float: left;
+    padding: 0 15px;
+    overflow: hidden;
+    position: relative;
+}
+.split-example .title {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    color: white;
+    padding-left: 20px;
+}
+.split-example pre {
+    margin: auto;
+    height: 500px;
+    width: 105%;
+    overflow: scroll;
+}
+.split-example pre code {
+    height: auto;
+    padding: 35px 35px 35px 10px;
+}
+.split-example iframe {
+    width: 100%;
+    height: 500px;
+    margin: auto;
+}
+
 </style>
 
 # Make a map in Tangram
