@@ -53,42 +53,6 @@ setInterval( function() {
 #demo-wrapper {
     margin-bottom: 1em;
 }
-
-.split-example {
-    margin-left: calc(50% - 50vw);
-    width: 100vw;
-    height: 500px;
-}
-.split-example .panel {
-    width: 50%;
-    float: left;
-    padding: 0 15px;
-    overflow: hidden;
-    position: relative;
-}
-.split-example .title {
-    position: absolute;
-    background: rgba(0, 0, 0, 0.2);
-    width: 100%;
-    color: white;
-    padding-left: 20px;
-}
-.split-example pre {
-    margin: auto;
-    height: 500px;
-    width: 105%;
-    overflow: scroll;
-}
-.split-example pre code {
-    height: auto;
-    padding: 35px 35px 35px 10px;
-}
-.split-example iframe {
-    width: 100%;
-    height: 500px;
-    margin: auto;
-}
-
 </style>
 
 # Make a map in Tangram
@@ -100,90 +64,6 @@ This tutorial uses [Tangram Play](), an in-browser text editor for Tangram. You 
 To complete this tutorial, you need a [browser that supports WebGL](https://get.webgl.org/). You will need to maintain an Internet connection while you are working so you can access the map source data, which is being streamed from Mapzen's servers. It should take you about an hour to complete the exercise and you'll create a map that looks like this:
 
 <iframe class="demo-wrapper" src="https://mapzen.com/tangram/play/?scene=https%3A%2F%2Fapi.github.com%2Fgists%2F93976e340b0fa3ece1d0e443c64f35be#3.43/33.51/-101.81"></iframe>
-
-<div class="split-example">
-  <div class="panel left-panel">
-    <div class="title">scene.yaml</div>
-    <pre><code class="language-yaml" data-lang="yaml">
-    sources:
-      mapzen:
-          type: TopoJSON
-          url: https://tile.mapzen.com/mapzen/vector/v1/all/{z}/{x}/{y}.topojson
-    layers:
-      _landLayer:
-          data:
-              source: mapzen
-              layer: earth
-          draw:
-              polygons:
-                  order: 0
-                  color: [0.443, 0.439, 0.431, 1.00]
-      _waterLayer:
-          data:
-              source: mapzen
-              layer: water
-          draw:
-              polygons:
-                  order: 2
-                  color: [0.322, 0.396, 0.416, 0.32]
-      _boundariesLayer:
-          data:
-              source: mapzen
-              layer: boundaries
-          _countryBorders:
-              filter: { kind_detail: "2"  }
-              draw:
-                  lines:
-                      order: 1
-                      color: [0.965, 0.953, 0.953, 1.00]
-                      width: [[2,1.5px],[5,2.5px]]
-                      cap: round
-          _stateBorders:
-              filter: { kind_detail: "4" }
-              draw:
-                  lines:
-                      order: 1
-                      color: [0.745, 0.722, 0.714, 1.00]
-                      width: 1px
-      _roadsLayer:
-          data:
-              source: mapzen
-              layer: roads
-          draw:
-              lines:
-                  order: 3
-                  color: [0.667, 0.643, 0.627, 1.00]
-                  width: 1px
-                  cap: round
-      _buildingsLayer:
-          data:
-              source: mapzen
-              layer: buildings
-          draw:
-              polygons:
-                  order: 4
-                  color: [0.290, 0.278, 0.278, 1.00]
-      _countryName:
-          data:
-              source: mapzen
-              layer: places
-          filter: { kind: country, population: { min: 30000000 } }
-          draw:
-              text:
-                  text_source: function() { return feature["name:en"] || feature["name"]; }
-                  font:
-                      size: 14px
-                      fill: [0.788, 0.694, 0.380, 1.00]
-                  order: 5
-
-    </code></pre>
-  </div>
-  <div class="panel right-panel">
-      <iframe scrolling="no" src="https://s3.amazonaws.com/mapzen-assets/images/geology-map/demo_red_polygons.html">
-        Your browser doesn't support iframe, <a href="https://s3.amazonaws.com/mapzen-assets/images/geology-map/demo_red_polygons.html" target="_blank">click here to see demo</a>
-      </iframe>
-  </div>
-</div>
 
 ## Getting used to YAML
 
@@ -282,7 +162,7 @@ After these boundaries layer, the map is shaping up to be a nice reference map a
 
 ### Styling at high zoom levels
 
-Adding more
+Now that the low zoom levels have some basic detail, we should add some details that get added in at higher zooms like roads and buildings. 
 
 
 <iframe class="demo-wrapper" src="https://mapzen.com/tangram/play/?scene=https%3A%2F%2Fapi.github.com%2Fgists%2F03bc906e0ca2d5fe42750064ff0ae44d#15.2117/43.0724/-89.4038"></iframe>
