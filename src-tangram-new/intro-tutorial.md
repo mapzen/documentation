@@ -27,9 +27,7 @@ function show(el) {
         iframe.src = el.getAttribute("source");
     }
 }
-
 // check visibility every half-second, hide off-screen demos to go easy on the GPU
-
 setInterval( function() {
     var elements = document.getElementsByClassName("demo-wrapper");
     for (var i=0; i < elements.length; i++) {
@@ -87,7 +85,7 @@ sources:
 
 Declaring a source is the first step in creating a Tangram map. In order to start seeing a map in the preview panes, we need to add filtering or styling rules. Let's do that!
 
-### Adding land and water
+## Style features in Tangram
 
 To have features appear on the map, use the `layers` block to create a new layer, define the data to use and how it should be styled. To design the first basic layers of the map, water and land, two new layers have to be created. Create a `layer` block and name `_landLayer` (In this tutorial, layer names start with an underscore). The next step is to define the data source to use and what specific layer from the data to style. The data source declared in the previous step is named `mapzen`, so the source should also match that in the `data` block. To choose which layer we want to use, look at the [vector tiles documentation](https://mapzen.com/documentation/vector-tiles/layers/) to select the correct layer, in this case `earth` is the layer to style land.
 
@@ -162,8 +160,40 @@ After these boundaries layer, the map is shaping up to be a nice reference map a
 
 ### Styling at high zoom levels
 
-Now that the low zoom levels have some basic detail, we should add some details that get added in at higher zooms like roads and buildings. 
+Now that the low zoom levels have some basic detail, we should add some details that get added in at higher zooms like roads and buildings.
 
+#### Roads layer
+
+
+
+```yaml
+_roadsLayer:
+        data:
+            source: mapzen
+            layer: roads
+        draw:
+            lines:
+                order: 3
+                color: [0.667, 0.643, 0.627, 1.00]
+                width: 1px
+                cap: round
+```
+
+
+#### Buildings Layer
+
+
+
+```yaml
+_buildingsLayer:
+        data:
+            source: mapzen
+            layer: buildings
+        draw:
+            polygons:
+                order: 4
+                color: [0.290, 0.278, 0.278, 1.00]
+```
 
 <iframe class="demo-wrapper" src="https://mapzen.com/tangram/play/?scene=https%3A%2F%2Fapi.github.com%2Fgists%2F03bc906e0ca2d5fe42750064ff0ae44d#15.2117/43.0724/-89.4038"></iframe>
 
@@ -171,4 +201,4 @@ Now that the low zoom levels have some basic detail, we should add some details 
 ### Label that map!
 <iframe class="demo-wrapper" src="https://mapzen.com/tangram/play/?scene=https%3A%2F%2Fapi.github.com%2Fgists%2F1f900ad4209ba2aa4e2585b7876c74f0#3.30/31.79/-27.79"></iframe>
 
-### Publishing the map
+## Publishing the map
