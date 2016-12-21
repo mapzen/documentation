@@ -122,7 +122,9 @@ var map = L.Mapzen.map('map', {
 Or, you can put your own data on top of them inside of a [Tangram](https://mapzen.com/products/tangram/) scene file with the `import` feature:
 
 <div class="demo-wrap">
-<div class="demo" id="demo0" code="" source="https://precog.mapzen.com/tangrams/tangram-play/master/embed/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/editing-basemaps1.yaml#5/38.720/-79.717"></div><span class="caption">[Open in Play ▶️](http://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/editing-basemaps1.yaml#5/38.720/-79.717)</span></div>
+    <div class="demo" id="demo0" code="" source="https://precog.mapzen.com/tangrams/tangram-play/master/embed/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/editing-basemaps1.yaml#5/38.720/-79.717"></div>
+    <span class="caption"><a href="http://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/editing-basemaps1.yaml#5/38.720/-79.717">( Open in Play ▶ )️</a></span>
+</div>
 
 But what do you do if you want to customize the house style itself? This is a bit trickier, and involves a bit of detective work.
 
@@ -132,7 +134,10 @@ First, you must know which features you wish to modify. The broader the class of
 
 Before we start pulling apart a house style, let's start with a simpler example to see the basic method to override a style. Here's a very basic Tangram scene file:
 
-<div class="demo" id="demo1" code="" source="https://precog.mapzen.com/tangrams/tangram-play/master/embed/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/simple-basemap.yaml#11.8002/41.3381/69.2698"></div>
+<div class="demo-wrap">
+    <div class="demo" id="demo1" code="" source="https://precog.mapzen.com/tangrams/tangram-play/master/embed/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/simple-basemap.yaml#11.8002/41.3381/69.2698"></div>
+    <span class="caption"><a href="http://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/simple-basemap.yaml#11.8002/41.3381/69.2698">( Open in Play ▶ )️</a></span>
+</div>
 
 We've saved this scene file to the Tangram documentation repo, so it can be imported as a base style in a Tangram scene file, like so:
 
@@ -144,7 +149,10 @@ Then, to modify it, identify the parameter you want to change, and then re-decla
 
 In this case, we'll change the `color` of the `major_road` sublayer. We don't need to include any of the other parameters in that layer, unless we want to change them – they already exist in the imported style, and will still take effect. Simple enough!
 
-<div class="demo" id="demo3" code="" source="https://precog.mapzen.com/tangrams/tangram-play/master/embed/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/editing-basemaps3.yaml#11.8002/41.3381/69.2698"></div>
+<div class="demo-wrap">
+    <div class="demo" id="demo3" code="" source="https://precog.mapzen.com/tangrams/tangram-play/master/embed/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/editing-basemaps3.yaml#11.8002/41.3381/69.2698"></div>
+    <span class="caption"><a href="https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/editing-basemaps3.yaml#11.8002/41.3381/69.2698">( Open in Play ▶ )️</a></span>
+</div>
 
 ## Customizing a House Style
 
@@ -167,17 +175,17 @@ Copy the entire "roads" layer into an editor somewhere – it could be Tangram P
 
 Now, we want to delete any branch which doesn't end with a `lines: color:` – so all of the `filter` declarations, and `width` declaration, even the `outline` declarations: all of those and their descendants can be deleted.
 
-The block below has the lines to be deleted commented out:
+So this block:
 
 ```yaml
 minor_road:
-#    filter: { kind: minor_road }
+    filter: { kind: minor_road }
     draw:
         lines:
             color: [[12, global.minor_road1], [17, global.minor_road2]]
-#            width: [[12, 1.0px], [14, 1.5px], [15, 3px], [16, 5m]]
-#            outline:
-#                width: [[12, 0px], [14, .5px], [17, 1px]]
+            width: [[12, 1.0px], [14, 1.5px], [15, 3px], [16, 5m]]
+            outline:
+                width: [[12, 0px], [14, .5px], [17, 1px]]
 ```
 
 Would become this:
@@ -204,7 +212,10 @@ Here's an example scene file: https://github.com/tangrams/tangram-docs/blob/gh-p
 
 And here's what it looks like:
 
-<div class="demo" id="demo4" code="" source="https://precog.mapzen.com/tangrams/tangram-play/master/embed/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/editing-basemaps4.yaml#11.8002/41.3381/69.2698"></div>
+<div class="demo-wrap">
+    <div class="demo" id="demo4" code="" source="https://precog.mapzen.com/tangrams/tangram-play/master/embed/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/editing-basemaps4.yaml#11.8002/41.3381/69.2698"></div>
+    <span class="caption"><a href="https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/editing-basemaps4.yaml#11.8002/41.3381/69.2698">( Open in Play ▶ )️</a></span>
+</div>
 
 Congratulations! Those are the basics of customizing an imported scene file. In fact there's no advanced technique, that's it.
 
