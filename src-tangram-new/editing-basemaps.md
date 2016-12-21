@@ -160,21 +160,21 @@ roads:
             ...
 ```
 
-Copy the entire "roads" layer into an editor somewhere – it could be Tangram Play, or the text editor of your choice. Tangram Play has a handy "select similar" feature – control-D will find the next instance of the selected text and add to the selection, allowing you to edit in multiple places at once, which comes in handy for the next step.
+Copy the entire "roads" layer into an editor somewhere – it could be Tangram Play, or the text editor of your choice. Tangram Play has a "select similar" feature, accessed by pressing `control-D`, which will find the next instance of the selected text and add to the selection. This allows you to edit in multiple places at once, which comes in handy for the next step.
 
 Now, we want to delete any branch which doesn't end with a `lines: color:` – so all of the `filter` declarations, and `width` declaration, even the `outline` declarations: all of those and their descendants can be deleted.
 
-So this block:
+The block below has the lines to be deleted commented out:
 
 ```yaml
 minor_road:
-    filter: { kind: minor_road } ######################################## delete
+#    filter: { kind: minor_road }
     draw:
         lines:
             color: [[12, global.minor_road1], [17, global.minor_road2]]
-            width: [[12, 1.0px], [14, 1.5px], [15, 3px], [16, 5m]] ###### delete
-            outline: #################################################### delete
-                width: [[12, 0px], [14, .5px], [17, 1px]] ############### delete
+#            width: [[12, 1.0px], [14, 1.5px], [15, 3px], [16, 5m]]
+#            outline:
+#                width: [[12, 0px], [14, .5px], [17, 1px]]
 ```
 
 Would become this:
