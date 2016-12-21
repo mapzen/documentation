@@ -160,11 +160,15 @@ After these boundaries layer, the map is shaping up to be a nice reference map a
 
 ### Styling at high zoom levels
 
-Now that the low zoom levels have some basic detail, we should add some details that get added in at higher zooms like roads and buildings.
+Now that the low zoom levels have some basic detail, we should add some details that get added in at higher zooms like roads and buildings. Time to create two additional layers for this map, `_roadsLayer` and `_buildingsLayer`, following on previous draw styles of lines and polygons. You can further filter the roads and building layers as desired, as taught in the previous section.
 
 #### Roads layer
 
+The `roads` layer in Mapzen vector tiles starts at zoom 5 with highways and increases detail with higher zoom levels. These features should be styled as lines. Set the data `layer` to 'roads' and create a draw style that uses the `lines` style and add the desired color and width, with the order set to be be 3, the top layer so far. With increasing zoom levels and added detail, it makes sense to increase the widths of roads with zoom level. Unlike in previous uses of the line style where a constant value was used for width, [stops]() can be used to dynamically change the road layer's width at varying zoom levels.
 
+Stops are 2-dimensional arrays that can replace a constant value in Tangram, to add a subtle transition to a feature and make sure features have the correct prominence at every zoom level. Stops always follow the format of [[zoom, value],[zoom2, value2]] with as many items in the array as desired. The default unit of the value is always `meters`. In between the zoom levels, the values are interpolated linearly for stops using width. Outside of the range specified by the stops, the values are capped by the highest and lowest values in the range.
+
+For this roads layer, the first pair will be `[5,1px]` which means that at zoom 5 the road's width will be 1 pixel. Add in 3 additional stops to see how they work with the roads layer. The code bank below shows an example set of stops that will increase the width slightly.
 
 ```yaml
 _roadsLayer:
@@ -175,14 +179,12 @@ _roadsLayer:
             lines:
                 order: 3
                 color: [0.667, 0.643, 0.627, 1.00]
-                width: 1px
-                cap: round
+                width: [[5,1px],[8,1.5px],[11,2px],[15,2.5px]]
 ```
-
 
 #### Buildings Layer
 
-
+While roads are a very useful feature to have displayed at high zoom levels on a map, adding building footprints can make a map at high zooms appear more realistic. Create a new layer called `_buildingsLayer` that uses the `buildings` layer from the vector tiles source. These can be drawn in a polygon draw style with a set color and an order of 4 to add to the top layer.
 
 ```yaml
 _buildingsLayer:
@@ -195,10 +197,38 @@ _buildingsLayer:
                 color: [0.290, 0.278, 0.278, 1.00]
 ```
 
+By adding the roads and building layers, you should have a map that transitions from low to high zooms with added detail. Here's what the map should look like now:
+
 <iframe class="demo-wrapper" src="https://mapzen.com/tangram/play/?scene=https%3A%2F%2Fapi.github.com%2Fgists%2F03bc906e0ca2d5fe42750064ff0ae44d#15.2117/43.0724/-89.4038"></iframe>
 
 
 ### Label that map!
+
+At this point, the map should have details added from low to high zoom levels with almost everything needed on a map, except for one important feature: labels. The last layer on the map will be called `_countryName` and use the text layer included in the vector tiles source called [places](). This layer in the tiles has the labels for administrative features like countries, regions, cities and more. Based on the layer's name, a filter needs to be added to only show country names.
+
+Once the the new layer has created with the `places` layer specified, the filter function should be added. This follows the same formula as the boundaries filter used earlier. The filter should specify country labels only, so use `kind: country`.
+
+The `places` layer also has population included in the data properties. This can be used to further filter this layer, adding different styling rules for different sized features. Add a comma after the first rule and create another filter for populations where the minimum is 30 million. This statement should be in curly brackets as it has an additional filter, with the correct filter as `population: { min: 30000000 }`.
+
+Now that the filter rule has been created, it's time to use the draw block and a new type of draw style: [text](). Like `lines` and `polygons` the text draw style has required elements besides order. Inside the `text` draw style, the `font` element has to be declared with at least one [font parameter]() in it. To make the country labels stand out, add a `fill` that contrasts against the dark map. Set the order to be drawn on top and the `_countryName` layer is done.
+
+```yaml
+_countryName:
+       data:
+           source: mapzen
+           layer: places
+       filter: { kind: country, population: { min: 30000000 } }
+       draw:
+           text:
+               font:
+                   fill: [0.788, 0.694, 0.380, 1.00]
+               order: 5
+```
+
+With this layer being finished, the map is finally complete! You should have a map that has administrative borders, country labels, roads, and buildings.
+
 <iframe class="demo-wrapper" src="https://mapzen.com/tangram/play/?scene=https%3A%2F%2Fapi.github.com%2Fgists%2F1f900ad4209ba2aa4e2585b7876c74f0#3.30/31.79/-27.79"></iframe>
 
-## Publishing the map
+###Summary and next steps
+
+You just created your first map with Tangram! Build on what you have learned here to make the exact map you want. Take a look at the [vector tiles]() documentation to see what other layers can be added or add more customization to your map through style parameters in [Tangram](). Learn how to [publish your Tangram map]() and share your map on the web or add more complexity to this map with more [tutorials]().

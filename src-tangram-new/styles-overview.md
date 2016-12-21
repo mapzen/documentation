@@ -1,6 +1,236 @@
-Styles go here
+# Styles Overview
 
-# draw
+*This is an overview of Tangram's styling system. For a complete technical reference of the custom style-creation system, see [styles](styles.md), and for all the technical details of drawing with those styles, see [draw](draw.md).*
+
+Tangram currently has five built-in _draw styles_: `polygons`, `lines`, `points`, `text`, and `raster`. Each draw style displays data in a different way, and some of them require specific data types and properties.
+
+Draw styles are referenced in two places in the scene file: when defining custom [styles](styles.md) and again in [draw](draw.md) groups.
+
+## draw styles
+
+#### `polygons`
+The `polygons` _draw style_ tessellates and extrudes vector shapes into 3D geometry. It requires polygonal data. See [`polygons`](#polygons-1).
+
+#### `lines`
+The `lines` _draw style_ can turn either polygonal or line data into lines. See [`lines`](#lines-1).
+
+#### `points`
+The `points` _draw style_ draws a filled circle at the location of the data point. It can work with point data, lines, or polygons. Points will "collide" with each other, with only the winner being drawn, determined by the [`priority`](draw.md#priority) draw parameter.
+
+Technically, this draw style creates a small quad, which is then colored with a default shader which draws a dot. This behavior can be overridden with either a custom shader or a texture.
+
+See [`points`](#points-1).
+
+#### `text`
+The `text` _draw style_ draws text labels at a given point. It can work with point, line, or polygon data. When used with lines, the label will be drawn along the line. When used with polygons, the label will be drawn at the polygon's centroid. Text labels will "collide" with each other, with only the winner being drawn, determined by the [`priority`](draw.md#priority) draw parameter.
+
+See [`text`](#text-1).
+
+#### `raster`
+The `raster` _draw style_ draws one tile-sized square per tile and paints it with the appropriate tile from a `Raster` data source. See [`raster`](#raster-1).
+
+## Using Styles
+
+These built-in _draw styles_ are used as the foundation for all custom styling in Tangram. When writing an inline style under a `layer`, they are referenced in _draw groups_, in one of two ways:
+
+A _draw group_ with a custom name may reference a _style_ by name with the `style` parameter:
+
+```yaml
+roads:
+    draw:
+        my_style:
+            style: polygons
+            color: blue
+```
+
+Or, if a _draw group_ is named for one of the _draw styles_, the `style` parameter may be omitted:
+
+```yaml
+roads:
+    draw:
+        polygons:
+            color: blue
+        lines:
+            color: red
+```
+
+By defining multiple _draw groups_ the same feature may be drawn using multiple styles simultaneously:
+
+```yaml
+roads:
+    draw:
+        polygons:
+            color: blue
+        lines:
+            color: red
+```
+
+When defining a custom style, the built-in _draw groups_ are explicitly referenced under the new style name with the `base` parameter:
+
+```yaml
+styles:
+    buildings:
+        base: polygons
+```
+
+In this way, custom styles may "extend" the behavior or the built-in _draw styles_.
+
+## polygons
+The *polygons* draw style requires a datasource containing coordinates connected by lines into a "closed" shape. If the lines of the polygon start and stop at different places, it is an "open" shape, and the `polygons` draw style can't use it. But if a sequence of lines connects back onto its own starting point, it is considered "closed", and can be extruded into a 3D shape.
+
+#### `polygons` parameters
+Styles which are extensions of the `polygons` draw style can take the following parameters:
+
+- `texcoords`
+- `animated`
+- `blend`
+- `materials` : see [materials](materials.md)
+- `shaders`: see [shaders](shaders.md)
+
+#### `polygons` draw group requirements
+[Draw groups](draw.md#draw-group) which use the `polygons` draw style must specify, at minimum, the following parameters in order to be drawn:
+
+- [color](draw.md#color)
+
+## lines
+The *lines* style requires a datasource containing connected coordinates. Thus it can accept either linear or polygonal input data. It draws a rectangle along each line segment, and can optionally draw special [`join`](draw.md#join) and [`cap`](draw.md#cap) styles.
+
+#### `lines` parameters
+Styles which are extensions of the `lines` draw style can take the following parameters:
+
+- `texcoords`
+- `animated`
+- `blend`
+- `materials` : see [materials](materials.md)
+- `shaders`: see [shaders](shaders.md)
+
+#### `lines` draw group requirements
+[Draw groups](draw.md#draw-group) which use the `lines` draw style must specify, at minimum, the following parameters in order to be drawn:
+
+- [color](draw.md#color)
+- [width](draw.md#width)
+
+## points
+The `points` draw style is used to draw dots or sprites at points of interest. It also builds a rectangle at a point, and can be colored in a variety of ways:
+
+- with a special shader designed to draw a circle
+- with a `texture`
+- with a `sprite` from a `texture`
+
+If the point is used to draw a dot, the size and color of this circle can be specified in the scene file with the `size` and `color` parameters.
+
+`points` and `text` have a special relationship, which is useful for creating custom labels and icons. They will also collide with each other – the "winner" is drawn and the "loser" is not, as determined by the [`priority`](draw.md#priority) draw parameter.
+
+#### `points` draw group requirements
+[Draw groups](draw.md#draw-group) which use the `points` draw style must specify, at minimum, the following parameters in order to be drawn:
+
+- [color](draw.md#color)
+- [size](draw.md#size)
+
+## text
+The `text` style is similar to the `sprites` style, in that it builds a rectangle at a point. However, instead of being colored with a custom texture, this style builds its own texture, containing text.
+
+The content of the text is based on the [`text_source`](draw.md#text-source) parameter. The style of the text is specified by the [`font`](draw.md#font-parameters) parameters.
+
+#### `text` parameters
+Styles which are extensions of the `text` style can take the following special parameters:
+
+- [`font`](draw.md#font-parameters): Sets font's typeface, style, size, color, and outline.
+- [`text_source`](draw.md#text_source): Determines label text, defaults to the feature's `name` property.
+- [`priority`](draw.md#priority): Sets the priority of the label relative to other labels and points/sprites.
+- [`align`](draw.md#align): Controls text alignment.
+- [`anchor`](draw.md#anchor): Controls text's relative positioning.
+- [`offset`](draw.md#offset): Controls text's position offset.
+- [`text_wrap`](draw.md#text_wrap): Sets number of characters before text wraps to multiple lines.
+- [`repeat_distance`](draw.md#repeat_distance): Sets the distance beyond which label text may repeat.
+- [`repeat_group`](draw.md#repeat_group): Optional grouping mechanism for fine-grained control over text repetition.
+- [`collide`](draw.md#collide): Sets whether label collides with other labels or points/sprites.
+- [`move_into_tile`](draw.md#move_into_tile): Increases number of labels that will display, by moving some to fit within tile bounds (JS-only)
+
+These parameters are described in the [draw](draw.md) entry.
+
+#### `text` draw group requirements
+[Draw groups](draw.md#draw-group) which use the `text` draw style must specify, at minimum, the following parameters in order to be drawn:
+
+- [font](draw.md#font)
+
+## `raster`
+The `raster` style renders [Raster data sources](sources.md#Raster), such as traditional raster tiles.
+
+Note that `Raster` sources can also be used by other styles, by "attaching" the sources to the styles with the [rasters](sources.md#rasters) parameter. See the [Rasters Overview](Raster-Overview.md).
+
+## style composition with `mix`
+
+The `mix` parameter copies the properties of the named style (or styles) to a new style. In this way, new styles can be "forked" from existing styles.
+
+This allows styles to be made which vary only slightly from each other, without having to manually duplicate everything else in the style code. It also allows a style to act as a "base" or "foundation" style, to be mixed into others.
+
+The following example creates a style named "geo2" by copying all the properties of the "geo" style:
+
+```yaml
+styles:
+    geo:
+        base: polygon
+    geo2:
+        mix: geo
+```
+
+These two styles are identical.
+
+#### modifications
+
+Once you've mixed in a style, you can add or modify any properties you like.
+
+For example, you could create a new style called styleB that "inherits from" an existing style called styleA, and then adds custom shader blocks:
+
+```yaml
+styleB:
+   mix: styleA
+   shaders:
+      blocks:
+         color: ...
+```
+
+Or you could mix in an existing style, but disable lighting:
+
+```yaml
+fancy-but-no-lighting:
+    base: fancy
+    lighting: false
+```
+
+You can even modify the mix'ed-in style's `base`. For example, if you have a polygon-based style with custom shader blocks that you want to apply to lines instead, you can create a line-based version like this:
+
+```yaml
+fancy-lines:
+    mix: fancy-polygons
+    base: lines # change the base to lines
+```
+
+Note that in this case, any properties which were special to the `polygons` draw style will still be copied, but will be ignored by the renderer.
+
+
+#### combinations
+
+The `mix` parameter can also be given a list of styles – this makes it possible to mix multiple effects together, e.g. to apply both the windows and halftone effects simultaneously:
+
+```yaml
+halftone-windows:
+    mix: [ windows, halftone ]
+```
+
+Styles in a list will be copied in the order listed – so if a property is common to multiple named styles, styles named last in the list will take precedence.
+
+```yaml
+styles:
+    custom:
+        mix: [styleA, styleB, styleC]
+```
+
+Here, styleC's properties will override any it has in common with the other listed styles.
+
+
+## Draw
 
 *This is the technical documentation for Tangram's styling system. For a conceptual overview of the styling system, see the [Styles Overview](Styles-Overview.md).*
 
@@ -190,9 +420,9 @@ _CSS colors_ include the following color formats, as specified in the [W3C's Cas
 - _HSL colors_: `hsl(180, 100%, 100%)`
 - _HSL colors_**: `hsla(180, 100%, 100%, 50%)`
 
-`color` is not required if a style is used which specifies a shader with a _color block_ or a _filter block_. See [shaders: blocks](shaders.md#blocks).
+*`color` is not required if a style is used which specifies a shader with a _color block_ or a _filter block_. See [shaders: blocks](shaders.md#blocks).*
 
-Currently, alpha values are ignored in the `add` and `multiply` `blend` modes, and respected in the `inlay` and `overlay` modes. For more on this, see the [`blend`](styles.md#blend) entry.
+**Currently, alpha values are ignored in the `add` and `multiply` `blend` modes, and respected in the `inlay` and `overlay` modes. For more on this, see the [`blend`](styles.md#blend) entry.**
 
 
 ```yaml
@@ -704,7 +934,7 @@ draw:
         visible: false
 ```
 
-This parameter is also available for `text` blocks attached to a `points` layer:
+This paramater is also available for `text` blocks attached to a `points` layer:
 
 ```yaml
 draw:
@@ -764,87 +994,6 @@ Applies to `polygons` and `lines`. Sets the z-offset of a feature.
 draw:
     lines:
         z: 50
-```
-
-# fonts
-
-*This is the technical documentation for Tangram's `fonts` block. For an overview of Tangram's labeling capabilities, see the [`text`](Styles-Overview.md#text-1) entry in the [Styles Overview](Styles-Overview.md).*
-
-##`fonts`
-The `fonts` element is an optional top-level element in the [scene file](Scene-file.md). It has only one kind of sub-element: a named _font definition_.
-
-A _font definition_ can define a font in one of two ways: through _external CSS_, or with any number of `font face definitions`.
-
-####`external`
-[[JS-only](https://github.com/tangrams/tangram)] With this method of defining a font, the value of the _font definition_ is set to "`external`":
-
-```
-fonts:
-    Poiret One: external
-```
-
-This requires that a corresponding CSS declaration be made in the HTML:
-
-`<link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>`
-
-Tangram will identify the externally-loaded typeface by name and make it available for use in _text_ labels.
-
-####font face definition
-A _font face definition_ may be used as the value of the _font definition_. This is an object with a number of possible parameters:
-
-  - `weight`: defaults to `normal`, may also be `bold` or a numeric font weight, e.g. `500`
-  - `style`: defaults to `normal`, may also be `italic`
-  - `url`: the URL to load the font from. For maximum browser compatibility, fonts should be either `ttf`, `otf`, or `woff` (`woff2` is [currently supported](http://caniuse.com/#search=woff2) in Chrome and Firefox but not other major browsers). As with other scene resources, `url` is relative to the scene file.
-
-An example of a _font face definition_ with a single parameter, _url_:
-
-```yaml
-fonts:
-    Montserrat:
-        url: https://fonts.gstatic.com/s/montserrat/v7/zhcz-_WihjSQC0oHJ9TCYL3hpw3pgy2gAi-Ip7WPMi0.woff
-```
-
-Example of a _font face definition_ with multiple parameters:
-
-```
-fonts:
-    Open Sans:
-        - weight: 300
-          url: fonts/open sans-300normal.ttf
-        - weight: 300
-          style: italic
-          url: fonts/open sans-300italic.ttf
-        - weight: 400
-          url: fonts/open sans-400normal.ttf
-        - weight: 400
-          style: italic
-          url: fonts/open sans-400italic.ttf
-        - weight: 600
-          url: fonts/open sans-600normal.ttf
-        - weight: 600
-          style: italic
-          url: fonts/open sans-600italic.ttf
-        - weight: 700
-          url: fonts/open sans-700normal.ttf
-        - weight: 700
-          style: italic
-          url: fonts/open sans-700italic.ttf
-        - weight: 800
-          url: fonts/open sans-800normal.ttf
-        - weight: 800
-          style: italic
-          url: fonts/open sans-800italic.ttf
-```
-
-When _font definitions_ are declared in this way, the fonts from the associated _urls_ will be used when the appropriate combination of _font-family_, _style_, and _weight_ parameters are specified in a style's [`font`](draw.md#font) block:
-
-```yaml
-draw:
-    text:
-        font:
-            family: Open Sans
-            style: italic
-            weight: 300
 ```
 
 ## `font` parameters
@@ -927,8 +1076,324 @@ Optional _string_, one of `capitalize`, `uppercase`, or `lowercase`. Sets a text
 ####`weight`
 Optional _string_ or _number_. Strings may be one of `lighter`, `normal`, `bold`, or `bolder`; integers may be any CSS-style font weight from `100`-`900`. Default is `normal`.
 
+## Fonts
 
-# materials
+*This is the technical documentation for Tangram's `fonts` block. For an overview of Tangram's labeling capabilities, see the [`text`](Styles-Overview.md#text-1) entry in the [Styles Overview](Styles-Overview.md).*
+
+##`fonts`
+The `fonts` element is an optional top-level element in the [scene file](Scene-file.md). It has only one kind of sub-element: a named _font definition_.
+
+A _font definition_ can define a font in one of two ways: through _external CSS_, or with any number of `font face definitions`.
+
+####`external`
+[[JS-only](https://github.com/tangrams/tangram)] With this method of defining a font, the value of the _font definition_ is set to "`external`":
+
+```
+fonts:
+    Poiret One: external
+```
+
+This requires that a corresponding CSS declaration be made in the HTML:
+
+`<link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>`
+
+Tangram will identify the externally-loaded typeface by name and make it available for use in _text_ labels.
+
+####font face definition
+A _font face definition_ may be used as the value of the _font definition_. This is an object with a number of possible parameters:
+
+  - `weight`: defaults to `normal`, may also be `bold` or a numeric font weight, e.g. `500`
+  - `style`: defaults to `normal`, may also be `italic`
+  - `url`: the URL to load the font from. For maximum browser compatibility, fonts should be either `ttf`, `otf`, or `woff` (`woff2` is [currently supported](http://caniuse.com/#search=woff2) in Chrome and Firefox but not other major browsers). As with other scene resources, `url` is relative to the scene file.
+
+An example of a _font face definition_ with a single parameter, _url_:
+
+```yaml
+fonts:
+    Montserrat:
+        url: https://fonts.gstatic.com/s/montserrat/v7/zhcz-_WihjSQC0oHJ9TCYL3hpw3pgy2gAi-Ip7WPMi0.woff
+```
+
+Example of a _font face definition_ with multiple parameters:
+
+```
+fonts:
+    Open Sans:
+        - weight: 300
+          url: fonts/open sans-300normal.ttf
+        - weight: 300
+          style: italic
+          url: fonts/open sans-300italic.ttf
+        - weight: 400
+          url: fonts/open sans-400normal.ttf
+        - weight: 400
+          style: italic
+          url: fonts/open sans-400italic.ttf
+        - weight: 600
+          url: fonts/open sans-600normal.ttf
+        - weight: 600
+          style: italic
+          url: fonts/open sans-600italic.ttf
+        - weight: 700
+          url: fonts/open sans-700normal.ttf
+        - weight: 700
+          style: italic
+          url: fonts/open sans-700italic.ttf
+        - weight: 800
+          url: fonts/open sans-800normal.ttf
+        - weight: 800
+          style: italic
+          url: fonts/open sans-800italic.ttf
+```
+
+When _font definitions_ are declared in this way, the fonts from the associated _urls_ will be used when the appropriate combination of _font-family_, _style_, and _weight_ parameters are specified in a style's [`font`](draw.md#font) block:
+
+```yaml
+draw:
+    text:
+        font:
+            family: Open Sans
+            style: italic
+            weight: 300
+```
+
+For more, see [font parameters](draw.md#font-parameters).
+
+## Textures
+
+*This is the technical documentation for Tangram's `textures` block. For an overview of the ways textures can be used by Tangram, see the [Materials Overview](Materials-Overview.md).*
+
+##`textures`
+The `textures` element is an optional top-level element in the [scene file](Scene-file.md). It has only one kind of sub-element: a named _texture object_.
+
+```yaml
+textures:
+    pois:
+        url: demos/images/marker.png
+    brick:
+        url: demos/images/brick.jpg
+```
+
+When a texture is defined in the top-level `textures` element, it is declared with a _texture name_ which allows it to be referenced by name in other `texture` parameters, including in `styles` and `materials` definitions:
+
+```yaml
+# here we define and name the texture
+textures:
+    pois:
+        url: images/poi_icons_18@2x.png
+
+# here we reference the above texture
+styles:
+    pois-style:
+        base: points
+        texture: pois
+```
+
+Outside of the `textures` element, a new texture may be defined inline by providing a URL instead of a texture name:
+```yaml
+# defining a new texture inline
+styles:
+    rock:
+        base: polygons
+        material:
+            normal:
+                texture: images/rock.jpg
+                mapping: uv
+```
+These textures will use the default [parameters](#texture parameters) described below. To use custom parameters for a texture, you must declare it in the `textures` element.
+
+If a texture is provided for a _lines_ style, the texture is repeated across the line, with the width of the texture matching the width of the line, and the texture y coordinate scaled to match the aspect ratio of the image (its height over its width).
+
+## texture parameters
+
+####`url`
+Optional _string_, though either `url` or [`element`](#element) is required ([JS-only](https://github.com/tangrams/tangram). This element is required for [ES](https://github.com/tangrams/tangram-es)). Specifies the path to a texture source file. No default.
+
+URLs can be absolute or relative.
+
+```yaml
+textures:
+    ghost:
+        url: demos/images/ghost.png
+```
+
+```yaml
+textures:
+    ghost:
+        url: http://ghostimages.com/ghost.png
+```
+
+#### `element`
+[[JS-only](https://github.com/tangrams/tangram)] Optional _string_, though either [`url`](#url) or `element` is required. Specifies a CSS element selector string. No default.
+
+This parameter allows an HTML element to be used as the source of the texture, as identified by a CSS selector string.
+
+For example, this canvas element:
+
+`<canvas class='awesome-texture'>`
+
+Can be referenced as:
+
+```yaml
+textures:
+    awesome-texture:
+        element: .awesome-texture
+```
+
+You can also reference an element by `id`, but the use of `#` in CSS means the YAML must be quoted so it's not interpreted as a YAML comment:
+
+`<canvas id='texture-id'>`
+
+```yaml
+textures:
+    awesome-texture:
+        element: '#texture-id' # no comment!
+```
+
+#### `filtering`
+Optional _string_, one of `linear`, `nearest`, or `mipmap`. Defaults to `linear`.
+
+Sets the filtering mode for the texture, which determines quality at various zoom levels.
+
+```yaml
+textures:
+    ghost:
+        url: demos/images/ghost.png
+        filtering: mipmap
+```
+
+#### `sprites`
+Optional parameter. Defines the start of a `sprites` block.
+
+`sprites` take only one kind of parameter: the _sprite name_. Any number of sprites may be defined.
+
+For using sprites in _draw styles_, see [`sprite`](draw.md#sprite).
+
+#### sprite name
+Required _string_. Can be anything. No default.
+
+Defines an area of a texture to be used as an individual sprite, as _[x origin, y origin, width, height]_ in pixels.
+
+```yaml
+textures:
+    pois:
+        url: demos/images/poi_icons_32.png
+        filtering: mipmap
+        sprites:
+            airport: [0, 0, 32, 32]
+            restaurant: [0, 777, 32, 32]
+            cafe: [0, 814, 32, 32]
+            museum: [0, 518, 32, 32]
+```
+
+For using sprites in _draw styles_, see [`sprite`](draw.md#sprite).
+
+## Materials
+
+*This is the conceptual overview for Tangram's materials system. For technical reference, see the [Materials page](materials.md).*
+
+Materials describe how an object responds to illumination by [lights](Lights-Overview.md). In the [OpenGL lighting model](https://en.wikipedia.org/wiki/Blinn%E2%80%93Phong_shading_model), lights can emit ***diffuse***, ***ambient***, or ***specular*** light components (often known as "terms"), and the properties of a material describe how (or whether) an object will reflect those terms.
+
+The most common material properties control the reflection of those three terms, and share their names:
+
+### `diffuse`
+This is the primary color of an object as it would appear in pure white light, in the absence of highlights. By default: `diffuse: white`.
+
+```yaml
+lights:
+    light1:
+        type: point
+        position: [1,1,2.4]
+        ambient: white
+        diffuse: white
+        specular: white
+
+styles:
+    stylename:
+        material:
+            diffuse: 0.5
+            ambient: 0
+            specular: 0
+```
+![](images/diffuse-surface.png)
+![](images/diffuse.png)
+
+### `ambient`
+This is is the color of the object in the presence of ambient light. By default, the ambient color will be the same as the `diffuse` value, unless otherwise specified.
+
+```yaml
+lights:
+    light1:
+        type: point
+        position: [1,1,2.4]
+        ambient: white
+        diffuse: white
+        specular: white
+
+styles:
+    stylename:
+        material:
+            emission: 0
+            ambient: 0.5
+            diffuse: 0
+            specular: 0
+            shininess: 0.2
+```
+![](images/ambient-surface.png)
+![](images/ambient-sphere.png)
+
+
+###`specular`
+In our lighting model, "specular" is the "highlight" color of a material. It can be thought of as the reflection of the light source itself on the surface of an object. The `shininess` parameter controls the size of the highlight: larger numbers produce smaller highlights, which makes the object appear shinier.
+
+By default, these are set to `specular: 0` and `shininess: 0.2`
+
+```yaml
+lights:
+    light1:
+        type: point
+        position: [1,1,2.4]
+        ambient: white
+        diffuse: white
+        specular: white
+
+styles:
+    stylename:
+        material:
+            diffuse: 0.0
+            ambient: 0
+            specular: 0.5
+        shininess: 2.0
+```
+![](images/specular-surface.png)
+![](images/specular.png)
+
+
+![](images/shininess.png)
+
+
+###`emission`
+When an `emission` color is set, the object will take on that color independent of any lights, including ambient, as though it is glowing (although it will not illuminate neighboring objects, as it is not a true light source). By default, it is set to `emission: 0`.
+
+```yaml
+lights:
+    light1:
+        type: point
+        position: [1,1,2.4]
+        ambient: 0
+        diffuse: 0
+        specular: 0
+
+styles:
+    stylename:
+        material:
+            emission: [.9,.9,.9]
+            ambient: 0
+            diffuse: 0.0
+```
+![](images/emission-surface.png)
+![](images/emission.png)
+
 *This is the technical documentation for Tangram’s materials. For a conceptual overview of the material system, see the [Materials Overview](Materials-Overview.md).*
 
 #### `material`
@@ -1068,109 +1533,6 @@ material:
 
 See also: [texture parameters](textures.md#texture-parameters).
 
-*This is the conceptual overview for Tangram's materials system. For technical reference, see the [Materials page](materials.md).*
-
-Materials describe how an object responds to illumination by [lights](Lights-Overview.md). In the [OpenGL lighting model](https://en.wikipedia.org/wiki/Blinn%E2%80%93Phong_shading_model), lights can emit ***diffuse***, ***ambient***, or ***specular*** light components (often known as "terms"), and the properties of a material describe how (or whether) an object will reflect those terms.
-
-The most common material properties control the reflection of those three terms, and share their names:
-
-###`diffuse`
-This is the primary color of an object as it would appear in pure white light, in the absence of highlights. By default: `diffuse: white`.
-
-```yaml
-lights:
-    light1:
-        type: point
-        position: [1,1,2.4]
-        ambient: white
-        diffuse: white
-        specular: white
-
-styles:
-    stylename:
-        material:
-            diffuse: 0.5
-            ambient: 0
-            specular: 0
-```
-![](images/diffuse-surface.png)
-![](images/diffuse.png)
-
-###`ambient`
-This is is the color of the object in the presence of ambient light. By default, the ambient color will be the same as the `diffuse` value, unless otherwise specified.
-
-```yaml
-lights:
-    light1:
-        type: point
-        position: [1,1,2.4]
-        ambient: white
-        diffuse: white
-        specular: white
-
-styles:
-    stylename:
-        material:
-            emission: 0
-            ambient: 0.5
-            diffuse: 0
-            specular: 0
-            shininess: 0.2
-```
-![](images/ambient-surface.png)
-![](images/ambient-sphere.png)
-
-
-###`specular`
-In our lighting model, "specular" is the "highlight" color of a material. It can be thought of as the reflection of the light source itself on the surface of an object. The `shininess` parameter controls the size of the highlight: larger numbers produce smaller highlights, which makes the object appear shinier.
-
-By default, these are set to `specular: 0` and `shininess: 0.2`
-
-```yaml
-lights:
-    light1:
-        type: point
-        position: [1,1,2.4]
-        ambient: white
-        diffuse: white
-        specular: white
-
-styles:
-    stylename:
-        material:
-            diffuse: 0.0
-            ambient: 0
-            specular: 0.5
-        shininess: 2.0
-```
-![](images/specular-surface.png)
-![](images/specular.png)
-
-
-![](images/shininess.png)
-
-
-###`emission`
-When an `emission` color is set, the object will take on that color independent of any lights, including ambient, as though it is glowing (although it will not illuminate neighboring objects, as it is not a true light source). By default, it is set to `emission: 0`.
-
-```yaml
-lights:
-    light1:
-        type: point
-        position: [1,1,2.4]
-        ambient: 0
-        diffuse: 0
-        specular: 0
-
-styles:
-    stylename:
-        material:
-            emission: [.9,.9,.9]
-            ambient: 0
-            diffuse: 0.0
-```
-![](images/emission-surface.png)
-![](images/emission.png)
 
 
 ## Textures
@@ -1345,16 +1707,14 @@ shaders:
             normal += snoise(vec3(worldPosition().xy*0.08,u_time*.5))*0.02;
 ```
 
-[ ![](images/dynamic-normals.png) ](http://tangrams.github.io/tangram-docs/?material/dynamic-normals.yaml)
-
-
-# textures
+![images/dynamic-normals.png ](http://tangrams.github.io/tangram-docs/?material/dynamic-normals.yaml)
 
 
 ## Rasters
+
 Tangram allows raster data sources to be loaded, displayed, and combined with vector data sources in a variety of ways, including with real-time image manipulation.
 
-## Basic Raster Display
+### Basic Raster Display
 
 The simplest way to use raster data is to display it directly, without any combinations or modifications.
 
@@ -1382,7 +1742,7 @@ This allows the raster layer to be used as a basemap, with other vector data dra
 
 ![tangram-wed mar 30 2016 16-51-48 gmt-0400 edt](https://cloud.githubusercontent.com/assets/16733/14157176/e57c96dc-f697-11e5-9c6d-c1a47f8e4d1d.png)
 
-## Tinting
+### Tinting
 
 The `raster` style can take a `color` parameter, which will be multiplied by the raster's color as a tint. This parameter's value defaults to "white" and accepts all standard `color` values including JavaScript functions.
 
@@ -1400,7 +1760,7 @@ layers:
 
 ![tangram-wed mar 30 2016 16-56-31 gmt-0400 edt](https://cloud.githubusercontent.com/assets/16733/14157295/64e6683a-f698-11e5-9171-75adc131243f.png)
 
-### Geometry Masking
+#### Geometry Masking
 
 The `raster` style can also be applied to a non-`Raster` source that has a raster sampler attached, using the [`rasters`](sources.md#rasters) parameter. In this case, the Stamen terrain is attached to and masked against the OSM landuse polygons:
 
@@ -1428,7 +1788,7 @@ This technique can be used for combining shaded relief with landcover classifica
 
 ![tangram-fri apr 01 2016 12-35-12 gmt-0400 edt](https://cloud.githubusercontent.com/assets/16733/14213503/4b24aa5a-f806-11e5-8bbc-ba3d61f33bed.png)
 
-### Custom Styles
+#### Custom Styles
 
 The `raster` style is derived from the `polygons` rendering style, and provides the same shader blocks. This allows for custom raster styles to be defined with `base: raster`. For example, this style converts raster tiles to grayscale:
 
@@ -1460,7 +1820,7 @@ layers:
 
 ![tangram-wed mar 30 2016 16-59-03 gmt-0400 edt](https://cloud.githubusercontent.com/assets/16733/14157381/b90ec916-f698-11e5-8697-5e99a66faf23.png)
 
-## Advanced Raster Styles
+### Advanced Raster Styles
 
 Styles can enable raster samplers with the `raster` parameter, which can have the following values:
 
@@ -1468,7 +1828,7 @@ Styles can enable raster samplers with the `raster` parameter, which can have th
 - `normal`: To support terrain shading, there is also built-in support for applying a raster source as a normal map.
 - `custom`: This value is for cases where you want access to raster samplers, but the data is not formatted for direct use as a color or normal. Mapzen's RGB-packed elevation tiles are an example; the raw data must be decoded and re-interpreted for usable results, and is not intended for display.
 
-### Normal Maps
+#### Normal Maps
 
 This example loads pre-computed "normal" tiles as a normal map, which can be lit by standard Tangram lights:
 
@@ -1503,13 +1863,13 @@ layers:
 
 ![tangram-wed mar 30 2016 21-39-44 gmt-0400 edt](https://cloud.githubusercontent.com/assets/16733/14163150/7bff64d6-f6c0-11e5-9c22-555d8075b8dd.png)
 
-###Direct Sampler Access
+#### Direct Sampler Access
 
 When a style declares `raster: custom`, any shaders defined in that style can directly sample the raster for custom effects.
 
 This example uses the [`sampleRaster()`](styles.md#raster) method to unpack Mapzen elevation tiles for color display:
 
-```yaml
+```
 styles:
     elevation:
         base: polygons
@@ -1528,9 +1888,9 @@ styles:
 
 ![tangram-wed mar 30 2016 21-59-05 gmt-0400 edt](https://cloud.githubusercontent.com/assets/16733/14163364/a9429a10-f6c2-11e5-81c7-c0561e5919be.png)
 
-### Multiple Raster Samplers
+#### Multiple Raster Samplers
 
-This example shows the use of two raster samplers in the same rendering style. First, sources are defined for Stamen's Watercolor and Toner tiles. To make them both available in the same rendering `style`, the watercolor source is attached as the second sampler for the toner source.
+This example shows the use of two raster samplers in the same rendering style. First, sources are defined for Stamens Watercolor and Toner tiles. To make them both available in the same rendering `style`, the watercolor source is attached as the second sampler for the toner source.
 
 A simple `style` that does a 50/50 blend of the two samplers is then defined. Finally, the toner source is drawn with the blend style.
 

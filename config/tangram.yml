@@ -26,7 +26,7 @@ pages:
 mz:redirects:
   'tangram-overview': '.'
   'filters-overview': 'data'
-  'raster-overview': 'styles-overview#rasters'
+  'raster-overview': 'styles-overview#rasters' 
   'lights-overview': 'map-view#lights'
   'cameras-overview': 'map-view#cameras'
   'materials-overview': 'styles-overview#materials'
