@@ -94,8 +94,10 @@ setInterval( function() {
 }, 500);
 </script>
 <style>
-.demo {
+.demo-wrap {
     margin: 1em 0;
+}
+.demo {
     width: 100%;
     height: 350px;
 }
@@ -119,7 +121,8 @@ var map = L.Mapzen.map('map', {
 
 Or, you can put your own data on top of them inside of a [Tangram](https://mapzen.com/products/tangram/) scene file with the `import` feature:
 
-<div class="demo" id="demo0" code="" source="https://precog.mapzen.com/tangrams/tangram-play/master/embed/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/editing-basemaps1.yaml#5/38.720/-79.717"><span class="caption">[Open in Play ▶️](http://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/editing-basemaps1.yaml#5/38.720/-79.717)</span></div>
+<div class="demo-wrap">
+<div class="demo" id="demo0" code="" source="https://precog.mapzen.com/tangrams/tangram-play/master/embed/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/editing-basemaps1.yaml#5/38.720/-79.717"></div><span class="caption">[Open in Play ▶️](http://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/editing-basemaps1.yaml#5/38.720/-79.717)</span></div>
 
 But what do you do if you want to customize the house style itself? This is a bit trickier, and involves a bit of detective work.
 
