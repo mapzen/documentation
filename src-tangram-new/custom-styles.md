@@ -40,9 +40,9 @@ function show(el) {
 
             // create a new iframe
             iframe = document.createElement("iframe");
+            iframe.classList.add("demoframe");
             var source = '';
             el.appendChild(iframe);
-            iframe.style.height = "100%";
 
             // get the source if it has been set
             if (typeof el.getAttribute("source") != 'undefined') {
@@ -94,8 +94,16 @@ setInterval( function() {
 }, 500);
 </script>
 <style>
-.demo-wrapper {
-    margin-bottom: 1em;
+.demo {
+    margin: 1em 0;
+    width: 100%;
+    height: 350px;
+}
+.demoframe {
+    border: 0px;
+    margin: 0;
+    height: 100%;
+    width: 100%;
 }
 </style>
 
