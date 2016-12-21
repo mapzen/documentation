@@ -62,15 +62,16 @@ function show(el) {
     }
 }
 
-function replaceUrlParam(url, paramName, paramValue){
-    // from http://stackoverflow.com/questions/7171099/how-to-replace-url-parameter-with-javascript-jquery
-    if(paramValue == null)
-        paramValue = '';
-    var pattern = new RegExp('\\b('+paramName+'=).*?(&|$)')
-    if(url.search(pattern)>=0){
-        return url.replace(pattern,'$1' + paramValue + '$2');
+function replaceUrlParam(url, param, value){
+    var parser = document.createElement('a');
+    parser.href = url;
+
+    if (value == null) value = '';
+    var pattern = new RegExp('\\b('+param+'=).*?(&|$)')
+    if (parser.search.search(pattern)>=0){
+        return parser.search.replace(pattern,'$1' + value + '$2');
     }
-    return url + (url.indexOf('?')>0 ? '&' : '?') + paramName + '=' + paramValue 
+    return parser.href;
 }
 
 
