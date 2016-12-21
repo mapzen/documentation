@@ -119,7 +119,7 @@ var map = L.Mapzen.map('map', {
 
 Or, you can put your own data on top of them inside of a [Tangram](https://mapzen.com/products/tangram/) scene file with the `import` feature:
 
-<div class="demo" id="demo0" code="" source="https://precog.mapzen.com/tangrams/tangram-play/master/embed/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/editing-basemaps1.yaml#11.8002/41.3381/69.2698"></div>
+<div class="demo" id="demo0" code="" source="https://precog.mapzen.com/tangrams/tangram-play/master/embed/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/editing-basemaps1.yaml#5/38.686/-80.420"></div>[Open in Play ▶️](http://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/editing-basemaps1.yaml#5/38.686/-80.420)
 
 But what do you do if you want to customize the house style itself? This is a bit trickier, and involves a bit of detective work.
 
