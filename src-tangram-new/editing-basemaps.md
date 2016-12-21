@@ -74,7 +74,7 @@ function replaceUrlParam(url, paramName, paramValue){
 
 // check visibility every half-second, hide off-screen demos to go easy on the GPU
 setInterval( function() {
-    var elements = document.getElementsByClassName("demo-wrapper");
+    var elements = document.getElementsByClassName("demo");
     for (var i=0; i < elements.length; i++) {
         el = elements[i];
         if (elementIntersectsViewport(el) || (i == 0 && window.pageYOffset < 500)) {
@@ -94,26 +94,24 @@ setInterval( function() {
 }, 500);
 </script>
 <style>
-.demo-wrapper {
-    margin-bottom: 1em;
+.demo {
+    /*margin-bottom: 1em;*/
 }
 </style>
 
-Tangram draws map features using its [built-in _draw styles_](https://mapzen.com/documentation/tangram/Styles-Overview/): `polygons`, `lines`, `points`, `text`, and `raster`. Using the `styles` element, you can customize the behavior of these draw styles, either by using the many built-in customization features, or by making your own effects from scratch using [shaders](https://mapzen.com/documentation/tangram/shaders/).
+Mapzen has published a number of stylish yet functional [basemaps](https://mapzen.com/products/maps/), equally suitable for the home or office. They can be used as standalone Leaflet layers using [Mapzen.js](https://mapzen.com/documentation/mapzen-js/):
 
-This tutorial will explore three things you can make with custom styles: dashed lines, transparent polygons, and shader effects.
+```javascript
+var map = L.Mapzen.map('map', {
+  center: [40.74429, -73.99035],
+  zoom: 15,
+  scene: L.Mapzen.BasemapStyles.Refill
+})
+```
 
-[images]
+Or, you can put your own data on top of them inside of a [Tangram](https://mapzen.com/products/tangram/) scene file with the `import` feature:
 
-Note: in the examples in this tutorial, we are relying on the [layer name shortcut](https://mapzen.com/documentation/tangram/Filters-Overview/#layer-name-shortcut) and [style name shortcut](https://mapzen.com/documentation/tangram/Styles-Overview.md#using-styles).
-
-## Dashed Lines
-
-Let's use one of the built-in style customization options, [`dash`](https://mapzen.com/documentation/tangram/styles#dash), to draw some dashed lines. Add a datasource to your map with a [`source`](https://mapzen.com/documentation/tangram/source) entry, then add some lines to your map - let's start with road features.
-
-Note: This tutorial uses Tangram's interactive scenefile editor, [Tangram Play](https://mapzen.com/tangram/play/) – type in the embedded editors to see real-time updates!
-
-<div class="demo-wrapper" id="demo0" code="" source="https://precog.mapzen.com/tangrams/tangram-play/master/embed/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/editing-basemaps1.yaml#11.8002/41.3381/69.2698"></div>
+<div class="demo" id="demo0" code="" source="https://precog.mapzen.com/tangrams/tangram-play/master/embed/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/editing-basemaps1.yaml#11.8002/41.3381/69.2698"></div>
 
 But what do you do if you want to customize the house style itself? This is a bit trickier, and involves a bit of detective work.
 
@@ -123,7 +121,7 @@ First, you must know which features you wish to modify. The broader the class of
 
 Before we start pulling apart a house style, let's start with a simpler example to see the basic method to override a style. Here's a very basic Tangram scene file:
 
-<div class="demo-wrapper" id="demo1" code="" source="https://precog.mapzen.com/tangrams/tangram-play/master/embed/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/simple-basemap.yaml#11.8002/41.3381/69.2698"></div>
+<div class="demo" id="demo1" code="" source="https://precog.mapzen.com/tangrams/tangram-play/master/embed/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/simple-basemap.yaml#11.8002/41.3381/69.2698"></div>
 
 We've saved this scene file to the Tangram documentation repo, so it can be imported as a base style in a Tangram scene file, like so:
 
@@ -135,7 +133,7 @@ Then, to modify it, identify the parameter you want to change, and then re-decla
 
 In this case, we'll change the `color` of the `major_road` sublayer. We don't need to include any of the other parameters in that layer, unless we want to change them – they already exist in the imported style, and will still take effect. Simple enough!
 
-<div class="demo-wrapper" id="demo3" code="" source="https://precog.mapzen.com/tangrams/tangram-play/master/embed/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/editing-basemaps3.yaml#11.8002/41.3381/69.2698"></div>
+<div class="demo" id="demo3" code="" source="https://precog.mapzen.com/tangrams/tangram-play/master/embed/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/editing-basemaps3.yaml#11.8002/41.3381/69.2698"></div>
 
 ## Customizing a House Style
 
@@ -195,7 +193,7 @@ Here's an example scene file: https://github.com/tangrams/tangram-docs/blob/gh-p
 
 And here's what it looks like:
 
-<div class="demo-wrapper" id="demo4" code="" source="https://precog.mapzen.com/tangrams/tangram-play/master/embed/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/editing-basemaps4.yaml#11.8002/41.3381/69.2698"></div>
+<div class="demo" id="demo4" code="" source="https://precog.mapzen.com/tangrams/tangram-play/master/embed/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/editing-basemaps4.yaml#11.8002/41.3381/69.2698"></div>
 
 Congratulations! Those are the basics of customizing an imported scene file. In fact there's no advanced technique, that's it.
 
