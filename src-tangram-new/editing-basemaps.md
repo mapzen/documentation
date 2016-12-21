@@ -123,7 +123,7 @@ Or, you can put your own data on top of them inside of a [Tangram](https://mapze
 
 <div class="demo-wrap">
     <div class="demo" id="demo0" code="" source="https://precog.mapzen.com/tangrams/tangram-play/master/embed/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/editing-basemaps1.yaml#5/38.720/-79.717"></div>
-    <span class="caption"><a href="http://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/editing-basemaps1.yaml#5/38.720/-79.717">( Open in Play ▶ )️</a></span>
+    <span class="caption"><a target="_blank" href="http://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/editing-basemaps1.yaml#5/38.720/-79.717">( Open in Play ▶ )️</a></span>
 </div>
 
 But what do you do if you want to customize the house style itself? This is a bit trickier, and involves a bit of detective work.
@@ -136,7 +136,7 @@ Before we start pulling apart a house style, let's start with a simpler example 
 
 <div class="demo-wrap">
     <div class="demo" id="demo1" code="" source="https://precog.mapzen.com/tangrams/tangram-play/master/embed/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/simple-basemap.yaml#11.8002/41.3381/69.2698"></div>
-    <span class="caption"><a href="http://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/simple-basemap.yaml#11.8002/41.3381/69.2698">( Open in Play ▶ )️</a></span>
+    <span class="caption"><a target="_blank" href="http://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/simple-basemap.yaml#11.8002/41.3381/69.2698">( Open in Play ▶ )️</a></span>
 </div>
 
 We've saved this scene file to the Tangram documentation repo, so it can be imported as a base style in a Tangram scene file, like so:
@@ -151,7 +151,7 @@ In this case, we'll change the `color` of the `major_road` sublayer. We don't ne
 
 <div class="demo-wrap">
     <div class="demo" id="demo3" code="" source="https://precog.mapzen.com/tangrams/tangram-play/master/embed/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/editing-basemaps3.yaml#11.8002/41.3381/69.2698"></div>
-    <span class="caption"><a href="https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/editing-basemaps3.yaml#11.8002/41.3381/69.2698">( Open in Play ▶ )️</a></span>
+    <span class="caption"><a target="_blank" href="http://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/editing-basemaps3.yaml#11.8002/41.3381/69.2698">( Open in Play ▶ )️</a></span>
 </div>
 
 ## Customizing a House Style
@@ -214,7 +214,7 @@ And here's what it looks like:
 
 <div class="demo-wrap">
     <div class="demo" id="demo4" code="" source="https://precog.mapzen.com/tangrams/tangram-play/master/embed/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/editing-basemaps4.yaml#11.8002/41.3381/69.2698"></div>
-    <span class="caption"><a href="https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/editing-basemaps4.yaml#11.8002/41.3381/69.2698">( Open in Play ▶ )️</a></span>
+    <span class="caption"><a target="_blank" href="http://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/editing-basemaps4.yaml#11.8002/41.3381/69.2698">( Open in Play ▶ )️</a></span>
 </div>
 
 Congratulations! Those are the basics of customizing an imported scene file. In fact there's no advanced technique, that's it.
