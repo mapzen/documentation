@@ -69,7 +69,7 @@ function replaceUrlParam(url, param, value){
     if (value == null) value = '';
     var pattern = new RegExp('\\b('+param+'=).*?(&|$)')
     if (parser.search.search(pattern)>=0){
-        return parser.search.replace(pattern,'$1' + value + '$2');
+        parser.search = parser.search.replace(pattern,'$1' + value + '$2');
     }
     return parser.href;
 }
