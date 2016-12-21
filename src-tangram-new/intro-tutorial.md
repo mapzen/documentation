@@ -120,7 +120,7 @@ _waterLayer:
 
 Here's what your map should look like:
 
-<iframe class="demo-wrapper" src="https://mapzen.com/tangram/play/?scene=https%3A%2F%2Fapi.github.com%2Fgists%2F4a1bbb65a2616469d4946ea623db4324#3.43/33.51/-101.81"></iframe>
+<iframe class="demo-wrapper" src="https://mapzen.com/tangram/play/?scene=https%3A%2F%2Fapi.github.com%2Fgists%2F736784cbfee8b5a482c9af944d7b0363#3.00/31.81/-27.80"></iframe>
 
 
 ### Filtering boundary types
@@ -156,7 +156,7 @@ _boundariesLayer:
 
 After these boundaries layer, the map is shaping up to be a nice reference map at low zooms:
 
-<iframe class="demo-wrapper" src="https://mapzen.com/tangram/play/?scene=https%3A%2F%2Fapi.github.com%2Fgists%2F048a7c4152405cd538f57083177eb054#4.674/42.009/-99.610"></iframe>
+<iframe class="demo-wrapper" src="https://mapzen.com/tangram/play/?scene=https%3A%2F%2Fapi.github.com%2Fgists%2F5dff3ef94e95f1600893cc3c61930795#4.00/30.95/-72.49"></iframe>
 
 ### Styling at high zoom levels
 
@@ -199,7 +199,7 @@ _buildingsLayer:
 
 By adding the roads and building layers, you should have a map that transitions from low to high zooms with added detail. Here's what the map should look like now:
 
-<iframe class="demo-wrapper" src="https://mapzen.com/tangram/play/?scene=https%3A%2F%2Fapi.github.com%2Fgists%2F03bc906e0ca2d5fe42750064ff0ae44d#15.2117/43.0724/-89.4038"></iframe>
+<iframe class="demo-wrapper" src="https://mapzen.com/tangram/play/?scene=https%3A%2F%2Fapi.github.com%2Fgists%2F671f61101f2d570b80d1893dcfc49761#16.00/40.73009/-73.98415"></iframe>
 
 
 ### Label that map!
@@ -227,7 +227,7 @@ _countryName:
 
 With this layer being finished, the map is finally complete! You should have a map that has administrative borders, country labels, roads, and buildings.
 
-<iframe class="demo-wrapper" src="https://mapzen.com/tangram/play/?scene=https%3A%2F%2Fapi.github.com%2Fgists%2F1f900ad4209ba2aa4e2585b7876c74f0#3.30/31.79/-27.79"></iframe>
+<iframe class="demo-wrapper" src="https://mapzen.com/tangram/play/?scene=https%3A%2F%2Fapi.github.com%2Fgists%2F7b9c01258e0a96c0f7171bd0e5060e5d#3.38/37.35/-85.26"></iframe>
 
 ###Summary and next steps
 
