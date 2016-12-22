@@ -227,6 +227,6 @@ And when `animated: true` is added to the style, you can make effects based on t
 
 Experiment with different `color` values to see the way the shader's `color` and the draw layer's `color` interact.
 
-For more about internal variables available in shaders, see [Built-ins, defaults, and presets](shaders.md#built-ins-defaults-and-presets).
+For more about internal variables available in shaders, see [Built-ins, defaults, and presets](https://mapzen.com/documentation/tangram/shaders/#built-ins-defaults-and-presets).
 
 Questions? Comments? Drop us a line [on GitHub](http://github.com/tangrams/tangram/issues), [on Twitter](http://twitter.com/tangramjs), or [via email](mailto:tangram@mapzen.com).
