@@ -107,6 +107,9 @@ setInterval( function() {
     height: 100%;
     width: 100%;
 }
+.CodeMirror {
+    width: 100%;
+}
 </style>
 
 Tangram draws map features using its [built-in _draw styles_](https://mapzen.com/documentation/tangram/Styles-Overview/): `polygons`, `lines`, `points`, `text`, and `raster`. Using the `styles` element, you can customize the behavior of these draw styles, either by using the many built-in customization features, or by making your own effects from scratch using [shaders](https://mapzen.com/documentation/tangram/shaders/).

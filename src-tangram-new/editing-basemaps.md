@@ -107,6 +107,9 @@ setInterval( function() {
     height: 100%;
     width: 100%;
 }
+.CodeMirror {
+    width: 100%;
+}
 </style>
 
 Mapzen has published a number of stylish yet functional [basemaps](https://mapzen.com/products/maps/), equally suitable for the home or office. They can be used as standalone Leaflet layers using [Mapzen.js](https://mapzen.com/documentation/mapzen-js/):
