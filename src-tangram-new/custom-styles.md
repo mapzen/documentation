@@ -23,7 +23,6 @@ function hide(el) {
                 var blob = new Blob([iframe.contentWindow.editor.getValue()], {type: "text/plain"});
                 // make an objectURL from the blob and save that to the parent div
                 el.setAttribute("code", window.URL.createObjectURL(blob));
-                // console.log('saved', el.getAttribute("code"))
                 el.removeChild(iframe);
             }
         }
@@ -100,7 +99,7 @@ setInterval( function() {
 }
 .demo {
     width: 100%;
-    height: 350px;
+    height: 400px;
 }
 .demoframe {
     border: 0px;

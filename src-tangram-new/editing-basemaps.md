@@ -23,7 +23,6 @@ function hide(el) {
                 var blob = new Blob([iframe.contentWindow.editor.getValue()], {type: "text/plain"});
                 // make an objectURL from the blob and save that to the parent div
                 el.setAttribute("code", window.URL.createObjectURL(blob));
-                // console.log('saved', el.getAttribute("code"))
                 el.removeChild(iframe);
             }
         }
@@ -51,9 +50,7 @@ function show(el) {
                 if (el.getAttribute("code") !='' && el.getAttribute("code") !='null') {
                     // get source from the previously-saved blobURL
                     var code = el.getAttribute("code");
-                    console.log('before:', el.getAttribute("source"))
                     iframe.src = replaceUrlParam(el.getAttribute("source"), "scene", code);
-                    console.log('before:', iframe.src)
                 } else {
                     iframe.src = source;
                 }
@@ -102,7 +99,7 @@ setInterval( function() {
 }
 .demo {
     width: 100%;
-    height: 350px;
+    height: 400;
 }
 .demoframe {
     border: 0px;
