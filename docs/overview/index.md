@@ -52,7 +52,7 @@ Mapzen uses server caching to deliver commonly requested content as quickly as p
 
 - 100 queries per second (about six map views per second)
 - 2,000 queries per minute (about 133 views per minute)
-- 100,000 queries per day (about 6,6000 views per day)
+- 100,000 queries per day (about 6,600 views per day)
 
 When viewing a map, you commonly use about 15 tiles at a time. The number of map views is an attempt to translate the query rate limits into practical expectations in an app.
 
