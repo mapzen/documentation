@@ -7,7 +7,7 @@ pages:
   - 'Get started': 'get-started.md'
   - 'API reference': 'api-reference.md'
   - 'Basemap styles': 'styles.md'
-#  - 'Icons': 'icons.md'
+  - 'Icons': 'icons.md'
   - 'Versioning': 'versioning.md'
 
 extra:
