@@ -1,5 +1,6 @@
 site_name: Cartography
-docs_dir: src-cartography
+#docs_dir: src-cartography
+docs_dir: src-cartography-new
 site_dir: dist-cartography
 
 pages:
