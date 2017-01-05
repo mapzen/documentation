@@ -49,8 +49,45 @@ function show(el) {
                     // get source from the previously-saved blobURL
                     var code = el.getAttribute("code");
                     iframe.onload = function() {
+                        // console.log('iframe:', iframe)
                         if (iframe.contentWindow != 'undefined') {
                             var editor = iframe.contentWindow.editor;
+                            var map = iframe.contentWindow.map;
+                            // console.log('map?', map)
+                            var Tangram = iframe.contentWindow.Tangram;
+                            // console.log('Tangram?', Tangram)
+                            if (iframe.contentWindow.scene) {
+                                // console.log('scene?', iframe.contentWindow.scene);
+                                setScene();
+                            }
+                            else {
+                                // wait for scene to be defined
+                                // http://fokkezb.nl/2016/04/14/how-to-wait-for-a-javascript-variable-to-be-defined/
+                              Object.defineProperty(iframe.contentWindow, 'scene', {
+                                configurable: true,
+                                enumerable: true,
+                                writeable: true,
+                                get: function() {
+                                  return this._scene;
+                                },
+                                set: function(val) {
+                                    // console.log('set?')
+                                  this._scene = val;
+                                  setScene();
+                                }
+                              });
+                            }
+
+                            var loadevent = {view_complete: setValue}
+                            function setValue() {
+                                iframe.contentWindow.scene.unsubscribe(loadevent);
+                                // set it again when tangram finishes drawing, just in case
+                                editor.doc.setValue(code);
+                            }
+                            function setScene() {
+                                iframe.contentWindow.scene.subscribe(loadevent);
+                            }
+
                             var event = 'viewportChange';
                             var trigger = function() {
                                 // turn off immediately
