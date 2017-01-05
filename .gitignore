@@ -9,7 +9,7 @@ dist-*-mkdocs.yml
 .sass-cache/
 theme/fragments/
 !src-index/
-!src-tangram-new/
+!src-cartography-new/
 
 # Python
 *.pyc
