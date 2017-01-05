@@ -9,7 +9,7 @@ ANDROID = https://github.com/mapzen/android/archive/master.tar.gz
 IOS = https://github.com/mapzen/ios/archive/master.tar.gz
 MAPZENJS = https://mapzen.com/js/docs.tar.gz
 LIBPOSTAL = https://github.com/whosonfirst/go-whosonfirst-libpostal/archive/master.tar.gz
-CARTOGRAPHY = https://github.com/tangrams/cartography-docs/archive/master.tar.gz
+CARTOGRAPHY = https://github.com/tangrams/cartography-docs/archive/v1.0.1.tar.gz
 
 SHELL := /bin/bash # required for OSX
 PYTHONPATH := packages:$(PYTHONPATH)
@@ -90,7 +90,7 @@ src-libpostal:
 
 src-cartography:
 	mkdir src-cartography
-	curl -sL $(CARTOGRAPHY) | tar -zxv -C src-cartography --strip-components=1 cartography-docs-master
+	curl -sL $(CARTOGRAPHY) | tar -zxv -C src-cartography --strip-components=1 --exclude=README.md
 
 src-overview:
 	cp -r docs/overview src-overview
