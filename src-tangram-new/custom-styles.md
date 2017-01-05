@@ -32,9 +32,10 @@ function hide(el) {
         }
     }
 }
+
 function show(el) {
     if (typeof el != 'undefined') {
-        iframe = el.getElementsByTagName("iframe")[0];
+        var iframe = el.getElementsByTagName("iframe")[0];
         if (typeof iframe == "undefined") {
 
             // create a new iframe
@@ -50,27 +51,33 @@ function show(el) {
                 if (el.getAttribute("code") !='' && el.getAttribute("code") !='null') {
                     // get source from the previously-saved blobURL
                     var code = el.getAttribute("code");
-                    iframe.src = replaceUrlParam(el.getAttribute("source"), "scene", code);
-                } else {
-                    iframe.src = source;
+                    iframe.onload = function() {
+                        if (iframe.contentWindow != 'undefined') {
+                            var editor = iframe.contentWindow.editor;
+                            var event = 'viewportChange';
+                            var trigger = function() {
+                                // turn off immediately
+                                disable();
+                            };
+                            function disable() {
+                                // turn off event listener
+                                editor.off(event, trigger);
+                                // set the editor value to the modified code
+                                setTimeout(function() {
+                                    // use a setTimeout 0 to make this a separate entry in the browser's event queue, so it won't happen until the editor is ready
+                                    editor.doc.setValue(code);
+                                }, 0);
+                            }
+                            // set event listener to wait for the editor to draw
+                            editor.on(event, trigger);
+                        }
+                    }
                 }
+                iframe.src = source;
             }
         }
     }
 }
-
-function replaceUrlParam(url, param, value){
-    var parser = document.createElement('a');
-    parser.href = url;
-
-    if (value == null) value = '';
-    var pattern = new RegExp('\\b('+param+'=).*?(&|$)')
-    if (parser.search.search(pattern)>=0){
-        parser.search = parser.search.replace(pattern,'$1' + value + '$2');
-    }
-    return parser.href;
-}
-
 
 // check visibility every half-second, hide off-screen demos to go easy on the GPU
 setInterval( function() {
