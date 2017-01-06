@@ -85,6 +85,7 @@ function show(el) {
                                 editor.doc.setValue(code);
                             }
                             function setScene() {
+                                if (typeof iframe.contentWindow.scene == 'undefined') console.log('scene undefined, somehow')
                                 iframe.contentWindow.scene.subscribe(loadevent);
                             }
 
