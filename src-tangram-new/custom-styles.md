@@ -137,6 +137,9 @@ setInterval( function() {
 <style>
 .demo-wrap {
     margin: 1em 0;
+    background-image: url("http://tangrams.github.io/tangram-docs/tutorials/loading.gif");
+    background-position: center;
+    background-repeat: no-repeat;
 }
 .demo {
     width: 100%;
