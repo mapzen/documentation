@@ -82,7 +82,8 @@ src-ios:
 
 src-mapzen-js:
 	mkdir src-mapzen-js
-	curl -sL $(MAPZENJS) | tar -zxv -C src-mapzen-js --strip-components=1 docs
+	curl -sL $(MAPZENJS) -o $@.tgz --retry 2
+	tar -zxv -C src-mapzen-js --strip-components=1 -f $@.tgz docs
 
 src-libpostal:
 	mkdir src-libpostal
