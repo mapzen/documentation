@@ -57,7 +57,7 @@ setInterval( function() {
 
 [Tangram](index.md) is a 2D and 3D map renderer that allows you to make web maps with almost infinite possibilities. Tangram is built off of [WebGL](index.md#webgl) and uses a syntax style called [YAML](index.md#YAML) to control the map design with extremely fine detail, if desired. This step-by-step tutorial will walk you through making your first Tangram map.  
 
-This tutorial uses [Tangram Play](), an in-browser text editor for Tangram. You can also build Tangram maps in a [text editor running a Python web server]().
+This tutorial uses [Tangram Play](https://mapzen.com/tangram/play), an in-browser text editor for Tangram. You can also build Tangram maps in a [text editor running a Python web server]().
 
 To complete this tutorial, you need a [browser that supports WebGL](https://get.webgl.org/). You will need to maintain an Internet connection while you are working so you can access the map source data, which is being streamed from Mapzen's servers. It should take you about an hour to complete the exercise and you'll create a map that looks like this:
 
@@ -67,7 +67,7 @@ To complete this tutorial, you need a [browser that supports WebGL](https://get.
 
 Tangram is written in a syntax called [YAML](), which tends to be a little more friendly and easy to write in than [JSON](). YAML is reliant on indentations (any number of spaces or tabs is allowed, consistency is what's important). In a Tangram scene, there are a few required _blocks_ that define what is on the map.
 
-(maybe more on YAML?)
+**(maybe more on YAML?)**
 
 The three things needed to build a web map in Tangram are:
 - A defined data source (we'll be using [Mapzen vector tiles](https://mapzen.com/documentation/vector-tiles/), but you can add any [custom spatial data source]())
