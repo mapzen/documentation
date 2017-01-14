@@ -15,19 +15,18 @@ To complete this tutorial, you need a [browser that supports WebGL](https://get.
 
 ## Adding custom fonts and textures
 
-While Tangram offers several [web fonts]() included in the renderer, you can also add your own preferred typefaces using the `fonts` block. Tangram supports any common font format, including OTF, TTF, and WOFF. To import a font, create a block named `fonts` and add a layer underneath for the typeface you're importing to create a [font face definition](). In this case, [Lora](https://fonts.google.com/specimen/Lora) from Google Fonts. Name the layer `Lora` for the typeface style and add a URL to load the font. You might want to add multiple weights or styles of a font for different layers. This tutorial will need a medium weight version of Lora and an italic version. You can also add fonts through an [external CSS stylesheet, or store them in a folder]().
+While Tangram offers several [web fonts]() included in the renderer, you can also add your own preferred typefaces using the `fonts` block. Tangram supports any common font format, including OTF, TTF, and WOFF. To import a font, create a block named `fonts` and add a layer underneath for the typeface you're importing to create a [font face definition](). In this case, [Lora](https://fonts.google.com/specimen/Lora) from Google Fonts. Name the layer `Lora` for the typeface style and add a URL to load the font. You might want to add multiple weights or styles of a font for different layers. This tutorial will need a medium weight version of Lora and an italic version, so to specify the different options you can add the . You can also add fonts through an [external CSS stylesheet, or store them in a folder]().
 
 ```yaml
 fonts:
     Lora:
-        - weight: 700
+        - style: normal
           url: https://fonts.gstatic.com/s/lora/v9/mlTYdpdDwCepOR2s5kS2CwLUuEpTyoUstqEm5AMlJo4.woff2
-        - weight: 700
-           style: italic
+        - style: italic
            url: https://fonts.gstatic.com/s/lora/v9/_IxjUs2lbQSu0MyFEAfa7ZBw1xU1rKptJj_0jans920.woff2
 ```
 
-A common way to label a point feature like a city or point of interest is with an icon/sprite as a point with a label next to it. While there are several ways to [import icons]() in a Tangram scene, you will import the point icons using a [textures]() block.
+A common way to label a point feature like a city or point of interest is with an icon/sprite as a point with a label next to it. While there are several ways to [import icons]() in a Tangram scene, in this tutorial you will import the point icons using a [textures]() block. Just like the font block, name the layer and add the URL one indent level below. There are often different types of point icons used to distinct capitals from cities. Use the two URLs below to create two separate textures with the icons linked.
 
 ```yaml
 textures:
@@ -36,3 +35,5 @@ textures:
     capital:
         url: https://raw.githubusercontent.com/tangrams/cartography-docs/master/img/sprite/bubble-wrap-style/2x/capital-m.png
 ```
+
+## Styling basic layers 
