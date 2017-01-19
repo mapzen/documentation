@@ -2,7 +2,7 @@
 TANGRAM = https://github.com/tangrams/tangram-docs/archive/gh-pages.tar.gz
 EXTRACTS = https://github.com/mapzen/metro-extracts/archive/master.tar.gz
 VALHALLA = https://github.com/valhalla/valhalla-docs/archive/master.tar.gz
-VALHALLA_TEMP = https://github.com/valhalla/valhalla-docs/archive/transit.tar.gz
+VALHALLA_TEMP = https://github.com/valhalla/valhalla-docs/archive/rhonda-stops.tar.gz
 VECTOR_TILES = https://api.github.com/repos/tilezen/vector-datasource/releases/latest
 TERRAIN_TILES = https://api.github.com/repos/tilezen/joerd/releases/latest
 SEARCH = https://github.com/pelias/pelias-doc/archive/master.tar.gz
@@ -67,7 +67,7 @@ src-elevation:
 
 src-mobility:
 	mkdir src-mobility
-	curl -sL $(VALHALLA_TEMP) | tar -zxv -C src-mobility --strip-components=1 valhalla-docs-transit
+	curl -sL $(VALHALLA_TEMP) | tar -zxv -C src-mobility --strip-components=1 valhalla-docs-rhonda-stops
 
 src-search:
 	mkdir src-search
