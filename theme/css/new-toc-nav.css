@@ -8,6 +8,11 @@ li.toc-top-level.toc-current.toc-main > a {
   text-transform: uppercase;
 }
 
+.toc-sub-section {
+  list-style: none;
+  padding-left: 0;
+}
+
 .toc-subnav.toc-section > li.active > a {
   box-shadow: none;
   font-weight: 400;
