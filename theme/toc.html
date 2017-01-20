@@ -4,7 +4,7 @@
   {% if include_nav %}
     {% for nav_item in nav if not nav_item.title == 'README' %}
       {% if nav_item.children %}
-        <li class='toc-top-level{% if nav_item.active %} toc-current{% endif %}'>
+        <li class='toc-top-level toc-main{% if nav_item.active %} toc-current{% endif %}'>
           <a href='#' class='toc-subnav-toggle'>{{ nav_item.title }}</a>
           {% if not (loop.first == true) %}
             <ul class='toc-subnav{% if nav_item.active %} toc-expand{% endif %}'>
@@ -15,16 +15,17 @@
           {% endif %}
         </li>
       {% else %}
-        <li class='toc-top-level{% if nav_item.active %} toc-current{% endif %}'>
+        <li class='toc-top-level toc-main{% if nav_item.active %} toc-current{% endif %}'>
           <a href='{{ nav_item.url }}'>{{ nav_item.title }}</a>
-        </li>
         {% if not (loop.first and config.extra.exclude_home_contents_in_toc == true) %}
           {% if nav_item.active %}
             {% include 'toc-sub.html' %}
           {% endif %}
         {% endif %}
+        </li>
       {% endif %}
     {% endfor %}
   {% endif %}
   </ul>
 </div>
+

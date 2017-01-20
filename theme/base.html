@@ -13,6 +13,8 @@
 
     <link rel='stylesheet' href='https://mapzen.com/common/styleguide/styles/documentation.css'>
     <link rel='stylesheet' href='{{ base_url }}/css/highlight.css'>
+    <link rel='stylesheet' href='{{ base_url }}/css/highlight.css'>
+    <link rel='stylesheet' href='{{ base_url }}/css/new-toc-nav.css'>
     {%- for path in extra_css %}
     <link href='{{ path }}' rel='stylesheet'>
     {%- endfor %}
@@ -23,9 +25,9 @@
     {% include 'fragments/global-nav.html' %}
 
     {% if config.extra.layout == 'raw-page' %}
-    
+
       {{ content }}
-    
+
     {% else %}
 
     <div class='documentation-hero'>
@@ -110,7 +112,7 @@
     <div class='container headroom-large footroom-large hidden-print'>
       {% include 'common/cta.html' %}
     </div>
-    
+
     {% endif %}
 
     {% include 'fragments/global-footer.html' %}
@@ -120,6 +122,7 @@
     <script>var base_url = '{{ base_url }}';</script>
     <script src='{{ base_url }}/js/base.js'></script>
     <script src='https://mapzen.com/common/styleguide/scripts/mapzen-styleguide.min.js'></script>
+    <script src='{{ base_url }}/js/new-nav.js'></script>
     {%- for path in extra_javascript %}
     <script src='{{ path }}'></script>
     {%- endfor %}

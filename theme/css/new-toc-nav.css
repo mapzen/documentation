@@ -1,0 +1,43 @@
+li.toc-top-level.toc-current.toc-main > a {
+  background-color: transparent; /**/
+  color: $mz-darkblue;
+}
+
+li.toc-main > a {
+  background-color: transparent; /**/
+  color: $mz-darkblue;
+}
+
+
+.toc-section {
+
+  a {
+    color: black;
+    font-weight: 400;
+  }
+
+}
+
+.toc-sub-section {
+  list-style: none;
+  padding-left: 0px;
+}
+
+.toc-list-toggle {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+
+.toc-subnav li.active > .toc-list-toggle {
+  font-weight: 600;
+  box-shadow: none; /**/
+}
+
+.toc-list {
+  font-size: 12px;
+}
+
+.toc-list-title {
+  margin-right: 10px;
+}
