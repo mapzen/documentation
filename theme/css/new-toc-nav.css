@@ -1,41 +1,34 @@
+/* These class names are temporary */
 li.toc-top-level.toc-current.toc-main > a {
   background-color: transparent; /**/
-  color: $mz-darkblue;
+  color: #385d5c;
 }
 
-li.toc-main > a {
-  background-color: transparent; /**/
-  color: $mz-darkblue;
+.toc-section > li > a {
+  text-transform: uppercase;
+}
+
+.toc-subnav.toc-section > li.active > a {
+  box-shadow: none;
+  font-weight: 400;
+}
+.toc-subnav .toc-sub-section > li.active > a {
+  box-shadow: inset 4px 0 0 #385d5c;
+}
+.toc-subnav .toc-sub-sub-section > li.active > a {
+  box-shadow: none;
 }
 
 
-.toc-section {
-
-  a {
-    color: black;
-    font-weight: 400;
-  }
-
-}
-
-.toc-sub-section {
+.toc-sub-sub-section {
   list-style: none;
-  padding-left: 0px;
+  padding-left: 0;
+  font-size: 12px;
 }
 
 .toc-list-toggle {
   font-size: 12px;
   font-weight: 400;
-}
-
-
-.toc-subnav li.active > .toc-list-toggle {
-  font-weight: 600;
-  box-shadow: none; /**/
-}
-
-.toc-list {
-  font-size: 12px;
 }
 
 .toc-list-title {
