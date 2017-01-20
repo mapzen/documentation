@@ -1,8 +1,22 @@
 <ul class='toc-subnav toc-expand'>
 {% for toc_item in toc %}
-  <li class='main{% if toc_item.active %} active{% endif %}'><a href='{{ toc_item.url }}'>{{ toc_item.title }}</a></li>
-  {% for toc_item in toc_item.children %}
-    <li><a href='{{ toc_item.url }}'>{{ toc_item.title }}</a></li>
+  <li class='main{% if toc_item.active %} active{% endif %}'><a href='{{ toc_item.url }} toc-main'>{{ toc_item.title }}</a></li>
+  {% for toc_item_header_2 in toc_item.children %}
+    <li><a href='{{ toc_item.url }}'>{{ toc_item_header_2.title }}</a></li>
+    <ul class="toc-subnav toc-expand">
+    {% for toc_item_header_3 in toc_item_header_2.children %}
+      <li class='toc-sub'>
+        <a class="toc-subnav-toggle" href='{{ toc_item_header_3.url }}'>
+          <span class='toc-sub-title'>{{ toc_item_header_3.title }}</span>{% if toc_item_header_3.children %}<i class="fa fa-angle-right" aria-hidden="true"></i>{% endif %}
+        </a>
+      <ul class ="toc-subnav">
+      {% for toc_item_header_4 in toc_item_header_3.children %}
+        <li> <a href='{{ toc_item_header_4.url }}'>{{ toc_item_header_4.title }}</a> </li>
+      {% endfor %}
+      </ul>
+      </li>
+    {% endfor %}
+    </ul>
   {% endfor %}
 {% endfor %}
 </ul>
