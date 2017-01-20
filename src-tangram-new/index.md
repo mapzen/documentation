@@ -1,5 +1,3 @@
-# Get started
-
 [Tangram](https://mapzen.com/projects/tangram) is a flexible mapping engine, designed for real-time rendering of 2D and 3D maps from [vector tiles](). Map styles, data filters, labels, and even graphics card code can be defined in [YAML](http://www.yaml.org/spec/1.2/spec.html), and APIs permit direct interactive control of the style. Changing the color is just the beginning; every Tangram map is a 3D scene, so you also can modify [lights](Lights-Overview.md) and [cameras](Cameras-Overview.md).
 
 Tangram is designed to use vector data sources such as Mapzen’s [vector tile service](https://mapzen.com/projects/vector-tiles), which is a hosted tile service that uses [data from Natural Earth and OpenStreetMap](https://mapzen.com/documentation/vector-tiles/data-sources/). This data contains geometry data sources contain metadata, which Tangram can use to [filter](Filters-Overview.md) the data and change drawing styles in real time. Tangram also supports using third party data or layering multiple data sources.
@@ -12,7 +10,7 @@ Tangram is available in two delicious flavors: [Tangram JS](https://github.com/t
 
 All of these effects are possible thanks to [OpenGL](https://en.wikipedia.org/wiki/OpenGL). You can write graphics card programs, known as [shaders](Shaders-Overview.md), and even JavaScript to add interactivity, mix data sources, and control the design of your maps.
 
-### YAML  
+### YAML
 **YAML** is an object-based data format with a flexible structure. Its specification includes a huge array of wacky abilities, but we only use a few of them.
 
 Here are the most important YAML features to know about when writing Tangram scene files.
