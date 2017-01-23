@@ -23,9 +23,14 @@ pages:
   - Turn-by-Turn:
     - 'Overview': 'turn-by-turn/overview.md'
     - 'API reference': 'turn-by-turn/api-reference.md'
-    - 'Tutorial': 'turn-by-turn/add-routing-to-a-map.md' 
+    - 'Tutorial': 'turn-by-turn/add-routing-to-a-map.md'
   - 'Optimized route': 'optimized/api-reference.md'
   - 'Time-Distance Matrix': 'matrix/api-reference.md'
+  - 'Isochrone': 'isochrone/api-reference.md'
+  - 'Mobility Explorer':
+    - 'Overview': 'explorer/overview.md'
+    - 'Explore transit': 'explorer/explore-transit.md'
+    - 'Generate isochrones': 'explorer/isochrones.md'
   - 'Decode a route shape': 'decoding.md'
   - 'Release notes': 'release-notes.md'
 

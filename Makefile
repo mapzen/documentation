@@ -2,13 +2,14 @@
 TANGRAM = https://github.com/tangrams/tangram-docs/archive/gh-pages.tar.gz
 EXTRACTS = https://github.com/mapzen/metro-extracts/archive/master.tar.gz
 VALHALLA = https://github.com/valhalla/valhalla-docs/archive/master.tar.gz
-VECTOR_TILES = https://github.com/tilezen/vector-datasource/archive/v1.0.0-docs3.tar.gz
-TERRAIN_TILES = https://github.com/tilezen/joerd/archive/v1.0.0-docs3.tar.gz
+VECTOR_TILES = https://api.github.com/repos/tilezen/vector-datasource/releases/latest
+TERRAIN_TILES = https://api.github.com/repos/tilezen/joerd/releases/latest
 SEARCH = https://github.com/pelias/pelias-doc/archive/master.tar.gz
 ANDROID = https://github.com/mapzen/android/archive/master.tar.gz
 IOS = https://github.com/mapzen/ios/archive/master.tar.gz
 MAPZENJS = https://mapzen.com/js/docs.tar.gz
 LIBPOSTAL = https://github.com/whosonfirst/go-whosonfirst-libpostal/archive/master.tar.gz
+CARTOGRAPHY = https://github.com/tangrams/cartography-docs/archive/master.tar.gz
 
 SHELL := /bin/bash # required for OSX
 PYTHONPATH := packages:$(PYTHONPATH)
@@ -19,16 +20,16 @@ clean:
 	rm -rf dist theme/fragments
 	rm -rf src-android src-ios src-elevation src-mapzen-js src-metro-extracts \
 	       src-mobility src-search src-tangram src-terrain-tiles \
-	       src-vector-tiles src-libpostal
+	       src-vector-tiles src-libpostal src-cartography
 	rm -rf dist-android dist-ios dist-elevation dist-index dist-mapzen-js \
 	       dist-metro-extracts dist-mobility dist-search dist-tangram \
-	       dist-terrain-tiles dist-vector-tiles dist-libpostal
+	       dist-terrain-tiles dist-vector-tiles dist-libpostal dist-cartography
 	rm -rf dist-android-mkdocs.yml dist-ios-mkdocs.yml dist-elevation-mkdocs.yml \
 	       dist-index-mkdocs.yml dist-mapzen-js-mkdocs.yml \
 	       dist-metro-extracts-mkdocs.yml dist-mobility-mkdocs.yml \
 	       dist-search-mkdocs.yml dist-tangram-mkdocs.yml \
 	       dist-terrain-tiles-mkdocs.yml dist-vector-tiles-mkdocs.yml \
-				 dist-libpostal-mkdocs.yml
+	       dist-libpostal-mkdocs.yml dist-cartography-mkdocs.yml
 
 # Get individual sources docs
 src-tangram:
@@ -42,7 +43,9 @@ src-metro-extracts:
 src-vector-tiles:
 	mkdir src-vector-tiles
 	# Try with --wildcards for GNU tar, but fall back to BSD tar syntax for Mac.
-	curl -sL $(VECTOR_TILES) | ( \
+	curl -sL $(VECTOR_TILES) \
+	| jq '.tarball_url' --raw-output \
+	| xargs curl -sL | ( \
 	    tar -zxv -C src-vector-tiles --strip-components=2 --exclude=README.md --wildcards '*/docs/' \
 	 || tar -zxv -C src-vector-tiles --strip-components=2 --exclude=README.md '*/docs/' \
 	    )
@@ -50,7 +53,9 @@ src-vector-tiles:
 src-terrain-tiles:
 	mkdir src-terrain-tiles
 	# Try with --wildcards for GNU tar, but fall back to BSD tar syntax for Mac.
-	curl -sL $(TERRAIN_TILES) | ( \
+	curl -sL $(TERRAIN_TILES) \
+	| jq '.tarball_url' --raw-output \
+	| xargs curl -sL | ( \
 	    tar -zxv -C src-terrain-tiles --strip-components=2 --exclude=README.md --wildcards '*/docs/' \
 	 || tar -zxv -C src-terrain-tiles --strip-components=2 --exclude=README.md '*/docs/' \
 	    )
@@ -83,13 +88,20 @@ src-libpostal:
 	mkdir src-libpostal
 	curl -sL $(LIBPOSTAL) | tar -zxv -C src-libpostal --strip-components=2 go-whosonfirst-libpostal-master/docs
 
+src-cartography:
+	mkdir src-cartography
+	curl -sL $(CARTOGRAPHY) | tar -zxv -C src-cartography --strip-components=1 cartography-docs-master
+	
 src-overview:
-	cp -r docs src-overview
+	cp -r docs/overview src-overview
+
+src-guides:
+	cp -r docs/guides src-guides
 
 # Retrieve style guide
 theme/fragments:
 	mkdir -p theme/fragments
-	curl -sL 'https://mapzen.com/site-fragments/navbar.html' -o theme/fragments/global-nav.html
+	curl -sL 'https://mapzen.com/site-fragments/new-navbar.html' -o theme/fragments/global-nav.html
 	curl -sL 'https://mapzen.com/site-fragments/footer.html' -o theme/fragments/global-footer.html
 
 # Build Tangram, Metro Extracts, Vector Tiles, Elevation, Search, Mobility,
@@ -109,7 +121,7 @@ dist-index: theme/fragments
 	./setup-redirects.py ./dist-index-mkdocs.yml /documentation/
 	cp dist-index/index.html dist-index/next.html
 
-dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-search dist-elevation dist-android dist-ios dist-mapzen-js dist-overview dist-index dist-mobility dist-terrain-tiles dist-libpostal
+dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-search dist-elevation dist-android dist-ios dist-mapzen-js dist-overview dist-guides dist-index dist-mobility dist-terrain-tiles dist-libpostal dist-cartography
 	mkdir dist
 	ln -s ../dist-tangram dist/tangram
 	ln -s ../dist-metro-extracts dist/metro-extracts
@@ -122,7 +134,9 @@ dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-search dist-elevat
 	ln -s ../dist-ios dist/ios
 	ln -s ../dist-mapzen-js dist/mapzen-js
 	ln -s ../dist-overview dist/overview
+	ln -s ../dist-guides dist/guides
 	ln -s ../dist-libpostal dist/libpostal
+	ln -s ../dist-cartography dist/cartography
 	rsync -urv --ignore-existing dist-index/ dist/
 
 serve:
