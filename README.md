@@ -2,21 +2,17 @@
 
 We write our documentation in Markdown and store them in GitHub, and use a [MkDocs](http://www.mkdocs.org/)-based automated workflow to convert them into friendlier static-site documentation pages hosted at https://mapzen.com/documentation/. You can read more about this on our [blog post](https://mapzen.com/blog/doc-site/).
 
-## Status
-
-Documentation is generated hourly from a scheduled task attached to the
-[Heroku app `mapzen-docs-generator`](https://dashboard.heroku.com/apps/mapzen-docs-generator).
-
 ## Installation, Testing, And Use
 
 ### Rapid bootstrapping
 
-On a Mac, assuming you have [Homebrew](http://brew.sh) and
+On a Mac, assuming you have [Homebrew](http://brew.sh) and 
 [Python 3](https://docs.python.org/3/using/mac.html) installed, and a local
 checkout of this repository:
 
 ```shell
 # Prepare virtualenv and install local dependencies
+brew install jq
 virtualenv -p python3 venv
 source venv/bin/activate
 pip install -Ur requirements.txt
