@@ -25,7 +25,7 @@ pip install -Ur requirements.txt
 make
 
 # Local preview
-python -m SimpleHTTPServer 8000
+python -m http.server 8000
 open http://localhost:8000/dist/
 ```
 
@@ -34,7 +34,7 @@ open http://localhost:8000/dist/
 MkDocs can only build one set of documentation at a time, so there's really no way to build and then watch the entire documentation suite at once. However you can still just watch one set of documentation which is still enough for editing styles or debugging.
 
 ```shell
-make dist-tangram                       # Prepares documentation, in this case it's tangram
+make clean dist-tangram                 # Prepares documentation, in this case it's tangram
 mkdocs serve -f dist-tangram-mkdocs.yml # Run the server with watch
 ```
 
