@@ -1,10 +1,10 @@
-# Mapzen's documentation pipeline
+# Mapzen documentation
 
-We write our documentation in Markdown and store them in GitHub, and use a [MkDocs](http://www.mkdocs.org/)-based automated workflow to convert them into friendlier static-site documentation pages hosted at https://mapzen.com/documentation/. You can read more about this on our [blog post](https://mapzen.com/blog/doc-site/).
+Mapzen writes documentation in Markdown, stores the source files in GitHub, and uses a [MkDocs](http://www.mkdocs.org/)-based automated workflow to convert them into static-site documentation pages hosted at https://mapzen.com/documentation/. You can read more about this process in the [blog post](https://mapzen.com/blog/doc-site/).
 
-## Installation, Testing, And Use
+## Build locally
 
-### Build locally
+Clone the repository locally and open a terminal window to the mapzen-docs-generator folder.
 
 On a Mac, assuming you have [Homebrew](http://brew.sh) and 
 [Python 3](https://docs.python.org/3/using/mac.html) installed, and a local
