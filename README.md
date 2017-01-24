@@ -46,3 +46,6 @@ The source files to build Mapzen's documentation may be found in separate reposi
 | [Terrain Tiles](https://mapzen.com/documentation/terrain-tiles/)  | https://github.com/tilezen/joerd  | Needs to be in a release  |
 | [Elevation Service](https://mapzen.com/documentation/elevation/) | https://github.com/valhalla/valhalla-docs  | Push to Master |
 | [Android SDK](https://mapzen.com/documentation/android/) | https://github.com/mapzen/android/tree/master/docs | Push to Master |
+| [iOS SDK](https://mapzen.com/documentation/ios/) | https://github.com/mapzen/ios/blob/master/docs | Push to Master |
+| [Address parsing/libpostal](https://mapzen.com/documentation/libpostal/) | https://github.com/whosonfirst/go-whosonfirst-libpostal/blob/master/docs | Push to Master |
+| [Cartography](https://mapzen.com/documentation/cartography/) | https://github.com/tangrams/cartography-docs/ | Push to Master |
