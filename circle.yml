@@ -5,7 +5,7 @@ machine:
 dependencies:
   override:
     - sudo apt-get update -y
-    - sudo apt-get install -y curl jq
+    - sudo apt-get install -y curl
 
 test:
   override:
