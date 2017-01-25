@@ -1,22 +1,17 @@
-# Set up and documentation update instructions
+# Set up and build documentation
 
-## Follow the setup and writing instructions
+## Follow the writing instructions
 
 - Follow the guidelines of the [writing style guide](https://github.com/mapzen/styleguide/tree/master/src/site/guides) when it comes to writing technical documentation.
 - Include an `index.md` file at the root folder of your documentation. (Note: [MkDocs will allow this to be customized in the future.](https://github.com/mkdocs/mkdocs/issues/608))
 - Start each page with a top-level heading with one `#` symbol, except for the index.md. The home page should not have a title because it would most likely duplicate the banner on the page.
-
-## Make your markdown compatible with GitHub and the documentation site
-
-- [Markdown formatting guide](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+- Follow the [Markdown formatting guide](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 - Add blank lines between different blocks of content: before and after bulleted lists, numbered lists, code blocks, images, and so on.
 - If a code block or image is supposed to be part of a list, remember the blank lines before and after, and also indent it four spaces. Using or mixing tabs might cause problems. Python Markdown is a lot pickier about this than GitHub-flavored Markdown, causing lists to nest improperly or break numbering altogether.
 
 ## Add a new section to the documentation
 
-Adding an entirely new section of the help has many factors, ranging from design decisions on the mapzen.com website to the mechanics of building the help.
-
-In general, there are four files that you need to update to do this. You can often copy, paste, and modify existing files to understand what needs to be updated to add the new section.
+Adding an entirely new section of the help has many factors, ranging from design decisions on the mapzen.com website to the mechanics of building the help. In general, there are four files that you need to update to do this. You can often copy, paste, and modify existing files to understand what needs to be updated to add the new section.
 
 1. Add an entry to https://github.com/mapzen/documentation/tree/master/src-index to update the index file that is the landing page for the documentation.
 2. Add a new config `.yml` file to https://github.com/mapzen/documentation/tree/master/config. This builds the table of contents and sets the links to the source files so the `Edit this page on GitHub` links work properly (these allow users to go directly to the source file to propose edits).
@@ -25,7 +20,7 @@ In general, there are four files that you need to update to do this. You can oft
 
 If you are removing sections from the help, you will need to consider adding URL redirects to the `index.yml` file.
 
-## Add entry to the documentation table of contents
+## Add an entry to the documentation table of contents
 
 To display on the documentation site, you need to add a topic to a configuration file. Otherwise, the topic exists only in the repository. It is fine to have topics in the repository that are not in the help system, as long as you know that is happening.
 
@@ -43,17 +38,17 @@ You need to update the config.yml file to add a topic, remove one, or rename it 
 
 File names are case-sensitive, so 'Scene-file.md' is different from 'scene-file.md'. The file name in the config file must exactly match the source file, or else you will get a build error.
 
-### Preview changes that are in a branch
+### Preview content changes that are in a branch
 
 If you've created a pull request in the documentation repository, and your content changes are in the branch that the help is built from (usually, master), you can view changes at [precog.mapzen.com/mapzen/documentation/](precog.mapzen.com/mapzen/documentation/). 
 
-If the content changes are in a different branch, you need to make temporary changes to the build process. 
+If the content changes are in a different branch, you need to make temporary changes to the build process to locate your branch. 
 
 1. Create a branch in the `documentation` repository.
 1. Open the Makefile
 2. In another tab, open the latest commit on the branch you're working on in the particular project repository
 3. Copy the full commit ID
-4. In the Makefile, edit the URL and replace the phrase (typically 'master') before .tar.gz with the commit ID, for example:
+4. In the Makefile, edit the URL and replace the phrase (typically, 'master') before .tar.gz with the commit ID, for example:
 
 `EXTRACTS = https://github.com/mapzen/metro-extracts/archive/master.tar.gz --> EXTRACTS = https://github.com/mapzen/metro-extracts/archive/2d3ef32e1a6fc51be6908968e32902a04a016dee.tar.gz`
 
@@ -139,9 +134,13 @@ If you move content or rename a repository, you need to update the source locati
 The Makefile collects and builds the documentation. Here are the general steps it takes. 
 
 - It first retrieves the source documentation file, which is available from GitHub inside a pre-packaged archive with the extension `tar.gz`. 
+    
     `TANGRAM = https://github.com/tangrams/tangram-docs/archive/gh-pages.tar.gz`
+    
 - It uncompresses the file, with a line further down in the Makefile that looks something like this. This will extract the files into the `src/project-name` directory, which makes them available to mkdocs. 
+
     `curl -sL $(TANGRAM) | tar -zxv -C src-tangram --strip-components=2 tangram-docs-gh-pages/pages`
     
 You can use this line to change the branch used as the source of the documentation with these lines, which can be handy for testing purposes. This is accomplished by replacing `gh-pages` with the name of another branch. Note that you'll need to convert any slashes in the branch name to dashes. For example, if your repo name is `tangram-docs` and your branch name is `cleanup`, the reference in the `curl` command will look like `tangram-docs-cleanup`, and the full command will be:
-    `curl -sL $(TANGRAM) | tar -zxv -C src-tangram --strip-components=2 tangram-docs-cleanup/pages`
+
+`curl -sL $(TANGRAM) | tar -zxv -C src-tangram --strip-components=2 tangram-docs-cleanup/pages`
