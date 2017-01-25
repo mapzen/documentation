@@ -8,23 +8,23 @@ As long as a markdown file is listed in the build configuration, changes in the 
 
 ## Source file locations
 
-The source files to build Mapzen's documentation may be found in separate documentation repositories in a GitHub organization, as a documentation folder in a project's repository, or within this repository. Getting changes onto the documentation site may require the files be on a certain branch or in a special release.
+The source files to build Mapzen's documentation may be found in separate documentation repositories in a GitHub organization, as a documentation folder in a project's repository, or within this repository. Getting changes onto the documentation site may require the files be on a certain branch or in a release.
 
-|                           Product                        | Source location | Updates  |
+|                           Documentation section                       | Source location | Branch name or release  |
 |----------------------------------------------------------|---------------------|----------|
-| [Overview](http://www.mapzen.com/documentation/overview) | https://github.com/mapzen/mapzen-docs-generator/tree/master/docs  | Push to Master  |
-| [Mapzen.js](https://mapzen.com/documentation/mapzen-js/)  | https://github.com/mapzen/mapzen.js/tree/master/docs  | Needs to be in a release  |
-| [Tangram](https://mapzen.com/documentation/tangram/) | https://github.com/tangrams/tangram-docs | Push to gh-pages   |
-| [Vector Tiles](https://mapzen.com/documentation/vector-tiles/)  | https://github.com/tilezen/vector-datasource/tree/master/docs  | Has versioning |
-| [Search](https://mapzen.com/documentation/search/)  | https://github.com/pelias/pelias-doc  | Push to Master  |
-| [Mobility](https://mapzen.com/documentation/mobility/)  | https://github.com/valhalla/valhalla-docs  | Push to Master |
-| [Metro Extracts](https://mapzen.com/documentation/metro-extracts/)  | https://github.com/mapzen/metro-extracts/tree/master/docs  | Push to Master |
-| [Terrain Tiles](https://mapzen.com/documentation/terrain-tiles/)  | https://github.com/tilezen/joerd  | Needs to be in a release  |
-| [Elevation Service](https://mapzen.com/documentation/elevation/) | https://github.com/valhalla/valhalla-docs  | Push to Master |
-| [Android SDK](https://mapzen.com/documentation/android/) | https://github.com/mapzen/android/tree/master/docs | Push to Master |
-| [iOS SDK](https://mapzen.com/documentation/ios/) | https://github.com/mapzen/ios/blob/master/docs | Push to Master |
-| [Address parsing/libpostal](https://mapzen.com/documentation/libpostal/) | https://github.com/whosonfirst/go-whosonfirst-libpostal/blob/master/docs | Push to Master |
-| [Cartography](https://mapzen.com/documentation/cartography/) | https://github.com/tangrams/cartography-docs/ | Push to Master |
+| [Overview](http://www.mapzen.com/documentation/overview) | https://github.com/mapzen/mapzen-docs-generator/tree/master/docs  | Master  |
+| [Mapzen.js](https://mapzen.com/documentation/mapzen-js/)  | https://github.com/mapzen/mapzen.js/tree/master/docs  | Latest release  |
+| [Tangram](https://mapzen.com/documentation/tangram/) | https://github.com/tangrams/tangram-docs | gh-pages   |
+| [Vector tiles](https://mapzen.com/documentation/vector-tiles/)  | https://github.com/tilezen/vector-datasource/tree/master/docs  | Latest release |
+| [Search](https://mapzen.com/documentation/search/)  | https://github.com/pelias/pelias-doc  | Master  |
+| [Mobility](https://mapzen.com/documentation/mobility/)  | https://github.com/valhalla/valhalla-docs  | Master |
+| [Metro Extracts](https://mapzen.com/documentation/metro-extracts/)  | https://github.com/mapzen/metro-extracts/tree/master/docs  | Master |
+| [Terrain tiles](https://mapzen.com/documentation/terrain-tiles/)  | https://github.com/tilezen/joerd  | Latest release  |
+| [Elevation](https://mapzen.com/documentation/elevation/) | https://github.com/valhalla/valhalla-docs  | Master |
+| [Android SDK](https://mapzen.com/documentation/android/) | https://github.com/mapzen/android/tree/master/docs | Master |
+| [iOS SDK](https://mapzen.com/documentation/ios/) | https://github.com/mapzen/ios/blob/master/docs  Master |
+| [Address parsing/libpostal](https://mapzen.com/documentation/libpostal/) | https://github.com/whosonfirst/go-whosonfirst-libpostal/blob/master/docs | Master |
+| [Cartography](https://mapzen.com/documentation/cartography/) | https://github.com/tangrams/cartography-docs/ | Master |
 
 ## Build locally
 
