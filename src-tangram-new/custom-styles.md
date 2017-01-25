@@ -78,12 +78,13 @@ function show(el) {
                               });
                             }
 
-                            var loadevent = {view_complete: setValue}
                             function setValue() {
                                 iframe.contentWindow.scene.unsubscribe(loadevent);
                                 // set it again when tangram finishes drawing, just in case
                                 editor.doc.setValue(code);
                             }
+                            var loadevent = {view_complete: setValue}
+
                             function setScene() {
                                 if (typeof iframe.contentWindow.scene == 'undefined') console.log('scene undefined, somehow')
                                 iframe.contentWindow.scene.subscribe(loadevent);
