@@ -19,13 +19,13 @@ pip install -Ur requirements.txt
 # Get all the sources and build all the documentation
 make
 
-# Use make clean for a fresh build
+# Use `make clean all` for a fresh build
 
 # Local preview
 python -m http.server 8000
 open http://localhost:8000/dist/
 ```
 
-Run `make clean` to build a clean copy of the documentation. This command deletes the previous build and makes new files.
+Run `make clean all` to build a clean copy of the documentation. This command deletes the previous build and makes new files.
 
-You may be able to build one section of the documentation using `make clean dist-projectname`, such as `make clean dist-tangram`.
+You may be able to build one section of the documentation using `make clean dist-{projectname}`, such as `make clean dist-tangram`.
