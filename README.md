@@ -12,7 +12,6 @@ checkout of this repository:
 
 ```shell
 # Prepare virtualenv and install local dependencies
-brew install jq
 virtualenv -p python3 venv
 source venv/bin/activate
 pip install -Ur requirements.txt
