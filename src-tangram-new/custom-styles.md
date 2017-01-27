@@ -49,7 +49,6 @@ function show(el) {
                     // get source from the previously-saved blobURL
                     var code = el.getAttribute("code");
                     iframe.onload = function() {
-                        // console.log('iframe:', iframe)
 
                         // set the value of the codeMirror editor when it exists
                         // if the contentWindow exists
@@ -73,9 +72,6 @@ function show(el) {
                                         return this._scene;
                                     },
                                     set: function(val) {
-                                        console.log('setting iframe.contentWindow.scene')
-                                        // console.log('iframe.contentWindow?', iframe.contentWindow);
-                                        // console.log('iframe.contentWindow.document?', iframe.contentWindow.document);
                                         this._scene = val;
                                         setScene();
                                     }
