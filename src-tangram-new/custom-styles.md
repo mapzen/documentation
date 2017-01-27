@@ -117,11 +117,11 @@ function show(el) {
                                         enumerable: true,
                                         writeable: true,
                                         get: function() {
-                                            return this._scene;
+                                            return this._ownerDocument;
                                         },
                                         set: function(val) {
                                             console.log('setting editor.ownerDocument')
-                                            this._scene = val;
+                                            this._ownerDocument = val;
                                             editor.doc.setValue(code);
                                         }
                                     });
@@ -205,7 +205,7 @@ Note: This tutorial uses Tangram's interactive scenefile editor, [Tangram Play](
     <span class="caption"><a target="_blank" href="http://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom1.yaml#16.50417/40.7807/-73.96085">( Open in Play ▶ )️</a></span>
 </div>
 
-Now let's make a custom _draw style_ called "_dashes" (it could be anything, and the underscore isn't required, but it's a handy way to remember which things we named ourselves). The `dash` parameter takes an array, which sets the length of the dashes and gaps.
+Now let's make a custom _draw style_ called "_dashes" – this name could be anything, and the leading underscore isn't required, but it's a handy way to remember which things we named ourselves. The `dash` parameter takes an array, which sets the length of the dashes and gaps.
 
 <div class="demo-wrap">
     <div class="demo" id="demo1" code="" source="https://precog.mapzen.com/tangrams/tangram-play/master/embed/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom2.yaml#16.50417/40.78070/-73.96085"></div>
