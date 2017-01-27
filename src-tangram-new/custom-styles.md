@@ -50,43 +50,51 @@ function show(el) {
                     var code = el.getAttribute("code");
                     iframe.onload = function() {
                         // console.log('iframe:', iframe)
-                        if (iframe.contentWindow != 'undefined') {
+
+                        // set the value of the codeMirror editor when it exists
+                        // if the contentWindow exists
+                        if (typeof iframe.contentWindow != 'undefined') {
+
                             var editor = iframe.contentWindow.editor;
                             var map = iframe.contentWindow.map;
-                            // console.log('map?', map)
                             var Tangram = iframe.contentWindow.Tangram;
-                            // console.log('Tangram?', Tangram)
                             if (iframe.contentWindow.scene) {
-                                // console.log('scene?', iframe.contentWindow.scene);
                                 setScene();
                             }
                             else {
+                                console.log('waiting for scene')
                                 // wait for scene to be defined
                                 // http://fokkezb.nl/2016/04/14/how-to-wait-for-a-javascript-variable-to-be-defined/
-                              Object.defineProperty(iframe.contentWindow, 'scene', {
-                                configurable: true,
-                                enumerable: true,
-                                writeable: true,
-                                get: function() {
-                                  return this._scene;
-                                },
-                                set: function(val) {
-                                    // console.log('set?')
-                                  this._scene = val;
-                                  setScene();
-                                }
-                              });
+                                Object.defineProperty(iframe.contentWindow, 'scene', {
+                                    configurable: true,
+                                    enumerable: true,
+                                    writeable: true,
+                                    get: function() {
+                                        return this._scene;
+                                    },
+                                    set: function(val) {
+                                        console.log('setting iframe.contentWindow.scene')
+                                        // console.log('iframe.contentWindow?', iframe.contentWindow);
+                                        // console.log('iframe.contentWindow.document?', iframe.contentWindow.document);
+                                        this._scene = val;
+                                        setScene();
+                                    }
+                                });
                             }
 
                             function setValue() {
+                                // unsubscribe immediately
                                 iframe.contentWindow.scene.unsubscribe(loadevent);
                                 // set it again when tangram finishes drawing, just in case
                                 editor.doc.setValue(code);
                             }
+
+                            // make a subscription object with a callback
                             var loadevent = {view_complete: setValue}
 
                             function setScene() {
                                 if (typeof iframe.contentWindow.scene == 'undefined') console.log('scene undefined, somehow')
+                                // subscribe to the loadevent
                                 iframe.contentWindow.scene.subscribe(loadevent);
                             }
 
@@ -101,11 +109,30 @@ function show(el) {
                                 // set the editor value to the modified code
                                 setTimeout(function() {
                                     // use a setTimeout 0 to make this a separate entry in the browser's event queue, so it won't happen until the editor is ready
-                                    editor.doc.setValue(code);
+
+                                    // wait for editor's ownerDocument to be defined
+                                    // http://fokkezb.nl/2016/04/14/how-to-wait-for-a-javascript-variable-to-be-defined/
+                                    Object.defineProperty(editor, 'ownerDocument', {
+                                        configurable: true,
+                                        enumerable: true,
+                                        writeable: true,
+                                        get: function() {
+                                            return this._scene;
+                                        },
+                                        set: function(val) {
+                                            console.log('setting editor.ownerDocument')
+                                            this._scene = val;
+                                            editor.doc.setValue(code);
+                                        }
+                                    });
+
+
                                 }, 0);
                             }
                             // set event listener to wait for the editor to draw
                             editor.on(event, trigger);
+                        } else {
+                            console.log('is iframe.contentWindow undefined?', iframe.contentWindow);
                         }
                     }
                 }
@@ -114,6 +141,7 @@ function show(el) {
         }
     }
 }
+
 
 // check visibility every half-second, hide off-screen demos to go easy on the GPU
 setInterval( function() {
