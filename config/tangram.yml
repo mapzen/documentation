@@ -6,7 +6,7 @@ site_dir: dist-tangram
 # to enforce the Table of Contents structure manually in the configuration below.
 # This means pages should be added or subtracted manually here if the files change.
 pages:
-  - Get Started: 
+  - Get Started:
     - 'Tangram Basics': index.md
   - Documentation:
     - 'The scene file': 'scene-file.md'
@@ -14,14 +14,16 @@ pages:
     - 'Styling features': 'styles-overview.md'
     - 'Editing map view': 'map-view.md'
     - 'Shaders': 'shaders-overview.md'
-  - 'API Reference': 'api-reference.md'
+  - API Reference:
+    - 'API Reference': 'api-reference.md'
   - Tutorials:
     - 'Make a Tangram map': 'intro-tutorial.md'
     - 'Cartographic design': 'cartography.md'
     - 'Editing a basemap': 'basemap.md'
     - 'Custom Styles': 'custom-styles.md'
     - 'Terrain maps': 'terrain.md'
-  - 'Gallery': 'gallery.md'
+  - Gallery:
+    - 'Gallery': 'gallery.md'
 
 mz:redirects:
   'tangram-overview': '.'
