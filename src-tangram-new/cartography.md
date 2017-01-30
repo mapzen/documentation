@@ -11,8 +11,7 @@ This tutorial uses [Tangram Play](https://mapzen.com/tangram/play), an in-browse
 
 To complete this tutorial, you need a [browser that supports WebGL](https://get.webgl.org/). You will need to maintain an Internet connection while you are working so you can access the map source data, which is being streamed from Mapzen's servers. It should take you several hours to complete the exercise and you'll create a map that looks like this:
 
-<iframe class="demo-wrapper" src="https://mapzen.com/tangram/play/?lines=213-217%2C219-221%2C223-228&amp;scene=https%3A%2F%2Fapi.github.com%2Fgists%2F26856950d07333cafe2fa9212ef1d7cf#5.073/40.400/-98.746">
-</iframe>
+<iframe class="demo-wrapper" src="https://mapzen.com/tangram/play/?lines=213-217%2C219-221%2C223-228&scene=https%3A%2F%2Fapi.github.com%2Fgists%2F26856950d07333cafe2fa9212ef1d7cf#5.073/40.400/-98.746"></iframe>
 
 ## Adding custom fonts and textures
 
@@ -27,7 +26,7 @@ fonts:
            url: https://fonts.gstatic.com/s/lora/v9/_IxjUs2lbQSu0MyFEAfa7ZBw1xU1rKptJj_0jans920.woff2
 ```
 
-A common way to label a point feature like a city or point of interest is with an icon as a point with a label next to it. While there are several ways to [import icons]() in a Tangram scene, in this tutorial you will import the point icons using a [textures]() block. Just like the font block, name the layer and add the URL one indent level below. There are often different types of point icons used to distinct capitals from cities. Use the two URLs below to create two separate textures with the icons linked.
+A common way to label a point feature like a city or point of interest is with an icon/sprite as a point with a label next to it. While there are several ways to [import icons]() in a Tangram scene, in this tutorial you will import the point icons using a [textures]() block. Just like the font block, name the layer and add the URL one indent level below. There are often different types of point icons used to distinct capitals from cities. Use the two URLs below to create two separate textures with the icons linked.
 
 ```yaml
 textures:
@@ -37,6 +36,7 @@ textures:
         url: https://raw.githubusercontent.com/tangrams/cartography-docs/master/img/sprite/bubble-wrap-style/2x/capital-m.png
 ```
 
+<<<<<<< HEAD
 ## Styling basic layers
 
 The first layers that are required for a base map are the essential water and earth layers to distinguish water and land from each other. In the [previous tutorial](intro-tutorial.md), the `earth` layer was styled as a `polygon` draw style; this time to color what's land on the map, you'll use a background color. This can improve performance of the map as well as fill in any data gaps between the `land` and `water` layers. The `earth` layer will still be used to draw the labels for continents.
@@ -77,7 +77,7 @@ _earthLabels:
 
 ### Adding water layers
 
- Water features are going to use three style types- polygons for the fill, lines for additional detail, and a label sublayer.
+ Water features are going to use three style types- polygons for the fill, lines for additional detail, and a label sublayer. This 
 
 
 ```yaml
@@ -117,3 +117,6 @@ _waterLayer:
 With the water and earth layers and labels added, the map should now look like this:
 
 <iframe class="demo-wrapper" src="https://mapzen.com/tangram/play/?scene=https%3A%2F%2Fapi.github.com%2Fgists%2Ffa00e36073656a1c9ff5634bd7ef0ceb#3.31/10.08/94.72"></iframe>
+=======
+## Styling basic layers 
+>>>>>>> parent of 25acbfd... tutorial writing

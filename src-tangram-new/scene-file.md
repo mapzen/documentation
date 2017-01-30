@@ -1,6 +1,3 @@
-# The Scene file
-
-
 ## Required Elements in Tangram
 
 ## `scene`

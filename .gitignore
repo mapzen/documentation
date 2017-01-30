@@ -10,6 +10,7 @@ dist-*-mkdocs.yml
 theme/fragments/
 !src-index/
 !src-tangram-new/
+venv/
 
 # Python
 *.pyc

@@ -8,7 +8,7 @@ site_dir: dist-tangram
 pages:
   - Get Started: index.md
   #- 'Tangram Basics': index.md
-  - Documentation:
+  - Documentation: scene-file.md
     - 'The scene file': 'scene-file.md'
     - 'Data': 'data.md'
     - 'Styling features': 'styles-overview.md'
@@ -26,7 +26,7 @@ pages:
 mz:redirects:
   'tangram-overview': '.'
   'filters-overview': 'data'
-  'raster-overview': 'styles-overview#rasters' 
+  'raster-overview': 'styles-overview#rasters'
   'lights-overview': 'map-view#lights'
   'cameras-overview': 'map-view#cameras'
   'materials-overview': 'styles-overview#materials'
