@@ -4,6 +4,8 @@ site_dir: dist-ios
 
 pages:
   - Home: index.md
+  - Get Started: 'getting-started.md'
+  - Installation: 'installation.md'
 
 extra:
   site_subtitle: 'A thin wrapper that packages up everything you need to use Mapzen services in your iOS applications.'
