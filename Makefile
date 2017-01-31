@@ -10,6 +10,7 @@ IOS = https://github.com/mapzen/ios/archive/master.tar.gz
 MAPZENJS = https://mapzen.com/js/docs.tar.gz
 LIBPOSTAL = https://github.com/whosonfirst/go-whosonfirst-libpostal/archive/master.tar.gz
 CARTOGRAPHY = https://github.com/tangrams/cartography-docs/archive/master.tar.gz
+FANCYPANTS = https://github.com/mapzen/fancypants/archive/master.tar.gz
 
 SHELL := /bin/bash # required for OSX
 PYTHONPATH := packages:$(PYTHONPATH)
@@ -20,16 +21,16 @@ clean:
 	rm -rf dist theme/fragments
 	rm -rf src-android src-ios src-elevation src-mapzen-js src-metro-extracts \
 	       src-mobility src-search src-tangram src-terrain-tiles \
-	       src-vector-tiles src-libpostal src-cartography
+	       src-vector-tiles src-libpostal src-cartography src-fancypants
 	rm -rf dist-android dist-ios dist-elevation dist-index dist-mapzen-js \
 	       dist-metro-extracts dist-mobility dist-search dist-tangram \
-	       dist-terrain-tiles dist-vector-tiles dist-libpostal dist-cartography
+	       dist-terrain-tiles dist-vector-tiles dist-libpostal dist-cartography dist-fancypants
 	rm -rf dist-android-mkdocs.yml dist-ios-mkdocs.yml dist-elevation-mkdocs.yml \
 	       dist-index-mkdocs.yml dist-mapzen-js-mkdocs.yml \
 	       dist-metro-extracts-mkdocs.yml dist-mobility-mkdocs.yml \
 	       dist-search-mkdocs.yml dist-tangram-mkdocs.yml \
 	       dist-terrain-tiles-mkdocs.yml dist-vector-tiles-mkdocs.yml \
-	       dist-libpostal-mkdocs.yml dist-cartography-mkdocs.yml
+	       dist-libpostal-mkdocs.yml dist-cartography-mkdocs.yml dist-fancypants-mkdocs.yml
 
 # Get individual sources docs
 src-tangram:
@@ -92,6 +93,10 @@ src-cartography:
 	mkdir src-cartography
 	curl -sL $(CARTOGRAPHY) | tar -zxv -C src-cartography --strip-components=1 cartography-docs-master
 	
+src-fancypants:
+	mkdir src-fancypants
+	curl -sL $(FANCYPANTS) | tar -zxv -C src-fancypants --strip-components=1 fancypants-master
+	
 src-overview:
 	cp -r docs/overview src-overview
 
@@ -105,7 +110,7 @@ theme/fragments:
 	curl -sL 'https://mapzen.com/site-fragments/footer.html' -o theme/fragments/global-footer.html
 
 # Build Tangram, Metro Extracts, Vector Tiles, Elevation, Search, Mobility,
-# Android, iOS, Mapzen JS, Terrain Tiles, and Overview docs.
+# Android, iOS, Mapzen JS, Terrain Tiles, Fancy Pants, and Overview docs.
 # Uses GNU Make pattern rules:
 # https://www.gnu.org/software/make/manual/html_node/Pattern-Examples.html
 dist-%: src-% theme/fragments
@@ -121,7 +126,7 @@ dist-index: theme/fragments
 	./setup-redirects.py ./dist-index-mkdocs.yml /documentation/
 	cp dist-index/index.html dist-index/next.html
 
-dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-search dist-elevation dist-android dist-ios dist-mapzen-js dist-overview dist-guides dist-index dist-mobility dist-terrain-tiles dist-libpostal dist-cartography
+dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-search dist-elevation dist-android dist-ios dist-mapzen-js dist-overview dist-guides dist-index dist-mobility dist-terrain-tiles dist-libpostal dist-cartography dist-fancypants
 	mkdir dist
 	ln -s ../dist-tangram dist/tangram
 	ln -s ../dist-metro-extracts dist/metro-extracts
@@ -137,6 +142,7 @@ dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-search dist-elevat
 	ln -s ../dist-guides dist/guides
 	ln -s ../dist-libpostal dist/libpostal
 	ln -s ../dist-cartography dist/cartography
+	ln -s ../dist-fancypants dist/fancypants
 	rsync -urv --ignore-existing dist-index/ dist/
 
 serve:
