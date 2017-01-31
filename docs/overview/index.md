@@ -48,7 +48,7 @@ Mapzen uses server caching to deliver commonly requested content as quickly as p
 
 #### Mapzen Basemap Styles
 
-Mapzen's [cartography](https://mapzen.com/documentation/cartography/) will require an API key starting in March 2017 to enable access to Mapzen vector and terrain tiles data sources.
+Mapzen's [cartography](https://mapzen.com/documentation/cartography/) requires an API key to enable access to Mapzen vector and terrain tiles data sources.
 
 #### Mapzen Vector Tiles
 
