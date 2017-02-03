@@ -1,4 +1,7 @@
 <script>
+var demoframe;
+var current = {el: null, dist: null};
+
 function distanceFromCenter(el) {
   var top = el.offsetTop;
   var height = el.offsetHeight;
@@ -14,151 +17,160 @@ function distanceFromCenter(el) {
   return Math.abs(windowCenter - elementCenter);
 }
 
-function hide(el) {
-    iframe = el.getElementsByTagName("iframe")[0];
-    if (typeof iframe != "undefined") {
-        try {
-            if (typeof iframe.contentWindow.scene != 'undefined') {
-                el.setAttribute("code", iframe.contentWindow.editor.getValue());
-                el.removeChild(iframe);
-            }
-        }
-        catch(e) {
-            console.log(e);
-            el.removeChild(iframe);
+function moveFrameTo(el) {
+    if (typeof el == 'undefined') return false;
+
+    var source = '';
+    // get the source if it has been set
+    if (typeof el.getAttribute("source") != 'undefined') {
+        // get the source
+        source = el.getAttribute("source");
+        if (el.getAttribute("code") !='' && el.getAttribute("code") !='null') {
+            loadOldCode(el);
         }
     }
+
+    // set source of iframe
+    demoframe.src = source;
+    newtop = el.offsetTop;
+    parent = el;
+    demoframe.style.top = newtop+"px";
+    demoframe.style.left = el.offsetLeft+"px";
 }
-function show(el) {
-    if (typeof el != 'undefined') {
-        var iframe = el.getElementsByTagName("iframe")[0];
-        if (typeof iframe == "undefined") {
 
-            // create a new iframe
-            iframe = document.createElement("iframe");
-            iframe.classList.add("demoframe");
-            var source = '';
-            el.appendChild(iframe);
+// http://fokkezb.nl/2016/04/14/how-to-wait-for-a-javascript-variable-to-be-defined/
+// sets the property pre-emptively, then triggers a callback if something else sets it
+function waitForProperty(object, property, callback) {
+    Object.defineProperty(object, property, {
+        configurable: true,
+        enumerable: true,
+        writeable: true,
+        get: function() {
+            return this['_'+property];
+        },
+        set: function(val) {
+            this['_'+property] = val;
+            callback(val);
+        }
+    });
+}
 
-            // get the source if it has been set
-            if (typeof el.getAttribute("source") != 'undefined') {
-                // get the source
-                source = el.getAttribute("source");
-                if (el.getAttribute("code") !='' && el.getAttribute("code") !='null') {
-                    // get source from the previously-saved blobURL
-                    var code = el.getAttribute("code");
-                    iframe.onload = function() {
+function loadOldCode(el) {
+    // get source from the previously-saved blobURL
+    var code = el.getAttribute("code");
+    demoframe.onload = function() {
 
-                        // set the value of the codeMirror editor when it exists
-                        // if the contentWindow exists
-                        if (typeof iframe.contentWindow != 'undefined') {
+        // if the contentWindow doesn't exist, bail
+        if (typeof demoframe.contentWindow == 'undefined') {
+            console.log('is demoframe.contentWindow undefined?', demoframe.contentWindow);
+            return false;
+        }
 
-                            var editor = iframe.contentWindow.editor;
-                            var map = iframe.contentWindow.map;
-                            var Tangram = iframe.contentWindow.Tangram;
-                            if (iframe.contentWindow.scene) {
-                                setScene();
-                            }
-                            else {
-                                console.log('waiting for scene')
-                                // wait for scene to be defined
-                                // http://fokkezb.nl/2016/04/14/how-to-wait-for-a-javascript-variable-to-be-defined/
-                                Object.defineProperty(iframe.contentWindow, 'scene', {
-                                    configurable: true,
-                                    enumerable: true,
-                                    writeable: true,
-                                    get: function() {
-                                        return this._scene;
-                                    },
-                                    set: function(val) {
-                                        this._scene = val;
-                                        setScene();
-                                    }
-                                });
-                            }
+        // set the value of the codeMirror editor when it exists
+        var editor = demoframe.contentWindow.editor;
+        var map = demoframe.contentWindow.map;
+        var Tangram = demoframe.contentWindow.Tangram;
+        if (demoframe.contentWindow.scene) {
+            setScene();
+        }
+        else {
+            // console.log('waiting for scene')
+            // wait for scene to be defined
+            waitForProperty(demoframe.contentWindow, 'scene', setScene);
+        }
 
-                            function setValue() {
-                                // unsubscribe immediately
-                                iframe.contentWindow.scene.unsubscribe(loadevent);
-                                // set it again when tangram finishes drawing, just in case
-                                editor.doc.setValue(code);
-                            }
+        function setValue() {
+            // unsubscribe immediately
+            demoframe.contentWindow.scene.unsubscribe(loadevent);
+            // set it again when tangram finishes drawing, just in case
+            editor.doc.setValue(code);
+        }
 
-                            // make a subscription object with a callback
-                            var loadevent = {view_complete: setValue}
+        // make a subscription object with a callback
+        var loadevent = {view_complete: setValue}
 
-                            function setScene() {
-                                if (typeof iframe.contentWindow.scene == 'undefined') console.log('scene undefined, somehow')
-                                // subscribe to the loadevent
-                                iframe.contentWindow.scene.subscribe(loadevent);
-                            }
+        function setScene() {
+            if (typeof demoframe.contentWindow.scene == 'undefined') console.log('scene undefined, somehow')
+            // subscribe to the loadevent
+            demoframe.contentWindow.scene.subscribe(loadevent);
+        }
 
-                            var event = 'viewportChange';
-                            var trigger = function() {
-                                // turn off immediately
-                                disable();
-                            };
-                            function disable() {
-                                // turn off event listener
-                                editor.off(event, trigger);
-                                // set the editor value to the modified code
-                                setTimeout(function() {
-                                    // use a setTimeout 0 to make this a separate entry in the browser's event queue, so it won't happen until the editor is ready
+        var event = 'viewportChange';
+        var trigger = function() {
+            // turn off immediately
+            disable();
+        };
+        function setCode(code) {
+            console.log('setting editor.ownerDocument');
+            editor.doc.setValue(code);
+        }
+        function disable() {
+            // turn off event listener
+            editor.off(event, trigger);
+            // set the editor value to the modified code
+            setTimeout(function() {
+                // use a setTimeout 0 to make this a separate entry in the browser's event queue, so it won't happen until the editor is ready
 
-                                    // wait for editor's ownerDocument to be defined
-                                    // http://fokkezb.nl/2016/04/14/how-to-wait-for-a-javascript-variable-to-be-defined/
-                                    Object.defineProperty(editor, 'ownerDocument', {
-                                        configurable: true,
-                                        enumerable: true,
-                                        writeable: true,
-                                        get: function() {
-                                            return this._ownerDocument;
-                                        },
-                                        set: function(val) {
-                                            console.log('setting editor.ownerDocument')
-                                            this._ownerDocument = val;
-                                            editor.doc.setValue(code);
-                                        }
-                                    });
+                // wait for editor's ownerDocument to be defined
+                waitForProperty(editor, 'ownerDocument', setCode);
+                // Object.defineProperty(editor, 'ownerDocument', {
+                //     configurable: true,
+                //     enumerable: true,
+                //     writeable: true,
+                //     get: function() {
+                //         return this._ownerDocument;
+                //     },
+                //     set: function(val) {
+                //         console.log('setting editor.ownerDocument')
+                //         this._ownerDocument = val;
+                //         editor.doc.setValue(code);            
+                //     }
+                // });
 
 
-                                }, 0);
-                            }
-                            // set event listener to wait for the editor to draw
-                            editor.on(event, trigger);
-                        } else {
-                            console.log('is iframe.contentWindow undefined?', iframe.contentWindow);
-                        }
-                    }
+            }, 0);
+        }
+        // set event listener to wait for the editor to draw
+        editor.on(event, trigger);
+    }
+}
+window.onload = function() {
+// create a new iframe
+    demoframe = document.createElement("iframe");
+    demoframe.classList.add("demoframeclass");
+    document.getElementsByClassName("documentation-content")[0].appendChild(demoframe);
+
+    // check visibility every half-second, hide off-screen demos to go easy on the GPU
+    setInterval( function() {
+        var elements = document.getElementsByClassName("demo");
+        var winner = {el: null, dist: Infinity};
+        for (var i=0; i < elements.length; i++) {
+            el = elements[i];
+            dist = distanceFromCenter(el);
+            if (dist < winner.dist) {
+                winner = {el: el, dist: dist}
+            }
+        }
+        if (winner.el != current.el) {
+            // try to save current code state in a property called "code" on the parent div
+            try {
+                if (typeof demoframe.contentWindow.scene != 'undefined') {
+                    current.el.setAttribute("code", demoframe.contentWindow.editor.getValue());
                 }
-                iframe.src = source;
             }
+            catch(e) {
+                console.log(e);
+            }
+
+            current = winner;
+            moveFrameTo(winner.el);
         }
-    }
+    }, 500);
 }
-
-
-// check visibility every half-second, hide off-screen demos to go easy on the GPU
-setInterval( function() {
-    var elements = document.getElementsByClassName("demo");
-    var winner = {el: null, dist: Infinity};
-    for (var i=0; i < elements.length; i++) {
-        el = elements[i];
-        dist = distanceFromCenter(el);
-        if (dist < winner.dist) {
-            if (winner.el != null) hide(winner.el);
-            winner = {el: el, dist: dist}
-        } else if (dist > winner.dist) {
-            hide(el)
-        }
-    }
-    show(winner.el);
-}, 500);
 </script>
 
 <style>
 .demo-wrap {
-    margin: 1em 0;
     background-image: url("https://tangrams.github.io/tangram-docs/tutorials/loading.gif");
     background-position: center;
     background-repeat: no-repeat;
@@ -166,12 +178,15 @@ setInterval( function() {
 .demo {
     width: 100%;
     height: 400px;
+    background-color: #303237; /* codemirror bg color */
 }
-.demoframe {
+.demoframeclass {
     border: 0px;
     margin: 0;
-    height: 100%;
-    width: 100%;
+    height: 400px;
+    width: calc(100% - 30px);
+    position: absolute;
+    display: block;
 }
 .CodeMirror {
     width: 100%;
