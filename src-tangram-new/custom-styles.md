@@ -1,5 +1,5 @@
 <script>
-function elementIntersectsViewport (el) {
+function distanceFromCenter(el) {
   var top = el.offsetTop;
   var height = el.offsetHeight;
 
@@ -8,10 +8,10 @@ function elementIntersectsViewport (el) {
     top += el.offsetTop;
   }
 
-  return (
-    top < (window.pageYOffset + window.innerHeight) &&
-    (top + height) > window.pageYOffset
-  );
+  var windowCenter = window.pageYOffset + window.innerHeight/2;
+  var elementCenter = top + height/2;
+
+  return Math.abs(windowCenter - elementCenter);
 }
 
 function hide(el) {
@@ -29,7 +29,6 @@ function hide(el) {
         }
     }
 }
-
 function show(el) {
     if (typeof el != 'undefined') {
         var iframe = el.getElementsByTagName("iframe")[0];
@@ -142,24 +141,21 @@ function show(el) {
 // check visibility every half-second, hide off-screen demos to go easy on the GPU
 setInterval( function() {
     var elements = document.getElementsByClassName("demo");
+    var winner = {el: null, dist: Infinity};
     for (var i=0; i < elements.length; i++) {
         el = elements[i];
-        if (elementIntersectsViewport(el) || (i == 0 && window.pageYOffset < 500)) {
-            show(el);
-            // show the next two iframes as well
-            show(elements[i+1]);
-            show(elements[i+2]);
-            for (var j=0; j < elements.length; j++) {
-                // don't hide the previous one, the current one, or the next two
-                if (j != i && j != i-1 && j != i+1 && j != i+2) {
-                    hide(elements[j]);
-                }
-            }
-            break;
+        dist = distanceFromCenter(el);
+        if (dist < winner.dist) {
+            if (winner.el != null) hide(winner.el);
+            winner = {el: el, dist: dist}
+        } else if (dist > winner.dist) {
+            hide(el)
         }
     }
+    show(winner.el);
 }, 500);
 </script>
+
 <style>
 .demo-wrap {
     margin: 1em 0;
