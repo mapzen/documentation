@@ -1,4 +1,4 @@
-# Tutorial: Learn GitHub by building a website 3:49
+# Tutorial: Learn GitHub by building a website
 
 GitHub is a website that enables people to collaborate on projects, and many organizations use it for managing both software code and documentation. You will get started with GitHub by applying its tools to creating a website.
 
