@@ -1,4 +1,4 @@
-# Tutorial: Learn GitHub by building a website
+# Tutorial: Learn GitHub by building a website 3:49
 
 GitHub is a website that enables people to collaborate on projects, and many organizations use it for managing both software code and documentation. You will get started with GitHub by applying its tools to creating a website.
 
@@ -96,23 +96,27 @@ _Tip: You can click Graphs > Network or the number next to the Fork button, to v
 
 1. Scroll to the `Commit new file` section of the page.
 2. In the first box, type `Create website index file`.
-  This is a commit message, where you can explain your work. Providing a descriptive and meaningful message is important so you and others are able to know what is happening in this group of edits and be able to refer back to them in the future. If you do not add any text, GitHub includes a default message.
-3. Click `Create a new branch for this commit and start a pull request.` On this page, GitHub is combining three actions into one: creating a branch for your changes, committing your them to the branch, and starting a pull request.
 
+    This is a commit message, where you can explain your work. Providing a descriptive and meaningful message is important so you and others are able to know what is happening in this group of edits and be able to refer back to them in the future. If you do not add any text, GitHub includes a default message.
 
-  _Tip: When you are making more complex edits, you may want to create a branch from the Branch menu and reuse the branch for multiple commits._
+3. Click `Create a new branch for this commit and start a pull request.`
+
+    On this page, GitHub is combining three actions into one: creating a branch for your changes, committing your them to the branch, and starting a pull request.
+
+    _Tip: When you are making more complex edits, you may want to create a branch from the Branch menu and reuse the branch for multiple commits._
 
 4. GitHub automatically suggests a branch name based on your username. You can use it or type your own, such as `new-index-file`. The branch name should be descriptive, and some organizations may have naming standards.
 
     ![Commit new file](images/index-file-commit-small.png)
+
 5. Click `Propose new file`.
 
-
-  The page refreshes and you are on a page where you can open a pull request to propose your changes be merged into the master branch. The subject of the pull request is the commit message you typed before.
+    The page refreshes and you are on a page where you can open a pull request to propose your changes be merged into the master branch. The subject of the pull request is the commit message you typed before.
 
 6. Add some additional information about your the changes you are proposing in the comment box, such as `This adds an index file to create the homepage for the website.`
 
     ![Open a pull request page](images/open-pull-request-small.png)
+
 7. Scroll the page and review the other information displayed on the pull request. For example, you can see the list of commits (there is only one) and the changes you made.
 8. Click `Create pull request`.
 
@@ -129,12 +133,14 @@ In this case, you are the only contributor to this repository and need to review
 1. Review the information on the pull request page.
 
     ![Pull request page](images/pull-request-page-small.png)
+
 2. Below the merge section, type a comment and click `Comment`. Comments are used to discuss the changes. You can use emoji and markdown in your comments.
 
     ![Add a comment to a pull request](images/pull-request-add-comment-small.png)
+
 3. Click `Merge pull request`.
 
-  Your changes are compatible and do not conflict with the master branch, so can be merged automatically. However, sometimes, when multiple people are editing the same part of a file, GitHub cannot determine which change is correct. If this happens, you may need to use [command-line options](https://help.github.com/articles/resolving-a-merge-conflict-from-the-command-line/) to review and reconcile merge conflicts.
+    Your changes are compatible and do not conflict with the master branch, so can be merged automatically. However, sometimes, when multiple people are editing the same part of a file, GitHub cannot determine which change is correct. If this happens, you may need to use [command-line options](https://help.github.com/articles/resolving-a-merge-conflict-from-the-command-line/) to review and reconcile merge conflicts.
 
 4. Click `Confirm merge`.
 5. Click `Delete branch` to remove the temporary branch.
@@ -157,10 +163,12 @@ The option to use the `docs` folder, which is what you will be doing, allows you
 1. Click `Settings` near the top of the page.
 
     ![Repository settings button](images/repository-settings-button.png)
+
 2. On the main `Options` tab, scroll to the `GitHub Pages` section.
 3. Under `Source`, click `master branch /docs folder`.
 
     ![GitHub Pages source using the /docs folder](images/github-pages-source.png)
+
 4. Click `Save`.
 5. After the page refreshes, scroll back to the `GitHub Pages` section, if necessary, and notice that there is a banner indicating your site is ready to be published.
 7. Refresh the page again. You should now see a note that indicates your site has been published and its URL.
@@ -179,11 +187,13 @@ You next can replace the "Hello, world!" text with real content. You can copy te
 3. Click the `Raw` button to view the plain text, including the markdown formatting.
 
     ![View the raw file content](images/raw-button.png)
+
 4. Select all the text and copy it.
 5. Navigate to the `index.md` file in the `docs` folder.
 6. Click `Edit this file`.
 
     ![Start editing the file](images/edit-this-text-button.png)
+
 7. Delete the "Hello, world!" text, making sure to leave in place the front matter section above it.
 8. Paste the text you copied after the second `---` line.
 9. Following the same workflow you did before, commit your changes into a new branch and start a pull request.
@@ -201,8 +211,10 @@ Your basic website is complete.
 On your own, here are some of the tasks you can do to continue enhancing your site.
 
 1. Add more pages to your website.
-  - Files you add in the `docs` folder will be at a URL that matches the file name. For example, `about.md` will display at `/about`.
-  - Add a blog to your site by creating a `_posts` folder in the `docs` folder. By default, files should be named `YYYY-MM-DD-my-new-post.md`, where YYYY-MM-DD is the year, month, and day it is posted and the file name. This shows up on your site at a URL similar to `YYYY/MM/DD/my-new-post`.
+
+    - Files you add in the `docs` folder will be at a URL that matches the file name. For example, `about.md` will display at `/about`.
+    - Add a blog to your site by creating a `_posts` folder in the `docs` folder. By default, files should be named `YYYY-MM-DD-my-new-post.md`, where YYYY-MM-DD is the year, month, and day it is posted and the file name. This shows up on your site at a URL similar to `YYYY/MM/DD/my-new-post`.
+
 2. Customize the site configuration in `_config.yml`.
 3. Experiment with other themes, including the automatic site generation tools under the repository settings.
 4. Make a local copy of the repository and learn how to use the command-line interface to modify the files.
