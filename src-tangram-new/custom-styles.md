@@ -41,14 +41,17 @@ function moveFrameTo(el) {
 // http://fokkezb.nl/2016/04/14/how-to-wait-for-a-javascript-variable-to-be-defined/
 // sets the property pre-emptively, then triggers a callback if something else sets it
 function waitForProperty(object, property, callback) {
+    console.log('waitForProperty')
     Object.defineProperty(object, property, {
         configurable: true,
         enumerable: true,
         writeable: true,
         get: function() {
+            console.log('get:', property)
             return this['_'+property];
         },
         set: function(val) {
+            console.log('set:', property)
             this['_'+property] = val;
             callback(val);
         }
@@ -70,30 +73,6 @@ function loadOldCode(el) {
         var editor = demoframe.contentWindow.editor;
         var map = demoframe.contentWindow.map;
         var Tangram = demoframe.contentWindow.Tangram;
-        if (demoframe.contentWindow.scene) {
-            setScene();
-        }
-        else {
-            // console.log('waiting for scene')
-            // wait for scene to be defined
-            waitForProperty(demoframe.contentWindow, 'scene', setScene);
-        }
-
-        function setValue() {
-            // unsubscribe immediately
-            demoframe.contentWindow.scene.unsubscribe(loadevent);
-            // set it again when tangram finishes drawing, just in case
-            editor.doc.setValue(code);
-        }
-
-        // make a subscription object with a callback
-        var loadevent = {view_complete: setValue}
-
-        function setScene() {
-            if (typeof demoframe.contentWindow.scene == 'undefined') console.log('scene undefined, somehow')
-            // subscribe to the loadevent
-            demoframe.contentWindow.scene.subscribe(loadevent);
-        }
 
         var event = 'viewportChange';
         var trigger = function() {
@@ -101,32 +80,16 @@ function loadOldCode(el) {
             disable();
         };
         function setCode(code) {
-            console.log('setting editor.ownerDocument');
             editor.doc.setValue(code);
         }
         function disable() {
-            // turn off event listener
+            // turn off event listeners
             editor.off(event, trigger);
+            demoframe.onload = null;
             // set the editor value to the modified code
             setTimeout(function() {
                 // use a setTimeout 0 to make this a separate entry in the browser's event queue, so it won't happen until the editor is ready
-
-                // wait for editor's ownerDocument to be defined
-                waitForProperty(editor, 'ownerDocument', setCode);
-                // Object.defineProperty(editor, 'ownerDocument', {
-                //     configurable: true,
-                //     enumerable: true,
-                //     writeable: true,
-                //     get: function() {
-                //         return this._ownerDocument;
-                //     },
-                //     set: function(val) {
-                //         console.log('setting editor.ownerDocument')
-                //         this._ownerDocument = val;
-                //         editor.doc.setValue(code);            
-                //     }
-                // });
-
+                setCode(code);
 
             }, 0);
         }
@@ -134,6 +97,7 @@ function loadOldCode(el) {
         editor.on(event, trigger);
     }
 }
+
 window.onload = function() {
 // create a new iframe
     demoframe = document.createElement("iframe");
