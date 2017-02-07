@@ -18,44 +18,28 @@ function distanceFromCenter(el) {
 }
 
 function moveFrameTo(el) {
+    // console.log('move')
     if (typeof el == 'undefined') return false;
 
-    var source = '';
-    // get the source if it has been set
-    if (typeof el.getAttribute("source") != 'undefined') {
-        // get the source
-        source = el.getAttribute("source");
-        if (el.getAttribute("code") !='' && el.getAttribute("code") !='null') {
-            loadOldCode(el);
-        }
-    }
-
-    // set source of iframe
-    demoframe.src = source;
     newtop = el.offsetTop;
     parent = el;
     demoframe.style.top = newtop+"px";
     demoframe.style.left = el.offsetLeft+"px";
-}
-
-// http://fokkezb.nl/2016/04/14/how-to-wait-for-a-javascript-variable-to-be-defined/
-// sets the property pre-emptively, then triggers a callback if something else sets it
-function waitForProperty(object, property, callback) {
-    console.log('waitForProperty')
-    Object.defineProperty(object, property, {
-        configurable: true,
-        enumerable: true,
-        writeable: true,
-        get: function() {
-            console.log('get:', property)
-            return this['_'+property];
-        },
-        set: function(val) {
-            console.log('set:', property)
-            this['_'+property] = val;
-            callback(val);
+    // get the source if it has been set
+    if (typeof el.getAttribute("source") != 'undefined') {
+        demoframe.src = el.getAttribute("source");
+    }
+    // if code was saved previously
+    if (el.getAttribute("code") !='' && el.getAttribute("code") != 'null') {
+        // load it
+        loadOldCode(el);
+    } else {
+        demoframe.onload = function() {
+            // console.log('demoframe.onload')
+            // debugger
+            demoframe.style.visibility = "visible";
         }
-    });
+    }
 }
 
 function loadOldCode(el) {
@@ -90,8 +74,9 @@ function loadOldCode(el) {
             setTimeout(function() {
                 // use a setTimeout 0 to make this a separate entry in the browser's event queue, so it won't happen until the editor is ready
                 setCode(code);
-
             }, 0);
+            // show iframe
+            demoframe.style.visibility = "visible";
         }
         // set event listener to wait for the editor to draw
         editor.on(event, trigger);
@@ -116,16 +101,17 @@ window.onload = function() {
             }
         }
         if (winner.el != current.el) {
+            demoframe.style.visibility = "hidden";
             // try to save current code state in a property called "code" on the parent div
             try {
                 if (typeof demoframe.contentWindow.scene != 'undefined') {
                     current.el.setAttribute("code", demoframe.contentWindow.editor.getValue());
                 }
+                demoframe.src = "";
             }
             catch(e) {
                 console.log(e);
             }
-
             current = winner;
             moveFrameTo(winner.el);
         }
