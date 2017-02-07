@@ -2,25 +2,27 @@
 var demoframe;
 var current = {el: null, dist: null};
 
+// find distance of element from center of viewport
 function distanceFromCenter(el) {
-  var top = el.offsetTop;
-  var height = el.offsetHeight;
+    var top = el.offsetTop;
+    var height = el.offsetHeight;
 
-  while(el.offsetParent) {
-    el = el.offsetParent;
-    top += el.offsetTop;
-  }
+    while(el.offsetParent) {
+        el = el.offsetParent;
+        top += el.offsetTop;
+    }
 
-  var windowCenter = window.pageYOffset + window.innerHeight/2;
-  var elementCenter = top + height/2;
+    var windowCenter = window.pageYOffset + window.innerHeight/2;
+    var elementCenter = top + height/2;
 
-  return Math.abs(windowCenter - elementCenter);
+    return Math.abs(windowCenter - elementCenter);
 }
 
 function moveFrameTo(el) {
-    // console.log('move')
     if (typeof el == 'undefined') return false;
-
+    // el.style['background-color'] = "rgba(0,0,0,0)";
+    el.appendChild(loader);
+    // debugger
     newtop = el.offsetTop;
     parent = el;
     demoframe.style.top = newtop+"px";
@@ -35,8 +37,7 @@ function moveFrameTo(el) {
         loadOldCode(el);
     } else {
         demoframe.onload = function() {
-            // console.log('demoframe.onload')
-            // debugger
+            // show the iframe once it's loaded
             demoframe.style.visibility = "visible";
         }
     }
@@ -55,7 +56,6 @@ function loadOldCode(el) {
 
         // set the value of the codeMirror editor when it exists
         var editor = demoframe.contentWindow.editor;
-        var map = demoframe.contentWindow.map;
         var Tangram = demoframe.contentWindow.Tangram;
 
         var event = 'viewportChange';
@@ -67,9 +67,8 @@ function loadOldCode(el) {
             editor.doc.setValue(code);
         }
         function disable() {
-            // turn off event listeners
+            // remove event listener
             editor.off(event, trigger);
-            demoframe.onload = null;
             // set the editor value to the modified code
             setTimeout(function() {
                 // use a setTimeout 0 to make this a separate entry in the browser's event queue, so it won't happen until the editor is ready
@@ -84,12 +83,14 @@ function loadOldCode(el) {
 }
 
 window.onload = function() {
-// create a new iframe
+    // create a new iframe
     demoframe = document.createElement("iframe");
     demoframe.classList.add("demoframeclass");
     document.getElementsByClassName("documentation-content")[0].appendChild(demoframe);
+    loader = document.createElement("div");
+    loader.classList.add("demo-loading");
 
-    // check visibility every half-second, hide off-screen demos to go easy on the GPU
+    // check visibility every quarter-second, hide off-screen demos to go easy on the GPU
     setInterval( function() {
         var elements = document.getElementsByClassName("demo");
         var winner = {el: null, dist: Infinity};
@@ -101,7 +102,12 @@ window.onload = function() {
             }
         }
         if (winner.el != current.el) {
+            // hide the demoframe
             demoframe.style.visibility = "hidden";
+            // remove any onloads in case it's in the middle of loading something
+            demoframe.onload = null;
+            // stop it loading whatever it was loading
+            // demoframe.src = "";
             // try to save current code state in a property called "code" on the parent div
             try {
                 if (typeof demoframe.contentWindow.scene != 'undefined') {
@@ -115,15 +121,37 @@ window.onload = function() {
             current = winner;
             moveFrameTo(winner.el);
         }
-    }, 500);
+    }, 250);
 }
 </script>
 
 <style>
+.demo-loading {
+    position: relative;
+    height: 10px;
+    width: 100%;
+    left: 0;
+    top: 390px;
+    transition: 80ms bottom ease-out;
+    animation: barberpole 1s linear infinite;
+    background-size: 30px 30px;
+    background-image: linear-gradient(135deg,#6b6b70 25%,#3d3f46 25%,#3d3f46 50%,#6b6b70 50%,#6b6b70 75%,#3d3f46 75%,#3d3f46);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+@keyframes barberpole {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 60px 30px;
+    }
+}
 .demo-wrap {
-    background-image: url("https://tangrams.github.io/tangram-docs/tutorials/loading.gif");
-    background-position: center;
-    background-repeat: no-repeat;
+    /*position: relative;*/
 }
 .demo {
     width: 100%;
