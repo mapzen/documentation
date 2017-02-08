@@ -44,7 +44,7 @@ src-vector-tiles:
 	mkdir src-vector-tiles
 	# Try with --wildcards for GNU tar, but fall back to BSD tar syntax for Mac.
 	curl -sL $(VECTOR_TILES) \
-	| jq '.tarball_url' --raw-output \
+	| ./extract-tarball-url.py \
 	| xargs curl -sL | ( \
 	    tar -zxv -C src-vector-tiles --strip-components=2 --exclude=README.md --wildcards '*/docs/' \
 	 || tar -zxv -C src-vector-tiles --strip-components=2 --exclude=README.md '*/docs/' \
@@ -54,7 +54,7 @@ src-terrain-tiles:
 	mkdir src-terrain-tiles
 	# Try with --wildcards for GNU tar, but fall back to BSD tar syntax for Mac.
 	curl -sL $(TERRAIN_TILES) \
-	| jq '.tarball_url' --raw-output \
+	| ./extract-tarball-url.py \
 	| xargs curl -sL | ( \
 	    tar -zxv -C src-terrain-tiles --strip-components=2 --exclude=README.md --wildcards '*/docs/' \
 	 || tar -zxv -C src-terrain-tiles --strip-components=2 --exclude=README.md '*/docs/' \
@@ -91,7 +91,7 @@ src-libpostal:
 src-cartography:
 	mkdir src-cartography
 	curl -sL $(CARTOGRAPHY) | tar -zxv -C src-cartography --strip-components=1 cartography-docs-master
-
+	
 src-overview:
 	cp -r docs/overview src-overview
 
