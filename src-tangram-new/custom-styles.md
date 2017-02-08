@@ -66,12 +66,12 @@ function loadOldCode(el) {
             scene = demoframe.contentWindow.layer.scene;
             editor.doc.setValue(code);
             if (scene.initializing) {
-                view_complete_event = { view_complete: function() {
+                load_event = { load: function() {
                     // set it again to force a Tangram update
                     editor.doc.setValue(code);
                     scene.unsubscribe(this);
                 }};
-                scene.subscribe(view_complete_event);
+                scene.subscribe(load_event);
             }
         }
         function disable() {
