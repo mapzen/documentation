@@ -57,13 +57,13 @@ function loadOldCode(el) {
 
         // set the value of the codeMirror editor when it exists
         var editor = demoframe.contentWindow.editor;
-        var scene = demoframe.contentWindow.layer.scene;
         var event = 'viewportChange';
         var trigger = function() {
             // turn off immediately
             disable();
         };
         function setCode(code) {
+            scene = demoframe.contentWindow.layer.scene;
             editor.doc.setValue(code);
             if (scene.initializing) {
                 view_complete_event = { view_complete: function() {
