@@ -31,6 +31,7 @@ function moveFrameTo(el) {
     if (typeof el.getAttribute("source") != 'undefined') {
         demoframe.src = el.getAttribute("source");
     }
+    // debugger
     // if code was saved previously
     if (el.getAttribute("code") !='' && el.getAttribute("code") != 'null') {
         // load it
@@ -56,8 +57,7 @@ function loadOldCode(el) {
 
         // set the value of the codeMirror editor when it exists
         var editor = demoframe.contentWindow.editor;
-        var Tangram = demoframe.contentWindow.Tangram;
-
+        var scene = demoframe.contentWindow.layer.scene;
         var event = 'viewportChange';
         var trigger = function() {
             // turn off immediately
@@ -65,6 +65,14 @@ function loadOldCode(el) {
         };
         function setCode(code) {
             editor.doc.setValue(code);
+            if (scene.initializing) {
+                view_complete_event = { view_complete: function() {
+                    // set it again to force a Tangram update
+                    editor.doc.setValue(code);
+                    scene.unsubscribe(this);
+                }};
+                scene.subscribe(view_complete_event);
+            }
         }
         function disable() {
             // remove event listener
