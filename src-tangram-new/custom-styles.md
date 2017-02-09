@@ -1,4 +1,4 @@
-<link rel='stylesheet' href='https://tangrams.github.io/tangram-docs/tutorial-embeds.css'>
+<link rel='stylesheet' href='https://tangrams.github.io/tangram-docs/css/tutorial-embeds.css'>
 
 Tangram draws map features using its [built-in _draw styles_](https://mapzen.com/documentation/tangram/Styles-Overview/): `polygons`, `lines`, `points`, `text`, and `raster`. Using the `styles` element, you can customize the behavior of these draw styles, either by using the many built-in customization features, or by making your own effects from scratch using [shaders](https://mapzen.com/documentation/tangram/shaders/).
 
@@ -121,4 +121,4 @@ For more about internal variables available in shaders, see [Built-ins, defaults
 
 Questions? Comments? Drop us a line [on GitHub](http://github.com/tangrams/tangram/issues), [on Twitter](http://twitter.com/tangramjs), or [via email](mailto:tangram@mapzen.com).
 
-<script src='https://tangrams.github.io/tangram-docs/tutorial-embeds.js'></script>
+<script src='https://tangrams.github.io/tangram-docs/src/tutorial-embeds.js'></script>
