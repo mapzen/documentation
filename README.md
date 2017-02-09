@@ -22,7 +22,7 @@ The source files to build Mapzen's documentation may be found in separate docume
 | [Terrain tiles](https://mapzen.com/documentation/terrain-tiles/)  | https://github.com/tilezen/joerd  | Latest release  |
 | [Elevation](https://mapzen.com/documentation/elevation/) | https://github.com/valhalla/valhalla-docs  | Master |
 | [Android SDK](https://mapzen.com/documentation/android/) | https://github.com/mapzen/android/tree/master/docs | Latest release |
-| [iOS SDK](https://mapzen.com/documentation/ios/) | https://github.com/mapzen/ios/blob/master/docs | Master |
+| [iOS SDK](https://mapzen.com/documentation/ios/) | https://github.com/mapzen/ios/blob/master/docs | Latest release |
 | [Address parsing/libpostal](https://mapzen.com/documentation/libpostal/) | https://github.com/whosonfirst/go-whosonfirst-libpostal/blob/master/docs | Master |
 | [Cartography](https://mapzen.com/documentation/cartography/) | https://github.com/tangrams/cartography-docs/ | Master |
 
