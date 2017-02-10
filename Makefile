@@ -103,7 +103,7 @@ src-libpostal:
 src-cartography:
 	mkdir src-cartography
 	curl -sL $(CARTOGRAPHY) | tar -zxv -C src-cartography --strip-components=1 cartography-docs-master
-	
+
 src-overview:
 	cp -r docs/overview src-overview
 
@@ -113,7 +113,7 @@ src-guides:
 # Retrieve style guide
 theme/fragments:
 	mkdir -p theme/fragments
-	curl -sL 'https://mapzen.com/site-fragments/new-navbar.html' -o theme/fragments/global-nav.html
+	curl -sL 'https://mapzen.com/site-fragments/navbar.html' -o theme/fragments/global-nav.html
 	curl -sL 'https://mapzen.com/site-fragments/footer.html' -o theme/fragments/global-footer.html
 
 # Build Tangram, Metro Extracts, Vector Tiles, Elevation, Search, Mobility,
