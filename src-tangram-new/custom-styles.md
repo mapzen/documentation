@@ -121,4 +121,4 @@ For more about internal variables available in shaders, see [Built-ins, defaults
 
 Questions? Comments? Drop us a line [on GitHub](http://github.com/tangrams/tangram/issues), [on Twitter](http://twitter.com/tangramjs), or [via email](mailto:tangram@mapzen.com).
 
-<script src='https://raw.githubusercontent.com/tangrams/tangram-docs/tutorial/src/tutorial-embeds.js'></script>
+<script src='https://meetar.github.io/docstest/tutorials-embeds.js'></script>
