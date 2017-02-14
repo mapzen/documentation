@@ -44,7 +44,11 @@ Mapzen uses server caching to deliver commonly requested content as quickly as p
 
 #### Tangram
 
-[Tangram](https://mapzen.com/documentation/tangram/), Mapzen's rendering software for web and mobile apps, does not require its own API key. However, if you are using Tangram to draw data from Mapzen's vector tiles service, you need a vector tiles key.
+[Tangram](https://mapzen.com/documentation/tangram/), Mapzen's rendering software for web and mobile apps, does not require its own API key. However, if you are using Tangram to draw data from Mapzen's vector tiles service, you need an API key.
+
+#### Mapzen Basemap Styles
+
+Mapzen's [cartography](https://mapzen.com/documentation/cartography/) requires an API key to enable access to Mapzen vector and terrain tiles data sources.
 
 #### Mapzen Vector Tiles
 
