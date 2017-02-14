@@ -12,7 +12,7 @@ Note: in the examples in this tutorial, we are relying on the [layer name shortc
 
 Let's use one of the built-in style customization options, [`dash`](https://mapzen.com/documentation/tangram/styles#dash), to draw some dashed lines. Add a datasource to your map with a [`source`](https://mapzen.com/documentation/tangram/source) entry, then add some lines to your map - let's start with road features.
 
-<div class="alert alert-info" role="alert">Note: This tutorial uses Tangram's interactive scenefile editor, [Tangram Play](https://mapzen.com/tangram/play/) – type in the embedded editors to see real-time updates!</div>
+<div class="alert alert-info" role="alert">Note: This tutorial uses Tangram's interactive scenefile editor, <a href="https://mapzen.com/tangram/play/">Tangram Play</a> – type in the embedded editors to see real-time updates!</div>
 
 <div class="demo-wrap">
     <div class="demo" id="demo0" source="https://precog.mapzen.com/tangrams/tangram-play/master/embed/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom1.yaml#16.50417/40.78070/-73.96085"></div>
