@@ -20,7 +20,7 @@ Now let's make a custom _draw style_ called "_dashes" – this name could be any
 
 <div class="play-embed" source="https://precog.mapzen.com/tangrams/tangram-play/master/embed/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom2.yaml&lines=7-9#16.50417/40.78070/-73.96085"></div>
 
-Then, rename the _draw group_ of the "roads" layer from `lines` to `_dashes`, and the roads will be drawn in the custom style.
+So far our new style isn't used anywhere, so no dashes will be seen. To fix this, rename the _draw group_ of the "roads" layer from `lines` to `_dashes`, and the roads will be drawn in the custom style.
 
 The values of the `dash` parameter are relative to the `width` of the line – a value of `2` produces a dash or gap twice as long as the line's width, `.5` is half the line's width, and `1` produces a square.
 
@@ -52,11 +52,11 @@ Finally, set the buildings draw style to match the name of the custom style:
 
 <div class="play-embed" source="https://precog.mapzen.com/tangrams/tangram-play/master/embed/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom8.yaml&lines=15#17/40.76442/-73.98058"></div>
 
-It doesn't look transparent! That's because the building layer's color value is a solid gray: `[.7, .7, .7]`. The three values in that array are the Red, Green, and Blue channels – but there's another possible channel for Alpha, and if you don't specify it, it defaults to `1`, which is opaque. The `blend` modes respect alpha, so let's add an alpha value of `.5` to that color array, which will give it 50% opacity:
+It didn't work! That's because the building layer's color value is a solid gray: `[.7, .7, .7]`. The three values in that array are the Red, Green, and Blue channels – but there's another possible channel for Alpha, and if you don't specify it, it defaults to `1`, which is opaque. The `blend` modes respect alpha, so let's add an alpha value of `.5` to that color array, which will give it 50% opacity:
 
 <div class="play-embed" source="https://precog.mapzen.com/tangrams/tangram-play/master/embed/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/custom/custom9.yaml&lines=17#17/40.76442/-73.98058"></div>
 
-Experiment with different RGB and alpha values above!
+Experiment with different RGB and alpha values above! (Check out Tangram's [color documentation](https://mapzen.com/documentation/tangram/draw/#color) to see how color values may be specified.)
 
 ## Shader Effects
 
