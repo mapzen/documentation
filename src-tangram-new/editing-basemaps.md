@@ -12,13 +12,13 @@ var map = L.Mapzen.map('map', {
 
 Or, you can put your own data on top of them inside of a [Tangram](https://mapzen.com/products/tangram/) scene file with the `import` feature.
 
-<div class="alert alert-info" role="alert">Note: This tutorial uses Tangram's interactive scenefile editor, <a href="https://mapzen.com/tangram/play/">Tangram Play</a> – type in the embedded editors to see real-time updates!</div>
-
 <div class="play-embed" source="https://precog.mapzen.com/tangrams/tangram-play/master/embed/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/editing-basemaps1.yaml&lines=1#5/38.720/-79.717"></div>
 
 But what do you do if you want to customize the house style itself? This is a bit trickier, and involves a bit of detective work.
 
 First, you must know which features you wish to modify. The broader the class of features you want to change, the trickier it will be to change them. In our house styles, a given feature may be affected by multiple styles and sets of drawing rules, specifying a slightly different style at various zoom levels, and for various sub-classifications of the data. So, once you've picked a feature, you must understand how that feature is currently drawn.
+
+<div class="alert alert-info" role="alert">Note: This tutorial uses Tangram's interactive scenefile editor, <a href="https://mapzen.com/tangram/play/">Tangram Play</a> – type in the embedded editors to see real-time updates!</div>
 
 ## Basic Style Override
 
@@ -57,9 +57,9 @@ roads:
         ...
 ```
 
-Copy the entire "roads" layer into a new document in an editor somewhere – it could be Tangram Play, or the text editor of your choice. Tangram Play has a "select similar" feature, accessed by pressing `control-D`, which will find the next instance of the selected text and add to the selection. This allows you to edit in multiple places at once, which comes in handy for the next step.
+Copy the entire "roads" layer into a new document in an editor somewhere. If your editor allows you to edit in multiple places at once (such as Sublime Text, with its Command+D "Quick Add Next" option), that feature will come in handy for the next step.
 
-We want to delete any branch which doesn't end with a `lines: color:` – so all of the `filter` declarations, and those `width` declarations, even the `outline` declarations: all of those and their descendants can be deleted.
+We want to delete any branch which doesn't end with a `lines: color:` – so all of the `filter` declarations, and those `width` declarations, any other draw style blocks like `polygon` or `point`, and even the `outline` declarations – all of those and their descendants can be deleted.
 
 So this block:
 
@@ -83,7 +83,7 @@ minor_road:
             color: [[12, global.minor_road1], [17, global.minor_road2]]
 ```
 
-Once you have a big tree with only `color` parameters dangling from the tips of all the branches, change all those color values to something festive. Red is a classic choice:
+Once you have a big tree with only `color` parameters dangling from the tips of all the branches, celebrate by changing all those color values to something festive. Red is a classic choice:
 
 ```yaml
 minor_road:
