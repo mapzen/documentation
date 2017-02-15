@@ -1,116 +1,4 @@
-<script>
-function elementIntersectsViewport (el) {
-  var top = el.offsetTop;
-  var height = el.offsetHeight;
-
-  while(el.offsetParent) {
-    el = el.offsetParent;
-    top += el.offsetTop;
-  }
-
-  return (
-    top < (window.pageYOffset + window.innerHeight) &&
-    (top + height) > window.pageYOffset
-  );
-}
-
-function hide(el) {
-    iframe = el.getElementsByTagName("iframe")[0];
-    if (typeof iframe != "undefined") {
-        try {
-            if (typeof iframe.contentWindow.scene != 'undefined') {
-                // make a new blob from the codemirror code
-                var blob = new Blob([iframe.contentWindow.editor.getValue()], {type: "text/plain"});
-                // make an objectURL from the blob and save that to the parent div
-                el.setAttribute("code", window.URL.createObjectURL(blob));
-                el.removeChild(iframe);
-            }
-        }
-        catch(e) {
-            console.log(e);
-            el.removeChild(iframe);
-        }
-    }
-}
-function show(el) {
-    if (typeof el != 'undefined') {
-        iframe = el.getElementsByTagName("iframe")[0];
-        if (typeof iframe == "undefined") {
-
-            // create a new iframe
-            iframe = document.createElement("iframe");
-            iframe.classList.add("demoframe");
-            var source = '';
-            el.appendChild(iframe);
-
-            // get the source if it has been set
-            if (typeof el.getAttribute("source") != 'undefined') {
-                // get the source
-                source = el.getAttribute("source");
-                if (el.getAttribute("code") !='' && el.getAttribute("code") !='null') {
-                    // get source from the previously-saved blobURL
-                    var code = el.getAttribute("code");
-                    iframe.src = replaceUrlParam(el.getAttribute("source"), "scene", code);
-                } else {
-                    iframe.src = source;
-                }
-            }
-        }
-    }
-}
-
-function replaceUrlParam(url, param, value){
-    var parser = document.createElement('a');
-    parser.href = url;
-
-    if (value == null) value = '';
-    var pattern = new RegExp('\\b('+param+'=).*?(&|$)')
-    if (parser.search.search(pattern)>=0){
-        parser.search = parser.search.replace(pattern,'$1' + value + '$2');
-    }
-    return parser.href;
-}
-
-
-// check visibility every half-second, hide off-screen demos to go easy on the GPU
-setInterval( function() {
-    var elements = document.getElementsByClassName("demo");
-    for (var i=0; i < elements.length; i++) {
-        el = elements[i];
-        if (elementIntersectsViewport(el) || (i == 0 && window.pageYOffset < 500)) {
-            show(el);
-            // show the next two iframes as well
-            show(elements[i+1]);
-            show(elements[i+2]);
-            for (var j=0; j < elements.length; j++) {
-                // don't hide the previous one, the current one, or the next two
-                if (j != i && j != i-1 && j != i+1 && j != i+2) {
-                    hide(elements[j]);
-                }
-            }
-            break;
-        }
-    }
-}, 500);
-</script>
-<style>
-.demo-wrap {
-    margin: 1em 0;
-}
-.demo {
-    width: 100%;
-    height: 400;
-}
-.demoframe {
-    border: 0px;
-    margin: 0;
-    height: 100%;
-    width: 100%;
-}
-.CodeMirror {
-    width: 100%;
-}
-</style>
+<link rel='stylesheet' href='https://tangrams.github.io/tangram-docs/css/tutorial-embeds.css'>
 
 Mapzen has published a number of stylish yet functional [basemaps](https://mapzen.com/products/maps/), equally suitable for the home or office. They can be used as standalone Leaflet layers using [Mapzen.js](https://mapzen.com/documentation/mapzen-js/):
 
@@ -122,12 +10,11 @@ var map = L.Mapzen.map('map', {
 })
 ```
 
-Or, you can put your own data on top of them inside of a [Tangram](https://mapzen.com/products/tangram/) scene file with the `import` feature:
+Or, you can put your own data on top of them inside of a [Tangram](https://mapzen.com/products/tangram/) scene file with the `import` feature.
 
-<div class="demo-wrap">
-    <div class="demo" id="demo0" code="" source="https://precog.mapzen.com/tangrams/tangram-play/master/embed/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/editing-basemaps1.yaml#5/38.720/-79.717"></div>
-    <span class="caption"><a target="_blank" href="http://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/editing-basemaps1.yaml#5/38.720/-79.717">( Open in Play ▶ )️</a></span>
-</div>
+<div class="alert alert-info" role="alert">Note: This tutorial uses Tangram's interactive scenefile editor, <a href="https://mapzen.com/tangram/play/">Tangram Play</a> – type in the embedded editors to see real-time updates!</div>
+
+<div class="play-embed" source="https://precog.mapzen.com/tangrams/tangram-play/master/embed/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/editing-basemaps1.yaml&lines=1#5/38.720/-79.717"></div>
 
 But what do you do if you want to customize the house style itself? This is a bit trickier, and involves a bit of detective work.
 
@@ -137,10 +24,7 @@ First, you must know which features you wish to modify. The broader the class of
 
 Before we start pulling apart a house style, let's start with a simpler example to see the basic method to override a style. Here's a very basic Tangram scene file:
 
-<div class="demo-wrap">
-    <div class="demo" id="demo1" code="" source="https://precog.mapzen.com/tangrams/tangram-play/master/embed/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/simple-basemap.yaml#11.8002/41.3381/69.2698"></div>
-    <span class="caption"><a target="_blank" href="http://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/simple-basemap.yaml#11.8002/41.3381/69.2698">( Open in Play ▶ )️</a></span>
-</div>
+<div class="play-embed" source="https://precog.mapzen.com/tangrams/tangram-play/master/embed/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/simple-basemap.yaml#11.8002/41.3381/69.2698"></div>
 
 We've saved this scene file to the Tangram documentation repo, so it can be imported as a base style in a Tangram scene file, like so:
 
@@ -152,10 +36,7 @@ Then, to modify it, identify the parameter you want to change, and then re-decla
 
 In this case, we'll change the `color` of the `major_road` sublayer. We don't need to include any of the other parameters in that layer, unless we want to change them – they already exist in the imported style, and will still take effect. Simple enough!
 
-<div class="demo-wrap">
-    <div class="demo" id="demo3" code="" source="https://precog.mapzen.com/tangrams/tangram-play/master/embed/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/editing-basemaps3.yaml#11.8002/41.3381/69.2698"></div>
-    <span class="caption"><a target="_blank" href="http://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/editing-basemaps3.yaml#11.8002/41.3381/69.2698">( Open in Play ▶ )️</a></span>
-</div>
+<div class="play-embed" source="https://precog.mapzen.com/tangrams/tangram-play/master/embed/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/editing-basemaps3.yaml#11.8002/41.3381/69.2698"></div>
 
 ## Customizing a House Style
 
@@ -215,11 +96,10 @@ Here's an example scene file: https://github.com/tangrams/tangram-docs/blob/gh-p
 
 And here's what it looks like:
 
-<div class="demo-wrap">
-    <div class="demo" id="demo4" code="" source="https://precog.mapzen.com/tangrams/tangram-play/master/embed/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/editing-basemaps4.yaml#11.8002/41.3381/69.2698"></div>
-    <span class="caption"><a target="_blank" href="http://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/editing-basemaps4.yaml#11.8002/41.3381/69.2698">( Open in Play ▶ )️</a></span>
-</div>
+<div class="play-embed" source="https://precog.mapzen.com/tangrams/tangram-play/master/embed/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/editing-basemaps4.yaml#11.8002/41.3381/69.2698"></div>
 
 Congratulations! Those are the basics of customizing an imported scene file. In fact there's no advanced technique, that's it.
 
 Questions? Comments? Drop us a line [on GitHub](http://github.com/tangrams/tangram/issues), [on Twitter](http://twitter.com/tangramjs), or [via email](mailto:tangram@mapzen.com).
+
+<script src='https://tangrams.github.io/tangram-docs/src/tutorial-embeds.js'></script>
