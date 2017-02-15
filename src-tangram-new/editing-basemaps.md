@@ -44,7 +44,7 @@ The Mapzen house styles are significantly more complex. Take the case of [Refill
 
 So let's try it. First, download the Refill style and take a look at it in the text editor of your choice: https://mapzen.com/carto/refill-style-no-labels/6/refill-style-no-labels.yaml
 
-(We'll be working with version 6 of the Refill style – the house styles may change over time, so if you want to override any properties or variables which aren't part of the SDK you should use a specific version.)
+(We'll be working with version 6 of the Refill style – as Mapzen's basemap styles are still in active development we recommend pegging an import to a specific major version, so you enjoy any minor and patch updates but are ensured of stable named scene elements. See the [cartography docs](https://mapzen.com/documentation/cartography/versioning/) for info and current [major versions](https://mapzen.com/documentation/cartography/styles/).)
 
 Search for the roads layer, which can be found by searching for `roads:` – it starts like this:
 
