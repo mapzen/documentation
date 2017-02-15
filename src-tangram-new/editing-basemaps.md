@@ -44,20 +44,20 @@ The Mapzen house styles are significantly more complex. Take the case of [Refill
 
 So let's try it. First, open up the Refill style and take a look at it: https://github.com/tangrams/refill-style/blob/gh-pages/refill-style.yaml
 
-Then, open it in a separate text editor, so you can easily navigate around. Then, search for the roads layer, which can be found by searching for `roads:` – it starts like this:
+Then, open it in a separate text editor, so you can easily navigate around. (You can click the "Raw" link on that GutHub page and copy the code right out of there, and paste it in your editor of choice. Just like a real programmer!) Then, search for the roads layer, which can be found by searching for `roads:` – it starts like this:
 
 ```yaml
 roads:
-        data: { source: mapzen, layer: roads }
-        filter: { not: { kind: rail } }
-        draw:
-            lines:
-            ...
+    data: { source: mapzen, layer: roads }
+    filter: { not: { kind: rail } }
+    draw:
+        lines:
+        ...
 ```
 
-Copy the entire "roads" layer into an editor somewhere – it could be Tangram Play, or the text editor of your choice. Tangram Play has a "select similar" feature, accessed by pressing `control-D`, which will find the next instance of the selected text and add to the selection. This allows you to edit in multiple places at once, which comes in handy for the next step.
+Copy the entire "roads" layer into a new document in an editor somewhere – it could be Tangram Play, or the text editor of your choice. Tangram Play has a "select similar" feature, accessed by pressing `control-D`, which will find the next instance of the selected text and add to the selection. This allows you to edit in multiple places at once, which comes in handy for the next step.
 
-Now, we want to delete any branch which doesn't end with a `lines: color:` – so all of the `filter` declarations, and `width` declaration, even the `outline` declarations: all of those and their descendants can be deleted.
+We want to delete any branch which doesn't end with a `lines: color:` – so all of the `filter` declarations, and those `width` declarations, even the `outline` declarations: all of those and their descendants can be deleted.
 
 So this block:
 
@@ -81,7 +81,7 @@ minor_road:
             color: [[12, global.minor_road1], [17, global.minor_road2]]
 ```
 
-Then, change all of the color values to something festive. Red is a classic choice:
+Once you have a big tree with only `color` parameters dangling from the tips of all the branches, change all those color values to something festive. Red is a classic choice:
 
 ```yaml
 minor_road:
@@ -90,7 +90,7 @@ minor_road:
             color: red
 ```
 
-As of this writing, the roads layer is almost 1400 lines long, but after editing, it should be closer to 200 – and all made up of `color` declarations. When you have that, paste it into your new scene file under the `import`, and all of those color declarations will overwrite the ones in the import.
+As of this writing, the roads layer is almost 1400 lines long, but after editing, it should be closer to 200 – and all made up of `color` declarations. When you have that, paste it into your new scene file under a `layers` object, just below the `import` object, and all of those color declarations will overwrite the ones in the import.
 
 Here's an example scene file: https://github.com/tangrams/tangram-docs/blob/gh-pages/tutorials/editing-basemaps/editing-basemaps4.yaml
 
@@ -98,7 +98,7 @@ And here's what it looks like:
 
 <div class="play-embed" source="https://precog.mapzen.com/tangrams/tangram-play/master/embed/?go=👌&scene=https://tangrams.github.io/tangram-docs/tutorials/editing-basemaps/editing-basemaps4.yaml#11.8002/41.3381/69.2698"></div>
 
-Congratulations! Those are the basics of customizing an imported scene file. In fact there's no advanced technique, that's it.
+Congratulations! Those are the basics of customizing an imported scene file. In fact, there are no advanced techniques – that's it.
 
 Questions? Comments? Drop us a line [on GitHub](http://github.com/tangrams/tangram/issues), [on Twitter](http://twitter.com/tangramjs), or [via email](mailto:tangram@mapzen.com).
 
