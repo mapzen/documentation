@@ -6,7 +6,7 @@ This tutorial will explore three things you can make with custom styles: dashed 
 
 ![three views of tangram scenes](https://mapzen-assets.s3.amazonaws.com/images/tangram-tutorials/custom-styles.jpg)
 
-Note: in the examples in this tutorial, we are relying on the [layer name shortcut](https://mapzen.com/documentation/tangram/Filters-Overview/#layer-name-shortcut) and [style name shortcut](https://mapzen.com/documentation/tangram/Styles-Overview.md#using-styles).
+Note: in the examples in this tutorial, we are relying on the [layer name shortcut](https://mapzen.com/documentation/tangram/Filters-Overview/#layer-name-shortcut) and [style name shortcut](https://mapzen.com/documentation/tangram/Styles-Overview/#using-styles).
 
 ## Dashed Lines
 
