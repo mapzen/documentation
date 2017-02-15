@@ -42,9 +42,11 @@ In this case, we'll change the `color` of the `major_road` sublayer. We don't ne
 
 The Mapzen house styles are significantly more complex. Take the case of [Refill](https://github.com/tangrams/refill-style), which is deceptively simple-looking – though it is monochrome, this style includes dozens of places where road color is specified, depending on the classification of road, its datasource, even the zoom level at which it's drawn. This means you'll have to change color values in many places.
 
-So let's try it. First, open up the Refill style and take a look at it: https://github.com/tangrams/refill-style/blob/gh-pages/refill-style.yaml
+So let's try it. First, download the Refill style and take a look at it in the text editor of your choice: https://mapzen.com/carto/refill-style-no-labels/6.0.0/refill-style-no-labels.yaml
 
-Then, open it in a separate text editor, so you can easily navigate around. (You can click the "Raw" link on that GutHub page and copy the code right out of there, and paste it in your editor of choice. Just like a real programmer!) Then, search for the roads layer, which can be found by searching for `roads:` – it starts like this:
+(We'll be working with version 6.0.0 of the Refill style – the house styles may change over time, so if you want to override any properties or variables which aren't part of the SDK you should use a specific version.)
+
+Search for the roads layer, which can be found by searching for `roads:` – it starts like this:
 
 ```yaml
 roads:
