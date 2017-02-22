@@ -39,6 +39,8 @@ pages:
     - 'Demos': 'Demos.md'
     - 'JS Walkthrough': 'walkthrough.md'
     - 'Android Walkthrough': 'android-walkthrough.md'
+    - 'Editing Basemaps': 'tutorials/editing-basemaps.md'
+    - 'Custom Styles': 'tutorials/custom-styles.md'
 
 
 # Determines if a broken link to a page within the documentation is considered
