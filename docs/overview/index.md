@@ -4,7 +4,7 @@ Mapzen's products help you put a map anywhere, search and route the planet, and 
 
 Mapzen developer account authentication is through [GitHub](https://github.com), which is a website that enables people to collaborate on a project. You need to have a GitHub account to create a Mapzen developer account, as there is currently no other form of authentication.
 
-When signed in to your Mapzen developer account, you see a dashboard where you can create an API key, which is a code that uniquely identifies your developer account without providing a password.
+When signed in to your Mapzen developer account, you see a dashboard where you can create an API key, which is a code that uniquely links API usage inside your application with your account without needing a password.
 
 1. If you do not have a GitHub account, create one at https://github.com/join. It can be any kind, including personal.
 2. Go to https://mapzen.com/developers. This is where you can create, delete, and manage your API keys.
@@ -20,9 +20,9 @@ Mapzen offers a free tier of each service, subject to the rate limits listed bel
 
 The services have maximum numbers of queries you can make within a certain period of time, and some have additional limitations to minimize computationally intensive uses.
 
-All the projects used to build the Mapzen-hosted services are open source. If you want to try Mapzen's products, start with the hosted services to see if they fit your workflow needs. If you later decide that you need additional customizations or higher capacity, you can consider installing on your own servers the open-source code used to build Mapzen's services.
+All the projects used to build the Mapzen-hosted services are open source. If you want to try Mapzen's products, start with the hosted services to see if they fit your workflow needs. If you later decide that you need additional customizations, you can consider installing on your own servers the open-source code used to build Mapzen's services.
 
-If you send a query without a valid API key (keyless access), the rate limits are 1,000 requests per day, 6 per minute, and 1 per second for each Mapzen service.
+You must include an API key when using Mapzen's services; requests sent without an API key return errors.
 
 If you find a problem, need higher limits, or have enhancement suggestions for Mapzen's products, send a note to hello@mapzen.com.
 
