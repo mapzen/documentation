@@ -4,7 +4,7 @@ site_dir: dist-overview
 
 pages:
   - Overview: index.md
-
+  - Rate limit usage: 'usage.md'
 extra:
   site_subtitle: Get started developing with Mapzen's products
   project_repo_url: https://github.com/mapzen/mapzen-docs-generator
