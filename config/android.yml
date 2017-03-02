@@ -17,8 +17,8 @@ pages:
     - 'GeoData API': 'geodata-api.md'
   - 'Mapzen Search for Android': 'search.md'
   - 'Mapzen Turn-by-Turn for Android': 'turn-by-turn.md'
- 
- mz:redirects:
+
+mz:redirects:
   'markers': 'add-features'
   'polylines': 'add-features'
   'polygons': 'add-features'
