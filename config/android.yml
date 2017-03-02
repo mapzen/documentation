@@ -17,7 +17,7 @@ pages:
     - 'GeoData API': 'geodata-api.md'
   - 'Mapzen Search for Android': 'search.md'
   - 'Mapzen Turn-by-Turn for Android': 'turn-by-turn.md'
-
+ 
 extra:
   site_subtitle: 'A thin wrapper that packages up everything you need to use Mapzen services in your Android applications.'
   project_repo_url: https://github.com/mapzen/android
