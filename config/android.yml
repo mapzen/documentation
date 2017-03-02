@@ -7,7 +7,7 @@ pages:
   - 'Installation': 'installation.md'
   - 'Get started': 'getting-started.md'
   - 'Position, rotation, and zoom': 'basic-functions.md'
-  - 'Add features': 'add-features.md'
+  - 'Add features': 'features.md'
   - 'Switching styles': 'styles.md'
   - 'Gesture responders': 'gesture-responders.md'
   - 'Location services': 'location-services.md'
