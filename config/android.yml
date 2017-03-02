@@ -11,7 +11,7 @@ pages:
   - 'Switching styles': 'styles.md'
   - 'Gesture responders': 'gesture-responders.md'
   - 'Location services': 'location-services.md'
-  - 'Mapzen Places API': 
+  - Mapzen Places for Android: 
     - 'Overview': 'places.md'
     - 'Autocomplete interface': 'autocomplete-ui.md'
     - 'GeoData API': 'geodata-api.md'
