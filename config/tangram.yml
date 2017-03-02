@@ -35,7 +35,7 @@ pages:
   - JavaScript API: 'Javascript-API.md'
   - Android API: 'Android-API.md'
   - iOS API: 'iOS-API.md'
-  - Getting Started:
+  - Get Started:
     - 'Setup Guides': 'Tangram-Setup.md'
     - 'Demos & Examples': 'Demos.md'
 
