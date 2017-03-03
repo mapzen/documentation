@@ -6,17 +6,24 @@ pages:
   - Home: index.md
   - 'Installation': 'installation.md'
   - 'Get started': 'getting-started.md'
-  - 'Current location': 'current-location.md'
   - 'Position, rotation, and zoom': 'basic-functions.md'
-  - 'Markers': 'markers.md'
-  - 'Polylines': 'polyline.md'
-  - 'Polygons': 'polygon.md'
+  - 'Add features': 'features.md'
   - 'Switching styles': 'styles.md'
   - 'Gesture responders': 'gesture-responders.md'
   - 'Location services': 'location-services.md'
+  - Mapzen Places for Android: 
+    - 'Overview': 'places.md'
+    - 'Autocomplete interface': 'autocomplete-ui.md'
+    - 'GeoData API': 'geodata-api.md'
   - 'Mapzen Search for Android': 'search.md'
   - 'Mapzen Turn-by-Turn for Android': 'turn-by-turn.md'
 
+mz:redirects:
+  'markers': 'add-features'
+  'polylines': 'add-features'
+  'polygons': 'add-features'
+  'current-location': 'location-services'
+ 
 extra:
   site_subtitle: 'A thin wrapper that packages up everything you need to use Mapzen services in your Android applications.'
   project_repo_url: https://github.com/mapzen/android
