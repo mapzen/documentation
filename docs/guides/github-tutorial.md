@@ -74,7 +74,7 @@ Markdown is a lightweight markup language that uses plain text with symbols, lik
   Hello, world!
   ```
 
-The text between the two lines of hyphens (`---`) is metadata, known as front matter, that Jekyll processes to display the page. You can use variables and other options in the front matter to customize your site.
+The text between the two lines of hyphens (`---`) is metadata, known as front matter, that Jekyll processes to display the page. You can use variables and other options in the front matter to customize your site. GitHub Pages can make any markdown file into a website, so tries to assign the page metadata automatically if it is not present.
 
 You are setting the page layout and giving the page a title. The content that comes after this is what is displayed on your page (Hello, world!).
 
