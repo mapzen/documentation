@@ -36,9 +36,11 @@ pages:
   - Android API: 'Android-API.md'
   - iOS API: 'iOS-API.md'
   - Demos & Examples:
-    - 'Demos': 'Demos.md'
+    - 'Demos': 'demos.md'
     - 'JS Walkthrough': 'walkthrough.md'
     - 'Android Walkthrough': 'android-walkthrough.md'
+    - 'Custom Styles': 'tutorials/custom-styles.md'
+    - 'Editing Basemaps': 'tutorials/editing-basemaps.md'
 
 
 # Determines if a broken link to a page within the documentation is considered
