@@ -37,7 +37,7 @@ pages:
   - iOS API: 'iOS-API.md'
   - Get Started:
     - 'Setup Guides': 'Tangram-Setup.md'
-    - 'Tutorials & Demos': 'Demos.md'
+    - 'Tutorials & Demos': 'demos.md'
 
 
 # Determines if a broken link to a page within the documentation is considered
