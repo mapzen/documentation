@@ -4,7 +4,7 @@ Mapzen's products help you put a map anywhere, search and route the planet, and 
 
 Mapzen developer account authentication is through [GitHub](https://github.com), which is a website that enables people to collaborate on a project. You need to have a GitHub account to create a Mapzen developer account, as there is currently no other form of authentication.
 
-When signed in to your Mapzen developer account, you see a dashboard where you can create an API key, which is a code that uniquely identifies your developer account without providing a password.
+When signed in to your Mapzen developer account, you see a dashboard where you can create an API key, which is a code that uniquely links API usage inside your application with your account without needing a password.
 
 1. If you do not have a GitHub account, create one at https://github.com/join. It can be any kind, including personal.
 2. Go to https://mapzen.com/developers. This is where you can create, delete, and manage your API keys.
@@ -13,16 +13,16 @@ When signed in to your Mapzen developer account, you see a dashboard where you c
 5. Optionally, give the key a name so you can remember the purpose of the project.
 6. When you are ready to use it, copy the key and paste it into your code. In your query, the API key parameter should take the form of `api_key=mapzen-xxxxxx`.
 
-Mapzen's web services have various API endpoints that allow you to access web resources through a URL. You will need to include your API key in the URL you construct to send queries to Mapzen's services. For example, add an `api_key` URL parameter to any request, such as `&api_key=mapzen-xxxxxx`.
+Mapzen's web services have various API endpoints that allow you to access web resources through a URL. You will need to include your API key in the URL you construct to send queries to Mapzen's services. For example, add an `api_key` URL parameter to any request, such as `?api_key=mapzen-xxxxxx`.
 
 ## Rate limits
 Mapzen offers a free tier of each service, subject to the rate limits listed below. Mapzen's hosted services are shared resources, so there are limitations to prevent individual users from degrading system performance for everyone.
 
 The services have maximum numbers of queries you can make within a certain period of time, and some have additional limitations to minimize computationally intensive uses.
 
-All the projects used to build the Mapzen-hosted services are open source. If you want to try Mapzen's products, start with the hosted services to see if they fit your workflow needs. If you later decide that you need additional customizations or higher capacity, you can consider installing on your own servers the open-source code used to build Mapzen's services.
+All the projects used to build the Mapzen-hosted services are open source. If you want to try Mapzen's products, start with the hosted services to see if they fit your workflow needs. If you later decide that you need additional customizations, you can consider installing on your own servers the open-source code used to build Mapzen's services.
 
-If you send a query without a valid API key (keyless access), the rate limits are 1,000 requests per day, 6 per minute, and 1 per second for each Mapzen service.
+You must include an API key when using Mapzen's services; requests sent without an API key return errors.
 
 If you find a problem, need higher limits, or have enhancement suggestions for Mapzen's products, send a note to hello@mapzen.com.
 
@@ -44,7 +44,11 @@ Mapzen uses server caching to deliver commonly requested content as quickly as p
 
 #### Tangram
 
-[Tangram](https://mapzen.com/documentation/tangram/), Mapzen's rendering software for web and mobile apps, does not require its own API key. However, if you are using Tangram to draw data from Mapzen's vector tiles service, you need a vector tiles key.
+[Tangram](https://mapzen.com/documentation/tangram/), Mapzen's rendering software for web and mobile apps, does not require its own API key. However, if you are using Tangram to draw data from Mapzen's vector tiles service, you need an API key.
+
+#### Mapzen Basemap Styles
+
+Mapzen's [cartography](https://mapzen.com/documentation/cartography/) requires an API key to enable access to Mapzen vector and terrain tiles data sources.
 
 #### Mapzen Vector Tiles
 
