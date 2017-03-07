@@ -35,10 +35,9 @@ pages:
   - JavaScript API: 'Javascript-API.md'
   - Android API: 'Android-API.md'
   - iOS API: 'iOS-API.md'
-  - Demos & Examples:
-    - 'Demos': 'Demos.md'
-    - 'JS Walkthrough': 'walkthrough.md'
-    - 'Android Walkthrough': 'android-walkthrough.md'
+  - Get Started:
+    - 'Setup Guides': 'Tangram-Setup.md'
+    - 'Tutorials & Demos': 'demos.md'
 
 
 # Determines if a broken link to a page within the documentation is considered
