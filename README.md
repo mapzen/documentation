@@ -52,4 +52,4 @@ open http://localhost:8000/dist/
 
 Run `make clean all` to build a clean copy of the documentation. This command deletes the previous build and makes new files.
 
-You may be able to build one section of the documentation using `make clean dist-projectname`, such as `make clean dist-tangram`.
+You may be able to build one section of the documentation using `make clean dist-{projectname}`, such as `make clean dist-tangram`.
