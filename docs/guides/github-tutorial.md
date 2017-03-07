@@ -47,7 +47,7 @@ _Tip: You can download a copy of a repository to your local machine. Doing this 
 The files provided for the tutorial include information about the repository's license, some markdown documents, and a `docs` folder. You are going to create a web page from the contents of the `docs` folder.
 
 1. Look at the files in your forked repository.
-2. Click the `docs` folder to display its contents. It contains a `css` folder, which imports a visual theme for the website you will create, and `_config.yml` to set up the website.
+2. Click the `docs` folder to display its contents. It contains `_config.yml` with configuration information to set up the website.
 
     ![Files in the repository](images/repo-files-css-config.png)
 
@@ -158,7 +158,7 @@ To use GitHub Pages, you need to specify the source of the files used to build t
 - the entire master branch, which is useful if the repository only contains files used for the website
 - the contents of a folder named `docs` in the master branch
 
-The option to use the `docs` folder, which is what you will be doing, allows you to store documentation in the same repository alongside the code it describes. The repository you forked contains all the stylesheets needed to build a website, but GitHub Pages has other options for building your own themes or custom sites.
+The option to use the `docs` folder, which is what you will be doing, allows you to store documentation in the same repository alongside the code it describes. You are using the default visual style, but GitHub Pages has other options for building your own themes or custom sites.
 
 1. Click `Settings` near the top of the page.
 
@@ -194,7 +194,7 @@ You next can replace the "Hello, world!" text with real content. You can copy te
 
     ![Start editing the file](images/edit-this-text-button.png)
 
-7. Delete the "Hello, world!" text, making sure to leave in place the front matter section above it.
+7. Delete the "Hello, world!" text, making sure to leave in place the front matter section above it. (If you do accidentally delete it, GitHub Pages tries to assign the page metadata automatically.)
 8. Paste the text you copied after the second `---` line.
 9. Following the same workflow you did before, commit your changes into a new branch and start a pull request.
 10. Open the pull request, merge your changes into the master branch, and delete the temporary branch.
