@@ -49,8 +49,6 @@ The files provided for the tutorial include information about the repository's l
 1. Look at the files in your forked repository.
 2. Click the `docs` folder to display its contents. It contains `_config.yml` with configuration information to set up the website.
 
-    ![Files in the repository](images/repo-files-css-config.png)
-
 These files are used with [Jekyll](https://jekyllrb.com/), a software library written in Ruby that converts text files, such as the markdown files you see here, into a static website or blog. Jekyll is very flexible, and you can [review the documentation](https://jekyllrb.com/docs/home/) to learn more about how to customize it for your site. [GitHub Pages](https://pages.github.com/), which the free website hosting service you are using in this tutorial, is powered by Jekyll.
 
 _Tip: The site template and layouts you are using are from a theme called Minima, which is the built-in style for Jekyll. You can see an example and view the open-source code in the [Minima repository](https://github.com/jekyll/minima)._
