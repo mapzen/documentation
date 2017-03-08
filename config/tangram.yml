@@ -36,6 +36,7 @@ pages:
   - Android API: 'Android-API.md'
   - iOS API: 'iOS-API.md'
   - Get Started:
+    - 'Setup Guides': 'Tangram-Setup.md'
     - 'Demos': 'demos.md'
     - 'JS Walkthrough': 'walkthrough.md'
     - 'Android Walkthrough': 'android-walkthrough.md'
