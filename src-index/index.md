@@ -123,7 +123,7 @@
 				<div class="category-info">
 					<a class="docs-title" href="wof/">Who's On First API</a>
 					<p class="excerpt">
-						Retrieve data about place from our gazetteer, Who's On First.
+						Retrieve data about places from our gazetteer, Who's On First.
 					</p>
 				</div>
 				<div class="read-more">
