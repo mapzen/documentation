@@ -119,6 +119,17 @@
 			<h6 class="category-title">
 				Data
 			</h6>
+			<div class="category-info-container">
+				<div class="category-info">
+					<a class="docs-title" href="wof/">Who's On First API</a>
+					<p class="excerpt">
+						Retrieve data about place from our gazetteer, Who's On First.
+					</p>
+				</div>
+				<div class="read-more">
+					<a class="btn btn-default btn-transparent" href="wof/"> View Documentation </a>
+				</div>
+			</div>
 			<div class="category-info-container first">
 				<div class="category-info">
 					<a class="docs-title" href="metro-extracts/">Metro Extracts</a>
