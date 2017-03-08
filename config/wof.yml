@@ -9,9 +9,8 @@ pages:
   - 'Pagination': 'pagination.md'
   - 'Error codes': 'errors.md'
 
-# Extra variables for templates
 extra:
-  site_subtitle: 'Add open elevation data to your applications with the raster tile map service.'
+  site_subtitle: 'Retrieve data about places from our gazetteer, Who's On First.'
   project_repo_url: https://github.com/whosonfirst/whosonfirst-www-api
   docs_base_url: https://github.com/whosonfirst/whosonfirst-www-api/tree/master/docs
   exclude_home_contents_in_toc: false
