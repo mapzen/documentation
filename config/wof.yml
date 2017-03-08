@@ -4,6 +4,10 @@ site_dir: dist-wof
 
 pages:
   - Home: index.md
+  - 'Formats': 'formats.md'
+  - 'Methods': 'methods.md'
+  - 'Pagination': 'pagination.md'
+  - 'Error codes': 'errors.md'
 
 # Extra variables for templates
 extra:
