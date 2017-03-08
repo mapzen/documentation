@@ -10,7 +10,7 @@ pages:
  - 'Error codes': 'errors.md'
 
 extra:
- site_subtitle: 'Retrieve data about places from our gazetteer, Who's On First.'
+ site_subtitle: "Retrieve data about places from our gazetteer, Who's On First."
  project_repo_url: https://github.com/whosonfirst/whosonfirst-www-api
  docs_base_url: https://github.com/whosonfirst/whosonfirst-www-api/tree/master/docs
  exclude_home_contents_in_toc: false
