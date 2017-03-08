@@ -104,9 +104,8 @@ src-libpostal:
 
 src-wof:
 	mkdir src-wof
-	curl -sL $(WOF) | tar -zxv -C src-wof --strip-components=2 go-whosonfirst-wof-master/docs
+	curl -sL $(WOF) | tar -zxv -C src-wof --strip-components=2 whosonfirst-www-api-master/docs
 	
-
 src-cartography:
 	mkdir src-cartography
 	curl -sL $(CARTOGRAPHY) | tar -zxv -C src-cartography --strip-components=1 cartography-docs-master
@@ -124,7 +123,7 @@ theme/fragments:
 	curl -sL 'https://mapzen.com/site-fragments/footer.html' -o theme/fragments/global-footer.html
 
 # Build Tangram, Metro Extracts, Vector Tiles, Elevation, Search, Mobility,
-# Android, iOS, Mapzen JS, Terrain Tiles, WOF and Overview docs.
+# Android, iOS, Mapzen JS, Terrain Tiles, Who's On First and Overview docs.
 # Uses GNU Make pattern rules:
 # https://www.gnu.org/software/make/manual/html_node/Pattern-Examples.html
 dist-%: src-% theme/fragments
