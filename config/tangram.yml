@@ -37,11 +37,12 @@ pages:
   - iOS API: 'iOS-API.md'
   - Get Started:
     - 'Setup Guides': 'Tangram-Setup.md'
-    - 'Demos': 'demos.md'
     - 'JS Walkthrough': 'walkthrough.md'
     - 'Android Walkthrough': 'android-walkthrough.md'
-    - 'Custom Styles': 'tutorials/custom-styles.md'
-    - 'Editing Basemaps': 'tutorials/editing-basemaps.md'
+    - Tutorials:
+      - 'Custom Styles': 'tutorials/custom-styles.md'
+      - 'Editing Basemaps': 'tutorials/editing-basemaps.md'
+    - 'Demos': 'demos.md'
 
 # Determines if a broken link to a page within the documentation is considered
 # a warning or an error (link to a page not listed in the pages setting). Set
