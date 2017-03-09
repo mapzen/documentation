@@ -32,17 +32,18 @@ pages:
     - 'sources': 'sources.md'
     - 'styles': 'styles.md'
     - 'textures': 'textures.md'
-  - JavaScript API: 'Javascript-API.md'
-  - Android API: 'Android-API.md'
-  - iOS API: 'iOS-API.md'
   - Get Started:
-    - 'Setup Guides': 'Tangram-Setup.md'
-    - 'JS Walkthrough': 'walkthrough.md'
-    - 'Android Walkthrough': 'android-walkthrough.md'
+    - Setup Guides: 
+      - 'Setup Overview': 'Tangram-Setup.md'
+      - 'JS Walkthrough': 'walkthrough.md'
+      - 'Android Walkthrough': 'android-walkthrough.md'
     - Tutorials:
       - 'Custom Styles': 'tutorials/custom-styles.md'
       - 'Editing Basemaps': 'tutorials/editing-basemaps.md'
     - 'Demos': 'demos.md'
+  - JavaScript API: 'Javascript-API.md'
+  - Android API: 'Android-API.md'
+  - iOS API: 'iOS-API.md'
 
 # Determines if a broken link to a page within the documentation is considered
 # a warning or an error (link to a page not listed in the pages setting). Set
