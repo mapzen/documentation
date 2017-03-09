@@ -17,6 +17,7 @@ pages:
     - 'GeoData API': 'geodata-api.md'
   - 'Mapzen Search for Android': 'search.md'
   - 'Mapzen Turn-by-Turn for Android': 'turn-by-turn.md'
+  - 'Javadoc': 'javadoc.md'
 
 mz:redirects:
   'markers': 'add-features'
