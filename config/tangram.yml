@@ -7,18 +7,18 @@ site_dir: dist-tangram
 # This means pages should be added or subtracted manually here if the files change.
 pages:
   - Home: index.md
-  - Concept Overviews:
+  - Concept overviews:
     - 'Tangram': 'Tangram-Overview.md'
-    - 'The Scene File': 'Scene-file.md'
-    - 'Data Filters': 'Filters-Overview.md'
+    - 'The scene file': 'Scene-file.md'
+    - 'Data filters': 'Filters-Overview.md'
     - 'Styles': 'Styles-Overview.md'
     - 'Shaders': 'Shaders-Overview.md'
-    - 'Raster Sources': 'Raster-Overview.md'
+    - 'Raster sources': 'Raster-Overview.md'
     - 'Lights': 'Lights-Overview.md'
     - 'Cameras': 'Cameras-Overview.md'
     - 'Materials': 'Materials-Overview.md'
     - 'YAML': 'yaml.md'
-  - Syntax Reference:
+  - Syntax reference:
     - 'cameras': 'cameras.md'
     - 'draw': 'draw.md'
     - 'global': 'global.md'
@@ -32,14 +32,14 @@ pages:
     - 'sources': 'sources.md'
     - 'styles': 'styles.md'
     - 'textures': 'textures.md'
-  - Get Started:
-    - Setup Guides: 
-      - 'Setup Overview': 'Tangram-Setup.md'
-      - 'JS Walkthrough': 'walkthrough.md'
-      - 'Android Walkthrough': 'android-walkthrough.md'
+  - Get started:
+    - Setup guides: 
+      - 'Setup overview': 'Tangram-Setup.md'
+      - 'JS walkthrough': 'walkthrough.md'
+      - 'Android walkthrough': 'android-walkthrough.md'
     - Tutorials:
-      - 'Custom Styles': 'tutorials/custom-styles.md'
-      - 'Editing Basemaps': 'tutorials/editing-basemaps.md'
+      - 'Custom styles': 'tutorials/custom-styles.md'
+      - 'Editing basemaps': 'tutorials/editing-basemaps.md'
     - 'Demos': 'demos.md'
   - JavaScript API: 'Javascript-API.md'
   - Android API: 'Android-API.md'
