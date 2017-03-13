@@ -7,7 +7,11 @@
     {% if page_description %}<meta name='description' content='{{ page_description }}'>{% endif %}
     {% if site_author %}<meta name='author' content='{{ site_author }}'>{% endif %}
     {% if canonical_url %}<link rel='canonical' href='{{ canonical_url }}'>{% endif %}
-    <link rel='shortcut icon' href='https://mapzen.com/common/styleguide/images/favicon.ico'>
+    <link rel='apple-touch-icon' href='https://mapzen.com/common/styleguide/images/favicons/apple-touch-icon.png' sizes='180x180'>
+    <link rel='icon' type='image/png' href='https://mapzen.com/common/styleguide/images/favicons/favicon-16x16.png' sizes='16x16'>
+    <link rel='icon' type='image/png' href='https://mapzen.com/common/styleguide/images/favicons/favicon-32x32.png' sizes='32x32'>
+    <link rel='manifest' href='https://mapzen.com/common/styleguide/images/favicons/manifest.json'>
+    <link rel='mask-icon' href='https://mapzen.com/common/styleguide/images/favicons/safari-pinned-tab.svg' color='#2C1E3F'>
 
     <title>{% if page_title %}{{ page_title }} - {% endif %}{{ site_name }}</title>
 
@@ -23,9 +27,9 @@
     {% include 'fragments/global-nav.html' %}
 
     {% if config.extra.layout == 'raw-page' %}
-    
+
       {{ content }}
-    
+
     {% else %}
 
     <div class='documentation-hero'>
@@ -110,7 +114,7 @@
     <div class='container headroom-large footroom-large hidden-print'>
       {% include 'common/cta.html' %}
     </div>
-    
+
     {% endif %}
 
     {% include 'fragments/global-footer.html' %}
