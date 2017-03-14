@@ -135,9 +135,9 @@ There are also limitations on the number of sampling points for which you reques
 
 The Mapzen Elevation lookup service is built from the [Valhalla](https://github.com/valhalla) open-source project.
 
-#### Who's On First API
+#### Who's On First
 
-[Who's On First's API](https://mapzen.com/documentation/wof/) provides all sorts of data about places from our gazetteer 
+Retrieve data about places from the [Who's On Firsts](https://mapzen.com/documentation/wof/) gazetteer.
 
 - Queries per day: 25,000
 - Queries per minute: 300
