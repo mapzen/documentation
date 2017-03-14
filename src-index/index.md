@@ -121,9 +121,9 @@
 			</h6>
 			<div class="category-info-container first">
 				<div class="category-info">
-					<a class="docs-title" href="wof/">Who's On First API</a>
+					<a class="docs-title" href="wof/">Who's On First</a>
 					<p class="excerpt">
-						Retrieve data about places from our gazetteer, Who's On First.
+						Retrieve data about places from the Who's on First gazetteer.
 					</p>
 				</div>
 				<div class="read-more">
