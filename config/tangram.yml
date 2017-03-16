@@ -40,7 +40,7 @@ pages:
     - Tutorials:
       - 'Custom styles': 'tutorials/custom-styles.md'
       - 'Editing basemaps': 'tutorials/editing-basemaps.md'
-    - 'Demos': 'demos.md'
+    - Demos: demos.md
   - JavaScript API: 'Javascript-API.md'
   - Android API: 'Android-API.md'
   - iOS API: 'iOS-API.md'
