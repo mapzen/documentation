@@ -6,7 +6,7 @@
     {% endif %}
   {% else %}
     <!-- This is when there is subcategory coming from config.yml -->
-    <a href='#'>{{ nav_item.title }}</a>
+    <a href='{% if nav_item.active %} {{nav_item.url}} {% else %} {{nav_item.children[0].url}} {% endif %} '> {{ nav_item.title }}</a>
     <ul class='toc-subnav'>
       {% if nav_item.active %}
         {% for nav_item in nav_item.children %}
