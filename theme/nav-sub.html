@@ -5,11 +5,16 @@
       {% include 'toc-sub.html' %}
     {% endif %}
   {% else %}
-    <a href=''>{{ nav_item.title }}</a>
-    <ul class=''>
-      {% for nav_item in nav_item.children %}
-        {% include 'nav-sub.html' %}
-      {% endfor %}
+    <!-- This is when there is subcategory coming from config.yml -->
+    <a href='#'>{{ nav_item.title }}</a>
+    <ul class='toc-subnav'>
+      {% if nav_item.active %}
+        {% for nav_item in nav_item.children %}
+          <li class='boing main{% if nav_item.active %} toc-current{% endif %}'>
+            <a href='{{ nav_item.url }}'>{{nav_item.title}} </a>
+          </li>
+        {% endfor %}
+      {% endif %}
     </ul>
   {% endif %}
 </li>
