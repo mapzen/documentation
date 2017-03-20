@@ -35,8 +35,8 @@ pages:
   - Get started:
     - Setup guides: 
       - 'Setup overview': 'Tangram-Setup.md'
-      - 'JS walkthrough': 'walkthrough.md'
-      - 'Android walkthrough': 'android-walkthrough.md'
+      - 'JavaScript setup': 'walkthrough.md'
+      - 'Android setup': 'android-walkthrough.md'
     - Tutorials:
       - 'Custom styles': 'tutorials/custom-styles.md'
       - 'Editing basemaps': 'tutorials/editing-basemaps.md'
