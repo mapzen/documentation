@@ -7,18 +7,18 @@ site_dir: dist-tangram
 # This means pages should be added or subtracted manually here if the files change.
 pages:
   - Home: index.md
-  - Concept Overviews:
+  - Concept overviews:
     - 'Tangram': 'Tangram-Overview.md'
-    - 'The Scene File': 'Scene-file.md'
-    - 'Data Filters': 'Filters-Overview.md'
+    - 'The scene file': 'Scene-file.md'
+    - 'Data filters': 'Filters-Overview.md'
     - 'Styles': 'Styles-Overview.md'
     - 'Shaders': 'Shaders-Overview.md'
-    - 'Raster Sources': 'Raster-Overview.md'
+    - 'Raster sources': 'Raster-Overview.md'
     - 'Lights': 'Lights-Overview.md'
     - 'Cameras': 'Cameras-Overview.md'
     - 'Materials': 'Materials-Overview.md'
     - 'YAML': 'yaml.md'
-  - Syntax Reference:
+  - Syntax reference:
     - 'cameras': 'cameras.md'
     - 'draw': 'draw.md'
     - 'global': 'global.md'
@@ -32,13 +32,18 @@ pages:
     - 'sources': 'sources.md'
     - 'styles': 'styles.md'
     - 'textures': 'textures.md'
+  - Get started:
+    - Setup guides:
+      - 'Setup overview': 'Tangram-Setup.md'
+      - 'JavaScript setup': 'walkthrough.md'
+      - 'Android setup': 'android-walkthrough.md'
+    - Tutorials:
+      - 'Custom styles': 'tutorials/custom-styles.md'
+      - 'Editing basemaps': 'tutorials/editing-basemaps.md'
+    - 'Demos': 'demos.md'
   - JavaScript API: 'Javascript-API.md'
   - Android API: 'Android-API.md'
   - iOS API: 'iOS-API.md'
-  - Get Started:
-    - 'Setup Guides': 'Tangram-Setup.md'
-    - 'Tutorials & Demos': 'demos.md'
-
 
 # Determines if a broken link to a page within the documentation is considered
 # a warning or an error (link to a page not listed in the pages setting). Set

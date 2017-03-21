@@ -29,9 +29,9 @@
 	</div>
 	<div class="row">
 		<div class="col-xs-12 footroom-large">
-			<h6 class="category-title">
+			<h3 class="category-title">
 				Maps
-			</h6>
+			</h3>
 			<div class="category-info-container first">
 				<div class="category-info">
 					<a class="docs-title" href="mapzen-js/">mapzen.js</a>
@@ -89,9 +89,9 @@
 			</div>
 		</div>
 		<div class="col-xs-12 footroom-large">
-			<h6 class="category-title">
+			<h3 class="category-title">
 				Search & Mobility
-			</h6>
+			</h3>
 			<div class="category-info-container first">
 				<div class="category-info">
 					<a class="docs-title" href="search/">Mapzen Search</a>
@@ -116,9 +116,9 @@
 			</div>
 		</div>
 		<div class="col-xs-12 footroom-large">
-			<h6 class="category-title">
+			<h3 class="category-title">
 				Data
-			</h6>
+			</h3>
 			<div class="category-info-container first">
 				<div class="category-info">
 					<a class="docs-title" href="wof/">Who's On First</a>
@@ -165,9 +165,9 @@
 			</div>
 		</div>
 		<div class="col-xs-12 footroom-large">
-			<h6 class="category-title">
+			<h3 class="category-title">
 				Mobile
-			</h6>
+			</h3>
 			<div class="category-info-container first">
 				<div class="category-info">
 					<a class="docs-title" href="android/">Android SDK</a>
