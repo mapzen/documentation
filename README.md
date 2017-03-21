@@ -13,7 +13,7 @@ The source files to build Mapzen's documentation may be found in separate docume
 |                           Documentation section                       | Source location | Branch name or release  |
 |----------------------------------------------------------|---------------------|----------|
 | [Overview](http://www.mapzen.com/documentation/overview) | https://github.com/mapzen/mapzen-docs-generator/tree/master/docs  | Master  |
-| [Mapzen.js](https://mapzen.com/documentation/mapzen-js/)  | https://github.com/mapzen/mapzen.js/tree/master/docs  | Latest release  |
+| [mapzen.js](https://mapzen.com/documentation/mapzen-js/)  | https://github.com/mapzen/mapzen.js/tree/master/docs  | Latest release  |
 | [Tangram](https://mapzen.com/documentation/tangram/) | https://github.com/tangrams/tangram-docs | gh-pages   |
 | [Vector tiles](https://mapzen.com/documentation/vector-tiles/)  | https://github.com/tilezen/vector-datasource/tree/master/docs  | Latest release |
 | [Search](https://mapzen.com/documentation/search/)  | https://github.com/pelias/pelias-doc  | Master  |
