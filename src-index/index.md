@@ -121,6 +121,17 @@
 			</h3>
 			<div class="category-info-container first">
 				<div class="category-info">
+					<a class="docs-title" href="wof/">Who's On First</a>
+					<p class="excerpt">
+						Retrieve data about places from the Who's on First gazetteer.
+					</p>
+				</div>
+				<div class="read-more">
+					<a class="btn btn-default btn-transparent" href="wof/"> View Documentation </a>
+				</div>
+			</div>
+			<div class="category-info-container">
+				<div class="category-info">
 					<a class="docs-title" href="metro-extracts/">Metro Extracts</a>
 					<p class="excerpt">
 						Download manageable, city-sized portions of OpenStreetMap data.

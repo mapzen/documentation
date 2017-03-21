@@ -135,11 +135,18 @@ There are also limitations on the number of sampling points for which you reques
 
 The Mapzen Elevation lookup service is built from the [Valhalla](https://github.com/valhalla) open-source project.
 
+#### Who's On First
+
+Retrieve data about places from the [Who's On Firsts](https://mapzen.com/documentation/wof/) gazetteer.
+
+- Queries per day: 25,000
+- Queries per minute: 300
+- Queries per second: 6
+
 #### Other data products
 
 Mapzen's other data products do not currently require API keys. These include:
 
-- Who's on First, the global gazetteer
 - Metro Extracts, downloadable snapshots of OpenStreetMap data (Note: you will need to sign in with a developer account to download custom extracts)
 - Transitland, the open transit data project
 
