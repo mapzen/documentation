@@ -1,6 +1,7 @@
 <div class='toc hidden-print' role='directory' id='toc'>
   <ul class='nav toc-nav'>
-
+  <!-- Elements of the nav come from each section's config file, toc contents come from parsed html -->
+  <!-- Sub-nav is coming from config too, but sub-toc contents come from the html of the page -->
   {% if include_nav %}
     {% for nav_item in nav if not nav_item.title == 'README' %}
       {% if nav_item.children %}
