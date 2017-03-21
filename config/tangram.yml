@@ -33,7 +33,7 @@ pages:
     - 'styles': 'styles.md'
     - 'textures': 'textures.md'
   - Get started:
-    - Setup guides: 
+    - Setup guides:
       - 'Setup overview': 'Tangram-Setup.md'
       - 'JavaScript setup': 'walkthrough.md'
       - 'Android setup': 'android-walkthrough.md'
