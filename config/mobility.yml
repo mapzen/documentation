@@ -27,6 +27,7 @@ pages:
   - 'Optimized route': 'optimized/api-reference.md'
   - 'Time-Distance Matrix': 'matrix/api-reference.md'
   - 'Isochrone': 'isochrone/api-reference.md'
+  - 'Map matching': 'map-matching/api-reference.md'
   - 'Mobility Explorer':
     - 'Overview': 'explorer/overview.md'
     - 'Explore transit': 'explorer/explore-transit.md'
