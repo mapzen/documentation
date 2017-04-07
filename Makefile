@@ -11,7 +11,6 @@ MAPZENJS = https://mapzen.com/js/docs.tar.gz
 LIBPOSTAL = https://github.com/whosonfirst/go-whosonfirst-libpostal/archive/master.tar.gz
 CARTOGRAPHY = https://github.com/tangrams/cartography-docs/archive/master.tar.gz
 WOF = https://github.com/whosonfirst/whosonfirst-www-api/archive/master.tar.gz
-OVERVIEW = https://github.com/mapzen/documentation/archive/master.tar.gz
 
 SHELL := /bin/bash # required for OSX
 PYTHONPATH := packages:$(PYTHONPATH)
@@ -33,7 +32,6 @@ clean:
 	       dist-terrain-tiles-mkdocs.yml dist-vector-tiles-mkdocs.yml \
 	       dist-libpostal-mkdocs.yml dist-cartography-mkdocs.yml
 	       dist-wof-mkdocs.yml dist-wof-mkdocs.yml
-	       dist-overview-mkdocs.yml dist-overview-mkdocs.yml
 
 # Get individual sources docs
 src-tangram:
@@ -113,9 +111,8 @@ src-cartography:
 	curl -sL $(CARTOGRAPHY) | tar -zxv -C src-cartography --strip-components=1 cartography-docs-master
 
 src-overview:
-	mkdir src-overview
-	curl -sL $(OVERVIEW) | tar -zxv -C src-overview --strip-components=1 documentation-docs-master
-
+	cp -r docs/overview src-overview
+	
 src-guides:
 	cp -r docs/guides src-guides
 
