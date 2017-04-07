@@ -1,3 +1,5 @@
+# Frequently Asked Questions
+
 - Will my ______________ stop working if I don’t pay?
 - How can I set up budget caps?
 - Can I get alerts about my usage?

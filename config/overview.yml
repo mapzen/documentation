@@ -4,8 +4,8 @@ site_dir: dist-overview
 
 pages:
   - Overview: index.md
-  - 'Frequently asked questions': 'frequently-asked.md'
-  - 'Terms of service': 'terms.md'
+  - 'Frequently asked questions': 'overview/faq.md'
+  - 'Terms of service': 'overview/terms.md'
 
 extra:
   site_subtitle: Get started developing with Mapzen's products
