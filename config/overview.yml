@@ -10,5 +10,5 @@ pages:
 extra:
   site_subtitle: Get started developing with Mapzen's products
   project_repo_url: https://github.com/mapzen/mapzen-docs-generator
-  docs_base_url: https://github.com/mapzen/mapzen-docs-generator/tree/master/docs/overview
+  docs_base_url: https://github.com/mapzen/mapzen-docs-generator/tree/master/docs/overview/
   exclude_home_contents_in_toc: false
