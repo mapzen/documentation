@@ -9,7 +9,7 @@ pages:
   - 'Position, rotation, and zoom': 'basic-functions.md'
   - 'Add features': 'features.md'
   - 'Switching styles': 'styles.md'
-  - 'Gesture delegates': 'gesture-delegates.md'
+  - 'Gestures': 'gesture-delegates.md'
   - 'Location Services': 'location-services.md'
   - 'Mapzen Places for iOS': 'places.md'
   - 'Mapzen Search for iOS': 'search.md'
