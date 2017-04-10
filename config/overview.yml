@@ -4,6 +4,7 @@ site_dir: dist-overview
 
 pages:
   - Overview: index.md
+  - 'Account Settings': 'account-settings.md'
   - 'Frequently asked questions': 'faq.md'
   - 'Terms of service': 'terms.md'
 
