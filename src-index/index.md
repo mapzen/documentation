@@ -17,9 +17,9 @@
 				<img width="50px" src="https://mapzen.com/common/styleguide/images/key.svg">
 			</div>
 			<div class="col-xs-12 col-sm-10">
-				Get your API key for access to Mapzen services.
+				Get started with Mapzen services.
 				<p class="cta-paragraph">
-					New to Mapzen? Learn more about rate limits and API keys to start working with our products in minutes.
+					Learn how to sign up, get an API key, and set up billing information to start working with our products in minutes. 
 				</p>
 			</div>
 		</div>
