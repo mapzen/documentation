@@ -19,7 +19,7 @@
 			<div class="col-xs-12 col-sm-10">
 				Get started with Mapzen services.
 				<p class="cta-paragraph">
-					Learn how to sign up, get an API key, and set up billing information to start working with our products in minutes. 
+					Learn how to sign up for a Mapzen Flex account, get an API key, and set up billing information to start working with our products in minutes. 
 				</p>
 			</div>
 		</div>
