@@ -76,23 +76,11 @@ src-search:
 
 src-android:
 	mkdir src-android
-	# Try with --wildcards for GNU tar, but fall back to BSD tar syntax for Mac.
-	curl -sL $(ANDROID) \
-	| ./extract-tarball-url.py \
-	| xargs curl -sL | ( \
-	    tar -zxv -C src-android --strip-components=2 --exclude=README.md --wildcards '*/docs/' \
-	 || tar -zxv -C src-android --strip-components=2 --exclude=README.md '*/docs/' \
-	    )
+	curl -sL $(ANDROID) | tar -zxv -C src-android --strip-components=1 android-doc-master
 
 src-ios:
 	mkdir src-ios
-	# Try with --wildcards for GNU tar, but fall back to BSD tar syntax for Mac.
-	curl -sL $(IOS) \
-	| ./extract-tarball-url.py \
-	| xargs curl -sL | ( \
-	    tar -zxv -C src-ios --strip-components=2 --exclude=README.md --wildcards '*/docs/' \
-	 || tar -zxv -C src-ios --strip-components=2 --exclude=README.md '*/docs/' \
-	    )
+	curl -sL $(IOS) | tar -zxv -C src-ios --strip-components=1 ios-doc-master
 
 src-mapzen-js:
 	mkdir src-mapzen-js
