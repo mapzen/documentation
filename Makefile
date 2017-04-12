@@ -76,11 +76,11 @@ src-search:
 
 src-android:
 	mkdir src-android
-	curl -sL $(ANDROID) | tar -zxv -C src-android --strip-components=1 android-doc-master
+	curl -sL $(ANDROID) | tar -zxv -C src-android --strip-components=2 android-master/docs
 
 src-ios:
 	mkdir src-ios
-	curl -sL $(IOS) | tar -zxv -C src-ios --strip-components=1 ios-doc-master
+	curl -sL $(IOS) | tar -zxv -C src-ios --strip-components=2 ios-master/docs
 
 src-mapzen-js:
 	mkdir src-mapzen-js
