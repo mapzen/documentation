@@ -1,10 +1,14 @@
 # View your usage and bill
 
-When you are signed in with your Mapzen account, you can view your current usage and current charges due.
+When you are signed in with your Mapzen account, you can view your current usage and charges due.
 
 If you need to update your credit card information to pay your bill, you can do that from your profile settings page. If you have questions about your bill or are having problems paying it, please contact Mapzen at (email@mapzen.com).
 
 ## View your usage
+
+To check your usage, sign in to your developer account and review your dashboard.
+
+You also receive [HTTP status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) in the header for the server's response to your query.
 
 1. Make sure you are signed into your Mapzen account.
 2. Click your profile menu and click Dashboard. This page shows your current Mapzen API keys.
