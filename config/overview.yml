@@ -6,7 +6,6 @@ pages:
   - Overview: index.md
   - 'Account Settings': 'account-settings.md'
   - 'Frequently asked questions': 'faq.md'
-  - 'Terms of service': 'terms.md'
 
 extra:
   site_subtitle: Get started developing with Mapzen's products
