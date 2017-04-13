@@ -1,6 +1,6 @@
-# Update your Mapzen account setting
+# Update your Mapzen account settings
 
-When you signed in on Mapzen’s website, you can view and modify your account settings.
+When you signed in on Mapzen’s website, you can view and modify your account settings. These include changing you email address and password and billing information.
 
 ## Sign in to your Mapzen account
 
