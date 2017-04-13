@@ -6,6 +6,7 @@ pages:
   - Overview: index.md
   - 'Account settings': 'account-settings.md'
   - 'Billing information': 'billing.md'
+  - 'API keys': 'api-keys.md'
 
 extra:
   site_subtitle: Get started developing with Mapzen's products
