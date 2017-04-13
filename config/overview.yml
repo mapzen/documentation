@@ -4,8 +4,8 @@ site_dir: dist-overview
 
 pages:
   - Overview: index.md
-  - 'Account Settings': 'account-settings.md'
-  - 'Frequently asked questions': 'faq.md'
+  - 'Account settings': 'account-settings.md'
+  - 'Billing information': 'billing.md'
 
 extra:
   site_subtitle: Get started developing with Mapzen's products
