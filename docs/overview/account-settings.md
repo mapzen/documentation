@@ -7,14 +7,14 @@ Sign in either with your GitHub account authentication or by using your email ad
 In the top corner of the page, click your profile button.
 From this menu, you can modify your account settings.
 
-## Change your email address or password
+### Change your email address or password
 
 Make sure you are signed into your Mapzen account.
 Click your profile menu and click Settings.
 If you are using GitHub authentication, you can only change your email address. Note that this is the address that was part of your GitHub profile when you originally authenticated your Mapzen account.
 If you are using an email and password to sign in, you can update both of those.
 
-## Add or update your credit card
+### Add or update your credit card
 
 Your Mapzen Flex bill is paid automatically by credit card. If you want to use any of Mapzen’s services above the free limits, you need to add a payment method to your profile, and be sure to keep the card updated if it expires or you are issued a new account number. 
 
@@ -41,27 +41,27 @@ Click your profile menu and click Settings.
 Set the limit $0 to ensure that your account does not accrue any costs at all. 
 
 
-# View your usage and bill
+## View your usage and bill
 
 When you are signed in with your Mapzen account, you can view your current usage and current charges due.
 
 If you need to update your credit card information to pay your bill, you can do that from your profile settings page. If you have questions about your bill or are having problems paying it, please contact Mapzen at (email@mapzen.com).
 
-## View your usage
+### View your usage
 
 Make sure you are signed into your Mapzen account.
 Click your profile menu and click Dashboard. This page shows your current Mapzen API keys.
 Click one of your API keys in the list and click Usage. The graphs show the number of requests on this key for each product.
 (This UI will change if limits are per account and not per key)
 
-## View your bill
+### View your bill
 
 Your bill is sent to the email address in your profile when due, and you can also review it when you are signed in to your Mapzen account. Your bill is in the United States Dollar (USD), and Mapzen handles the payment of sales or usage tax that may be required.
 
 Make sure you are signed into your Mapzen account.
 ?
 
-## Contact Mapzen support from within the dashboard
+### Contact Mapzen support from within the dashboard
 
 Mapzen has many ways for you to get help. If you are signed in, you can use a web form to send a question and receive an email response. 
 
@@ -71,7 +71,7 @@ Make sure you are signed into your Mapzen account.
 Click your profile menu and click Dashboard. 
 Click Contact us, fill in the form, and submit it. Be sure to include your correct email address if you want a response.
 
-## Request a bill credit for service issues
+### Request a bill credit for service issues
 
 While Mapzen hopes you never experience an outage or downtime in services, you can request a credit in the event that issues occur. See the developer agreement for more information about your rights and requirements, and keep in mind that those terms supersede any documentation content here.
 
