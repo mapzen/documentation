@@ -22,7 +22,7 @@ To use any of Mapzen’s services above the free limits, you need to add a payme
 
 If you do not have a valid credit card on file and you reach the free limits, your access to that particular Mapzen service will cease for the remainder of the month.
 
-Your Mapzen Flex bill is paid automatically by credit card. You are billed in the United States Dollar (USD).
+At the end of each month, Mapzen calculates your usage and bill, and you charges are paid automatically by credit card.
 
 1. Make sure you are signed into your Mapzen account.
 2. Click your profile menu and click `Settings`.

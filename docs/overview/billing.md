@@ -1,8 +1,21 @@
-# View your usage and bill
+# View your bill and current usage
 
 When you are signed in with your Mapzen account, you can view your current usage and charges due.
 
-If you need to update your credit card information to pay your bill, you can do that from your profile settings page. If you have questions about your bill or are having problems paying it, please contact Mapzen at (email@mapzen.com).
+Your bill is sent to the email address in your profile, and you can also review it when you are signed in to your Mapzen account.
+
+Under Mapzen's pricing system, you pay only for what you use. You can think of your Mapzen bill as similar to a home utility bill, where your charges are dependent on how much water or electricity, for example, you consumed in a month.
+
+Because there are no paid tiers, you pay for each individual API request you make. Although you may see pricing listed in units of 1,000, requests are not purchased in bundles. For example, $0.05 per 1,000 is intended to be a simpler way of representing that each request is $0.00005.
+
+Billing is post-paid after the month ends, and there are no prepayment discounts available. There are no minimum fees for maintaining a Mapzen account, even if you have no usage for a while.
+
+The billing currency is the United States Dollar (USD). Mapzen handles the payment of sales or usage tax that may be required in your area.
+
+1. Make sure you are signed into your Mapzen account.
+2. ?????
+
+If you need to update your credit card information, you can do that from your profile settings page (link). If you have questions about your bill or are having problems paying it, please contact Mapzen at (email@mapzen.com).
 
 ## View your usage
 
@@ -13,24 +26,7 @@ You also receive [HTTP status codes](https://en.wikipedia.org/wiki/List_of_HTTP_
 1. Make sure you are signed into your Mapzen account.
 2. Click your profile menu and click Dashboard. This page shows your current Mapzen API keys.
 3. Click one of your API keys in the list and click Usage. The graphs show the number of requests on this key for each product.
-(This UI will change if limits are per account and not per key)
-
-## View your bill
-
-Your bill is sent to the email address in your profile when due, and you can also review it when you are signed in to your Mapzen account. Your bill is in the United States Dollar (USD), and Mapzen handles the payment of sales or usage tax that may be required.
-
-1. Make sure you are signed into your Mapzen account.
-?
-
-## Contact Mapzen support from within the dashboard
-
-Mapzen has many ways for you to get help. If you are signed in, you can use a web form to send a question and receive an email response.
-
-Premium support and service-level agreements are available for an additional monthly fee, and you can subscribe even if you are within the free rate limits of Mapzen’s products. See (pricing support page) for information about pricing and how to get started.
-
-1. Make sure you are signed into your Mapzen account.
-2. Click your profile menu and click Dashboard.
-3. Click Contact us, fill in the form, and submit it. Be sure to include your correct email address if you want a response.
+????
 
 ## Request a bill credit for service issues
 
