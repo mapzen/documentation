@@ -7,6 +7,46 @@
 		</div>
 	</div>
 	<div class="row">
+		<div class="col-xs-12 footroom-large">
+			<h3 class="category-title">
+				General
+			</h3>
+			<div class="category-info-container first">
+				<div class="category-info">
+					<a class="docs-title" href="overview/">Developer Overview</a>
+					<p class="excerpt">
+						Learn the basics of how to get started with Mapzen products and services.
+					</p>
+				</div>
+				<div class="read-more">
+					<a class="btn btn-default btn-transparent" href="overview/"> View Documentation </a>
+				</div>
+			</div>
+			<div class="category-info-container">
+				<div class="category-info">
+					<a class="docs-title" href="/">Mapzen Flex</a>
+					<p class="excerpt">
+						Learn about account settings and billing information with our pricing model, Mapzen Flex.
+					</p>
+				</div>
+				<div class="read-more">
+					<a class="btn btn-default btn-transparent" href="/"> View Documentation </a>
+				</div>
+			</div>
+			<div class="category-info-container">
+				<div class="category-info">
+					<a class="docs-title" href="/">Mapzen Guides</a>
+					<p class="excerpt">
+						Handy guides to learn the basics of web development and mapping.
+					</p>
+				</div>
+				<div class="read-more">
+					<a class="btn btn-default btn-transparent" href="/"> View Documentation </a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- <div class="row">
 		<div class="col-xs-12 text-center headroom-extra-large footroom-large">
 			<img class="red-compass" src="https://mapzen.com/common/styleguide/images/divider/compass-red.png">
 		</div>
@@ -19,14 +59,14 @@
 			<div class="col-xs-12 col-sm-10">
 				Get started with Mapzen services.
 				<p class="cta-paragraph">
-					Learn how to sign up for a Mapzen Flex account, get an API key, and set up billing information to start working with our products in minutes. 
+					Learn how to sign up for a Mapzen Flex account, get an API key, and set up billing information to start working with our products in minutes.
 				</p>
 			</div>
 		</div>
 		<div class="cta-btn">
 			<a href="overview" class="btn btn-mapzen">Get started</a>
 		</div>
-	</div>
+	</div> -->
 	<div class="row">
 		<div class="col-xs-12 footroom-large">
 			<h3 class="category-title">
