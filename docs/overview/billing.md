@@ -12,7 +12,8 @@ Billing is post-paid after the month ends, and there are no prepayment discounts
 
 The billing currency is the United States Dollar (USD). Mapzen handles the payment of sales or usage tax that may be required in your area.
 
-1. Make sure you are signed into your Mapzen account.
+1. Sign in to your Mapzen account.
+2. In the top corner of the page, click `Account` and click `Settings`.
 2. ?????
 
 If you need to update your credit card information, you can do that from your profile settings page (link). If you have questions about your bill or are having problems paying it, please contact Mapzen at (email@mapzen.com).
@@ -23,10 +24,19 @@ To check your usage, sign in to your developer account and review your dashboard
 
 You also receive [HTTP status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) in the header for the server's response to your query.
 
-1. Make sure you are signed into your Mapzen account.
-2. Click your profile menu and click Dashboard. This page shows your current Mapzen API keys.
-3. Click one of your API keys in the list and click Usage. The graphs show the number of requests on this key for each product.
+1. Sign in to your Mapzen account.
+2. In the top corner of the page, click `Account` and click `Dashboard`. This page shows your current Mapzen API keys.
+3. Click one of your API keys in the list and click `Usage`. The graphs show the number of requests on this key for each product.
+
+There is not currently an API for directly accessing your usage information.
+
 ????
+
+However, after you make an API call to a Mapzen service, you can get more information in the HTTP headers of the response. HTTP headers are embedded metadata that tells your browser (or other software) how to make sense of the request.
+
+X-ApiaxleProxy-Qpd-Left
+
+???? Is this still valid? Is there a queries per month header? Does it list only free usage?
 
 ## Request a bill credit for service issues
 
