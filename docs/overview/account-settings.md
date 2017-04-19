@@ -52,9 +52,25 @@ As you approach your spending limits, your choices are to adjust your usage, acc
 
 ## Disabling access to Mapzen Flex billing
 
-If you want to disable Mapzen Flex on your account and stop being billed, there are two ways you can do it. The workflow depends on whether you have already accrued charges on your account.
+If you want to disable Mapzen Flex on your account and stop being billed, deactivate billing.
 
-- If you are within the free limits and have no pending charges on your account, you can remove your payment method. Add your credit card when you are ready to restart billing and access to rate limits about the free levels.
-- If you have any pending charges on your account, you need to set your billing status to inactive by clicking `Billing` and `Update`. Any charges you have accrued that month will be billed to the credit card saved in your account. However, no additional charges will be added. In the following month, you may remove your credit card altogether when you have no balance due.
+If you have any pending charges on your account, you need to set your billing status to inactive by clicking `Billing` and `Update`.
+
+Any charges you have accrued that month will be billed to the credit card saved in your account. However, no additional charges will be added. If you have no pending charges, you may remove your credit card altogether when you have no balance due.
 
 Either of these options will end your paid usage for the remainder of the month, and make it so you are only able to use Mapzen services up to the free tier of each product. This means that your maps may no longer function.
+
+## Subscribe to premium support services
+
+Premium support, which includes faster response times and a service-level agreement, is available for an additional, flat monthly fee. When contacting Mapzen, users with premium support receive priority replies, usually within one business day. A service-level agreement indicates the service's required uptime and instructions to take if these are not met. (???? learn more link)
+
+You are billed for the premium support subscription at the beginning of each month. You have access to premium support as soon as you enable it on your account, and there are no prorated costs for joining in the middle of a billing cycle.
+
+If you cancel, you can continue to use your premium support benefits through the end of the month and your credit card will not be charged in subsequent months. No refunds are issued for the remainder of the billing period in which you cancel.
+
+You can subscribe to premium support even if you are within the free rate limits of Mapzen’s products.
+
+1. Sign in to your Mapzen account.
+2. In the top corner of the page, click `Account` and click `Settings`.
+3. ??? Under `Add-ons`, agree to premium support.
+4. ??? To cancel support...

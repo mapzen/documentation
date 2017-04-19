@@ -38,9 +38,11 @@ X-ApiaxleProxy-Qpd-Left
 
 ???? Is this still valid? Is there a queries per month header? Does it list only free usage?
 
-## Request a bill credit for service issues
+## Request a bill credit for service issues (premium support only)
 
-While Mapzen hopes you never experience an outage or downtime in services, you can request a credit in the event that issues occur. See the developer agreement for more information about your rights and requirements, and keep in mind that those terms supersede any documentation content here.
+_Note: This is only available to users who subscribe to premium support, which includes a service-level agreement. To sign up, see ????? link)_
 
-1. If you believe that Mapzen has not met the uptime percentage in the developer agreement, record any information about the downtime you can, such as the service name and API, date and time, and estimated outage amount.
+While Mapzen hopes you never experience an outage or downtime in services, you can request a credit in the event that issues occur. See your support agreement for more information about your rights and requirements, and keep in mind that those terms supersede any documentation content here.
+
+1. If you are a premium support subscriber and believe that Mapzen has not met the uptime percentage in the developer agreement, record any information about the downtime you can, such as the service name and API, date and time, and estimated outage amount.
 2. Within 15 days, send this to Mapzen support at (some support address @mapzen.com) for review.
