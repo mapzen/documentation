@@ -52,7 +52,7 @@ As you approach your spending limits, your choices are to adjust your usage, acc
 
 ## Disabling access to Mapzen Flex billing
 
-If you want to disable Mapzen Flex on your account and stop being billed, deactivate billing.
+If you want to disable Mapzen Flex on your account and stop being billed, deactivate billing....
 
 If you have any pending charges on your account, you need to set your billing status to inactive by clicking `Billing` and `Update`.
 
