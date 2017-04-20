@@ -29,6 +29,8 @@ At the end of each month, Mapzen calculates your usage and bill, and your charge
 3. Click `Add Payment Method`.
 4. Enter your credit card information.
 
+If your account has any pending usage charges in a month, you can update your payment method information, but are unable to remove a credit card altogether until the balance is cleared.
+
 ## Set monthly spending limits
 
 With Mapzen Flex, you can set limits on your spending each month. This gives you the comfort of knowing that your bill will remain within the maximum amount you specify.
@@ -50,15 +52,15 @@ See https://mapzen.com/pricing for more information on current pricing and the l
 
 As you approach your spending limits, your choices are to adjust your usage, accept that your access to paid services will end, or increase your limits.
 
-## Disabling access to Mapzen Flex billing
+## Deactivate access to Mapzen Flex billing
 
-If you want to disable Mapzen Flex on your account and stop being billed, deactivate billing....
+If you want to disable Mapzen Flex on your account and stop billing, set your billing status to inactive. Do this by clicking `Billing` and `Update`. ????
 
-If you have any pending charges on your account, you need to set your billing status to inactive by clicking `Billing` and `Update`.
+Deactivating your billing ends your paid usage, and makes it so you are only able to use Mapzen services up to the free tier of each product. This means that your maps may no longer function.
 
-Any charges you have accrued that month will be billed to the credit card saved in your account. However, no additional charges will be added. If you have no pending charges, you may remove your credit card altogether when you have no balance due.
+Any pending charges accrued before you deactivated Mapzen Flex will still be billed to the credit card saved in your account. However, no further charges can occur until you reactivate billing.
 
-Either of these options will end your paid usage for the remainder of the month, and make it so you are only able to use Mapzen services up to the free tier of each product. This means that your maps may no longer function.
+Anytime you want to start billing again, set your Mapzen Flex status to active.
 
 ## Subscribe to premium support services
 

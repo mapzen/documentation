@@ -2,8 +2,6 @@
 
 When you are signed in with your Mapzen account, you can view your current usage and charges due.
 
-Your bill is sent to the email address in your profile, and you can also review it when you are signed in to your Mapzen account.
-
 Under Mapzen's pricing system, you pay only for what you use. You can think of your Mapzen bill as similar to a home utility bill, where your charges are dependent on how much water or electricity, for example, you consumed in a month.
 
 Because there are no paid tiers, you pay for each individual API request you make. Although you may see pricing listed in units of 1,000, requests are not purchased in bundles. For example, $0.05 per 1,000 is intended to be a simpler way of representing that each request is $0.00005.
@@ -16,7 +14,7 @@ The billing currency is the United States Dollar (USD). Mapzen handles the payme
 2. In the top corner of the page, click `Account` and click `Settings`.
 2. ?????
 
-If you need to update your credit card information, you can do that from your profile settings page (link). If you have questions about your bill or are having problems paying it, please contact Mapzen at (email@mapzen.com).
+If you need to update your credit card information, you can do that from your profile settings page (??? link). If you have questions about your bill or are having problems paying it, please contact Mapzen at support@mapzen.com.
 
 ## View your usage
 
