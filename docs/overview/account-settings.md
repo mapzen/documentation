@@ -2,12 +2,17 @@
 
 When you signed in on Mapzen’s website, you can view and modify your account settings. These include changing your email address and password, and updating your credit card and billing information.
 
-## Sign in to your Mapzen account
+## Sign up for a Mapzen account
 
 1. Go to https://mapzen.com.
-2. Sign in with your email address and password. Alternatively, authenticate with your GitHub account.
-3. In the top corner of the page, click `Account`.
-4. From this menu, you can modify your settings.
+2. Click `Sign Up`.
+3. Enter your e-mail address and password. Alternatively, if you have a [GitHub](https://github.com) account, you can use it to authenticate your Mapzen account. GitHub is a website that enables people to collaborate on a project.
+4. Agree to the terms.
+???
+
+In the future when you sign in, use either your email address and password or GitHub. If you forgot your account credentials, you can also attempt to reset them.
+
+To delete your account, you need to contact Mapzen ????. If you are using GitHub, sign into your GitHub account and revoke[Mapzen Platform](https://help.github.com/articles/reviewing-your-authorized-applications-oauth/) as an authorized application.
 
 ## Change your email address or password
 
@@ -29,7 +34,7 @@ At the end of each month, Mapzen calculates your usage and bill, and your charge
 3. Click `Add Payment Method`.
 4. Enter your credit card information.
 
-If your account has any pending usage charges in a month, you can update your payment method information, but are unable to remove a credit card altogether until the balance is cleared.
+If your account has any pending usage charges in a month, you can update your account to use a different credit card, but are unable to remove a credit card altogether until the balance is cleared.
 
 ## Set monthly spending limits
 

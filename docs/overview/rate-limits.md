@@ -1,5 +1,13 @@
 ### Rate limits
 
+Mapzen offers a free tier of each service, subject to the rate limits listed below. The services have maximum numbers of requests you can make per month, and some have additional service limitations to minimize computationally intensive uses.
+
+All the projects used to build the Mapzen-hosted services are open source. If you want to try Mapzen’s products, start with the hosted services to see if they fit your workflow needs. If you later decide that you need additional customizations, you can consider installing on your own servers the open-source code used to build Mapzen’s services.
+
+You must include an API key when using Mapzen’s services; requests sent without an API key return errors.
+
+To use any of Mapzen’s services above the free limits, you need to add a payment method to your account. (???? link)
+
 #### Mapping products
 
 ##### Tangram
