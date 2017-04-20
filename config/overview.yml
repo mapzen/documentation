@@ -8,6 +8,10 @@ pages:
   - 'Billing information': 'billing.md'
   - 'API keys': 'api-keys.md'
   - 'Contact support': 'support.md'
+  - 'Rate limits': 'rate-limits.md'
+
+mz:redirects:
+  'index': 'rate-limits'
 
 extra:
   site_subtitle: Get started developing with Mapzen's products
