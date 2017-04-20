@@ -6,13 +6,11 @@ All Mapzen users have access to standard email support. Premium support with a s
 
 The hours of operation for technical support are generally Monday through Friday, from 09:00 to 17:00, Pacific Time (US), excluding weekends and public holidays. Response through email currently the only support option available.
 
-You can also get self-service help at any time at https://mapzen.com/documentation/ and https://mapzen.com/blog/.
-
 ## Contact Mapzen by email
 
 Mapzen's main support email address is support@mapzen.com. Check in about anything you need, such as our APIs, workflow guidance, and rate limits. The questions you ask to improve the technical documentation so the answer is easier to find for the next person who has the same problem.
 
-If you need help with a technical issue, please include any details necessary to investigate your question. This can include instructions to reproduce the problem, the behavior you expected compared to what did happen, code samples, and screenshots.
+If you need help with a technical issue, please include any details necessary to investigate your report. This can include instructions to reproduce the problem, the behavior you expected compared to what did happen, code samples, and screenshots.
 
 ## Contact Mapzen from within your dashboard
 
@@ -22,39 +20,34 @@ If you are signed in, you can use a web form to send a question or feedback. Be 
 2. In the top corner of the page, click `Account` and click `Dashboard`.
 3. ??? Click Contact us, fill in the form, and submit it.
 
+## Read documentation and blog posts
+
+You can get self-service help at any time at https://mapzen.com/documentation/ and https://mapzen.com/blog/.
+
+Click the `Documentation` link at the top of any page on Mapzen's site to get to the help system. Documentation includes a variety of content, including comprehensive developer API reference, tutorials, glossaries, and conceptual overviews. If you want to help other users by making a correction or addition, each page has a button at the bottom (`Edit this page on GitHub`) that takes you to the source file.
+
+The Mapzen blog is the home for Mapzen news, including announcements, engineering deep-dives, and product showcases and case studies. The blog posts and other company news are rolled into a monthly email newsletter. Sign up: https://mapzen.com/newsletter-signup/.
+
 ## Connect with the community
 
-Mapzen has many active developers who want to help.
+### Social media
 
-Join us on GitHub
-Follow Mapzen on Twitter, Facebook, etc.
-Come to events in SF or NY
-GIS Devs Slack
-Join Gitter channels
+Mapzen loves hearing from you on social media. Follow [@mapzen](https://twitter.com/mapzen) to be the first to know about Mapzen announcements, and be sure to tweet your questions and links to the interesting work you are doing with Mapzen's products. Mapzen also has pages on [Facebook](https://www.facebook.com/gomapzen), [LinkedIn](https://www.linkedin.com/company/mapzen), and other sites.
 
-I found a bug/am having problems/have suggestions for feature requests; how can I report these?
-Send an email
-Use GitHub repository if you’re comfortable with that
+## GitHub and community chat
 
-Mapzen wants to make sure you never have to experience this. We offer many ways to learn more about our products and contact us&mdash;from self-service documentation to in-person technical assistance. We provide all these options at no cost to you.
+If you are working with the code for Mapzen's open-source projects, you might be more comfortable communicating with through [GitHub](https://github.com). GitHub is the collaborative version control system Mapzen uses to manage code and documentation. Posting an issue lets engineers and other users know about a bug or software enhancement directly.
 
-## Documentation and blog posts
-Your first resource for information about how to use Mapzen's products is the [technical documentation](https://mapzen.com/documentation/). Click the Documentation link at the top of any page on Mapzen's site to get to our help system. Documentation includes a variety of content, including comprehensive developer API reference, tutorials, glossaries, and conceptual overviews. If you want to help other users by making a correction or addition, each page has a button at the bottom (`Edit this page on GitHub`) that takes you to the source file.
+[Gitter](https://gitter.im) is an instant message chat system for GitHub users. Some of Mapzen's development teams have set up chat rooms associated with Mapzen's open-source projects so you can communicate with staff and the community in near real time.
 
-We roll up our blog posts and other company news into a (mercifully short) monthly email newsletter. Sign up: https://mapzen.com/newsletter-signup/.
+- [Pelias](https://gitter.im/pelias/pelias) for geographic search and geocoding
+- [Tangram](https://gitter.im/tangrams/tangram-chat) for the map-drawing engine
+- [Tilezen](https://gitter.im/tilezen/tilezen-chat) for vector tiles and map data
 
+If you have questions about running your own instance of Mapzen's open-source projects, GitHub and Gitter are your best options.
 
-## Social media
-We love hearing from you on our social media accounts. [Tweet us a hello](https://twitter.com/intent/tweet?text=@mapzen+hello+map+friends), whether you have questions about our APIs or showing off your work. Follow [@mapzen](https://twitter.com/mapzen) and you'll be the first to know about cool Mapzen things.
+Another option for community chat is the #mapzen channel in [The Spatial Community](http://thespatialcommunity.org/), an online chat with thousands of geospatial enthusiasts as members.  
 
-## GitHub and Gitter
-If you are working with the code for Mapzen's open-source projects, you might be more comfortable communicating with us through [GitHub](https://github.com). GitHub is the collaborative version control system we use to manage our code and documentation. Posting an issue lets our engineers and other users know about a bug or software enhancement directly.
+### Events at Mapzen offices
 
-[Gitter](https://gitter.im) is an instant message chat system for GitHub users. Some of Mapzen's development teams have set up chat rooms associated with our open-source projects so you can communicate with us and the community in real time.
-
-- [Pelias](https://gitter.im/pelias/pelias?utm_source=share-link&utm_medium=link&utm_campaign=share-link) for geographic search and geocoding
-- [Tangram](https://gitter.im/tangrams/tangram-chat?utm_source=share-link&utm_medium=link&utm_campaign=share-link) for the map-drawing engine
-- [Tilezen](https://gitter.im/tilezen/tilezen-chat?utm_source=share-link&utm_medium=link&utm_campaign=share-link) for vector tiles and map data
-
-## In-person support during office hours
-If you are in the San Francisco area, Mapzen hosts open office hours every third Wednesday of the month. During office hours, you can get personalized technical assistance and training and meet other users. We provide bagels and light breakfast snacks, and lovely views of the San Francisco Bay from our office windows, plus video conference links to our staff elsewhere. Last month, we had simultaneous video calls between attendees and our engineers in New York and London!
+If you are near a Mapzen office in the New York or San Francisco area, Mapzen occasionally hosts community events. In addition, Mapzen regularly offers office hours, where you can get personalized technical assistance and training and meet other users. Dates and times are usually announced on the Mapzen Twitter account and newsletter.
