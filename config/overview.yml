@@ -10,8 +10,8 @@ pages:
   - 'Contact support': 'support.md'
   - 'Rate limits': 'rate-limits.md'
 
-mz:redirects:
-  'overview/#rate-limits': 'overview/rate-limits'
+# mz:redirects:
+#  'overview/#rate-limits': 'overview/rate-limits'
 
 extra:
   site_subtitle: Get started developing with Mapzen's products
