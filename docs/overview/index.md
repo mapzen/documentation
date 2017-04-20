@@ -6,14 +6,14 @@ To get started, you need to create a Mapzen developer account and API keys, and 
 
 Mapzen Flex is Mapzen's pricing system, where you only pay for what you use. Follow these steps to get started developing on the Mapzen platform.
 
-## Sign up for a Mapzen account
+## 1. Sign up for a Mapzen account
 
 If you want to use Mapzen’s services, you need to create a Mapzen account. After you have an account, you can modify your account settings, view your usage, and manage your API keys.
 
 1. Go to https://mapzen.com.
 2. Click `Sign Up`.
 
-## Add billing information
+## 2. Add billing information
 
 To use any of Mapzen’s services above the free limits, you need to add a payment method to your account. If you do not have a valid credit card on file and you reach the free limits, your maps may no longer function.
 
@@ -23,7 +23,7 @@ Optionally, take control of your bill by setting a monthly spending limit. This 
 
 ??? LINK
 
-## Get an API key
+## 3. Get an API key
 
 An API key is a code that uniquely links API usage inside your application with your Mapzen account. You must include a Mapzen API key with all your server requests.
 
@@ -31,15 +31,14 @@ When signed in to your Mapzen account, you can access a dashboard that allows yo
 
 ??? LINK
 
-## Start building
+## 4. Start building
 
-If you are new to the Mapzen platform, you can try these tutorials to help you get started.
-??? LINK TO NEW TUTORIAL PAGE
+If you are new to the Mapzen platform, you might start with these tutorials.
 
-You might want to try:
-Highlight mapzen.js tutorial
-Search get started
-Turn-by-turn tutorial
+- [Get started with mapzen.js](https://mapzen.com/documentation/mapzen-js/get-started/), the Mapzen JavaScript SDK
+- [Add Turn-by-Turn routing to a map](https://mapzen.com/documentation/mobility/turn-by-turn/add-routing-to-a-map/)
+- [Add the Mapzen Search geocoder to a map](https://mapzen.com/documentation/search/add-search-to-a-map/)
+- Get started with [Mapzen Android SDK](https://mapzen.com/documentation/android/getting-started/) and [Mapzen iOS SDK)[https://mapzen.com/documentation/ios/getting-started/]
 
 At the end of each month, your usage is calculated and any balance due is automatically billed to the payment method in your account.
 

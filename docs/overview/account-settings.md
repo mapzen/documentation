@@ -10,7 +10,7 @@ When you signed in on Mapzen’s website, you can view and modify your account s
 4. Agree to the terms.
 ???
 
-In the future when you sign in, use either your email address and password or GitHub. If you forgot your account credentials, you can also attempt to reset them.
+In the future when you sign in, use either your email address and password or GitHub account. If you forgot your account credentials, you can also attempt to reset them.
 
 To delete your account, you need to contact Mapzen ????. If you are using GitHub, sign into your GitHub account and revoke[Mapzen Platform](https://help.github.com/articles/reviewing-your-authorized-applications-oauth/) as an authorized application.
 
@@ -18,8 +18,8 @@ To delete your account, you need to contact Mapzen ????. If you are using GitHub
 
 1. Sign in to your Mapzen account.
 2. In the top corner of the page, click `Account` and click `Settings`.
-3. If you are using GitHub authentication, you can only change your email address. Note that this is the address that was part of your GitHub profile when you originally authenticated your Mapzen account.
-4. If you are using an email and password to sign in, you can update both of those.
+3. If you are using an email and password to sign in, you can update your email address and password.
+4. With GitHub authentication, you can change your email address where you receive communications from Mapzen. Note that this is the address that was part of your GitHub profile when you originally authenticated your Mapzen account.
 
 ## Add or update your Mapzen Flex payment method
 
