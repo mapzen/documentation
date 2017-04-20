@@ -1,3 +1,5 @@
+# Get started
+
 Mapzen’s products help you put a map anywhere, search and route the planet, and try a world of open data. These are built from open-source tools that are packaged into a web service and hosted on Mapzen’s servers.
 
 To get started, you need to create a Mapzen developer account and API keys, and you are ready to build.
