@@ -11,7 +11,7 @@ pages:
   - 'Rate limits': 'rate-limits.md'
 
 mz:redirects:
-  'index': 'rate-limits'
+  'overview': 'overview/rate-limits'
 
 extra:
   site_subtitle: Get started developing with Mapzen's products
