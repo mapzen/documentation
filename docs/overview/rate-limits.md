@@ -2,7 +2,7 @@
 
 Mapzen offers a free tier of each service, subject to rate limits. The services have maximum numbers of requests you can make per month, and some have additional service limitations to minimize computationally intensive uses.
 
-[Mapzen Flex](https://mapzen.com/pricing) is Mapzen's pricing system, where you only pay for what you use. To use any of Mapzen’s services above the free limits, you need to [add a payment method to your account](account-settings/#Add-your-Mapzen-Flex-payment-method).
+To use Mapzen’s services above the free limits, you need to [add a payment method to your account](account-settings/#Add-your-Mapzen-Flex-payment-method) and enable billing.
 
 All the projects used to build the Mapzen-hosted services are open source. If you want to try Mapzen’s products, start with the hosted services to see if they fit your workflow needs. If you later decide that you need additional customizations, you can consider installing on your own servers the open-source code used to build Mapzen’s services.
 
@@ -30,9 +30,7 @@ The Mapzen Vector Tiles service is built from the [Tilezen](https://github.com/t
 
 ### Mapzen Terrain Tiles
 
-[Mapzen Terrain Tiles](https://mapzen.com/documentation/terrain-tiles/) provides global elevation coverage. This service is 100% cached and there are no rate limits.
-
-_Note: This service is not currently part of Mapzen Flex._
+[Mapzen Terrain Tiles](https://mapzen.com/documentation/terrain-tiles/) provides global elevation coverage and there are no rate limits.
 
 The Mapzen Terrain Tiles service is built from the [Joerd](https://github.com/tilezen/joerd) open-source project.
 

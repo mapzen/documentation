@@ -30,10 +30,10 @@ At the end of each month, Mapzen calculates your usage and bill, and your charge
 
 1. Sign in to your Mapzen account.
 2. In the top corner of the page, click `Account` and click `Settings`.
-3. Click `Add Payment Method`.
+3. In the `Billing` section, `Add Payment Method`.
 4. Enter your credit card information.
 
-If your account has any pending usage charges in a month, you can update your account to use a different credit card, but are unable to delete your credit card altogether until the balance has cleared.
+If your account has any pending usage charges in a month, you can update it to a different credit card, but are unable to delete your credit card altogether until the balance has cleared.
 
 ## Set monthly spending limits
 
@@ -43,28 +43,28 @@ To set a spending limit, you first need to add a payment method to your account.
 
 The spending limit applies across all services. If you reach your spending limit by using only Mapzen Search, for example, you will not be able to use Mapzen Search or any other services beyond the free limits for the remainder of the month. Your account will not accumulate any charges for overages, but no results will be returned for your API requests. This means that your maps may no longer function.
 
-Rate limits are reset on the first day of each month at 00:00 UTC (Coordinated Universal Time).
+Rate limits are reset on the first day of every month at 00:00 UTC (Coordinated Universal Time).
 
 See https://mapzen.com/pricing for more information on current pricing and the limits available with the free plan.
 
 1. Sign in to your Mapzen account.
 2. In the top corner of the page, click `Account` and click `Settings`.
-3. Make sure you have a payment method on your account. You will not see additional billing information until you have a credit card on file.
-4. Under `Billing`, click `Update`.
-5. Make sure your billing status is active.
+3. Make sure you have a payment method on your account. You will not see additional billing information unless you have a credit card on file.
+4. In the `Billing` section, click `Update` under `Monthly spending limit`.
+5. Make sure your billing status is `Enabled`.
 6. Enter the maximum you want to spend across all Mapzen services.
 
 As you approach your spending limit, your choices are to increase your spending limits, adjust your usage, or accept that your access to paid services will end.
 
-## Deactivate access to Mapzen Flex billing
+## Set your billing status
 
-If you want to disable Mapzen Flex on your account and stop billing, you can deactivate billing. Do this by clicking `Billing` on your account settings page, clicking `Update`, and setting your billing status to `Inactive`.
+When billing is enabled, you have access to Mapzen services at levels above the free limits and are agreeing to pay for your usage, up to your monthly spending limit, if one exists. By default, billing is enabled when you add a payment method to your account.
 
-An inactive billing status ends your paid usage, and makes it so you are only able to use Mapzen services up to the free tier of each product. If you exhaust the free limits, your maps may no longer function.
+To stop billing, set your billing status to disabled in the `Billing` section of your account settings. This has the effect of setting your monthly spending limit to $0 because you are only able to use Mapzen services up to the free limits of each product. If you exhaust the free limits, your maps may no longer function.
 
-Any pending charges accrued before you deactivated Mapzen Flex will still be billed to the credit card saved in your account at the end of the current billing cycle. However, no further charges can occur until you reactivate billing.
+Any charges that were pending before you disabled billing will still be charged to the credit card on file at the end of the current billing cycle. However, no further charges can accrue. The billing status remains as you set it until you change it in the future.
 
-Anytime you want to start billing again, set your Mapzen Flex status to `Active`.
+Anytime you want to start billing again, set your billing status to `Enabled`.
 
 ## Subscribe to premium support services
 

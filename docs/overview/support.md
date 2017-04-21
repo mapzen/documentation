@@ -2,9 +2,7 @@
 
 Mapzen has many ways for you to get more help, and wants to hear from you. You can send a note about questions about your bill, bugs or unexpected results, enhancement requests for future development, projects you have built with Mapzen, or any other questions you might have.
 
-All Mapzen users have access to standard email support. Premium support with a service-level agreement is available for an additional monthly fee, and you can subscribe even if you are within the free rate limits of Mapzen’s products. Premium support users receive priority response times, usually within one business day.
-
-??? You can sign up for premium support from within your [account settings](account-settings/#Subscribe-to-premium-support-services)
+All Mapzen users have access to standard email support. Premium support with a service-level agreement is available for an additional monthly fee, and you can subscribe even if you are within the free rate limits of Mapzen’s products. Premium support users receive priority response times, usually within one business day. To sign up for premium support, [contact Mapzen](support@mapzen.com).
 
 The hours of operation for technical support are generally Monday through Friday, from 09:00 to 17:00, Pacific Time (US), excluding weekends and public holidays.
 

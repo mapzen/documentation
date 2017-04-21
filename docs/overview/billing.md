@@ -1,8 +1,8 @@
-# View your current usage and Mapzen Flex bill
+# View your current usage and bill
 
 When you are signed in with your Mapzen account, you can view your current usage and charges due.
 
-[Mapzen Flex](https://mapzen.com/pricing) is Mapzen's pricing system, where you only pay for what you use. You can think of your Mapzen bill as similar to a home utility bill, where your charges are dependent on how much water or electricity, for example, you consumed in a month.
+With Mapzen Flex, you only pay for what you use. You can think of your Mapzen bill as similar to a home utility bill, where your charges are dependent on how much water or electricity, for example, you consumed in a month.
 
 Because there are no paid tiers, you pay for each individual API request you make above the free rate limits. Although you may see pricing listed in units of 1,000, requests are not purchased in bundles. For example, $0.05 per 1,000 is intended to be a simpler way of representing that each request is $0.00005.
 
@@ -23,7 +23,7 @@ To check your usage, sign in to your developer account and review your dashboard
 ???
 There is not currently an API for directly accessing your usage information, but you receive [HTTP status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) in the header for the server's response to your query.
 
-After you make an API call to a Mapzen service, you can get more information in the HTTP headers of the response. HTTP headers are embedded metadata that tells your browser (or other software) how to make sense of the request.
+After you make an API request to a Mapzen service, you can get more information in the HTTP headers of the response. HTTP headers are embedded metadata that tells your browser (or other software) how to make sense of the request.
 
 X-ApiaxleProxy-Qpd-Left
 
@@ -31,7 +31,7 @@ X-ApiaxleProxy-Qpd-Left
 
 ## Request a bill credit for service issues
 
-_Note: This is only available to users who [subscribe to premium support](account-settings/#Subscribe-to-premium-support-services), which includes a service-level agreement.)_
+_Note: This is only available to users who subscribe to premium support, which includes a service-level agreement.)_
 
 While Mapzen hopes you never experience an outage or downtime in services, you can request a credit in the event that issues occur. See your support agreement for more information about your rights and requirements, and keep in mind that those terms supersede any documentation content here.
 
