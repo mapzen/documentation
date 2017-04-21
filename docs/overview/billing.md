@@ -10,7 +10,7 @@ Billing is post-paid after the month ends, and there are no prepayment discounts
 
 The billing currency is the United States Dollar (USD). Mapzen handles the payment of sales or usage tax that may be required in your area.
 
-If you need to update your credit card information, you can do that from your [Mapzen account settings](account-settings.md/#Add-your-Mapzen-Flex-payment-method). If you have questions about your bill or are having problems paying it, please contact Mapzen at support@mapzen.com.
+If you need to update your credit card information, you can do that from your [Mapzen account settings](account-settings/#Add-your-Mapzen-Flex-payment-method). If you have questions about your bill or are having problems paying it, please contact Mapzen at support@mapzen.com.
 
 ## View your usage
 
@@ -31,7 +31,7 @@ X-ApiaxleProxy-Qpd-Left
 
 ## Request a bill credit for service issues
 
-_Note: This is only available to users who [subscribe to premium support](account-settings.md/#Subscribe-to-premium-support-services), which includes a service-level agreement.)_
+_Note: This is only available to users who [subscribe to premium support](account-settings/#Subscribe-to-premium-support-services), which includes a service-level agreement.)_
 
 While Mapzen hopes you never experience an outage or downtime in services, you can request a credit in the event that issues occur. See your support agreement for more information about your rights and requirements, and keep in mind that those terms supersede any documentation content here.
 

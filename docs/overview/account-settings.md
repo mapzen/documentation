@@ -76,7 +76,7 @@ If you cancel, you can continue to use your premium support benefits through the
 
 You can subscribe to premium support even if you are within the free rate limits of Mapzen’s products.
 
-[Learn more about Mapzen support offerings](support.md)
+[Learn more about Mapzen support offerings](support)
 
 1. Sign in to your Mapzen account.
 2. In the top corner of the page, click `Account` and click `Settings`.

@@ -2,7 +2,7 @@
 
 Mapzen offers a free tier of each service, subject to rate limits. The services have maximum numbers of requests you can make per month, and some have additional service limitations to minimize computationally intensive uses.
 
-[Mapzen Flex](https://mapzen.com/pricing) is Mapzen's pricing system, where you only pay for what you use. To use any of Mapzen’s services above the free limits, you need to [add a payment method to your account](account-settings.md/#Add-your-Mapzen-Flex-payment-method).
+[Mapzen Flex](https://mapzen.com/pricing) is Mapzen's pricing system, where you only pay for what you use. To use any of Mapzen’s services above the free limits, you need to [add a payment method to your account](account-settings/#Add-your-Mapzen-Flex-payment-method).
 
 All the projects used to build the Mapzen-hosted services are open source. If you want to try Mapzen’s products, start with the hosted services to see if they fit your workflow needs. If you later decide that you need additional customizations, you can consider installing on your own servers the open-source code used to build Mapzen’s services.
 
