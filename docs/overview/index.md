@@ -1,27 +1,30 @@
 # Get started
 
-Mapzen’s products help you put a map anywhere, search and route the planet, and try a world of open data. These are built from open-source tools that are packaged into a web service and hosted on Mapzen’s servers.
+Mapzen’s products help you put a map anywhere, search and route the planet, and try a world of open data.
 
-To get started, you need to create a Mapzen developer account and API keys, and you are ready to build.
-
-Mapzen Flex is Mapzen's pricing system, where you only pay for what you use. Follow these steps to get started developing on the Mapzen platform.
+Follow these steps to get started developing on the Mapzen platform.
 
 ## 1. Sign up for a Mapzen account
 
-If you want to use Mapzen’s services, you need to create a Mapzen account. After you have an account, you can modify your account settings, view your usage, and manage your API keys.
+Your first step is to create a Mapzen developer account. After you sign in, you can modify your account settings, view your Mapzen service usage, and manage your API keys. An account and API keys are required to use Mapzen services, even within the free limits.
 
 1. Go to https://mapzen.com.
 2. Click `Sign Up`.
+3. Choose your authentication method.
 
-## 2. Add billing information
+[Learn more about creating a Mapzen account](account-settings.md#Sign-up-for-a-Mapzen-account)
 
-To use any of Mapzen’s services above the free limits, you need to add a payment method to your account. If you do not have a valid credit card on file and you reach the free limits, your maps may no longer function.
+## 2. Add a payment method
 
-??? LINK
+[Mapzen Flex](https://mapzen.com/pricing) is Mapzen's pricing system, where you only pay for what you use.
 
-Optionally, take control of your bill by setting a monthly spending limit. This gives you the comfort of knowing that your bill will remain within the maximum amount you specify.
+To use any of Mapzen’s services above the free limits, you need to [add a payment method to your account](account-settings.md#Add-your-Mapzen-Flex-payment-method). Adding a payment method is optional, but if you do not have a valid credit card on file and you reach the free limits, your maps may no longer function.
 
-??? LINK
+Optionally, take control of your bill by [setting a monthly spending limit](account-settings.md#Set-monthly-spending-limits). This gives you the comfort of knowing that your bill will remain within the maximum amount you specify.
+
+If you have enabled Mapzen Flex by adding an active payment method, at the end of each month, your usage is calculated and any balance due is automatically billed to the credit card in your account.
+
+[Learn more about tracking your usage and billing](billing.md)
 
 ## 3. Get an API key
 
@@ -29,25 +32,25 @@ An API key is a code that uniquely links API usage inside your application with 
 
 When signed in to your Mapzen account, you can access a dashboard that allows you to create, manage, and track the usage of your Mapzen API keys.
 
-??? LINK
+[Learn how to create and manage your API keys](api-keys.md)
 
 ## 4. Start building
 
-If you are new to the Mapzen platform, you might start with these tutorials.
+If you are new to the Mapzen platform, you might try these tutorials.
 
 - [Get started with mapzen.js](https://mapzen.com/documentation/mapzen-js/get-started/), the Mapzen JavaScript SDK
 - [Add Turn-by-Turn routing to a map](https://mapzen.com/documentation/mobility/turn-by-turn/add-routing-to-a-map/)
 - [Add the Mapzen Search geocoder to a map](https://mapzen.com/documentation/search/add-search-to-a-map/)
-- Get started with [Mapzen Android SDK](https://mapzen.com/documentation/android/getting-started/) and [Mapzen iOS SDK)[https://mapzen.com/documentation/ios/getting-started/]
+- Get started with [Mapzen Android SDK](https://mapzen.com/documentation/android/getting-started/) and [Mapzen iOS SDK](https://mapzen.com/documentation/ios/getting-started/)
 
-At the end of each month, your usage is calculated and any balance due is automatically billed to the payment method in your account.
+## 5. Learn about the limits and legal terms
 
 ## Rate limits
 
-To find the current rate and service limits, see ??? (rate limits link -- doing this to keep any existing links because anchor redirects do not work).
+Mapzen offers a free tier of each service, subject to certain rate limits. The services have maximum numbers of requests you can make per month, and some have additional service limitations to minimize computationally intensive uses. To review the current limits for all Mapzen services, see [Rate limits](rate-limits.md).
 
 ## Terms of use
 
-Mapzen's products are available for any use, including commercial purposes. You need to follow the [attribution requirements](https://mapzen.com/rights/) for the data source, and also provide acknowledgement to Mapzen if you are using these web services.
+Mapzen's products are available for any use, including commercial purposes. You need to follow the [attribution requirements](https://mapzen.com/rights/) for the data source, and also provide acknowledgement if you are using Mapzen's web services.
 
 ??? See the full developer terms and this blog post that explains some common scenarios.

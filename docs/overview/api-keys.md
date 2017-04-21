@@ -2,7 +2,7 @@
 
 When signed in to your Mapzen account, you can access a dashboard that allows you to create, manage, and track the usage of your Mapzen API keys. An API key is a code that uniquely links API usage inside your application with your Mapzen account without needing a password.
 
-Mapzen's web services have various API endpoints that allow you to access web resources through a URL. You will need to include your API key in the URL you construct to send queries to Mapzen's services. For example, add an `api_key` URL parameter to any request, such as `?api_key=your-mapzen-api-key`. Your API key works for any Mapzen service.
+Mapzen's web services have various API endpoints that allow you to access web resources through a URL. You will need to include your API key in the URL you construct to send queries to Mapzen's services. For example, add an `api_key` URL parameter to any request, such as `?api_key=your-mapzen-api-key`. An API key works for any Mapzen service.
 
 You must include an API key when using Mapzen's services; requests sent without an API key return errors.
 
@@ -18,9 +18,9 @@ _Note: The free rate limits are applied to your usage across your entire account
 
 ## Choose an API key strategy for your app
 
-The simplest and most common workflow for API keys in an app is for you to provide a centralized API key for all users. This could mean that you deploy your app with a single key with enough capacity to cover all of your users’ usage. A valid variation is to create and deploy multiple keys if you want to monitor usage and billing for a particular client or function within your app.
+The simplest workflow is for your app to employ a centralized API key for all users. This could mean that you deploy your app with a single key with enough capacity to cover all of your users’ usage. A valid variation is to create and deploy multiple keys if you want to monitor usage and billing for a particular client or function within your app.
 
-In either of these cases, the API keys are linked to your account. This makes you responsible for the costs associated with all of the usage for the keys that are deployed in your app. You can set a spending limit on your account to avoid unexpected charges, although be aware that the app may not function after the spending limit is reached.
+In this model, the API keys in your app are linked to your Mapzen account. This makes you responsible for the costs associated with all of the usage for the keys that are deployed in your app. You can set a spending limit on your account to avoid unexpected charges, although be aware that the app may not function after the spending limit is reached.
 
 The alternative and more complex API key workflow is for your app to provide an option for users to enter an API key from their own Mapzen accounts. Doing this allows your users to have their own free rate limits, and makes them individually liable for their usage costs. If you implement this method, your app should clearly indicate that a valid Mapzen API key is required. Otherwise, your users will see errors if they fail to include an API key when using Mapzen's services.
 
@@ -53,4 +53,4 @@ var map = L.Mapzen.map('map', {
 }
 ```
 
-If you believe your API key has been compromised or used without your knowledge, contact [Mapzen](mailto:hello@mapzen.com). You can also delete API keys or rotate them periodically in your app. There is not currently a default way to limit an API key for usage only on a particular web domain.
+If you believe your API key has been compromised or used without your knowledge, contact [Mapzen](mailto:support@mapzen.com). You can also delete API keys or rotate them periodically in your app. There is not currently a default way to limit an API key for usage only on a particular web domain.

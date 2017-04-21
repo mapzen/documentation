@@ -1,10 +1,10 @@
 # Rate limits
 
-Mapzen offers a free tier of each service, subject to the rate limits listed below. The services have maximum numbers of requests you can make per month, and some have additional service limitations to minimize computationally intensive uses.
+Mapzen offers a free tier of each service, subject to rate limits. The services have maximum numbers of requests you can make per month, and some have additional service limitations to minimize computationally intensive uses.
 
-Mapzen Flex is Mapzen's pricing system, where you only pay for what you use. To use any of Mapzen’s services above the free limits, you need to add a payment method to your account. (???? link)
+[Mapzen Flex](https://mapzen.com/pricing) is Mapzen's pricing system, where you only pay for what you use. To use any of Mapzen’s services above the free limits, you need to [add a payment method to your account](account-settings.md#Add-your-Mapzen-Flex-payment-method).
 
-All the projects used to build the Mapzen-hosted services are open source. If you want to try Mapzen’s products, start with the hosted services to see if they fit your workflow needs. If you later decide that you need additional customizations, you can consider installing on your own servers the open-source code used to build Mapzen’s services. 
+All the projects used to build the Mapzen-hosted services are open source. If you want to try Mapzen’s products, start with the hosted services to see if they fit your workflow needs. If you later decide that you need additional customizations, you can consider installing on your own servers the open-source code used to build Mapzen’s services.
 
 You must include an API key when using Mapzen’s services; requests sent without an API key return errors.
 
@@ -24,7 +24,7 @@ Mapzen's [cartography](https://mapzen.com/documentation/cartography/) requires a
 
 - 50,000 free requests per month
 
-When viewing a map, you commonly use about 15 tiles at a time. The number of map views is an attempt to translate the query rate limits into practical expectations in an app.
+When viewing a map, you commonly use about 15 tile requests at a time.
 
 The Mapzen Vector Tiles service is built from the [Tilezen](https://github.com/tilezen) open-source project.
 
@@ -62,7 +62,7 @@ The distance limit is the total straight-line distance (colloquially, as the cro
 ### Mapzen Matrix
 
 [Mapzen Matrix](https://mapzen.com/documentation/matrix/) provides time and distance calculations between locations and has these limits:
-????
+
 - 2 queries per second
 - 5,000 queries per day
 - The maximum number of locations is 50 for any type of matrix.
@@ -73,9 +73,9 @@ _Note: This service is not currently part of Mapzen Flex._
 ### Mapzen Optimized Route
 
 [Mapzen Optimized Route](https://mapzen.com/documentation/optimized/) finds the most efficient route between many locations. The service has these limits:
-????
+
 - 2 queries per second
-- 5,000 queries per day
+- 5,000 requests per day
 - The maximum number of locations is 50.
 - The maximum straight-line distance between two locations is 200 kilometers.
 
@@ -86,8 +86,8 @@ _Note: This service is not currently part of Mapzen Flex._
 [Mapzen Isochrone](https://mapzen.com/documentation/mobility/isochrone/api-reference/) provides a computation of areas that are reachable within specified time periods from a location or set of locations. The service has these limits:
 
 ???
-- 2 queries per second
-- 5,000 queries per day
+- 2 requests per second
+- 5,000 requests per day
 - The maximum number of locations is one. For isochrones around multiple locations, you need to make multiple requests.
 - The maximum time to compute isochrone contours from the location is 120 minutes.
 - The maximum number of isochrone contours in a single request is four.
@@ -102,8 +102,8 @@ The Mapzen Turn-by-Turn, Matrix, Optimized Route, and Isochrone services are bui
 
 [Mapzen Elevation](https://mapzen.com/documentation/elevation/) provides the height or elevation at a set of locations and has these limits:
 
-- 2 queries per second
-- 20,000 queries per day
+- 2 requests per second
+- 20,000 requests per day
 
 There are also limitations on the number of sampling points for which you request elevations.
 
@@ -115,9 +115,9 @@ The Mapzen Elevation lookup service is built from the [Valhalla](https://github.
 
 Retrieve data about places from the [Who's On Firsts](https://mapzen.com/documentation/wof/) gazetteer.
 
-- Queries per day: 25,000
-- Queries per minute: 300
-- Queries per second: 6
+- 6 requests per second
+- 300 requests per minute
+- 25,000 requests per day
 
 _Note: This service is not currently part of Mapzen Flex._
 
@@ -125,9 +125,9 @@ _Note: This service is not currently part of Mapzen Flex._
 
 Mapzen's other data products do not currently require API keys. These include:
 
-- Metro Extracts, downloadable snapshots of OpenStreetMap data (Note: you will need to sign in with a developer account to download custom extracts)
-- Transitland, the open transit data project
+- [Metro Extracts](https://mapzen.com/data/metro-extracts/), downloadable snapshots of OpenStreetMap data (Note: you will need to sign in with a developer account to download custom extracts)
+- [Transitland](https://transit.land/), the open transit data project
 
 ## Mobile products
 
-To use Mapzen's Android or iOS SDKs or any of Mapzen's other products in your mobile apps, you need an API key. You are subject to the rate limits for the service you are integrating.
+To use Mapzen's [Android](https://mapzen.com/documentation/android/) or [iOS](https://mapzen.com/documentation/ios/) SDKs or any of Mapzen's other products in your mobile apps, you need an API key. You are subject to the rate limits for the Mapzen service you are integrating in your app.
