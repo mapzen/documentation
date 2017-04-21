@@ -12,7 +12,7 @@ Your first step is to create a Mapzen developer account. After you sign in, you 
 2. Click `Sign Up`.
 3. Choose your authentication method.
 
-[Learn more about creating a Mapzen account](account-settings.md/#Sign-up-for-a-Mapzen-account)
+[Learn more about creating a Mapzen account](account-settings/#Sign-up-for-a-Mapzen-account)
 
 ## 2. Add a payment method
 
@@ -24,7 +24,7 @@ Optionally, take control of your bill by [setting a monthly spending limit](acco
 
 If you have enabled Mapzen Flex by adding an active payment method, at the end of each month, your usage is calculated and any balance due is automatically billed to the credit card in your account.
 
-[Learn more about tracking your usage and billing](billing.md)
+[Learn more about tracking your usage and billing](billing)
 
 ## 3. Get an API key
 
