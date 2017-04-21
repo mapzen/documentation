@@ -63,35 +63,32 @@ The distance limit is the total straight-line distance (colloquially, as the cro
 
 [Mapzen Matrix](https://mapzen.com/documentation/matrix/) provides time and distance calculations between locations and has these limits:
 
-- 2 requests per second
-- 5,000 requests per day
+- 5,000 free requests per day
 - The maximum number of locations is 50 for any type of matrix.
 - The maximum straight-line distance between two locations is 200 kilometers.
 
-_Note: This service is not currently part of Mapzen Flex._
+_Note: This service currently offers only a free tier with these limits. Mapzen is working on updating this service to allow increased usage._
 
 ### Mapzen Optimized Route
 
 [Mapzen Optimized Route](https://mapzen.com/documentation/optimized/) finds the most efficient route between many locations. The service has these limits:
 
-- 2 requests per second
-- 5,000 requests per day
+- 5,000 free requests per day
 - The maximum number of locations is 50.
 - The maximum straight-line distance between two locations is 200 kilometers.
 
-_Note: This service is not currently part of Mapzen Flex._
+_Note: This service currently offers only a free tier with these limits. Mapzen is working on updating this service to allow increased usage._
 
 ### Mapzen Isochrone
 
 [Mapzen Isochrone](https://mapzen.com/documentation/mobility/isochrone/api-reference/) provides a computation of areas that are reachable within specified time periods from a location or set of locations. The service has these limits:
 
-- 2 requests per second
-- 5,000 requests per day
+- 5,000 free requests per day
 - The maximum number of locations is one. For isochrones around multiple locations, you need to make multiple requests.
 - The maximum time to compute isochrone contours from the location is 120 minutes.
 - The maximum number of isochrone contours in a single request is four.
 
-_Note: This service is not currently part of Mapzen Flex._
+_Note: This service currently offers only a free tier with these limits. Mapzen is working on updating this service to allow increased usage._
 
 The Mapzen Turn-by-Turn, Matrix, Optimized Route, and Isochrone services are built from the [Valhalla](https://github.com/valhalla) open-source project.
 
@@ -101,12 +98,11 @@ The Mapzen Turn-by-Turn, Matrix, Optimized Route, and Isochrone services are bui
 
 [Mapzen Elevation](https://mapzen.com/documentation/elevation/) provides the height or elevation at a set of locations and has these limits:
 
-- 2 requests per second
-- 20,000 requests per day
+- 20,000 free requests per day
 
 There are also limitations on the number of sampling points for which you request elevations.
 
-_Note: This service is not currently part of Mapzen Flex._
+_Note: This service currently offers only a free tier with these limits. Mapzen is working on updating this service to allow increased usage._
 
 The Mapzen Elevation lookup service is built from the [Valhalla](https://github.com/valhalla) open-source project.
 
@@ -114,11 +110,9 @@ The Mapzen Elevation lookup service is built from the [Valhalla](https://github.
 
 Retrieve data about places from the [Who's On Firsts](https://mapzen.com/documentation/wof/) gazetteer.
 
-- 6 requests per second
-- 300 requests per minute
-- 25,000 requests per day
+- 25,000 free requests per day
 
-_Note: This service is not currently part of Mapzen Flex._
+_Note: This service currently offers only a free tier with these limits. Mapzen is working on updating this service to allow increased usage._
 
 ### Other data products
 
