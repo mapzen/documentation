@@ -12,15 +12,15 @@ Your first step is to create a Mapzen developer account. After you sign in, you 
 2. Click `Sign Up`.
 3. Choose your authentication method.
 
-[Learn more about creating a Mapzen account](account-settings.md#Sign-up-for-a-Mapzen-account)
+[Learn more about creating a Mapzen account](account-settings.md/#Sign-up-for-a-Mapzen-account)
 
 ## 2. Add a payment method
 
 [Mapzen Flex](https://mapzen.com/pricing) is Mapzen's pricing system, where you only pay for what you use.
 
-To use any of Mapzen’s services above the free limits, you need to [add a payment method to your account](account-settings.md#Add-your-Mapzen-Flex-payment-method). Adding a payment method is optional, but if you do not have a valid credit card on file and you reach the free limits, your maps may no longer function.
+To use any of Mapzen’s services above the free limits, you need to [add a payment method to your account](account-settings.md/#Add-your-Mapzen-Flex-payment-method). Adding a payment method is optional, but if you do not have a valid credit card on file and you reach the free limits, your maps may no longer function.
 
-Optionally, take control of your bill by [setting a monthly spending limit](account-settings.md#Set-monthly-spending-limits). This gives you the comfort of knowing that your bill will remain within the maximum amount you specify.
+Optionally, take control of your bill by [setting a monthly spending limit](account-settings.md/#Set-monthly-spending-limits). This gives you the comfort of knowing that your bill will remain within the maximum amount you specify.
 
 If you have enabled Mapzen Flex by adding an active payment method, at the end of each month, your usage is calculated and any balance due is automatically billed to the credit card in your account.
 
@@ -45,11 +45,11 @@ If you are new to the Mapzen platform, you might try these tutorials.
 
 ## 5. Learn about the limits and legal terms
 
-## Rate limits
+### Rate limits
 
 Mapzen offers a free tier of each service, subject to certain rate limits. The services have maximum numbers of requests you can make per month, and some have additional service limitations to minimize computationally intensive uses. To review the current limits for all Mapzen services, see [Rate limits](rate-limits.md).
 
-## Terms of use
+### Terms of use
 
 Mapzen's products are available for any use, including commercial purposes. You need to follow the [attribution requirements](https://mapzen.com/rights/) for the data source, and also provide acknowledgement if you are using Mapzen's web services.
 

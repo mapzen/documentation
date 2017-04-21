@@ -2,7 +2,7 @@
 
 When signed in to your Mapzen account, you can access a dashboard that allows you to create, manage, and track the usage of your Mapzen API keys. An API key is a code that uniquely links API usage inside your application with your Mapzen account without needing a password.
 
-Mapzen's web services have various API endpoints that allow you to access web resources through a URL. You will need to include your API key in the URL you construct to send queries to Mapzen's services. For example, add an `api_key` URL parameter to any request, such as `?api_key=your-mapzen-api-key`. An API key works for any Mapzen service.
+Mapzen's web services have various API endpoints that allow you to access web resources through a URL. You will need to include your API key in the URL you construct to send requests to Mapzen's services. For example, add an `api_key` URL parameter to any request, such as `?api_key=your-mapzen-api-key`. An API key works for any Mapzen service.
 
 You must include an API key when using Mapzen's services; requests sent without an API key return errors.
 

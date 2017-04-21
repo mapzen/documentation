@@ -2,7 +2,7 @@
 
 Mapzen offers a free tier of each service, subject to rate limits. The services have maximum numbers of requests you can make per month, and some have additional service limitations to minimize computationally intensive uses.
 
-[Mapzen Flex](https://mapzen.com/pricing) is Mapzen's pricing system, where you only pay for what you use. To use any of Mapzen’s services above the free limits, you need to [add a payment method to your account](account-settings.md#Add-your-Mapzen-Flex-payment-method).
+[Mapzen Flex](https://mapzen.com/pricing) is Mapzen's pricing system, where you only pay for what you use. To use any of Mapzen’s services above the free limits, you need to [add a payment method to your account](account-settings.md/#Add-your-Mapzen-Flex-payment-method).
 
 All the projects used to build the Mapzen-hosted services are open source. If you want to try Mapzen’s products, start with the hosted services to see if they fit your workflow needs. If you later decide that you need additional customizations, you can consider installing on your own servers the open-source code used to build Mapzen’s services.
 
@@ -63,8 +63,8 @@ The distance limit is the total straight-line distance (colloquially, as the cro
 
 [Mapzen Matrix](https://mapzen.com/documentation/matrix/) provides time and distance calculations between locations and has these limits:
 
-- 2 queries per second
-- 5,000 queries per day
+- 2 requests per second
+- 5,000 requests per day
 - The maximum number of locations is 50 for any type of matrix.
 - The maximum straight-line distance between two locations is 200 kilometers.
 
@@ -74,7 +74,7 @@ _Note: This service is not currently part of Mapzen Flex._
 
 [Mapzen Optimized Route](https://mapzen.com/documentation/optimized/) finds the most efficient route between many locations. The service has these limits:
 
-- 2 queries per second
+- 2 requests per second
 - 5,000 requests per day
 - The maximum number of locations is 50.
 - The maximum straight-line distance between two locations is 200 kilometers.
@@ -85,7 +85,6 @@ _Note: This service is not currently part of Mapzen Flex._
 
 [Mapzen Isochrone](https://mapzen.com/documentation/mobility/isochrone/api-reference/) provides a computation of areas that are reachable within specified time periods from a location or set of locations. The service has these limits:
 
-???
 - 2 requests per second
 - 5,000 requests per day
 - The maximum number of locations is one. For isochrones around multiple locations, you need to make multiple requests.
