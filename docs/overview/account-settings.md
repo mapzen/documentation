@@ -65,20 +65,3 @@ To stop billing, set your billing status to disabled in the `Billing` section of
 Any charges that were pending before you disabled billing will still be charged to the credit card on file at the end of the current billing cycle. However, no further charges can accrue. The billing status remains as you set it until you change it in the future.
 
 Anytime you want to start billing again, set your billing status to `Enabled`.
-
-## Subscribe to premium support services
-
-Premium support, which includes faster response times and a service-level agreement, is available for an additional, flat monthly fee. When contacting Mapzen, users with premium support receive priority replies. A service-level agreement indicates the service's required uptime and instructions to take if these are not met.
-
-You are billed for your premium support subscription at the beginning of each month. You have access to premium support as soon as you enable it on your account, and there are no prorated costs for joining in the middle of a billing cycle.
-
-If you cancel, you can continue to use your premium support benefits through the end of the month and your credit card will not be charged in subsequent months. No refunds are issued for the remainder of the billing period in which you cancel.
-
-You can subscribe to premium support even if you are within the free rate limits of Mapzen’s products.
-
-[Learn more about Mapzen support offerings](support)
-
-1. Sign in to your Mapzen account.
-2. In the top corner of the page, click `Account` and click `Settings`.
-3. ??? Under `Add-ons`, agree to premium support.
-4. ??? To cancel support...
