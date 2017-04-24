@@ -24,9 +24,9 @@
 			</div>
 			<div class="category-info-container">
 				<div class="category-info">
-					<a class="docs-title" href="guides/">General developer guides</a>
+					<a class="docs-title" href="guides/">Developer guides</a>
 					<p class="excerpt">
-						Set up your development environment.
+						Set up your development environment with these general guides.
 					</p>
 				</div>
 				<div class="read-more">
@@ -55,7 +55,7 @@
 				<div class="category-info">
 					<a class="docs-title" href="cartography/">Cartography</a>
 					<p class="excerpt">
-						Basemap styles and hundreds of map icons.
+						Get everything you need to use Mapzen basemaps and icons in your applications.
 					</p>
 				</div>
 				<div class="read-more">
@@ -66,7 +66,7 @@
 				<div class="category-info">
 					<a class="docs-title" href="tangram/">Tangram</a>
 					<p class="excerpt">
-						Render 2D and 3D maps with fine control over almost every aspect of the map-making process.
+						Render 2D and 3D maps with fine control over the map-making process.
 					</p>
 				</div>
 				<div class="read-more">
@@ -104,7 +104,7 @@
 				<div class="category-info">
 					<a class="docs-title" href="search/">Mapzen Search</a>
 					<p class="excerpt">
-						Find places and addresses with this geographic search service built on open tools and open data.
+						Find places and addresses with this geographic search service.
 					</p>
 				</div>
 				<div class="read-more">
