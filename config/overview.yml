@@ -7,8 +7,8 @@ pages:
   - 'Account settings': 'account-settings.md'
   - 'Billing information': 'billing.md'
   - 'API keys': 'api-keys.md'
-  - 'Support': 'support.md'
   - 'Rate limits': 'rate-limits.md'
+  - 'Support': 'support.md'
 
 # mz:redirects:
 #  'overview/#rate-limits': 'overview/rate-limits'
