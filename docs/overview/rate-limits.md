@@ -1,5 +1,7 @@
 # Rate limits
 
+_Note: You may not see all billing and account settings options right now while your account is being upgraded. The rate limit and pricing information presented here will be fully effective for all accounts starting June 1, 2017._
+
 Mapzen offers some level of free access to each service, subject to rate limits. The services have maximum numbers of requests you can make per month, and some have additional service limitations to minimize computationally intensive uses.
 
 To use Mapzen’s services above the free limits, you need to [add a payment method to your account](account-settings/#Add-your-payment-method) and enable billing.
