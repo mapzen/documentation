@@ -1,4 +1,4 @@
-# View your current usage and bill
+## View your current usage and bill
 
 When you are signed in with your Mapzen account, you can view your current usage and charges due.
 
@@ -12,7 +12,7 @@ The billing currency is the United States Dollar (USD). Mapzen handles the payme
 
 If you need to update your credit card information, you can do that from your [Mapzen account settings](account-settings/#Add-your-Mapzen-Flex-payment-method). If you have questions about your bill or are having problems paying it, please contact Mapzen at support@mapzen.com.
 
-## View your usage
+### View your usage
 
 To check your usage, sign in to your developer account and review your dashboard.
 
@@ -29,7 +29,7 @@ X-ApiaxleProxy-Qpd-Left
 
 ???? Is this still valid? Is there a queries per month header? Does it list only free usage?
 
-## Request a bill credit for service issues
+### Request a bill credit for service issues
 
 _Note: This is only available to users who subscribe to premium support, which includes a service-level agreement.)_
 

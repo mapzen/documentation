@@ -1,8 +1,8 @@
-# Update your Mapzen account settings
+## Update your Mapzen account settings
 
 When you signed in on Mapzen’s website, you can view and modify your account settings. These include changing your email address and password, and updating your credit card and billing information.
 
-## Sign up for a Mapzen account
+### Sign up for a Mapzen account
 
 1. Go to https://mapzen.com.
 2. Click `Sign Up`.
@@ -13,14 +13,14 @@ In the future when you sign in, use either your email address and password or Gi
 
 To delete your account, you need to [contact Mapzen](mailto:support@mapzen.com). If you are using GitHub, sign into your GitHub account and revoke [Mapzen Platform](https://help.github.com/articles/reviewing-your-authorized-applications-oauth/) as an authorized application.
 
-## Change your email address or password
+### Change your email address or password
 
 1. Sign in to your Mapzen account.
 2. In the top corner of the page, click `Account` and click `Settings`.
 3. If you are using an email address to sign in, you can update your email address and password.
 4. With GitHub authentication, you can change your email address where you receive communications from Mapzen. Note that this is the address that was part of your GitHub profile when you originally authenticated your Mapzen account.
 
-## Add your Mapzen Flex payment method
+### Add your Mapzen Flex payment method
 
 To use any of Mapzen’s services above the free limits, you need to add a payment method to your account. Be sure to keep your credit card information updated if it expires or you are issued a new number.
 
@@ -35,7 +35,7 @@ At the end of each month, Mapzen calculates your usage and bill, and your charge
 
 If your account has any pending usage charges in a month, you can update it to a different credit card, but are unable to delete your credit card altogether until the balance has cleared.
 
-## Set monthly spending limits
+### Set monthly spending limits
 
 With Mapzen Flex, you can set limits on your spending each month. This gives you the comfort of knowing that your bill will remain within the maximum amount you specify.
 
@@ -56,7 +56,7 @@ See https://mapzen.com/pricing for more information on current pricing and the l
 
 As you approach your spending limit, your choices are to increase your spending limits, adjust your usage, or accept that your access to paid services will end.
 
-## Set your billing status
+### Set your billing status
 
 When billing is enabled, you have access to Mapzen services at levels above the free limits and are agreeing to pay for your usage, up to your monthly spending limit, if one exists. By default, billing is enabled when you add a payment method to your account.
 

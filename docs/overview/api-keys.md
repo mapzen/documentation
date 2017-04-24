@@ -1,4 +1,4 @@
-# Create and manage your Mapzen API keys
+## Create and manage your Mapzen API keys
 
 When signed in to your Mapzen account, you can access a dashboard that allows you to create, manage, and track the usage of your Mapzen API keys. An API key is a code that uniquely links API usage inside your application with your Mapzen account without needing a password.
 
@@ -6,7 +6,7 @@ Mapzen's web services have various API endpoints that allow you to access web re
 
 You must include an API key when using Mapzen's services; requests sent without an API key return errors.
 
-## Create an API key
+### Create an API key
 
 1. Go to https://mapzen.com.
 2. In the top corner of the page, click `Account` and click  `Dashboard`. This is where you can create, delete, and manage your API keys.
@@ -16,7 +16,7 @@ You must include an API key when using Mapzen's services; requests sent without 
 
 _Note: The free rate limits are applied to your usage across your entire account. Creating multiple keys does not increase these limits._
 
-## Choose an API key strategy for your app
+### Choose an API key strategy for your app
 
 The simplest workflow is for your app to employ a centralized API key for all users. This could mean that you deploy your app with a single key with enough capacity to cover all of your users’ usage. A valid variation is to create and deploy multiple keys if you want to monitor usage and billing for a particular client or function within your app.
 
@@ -24,7 +24,7 @@ In this model, the API keys in your app are linked to your Mapzen account. This 
 
 The alternative and more complex API key workflow is for your app to provide an option for users to enter an API key from their own Mapzen accounts. Doing this allows your users to have their own free rate limits, and makes them individually liable for their usage costs. If you implement this method, your app should clearly indicate that a valid Mapzen API key is required. Otherwise, your users will see errors if they fail to include an API key when using Mapzen's services.
 
-## Protect your API keys
+### Protect your API keys
 
 If you want to keep your API key private, you can consider using a proxy system to hide the key from your users.
 
