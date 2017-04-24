@@ -49,7 +49,7 @@ If you are new to the Mapzen platform, you might try these tutorials.
 
 #### Rate limits
 
-Mapzen offers a free tier of each service, subject to certain rate limits. The services have maximum numbers of requests you can make per month, and some have additional service limitations to minimize computationally intensive uses. To review the current limits for all Mapzen services, see [Rate limits](rate-limits).
+Mapzen offers some level of free access to each service, subject to rate limits. The services have maximum numbers of requests you can make per month, and some have additional service limitations to minimize computationally intensive uses. To review the current limits for all Mapzen services, see [Rate limits](rate-limits).
 
 #### Terms of use
 

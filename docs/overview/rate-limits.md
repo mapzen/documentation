@@ -1,8 +1,8 @@
 # Rate limits
 
-Mapzen offers a free tier of each service, subject to rate limits. The services have maximum numbers of requests you can make per month, and some have additional service limitations to minimize computationally intensive uses.
+Mapzen offers some level of free access to each service, subject to rate limits. The services have maximum numbers of requests you can make per month, and some have additional service limitations to minimize computationally intensive uses.
 
-To use Mapzen’s services above the free limits, you need to [add a payment method to your account](account-settings/#Add-your-Mapzen-Flex-payment-method) and enable billing.
+To use Mapzen’s services above the free limits, you need to [add a payment method to your account](account-settings/#Add-your-payment-method) and enable billing.
 
 All the projects used to build the Mapzen-hosted services are open source. If you want to try Mapzen’s products, start with the hosted services to see if they fit your workflow needs. If you later decide that you need additional customizations, you can consider installing on your own servers the open-source code used to build Mapzen’s services.
 
@@ -65,7 +65,7 @@ The distance limit is the total straight-line distance (colloquially, as the cro
 - The maximum number of locations is 50 for any type of matrix.
 - The maximum straight-line distance between two locations is 200 kilometers.
 
-_Note: This service currently offers only a free tier with these limits. Mapzen is working on updating this service to allow increased usage._
+_Note: This service currently offers only free access with these limits. Mapzen is working on updating this service to allow increased usage._
 
 ### Mapzen Optimized Route
 
@@ -75,7 +75,7 @@ _Note: This service currently offers only a free tier with these limits. Mapzen 
 - The maximum number of locations is 50.
 - The maximum straight-line distance between two locations is 200 kilometers.
 
-_Note: This service currently offers only a free tier with these limits. Mapzen is working on updating this service to allow increased usage._
+_Note: This service currently offers only free access with these limits. Mapzen is working on updating this service to allow increased usage._
 
 ### Mapzen Isochrone
 
@@ -86,7 +86,7 @@ _Note: This service currently offers only a free tier with these limits. Mapzen 
 - The maximum time to compute isochrone contours from the location is 120 minutes.
 - The maximum number of isochrone contours in a single request is four.
 
-_Note: This service currently offers only a free tier with these limits. Mapzen is working on updating this service to allow increased usage._
+_Note: This service currently offers only free access with these limits. Mapzen is working on updating this service to allow increased usage._
 
 The Mapzen Turn-by-Turn, Matrix, Optimized Route, and Isochrone services are built from the [Valhalla](https://github.com/valhalla) open-source project.
 
@@ -100,7 +100,7 @@ The Mapzen Turn-by-Turn, Matrix, Optimized Route, and Isochrone services are bui
 
 There are also limitations on the number of sampling points for which you request elevations.
 
-_Note: This service currently offers only a free tier with these limits. Mapzen is working on updating this service to allow increased usage._
+_Note: This service currently offers only free access with these limits. Mapzen is working on updating this service to allow increased usage._
 
 The Mapzen Elevation lookup service is built from the [Valhalla](https://github.com/valhalla) open-source project.
 
@@ -110,7 +110,7 @@ Retrieve data about places from the [Who's On Firsts](https://mapzen.com/documen
 
 - 25,000 free requests per day
 
-_Note: This service currently offers only a free tier with these limits. Mapzen is working on updating this service to allow increased usage._
+_Note: This service currently offers only free access with these limits. Mapzen is working on updating this service to allow increased usage._
 
 ### Other data products
 

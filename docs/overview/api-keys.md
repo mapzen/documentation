@@ -9,7 +9,7 @@ You must include an API key when using Mapzen's services; requests sent without 
 ## Create an API key
 
 1. Go to https://mapzen.com.
-2. In the top corner of the page, click `Account` and click  `Dashboard`. This is where you can create, delete, and manage your API keys.
+2. In the top corner of the page, click `Account` and click `Dashboard`. This is where you can create, delete, and manage your API keys.
 3. Create a new key.
 4. Optionally, give the key a name so you can remember the purpose of the project.
 5. When you are ready to use it, copy the key and paste it into your code. In your query, the API key parameter should take the form of `api_key=your-mapzen-api-key`, substituting your actual API key for `your-mapzen-api-key` part of the example.

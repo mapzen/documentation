@@ -57,7 +57,7 @@ See https://mapzen.com/pricing for more information on current pricing and the l
 5. Make sure your billing status is `Enabled`.
 6. Enter the maximum you want to spend across all Mapzen services.
 
-As you approach your spending limit, your choices are to increase your spending limits, adjust your usage, or accept that your access to paid services will end.
+As you approach your spending limit, your choices are to increase your spending limits, adjust your usage, or accept that your access to higher rate limits will end.
 
 ## Set your billing status
 
