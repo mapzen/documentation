@@ -13,7 +13,7 @@
 			</h3>
 			<div class="category-info-container first">
 				<div class="category-info">
-					<a class="docs-title" href="overview/">Mapzen developer overview</a>
+					<a class="docs-title" href="overview/">Get started</a>
 					<p class="excerpt">
 						Get started developing on the Mapzen platform by setting up your account, API keys, and billing information.
 					</p>
