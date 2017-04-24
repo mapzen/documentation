@@ -7,7 +7,8 @@ When you signed in on Mapzen’s website, you can view and modify your account s
 1. Go to https://mapzen.com.
 2. Click `Sign Up`.
 3. Choose your authentication method. Create your account by entering your e-mail address and password, or if you have a [GitHub](https://github.com) account, you can use it for authentication. GitHub is a website that enables people to collaborate on a project.
-4. Agree to the terms.
+
+When you create an account, you need to agree to the Mapzen [Terms of Service](https://mapzen.com/terms/).
 
 In the future when you sign in, use either your email address and password or GitHub account, depending on how you registered originally. If you forgot your password, you can also attempt to reset it.
 
@@ -22,7 +23,7 @@ To delete your account, you need to [contact Mapzen](mailto:support@mapzen.com).
 
 ## Add your payment method
 
-To use any of Mapzen’s services above the free limits, you need to add a payment method to your account. Be sure to keep your credit card information updated if it expires or you are issued a new number.
+To use any of Mapzen’s services above the free limits, you need to add a payment method to your account.
 
 If you do not have a valid credit card on file and you reach the free limits, your access to that Mapzen service will cease for the remainder of the month. You can continue to use other services up to their individual free limits.
 
@@ -37,9 +38,11 @@ If your account has any pending usage charges in a month, you can update it to a
 
 ## Set monthly spending limits
 
-You can set limits on your spending each month. This gives you the comfort of knowing that your bill will not exceed the amount you specify.
+You can set limits on your spending each month. This gives you the comfort of knowing that your bill will not exceed the amount you specify. You will only be charged for what you use, which may be less than the limit you set for the month.
 
-To set a spending limit, you first need to add a payment method to your account. By default, there is no spending limit on your account, which means your usage (and potential bill) is unrestricted. You are notified by email as you approach your spending limit.
+To set a spending limit, you first need to add a payment method to your account. By default, there is no spending limit on your account, which means your usage (and potential bill) is unrestricted.
+
+Limits can be changed at any time, but cannot be set to an amount lower than the already accrued charges for that month. After you change your limit, the monthly spending limit stays the same month after month into the future. You will be notified by email as you approach your spending limit.
 
 The spending limit applies across all services. If you reach your spending limit by using only Mapzen Search, for example, you will not be able to use Mapzen Search or any other services beyond the free limits for the remainder of the month. Your account will not accumulate any charges for overages, but no results will be returned for your API requests. This means that your maps may no longer function.
 
