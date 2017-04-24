@@ -1,4 +1,4 @@
-# Get started with Mapzen Flex
+# Get started
 
 Mapzen’s products help you put a map anywhere, search and route the planet, and try a world of open data.
 
@@ -28,9 +28,9 @@ One API key works for any Mapzen service.
 
 You can create an API key and use Mapzen's services up to the monthly rate limits for free. If you reach the limits on one Mapzen service, you can continue to use others up to their free limits. Rate limits reset at the beginning of every month.
 
-If you need more than the free rate limits, [add a payment method to your account](account-settings/#Add-your-Mapzen-Flex-payment-method). Otherwise, if you exhaust the free limits, your maps may no longer function.
+If you need more than the free rate limits, [add a payment method to your account](account-settings/#Add-your-payment-method). Otherwise, if you exhaust the free limits, your maps may no longer function.
 
-You can take control of your bill by [setting a monthly spending limit](account-settings/#Set-monthly-spending-limits). This gives you the comfort of knowing that your bill will remain within the amount you specify. You can modify your spending limit at any time.
+You can take control of your bill by [setting a monthly spending limit](account-settings/#Set-monthly-spending-limits). This gives you the comfort of knowing that your bill will not exceed the amount you specify. You can modify your spending limit at any time.
 
 Your usage is calculated monthly and any balance due is automatically billed to the credit card in your account.
 

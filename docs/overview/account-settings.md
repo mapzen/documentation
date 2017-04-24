@@ -20,7 +20,7 @@ To delete your account, you need to [contact Mapzen](mailto:support@mapzen.com).
 3. If you are using an email address to sign in, you can update your email address and password.
 4. With GitHub authentication, you can change your email address where you receive communications from Mapzen. Note that this is the address that was part of your GitHub profile when you originally authenticated your Mapzen account.
 
-## Add your Mapzen Flex payment method
+## Add your payment method
 
 To use any of Mapzen’s services above the free limits, you need to add a payment method to your account. Be sure to keep your credit card information updated if it expires or you are issued a new number.
 
@@ -37,7 +37,7 @@ If your account has any pending usage charges in a month, you can update it to a
 
 ## Set monthly spending limits
 
-With Mapzen Flex, you can set limits on your spending each month. This gives you the comfort of knowing that your bill will remain within the maximum amount you specify.
+You can set limits on your spending each month. This gives you the comfort of knowing that your bill will not exceed the amount you specify.
 
 To set a spending limit, you first need to add a payment method to your account. By default, there is no spending limit on your account, which means your usage (and potential bill) is unrestricted. You are notified by email as you approach your spending limit.
 
