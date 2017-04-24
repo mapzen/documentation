@@ -3,7 +3,7 @@ docs_dir: src-overview
 site_dir: dist-overview
 
 pages:
-  - 'Mapzen Flex': index.md
+  - 'Home': index.md
   - 'Account settings': 'account-settings.md'
   - 'Billing information': 'billing.md'
   - 'API keys': 'api-keys.md'
