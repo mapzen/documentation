@@ -1,12 +1,20 @@
-site_name: Developer overview
+site_name: Get started
 docs_dir: src-overview
 site_dir: dist-overview
 
 pages:
-  - Overview: index.md
+  - 'Home': index.md
+  - 'Account settings': 'account-settings.md'
+  - 'Billing information': 'billing.md'
+  - 'API keys': 'api-keys.md'
+  - 'Rate limits': 'rate-limits.md'
+  - 'Support': 'support.md'
+
+# mz:redirects:
+#  'overview/#rate-limits': 'overview/rate-limits'
 
 extra:
-  site_subtitle: Get started developing with Mapzen's products
+  site_subtitle: Get started developing on the Mapzen platform by setting up your account, API keys, and billing information.
   project_repo_url: https://github.com/mapzen/mapzen-docs-generator
-  docs_base_url: https://github.com/mapzen/mapzen-docs-generator/tree/master/docs/overview
+  docs_base_url: https://github.com/mapzen/mapzen-docs-generator/tree/master/docs/overview/
   exclude_home_contents_in_toc: false

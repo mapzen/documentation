@@ -7,24 +7,32 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-xs-12 text-center headroom-extra-large footroom-large">
-			<img class="red-compass" src="https://mapzen.com/common/styleguide/images/divider/compass-red.png">
-		</div>
-	</div>
-	<div class="cta-container footroom-large">
-		<div class="cta-text">
-			<div class="hidden-xs col-sm-2">
-				<img width="50px" src="https://mapzen.com/common/styleguide/images/key.svg">
+		<div class="col-xs-12 footroom-large">
+			<h3 class="category-title">
+				General
+			</h3>
+			<div class="category-info-container first">
+				<div class="category-info">
+					<a class="docs-title" href="overview/">Get started</a>
+					<p class="excerpt">
+						Get started developing on the Mapzen platform by setting up your account, API keys, and billing information.
+					</p>
+				</div>
+				<div class="read-more">
+					<a class="btn btn-default btn-transparent" href="overview/"> View Documentation </a>
+				</div>
 			</div>
-			<div class="col-xs-12 col-sm-10">
-				Get your API key for access to Mapzen services.
-				<p class="cta-paragraph">
-					New to Mapzen? Learn more about rate limits and API keys to start working with our products in minutes.
-				</p>
+			<div class="category-info-container">
+				<div class="category-info">
+					<a class="docs-title" href="guides/">Developer guides</a>
+					<p class="excerpt">
+						Set up your development environment with these general guides.
+					</p>
+				</div>
+				<div class="read-more">
+					<a class="btn btn-default btn-transparent" href="guides/"> View Documentation </a>
+				</div>
 			</div>
-		</div>
-		<div class="cta-btn">
-			<a href="overview" class="btn btn-mapzen">Get started</a>
 		</div>
 	</div>
 	<div class="row">
@@ -47,7 +55,7 @@
 				<div class="category-info">
 					<a class="docs-title" href="cartography/">Cartography</a>
 					<p class="excerpt">
-						Basemap styles and hundreds of map icons.
+						Get everything you need to use Mapzen basemaps and icons in your applications.
 					</p>
 				</div>
 				<div class="read-more">
@@ -58,7 +66,7 @@
 				<div class="category-info">
 					<a class="docs-title" href="tangram/">Tangram</a>
 					<p class="excerpt">
-						Render 2D and 3D maps with fine control over almost every aspect of the map-making process.
+						Render 2D and 3D maps with fine control over the map-making process.
 					</p>
 				</div>
 				<div class="read-more">
@@ -96,7 +104,7 @@
 				<div class="category-info">
 					<a class="docs-title" href="search/">Mapzen Search</a>
 					<p class="excerpt">
-						Find places and addresses with this geographic search service built on open tools and open data.
+						Find places and addresses with this geographic search service.
 					</p>
 				</div>
 				<div class="read-more">
