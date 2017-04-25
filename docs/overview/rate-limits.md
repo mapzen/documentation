@@ -4,7 +4,7 @@ _Note: You may not see all billing and account settings options right now while 
 
 Mapzen offers some level of free access to each service, subject to rate limits. The services have maximum numbers of requests you can make per month, and some have additional service limitations to minimize computationally intensive uses.
 
-To use Mapzen’s services above the free limits, you need to [add a payment method to your account](account-settings/#Add-your-payment-method) and enable billing.
+To use Mapzen’s services above the free limits, you need to [add a payment method to your account](account-settings.md#add-your-payment-method) and enable billing.
 
 All the projects used to build the Mapzen-hosted services are open source. If you want to try Mapzen’s products, start with the hosted services to see if they fit your workflow needs. If you later decide that you need additional customizations, you can consider installing on your own servers the open-source code used to build Mapzen’s services.
 

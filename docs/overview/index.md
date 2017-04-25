@@ -12,7 +12,7 @@ Your first step is to create a Mapzen developer account. After you sign in, you 
 2. Click `Sign Up`.
 3. Choose your authentication method.
 
-[Learn more about creating a Mapzen account](account-settings/#Sign-up-for-a-Mapzen-account)
+[Learn more about creating a Mapzen account](account-settings.md#sign-up-for-a-mapzen-account)
 
 ## 2. Get an API key
 
@@ -22,19 +22,19 @@ When signed in to your Mapzen account, you can access a dashboard that allows yo
 
 One API key works for any Mapzen service.
 
-[Learn how to create and manage your API keys](api-keys)
+[Learn how to create and manage your API keys](api-keys.md)
 
 ## 3. Customize your billing settings
 
 You can create an API key and use Mapzen's services up to the monthly rate limits for free. If you reach the limits on one Mapzen service, you can continue to use others up to their free limits. Rate limits reset at the beginning of every month.
 
-If you need more than the free rate limits, [add a payment method to your account](account-settings/#Add-your-payment-method). Otherwise, if you exhaust the free limits, your maps may no longer function.
+If you need more than the free rate limits, [add a payment method to your account](account-settings.md#add-your-payment-method). Otherwise, if you exhaust the free limits, your maps may no longer function.
 
-You can take control of your bill by [setting a monthly spending limit](account-settings/#Set-monthly-spending-limits). This gives you the comfort of knowing that your bill will not exceed the amount you specify. You can modify your spending limit at any time.
+You can take control of your bill by [setting a monthly spending limit](account-settings.md#set-monthly-spending-limits). This gives you the comfort of knowing that your bill will not exceed the amount you specify. You can modify your spending limit at any time.
 
 Your usage is calculated monthly and any balance due is automatically billed to the credit card in your account.
 
-[Learn more about tracking your usage and billing](billing)
+[Learn more about tracking your usage and billing](billing.md)
 
 ## 4. Start building
 
@@ -49,7 +49,7 @@ If you are new to the Mapzen platform, you might try these tutorials.
 
 #### Rate limits
 
-Mapzen offers some level of free access to each service, subject to rate limits. The services have maximum numbers of requests you can make per month, and some have additional service limitations to minimize computationally intensive uses. To review the current limits for all Mapzen services, see [Rate limits](rate-limits).
+Mapzen offers some level of free access to each service, subject to rate limits. The services have maximum numbers of requests you can make per month, and some have additional service limitations to minimize computationally intensive uses. To review the current limits for all Mapzen services, see [Rate limits](rate-limits.md).
 
 #### Terms of use
 
