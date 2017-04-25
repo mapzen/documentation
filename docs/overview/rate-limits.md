@@ -104,11 +104,11 @@ There are also limitations on the number of sampling points for which you reques
 
 _Note: This service currently offers only free access with these limits. Mapzen is working on updating this service to allow increased usage._
 
-The Mapzen Elevation lookup service is built from the [Valhalla](https://github.com/valhalla) open-source project.
+The Mapzen Elevation lookup service is built from the [Joerd](https://github.com/tilezen/joerd) open-source project.
 
 ### Who's On First
 
-Retrieve data about places from the [Who's On Firsts](https://mapzen.com/documentation/wof/) gazetteer.
+Retrieve data about places from the [Who's On First](https://mapzen.com/documentation/wof/) gazetteer.
 
 - 25,000 free requests per day
 
