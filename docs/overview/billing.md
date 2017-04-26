@@ -1,6 +1,6 @@
 # View your current usage and bill
 
-_Note: You may not see all billing and account settings options right now while your account is being upgraded. The rate limit and pricing information presented here will be fully effective for all accounts starting June 1, 2017._
+_Note: The rate limit and pricing information presented here will be fully effective for all accounts starting June 1, 2017._
 
 When you are signed in with your Mapzen account, you can view your current usage and charges due.
 
