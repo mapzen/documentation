@@ -14,6 +14,8 @@ The billing currency is the United States Dollar (USD). Mapzen handles the payme
 
 If you need to update your credit card information, you can do that from your [Mapzen account settings](account-settings.md#add-your-payment-method). If you have questions about your bill or are having problems paying it, please contact Mapzen at support@mapzen.com.
 
+Rate limits are reset on the first day of every month at 00:00 UTC (Coordinated Universal Time).
+
 ## View your usage
 
 To check your usage, sign in to your developer account and review your dashboard.
