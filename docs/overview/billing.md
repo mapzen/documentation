@@ -1,6 +1,6 @@
 # View your current usage and bill
 
-_Note: You may not see all billing and account settings options right now while your account is being upgraded. The rate limit and pricing information presented here will be fully effective for all accounts starting June 1, 2017._
+_Note: The rate limit and pricing information presented here will be fully effective for all accounts starting June 1, 2017._
 
 When you are signed in with your Mapzen account, you can view your current usage and charges due.
 
@@ -13,6 +13,8 @@ Billing is post-paid after the month ends, and there are no prepayment discounts
 The billing currency is the United States Dollar (USD). Mapzen handles the payment of sales or usage tax that may be required in your area.
 
 If you need to update your credit card information, you can do that from your [Mapzen account settings](account-settings.md#add-your-payment-method). If you have questions about your bill or are having problems paying it, please contact Mapzen at support@mapzen.com.
+
+Rate limits are reset on the first day of every month at 00:00 UTC (Coordinated Universal Time).
 
 ## View your usage
 
