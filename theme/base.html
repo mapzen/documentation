@@ -21,6 +21,25 @@
     <link href='{{ path }}' rel='stylesheet'>
     {%- endfor %}
   </head>
+  <style>
+    .documentation-header{
+      /* from styleguide _documentation.scss h1*/
+      position: relative;
+      font-weight: 700;
+      font-family: "Poppins", "Open Sans", Helvetica, Arial, sans-serif;
+      /* from styleguide _typography.scss */
+      font-size: 48px;
+      margin-top: 48px;
+      margin-bottom: 12px;
+      line-height: 1.2em;
+      /* scale back margins on mobile */
+      @media (max-width: $screen-sm) {
+        font-size: 42px;
+        margin-top: 24px;
+        margin-bottom: 6px;
+      }
+    }
+  </style>
 
   <body{% if current_page and current_page.is_homepage %} class='homepage'{% endif %} data-spy='scroll' data-target='.toc' data-offset='10'>
 
@@ -36,7 +55,7 @@
       <div class='container'>
         <div class='row'>
           <div class='col-xs-12 col-md-12'>
-            <h1>{{ site_name }}</h1>
+            <div class="documentation-header">{{ site_name }}</div>
             {% if config.extra.site_subtitle %}<p>{{ config.extra.site_subtitle }}</p>{% endif %}
           </div>
         </div>
