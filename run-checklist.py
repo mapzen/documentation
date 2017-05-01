@@ -84,8 +84,8 @@ class Tests (unittest.TestCase):
 
         page2 = self.server.go(link1['href'])
 
-        # head2 = page1.find(class_=compile(r'\bdocumentation-hero\b')).find('h1')
-        # self.assertIn(start_title, head2.text, 'We should be on a page called {} at {}'.format(start_title, self.server.url))
+        head2 = page1.find(class_=compile(r'\bdocumentation-hero\b')).find('h1')
+        self.assertIn(start_title, head2.text, 'We should be on a page called {} at {}'.format(start_title, self.server.url))
 
         crumbs2 = page2.find('ol', class_=compile(r'\bbreadcrumb\b')).find_all('li')
         self.assertEqual(len(crumbs2), 3, 'There should be three breadcrumbs at top at {}'.format(self.server.url))
