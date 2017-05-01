@@ -58,7 +58,7 @@ class Tests (unittest.TestCase):
         page1 = self.server.go(start_path)
         url1 = self.server.url
 
-        head1 = page1.find(class_=compile(r'\bdocumentation-hero\b')).find('documentation-header')
+        head1 = page1.find(class_=compile(r'\bdocumentation-hero\b')).find(class_=compile(r'\bdocumentation-header\b')
         self.assertEqual(head1.text, start_title, 'Should be looking at {} page at {}'.format(start_title, self.server.url))
 
         crumbs1 = page1.find('ol', class_=compile(r'\bbreadcrumb\b')).find_all('li')
@@ -84,7 +84,7 @@ class Tests (unittest.TestCase):
 
         page2 = self.server.go(link1['href'])
 
-        head2 = page1.find(class_=compile(r'\bdocumentation-hero\b')).find('documentation-header')
+        head2 = page1.find(class_=compile(r'\bdocumentation-hero\b')).find(class_=compile(r'\bdocumentation-header\b')
         self.assertIn(start_title, head2.text, 'We should be on a page called {} at {}'.format(start_title, self.server.url))
 
         crumbs2 = page2.find('ol', class_=compile(r'\bbreadcrumb\b')).find_all('li')
