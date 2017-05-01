@@ -7,9 +7,11 @@ pages:
   - 'Formats': 'formats.md'
   - 'Get started': 'use-service.md'
   - 'Build a map': 'build-a-map.md'
-  - 'Data Sources': 'data-sources.md'
-  - 'Attribution': 'attribution.md'
-  - 'API keys and rate limits': 'api-keys-and-rate-limits.md'
+  - 'Data sources': 'data-sources.md'
+  
+ mz:redirects:
+  'attribution': '.'
+  'api-keys-and-rate-limits': '.'
 
 # Extra variables for templates
 extra:
