@@ -9,7 +9,7 @@ pages:
   - 'Build a map': 'build-a-map.md'
   - 'Data sources': 'data-sources.md'
   
- mz:redirects:
+mz:redirects:
   'attribution': '.'
   'api-keys-and-rate-limits': '.'
 
