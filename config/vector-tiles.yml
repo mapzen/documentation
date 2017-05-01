@@ -10,7 +10,7 @@ pages:
   - 'Data sources': 'data-sources.md'
   - 'Migrate to version 1.0': 'migrate-to-vector-tiles-v1.md'
   
- mz:redirects:
+mz:redirects:
   'attribution': '.'
   'api-keys-and-rate-limits': '.'
 
