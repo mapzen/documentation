@@ -124,3 +124,7 @@ Mapzen's other data products do not currently require API keys. These include:
 ## Mobile products
 
 To use Mapzen's [Android](https://mapzen.com/documentation/android/) or [iOS](https://mapzen.com/documentation/ios/) SDKs or any of Mapzen's other products in your mobile apps, you need an API key. You are subject to the rate limits for the Mapzen service you are integrating in your app.
+
+## mapzen.js (Mapzen JavaScript SDK)
+
+To use [mapzen.js](https://mapzen.com/documentation/mapzen-js/), the Mapzen JavaScript SDK, you need an API key. You are subject to the rate limits for the Mapzen service you are integrating in your app.
