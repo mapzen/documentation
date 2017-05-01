@@ -12,6 +12,10 @@ You must include an API key when using Mapzen’s services; requests sent withou
 
 ## Mapping products
 
+### mapzen.js (Mapzen JavaScript SDK)
+
+To use [mapzen.js](https://mapzen.com/documentation/mapzen-js/), the Mapzen JavaScript SDK, you need an API key. You are subject to the rate limits for the Mapzen service you are integrating in your app.
+
 ### Tangram
 
 [Tangram](https://mapzen.com/documentation/tangram/), Mapzen's rendering software for web and mobile apps, does not require its own API key. However, if you are using Tangram to draw data from Mapzen's vector tiles service, you need an API key.
@@ -124,7 +128,3 @@ Mapzen's other data products do not currently require API keys. These include:
 ## Mobile products
 
 To use Mapzen's [Android](https://mapzen.com/documentation/android/) or [iOS](https://mapzen.com/documentation/ios/) SDKs or any of Mapzen's other products in your mobile apps, you need an API key. You are subject to the rate limits for the Mapzen service you are integrating in your app.
-
-## mapzen.js (Mapzen JavaScript SDK)
-
-To use [mapzen.js](https://mapzen.com/documentation/mapzen-js/), the Mapzen JavaScript SDK, you need an API key. You are subject to the rate limits for the Mapzen service you are integrating in your app.
