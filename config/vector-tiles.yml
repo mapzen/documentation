@@ -7,10 +7,12 @@ pages:
   - 'Layers': 'layers.md'
   - 'Get started': 'use-service.md'
   - 'Make a map': 'display-tiles.md'
-  - 'Data Sources': 'data-sources.md'
-  - 'Attribution': 'attribution.md'
-  - 'API keys and rate limits': 'api-keys-and-rate-limits.md'
+  - 'Data sources': 'data-sources.md'
   - 'Migrate to version 1.0': 'migrate-to-vector-tiles-v1.md'
+  
+mz:redirects:
+  'attribution': '.'
+  'api-keys-and-rate-limits': '.'
 
 # Extra variables for templates
 extra:
