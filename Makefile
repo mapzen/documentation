@@ -11,6 +11,7 @@ IOS = https://github.com/mapzen/ios/archive/master.tar.gz
 MAPZENJS = https://mapzen.com/js/docs.tar.gz
 LIBPOSTAL = https://github.com/whosonfirst/go-whosonfirst-libpostal/archive/master.tar.gz
 CARTOGRAPHY = https://github.com/tangrams/cartography-docs/archive/master.tar.gz
+WOF = https://github.com/whosonfirst/whosonfirst-www-api/archive/master.tar.gz
 
 SHELL := /bin/bash # required for OSX
 PYTHONPATH := packages:$(PYTHONPATH)
@@ -31,6 +32,7 @@ clean:
 	       dist-search-mkdocs.yml dist-tangram-mkdocs.yml \
 	       dist-terrain-tiles-mkdocs.yml dist-vector-tiles-mkdocs.yml \
 	       dist-libpostal-mkdocs.yml dist-cartography-mkdocs.yml
+	       dist-wof-mkdocs.yml dist-wof-mkdocs.yml
 
 # Get individual sources docs
 src-tangram:
@@ -45,7 +47,7 @@ src-vector-tiles:
 	mkdir src-vector-tiles
 	# Try with --wildcards for GNU tar, but fall back to BSD tar syntax for Mac.
 	curl -sL $(VECTOR_TILES) \
-	| jq '.tarball_url' --raw-output \
+	| ./extract-tarball-url.py \
 	| xargs curl -sL | ( \
 	    tar -zxv -C src-vector-tiles --strip-components=2 --exclude=README.md --wildcards '*/docs/' \
 	 || tar -zxv -C src-vector-tiles --strip-components=2 --exclude=README.md '*/docs/' \
@@ -55,7 +57,7 @@ src-terrain-tiles:
 	mkdir src-terrain-tiles
 	# Try with --wildcards for GNU tar, but fall back to BSD tar syntax for Mac.
 	curl -sL $(TERRAIN_TILES) \
-	| jq '.tarball_url' --raw-output \
+	| ./extract-tarball-url.py \
 	| xargs curl -sL | ( \
 	    tar -zxv -C src-terrain-tiles --strip-components=2 --exclude=README.md --wildcards '*/docs/' \
 	 || tar -zxv -C src-terrain-tiles --strip-components=2 --exclude=README.md '*/docs/' \
@@ -89,24 +91,28 @@ src-libpostal:
 	mkdir src-libpostal
 	curl -sL $(LIBPOSTAL) | tar -zxv -C src-libpostal --strip-components=2 go-whosonfirst-libpostal-master/docs
 
+src-wof:
+	mkdir src-wof
+	curl -sL $(WOF) | tar -zxv -C src-wof --strip-components=2 whosonfirst-www-api-master/docs
+	
 src-cartography:
 	mkdir src-cartography
 	curl -sL $(CARTOGRAPHY) | tar -zxv -C src-cartography --strip-components=1 cartography-docs-master
-	
+
 src-overview:
 	cp -r docs/overview src-overview
-
+	
 src-guides:
 	cp -r docs/guides src-guides
 
 # Retrieve style guide
 theme/fragments:
 	mkdir -p theme/fragments
-	curl -sL 'https://mapzen.com/site-fragments/new-navbar.html' -o theme/fragments/global-nav.html
+	curl -sL 'https://mapzen.com/site-fragments/navbar.html' -o theme/fragments/global-nav.html
 	curl -sL 'https://mapzen.com/site-fragments/footer.html' -o theme/fragments/global-footer.html
 
 # Build Tangram, Metro Extracts, Vector Tiles, Elevation, Search, Mobility,
-# Android, iOS, Mapzen JS, Terrain Tiles, and Overview docs.
+# Android, iOS, Mapzen JS, Terrain Tiles, Who's On First and Overview docs.
 # Uses GNU Make pattern rules:
 # https://www.gnu.org/software/make/manual/html_node/Pattern-Examples.html
 dist-%: src-% theme/fragments
@@ -122,7 +128,7 @@ dist-index: theme/fragments
 	./setup-redirects.py ./dist-index-mkdocs.yml /documentation/
 	cp dist-index/index.html dist-index/next.html
 
-dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-search dist-elevation dist-android dist-ios dist-mapzen-js dist-overview dist-guides dist-index dist-mobility dist-terrain-tiles dist-libpostal dist-cartography
+dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-search dist-elevation dist-android dist-ios dist-mapzen-js dist-overview dist-guides dist-index dist-mobility dist-terrain-tiles dist-libpostal dist-wof dist-cartography
 	mkdir dist
 	ln -s ../dist-tangram dist/tangram
 	ln -s ../dist-metro-extracts dist/metro-extracts
@@ -138,6 +144,7 @@ dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-search dist-elevat
 	ln -s ../dist-guides dist/guides
 	ln -s ../dist-libpostal dist/libpostal
 	ln -s ../dist-cartography dist/cartography
+	ln -s ../dist-wof dist/wof
 	rsync -urv --ignore-existing dist-index/ dist/
 
 serve:

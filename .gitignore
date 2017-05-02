@@ -9,6 +9,7 @@ dist-*-mkdocs.yml
 .sass-cache/
 theme/fragments/
 !src-index/
+venv/
 
 # Python
 *.pyc

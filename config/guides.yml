@@ -6,6 +6,7 @@ pages:
   - Home: 'index.md'
   - Text editors: 'install-text-editor.md'
   - Server environment: 'server-environment.md'
+  - GitHub tutorial: 'github-tutorial.md'
 
 extra:
   site_subtitle: 'Set up your development environment with these how-to topics'
