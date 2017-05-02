@@ -37,6 +37,7 @@ pages:
       - 'Setup overview': 'Tangram-Setup.md'
       - 'JavaScript setup': 'walkthrough.md'
       - 'Android setup': 'android-walkthrough.md'
+      - 'iOS setup': 'iOS-walkthrough.md'
     - Tutorials:
       - 'Custom styles': 'tutorials/custom-styles.md'
       - 'Editing basemaps': 'tutorials/editing-basemaps.md'

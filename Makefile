@@ -5,8 +5,8 @@ VALHALLA = https://github.com/valhalla/valhalla-docs/archive/master.tar.gz
 VECTOR_TILES = https://api.github.com/repos/tilezen/vector-datasource/releases/latest
 TERRAIN_TILES = https://api.github.com/repos/tilezen/joerd/releases/latest
 SEARCH = https://github.com/pelias/pelias-doc/archive/master.tar.gz
-ANDROID = https://api.github.com/repos/mapzen/android/releases/latest
-IOS = https://api.github.com/repos/mapzen/ios/releases/latest
+ANDROID = https://github.com/mapzen/android/archive/master.tar.gz
+IOS = https://github.com/mapzen/ios/archive/master.tar.gz
 MAPZENJS = https://mapzen.com/js/docs.tar.gz
 LIBPOSTAL = https://github.com/whosonfirst/go-whosonfirst-libpostal/archive/master.tar.gz
 CARTOGRAPHY = https://github.com/tangrams/cartography-docs/archive/master.tar.gz
@@ -76,23 +76,11 @@ src-search:
 
 src-android:
 	mkdir src-android
-	# Try with --wildcards for GNU tar, but fall back to BSD tar syntax for Mac.
-	curl -sL $(ANDROID) \
-	| ./extract-tarball-url.py \
-	| xargs curl -sL | ( \
-	    tar -zxv -C src-android --strip-components=2 --exclude=README.md --wildcards '*/docs/' \
-	 || tar -zxv -C src-android --strip-components=2 --exclude=README.md '*/docs/' \
-	    )
+	curl -sL $(ANDROID) | tar -zxv -C src-android --strip-components=2 android-master/docs
 
 src-ios:
 	mkdir src-ios
-	# Try with --wildcards for GNU tar, but fall back to BSD tar syntax for Mac.
-	curl -sL $(IOS) \
-	| ./extract-tarball-url.py \
-	| xargs curl -sL | ( \
-	    tar -zxv -C src-ios --strip-components=2 --exclude=README.md --wildcards '*/docs/' \
-	 || tar -zxv -C src-ios --strip-components=2 --exclude=README.md '*/docs/' \
-	    )
+	curl -sL $(IOS) | tar -zxv -C src-ios --strip-components=2 ios-master/docs
 
 src-mapzen-js:
 	mkdir src-mapzen-js
@@ -112,7 +100,7 @@ src-cartography:
 
 src-overview:
 	cp -r docs/overview src-overview
-
+	
 src-guides:
 	cp -r docs/guides src-guides
 
