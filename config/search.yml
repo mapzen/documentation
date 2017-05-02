@@ -16,12 +16,12 @@ pages:
   - 'HTTP status codes': 'http-status-codes.md'
   - 'Load data from the browser': 'use-cors.md'
   - 'Tutorial': 'add-search-to-a-map.md'
-  - 'API keys and rate limits': 'api-keys-rate-limits.md'
   - 'Release notes': 'release-notes.md'
 
 mz:redirects:
   'get-started': '.'
   'transition-from-beta': '.'
+  'api-keys-rate-limits.md': '.'
 
 extra:
   site_subtitle: 'Find places and addresses with this geographic search service built on open tools and open data.'
