@@ -21,33 +21,7 @@
     <link href='{{ path }}' rel='stylesheet'>
     {%- endfor %}
   </head>
-  <style>
-    .documentation-header {
-      /* from styleguide _documentation.scss documentation-hero h1*/
-      padding-top: 20px;
-      color: #fff;
-      /* from styleguide _documentation.scss h1*/
-      font-weight: $display-font-weight-bold;
-      font-family: $display-font-family;
-      /* from styleguide _typography.scss */
-      font-size: 48px;
-      line-height: 1.2em;
-      /* scale back margins on mobile */
-      @media (max-width: $screen-sm) {
-        font-size: 42px;
-      }
-    }
-    h1 {
-      font-size: 36px;
-    }
-    h2 {
-      font-size: 24px;
-    }
-    h3 {
-      font-size: 20px;
-    }
-  </style>
-
+  
   <body{% if current_page and current_page.is_homepage %} class='homepage'{% endif %} data-spy='scroll' data-target='.toc' data-offset='10'>
 
     {% include 'fragments/global-nav.html' %}
