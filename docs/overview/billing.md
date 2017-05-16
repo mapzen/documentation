@@ -10,7 +10,7 @@ Because there are no paid tiers, you pay for each individual API request you mak
 
 Billing is post-paid after the month ends, and there are no prepayment discounts available. There are no minimum fees for maintaining a Mapzen account, even if you have no usage for a while.
 
-The billing currency is the United States Dollar (USD). Mapzen handles the payment of sales or usage tax that may be required in your area.
+The billing currency is the United States Dollar (USD).
 
 If you need to update your credit card information, you can do that from your [Mapzen account settings](account-settings.md#add-your-payment-method). If you have questions about your bill or are having problems paying it, please contact Mapzen at support@mapzen.com.
 
