@@ -11,7 +11,14 @@ pages:
   - 'Switching styles': 'styles.md'
   - 'Gesture responders': 'gesture-responders.md'
   - 'Location services': 'location-services.md'
-  - Mapzen Places for Android: 
+  - LOST:
+    - 'Getting started': 'getting-started.md'
+    - 'Getting the Last Known Location': 'lost/last-known-location.md'
+    - 'Receiving Location Updates': 'lost/location-updates.md'
+    - 'Mock Locations & Routes': 'lost/mock-locations-routes.md'
+    - 'Changing Location Settings': 'lost/location-settings.md'
+    - 'Creating and Monitoring Geofences': 'lost/geofences.md'
+  - Mapzen Places for Android:
     - 'Overview': 'places.md'
     - 'Autocomplete interface': 'autocomplete-ui.md'
     - 'GeoData API': 'geodata-api.md'
@@ -24,7 +31,7 @@ mz:redirects:
   'polylines': 'add-features'
   'polygons': 'add-features'
   'current-location': 'location-services'
- 
+
 extra:
   site_subtitle: 'A thin wrapper that packages up everything you need to use Mapzen services in your Android applications.'
   project_repo_url: https://github.com/mapzen/android
