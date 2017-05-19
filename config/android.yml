@@ -12,12 +12,12 @@ pages:
   - 'Gesture responders': 'gesture-responders.md'
   - 'Location services': 'location-services.md'
   - LOST:
-    - 'Getting started': 'getting-started.md'
-    - 'Getting the Last Known Location': 'lost/last-known-location.md'
-    - 'Receiving Location Updates': 'lost/location-updates.md'
-    - 'Mock Locations & Routes': 'lost/mock-locations-routes.md'
-    - 'Changing Location Settings': 'lost/location-settings.md'
-    - 'Creating and Monitoring Geofences': 'lost/geofences.md'
+    - 'Get started': 'getting-started.md'
+    - 'Last known location': 'lost/last-known-location.md'
+    - 'Receive location updates': 'lost/location-updates.md'
+    - 'Mock locations & routes': 'lost/mock-locations-routes.md'
+    - 'Change location settings': 'lost/location-settings.md'
+    - 'Create and Monitor geofences': 'lost/geofences.md'
   - Mapzen Places for Android:
     - 'Overview': 'places.md'
     - 'Autocomplete interface': 'autocomplete-ui.md'
