@@ -12,7 +12,7 @@ pages:
   - 'Gesture responders': 'gesture-responders.md'
   - 'Location services': 'location-services.md'
   - LOST:
-    - 'Get started': 'getting-started.md'
+    - 'Get started': 'get-started.md'
     - 'Last known location': 'lost/last-known-location.md'
     - 'Receive location updates': 'lost/location-updates.md'
     - 'Mock locations & routes': 'lost/mock-locations-routes.md'
