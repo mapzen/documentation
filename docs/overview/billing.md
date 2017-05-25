@@ -26,9 +26,9 @@ To check your usage, sign in to your developer account and review your dashboard
 
 ## Request a bill credit for service issues
 
-_Note: This is only available to users who subscribe to premium support, which includes a service-level agreement._
+_Note: This is only available to users who purchase [premium support](account-settings.md#enable-premium-support), which includes a service-level agreement._
 
 While Mapzen hopes you never experience an outage or downtime in services, you can request a credit in the event that issues occur. See the Mapzen [Terms of Service](https://mapzen.com/terms/) for more information about your rights and requirements, and keep in mind that those terms supersede any documentation content here.
 
-1. If you are a premium support subscriber and believe that Mapzen has not met the uptime percentage in the developer agreement, record any information about the downtime you can, such as the service name and API, date and time, and estimated outage amount.
+1. If you have [premium support](account-settings.md#enable-premium-support) enabled on your account and believe that Mapzen has not met the uptime percentage in the terms of service, record any information about the downtime you can, such as the service name and API, date and time, and estimated outage amount.
 2. Within 15 days, send this to [Mapzen support](mailto:hello@mapzen.com) for review.
