@@ -26,7 +26,7 @@ To check your usage, sign in to your developer account and review your dashboard
 
 ## Request a bill credit for service issues
 
-_Note: This is only available to users who purchase [premium support](account-settings.md#enable-premium-support), which includes a service-level agreement._
+_Note: This is only available to users who enable [premium support](account-settings.md#enable-premium-support), which includes a service-level agreement._
 
 While Mapzen hopes you never experience an outage or downtime in services, you can request a credit in the event that issues occur. See the Mapzen [Terms of Service](https://mapzen.com/terms/) for more information about your rights and requirements, and keep in mind that those terms supersede any documentation content here.
 

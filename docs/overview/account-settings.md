@@ -73,13 +73,17 @@ Anytime you want to start billing again, set your billing status to `Enabled`.
 
 ## Enable premium support		
 
-Premium support, which includes faster response times and a service-level agreement, is available for an additional [monthly fee](https://mapzen.com/pricing/#premium-support). When contacting Mapzen, users with premium support receive priority replies. A service-level agreement indicates the service's required uptime and instructions to take if these are not met. You can add premium support even if you are within the free rate limits of Mapzen’s products.
+Premium support, which includes faster response times and a service-level agreement, is available for an additional [monthly fee](https://mapzen.com/pricing/#premium-support). You can add premium support even if you are within the free rate limits of Mapzen’s products.
+
+When contacting Mapzen, users with premium support receive priority replies. Premium support benefits are available to anyone at your organization, not just an individual account.
+
+A service-level agreement indicates the service's required uptime and instructions to take if these are not met. These are detailed in the Mapzen [Terms of Service](https://mapzen.com/terms/).
 
 [Learn more about Mapzen support offerings](support)
 
 You are billed for premium support at the beginning of each month. You can use it as soon as you enable it on your account, and the fee is prorated when joining in the middle of a billing cycle.
 
-If you decide to end your premium support access, you can continue to use your benefits through the end of the month and your credit card will not be charged in subsequent months. No refunds are issued for the remainder of the billing period in which you disable premium support.
+If you choose to disable your premium support access, you can continue to use your benefits through the end of the month and your credit card will not be charged in subsequent months. No refunds are issued for the remainder of the billing period.
 
 _Note: Premium support is for assistance with Mapzen's hosted web services and does not include help for on-premises installations of Mapzen's open-source projects. If you need help running your own instance, there are [community-based options](support.md#github-and-community-chat)._
 
