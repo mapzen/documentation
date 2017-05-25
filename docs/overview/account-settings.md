@@ -83,9 +83,9 @@ You can add premium support even if you are within the free rate limits of Mapze
 
 [Learn more about Mapzen support offerings](support)
 
-_Note: Premium support is for assistance with Mapzen's hosted web services and does not include help for on-premises installations of Mapzen's open-source projects. If you need help running your own instance, there are [community-based options](support.md/#github-and-community-chat)._
-
 1. Sign in to your Mapzen account.		
 2. In the top corner of the page, click `Account` and click `Settings`.		
 3. Under `Support`, click `Enable` and agree to the terms.		
 4. To end premium support, under `Support`, click `Update` and disable it on your account.
+
+_Note: Premium support is for assistance with Mapzen's hosted web services and does not include help for on-premises installations of Mapzen's open-source projects. If you need help running your own instance, there are [community-based options](support.md#github-and-community-chat)._
