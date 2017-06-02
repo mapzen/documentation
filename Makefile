@@ -36,7 +36,7 @@ clean:
 # Get individual sources docs
 src-tangram:
 	mkdir src-tangram
-	curl -sL $(TANGRAM) | tar -zxv -C src-tangram --strip-components=2 tangram-docs-rhonda-update-tutorials/pages
+	curl -sL $(TANGRAM) | tar -zxv -C src-tangram --strip-components=2 tangram-docs-rhonda-update-tutorial/pages
 
 src-metro-extracts:
 	mkdir src-metro-extracts
