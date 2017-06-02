@@ -1,7 +1,5 @@
 # Update your Mapzen account settings
 
-_Note: The rate limit and pricing information presented here will be fully effective for all accounts starting June 1, 2017._
-
 When you signed in on Mapzen’s website, you can view and modify your account settings. These include changing your email address and password, and updating your credit card and billing information.
 
 ## Sign up for a Mapzen account
