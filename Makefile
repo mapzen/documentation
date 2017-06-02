@@ -1,5 +1,5 @@
 # Source doc tarballs
-TANGRAM = https://github.com/tangrams/tangram-docs/archive/gh-pages.tar.gz
+TANGRAM = https://github.com/tangrams/tangram-docs/archive/rhonda-update-tutorial.tar.gz
 EXTRACTS = https://github.com/mapzen/metro-extracts/archive/master.tar.gz
 VALHALLA = https://github.com/valhalla/valhalla-docs/archive/master.tar.gz
 VECTOR_TILES = https://api.github.com/repos/tilezen/vector-datasource/releases/latest
@@ -36,7 +36,7 @@ clean:
 # Get individual sources docs
 src-tangram:
 	mkdir src-tangram
-	curl -sL $(TANGRAM) | tar -zxv -C src-tangram --strip-components=2 tangram-docs-gh-pages/pages
+	curl -sL $(TANGRAM) | tar -zxv -C src-tangram --strip-components=2 tangram-docs-rhonda-update-tutorials/pages
 
 src-metro-extracts:
 	mkdir src-metro-extracts
