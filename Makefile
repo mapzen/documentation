@@ -30,7 +30,7 @@ clean:
 	       dist-metro-extracts-mkdocs.yml dist-mobility-mkdocs.yml \
 	       dist-search-mkdocs.yml dist-tangram-mkdocs.yml \
 	       dist-terrain-tiles-mkdocs.yml dist-vector-tiles-mkdocs.yml \
-	       dist-libpostal-mkdocs.yml dist-cartography-mkdocs.yml
+	       dist-libpostal-mkdocs.yml dist-cartography-mkdocs.yml \
 	       dist-wof-mkdocs.yml dist-wof-mkdocs.yml
 
 # Get individual sources docs
