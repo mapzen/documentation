@@ -1,15 +1,12 @@
-// your-mapzen-api-key
 (function () {
   var placeholder = 'your-mapzen-api-key';
   var el = document.querySelector('.documentation-content');
   if (!el) return;
 
-  // window.fetch('/api/keys.json', { credentials: 'same-origin '})
-    // .then(function (response) {
-    //   return response.json();
-    // })
-  // TEMPORARY: Use a placeholder key; don't actually fetch
-  Promise.resolve([{key: 'test-1234567'}])
+  window.fetch('/api/keys.json', { credentials: 'same-origin '})
+    .then(function (response) {
+      return response.json();
+    })
     .then(function (data) {
       // Silent fail if data is not an array, or is zero-length
       if (!Array.isArray(data) || data.length === 0) return;
