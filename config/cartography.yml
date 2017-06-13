@@ -5,9 +5,10 @@ site_dir: dist-cartography
 pages:
   - Home: index.md
   - 'Get started': 'get-started.md'
-  - 'API reference': 'api-reference.md'
   - 'Basemap styles': 'styles.md'
+  - 'Themes': 'themes.md'
   - 'Icons': 'icons.md'
+  - 'API reference': 'api-reference.md'
   - 'Versioning': 'versioning.md'
 
 extra:
