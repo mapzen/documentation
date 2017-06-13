@@ -3,7 +3,7 @@
   var el = document.querySelector('.documentation-content');
   if (!el) return;
 
-  window.fetch('/api/keys.json', { credentials: 'same-origin '})
+  window.fetch('/api/keys.json', { credentials: 'same-origin' })
     .then(function (response) {
       return response.json();
     })
