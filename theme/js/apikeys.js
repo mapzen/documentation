@@ -20,4 +20,7 @@
     var regex = new RegExp(placeholder, 'g');
     el.innerHTML = el.innerHTML.replace(regex, key);
   }
+
+  // document.querySelector('.documentation-content').innerHTML = document.querySelector('.documentation-content').innerHTML.replace(/[{[]?your[_-]mapzen[_-]api[_-]key[}\]]?/gi, 'hihihih-2302323');
+
 })();
