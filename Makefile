@@ -3,8 +3,8 @@ TANGRAM = https://github.com/tangrams/tangram-docs/archive/gh-pages.tar.gz
 EXTRACTS = https://github.com/mapzen/metro-extracts/archive/master.tar.gz
 VALHALLA = https://github.com/valhalla/valhalla-docs/archive/master.tar.gz
 VALHALLA2 = https://github.com/valhalla/valhalla-docs/archive/rhonda-keys.tar.gz
-VECTOR_TILES = https://github.com/rmglennon/vector-datasource/archive/master.tar.gz
-TERRAIN_TILES = https://github.com/rmglennon/joerd/archive/master.tar.gz
+#VECTOR_TILES = https://github.com/rmglennon/vector-datasource/archive/master.tar.gz
+#TERRAIN_TILES = https://github.com/rmglennon/joerd/archive/master.tar.gz
 SEARCH = https://github.com/pelias/pelias-doc/archive/rhonda-key-placeholders.tar.gz
 ANDROID = https://github.com/rmglennon/android/archive/master.tar.gz
 IOS = https://github.com/rmglennon/ios/archive/master.tar.gz
@@ -21,16 +21,15 @@ all: dist
 clean:
 	rm -rf dist theme/fragments
 	rm -rf src-android src-ios src-elevation src-mapzen-js src-metro-extracts \
-	       src-mobility src-search src-tangram src-terrain-tiles \
-	       src-vector-tiles src-libpostal src-cartography
+	       src-mobility src-search src-tangram \
+	       src-libpostal src-cartography
 	rm -rf dist-android dist-ios dist-elevation dist-index dist-mapzen-js \
 	       dist-metro-extracts dist-mobility dist-search dist-tangram \
-	       dist-terrain-tiles dist-vector-tiles dist-libpostal dist-cartography
+	       dist-libpostal dist-cartography
 	rm -rf dist-android-mkdocs.yml dist-ios-mkdocs.yml dist-elevation-mkdocs.yml \
 	       dist-index-mkdocs.yml dist-mapzen-js-mkdocs.yml \
 	       dist-metro-extracts-mkdocs.yml dist-mobility-mkdocs.yml \
 	       dist-search-mkdocs.yml dist-tangram-mkdocs.yml \
-	       dist-terrain-tiles-mkdocs.yml dist-vector-tiles-mkdocs.yml \
 	       dist-libpostal-mkdocs.yml dist-cartography-mkdocs.yml \
 	       dist-wof-mkdocs.yml dist-wof-mkdocs.yml
 
@@ -43,13 +42,13 @@ src-metro-extracts:
 	mkdir src-metro-extracts
 	curl -sL $(EXTRACTS) | tar -zxv -C src-metro-extracts --strip-components=2 metro-extracts-master/docs
 
-src-vector-tiles:
- 	mkdir src-vector-tiles
-	curl -sL $(VECTOR_TILES) | tar -zxv -C src-vector-tiles --strip-components=2 vector-datasource-master/docs
-
-src-terrain-tiles:
-	 mkdir src-terrain-tiles
-		curl -sL $(TERRAIN_TILES) | tar -zxv -C src-terrain-tiles --strip-components=2 joerd-master/docs 
+# src-vector-tiles:
+#  	mkdir src-vector-tiles
+# 	curl -sL $(VECTOR_TILES) | tar -zxv -C src-vector-tiles --strip-components=2 vector-datasource-master/docs
+#
+# src-terrain-tiles:
+# 	 mkdir src-terrain-tiles
+# 		curl -sL $(TERRAIN_TILES) | tar -zxv -C src-terrain-tiles --strip-components=2 joerd-master/docs
 
 src-elevation:
 	mkdir src-elevation
@@ -116,12 +115,10 @@ dist-index: theme/fragments
 	./setup-redirects.py ./dist-index-mkdocs.yml /documentation/
 	cp dist-index/index.html dist-index/next.html
 
-dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-search dist-elevation dist-android dist-ios dist-mapzen-js dist-overview dist-guides dist-index dist-mobility dist-terrain-tiles dist-libpostal dist-wof dist-cartography
+dist: dist-tangram dist-metro-extracts dist-search dist-elevation dist-android dist-ios dist-mapzen-js dist-overview dist-guides dist-index dist-mobility  dist-libpostal dist-wof dist-cartography
 	mkdir dist
 	ln -s ../dist-tangram dist/tangram
 	ln -s ../dist-metro-extracts dist/metro-extracts
-	ln -s ../dist-vector-tiles dist/vector-tiles
-	ln -s ../dist-terrain-tiles dist/terrain-tiles
 	ln -s ../dist-search dist/search
 	ln -s ../dist-elevation dist/elevation
 	ln -s ../dist-mobility dist/mobility
