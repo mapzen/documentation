@@ -2,14 +2,15 @@
 TANGRAM = https://github.com/tangrams/tangram-docs/archive/gh-pages.tar.gz
 EXTRACTS = https://github.com/mapzen/metro-extracts/archive/master.tar.gz
 VALHALLA = https://github.com/valhalla/valhalla-docs/archive/master.tar.gz
-VECTOR_TILES = https://api.github.com/repos/tilezen/vector-datasource/releases/latest
-TERRAIN_TILES = https://api.github.com/repos/tilezen/joerd/releases/latest
-SEARCH = https://github.com/pelias/pelias-doc/archive/master.tar.gz
+VALHALLA2 = https://github.com/valhalla/valhalla-docs/archive/rhonda-keys.tar.gz
+VECTOR_TILES = https://github.com/rmglennon/vector-datasource/archive/master.tar.gz
+TERRAIN_TILES = https://github.com/rmglennon/joerd/archive/master.tar.gz
+SEARCH = https://github.com/pelias/pelias-doc/archive/rhonda-key-placeholders.tar.gz
 ANDROID = https://github.com/rmglennon/android/archive/master.tar.gz
 IOS = https://github.com/rmglennon/ios/archive/master.tar.gz
-MAPZENJS = https://mapzen.com/js/docs.tar.gz
+MAPZENJS = https://github.com/mapzen/mapzen.js/archive/rhonda-replace-api-keys.tar.gz
 LIBPOSTAL = https://github.com/whosonfirst/go-whosonfirst-libpostal/archive/master.tar.gz
-CARTOGRAPHY = https://github.com/tangrams/cartography-docs/archive/master.tar.gz
+CARTOGRAPHY = https://github.com/rmglennon/cartography-docs/archive/master.tar.gz
 WOF = https://github.com/whosonfirst/whosonfirst-www-api/archive/master.tar.gz
 
 SHELL := /bin/bash # required for OSX
@@ -68,11 +69,11 @@ src-elevation:
 
 src-mobility:
 	mkdir src-mobility
-	curl -sL $(VALHALLA) | tar -zxv -C src-mobility --strip-components=1 valhalla-docs-master
+	curl -sL $(VALHALLA2) | tar -zxv -C src-mobility --strip-components=1 valhalla-docs-rhonda-keys
 
 src-search:
 	mkdir src-search
-	curl -sL $(SEARCH) | tar -zxv -C src-search --strip-components=1 pelias-doc-master
+	curl -sL $(SEARCH) | tar -zxv -C src-search --strip-components=1 pelias-doc-rhonda-key-placeholders
 
 src-android:
 	mkdir src-android
@@ -84,7 +85,7 @@ src-ios:
 
 src-mapzen-js:
 	mkdir src-mapzen-js
-	curl -sL $(MAPZENJS) | tar -zxv -C src-mapzen-js --strip-components=1 docs
+	curl -sL $(MAPZENJS) | tar -zxv -C src-mapzen-js --strip-components=2 mapzen.js-rhonda-replace-api-keys/docs
 
 src-libpostal:
 	mkdir src-libpostal
