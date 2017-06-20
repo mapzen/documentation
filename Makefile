@@ -46,12 +46,8 @@ src-metro-extracts:
 src-vector-tiles:
 	mkdir src-vector-tiles
 	# Try with --wildcards for GNU tar, but fall back to BSD tar syntax for Mac.
-	curl -sL $(VECTOR_TILES) \
-	| ./extract-tarball-url.py \
-	| xargs curl -sL | ( \
-	    tar -zxv -C src-vector-tiles --strip-components=2 --exclude=README.md --wildcards '*/docs/' \
-	 || tar -zxv -C src-vector-tiles --strip-components=2 --exclude=README.md '*/docs/' \
-	    )
+	curl -sL $(VECTOR_TILES) tar -zxv -C src-vector-tiles --strip-components=2 --exclude=README.md --wildcards '*/docs/' \
+	tar -zxv -C src-vector-tiles --strip-components=2 --exclude=README.md '*/docs/' \
 
 src-terrain-tiles:
 	mkdir src-terrain-tiles
