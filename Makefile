@@ -3,7 +3,7 @@ TANGRAM = https://github.com/tangrams/tangram-docs/archive/gh-pages.tar.gz
 EXTRACTS = https://github.com/mapzen/metro-extracts/archive/master.tar.gz
 VALHALLA = https://github.com/valhalla/valhalla-docs/archive/master.tar.gz
 VALHALLA2 = https://github.com/valhalla/valhalla-docs/archive/rhonda-keys.tar.gz
-#VECTOR_TILES = https://github.com/rmglennon/vector-datasource/archive/master.tar.gz
+VECTOR_TILES = https://github.com/rmglennon/vector-datasource/archive/master.tar.gz
 TERRAIN_TILES = https://github.com/rmglennon/joerd/archive/master.tar.gz
 SEARCH = https://github.com/pelias/pelias-doc/archive/rhonda-key-placeholders.tar.gz
 ANDROID = https://github.com/rmglennon/android/archive/master.tar.gz
@@ -43,21 +43,9 @@ src-metro-extracts:
 	mkdir src-metro-extracts
 	curl -sL $(EXTRACTS) | tar -zxv -C src-metro-extracts --strip-components=2 metro-extracts-master/docs
 
-# src-vector-tiles:
-# 	mkdir src-vector-tiles
-# 	# Try with --wildcards for GNU tar, but fall back to BSD tar syntax for Mac.
-# 	curl -sL $(VECTOR_TILES) tar -zxv -C src-vector-tiles --strip-components=2 --exclude=README.md --wildcards '*/docs/' \
-# 	tar -zxv -C src-vector-tiles --strip-components=2 --exclude=README.md '*/docs/' \
-#
-# src-terrain-tiles:
-# 	mkdir src-terrain-tiles
-# 	# Try with --wildcards for GNU tar, but fall back to BSD tar syntax for Mac.
-# 	curl -sL $(TERRAIN_TILES) \
-# 	| ./extract-tarball-url.py \
-# 	| xargs curl -sL | ( \
-# 	    tar -zxv -C src-terrain-tiles --strip-components=2 --exclude=README.md --wildcards '*/docs/' \
-# 	 || tar -zxv -C src-terrain-tiles --strip-components=2 --exclude=README.md '*/docs/' \
-# 	    )
+src-vector-tiles:
+ 	mkdir src-vector-tiles
+	curl -sL $(VECTOR_TILES) | tar -zxv -C src-vector-tiles --strip-components=2 vector-datasource-master/docs    )
 
 src-elevation:
 	mkdir src-elevation
