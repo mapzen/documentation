@@ -11,7 +11,6 @@ dependencies:
 test:
   override:
     - make
-    - ./run-checklist.py
     - cp -Lr dist $CIRCLE_ARTIFACTS/documentation
     - echo '<a href="/documentation/">documentation</a>' > $CIRCLE_ARTIFACTS/index.html
 
