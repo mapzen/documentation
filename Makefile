@@ -45,7 +45,11 @@ src-metro-extracts:
 
 src-vector-tiles:
  	mkdir src-vector-tiles
-	curl -sL $(VECTOR_TILES) | tar -zxv -C src-vector-tiles --strip-components=2 vector-datasource-master/docs    )
+	curl -sL $(VECTOR_TILES) | tar -zxv -C src-vector-tiles --strip-components=2 vector-datasource-master/docs
+
+src-terrain-tiles:
+	 mkdir src-terrain-tiles
+		curl -sL $(TERRAIN_TILES) | tar -zxv -C src-terrain-tiles --strip-components=2 joerd-master/docs 
 
 src-elevation:
 	mkdir src-elevation
