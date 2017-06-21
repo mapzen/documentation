@@ -16,7 +16,7 @@ test:
 
 deployment:
   staging:
-    branch: staging
+    branch: rhonda-build
     commands:
       - aws s3 sync dist s3://static-dev.mapzen.com/documentation/
   release:
