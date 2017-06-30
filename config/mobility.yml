@@ -27,10 +27,12 @@ pages:
   - 'Optimized route': 'optimized/api-reference.md'
   - 'Time-Distance Matrix': 'matrix/api-reference.md'
   - 'Isochrone': 'isochrone/api-reference.md'
+  - 'Map Matching': 'map-matching/api-reference.md'
   - 'Mobility Explorer':
     - 'Overview': 'explorer/overview.md'
     - 'Explore transit': 'explorer/explore-transit.md'
     - 'Generate isochrones': 'explorer/isochrones.md'
+    - 'Match GPS locations to a route': 'explorer/map-matching.md'
     - 'Tutorial': 'explorer/tutorial.md'
   - 'Decode a route shape': 'decoding.md'
   - 'Release notes': 'release-notes.md'
@@ -39,6 +41,8 @@ mz:redirects:
   'turn-by-turn': 'turn-by-turn/api-reference'
   'matrix': 'matrix/api-reference'
   'optimized': 'optimized/api-reference'
+  'isochrone': 'isochrone/api-reference.md'
+  'map-matching': 'map-matching/api-reference.md'
 
 extra:
   site_subtitle: 'Add routing and navigation to your web and mobile apps.'
