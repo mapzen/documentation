@@ -13,6 +13,7 @@ pages:
   - 'Addresses': 'addresses.md'
   - 'API responses': 'response.md'
   - 'Data sources': 'data-sources.md'
+  - 'Languages': 'language-codes.md'
   - 'HTTP status codes': 'http-status-codes.md'
   - 'Load data from the browser': 'use-cors.md'
   - 'Tutorial': 'add-search-to-a-map.md'
