@@ -118,6 +118,14 @@ Retrieve data about places from the [Who's On First](https://mapzen.com/document
 
 _Note: This service currently offers only free access with these limits. Mapzen is working on updating this service to allow increased usage._
 
+### Libpostal address parsing
+
+[Libpostal API](https://mapzen.com/documentation/libpostal/) parses and normalizes street addresses and has these limits:
+
+- 30,000 free requests per day
+
+_Note: This service currently offers only free access with these limits. Mapzen is working on updating this service to allow increased usage._
+
 ### Other data products
 
 Mapzen's other data products do not currently require API keys. These include:
