@@ -86,7 +86,17 @@ The distance limit is the total straight-line distance (colloquially, as the cro
 - The maximum time to compute isochrone contours from the location is 120 minutes.
 - The maximum number of isochrone contours in a single request is four.
 
-The Mapzen Turn-by-Turn, Matrix, Optimized Route, and Isochrone services are built from the [Valhalla](https://github.com/valhalla) open-source project.
+### Mapzen Map Matching
+
+[Mapzen Map Matching](https://mapzen.com/documentation/mobility/map-matching/api-reference/) matches coordinates to known roads so you can turn a path into a route with narrative instructions and get the attribute values from that matched line. The service has these limits:
+
+- 1,000 free requests per month
+- The maximum input shape distance is 200 kilometers when using the `map_snap` shape match and 1,000 kilometers when using the `edge_walk` shape match.
+- The maximum number of input shape points is 16,000.
+- The maximum input GPS accuracy is 100 meters.
+- The maximum upper bounds of the search radius is 100 meters.
+
+The Mapzen Mobility services are built from the [Valhalla](https://github.com/valhalla) open-source project.
 
 ## Data products
 
