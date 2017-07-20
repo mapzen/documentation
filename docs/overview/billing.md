@@ -19,8 +19,9 @@ Rate limits are reset on the first day of every month at 00:00 UTC (Coordinated 
 To check your usage, sign in to your developer account and review your dashboard.
 
 1. Sign in to your Mapzen account.
-2. In the top corner of the page, click `Account` and click `Dashboard`. This page shows your current Mapzen API keys.
+2. In the top corner of the page, click `Account` and click `Dashboard`. This page shows an account summary with your current requests and charges and lists your Mapzen API keys.
 3. Click one of your API keys in the list and click `Usage`. The graphs show the number of requests on this key for each product.
+4. To display your past billing details, in the `Billing` section, click `View billing history`. You see an overview of each billing period and status. Click the link to view a printable version of your invoice. You can add your name, address, or tax identification number to the invoice in your [Mapzen account settings](account-settings.md#add-your-payment-method).
 
 ## Request a bill credit for service issues
 
