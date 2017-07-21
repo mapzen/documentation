@@ -67,7 +67,7 @@ The distance limit is the total straight-line distance (colloquially, as the cro
 
 - 1,000 free requests per month
 - The maximum number of locations is 50 for any type of matrix.
-- The maximum straight-line distance between two locations is 200 kilometers.
+- The maximum straight-line distance between two locations is 400 kilometers for automobiles and similar transportation modes, and 200 kilometers for other options.
 
 ### Mapzen Optimized Route
 
