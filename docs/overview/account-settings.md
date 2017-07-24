@@ -18,7 +18,7 @@ To delete your account, you need to [contact Mapzen](mailto:support@mapzen.com).
 
 1. Sign in to your Mapzen account.
 2. In the top corner of the page, click `Account` and click `Settings`.
-3. If you are using an email address to sign in, you can update your email address and password.
+3. If you are using an email address to sign in, you can update your email address and password. You can also update the name on your account.
 4. With GitHub authentication, you can change your email address where you receive communications from Mapzen. Note that this is the address that was part of your GitHub profile when you originally authenticated your Mapzen account.
 
 ## Add your payment method
@@ -35,6 +35,8 @@ At the end of each month, Mapzen calculates your usage and bill, and your charge
 4. Enter your credit card information.
 
 If your account has any pending usage charges in a month, you can update it to a different credit card, but are unable to delete your credit card altogether until the balance has cleared.
+
+To have details such as your mailing address or tax identification number appear on your monthly invoice, click `Update` under `Billing info`. All fields on the form are optional, so you can choose which ones you want to display on the invoice.
 
 ## Set monthly spending limits
 
