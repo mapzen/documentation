@@ -3,7 +3,8 @@ TANGRAM = https://github.com/tangrams/tangram-docs/archive/gh-pages.tar.gz
 EXTRACTS = https://github.com/mapzen/metro-extracts/archive/master.tar.gz
 VALHALLA = https://github.com/valhalla/valhalla-docs/archive/master.tar.gz
 VECTOR_TILES = https://api.github.com/repos/tilezen/vector-datasource/releases/latest
-TERRAIN_TILES = https://api.github.com/repos/tilezen/joerd/releases/latest
+#TERRAIN_TILES = https://api.github.com/repos/tilezen/joerd/releases/latest
+TERRAIN_TILES = https://github.com/tilezen/joerd/archive/iandees/v2-docs.zip
 SEARCH = https://github.com/pelias/pelias-doc/archive/master.tar.gz
 ANDROID = https://github.com/mapzen/android/archive/master.tar.gz
 IOS = https://github.com/mapzen/ios/archive/master.tar.gz
@@ -93,14 +94,14 @@ src-libpostal:
 src-wof:
 	mkdir src-wof
 	curl -sL $(WOF) | tar -zxv -C src-wof --strip-components=2 whosonfirst-www-api-master/docs
-	
+
 src-cartography:
 	mkdir src-cartography
 	curl -sL $(CARTOGRAPHY) | tar -zxv -C src-cartography --strip-components=1 cartography-docs-master
 
 src-overview:
 	cp -r docs/overview src-overview
-	
+
 src-guides:
 	cp -r docs/guides src-guides
 
