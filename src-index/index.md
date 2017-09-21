@@ -129,9 +129,9 @@
 			</h3>
 			<div class="category-info-container first">
 				<div class="category-info">
-					<a class="docs-title" href="wof/">Who's On First</a>
+					<a class="docs-title" href="places/">Mapzen Places</a>
 					<p class="excerpt">
-						Retrieve data about places from the Who's on First gazetteer.
+						Get data for administrative boundaries and hierarchies, neighbourhoods, postal codes, venues, and more.
 					</p>
 				</div>
 				<div class="read-more">
