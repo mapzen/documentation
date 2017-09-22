@@ -15,6 +15,10 @@ mz:redirects:
   'turn-by-turn/terminology': 'mobility/terminology'
   'turn-by-turn/decoding': 'mobility/decoding'
   'wof': 'places'
+  'wof/formats': 'places/formats'
+  'wof/methods': 'places/methods'
+  'wof/pagination': 'places/pagination'
+  'wof/errors': 'places/errors'
 
 extra:
   layout: raw-page
