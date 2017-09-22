@@ -131,11 +131,11 @@
 				<div class="category-info">
 					<a class="docs-title" href="places/">Mapzen Places</a>
 					<p class="excerpt">
-						Get data for administrative boundaries and hierarchies, neighbourhoods, postal codes, venues, and more.
+						Get administrative boundaries and hierarchies, neighbourhoods, postal codes, venues, and more.
 					</p>
 				</div>
 				<div class="read-more">
-					<a class="btn btn-default btn-transparent" href="wof/"> View Documentation </a>
+					<a class="btn btn-default btn-transparent" href="places/"> View Documentation </a>
 				</div>
 			</div>
 			<div class="category-info-container">
