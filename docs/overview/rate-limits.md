@@ -28,7 +28,7 @@ Mapzen's [cartography](https://mapzen.com/documentation/cartography/) requires a
 
 - 50,000 free requests per month
 
-When viewing a map, you commonly use about 15 tile requests at a time.
+When viewing a map, you commonly make about 15 tile API requests.
 
 The Mapzen Vector Tiles service is built from the [Tilezen](https://github.com/tilezen) open-source project.
 
