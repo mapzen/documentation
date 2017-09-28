@@ -28,7 +28,7 @@ Mapzen's [cartography](https://mapzen.com/documentation/cartography/) requires a
 
 - 50,000 free requests per month
 
-When viewing a map, you commonly make about 4 tile API requests at 512 pixel tile size, and about 15 tile API requests at 256 pixel tile size.
+When viewing a map, you commonly make about four requests at 512-pixel tile size, and about 15 requests at 256-pixel tile size.
 
 The Mapzen Vector Tiles service is built from the [Tilezen](https://github.com/tilezen) open-source project.
 
