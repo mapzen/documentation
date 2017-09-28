@@ -56,12 +56,17 @@ src-vector-tiles:
 src-terrain-tiles:
 	mkdir src-terrain-tiles
 	# Try with --wildcards for GNU tar, but fall back to BSD tar syntax for Mac.
-	curl -sL $(TERRAIN_TILES) \
-	| ./extract-tarball-url.py \
-	| xargs curl -sL | ( \
-	    tar -zxv -C src-terrain-tiles --strip-components=2 --exclude=README.md --wildcards '*/docs/' \
-	 || tar -zxv -C src-terrain-tiles --strip-components=2 --exclude=README.md '*/docs/' \
-	    )
+	curl -sL $(TERRAIN_TILES) | tar -zxv -C src-terrain-tiles --strip-components=2 joerd-iandees-v2-docs/docs
+	    
+#src-terrain-tiles:
+#	mkdir src-terrain-tiles
+	# Try with --wildcards for GNU tar, but fall back to BSD tar syntax for Mac.
+#	curl -sL $(TERRAIN_TILES) \
+#	| ./extract-tarball-url.py \
+#	| xargs curl -sL | ( \
+#	    tar -zxv -C src-terrain-tiles --strip-components=2 --exclude=README.md --wildcards '*/docs/' \
+#	 || tar -zxv -C src-terrain-tiles --strip-components=2 --exclude=README.md '*/docs/' \
+#	    )
 
 src-elevation:
 	mkdir src-elevation
