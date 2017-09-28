@@ -8,7 +8,7 @@ pages:
   - 'Get started': 'use-service.md'
   - 'Build a map': 'build-a-map.md'
   - 'Data sources': 'data-sources.md'
-  - 'HTTP Status Codes': 'http-status-codes.md'
+  - 'HTTP status codes': 'http-status-codes.md'
 
 mz:redirects:
   'attribution': '.'
