@@ -23,7 +23,7 @@ pages:
 mz:redirects:
   'get-started': '.'
   'transition-from-beta': '.'
-  'api-keys-rate-limits.md': '.'
+  'api-keys-rate-limits': '.'
 
 extra:
   site_subtitle: 'Find places and addresses with this geographic search service built on open tools and open data.'

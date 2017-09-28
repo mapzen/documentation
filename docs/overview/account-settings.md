@@ -12,8 +12,6 @@ When you create an account, you need to agree to the Mapzen [Terms of Service](h
 
 In the future when you sign in, use either your email address and password or GitHub account, depending on how you registered originally. If you forgot your password, you can also attempt to reset it.
 
-To delete your account, you need to [contact Mapzen](mailto:support@mapzen.com). If you are using GitHub, sign into your GitHub account and revoke [Mapzen Platform](https://help.github.com/articles/reviewing-your-authorized-applications-oauth/) as an authorized application.
-
 ## Change your email address or password
 
 1. Sign in to your Mapzen account.
@@ -91,3 +89,20 @@ _Note: Premium support is for assistance with Mapzen's hosted web services and d
 2. In the top corner of the page, click `Account` and click `Settings`.		
 3. Under `Support`, click `Enable` and agree to the terms.		
 4. To end premium support, under `Support`, click `Update` and disable it on your account.
+
+## Delete your Mapzen account
+
+If you no longer want to have a Mapzen account, you can delete it permanently. When you do this, your API keys stop working almost immediately, which means any maps using them no longer function. You will lose access to your API keys, dashboard, and past usage data, and you will not be able to sign in again.
+
+You can only delete your account if you have no outstanding charges.
+
+_Tip: If you only need to update your name, email address, or billing information, you do not need to delete your account. You can change these in your account settings._
+
+1. Sign in to your Mapzen account.
+2. In the top corner of the page, click `Account` and click `Settings`.
+3. Click `Delete your account`. If you do not see this section, your account has a balance due that must be paid before you can delete it.
+4. Review what happens when you delete your account, and confirm that you want take this action.
+
+If you are using GitHub authentication on your Mapzen account, optionally, sign into your GitHub account and revoke [Mapzen Platform](https://help.github.com/articles/reviewing-your-authorized-applications-oauth/) as an authorized application.
+
+You may still continue to receive emails from Mapzen. If you want to unsubscribe, use the links in the newsletter email.
