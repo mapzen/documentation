@@ -9,7 +9,7 @@ pages:
   - 'Themes': 'themes.md'
   - 'Icons': 'icons.md'
   - 'API reference': 'api-reference.md'
-  - 'Migration Guide': 'migration-guide.md'
+  - 'Migration guide': 'migration-guide.md'
   - 'Versioning': 'versioning.md'
 
 extra:
