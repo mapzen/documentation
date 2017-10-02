@@ -1,0 +1,16 @@
+site_name: Mapzen Places
+docs_dir: src-places
+site_dir: dist-places
+
+pages:
+ - Home: index.md
+ - 'Formats': 'formats.md'
+ - 'Methods': 'methods.md'
+ - 'Pagination': 'pagination.md'
+ - 'Error codes': 'errors.md'
+
+extra:
+ site_subtitle: "Get administrative boundaries and hierarchies, neighbourhoods, postal codes, venues, and more."
+ project_repo_url: https://github.com/whosonfirst/whosonfirst-www-api
+ docs_base_url: https://github.com/whosonfirst/whosonfirst-www-api/tree/mapzen/docs
+ exclude_home_contents_in_toc: false

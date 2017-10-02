@@ -10,7 +10,7 @@ IOS = https://github.com/mapzen/ios/archive/master.tar.gz
 MAPZENJS = https://mapzen.com/js/docs.tar.gz
 LIBPOSTAL = https://github.com/whosonfirst/go-whosonfirst-libpostal/archive/master.tar.gz
 CARTOGRAPHY = https://github.com/tangrams/cartography-docs/archive/master.tar.gz
-WOF = https://github.com/whosonfirst/whosonfirst-www-api/archive/master.tar.gz
+PLACES = https://github.com/whosonfirst/whosonfirst-www-api/archive/mapzen.tar.gz
 
 SHELL := /bin/bash # required for OSX
 PYTHONPATH := packages:$(PYTHONPATH)
@@ -31,7 +31,7 @@ clean:
 	       dist-search-mkdocs.yml dist-tangram-mkdocs.yml \
 	       dist-terrain-tiles-mkdocs.yml dist-vector-tiles-mkdocs.yml \
 	       dist-libpostal-mkdocs.yml dist-cartography-mkdocs.yml \
-	       dist-wof-mkdocs.yml dist-wof-mkdocs.yml
+	       dist-places-mkdocs.yml
 
 # Get individual sources docs
 src-tangram:
@@ -90,17 +90,17 @@ src-libpostal:
 	mkdir src-libpostal
 	curl -sL $(LIBPOSTAL) | tar -zxv -C src-libpostal --strip-components=2 go-whosonfirst-libpostal-master/docs
 
-src-wof:
-	mkdir src-wof
-	curl -sL $(WOF) | tar -zxv -C src-wof --strip-components=2 whosonfirst-www-api-master/docs
-	
+src-places:
+	mkdir src-places
+	curl -sL $(PLACES) | tar -zxv -C src-places --strip-components=2 whosonfirst-www-api-mapzen/docs
+
 src-cartography:
 	mkdir src-cartography
 	curl -sL $(CARTOGRAPHY) | tar -zxv -C src-cartography --strip-components=1 cartography-docs-master
 
 src-overview:
 	cp -r docs/overview src-overview
-	
+
 src-guides:
 	cp -r docs/guides src-guides
 
@@ -127,7 +127,7 @@ dist-index: theme/fragments
 	./setup-redirects.py ./dist-index-mkdocs.yml /documentation/
 	cp dist-index/index.html dist-index/next.html
 
-dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-search dist-elevation dist-android dist-ios dist-mapzen-js dist-overview dist-guides dist-index dist-mobility dist-terrain-tiles dist-libpostal dist-wof dist-cartography
+dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-search dist-elevation dist-android dist-ios dist-mapzen-js dist-overview dist-guides dist-index dist-mobility dist-terrain-tiles dist-libpostal dist-places dist-cartography
 	mkdir dist
 	ln -s ../dist-tangram dist/tangram
 	ln -s ../dist-metro-extracts dist/metro-extracts
@@ -143,7 +143,7 @@ dist: dist-tangram dist-metro-extracts dist-vector-tiles dist-search dist-elevat
 	ln -s ../dist-guides dist/guides
 	ln -s ../dist-libpostal dist/libpostal
 	ln -s ../dist-cartography dist/cartography
-	ln -s ../dist-wof dist/wof
+	ln -s ../dist-places dist/places
 	rsync -urv --ignore-existing dist-index/ dist/
 
 serve:
