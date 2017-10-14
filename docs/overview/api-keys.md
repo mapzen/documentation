@@ -53,4 +53,25 @@ var map = L.Mapzen.map('map', {
 }
 ```
 
+Another method of obfuscating the API key is put it in a separate YAML file and use an `import:` statement to link to it from your main scene file. In Tangram Play, this would look like:
+
+```
+import:
+    https://your-file-url.yaml #link to your YAML file
+
+sources:
+    mapzen:
+      [...]
+      url_params:
+          api_key: global.sdk_mapzen_api_key
+    
+```
+
+In your external file, you can define the key in a `global:` block.
+
+```
+global:
+    sdk_mapzen_api_key: your-mapzen-api-key
+```
+
 If you believe your API key has been compromised or used without your knowledge, contact [Mapzen](mailto:support@mapzen.com). You can also delete API keys or rotate them periodically in your app. There is not currently a default way to limit an API key for usage only on a particular web domain.
