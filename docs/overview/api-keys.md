@@ -28,50 +28,78 @@ The alternative and more complex API key workflow is for your app to provide an 
 
 If you want to keep your API key private, you can consider using a proxy system to hide the key from your users.
 
-Here is an example of how to do this with [mapzen.js](https://mapzen.com/documentation/mapzen-js/). In your YAML scene file that defines the Tangram map, add a `sources` parameter for the API key.
+If you believe your API key has been compromised or used without your knowledge, contact [Mapzen](mailto:support@mapzen.com). You can also delete API keys or rotate them periodically in your app. There is not currently a default way to limit an API key for usage only on a particular web domain.
+
+### Example with mapzen.js
+
+When using [mapzen.js](https://mapzen.com/documentation/mapzen-js/), in your YAML scene file that defines the Tangram map, add a `sources` parameter for the API key.
 
 ```
 sources:
     mapzen:
-      [...]
-      url_params:
-          api_key: global.sdk_mapzen_api_key
+        [...]
+        url_params:
+            api_key: global.sdk_mapzen_api_key
 ```
 
 Then, in the JavaScript, use your actual key in place of `your-mapzen-api-key` in this code.
 
 ```
 var map = L.Mapzen.map('map', {
-  tangramOptions: {
-    scene: {
-      [...]
-      global: {
-        sdk_mapzen_api_key: 'your-mapzen-api-key'
-      }
+    tangramOptions: {
+        scene: {
+            [...]
+            global: {
+            sdk_mapzen_api_key: 'your-mapzen-api-key'
+            }
+        }
     }
-  }
 }
 ```
 
-Another method of obfuscating the API key is put it in a separate YAML file and use an `import:` statement to link to it from your main scene file. In Tangram Play, this would look like:
+### Example with separate Tangram scene files
+
+A method of obfuscating the API key is put it in a separate YAML file and use an `import:` statement to link to it from your main Tangram scene file.
+
+1. Import the file.
+
+- all on one line
+    `import: https://your-file-url.yaml #link to your YAML file`
+- as an array
+    `import: [https://your-file-url.yaml] #link to your YAML file`
+- as an unordered list:
+    `import:
+    - https://your-file-url.yaml #link to your YAML file`
+
+The array or unordered list methods allow more than one import at a time:
+
+`import: [https://your-file-url.yaml, https://a-second-file-url.yaml]`
 
 ```
 import:
-    https://your-file-url.yaml #link to your YAML file
-
-sources:
-    mapzen:
-      [...]
-      url_params:
-          api_key: global.sdk_mapzen_api_key
-    
+    - https://your-file-url.yaml #link to your YAML file
+    - https://a-second-file-url.yaml #link to your YAML file
 ```
 
-In your external file, you can define the key in a `global:` block.
+Note that if the file is local, you do not need the protocol:
+
+`import: your-file.yaml #link to your YAML file`
+
+2. Reference the API key in the scene file.
+
+In your `sources` block, add `url_params`.
+
+```
+sources:
+    mapzen:
+        [...]
+        url_params:
+            api_key: global.sdk_mapzen_api_key
+```
+
+3. In your external file, define the key in a `global:` block.
 
 ```
 global:
     sdk_mapzen_api_key: your-mapzen-api-key
 ```
-
-If you believe your API key has been compromised or used without your knowledge, contact [Mapzen](mailto:support@mapzen.com). You can also delete API keys or rotate them periodically in your app. There is not currently a default way to limit an API key for usage only on a particular web domain.
