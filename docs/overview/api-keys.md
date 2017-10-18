@@ -63,43 +63,55 @@ A method of obfuscating the API key is put it in a separate YAML file and use an
 
 1. Import the file.
 
-- all on one line
-    `import: https://your-file-url.yaml #link to your YAML file`
-- as an array
-    `import: [https://your-file-url.yaml] #link to your YAML file`
-- as an unordered list:
-    `import:
-    - https://your-file-url.yaml #link to your YAML file`
+  There are several ways you can do this.
 
-The array or unordered list methods allow more than one import at a time:
+  - all on one line
+      ```
+      import: https://your-file-url.yaml #link to your YAML file
+      ```
+  - as an array
+      ```
+      import: [https://your-file-url.yaml] #link to your YAML file
+      ```
+  - as an unordered list:
+      ```
+      import:
+      - https://your-file-url.yaml #link to your YAML file
+      ```
 
-`import: [https://your-file-url.yaml, https://a-second-file-url.yaml]`
+  The array or unordered list methods allow more than one import at a time:
 
-```
-import:
-    - https://your-file-url.yaml #link to your YAML file
-    - https://a-second-file-url.yaml #link to your YAML file
-```
+  ```
+  import: [https://your-file-url.yaml, https://a-second-file-url.yaml]
+  ```
 
-Note that if the file is local, you do not need the protocol:
+  ```
+  import:
+      - https://your-file-url.yaml #link to your YAML file
+      - https://a-second-file-url.yaml #link to your YAML file
+  ```
 
-`import: your-file.yaml #link to your YAML file`
+  Note that if the file is local, you do not need the protocol:
+
+  ```
+  import: your-file.yaml #link to your YAML file
+  ```
 
 2. Reference the API key in the scene file.
 
-In your `sources` block, add `url_params`.
+  In your `sources` block, add `url_params`.
 
-```
-sources:
-    mapzen:
-        [...]
-        url_params:
-            api_key: global.sdk_mapzen_api_key
-```
+  ```
+  sources:
+      mapzen:
+          [...]
+          url_params:
+              api_key: global.sdk_mapzen_api_key
+  ```
 
 3. In your external file, define the key in a `global:` block.
 
-```
-global:
-    sdk_mapzen_api_key: your-mapzen-api-key
-```
+  ```
+  global:
+      sdk_mapzen_api_key: your-mapzen-api-key
+  ```
