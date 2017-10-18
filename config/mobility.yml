@@ -45,7 +45,6 @@ mz:redirects:
   'optimized': 'optimized/api-reference'
   'isochrone': 'isochrone/api-reference.md'
   'map-matching': 'map-matching/api-reference.md'
-  'decoding': 'reference/decoding.md'
 
 extra:
   site_subtitle: 'Add routing and navigation to your web and mobile apps.'
