@@ -34,8 +34,9 @@ pages:
     - 'Generate isochrones': 'explorer/isochrones.md'
     - 'Match GPS locations to a route': 'explorer/map-matching.md'
     - 'Tutorial': 'explorer/tutorial.md'
-  - 'Speeds': 'speeds.md'
-  - 'Decode a route shape': 'decoding.md'
+  - 'Reference':
+    - 'Speeds': 'speeds.md'
+    - 'Decode a route shape': 'decoding.md'
   - 'Release notes': 'release-notes.md'
 
 mz:redirects:
@@ -44,6 +45,7 @@ mz:redirects:
   'optimized': 'optimized/api-reference'
   'isochrone': 'isochrone/api-reference.md'
   'map-matching': 'map-matching/api-reference.md'
+  'decoding': 'reference/decoding.md'
 
 extra:
   site_subtitle: 'Add routing and navigation to your web and mobile apps.'
