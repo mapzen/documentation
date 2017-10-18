@@ -34,6 +34,7 @@ pages:
     - 'Generate isochrones': 'explorer/isochrones.md'
     - 'Match GPS locations to a route': 'explorer/map-matching.md'
     - 'Tutorial': 'explorer/tutorial.md'
+  - 'Speeds': 'speeds.md'
   - 'Decode a route shape': 'decoding.md'
   - 'Release notes': 'release-notes.md'
 
