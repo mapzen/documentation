@@ -61,57 +61,57 @@ var map = L.Mapzen.map('map', {
 
 A method of obfuscating the API key is put it in a separate YAML file and use an `import:` statement to link to it from your main Tangram scene file.
 
-#### 1. Import the file.
+1. Import the file.
 
-There are several ways you can do this.
+    There are several ways you can do this.
 
-- all on one line
+    - all on one line
+        ```yaml
+        import: https://your-file-url.yaml #link to your YAML file
+        ```
+    - as an array
+        ```yaml
+        import: [https://your-file-url.yaml] #link to your YAML file
+        ```
+    - as an unordered list:
+        ```yaml
+        import:
+        - https://your-file-url.yaml #link to your YAML file
+        ```
+
+    The array or unordered list methods allow more than one import at a time:
+
     ```yaml
-    import: https://your-file-url.yaml #link to your YAML file
+    import: [https://your-file-url.yaml, https://a-second-file-url.yaml]
     ```
-- as an array
-    ```yaml
-    import: [https://your-file-url.yaml] #link to your YAML file
-    ```
-- as an unordered list:
+
     ```yaml
     import:
-    - https://your-file-url.yaml #link to your YAML file
+        - https://your-file-url.yaml #link to your YAML file
+        - https://a-second-file-url.yaml #link to your YAML file
     ```
 
-The array or unordered list methods allow more than one import at a time:
+    Note that if the file is local, you do not need the protocol:
 
-```yaml
-import: [https://your-file-url.yaml, https://a-second-file-url.yaml]
-```
+    ```yaml
+    import: your-file.yaml #link to your YAML file
+    ```
 
-```yaml
-import:
-    - https://your-file-url.yaml #link to your YAML file
-    - https://a-second-file-url.yaml #link to your YAML file
-```
+2. Reference the API key in the scene file.
 
-Note that if the file is local, you do not need the protocol:
+    In your `sources` block, add `url_params`.
 
-```yaml
-import: your-file.yaml #link to your YAML file
-```
+    ```yaml
+    sources:
+        mapzen:
+            [...]
+            url_params:
+                api_key: global.sdk_mapzen_api_key
+    ```
 
-#### 2. Reference the API key in the scene file.
+3. In your external file, define the key in a `global:` block.
 
-In your `sources` block, add `url_params`.
-
-```yaml
-sources:
-    mapzen:
-        [...]
-        url_params:
-            api_key: global.sdk_mapzen_api_key
-```
-
-#### 3. In your external file, define the key in a `global:` block.
-
-```yaml
-global:
-    sdk_mapzen_api_key: your-mapzen-api-key
-```
+    ```yaml
+    global:
+        sdk_mapzen_api_key: your-mapzen-api-key
+    ```
