@@ -61,37 +61,7 @@ var map = L.Mapzen.map('map', {
 
 A method of obfuscating the API key is put it in a separate YAML file and use an `import:` statement to link to it from your main Tangram scene file.
 
-1. Import the file.
-
-    There are several ways you can do this.
-
-    - all on one line
-        ```yaml
-        import: https://your-file-url.yaml #link to your YAML file
-        ```
-    - as an array
-        ```yaml
-        import: [https://your-file-url.yaml] #link to your YAML file
-        ```
-    - as an unordered list:
-        ```yaml
-        import:
-        - https://your-file-url.yaml #link to your YAML file
-        ```
-
-    The array or unordered list methods allow more than one import at a time:
-
-    ```yaml
-    import: [https://your-file-url.yaml, https://a-second-file-url.yaml]
-    ```
-
-    ```yaml
-    import:
-        - https://your-file-url.yaml #link to your YAML file
-        - https://a-second-file-url.yaml #link to your YAML file
-    ```
-
-    Note that if the file is local, you do not need the protocol:
+1. Import the file. See the [Tangram import documentation](https://mapzen.com/documentation/tangram/import/) for details.
 
     ```yaml
     import: your-file.yaml #link to your YAML file
