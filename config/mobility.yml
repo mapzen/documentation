@@ -35,3 +35,5 @@ extra:
   site_subtitle: 'Add routing and navigation to your web and mobile apps.'
   project_repo_url: https://github.com/valhalla/
   docs_base_url: https://github.com/valhalla/valhalla-docs/tree/master
+
+# force refresh
