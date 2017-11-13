@@ -175,9 +175,9 @@ class Tests (unittest.TestCase):
 
     def test_guides_index(self):
         self._test_doc_section('/guides', *self._load_doc_titles('config/guides.yml'))
-        
-    def test_wof_index(self):
-        self._test_doc_section('/wof', *self._load_doc_titles('config/wof.yml')) 
+
+    def test_places_index(self):
+        self._test_doc_section('/places', *self._load_doc_titles('config/places.yml')) 
 
 if __name__ == '__main__':
     unittest.main()

@@ -24,11 +24,11 @@ Mapzen's [cartography](https://mapzen.com/documentation/cartography/) requires a
 
 ### Mapzen Vector Tiles
 
-[Mapzen Vector Tiles](https://mapzen.com/documentation/vector-tiles/) provides global basemap coverage and has these limits:
+[Mapzen Vector Tiles](https://mapzen.com/documentation/vector-tiles/) provides global basemap coverage. The service has these limits:
 
 - 50,000 free requests per month
 
-When viewing a map, you commonly use about 15 tile requests at a time.
+When viewing a map, you commonly make about four requests at 512-pixel tile size, and about 15 requests at 256-pixel tile size.
 
 The Mapzen Vector Tiles service is built from the [Tilezen](https://github.com/tilezen) open-source project.
 
@@ -42,7 +42,7 @@ The Mapzen Terrain Tiles service is built from the [Joerd](https://github.com/ti
 
 ### Mapzen Search
 
-[Mapzen Search](https://mapzen.com/documentation/search/) is a geocoding and place-finding service and has these limits:
+[Mapzen Search](https://mapzen.com/documentation/search/) is a geocoding and place-finding service. The service has these limits:
 
 - 25,000 free requests per month for forward geocoding, reverse geocoding, and place lookup
 - 50,000 free requests per month for autocomplete
@@ -51,7 +51,7 @@ The Mapzen Search service is built from the [Pelias](https://github.com/pelias) 
 
 ### Mapzen Turn-by-Turn
 
-[Mapzen Turn-by-Turn](https://mapzen.com/documentation/turn-by-turn/) is a routing and navigation service and has these limits:
+[Mapzen Turn-by-Turn](https://mapzen.com/documentation/turn-by-turn/) is a routing and navigation service. The service has these limits:
 
 - 5,000 free requests per month
 - Pedestrian routes have a limit of 50 locations and 250 kilometers.
@@ -63,7 +63,7 @@ The distance limit is the total straight-line distance (colloquially, as the cro
 
 ### Mapzen Matrix
 
-[Mapzen Matrix](https://mapzen.com/documentation/matrix/) provides time and distance calculations between locations and has these limits:
+[Mapzen Matrix](https://mapzen.com/documentation/matrix/) provides time and distance calculations between locations. The service has these limits:
 
 - 1,000 free requests per month
 - The maximum number of locations is 50 for any type of matrix.
@@ -102,7 +102,7 @@ The Mapzen Mobility services are built from the [Valhalla](https://github.com/va
 
 ### Mapzen Elevation
 
-[Mapzen Elevation](https://mapzen.com/documentation/elevation/) provides the height or elevation at a set of locations and has these limits:
+[Mapzen Elevation](https://mapzen.com/documentation/elevation/) provides the height or elevation at a set of locations. The service has these limits:
 
 - 5,000 free requests per month
 
@@ -110,21 +110,17 @@ There are also limitations on the number of sampling points for which you reques
 
 The Mapzen Elevation lookup service is built from the [Joerd](https://github.com/tilezen/joerd) open-source project.
 
-### Who's On First
+### Mapzen Places
 
-Retrieve data about places from the [Who's On First](https://mapzen.com/documentation/wof/) gazetteer.
+[Mapzen Places](https://mapzen.com/documentation/places/) provides administrative boundaries and hierarchies, neighbourhoods, postal codes, venues, and more from the [Who's On First](https://whosonfirst.mapzen.com/) dataset. The service has these limits:
 
-- 25,000 free requests per day
-
-_Note: This service currently offers only free access with these limits. Mapzen is working on updating this service to allow increased usage._
+- 25,000 free requests per month
 
 ### Libpostal address parsing
 
-[Libpostal API](https://mapzen.com/documentation/libpostal/) parses and normalizes street addresses and has these limits:
+[Libpostal API](https://mapzen.com/documentation/libpostal/) parses and normalizes street addresses. The service has these limits:
 
-- 30,000 free requests per day
-
-_Note: This service currently offers only free access with these limits. Mapzen is working on updating this service to allow increased usage._
+- 1,000 free requests per month
 
 ### Other data products
 
