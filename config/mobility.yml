@@ -2,8 +2,6 @@ site_name: Mapzen Mobility
 docs_dir: src-mobility
 site_dir: dist-mobility
 
-# force rebuild
-
 pages:
   - Home: index.md
   - 'Glossary': 'terminology.md'
