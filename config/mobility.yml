@@ -2,21 +2,6 @@ site_name: Mapzen Mobility
 docs_dir: src-mobility
 site_dir: dist-mobility
 
-mz:renames:
-  'optimized_route/api-reference.md': 'optimized/api-reference.md'
-  'api-reference.md': 'turn-by-turn/api-reference.md'
-  'add-routing-to-a-map.md': 'turn-by-turn/add-routing-to-a-map.md'
-  'images/browser-controls.png': 'turn-by-turn/images/browser-controls.png'
-  'images/browser-initial-map.png': 'turn-by-turn/images/browser-initial-map.png'
-  'images/local-browser.png': 'turn-by-turn/images/local-browser.png'
-  'images/route-map-initial.png': 'turn-by-turn/images/route-map-initial.png'
-  'images/route-map-valhalla-destination.png': 'turn-by-turn/images/route-map-valhalla-destination.png'
-  'images/route-map-valhalla-line-color.png': 'turn-by-turn/images/route-map-valhalla-line-color.png'
-  'images/route-map-valhalla.png': 'turn-by-turn/images/route-map-valhalla.png'
-  'images/start-python-server.png': 'turn-by-turn/images/start-python-server.png'
-  'images/terminal-404-error.png': 'turn-by-turn/images/terminal-404-error.png'
-  'turn-by-turn-overview.md': 'turn-by-turn/overview.md'
-
 pages:
   - Home: index.md
   - 'Glossary': 'terminology.md'
