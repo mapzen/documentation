@@ -36,6 +36,7 @@ pages:
     - Setup guides:
       - 'Setup overview': 'Tangram-Setup.md'
       - 'JavaScript setup': 'walkthrough.md'
+      - 'JavaScript bundling': 'Bundling.md'
       - 'Android setup': 'android-walkthrough.md'
       - 'iOS setup': 'iOS-walkthrough.md'
     - Tutorials:
