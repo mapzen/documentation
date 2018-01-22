@@ -11,16 +11,5 @@ dependencies:
 test:
   override:
     - make
-    - ./run-checklist.py
     - cp -Lr dist $CIRCLE_ARTIFACTS/documentation
     - echo '<a href="/documentation/">documentation</a>' > $CIRCLE_ARTIFACTS/index.html
-
-deployment:
-  staging:
-    branch: staging
-    commands:
-      - aws s3 sync dist s3://static-dev.mapzen.com/documentation/
-  release:
-    branch: master
-    commands:
-      - aws s3 sync dist $AWS_DESTINATION
